@@ -1,0 +1,47 @@
+{
+    "version": "1.0",
+    "file_records": [
+        {
+            "source_url": "C:/NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized.mdl",
+            "source_hash": "5fad8f3f7ca9966566b1afc97ca4ed9f3c35de2f",
+            "target_url": "./NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized.mdl",
+            "target_hash": "bd311f08f00eff9fd0ea6961f663e20aeeca86e5"
+        },
+        {
+            "source_url": "C:/lulu/model(\u6700\u7ec8\u7248)/03faucet/faucet_3/resource/img/43cab14230781caf82c01b4f1d8b7f48.png",
+            "source_hash": "ce07312019ae1c60d6b314fa792edf11f5df3e78",
+            "target_url": "./resource/img/43cab14230781caf82c01b4f1d8b7f48.png",
+            "target_hash": "ce07312019ae1c60d6b314fa792edf11f5df3e78"
+        },
+        {
+            "source_url": "C:/lulu/model(\u6700\u7ec8\u7248)/03faucet/faucet_3/resource/img/b52a3bb27dafcc80576034556adecee4.png",
+            "source_hash": "80ec103580ce0a86d39ab289277bd67ceed92e52",
+            "target_url": "./resource/img/b52a3bb27dafcc80576034556adecee4.png",
+            "target_hash": "80ec103580ce0a86d39ab289277bd67ceed92e52"
+        },
+        {
+            "source_url": "C:/lulu/model(\u6700\u7ec8\u7248)/03faucet/faucet_3/resource/img/ecd0515dca3a77bb03d2f7c7be91aab1.png",
+            "source_hash": "80b075d33bc4792da2e225ac0582bbb9bdb199e1",
+            "target_url": "./resource/img/ecd0515dca3a77bb03d2f7c7be91aab1.png",
+            "target_hash": "80b075d33bc4792da2e225ac0582bbb9bdb199e1"
+        },
+        {
+            "source_url": "C:/NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_BaseColor.png",
+            "source_hash": "ea2390323c92a174416c15f69dbaaa6865ec4442",
+            "target_url": "./NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_BaseColor.png",
+            "target_hash": "ea2390323c92a174416c15f69dbaaa6865ec4442"
+        },
+        {
+            "source_url": "C:/NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_ORM.png",
+            "source_hash": "d3f5482ac5f71b100ac12b336aa85966dc078d9e",
+            "target_url": "./NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_ORM.png",
+            "target_hash": "d3f5482ac5f71b100ac12b336aa85966dc078d9e"
+        },
+        {
+            "source_url": "C:/NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_Normal.png",
+            "source_hash": "c44d4a6f1d8e1068e4b8cbd29ec42c2164265e43",
+            "target_url": "./NVIDIA/Materials/2023_2_1/Base/Metals/Aluminum_Anodized/Aluminum_Anodized_Normal.png",
+            "target_hash": "c44d4a6f1d8e1068e4b8cbd29ec42c2164265e43"
+        }
+    ]
+}

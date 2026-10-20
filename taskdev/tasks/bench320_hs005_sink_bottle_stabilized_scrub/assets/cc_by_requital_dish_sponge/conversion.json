@@ -1,0 +1,71 @@
+{
+  "asset_id": "dish_sponge",
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "extension": "omni.kit.asset_converter 5.0.17",
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 3528273,
+    "default_prim": "/World",
+    "filename": "dish_sponge_visual.usd",
+    "forbidden_schema_count": 0,
+    "material_count": 1,
+    "mesh_count": 1,
+    "sha256": "17cf9caca532499991af0589a9ab3875ded6d070929fc005f0b27aef9b6e7ea6"
+  },
+  "schema": "hs005_downloaded_visual_conversion_v1",
+  "source": {
+    "archive_filename": "sponge_for_washing_dishes.zip",
+    "archive_sha256": "2003f17f0913bb7383d48a369fa345fb5ea18f405ea4a6ecb9f51646e852a914",
+    "author": "Requital (Azamkhon)",
+    "author_url": "https://sketchfab.com/requital_0111",
+    "files": {
+      "source/license.txt": "fe7a624d656497cde64a025aa8f43f701b9f79bdab31e24ba8df93b9465180fa",
+      "source/scene.bin": "c1eb15e2365c71efc7af8bccedb8a5c2f5b184b5cae4343f39e7a64f8dc59504",
+      "source/scene.gltf": "875ad3a55f1327dfac573f50366d33baf035b85c460526bc00ba8a27fd988ea9",
+      "source/textures/DefaultMaterial_baseColor.png": "15358f0e49185871e5eedfdad33d1523ea2f1be7db01c27cdb45af0cd9d7ebab",
+      "source/textures/DefaultMaterial_metallicRoughness.png": "0dd2aeb8bc0dc7eb3ef260878134ea726fd909e5f738f1880a64830a1744ed08",
+      "source/textures/DefaultMaterial_normal.png": "356f99142eb7b792021f2cab0d25f9fe0a2132de475e69fe1eae89d205a950a6"
+    },
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "profile": {
+      "bounds_source": [
+        [
+          -1.2276641354181226,
+          1.4343501319014074e-05,
+          -2.7725959989949653
+        ],
+        [
+          1.2276641354181226,
+          0.9816774464949263,
+          2.772596066735347
+        ]
+      ],
+      "extents_source": [
+        2.455328270836245,
+        0.9816631029936073,
+        5.545192065730312
+      ],
+      "geometry_count": 1,
+      "mesh_node_count": 1,
+      "triangle_count": 48688
+    },
+    "source_url": "https://sketchfab.com/3d-models/sponge-for-washing-dishes-7ec3822721dd416aacc6308a7ed46c2c",
+    "title": "Sponge For Washing Dishes"
+  }
+}

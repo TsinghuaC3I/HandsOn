@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="t25_place_cup_on_plate_plate">
+  <asset>
+    <material name="a02_plate_material" rgba="0.86 0.04 0.06 1" specular="0.08" shininess="0.15" />
+  </asset>
+
+  <worldbody>
+    <body name="plate" pos="-0.10 -0.36 0.932">
+      <freejoint name="plate_joint" />
+      <geom name="plate_visual"
+            type="cylinder"
+            pos="0 0 0.006"
+            size="0.13 0.008"
+            material="a02_plate_material"
+            contype="0"
+            conaffinity="0"
+            density="0"
+            group="1" />
+      <geom name="plate_rim_visual"
+            type="cylinder"
+            pos="0 0 0.017"
+            size="0.135 0.004"
+            material="a02_plate_material"
+            contype="0"
+            conaffinity="0"
+            density="0"
+            group="1" />
+      <geom name="plate_collision"
+            type="cylinder"
+            pos="0 0 0"
+            size="0.13 0.012"
+            condim="6"
+            friction="1.5 0.20 0.02"
+            solref="0.003 1"
+            solimp="0.95 0.99 0.001"
+            mass="0.18"
+            rgba="0 0 0 0"
+            group="3" />
+      <site name="plate_center" pos="0 0 0.014" size="0.008" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+</mujoco>

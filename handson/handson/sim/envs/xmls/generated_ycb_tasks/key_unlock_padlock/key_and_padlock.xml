@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="key_unlock_padlock_objects">
+  <default>
+    <default class="kup_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="kup_mesh_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="kup_key_collision">
+      <geom group="0" density="5800" friction="1.0 0.012 0.0002"
+            solref="0.004 1" solimp="0.96 0.995 0.001" rgba="0.70 0.55 0.18 0.36" />
+    </default>
+    <default class="kup_lock_collision">
+      <geom group="0" density="7200" friction="1.1 0.012 0.0002"
+            solref="0.004 1" solimp="0.96 0.995 0.001" rgba="0.35 0.36 0.38 0.34" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="kup_key_tex"
+             file="../../lightwheel_ycb/key_berkeley_meshes/visuals/T_key_berkeley_meshes_BC001.png" />
+    <texture type="2d" name="kup_padlock_tex"
+             file="../../lightwheel_ycb/padlock/visuals/T_padlock_BC001.png" />
+    <material name="kup_key_mat" texture="kup_key_tex" specular="0.45" shininess="0.35" />
+    <material name="kup_wrong_key_tag_mat" rgba="0.80 0.12 0.10 1" specular="0.25" shininess="0.2" />
+    <material name="kup_padlock_mat" texture="kup_padlock_tex" specular="0.35" shininess="0.25" />
+    <material name="kup_lock_dark_mat" rgba="0.035 0.040 0.048 1" specular="0.05" shininess="0.05" />
+    <material name="kup_goal_mat" rgba="0.1 0.85 0.25 0.45" specular="0" shininess="0" />
+    <mesh name="kup_key_visual_mesh"
+          file="../../lightwheel_ycb/key_berkeley_meshes/visuals/key_berkeley_meshes.obj" />
+    <mesh name="kup_padlock_visual_mesh"
+          file="../../lightwheel_ycb/padlock/visuals/padlock.obj" />
+    <mesh name="kup_padlock_prop_visual_mesh"
+          file="../../lightwheel_ycb/padlock/visuals/padlock_prop.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="padlock_body" pos="0.105 0.22 0.956" quat="1 0 0 0">
+      <geom name="padlock_visual" class="kup_mesh_visual" material="kup_padlock_mat"
+            mesh="kup_padlock_visual_mesh" />
+      <geom name="padlock_collision_box" class="kup_lock_collision" type="box"
+            size="0.024 0.013 0.036" pos="0 0 0" />
+      <geom name="padlock_keyway_plate" class="kup_visual" type="box"
+            size="0.0015 0.012 0.009" pos="0.025 0 -0.006"
+            material="kup_lock_dark_mat" rgba="0.02 0.02 0.025 1" />
+
+      <body name="lock_cylinder" pos="0.024 0 -0.006">
+        <inertial pos="0 0 0" mass="0.01" diaginertia="1e-6 1e-6 1e-6" />
+        <joint name="lock_cylinder_yaw" type="hinge" axis="1 0 0" limited="true"
+               range="-1.7 1.7" damping="0.02" armature="0.001" frictionloss="0.01" />
+        <geom name="lock_cylinder_face" class="kup_visual" type="cylinder"
+              size="0.007 0.002" quat="0.7071068 0 0.7071068 0"
+              material="kup_lock_dark_mat" rgba="0.04 0.045 0.05 1" />
+        <geom name="lock_keyway_visual" class="kup_visual" type="box"
+              size="0.002 0.0012 0.0055" pos="0.002 0 0"
+              material="kup_goal_mat" />
+        <site name="lock_keyhole" pos="0 0 0" size="0.004"
+              rgba="0.95 0.70 0.15 0.72" />
+        <site name="lock_insertion_goal" pos="0.018 0 0" size="0.004"
+              rgba="0.10 0.85 0.25 0.72" />
+      </body>
+
+      <body name="padlock_prop" pos="0 0 0">
+        <joint name="padlock_prop_joint" type="hinge" pos="0.014 0 -0.006"
+               axis="0 0 1" limited="true" range="0 0.9"
+               damping="0.04" armature="0.001" frictionloss="0.01" />
+        <joint name="padlock_prop_slide_joint" type="slide" axis="0 0 1"
+               limited="true" range="0 0.025" damping="0.03"
+               armature="0.001" frictionloss="0.01" />
+        <geom name="padlock_prop_visual" class="kup_mesh_visual" material="kup_padlock_mat"
+              mesh="kup_padlock_prop_visual_mesh" />
+        <geom name="padlock_prop_collision_arc" class="kup_lock_collision" type="capsule"
+              fromto="-0.014 0 0.017 0.014 0 0.017" size="0.003" />
+        <geom name="padlock_prop_collision_left" class="kup_lock_collision" type="capsule"
+              fromto="-0.014 0 -0.004 -0.014 0 0.017" size="0.003" />
+        <geom name="padlock_prop_collision_right" class="kup_lock_collision" type="capsule"
+              fromto="0.014 0 -0.004 0.014 0 0.017" size="0.003" />
+      </body>
+    </body>
+
+    <body name="correct_key_root_body" pos="-0.22 0.02 0.931" quat="1 0 0 0">
+      <freejoint name="correct_key_root" />
+      <body name="correct_key_object">
+        <geom name="correct_key_visual" class="kup_mesh_visual" material="kup_key_mat"
+              mesh="kup_key_visual_mesh" />
+        <geom name="correct_key_blade_collision" class="kup_key_collision" type="box"
+              size="0.0045 0.022 0.0024" pos="0 0.003 0" />
+        <geom name="correct_key_bow_collision" class="kup_key_collision" type="cylinder"
+              size="0.0125 0.0024" pos="0 -0.017 0" />
+        <geom name="correct_key_tip_marker" class="kup_visual" type="sphere"
+              size="0.0025" pos="0 0.024855 0" material="kup_goal_mat" />
+        <site name="correct_key_tip" pos="0 0.024855 0" size="0.0025"
+              rgba="0.95 0.70 0.15 0.65" />
+        <site name="correct_key_bow" pos="0 -0.018 0" size="0.003"
+              rgba="0.10 0.45 0.95 0.45" />
+      </body>
+    </body>
+
+    <body name="wrong_key_root_body" pos="-0.24 -0.09 0.931" quat="1 0 0 0">
+      <freejoint name="wrong_key_root" />
+      <body name="wrong_key_object">
+        <geom name="wrong_key_visual" class="kup_mesh_visual" material="kup_key_mat"
+              mesh="kup_key_visual_mesh" />
+        <geom name="wrong_key_blade_collision" class="kup_key_collision" type="box"
+              size="0.0045 0.022 0.0024" pos="0 0.003 0" />
+        <geom name="wrong_key_bow_collision" class="kup_key_collision" type="cylinder"
+              size="0.0125 0.0024" pos="0 -0.017 0" />
+        <geom name="wrong_key_decoy_tag" class="kup_visual" type="sphere"
+              size="0.0035" pos="0.010 -0.017 0.004"
+              material="kup_wrong_key_tag_mat" />
+        <site name="wrong_key_tip" pos="0 0.024855 0" size="0.0025"
+              rgba="0.80 0.12 0.10 0.65" />
+        <site name="wrong_key_bow" pos="0 -0.018 0" size="0.003"
+              rgba="0.80 0.12 0.10 0.45" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

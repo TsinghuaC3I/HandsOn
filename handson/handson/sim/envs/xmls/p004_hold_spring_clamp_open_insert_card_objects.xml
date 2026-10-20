@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="p004_hold_spring_clamp_open_insert_card_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="p004_visual">
+      <geom contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="p004_clamp_collision">
+      <geom group="3" density="780" friction="1.10 0.025 0.001"
+            solref="0.006 1" solimp="0.96 0.99 0.001" rgba="0 0 0 0"/>
+    </default>
+    <default class="p004_card_collision">
+      <geom group="3" friction="0.85 0.015 0.0002"
+            solref="0.003 1" solimp="0.97 0.995 0.001"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture name="p004_card_texture" type="2d"
+             file="lightwheel_ycb/Blank_credit_card/visuals/T_Blank_credit_card_BC001.png"/>
+    <material name="p004_card_material" texture="p004_card_texture" specular="0.20"/>
+    <mesh name="p004_card_visual_mesh"
+          file="lightwheel_ycb/Blank_credit_card/visuals/Blank_credit_card.obj"/>
+    <!-- Use the complete repository YCB extra-large clamp: separate textured
+         fixed/moving visual meshes plus every authored convex collider. -->
+    <texture name="p004_clamp_texture" type="2d"
+             file="lightwheel_ycb/extra_large_clamp/visuals/T_extra_large_clamp_BC001.png"/>
+    <material name="p004_clamp_fixed_material" texture="p004_clamp_texture"
+              specular="0.5" shininess="0.4472"/>
+    <material name="p004_clamp_moving_material" texture="p004_clamp_texture"
+              specular="0.5" shininess="0.4472"/>
+    <mesh name="p004_clamp_fixed_visual_mesh"
+          file="lightwheel_ycb/extra_large_clamp/visuals/extra_large_clamp.obj"/>
+    <mesh name="p004_clamp_moving_visual_mesh"
+          file="lightwheel_ycb/extra_large_clamp/visuals/extra_large_clamp_Lid.obj"/>
+    <mesh name="p004_clamp_fixed_c01" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider1_m.obj"/>
+    <mesh name="p004_clamp_fixed_c02" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider2_m.obj"/>
+    <mesh name="p004_clamp_fixed_c03" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider3_m.obj"/>
+    <mesh name="p004_clamp_fixed_c04" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider4_m.obj"/>
+    <mesh name="p004_clamp_fixed_c05" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider5_m.obj"/>
+    <mesh name="p004_clamp_fixed_c06" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider6_m.obj"/>
+    <mesh name="p004_clamp_fixed_c07" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider7_m.obj"/>
+    <mesh name="p004_clamp_fixed_c08" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider8_m.obj"/>
+    <mesh name="p004_clamp_fixed_c09" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider9_m.obj"/>
+    <mesh name="p004_clamp_fixed_c10" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider10_m.obj"/>
+    <mesh name="p004_clamp_fixed_c11" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider11_m.obj"/>
+    <mesh name="p004_clamp_fixed_c12" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Collider12_m.obj"/>
+    <mesh name="p004_clamp_moving_c01" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider1_m.obj"/>
+    <mesh name="p004_clamp_moving_c02" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider2_m.obj"/>
+    <mesh name="p004_clamp_moving_c03" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider3_m.obj"/>
+    <mesh name="p004_clamp_moving_c04" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider4_m.obj"/>
+    <mesh name="p004_clamp_moving_c05" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider5_m.obj"/>
+    <mesh name="p004_clamp_moving_c06" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider6_m.obj"/>
+    <mesh name="p004_clamp_moving_c07" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider7_m.obj"/>
+    <mesh name="p004_clamp_moving_c08" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider8_m.obj"/>
+    <mesh name="p004_clamp_moving_c09" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider9_m.obj"/>
+    <mesh name="p004_clamp_moving_c10" file="lightwheel_ycb/extra_large_clamp/collision/extra_large_clamp_Lid_Collider10_m.obj"/>
+    <material name="p004_platform_mat" rgba="0.63 0.43 0.22 1" specular="0.04" shininess="0.08"/>
+    <material name="p004_depth_mark_mat" rgba="0.08 0.75 0.95 0.72" specular="0.03"/>
+  </asset>
+
+  <worldbody>
+    <!-- The repository-owned 54 x 85 x 1 mm Blank_credit_card visual is kept
+         exact.  A matching analytic box collider is intentionally used for
+         stable thin-object PhysX contact. -->
+    <body name="p004_card" pos="-0.080 -0.200 0.94455">
+      <freejoint name="p004_card_root"/>
+      <site name="p004_card_center" pos="0 0 0" size="0.003" rgba="1 1 1 0"/>
+      <geom name="p004_card_collision" class="p004_card_collision" type="box"
+            size="0.027 0.0425 0.0005" mass="0.005" rgba="0 0 0 0"/>
+      <geom name="p004_card_visual" class="p004_visual" type="mesh"
+            mesh="p004_card_visual_mesh" material="p004_card_material"/>
+      <geom name="p004_card_depth_mark" class="p004_visual" type="box"
+            pos="-0.009 0 0.00058" size="0.0008 0.039 0.00005"
+            material="p004_depth_mark_mat"/>
+    </body>
+
+    <!-- A low, fixed staging block leaves 12.5 mm of each long card edge
+         exposed for a human-operated right-hand pinch.  It is 0.20 m away
+         from the clamp and cannot contact either jaw. -->
+    <body name="p004_card_stage" pos="-0.080 -0.200 0.917">
+      <inertial pos="0 0 0" mass="0.02" diaginertia="0.00002 0.00002 0.00002"/>
+      <geom name="p004_card_stage_collision" type="box" group="3"
+            size="0.038 0.030 0.027" friction="0.95 0.01 0.0001"
+            material="p004_platform_mat"/>
+      <geom name="p004_card_stage_visual" class="p004_visual" type="box"
+            size="0.038 0.030 0.027" material="p004_platform_mat"/>
+    </body>
+
+    <!-- The complete 165 x 213 x 37 mm YCB extra-large clamp. Its source
+         fixed mesh, moving mesh, convex colliders, hinge anchor, axis, and
+         0.872665 rad travel are preserved. The world rotation puts the fixed
+         half on the table, the moving handle above it, and the jaw closing
+         axis vertical around the horizontal card. -->
+    <body name="p004_spring_clamp_root_body" pos="-0.1727593 0.0201104 0.9504327"
+          quat="0.4347853 0.4370689 0.5558294 -0.5576614">
+      <freejoint name="p004_spring_clamp_root"/>
+      <inertial pos="0.0320160 0.0041265 -0.0007508" mass="0.1042768888"
+                diaginertia="0.000323852 0.000309129 0.000026227"
+                quat="0.4019643 0.5462013 -0.4474650 0.5829785"/>
+      <site name="p004_fixed_handle_site" pos="0.070 -0.085 0" size="0.004" rgba="0.10 0.85 0.95 0.8"/>
+      <site name="p004_fixed_pad_site" pos="0.010 0.090 0" size="0.003" rgba="0.10 0.85 0.95 0.8"/>
+      <geom name="p004_clamp_fixed_visual" class="p004_visual" type="mesh"
+            mesh="p004_clamp_fixed_visual_mesh" material="p004_clamp_fixed_material"/>
+      <geom name="p004_fixed_collision_01" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c01"/>
+      <geom name="p004_fixed_collision_02" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c02"/>
+      <geom name="p004_fixed_collision_03" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c03"/>
+      <geom name="p004_fixed_collision_04" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c04"/>
+      <geom name="p004_fixed_collision_05" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c05"/>
+      <geom name="p004_fixed_collision_06" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c06"/>
+      <geom name="p004_fixed_collision_07" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c07"/>
+      <geom name="p004_fixed_collision_08" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c08"/>
+      <geom name="p004_fixed_collision_09" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c09"/>
+      <geom name="p004_fixed_collision_10" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c10"/>
+      <geom name="p004_fixed_collision_11" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c11"/>
+      <geom name="p004_fixed_collision_12" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_fixed_c12"/>
+
+      <body name="p004_spring_clamp_moving_jaw">
+        <inertial pos="-0.0368182 0.0041069 0.0003074" mass="0.0977231047"
+                  diaginertia="0.000311968 0.000302676 0.000020157"
+                  quat="0.5241970 0.3964186 -0.5855704 0.4745284"/>
+        <!-- Preserve the source YCB hinge anchor, axis, armature, and travel.
+             The return stiffness/damping are calibrated for Wuji teleoperation
+             because the source model's unit friction is not hand-operable. -->
+        <joint name="p004_spring_clamp_moving_jaw_joint"
+               pos="-0.00133450 0.00235250 -0.00024950" axis="0 0 1"
+               limited="true" range="0 0.872665" damping="0.04" armature="0.01"
+               frictionloss="0.002" stiffness="0.55" springref="0.0"/>
+        <site name="p004_moving_handle_site" pos="-0.070 -0.085 0" size="0.004" rgba="0.95 0.30 0.20 0.8"/>
+        <site name="p004_moving_pad_site" pos="-0.010 0.090 0" size="0.003" rgba="0.95 0.30 0.20 0.8"/>
+        <geom name="p004_clamp_moving_visual" class="p004_visual" type="mesh"
+              mesh="p004_clamp_moving_visual_mesh" material="p004_clamp_moving_material"/>
+        <geom name="p004_moving_collision_01" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c01"/>
+        <geom name="p004_moving_collision_02" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c02"/>
+        <geom name="p004_moving_collision_03" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c03"/>
+        <geom name="p004_moving_collision_04" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c04"/>
+        <geom name="p004_moving_collision_05" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c05"/>
+        <geom name="p004_moving_collision_06" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c06"/>
+        <geom name="p004_moving_collision_07" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c07"/>
+        <geom name="p004_moving_collision_08" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c08"/>
+        <geom name="p004_moving_collision_09" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c09"/>
+        <geom name="p004_moving_collision_10" class="p004_clamp_collision" type="mesh" mesh="p004_clamp_moving_c10"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="p004_spring_clamp_root_body" body2="p004_spring_clamp_moving_jaw"/>
+  </contact>
+</mujoco>

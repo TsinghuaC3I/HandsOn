@@ -1,0 +1,47 @@
+{
+  "schema": "fu015_modern_kitchen_visual_v1",
+  "source": {
+    "archive_filename": "modern_kitchen.zip",
+    "archive_sha256": "4545c96b3246ec7f8d6e87d44dab68c6579c97039ba89d9bc4da938bf92a16a2",
+    "scene_filename": "scene.gltf",
+    "scene_sha256": "60c1a4d66c5a1dd5489170eab4f5145e739fda8193692c670d78f6583f27cb4a",
+    "source_url": "https://sketchfab.com/3d-models/modern-kitchen-82c35500aec347d2938ff7943900486f",
+    "author": "Visthétique",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "converter": {
+    "runtime": "Isaac Sim 5.1.0.0",
+    "extension": "omni.kit.asset_converter 5.0.17",
+    "context": {
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "export_preview_surface": true,
+      "use_meter_as_world_unit": true,
+      "create_world_as_default_root_prim": true,
+      "embed_textures": true,
+      "single_mesh": false,
+      "merge_all_meshes": false,
+      "disabling_instancing": true,
+      "convert_stage_up_z": true
+    }
+  },
+  "sanitization": {
+    "render_only": true,
+    "physics_schemas": 0,
+    "camera_prims": 0,
+    "light_prims": 0,
+    "mesh_count_before_pruning": 155,
+    "active_mesh_count_after_pruning": 144,
+    "deactivated_brand_or_label_groups": 8
+  },
+  "output": {
+    "filename": "modern_kitchen_visual.usd",
+    "sha256": "babf31ddcaa34b81dd669df0b99fe1cdbddccb15bb29f7c10f0a266d3d8a5cb3",
+    "bytes": 69996564,
+    "external_texture_count": 59,
+    "external_texture_bytes": 98093376
+  }
+}

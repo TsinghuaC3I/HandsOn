@@ -1,0 +1,6 @@
+env_name: t09_insert_peg
+camera_mapping:
+  base: front
+  wrist: wrist
+prompt: "Insert the round peg into the socket tray hole."
+robot_type: single_arm

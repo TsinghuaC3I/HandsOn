@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="ycb03_airplane">
+  <compiler angle="radian" />
+
+  <!-- This file is a task-local articulation wrapper around the unscaled YCB
+       a_toy_airplane source meshes. It adds no visible or colliding geometry. -->
+  <default>
+    <default class="ycb03_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="ycb03_collision">
+      <geom type="mesh" group="3" density="234.142" rgba="0 0 0 0"
+            friction="1.05 0.02 0.001" solref="0.004 1"
+            solimp="0.998 0.998 0.001" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="ycb03_airplane_texture"
+             file="lightwheel_ycb/a_toy_airplane/visuals/T_a_toy_airplane_BC001.png" />
+    <material name="ycb03_airplane_material" texture="ycb03_airplane_texture"
+              specular="0.333333" />
+
+    <mesh name="ycb03_airplane_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane.obj" />
+    <mesh name="ycb03_fl_wheel_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane_FL_Wheel.obj" />
+    <mesh name="ycb03_fr_wheel_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane_FR_Wheel.obj" />
+    <mesh name="ycb03_propeller_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane_Propeller.obj" />
+    <mesh name="ycb03_rl_wheel_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane_RL_Wheel.obj" />
+    <mesh name="ycb03_rr_wheel_visual"
+          file="lightwheel_ycb/a_toy_airplane/visuals/a_toy_airplane_RR_Wheel.obj" />
+
+    <mesh name="ycb03_airplane_collision_01" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider01_m.obj" />
+    <mesh name="ycb03_airplane_collision_02" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider02_m.obj" />
+    <mesh name="ycb03_airplane_collision_03" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider03_m.obj" />
+    <mesh name="ycb03_airplane_collision_04" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider04_m.obj" />
+    <mesh name="ycb03_airplane_collision_05" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider05_m.obj" />
+    <mesh name="ycb03_airplane_collision_06" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider06_m.obj" />
+    <mesh name="ycb03_airplane_collision_07" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider07_m.obj" />
+    <mesh name="ycb03_airplane_collision_08" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider08_m.obj" />
+    <mesh name="ycb03_airplane_collision_09" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Collider09_m.obj" />
+    <mesh name="ycb03_fl_wheel_collision" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_FL_Wheel_Collider01_m.obj" />
+    <mesh name="ycb03_fr_wheel_collision" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_FR_Wheel_Collider01_m.obj" />
+    <mesh name="ycb03_propeller_collision_01" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Propeller_Collider01_m.obj" />
+    <mesh name="ycb03_propeller_collision_02" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Propeller_Collider02_m.obj" />
+    <mesh name="ycb03_propeller_collision_03" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Propeller_Collider03_m.obj" />
+    <mesh name="ycb03_propeller_collision_04" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_Propeller_Collider04_m.obj" />
+    <mesh name="ycb03_rl_wheel_collision" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_RL_Wheel_Collider01_m.obj" />
+    <mesh name="ycb03_rr_wheel_collision" file="lightwheel_ycb/a_toy_airplane/collision/a_toy_airplane_RR_Wheel_Collider01_m.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="ycb03_airplane" pos="-0.24 0 0.9775755">
+      <freejoint name="ycb03_airplane_root_joint" />
+      <geom class="ycb03_visual" mesh="ycb03_airplane_visual"
+            material="ycb03_airplane_material" />
+      <geom name="ycb03_airplane_collider_01" class="ycb03_collision" mesh="ycb03_airplane_collision_01" />
+      <geom name="ycb03_airplane_collider_02" class="ycb03_collision" mesh="ycb03_airplane_collision_02" />
+      <geom name="ycb03_airplane_collider_03" class="ycb03_collision" mesh="ycb03_airplane_collision_03" />
+      <geom name="ycb03_airplane_collider_04" class="ycb03_collision" mesh="ycb03_airplane_collision_04" />
+      <geom name="ycb03_airplane_collider_05" class="ycb03_collision" mesh="ycb03_airplane_collision_05" />
+      <geom name="ycb03_airplane_collider_06" class="ycb03_collision" mesh="ycb03_airplane_collision_06" />
+      <geom name="ycb03_airplane_collider_07" class="ycb03_collision" mesh="ycb03_airplane_collision_07" />
+      <geom name="ycb03_airplane_collider_08" class="ycb03_collision" mesh="ycb03_airplane_collision_08" />
+      <geom name="ycb03_airplane_collider_09" class="ycb03_collision" mesh="ycb03_airplane_collision_09" />
+
+      <body name="ycb03_airplane_fl_wheel">
+        <!-- Wheel rotation is outside this task.  The Isaac 5.1 runtime replaces
+             the imported hinge with a fixed joint while retaining this rigid
+             wheel link for physical table-contact support measurement. -->
+        <joint name="a_toy_airplane_FL_Wheel_joint"
+               pos="0.04835150 -0.08226950 -0.05589450" axis="1 0 0"
+               limited="false" armature="0.01" damping="0.5" frictionloss="0.01" />
+        <geom class="ycb03_visual" mesh="ycb03_fl_wheel_visual" material="ycb03_airplane_material" />
+        <geom name="ycb03_fl_wheel_collider" class="ycb03_collision" mesh="ycb03_fl_wheel_collision" />
+      </body>
+      <body name="ycb03_airplane_fr_wheel">
+        <joint name="a_toy_airplane_FR_Wheel_joint"
+               pos="-0.05244850 -0.08226950 -0.05589450" axis="1 0 0"
+               limited="false" armature="0.01" damping="0.5" frictionloss="0.01" />
+        <geom class="ycb03_visual" mesh="ycb03_fr_wheel_visual" material="ycb03_airplane_material" />
+        <geom name="ycb03_fr_wheel_collider" class="ycb03_collision" mesh="ycb03_fr_wheel_collision" />
+      </body>
+      <body name="ycb03_airplane_propeller">
+        <!-- Collision-mesh integration gives 11.782 g.  Put the COM at the
+             shaft pivot so gravity cannot supply a hidden motor torque even
+             after MJCF converts the arbitrary source axis to a USD joint
+             frame; the measured principal inertia tensor is preserved. -->
+        <inertial pos="-0.00244850 -0.12516950 0.03930550"
+                  quat="0.636330365 -0.769544538 -0.035598879 -0.040219287"
+                  mass="0.0117822347"
+                  diaginertia="0.00000700288113 0.00000725314668 0.00001383558086" />
+        <!-- Passive task-local dynamics: no motor, lock, or capture. The lower
+             source damping is required for a human flick to create measurable
+             coast without allowing an unbounded, nonphysical spinner. -->
+        <joint name="a_toy_airplane_Propeller_joint"
+               pos="-0.00244850 -0.12516950 0.03930550"
+               axis="-0.0012613 0.983399 -0.181454"
+               limited="false" armature="0.00005" damping="0.004"
+               frictionloss="0.0005" />
+        <geom class="ycb03_visual" mesh="ycb03_propeller_visual" material="ycb03_airplane_material" />
+        <geom name="ycb03_propeller_collider_01" class="ycb03_collision" mesh="ycb03_propeller_collision_01" />
+        <geom name="ycb03_propeller_collider_02" class="ycb03_collision" mesh="ycb03_propeller_collision_02" />
+        <geom name="ycb03_propeller_collider_03" class="ycb03_collision" mesh="ycb03_propeller_collision_03" />
+        <geom name="ycb03_propeller_collider_04" class="ycb03_collision" mesh="ycb03_propeller_collision_04" />
+      </body>
+      <body name="ycb03_airplane_rl_wheel">
+        <joint name="a_toy_airplane_RL_Wheel_joint"
+               pos="0.01805150 0.09423050 -0.06699450" axis="1 0 0"
+               limited="false" armature="0.01" damping="0.5" frictionloss="0.01" />
+        <geom class="ycb03_visual" mesh="ycb03_rl_wheel_visual" material="ycb03_airplane_material" />
+        <geom name="ycb03_rl_wheel_collider" class="ycb03_collision" mesh="ycb03_rl_wheel_collision" />
+      </body>
+      <body name="ycb03_airplane_rr_wheel">
+        <joint name="a_toy_airplane_RR_Wheel_joint"
+               pos="-0.02214850 0.09423050 -0.06699450" axis="1 0 0"
+               limited="false" armature="0.01" damping="0.5" frictionloss="0.01" />
+        <geom class="ycb03_visual" mesh="ycb03_rr_wheel_visual" material="ycb03_airplane_material" />
+        <geom name="ycb03_rr_wheel_collider" class="ycb03_collision" mesh="ycb03_rr_wheel_collision" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

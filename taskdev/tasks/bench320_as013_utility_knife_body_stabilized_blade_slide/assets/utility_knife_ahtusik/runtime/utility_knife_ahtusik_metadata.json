@@ -1,0 +1,1028 @@
+{
+  "animation_policy": "source animation is travel reference only; no animation prim authored",
+  "archive_sha256": "85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b",
+  "asset_id": "as013-sketchfab-ahtusik",
+  "attribution": "This work is based on \"Utility Knife\" (https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92) by ahtusik (https://sketchfab.com/ahtusik) licensed under CC-BY-4.0.",
+  "author": "ahtusik",
+  "author_url": "https://sketchfab.com/ahtusik",
+  "axis_mapping": {
+    "determinant": 1.0,
+    "expression": "[-x, z, y] * 0.008",
+    "handedness_corrected": false,
+    "orientation_preserving": true,
+    "source": "trimesh/glTF world XYZ",
+    "target": "AS013 body XYZ (metres)"
+  },
+  "blade_bounds_m": {
+    "extent_m": [
+      0.02362180305260342,
+      0.18930288681278268,
+      0.0004938450789685589
+    ],
+    "max_m": [
+      0.015904755856115175,
+      0.07603718630286299,
+      6.259686994996198e-05
+    ],
+    "min_m": [
+      -0.007717047196488243,
+      -0.11326570050991969,
+      -0.00043124820901859693
+    ]
+  },
+  "blade_envelope_correction": {
+    "axis": "Y",
+    "clearance_m": 0.004,
+    "corrected_bounds_m": {
+      "extent_m": [
+        0.02362180305260342,
+        0.18930288681278268,
+        0.0004938450789685589
+      ],
+      "max_m": [
+        0.015904755856115175,
+        0.07603718630286299,
+        6.259686994996198e-05
+      ],
+      "min_m": [
+        -0.007717047196488243,
+        -0.11326570050991969,
+        -0.00043124820901859693
+      ]
+    },
+    "corrected_extent_y_m": 0.18930288681278268,
+    "housing_bounds_reference_m": {
+      "extent_m": [
+        0.06091090279866541,
+        0.19730288681278269,
+        0.007809112657368127
+      ],
+      "max_m": [
+        0.02804082284061206,
+        0.08003718630286298,
+        0.003942337482412428
+      ],
+      "min_m": [
+        -0.03287007995805335,
+        -0.11726570050991969,
+        -0.003866775174955699
+      ]
+    },
+    "length_within_housing": true,
+    "method": "baked_blade_y_fit_to_retracted_housing_envelope",
+    "negative_tip_shift_m": -0.006699278212907542,
+    "positive_tip_removed_m": 0.03294502621553791,
+    "q0_fully_retracted": true,
+    "q0_max_positive_exposure_m": 0.0,
+    "scale_y": 0.8782374658735086,
+    "source_extent_y_m": 0.21554863481541303,
+    "source_resized_bounds_m": {
+      "extent_m": [
+        0.02362180305260342,
+        0.21554863481541303,
+        0.0004938450789685589
+      ],
+      "max_m": [
+        0.015904755856115175,
+        0.1089822125184009,
+        6.259686994996198e-05
+      ],
+      "min_m": [
+        -0.007717047196488243,
+        -0.10656642229701214,
+        -0.00043124820901859693
+      ]
+    },
+    "target_bounds_m": {
+      "extent_y_m": 0.18930288681278268,
+      "max_y_m": 0.07603718630286298,
+      "min_y_m": -0.11326570050991969
+    }
+  },
+  "bounds_m": {
+    "extent_m": [
+      0.06091090279866541,
+      0.20407647217591499,
+      0.010309112657368127
+    ],
+    "max_m": [
+      0.02804082284061206,
+      0.0868107716659953,
+      0.006442337482412429
+    ],
+    "min_m": [
+      -0.03287007995805335,
+      -0.11726570050991969,
+      -0.003866775174955699
+    ]
+  },
+  "button_region": {
+    "bounds_m": {
+      "extent_m": [
+        0.023000000000000003,
+        0.05120340007605367,
+        0.0028128995016911233
+      ],
+      "max_m": [
+        0.01726182614886298,
+        -0.01533012299816419,
+        0.006442337482412429
+      ],
+      "min_m": [
+        -0.005738173851137024,
+        -0.06653352307421787,
+        0.0036294379807213055
+      ]
+    },
+    "center_m": [
+      0.004963646122181941,
+      -0.03915291714098384,
+      0.004960663082675808
+    ],
+    "local_bounds_m": {
+      "extent_m": [
+        0.023000000000000003,
+        0.05120340007605367,
+        0.0028128995016911233
+      ],
+      "max_m": [
+        0.012298180026681038,
+        0.023822794142819646,
+        0.001481674399736621
+      ],
+      "min_m": [
+        -0.010701819973318965,
+        -0.027380605933234027,
+        -0.0013312251019545022
+      ]
+    },
+    "predicate": "slider canonical vertices z > 0.003000 m",
+    "source_vertex_count": 276
+  },
+  "colliders": [
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_body_1",
+      "bounds": {
+        "extent_m": [
+          0.06091090279866541,
+          0.19730288681278269,
+          0.007809112657368127
+        ],
+        "max_m": [
+          0.02804082284061206,
+          0.08003718630286298,
+          0.003942337482412428
+        ],
+        "min_m": [
+          -0.03287007995805335,
+          -0.11726570050991969,
+          -0.003866775174955699
+        ]
+      },
+      "collision_only": true,
+      "face_count": 538,
+      "prim": "/Asset/E_body_1/Collision_Housing",
+      "role": "housing",
+      "vertex_count": 271,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.02362180305260342,
+          0.18930288681278268,
+          0.0004938450789685588
+        ],
+        "max_m": [
+          0.010941109733933235,
+          0.11519010344384684,
+          -0.004898066212725846
+        ],
+        "min_m": [
+          -0.012680693318670184,
+          -0.07411278336893584,
+          -0.005391911291694405
+        ]
+      },
+      "collision_only": true,
+      "face_count": 30,
+      "prim": "/Asset/E_link_blade_2/Collision_Blade",
+      "role": "blade",
+      "vertex_count": 17,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.023201306299029383,
+          0.011494873606490735,
+          0.0004125446070362155
+        ],
+        "max_m": [
+          0.010829132665354731,
+          0.12596368880697914,
+          -0.00490380001027033
+        ],
+        "min_m": [
+          -0.012372173633674653,
+          0.1144688152004884,
+          -0.005316344617306546
+        ]
+      },
+      "collision_only": true,
+      "face_count": 12,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.023201306299029383,
+          0.011494873606490721,
+          0.00041254460703621474
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 12,
+        "finite": true,
+        "minimum_axis_extent_m": 0.00041254460703621474,
+        "minimum_singular_value_m": 0.00011638696438901998,
+        "pass": true,
+        "singular_value_ratio": 0.0031842742262523744,
+        "singular_values_m": [
+          0.036550546881132705,
+          0.0004987090213135882,
+          0.00011638696438901998
+        ],
+        "source_component_index": 2,
+        "source_face_count": 8,
+        "source_vertex_count": 8,
+        "vertex_count": 8,
+        "volume_m3": 7.336998864539476e-10,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_00",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.00017639448229251096,
+      "vertex_count": 8,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.02295163765750861,
+          0.012162314106225702,
+          0.00041540688322678175
+        ],
+        "max_m": [
+          0.010900106177405135,
+          0.08382357315918548,
+          -0.004920138499903637
+        ],
+        "min_m": [
+          -0.012051531480103475,
+          0.07166125905295978,
+          -0.005335545383130419
+        ]
+      },
+      "collision_only": true,
+      "face_count": 12,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.022951637657508607,
+          0.012162314106225695,
+          0.0004154068832267816
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 12,
+        "finite": true,
+        "minimum_axis_extent_m": 0.0004154068832267816,
+        "minimum_singular_value_m": 0.0001026789834556179,
+        "pass": true,
+        "singular_value_ratio": 0.0028000967930292306,
+        "singular_values_m": [
+          0.03666979788385694,
+          0.00050003082683088,
+          0.0001026789834556179
+        ],
+        "source_component_index": 4,
+        "source_face_count": 8,
+        "source_vertex_count": 8,
+        "vertex_count": 8,
+        "volume_m3": 6.791254941407296e-10,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_01",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.00017767854256239764,
+      "vertex_count": 8,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.022770417145122877,
+          0.011907015779775612,
+          0.00041562800402524403
+        ],
+        "max_m": [
+          0.010941109733933235,
+          0.10611817640804169,
+          -0.004911299818951067
+        ],
+        "min_m": [
+          -0.011829307411189642,
+          0.09421116062826608,
+          -0.005326927822976311
+        ]
+      },
+      "collision_only": true,
+      "face_count": 12,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.022770417145122873,
+          0.011907015779775619,
+          0.0004156280040252439
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 12,
+        "finite": true,
+        "minimum_axis_extent_m": 0.0004156280040252439,
+        "minimum_singular_value_m": 0.0001376597031930187,
+        "pass": true,
+        "singular_value_ratio": 0.0037968666269890235,
+        "singular_values_m": [
+          0.03625613346924041,
+          0.0005021521620915763,
+          0.0001376597031930187
+        ],
+        "source_component_index": 3,
+        "source_face_count": 8,
+        "source_vertex_count": 8,
+        "vertex_count": 8,
+        "volume_m3": 9.017555772031706e-10,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_02",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.00017801589251503368,
+      "vertex_count": 8,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.006989122833152684,
+          0.006988522566593786,
+          0.0008450805284763207
+        ],
+        "max_m": [
+          0.0032744876513540353,
+          0.031415081806636914,
+          -0.004725237096513108
+        ],
+        "min_m": [
+          -0.0037146351817986495,
+          0.024426559240043128,
+          -0.005570317624989428
+        ]
+      },
+      "collision_only": true,
+      "face_count": 124,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.006989122833152684,
+          0.006988522566593784,
+          0.0008450805284763214
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 124,
+        "finite": true,
+        "minimum_axis_extent_m": 0.0008450805284763214,
+        "minimum_singular_value_m": 0.003301645334721774,
+        "pass": true,
+        "singular_value_ratio": 0.16692057727417775,
+        "singular_values_m": [
+          0.019779738296127565,
+          0.019779681756570553,
+          0.003301645334721774
+        ],
+        "source_component_index": 1,
+        "source_face_count": 124,
+        "source_vertex_count": 64,
+        "vertex_count": 64,
+        "volume_m3": 3.1500394931975546e-08,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_03",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.00021448426759977069,
+      "vertex_count": 64,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.023146880362106995,
+          0.011818692849591694,
+          0.00041644853135002977
+        ],
+        "max_m": [
+          0.010855293567213056,
+          0.06240488858271907,
+          -0.0049284053949093624
+        ],
+        "min_m": [
+          -0.012291586794893939,
+          0.05058619573312738,
+          -0.005344853926259392
+        ]
+      },
+      "collision_only": true,
+      "face_count": 14,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.023146880362106992,
+          0.011818692849591694,
+          0.00041644853135002977
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 14,
+        "finite": true,
+        "minimum_axis_extent_m": 0.00041644853135002977,
+        "minimum_singular_value_m": 0.00013090084657854008,
+        "pass": true,
+        "singular_value_ratio": 0.003385786929732444,
+        "singular_values_m": [
+          0.03866186777113122,
+          0.0005238401652552588,
+          0.00013090084657854008
+        ],
+        "source_component_index": 5,
+        "source_face_count": 16,
+        "source_vertex_count": 12,
+        "vertex_count": 9,
+        "volume_m3": 8.215032946711634e-10,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_04",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.00017790953775231335,
+      "vertex_count": 9,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.013620753875038017,
+          0.03718025204613144,
+          0.002988580200576834
+        ],
+        "max_m": [
+          0.007465095000595954,
+          0.0204727640036382,
+          -0.0027093770554517385
+        ],
+        "min_m": [
+          -0.0061556588744420635,
+          -0.016707488042493245,
+          -0.0056979572560285725
+        ]
+      },
+      "collision_only": true,
+      "face_count": 192,
+      "geometry_quality": {
+        "affine_rank": 3,
+        "axis_extents_m": [
+          0.013620753875038019,
+          0.03718025204613144,
+          0.002988580200576834
+        ],
+        "checks": {
+          "affine_rank_3": true,
+          "finite": true,
+          "minimum_axis_extent": true,
+          "minimum_face_count": true,
+          "minimum_singular_value": true,
+          "minimum_singular_value_ratio": true,
+          "minimum_vertex_count": true,
+          "minimum_volume": true,
+          "watertight": true,
+          "winding_consistent": true
+        },
+        "face_count": 192,
+        "finite": true,
+        "minimum_axis_extent_m": 0.002988580200576834,
+        "minimum_singular_value_m": 0.011866285111247354,
+        "pass": true,
+        "singular_value_ratio": 0.09340782103595617,
+        "singular_values_m": [
+          0.1270373827335034,
+          0.043167506241439245,
+          0.011866285111247354
+        ],
+        "source_component_index": 0,
+        "source_face_count": 232,
+        "source_vertex_count": 129,
+        "vertex_count": 98,
+        "volume_m3": 1.2177784868508055e-06,
+        "watertight": true,
+        "winding_consistent": true
+      },
+      "prim": "/Asset/E_link_blade_2/Collision_Slider_05",
+      "role": "slider",
+      "sampled_surface_gap_m": 0.0029641788630992406,
+      "vertex_count": 98,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "body": "/Asset/E_link_blade_2",
+      "bounds": {
+        "extent_m": [
+          0.023000000000000003,
+          0.05120340007605367,
+          0.0028128995016911233
+        ],
+        "max_m": [
+          0.012298180026681038,
+          0.023822794142819646,
+          0.001481674399736621
+        ],
+        "min_m": [
+          -0.010701819973318965,
+          -0.027380605933234027,
+          -0.0013312251019545022
+        ]
+      },
+      "collision_only": true,
+      "face_count": 372,
+      "prim": "/Asset/E_link_blade_2/Collision_Button",
+      "role": "slider_button",
+      "vertex_count": 188,
+      "visibility": "invisible"
+    }
+  ],
+  "collision_summary": {
+    "all_collision_only_invisible": true,
+    "blade_colliders": 1,
+    "button_colliders": 1,
+    "housing_colliders": 1,
+    "inherited_sdf_schema": false,
+    "moving_colliders": 8,
+    "slider_colliders": 6
+  },
+  "commercial_use": true,
+  "conversion_scale": 0.008,
+  "ergonomic_resize": {
+    "blade_envelope_correction": {
+      "axis": "Y",
+      "clearance_m": 0.004,
+      "corrected_bounds_m": {
+        "extent_m": [
+          0.02362180305260342,
+          0.18930288681278268,
+          0.0004938450789685589
+        ],
+        "max_m": [
+          0.015904755856115175,
+          0.07603718630286299,
+          6.259686994996198e-05
+        ],
+        "min_m": [
+          -0.007717047196488243,
+          -0.11326570050991969,
+          -0.00043124820901859693
+        ]
+      },
+      "corrected_extent_y_m": 0.18930288681278268,
+      "housing_bounds_reference_m": {
+        "extent_m": [
+          0.06091090279866541,
+          0.19730288681278269,
+          0.007809112657368127
+        ],
+        "max_m": [
+          0.02804082284061206,
+          0.08003718630286298,
+          0.003942337482412428
+        ],
+        "min_m": [
+          -0.03287007995805335,
+          -0.11726570050991969,
+          -0.003866775174955699
+        ]
+      },
+      "length_within_housing": true,
+      "method": "baked_blade_y_fit_to_retracted_housing_envelope",
+      "negative_tip_shift_m": -0.006699278212907542,
+      "positive_tip_removed_m": 0.03294502621553791,
+      "q0_fully_retracted": true,
+      "q0_max_positive_exposure_m": 0.0,
+      "scale_y": 0.8782374658735086,
+      "source_extent_y_m": 0.21554863481541303,
+      "source_resized_bounds_m": {
+        "extent_m": [
+          0.02362180305260342,
+          0.21554863481541303,
+          0.0004938450789685589
+        ],
+        "max_m": [
+          0.015904755856115175,
+          0.1089822125184009,
+          6.259686994996198e-05
+        ],
+        "min_m": [
+          -0.007717047196488243,
+          -0.10656642229701214,
+          -0.00043124820901859693
+        ]
+      },
+      "target_bounds_m": {
+        "extent_y_m": 0.18930288681278268,
+        "max_y_m": 0.07603718630286298,
+        "min_y_m": -0.11326570050991969
+      }
+    },
+    "button_actual_height_m": 0.0028128995016911233,
+    "button_actual_protrusion_m": 0.0025000000000000005,
+    "button_actual_width_m": 0.023000000000000003,
+    "button_lift_m": 0.0009242853399587057,
+    "button_source_vertex_count": 276,
+    "button_target_protrusion_m": 0.0025,
+    "button_target_width_m": 0.023,
+    "button_width_scale_after_global_resize": 1.1802743317021192,
+    "scale_xyz": [
+      1.3,
+      1.3,
+      2.35
+    ]
+  },
+  "housing_bounds_m": {
+    "extent_m": [
+      0.06091090279866541,
+      0.19730288681278269,
+      0.007809112657368127
+    ],
+    "max_m": [
+      0.02804082284061206,
+      0.08003718630286298,
+      0.003942337482412428
+    ],
+    "min_m": [
+      -0.03287007995805335,
+      -0.11726570050991969,
+      -0.003866775174955699
+    ]
+  },
+  "joint": {
+    "axis": "Y",
+    "body0": "/Asset/E_body_1",
+    "body1": "/Asset/E_link_blade_2",
+    "drive": {
+      "damping": 1.2,
+      "max_force": 12.0,
+      "stiffness": 80.0,
+      "type": "force"
+    },
+    "limits_m": [
+      0.0,
+      0.08
+    ],
+    "local_pos0_m": [
+      0.004963646122181941,
+      -0.03915291714098384,
+      0.004960663082675808
+    ],
+    "local_pos1_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "name": "PrismaticJoint_utility_knife_3_middle",
+    "type": "prismatic"
+  },
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "outputs": {
+    "ascii_usd": "utility_knife_ahtusik.usda",
+    "binary_usd": "utility_knife_ahtusik.usd"
+  },
+  "rigid_bodies": [
+    {
+      "center_of_mass_local_m": [
+        0.0014737481664682942,
+        -0.032543693291473226,
+        -0.00022539713025174197
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.0005523499946230037,
+        5.3424204536789045e-05,
+        0.0006040463690124212
+      ],
+      "inertia_dimensions_m": [
+        0.06091090279866541,
+        0.19730288681278269,
+        0.007809112657368127
+      ],
+      "inertia_model": "uniform_aabb_box",
+      "mass_kg": 0.17,
+      "prim": "/Asset/E_body_1",
+      "role": "housing"
+    },
+    {
+      "center_of_mass_local_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.0001670089242878006,
+        2.814546767981514e-06,
+        0.0001693939117998449
+      ],
+      "inertia_dimensions_m": [
+        0.024978873345351222,
+        0.20007647217591498,
+        0.007179631655765194
+      ],
+      "inertia_model": "uniform_aabb_box",
+      "mass_kg": 0.05,
+      "prim": "/Asset/E_link_blade_2",
+      "role": "blade_and_slider"
+    }
+  ],
+  "schema_version": "as013.asset.v4",
+  "slider_bounds_m": {
+    "extent_m": [
+      0.02467035366035569,
+      0.15334429474021316,
+      0.007179631655765194
+    ],
+    "max_m": [
+      0.01726182614886298,
+      0.0868107716659953,
+      0.006442337482412429
+    ],
+    "min_m": [
+      -0.007408527511492712,
+      -0.06653352307421787,
+      -0.0007372941733527649
+    ]
+  },
+  "slider_collision_decomposition": {
+    "certification_samples_per_hull": 30000,
+    "coordinate_weld_decimal_digits": 8,
+    "coordinate_weld_tolerance_m": 1e-08,
+    "geometry_quality_all_pass": true,
+    "geometry_quality_gates": {
+      "affine_rank": 3,
+      "finite": true,
+      "minimum_axis_extent_m": 0.0003,
+      "minimum_face_count": 4,
+      "minimum_singular_value_m": 9e-05,
+      "minimum_singular_value_ratio": 0.002,
+      "minimum_vertex_count": 4,
+      "minimum_volume_m3": 5e-10,
+      "watertight": true,
+      "winding_consistent": true
+    },
+    "hull_count": 6,
+    "method": "coordinate_welded_shared_edge_component_convex_hulls",
+    "minimum_observed_axis_extent_m": 0.00041254460703621474,
+    "minimum_observed_singular_value_m": 0.0001026789834556179,
+    "minimum_observed_singular_value_ratio": 0.0028000967930292306,
+    "minimum_observed_volume_m3": 6.791254941407296e-10,
+    "raised_button_has_dedicated_hull": true,
+    "sampled_surface_gap_max_m": 0.0029641788630992406,
+    "sampled_surface_gap_per_hull_m": [
+      0.00017639448229251096,
+      0.00017767854256239764,
+      0.00017801589251503368,
+      0.00021448426759977069,
+      0.00017790953775231335,
+      0.0029641788630992406
+    ],
+    "surface_gap_target_m": 0.003
+  },
+  "source_archive_path": "source/utility_knife.zip",
+  "source_archive_sha256": "85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b",
+  "source_files": {
+    "license.txt": "5f89a19cb535af5dd35016f8315ff3c4ea1cc07bd58da421f5eb7a05642eddd1",
+    "scene.bin": "5b41b20a8a2a0c523fcb06dcca2da09301dbebbb7ea09cb37a14becef81755ba",
+    "scene.gltf": "7e155ea959934f7d37380e1d0eb5f35d0d36076dd71d063f68b66acc5b8100ee",
+    "textures/Material.001_baseColor.png": "fea7c19eb3a7898bdf6edf231eefe110ebd2a0c09dc519a40f4791d2b0ae507b",
+    "textures/Material.001_metallicRoughness.png": "a2e686f398053f2ae43aa98eaab9e2c33f4f695a8b94cbb43a8a237abf8066ca",
+    "textures/Material.001_normal.png": "40f7b47ae84a175ec7bb83256e2f6bee03d9e663ec2a598c645ee59d468b04d7"
+  },
+  "source_scene_sha256": "7e155ea959934f7d37380e1d0eb5f35d0d36076dd71d063f68b66acc5b8100ee",
+  "source_url": "https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92",
+  "stage": {
+    "default_prim": "/Asset",
+    "meters_per_unit": 1.0,
+    "up_axis": "Z"
+  },
+  "title": "Utility Knife",
+  "visuals": [
+    {
+      "bounds": {
+        "extent_m": [
+          0.05380929710253701,
+          0.1722020243331825,
+          0.007809112657368127
+        ],
+        "max_m": [
+          0.027983333661379298,
+          0.055229386612977376,
+          0.003942337482412428
+        ],
+        "min_m": [
+          -0.025825963441157715,
+          -0.11697263772020511,
+          -0.003866775174955699
+        ]
+      },
+      "category": "housing",
+      "face_count": 1509,
+      "name": "Cube_Material.001_0",
+      "prim": "/Asset/E_body_1/Visual_Housing_0",
+      "source_material": "Material.001",
+      "vertex_count": 1219
+    },
+    {
+      "bounds": {
+        "extent_m": [
+          0.06091090279866541,
+          0.16430227691282723,
+          0.007809112657368127
+        ],
+        "max_m": [
+          0.02804082284061206,
+          0.04703657640290752,
+          0.003942337482412428
+        ],
+        "min_m": [
+          -0.03287007995805335,
+          -0.11726570050991969,
+          -0.003866775174955699
+        ]
+      },
+      "category": "housing",
+      "face_count": 4266,
+      "name": "Cube_Material.002_0",
+      "prim": "/Asset/E_body_1/Visual_Housing_1",
+      "source_material": "Material.002",
+      "vertex_count": 3030
+    },
+    {
+      "bounds": {
+        "extent_m": [
+          0.02607830103274425,
+          0.18256364196464875,
+          0.002822875908767928
+        ],
+        "max_m": [
+          0.017323480072319774,
+          0.08003718630286298,
+          0.0011382868311830031
+        ],
+        "min_m": [
+          -0.008754820960424474,
+          -0.10252645566178577,
+          -0.0016845890775849246
+        ]
+      },
+      "category": "housing",
+      "face_count": 2945,
+      "name": "Cube_Material.004_0",
+      "prim": "/Asset/E_body_1/Visual_Housing_2",
+      "source_material": "Material.004",
+      "vertex_count": 3033
+    },
+    {
+      "bounds": {
+        "extent_m": [
+          0.02362180305260342,
+          0.18930288681278268,
+          0.0004938450789685589
+        ],
+        "max_m": [
+          0.015904755856115175,
+          0.07603718630286299,
+          6.259686994996198e-05
+        ],
+        "min_m": [
+          -0.007717047196488243,
+          -0.11326570050991969,
+          -0.00043124820901859693
+        ]
+      },
+      "category": "blade",
+      "face_count": 88,
+      "name": "Plane_Material.003_0",
+      "prim": "/Asset/E_link_blade_2/Visual_Blade",
+      "source_material": "Material.003",
+      "vertex_count": 164
+    },
+    {
+      "bounds": {
+        "extent_m": [
+          0.02467035366035569,
+          0.15334429474021316,
+          0.007179631655765194
+        ],
+        "max_m": [
+          0.01726182614886298,
+          0.0868107716659953,
+          0.006442337482412429
+        ],
+        "min_m": [
+          -0.007408527511492712,
+          -0.06653352307421787,
+          -0.0007372941733527649
+        ]
+      },
+      "category": "slider",
+      "face_count": 820,
+      "name": "Plane_Material_0",
+      "prim": "/Asset/E_link_blade_2/Visual_Slider",
+      "source_material": "Material",
+      "vertex_count": 685
+    }
+  ]
+}

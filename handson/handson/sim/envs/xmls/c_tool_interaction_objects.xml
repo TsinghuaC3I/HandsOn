@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="c_tool_interaction_objects">
+  <compiler angle="radian" />
+  <default>
+    <default class="ctool_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="ctool_collision">
+      <geom group="3" density="700" friction="1.1 0.03 0.002" solref="0.004 1" solimp="0.96 0.995 0.001" />
+    </default>
+    <default class="ctool_particle">
+      <!-- Keep collision geometry identical to the 6.5 mm radius used by the
+           C07 release, vessel-clearance, and success calculations.  The old
+           9 mm spheres touched throughout the authored pile and sustained a
+           solver-driven residual spin even after 40 simulated seconds. -->
+      <geom type="sphere" size="0.0065" density="1400" friction="0.45 0.005 0.0002" solref="0.003 1" solimp="0.97 0.996 0.001" group="3" />
+    </default>
+  </default>
+  <asset>
+    <!-- Repository vessel/block assets plus task-native tool geometry. -->
+    <mesh name="c08_glass_cup_ycb" file="lightwheel_ycb/a_cups/visuals/a_cups.obj" />
+    <mesh name="c12_wood_block_ycb" file="lightwheel_ycb/wood_block/visuals/wood_block.obj" scale="0.5 0.5 0.5" />
+    <material name="ctool_clear" rgba="0.60 0.86 1.00 0.30" specular="0.35" />
+    <material name="ctool_glass" rgba="0.78 0.94 1.00 0.42" specular="0.45" />
+    <material name="ctool_blue" rgba="0.16 0.35 0.90 1" specular="0.20" />
+    <material name="ctool_green" rgba="0.08 0.70 0.30 0.42" specular="0.10" />
+    <material name="ctool_orange" rgba="0.95 0.55 0.16 0.72" specular="0.25" />
+    <material name="ctool_yellow" rgba="0.98 0.78 0.18 1" specular="0.25" />
+    <material name="ctool_red" rgba="0.86 0.10 0.08 1" specular="0.25" />
+    <material name="ctool_gray" rgba="0.45 0.46 0.48 1" specular="0.25" />
+    <material name="ctool_dark" rgba="0.06 0.07 0.08 1" specular="0.20" />
+    <material name="ctool_paper" rgba="0.96 0.95 0.88 1" specular="0.03" />
+    <material name="ctool_paper_warm" rgba="0.96 0.86 0.64 1" specular="0.03" />
+    <material name="ctool_paper_blue" rgba="0.68 0.86 0.96 1" specular="0.03" />
+    <material name="ctool_wood" rgba="0.58 0.38 0.18 1" specular="0.12" />
+    <material name="ctool_ice" rgba="0.72 0.93 1.00 0.75" specular="0.50" />
+    <material name="ctool_purple" rgba="0.42 0.20 0.72 1" specular="0.22" />
+    <material name="ctool_white" rgba="0.94 0.94 0.90 1" specular="0.18" />
+    <material name="ctool_appliance" rgba="0.50 0.60 0.70 1" specular="0.24" />
+    <material name="ctool_silver" rgba="0.70 0.73 0.76 1" specular="0.65" shininess="0.75" />
+    <material name="ctool_cyan" rgba="0.10 0.82 0.92 1" specular="0.30" />
+    <material name="ctool_lime" rgba="0.30 0.92 0.20 1" specular="0.25" />
+  </asset>
+
+  <worldbody>
+    <!-- C07: controlled pour into a narrow cup. -->
+    <body name="c07_pitcher" pos="-0.42 -0.22 0.950">
+      <freejoint name="c07_pitcher_joint" />
+      <site name="c07_pitcher_spout" pos="0.052 0 0.060" size="0.005" rgba="0.95 0.55 0.10 0.90" />
+      <geom name="c07_pitcher_visual" class="ctool_visual" type="cylinder" size="0.050 0.060" pos="0 0 0" material="ctool_orange" />
+      <geom name="c07_pitcher_rim" class="ctool_visual" type="cylinder" size="0.054 0.002" pos="0 0 0.060" material="ctool_yellow" />
+      <geom name="c07_pitcher_bottom" class="ctool_collision" type="cylinder" size="0.043 0.004" pos="0 0 -0.054" mass="0.030" />
+      <geom name="c07_pitcher_wall_xp" class="ctool_collision" type="box" size="0.003 0.050 0.055" pos="0.050 0 0" mass="0.012" />
+      <geom name="c07_pitcher_wall_xn" class="ctool_collision" type="box" size="0.003 0.050 0.055" pos="-0.050 0 0" mass="0.012" />
+      <geom name="c07_pitcher_wall_yp" class="ctool_collision" type="box" size="0.050 0.003 0.055" pos="0 0.050 0" mass="0.012" />
+      <geom name="c07_pitcher_wall_yn" class="ctool_collision" type="box" size="0.050 0.003 0.055" pos="0 -0.050 0" mass="0.012" />
+      <geom name="c07_pitcher_handle" class="ctool_collision" type="capsule" fromto="0.062 -0.035 0.030 0.062 -0.095 0.030" size="0.010" material="ctool_orange" mass="0.020" />
+    </body>
+    <body name="c07_cup" pos="-0.14 0.12 0.928">
+      <site name="c07_cup_center" pos="0 0 0.050" size="0.005" rgba="0.10 0.80 0.30 0.65" />
+      <geom name="c07_cup_visual" class="ctool_visual" type="cylinder" size="0.038 0.052" pos="0 0 0.052" material="ctool_glass" />
+      <geom name="c07_cup_bottom" class="ctool_collision" type="cylinder" size="0.034 0.003" pos="0 0 0.003" mass="0.001" />
+      <geom name="c07_cup_wall_xp" class="ctool_collision" type="box" size="0.0025 0.034 0.052" pos="0.038 0 0.052" mass="0.001" />
+      <geom name="c07_cup_wall_xn" class="ctool_collision" type="box" size="0.0025 0.034 0.052" pos="-0.038 0 0.052" mass="0.001" />
+      <geom name="c07_cup_wall_yp" class="ctool_collision" type="box" size="0.034 0.0025 0.052" pos="0 0.038 0.052" mass="0.001" />
+      <geom name="c07_cup_wall_yn" class="ctool_collision" type="box" size="0.034 0.0025 0.052" pos="0 -0.038 0.052" mass="0.001" />
+    </body>
+    <body name="c07_return_zone" pos="-0.42 -0.22 0.892">
+      <geom name="c07_return_zone_visual" class="ctool_visual" type="box" size="0.095 0.085 0.002" material="ctool_green" />
+    </body>
+    <body name="c07_particle_0" pos="-0.420 -0.220 0.970"><freejoint name="c07_particle_0_joint"/><geom name="c07_particle_0_geom" class="ctool_particle" material="ctool_red"/></body>
+    <body name="c07_particle_1" pos="-0.402 -0.220 0.970"><freejoint name="c07_particle_1_joint"/><geom name="c07_particle_1_geom" class="ctool_particle" material="ctool_blue"/></body>
+    <body name="c07_particle_2" pos="-0.438 -0.220 0.970"><freejoint name="c07_particle_2_joint"/><geom name="c07_particle_2_geom" class="ctool_particle" material="ctool_green"/></body>
+    <body name="c07_particle_3" pos="-0.420 -0.202 0.970"><freejoint name="c07_particle_3_joint"/><geom name="c07_particle_3_geom" class="ctool_particle" material="ctool_yellow"/></body>
+    <body name="c07_particle_4" pos="-0.420 -0.238 0.970"><freejoint name="c07_particle_4_joint"/><geom name="c07_particle_4_geom" class="ctool_particle" material="ctool_white"/></body>
+    <body name="c07_particle_5" pos="-0.407 -0.207 0.988"><freejoint name="c07_particle_5_joint"/><geom name="c07_particle_5_geom" class="ctool_particle" material="ctool_purple"/></body>
+    <body name="c07_particle_6" pos="-0.433 -0.207 0.988"><freejoint name="c07_particle_6_joint"/><geom name="c07_particle_6_geom" class="ctool_particle" material="ctool_orange"/></body>
+    <body name="c07_particle_7" pos="-0.420 -0.220 0.988"><freejoint name="c07_particle_7_joint"/><geom name="c07_particle_7_geom" class="ctool_particle" material="ctool_dark"/></body>
+
+    <!-- C08: tongs, bowl, four ice cubes, and glass cup. -->
+    <body name="c08_tongs" pos="-0.1495906 -0.1896633 0.8900000" quat="1 0 0 0">
+      <freejoint name="c08_tongs_root" />
+      <site name="c08_tongs_tip_fixed" pos="0.135 -0.018 0.012" size="0.004" rgba="0.9 0.5 0.1 0.8" />
+      <geom name="c08_tongs_spring_collision" class="ctool_collision" type="box" pos="-0.128 0 0.012" size="0.011 0.029 0.011" rgba="0 0 0 0" mass="0.018" />
+      <geom name="c08_tongs_spring_visual" class="ctool_visual" type="capsule" fromto="-0.128 -0.018 0.012 -0.128 0.018 0.012" size="0.0115" material="ctool_silver" />
+      <geom name="c08_tongs_spring_coil_0" class="ctool_visual" type="capsule" fromto="-0.138 -0.023 0.026 -0.132 0.023 0.026" size="0.0028" material="ctool_yellow" />
+      <geom name="c08_tongs_spring_coil_1" class="ctool_visual" type="capsule" fromto="-0.132 0.023 0.026 -0.126 -0.023 0.026" size="0.0028" material="ctool_yellow" />
+      <geom name="c08_tongs_spring_coil_2" class="ctool_visual" type="capsule" fromto="-0.126 -0.023 0.026 -0.120 0.023 0.026" size="0.0028" material="ctool_yellow" />
+      <geom name="c08_tongs_spring_coil_3" class="ctool_visual" type="capsule" fromto="-0.120 0.023 0.026 -0.114 -0.023 0.026" size="0.0028" material="ctool_yellow" />
+      <geom name="c08_tongs_spring_coil_4" class="ctool_visual" type="capsule" fromto="-0.114 -0.023 0.026 -0.108 0.023 0.026" size="0.0028" material="ctool_yellow" />
+      <geom name="c08_tongs_fixed_arm_collision" class="ctool_collision" type="capsule" fromto="-0.120 -0.018 0.012 0.112 -0.018 0.012" size="0.006" rgba="0 0 0 0" mass="0.030" />
+      <geom name="c08_tongs_fixed_arm_visual" class="ctool_visual" type="capsule" fromto="-0.120 -0.018 0.012 0.112 -0.018 0.012" size="0.0065" material="ctool_silver" />
+      <geom name="c08_tongs_fixed_grip_visual" class="ctool_visual" type="capsule" fromto="-0.105 -0.018 0.012 -0.025 -0.018 0.012" size="0.009" material="ctool_cyan" />
+      <geom name="c08_tongs_fixed_pad_collision" class="ctool_collision" type="box" pos="0.1265 -0.018 0.012" size="0.0385 0.014 0.014" rgba="0 0 0 0" mass="0.012" />
+      <geom name="c08_tongs_fixed_pad_visual" class="ctool_visual" type="capsule" fromto="0.102 -0.018 0.012 0.151 -0.018 0.012" size="0.0145" material="ctool_cyan" />
+      <geom name="c08_tongs_fixed_scallop_0" class="ctool_visual" type="sphere" pos="0.120 -0.030 0.012" size="0.007" material="ctool_cyan" />
+      <geom name="c08_tongs_fixed_scallop_1" class="ctool_visual" type="sphere" pos="0.139 -0.030 0.012" size="0.007" material="ctool_cyan" />
+      <geom name="c08_tongs_fixed_scallop_2" class="ctool_visual" type="sphere" pos="0.156 -0.028 0.012" size="0.006" material="ctool_cyan" />
+      <body name="c08_tongs_moving_arm" pos="-0.120 0.018 0.012">
+        <joint name="c08_tongs_joint" type="hinge" axis="0 0 1" range="0 0.45" springref="0.121765" stiffness="1.00" damping="0.12" frictionloss="0.012" armature="0.001" limited="true" />
+        <site name="c08_tongs_tip_moving" pos="0.255 0 0" size="0.004" rgba="0.9 0.5 0.1 0.8" />
+        <geom name="c08_tongs_moving_arm_collision" class="ctool_collision" type="capsule" fromto="0 0 0 0.232 0 0" size="0.006" rgba="0 0 0 0" mass="0.030" />
+        <geom name="c08_tongs_moving_arm_visual" class="ctool_visual" type="capsule" fromto="0 0 0 0.232 0 0" size="0.0065" material="ctool_silver" />
+        <geom name="c08_tongs_moving_grip_visual" class="ctool_visual" type="capsule" fromto="0.015 0 0 0.095 0 0" size="0.009" material="ctool_cyan" />
+        <geom name="c08_tongs_moving_pad_collision" class="ctool_collision" type="box" pos="0.2465 0 0" size="0.0385 0.014 0.014" rgba="0 0 0 0" mass="0.012" />
+        <geom name="c08_tongs_moving_pad_visual" class="ctool_visual" type="capsule" fromto="0.222 0 0 0.271 0 0" size="0.0145" material="ctool_cyan" />
+        <geom name="c08_tongs_moving_scallop_0" class="ctool_visual" type="sphere" pos="0.240 0.012 0" size="0.007" material="ctool_cyan" />
+        <geom name="c08_tongs_moving_scallop_1" class="ctool_visual" type="sphere" pos="0.259 0.012 0" size="0.007" material="ctool_cyan" />
+        <geom name="c08_tongs_moving_scallop_2" class="ctool_visual" type="sphere" pos="0.276 0.010 0" size="0.006" material="ctool_cyan" />
+      </body>
+    </body>
+    <!-- The spring and fixed jaw supports carry the free root at two separated
+         x stations.  Their invisible colliders use flat undersides so the
+         asymmetric articulated mass cannot roll off a rounded support during
+         reset.  The moving-jaw stand is a lower safety catch rather than a
+         third rest contact: constraining the driven child link against the
+         cradle closed a redundant contact loop and sustained hinge/root
+         oscillation.  The authored root pose is the measured static cradle
+         equilibrium, so reset does not begin with a free fall or a roll. -->
+    <body name="c08_tongs_cradle" pos="-0.15 -0.19 0.890">
+      <inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001"/>
+      <!-- Visual cradle only: the tongs rest on the tabletop.  Removing the
+           overlapping support shells prevents a GPU hinge torque at reset;
+           the cradle remains visible as the pickup marker. -->
+      <geom name="c08_tongs_cradle_spring_support" class="ctool_collision" contype="0" conaffinity="0" type="box" pos="-0.128 0 0.0102" size="0.020 0.032 0.0102" material="ctool_dark" mass="0.001"/>
+      <geom name="c08_tongs_cradle_fixed_jaw_support" class="ctool_collision" contype="0" conaffinity="0" type="box" pos="0.1265 -0.018 0.0087" size="0.042 0.020 0.0087" material="ctool_dark" mass="0.001"/>
+      <geom name="c08_tongs_cradle_moving_jaw_support" class="ctool_collision" contype="0" conaffinity="0" type="box" pos="0.1247 0.0479 0.00675" size="0.042 0.020 0.00675" material="ctool_dark" mass="0.001"/>
+      <geom name="c08_tongs_pickup_marker" class="ctool_visual" type="box" pos="-0.070 0 0.001" size="0.055 0.045 0.001" rgba="0.10 0.78 0.92 0.22"/>
+    </body>
+    <body name="c08_glass_cup" pos="-0.36 0.205 0.920">
+      <freejoint name="c08_glass_cup_joint"/>
+      <geom name="c08_cup_visual" class="ctool_visual" type="mesh" mesh="c08_glass_cup_ycb" material="ctool_glass"/>
+      <geom name="c08_cup_bottom" class="ctool_collision" type="box" size="0.020 0.020 0.0025" pos="0 0 -0.0275" mass="0.004" rgba="0 0 0 0"/>
+      <geom name="c08_cup_wall_xp" class="ctool_collision" type="box" size="0.0025 0.023 0.028" pos="0.027 0 0" mass="0.002" rgba="0 0 0 0"/>
+      <geom name="c08_cup_wall_xn" class="ctool_collision" type="box" size="0.0025 0.023 0.028" pos="-0.027 0 0" mass="0.002" rgba="0 0 0 0"/>
+      <geom name="c08_cup_wall_yp" class="ctool_collision" type="box" size="0.023 0.0025 0.028" pos="0 0.027 0" mass="0.002" rgba="0 0 0 0"/>
+      <geom name="c08_cup_wall_yn" class="ctool_collision" type="box" size="0.023 0.0025 0.028" pos="0 -0.027 0" mass="0.002" rgba="0 0 0 0"/>
+      <geom name="c08_cup_goal_rim_xp" class="ctool_visual" type="capsule" fromto="0.027 -0.018 0.031 0.027 0.018 0.031" size="0.0018" rgba="0.08 0.85 0.25 0.18"/>
+      <geom name="c08_cup_goal_rim_xn" class="ctool_visual" type="capsule" fromto="-0.027 -0.018 0.031 -0.027 0.018 0.031" size="0.0018" rgba="0.08 0.85 0.25 0.18"/>
+      <geom name="c08_cup_goal_rim_yp" class="ctool_visual" type="capsule" fromto="-0.018 0.027 0.031 0.018 0.027 0.031" size="0.0018" rgba="0.08 0.85 0.25 0.18"/>
+      <geom name="c08_cup_goal_rim_yn" class="ctool_visual" type="capsule" fromto="-0.018 -0.027 0.031 0.018 -0.027 0.031" size="0.0018" rgba="0.08 0.85 0.25 0.18"/>
+    </body>
+    <body name="c08_ice_0" pos="-0.385 -0.025 0.903"><freejoint name="c08_ice_0_joint"/><geom name="c08_ice_0_geom" class="ctool_collision" type="box" size="0.013 0.013 0.013" material="ctool_ice" mass="0.010"/></body>
+    <body name="c08_ice_1" pos="-0.335 -0.025 0.903"><freejoint name="c08_ice_1_joint"/><geom name="c08_ice_1_geom" class="ctool_collision" type="box" size="0.013 0.013 0.013" material="ctool_ice" mass="0.010"/></body>
+    <body name="c08_ice_2" pos="-0.385 0.025 0.903"><freejoint name="c08_ice_2_joint"/><geom name="c08_ice_2_geom" class="ctool_collision" type="box" size="0.013 0.013 0.013" material="ctool_ice" mass="0.010"/></body>
+    <body name="c08_ice_3" pos="-0.335 0.025 0.903"><freejoint name="c08_ice_3_joint"/><geom name="c08_ice_3_geom" class="ctool_collision" type="box" size="0.013 0.013 0.013" material="ctool_ice" mass="0.010"/></body>
+
+    <!-- C09: stapler and paper sheets. -->
+    <body name="c09_stapler" pos="-0.38 0.00 0.892" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="c09_stapler_root"/>
+      <site name="c09_staple_zone" pos="0.080 0 0.018" size="0.006" rgba="0.1 0.8 0.3 0.7" />
+      <!-- Keep collision and appearance geometrically distinct.  Isaac's
+           MJCF importer treats an opaque collidable geom as visual-only, and
+           can deduplicate near-identical collision/visual pairs. -->
+      <geom name="c09_stapler_base" class="ctool_collision" type="box" pos="0 0 0.009" size="0.090 0.032 0.009" rgba="0 0 0 0" mass="0.060" />
+      <geom name="c09_stapler_base_bevel" class="ctool_visual" type="capsule" fromto="-0.072 0 0.018 0.072 0 0.018" size="0.017" material="ctool_dark" />
+      <geom name="c09_stapler_anvil" class="ctool_visual" type="box" pos="0.060 0 0.020" size="0.025 0.022 0.002" material="ctool_silver" />
+      <geom name="c09_stapler_anvil_groove" class="ctool_visual" type="box" pos="0.069 0 0.023" size="0.010 0.002 0.0008" material="ctool_dark" />
+      <geom name="c09_stapler_hinge_pin" class="ctool_visual" type="cylinder" pos="-0.073 0 0.027" quat="0.7071068 0.7071068 0 0" size="0.011 0.036" material="ctool_silver" />
+      <!-- Keep all marker geoms on the fixed stapler root and before the
+           articulated child in MJCF child order.  Nested or top-level
+           marker-only bodies become invalid massless rigid links in Isaac. -->
+      <geom name="c09_work_zone_visual" class="ctool_visual" type="box" pos="0.080 0 0.001" size="0.050 0.036 0.0015" rgba="0.10 0.78 0.92 0.18"/>
+      <geom name="c09_staple_target_a" class="ctool_visual" type="box" pos="0.080 0 0.003" size="0.009 0.0012 0.0008" material="ctool_red"/>
+      <geom name="c09_staple_target_b" class="ctool_visual" type="box" pos="0.080 0 0.003" size="0.0012 0.009 0.0008" material="ctool_red"/>
+      <geom name="c09_staple_done" class="ctool_visual" type="capsule" fromto="0.074 0 0.005 0.086 0 0.005" size="0.0018" material="ctool_lime"/>
+      <!-- These local coordinates preserve the former world-space L guide
+           while making it follow the stapler's randomized translation/yaw. -->
+      <geom name="c09_alignment_guide_long" class="ctool_visual" type="box" pos="0 -0.082 -0.001" size="0.058 0.002 0.001" rgba="0.10 0.78 0.92 0.38"/>
+      <geom name="c09_alignment_guide_short" class="ctool_visual" type="box" pos="-0.056 -0.158 -0.001" size="0.002 0.078 0.001" rgba="0.10 0.78 0.92 0.38"/>
+      <body name="c09_stapler_top" pos="-0.075 0 0.020">
+        <joint name="c09_stapler_top_joint" type="hinge" axis="0 -1 0" range="0 0.95" damping="0.10" armature="0.002" limited="true" />
+        <geom name="c09_stapler_top_geom" class="ctool_collision" type="box" pos="0.0775 0 0.026" size="0.0775 0.019 0.019" rgba="0 0 0 0" mass="0.050" />
+        <geom name="c09_stapler_top_cover" class="ctool_visual" type="capsule" fromto="0 0 0.0265 0.155 0 0.0265" size="0.0195" material="ctool_red" />
+        <geom name="c09_stapler_magazine" class="ctool_visual" type="box" pos="0.077 0 0.011" size="0.065 0.022 0.005" material="ctool_silver" />
+        <geom name="c09_stapler_driver" class="ctool_visual" type="box" pos="0.147 0 0.007" size="0.004 0.020 0.010" material="ctool_silver" />
+      </body>
+    </body>
+    <body name="c09_paper_0" pos="-0.22 -0.11 0.894" quat="0.9990482 0 0 0.0436194">
+      <freejoint name="c09_paper_0_joint"/>
+      <geom name="c09_paper_0_geom" class="ctool_collision" type="box" size="0.075 0.050 0.0018" rgba="0 0 0 0" mass="0.009"/>
+      <geom name="c09_paper_0_grip_tab_collision" class="ctool_collision" type="box" pos="-0.060 -0.038 0.006" size="0.012 0.010 0.004" rgba="0 0 0 0" mass="0.001"/>
+      <geom name="c09_paper_0_visual" class="ctool_visual" type="box" pos="0 0 0.0019" size="0.075 0.050 0.0005" material="ctool_paper_warm"/>
+      <geom name="c09_paper_0_corner" class="ctool_visual" type="box" pos="0.060 0.038 0.0025" size="0.010 0.008 0.0002" material="ctool_red"/>
+      <geom name="c09_paper_0_grip_tab" class="ctool_visual" type="box" pos="-0.060 -0.038 0.006" size="0.012 0.010 0.004" material="ctool_red"/>
+    </body>
+    <body name="c09_paper_1" pos="-0.22 0.11 0.897" quat="0.9990482 0 0 -0.0436194">
+      <freejoint name="c09_paper_1_joint"/>
+      <geom name="c09_paper_1_geom" class="ctool_collision" type="box" size="0.075 0.050 0.0018" rgba="0 0 0 0" mass="0.009"/>
+      <geom name="c09_paper_1_grip_tab_collision" class="ctool_collision" type="box" pos="-0.060 0.038 0.006" size="0.012 0.010 0.004" rgba="0 0 0 0" mass="0.001"/>
+      <geom name="c09_paper_1_visual" class="ctool_visual" type="box" pos="0 0 0.0019" size="0.075 0.050 0.0005" material="ctool_paper_blue"/>
+      <geom name="c09_paper_1_corner" class="ctool_visual" type="box" pos="0.060 0.038 0.0025" size="0.010 0.008 0.0002" material="ctool_blue"/>
+      <geom name="c09_paper_1_grip_tab" class="ctool_visual" type="box" pos="-0.060 0.038 0.006" size="0.012 0.010 0.004" material="ctool_blue"/>
+    </body>
+    <!-- C10: power strip, charger plug, cable connector. -->
+    <body name="c10_power_strip" pos="-0.39 0.00 0.893" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="c10_power_strip_joint"/>
+      <site name="c10_strip_socket" pos="0 0 0.038" size="0.005" rgba="0.1 0.8 0.3 0.8" />
+      <!-- The center socket is a real collision channel.  The bottom plate
+           stops the prong tips at the fully seated depth. -->
+      <geom name="c10_power_strip_bottom" class="ctool_collision" type="box" pos="0 0 0.002" size="0.125 0.045 0.002" rgba="0 0 0 0" mass="0.020" />
+      <geom name="c10_power_strip_left" class="ctool_collision" type="box" pos="-0.0655 0 0.020" size="0.0595 0.045 0.016" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c10_power_strip_right" class="ctool_collision" type="box" pos="0.0655 0 0.020" size="0.0595 0.045 0.016" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c10_power_strip_center_front" class="ctool_collision" type="box" pos="0 0.0295 0.020" size="0.006 0.0155 0.016" rgba="0 0 0 0" mass="0.005" />
+      <geom name="c10_power_strip_center_back" class="ctool_collision" type="box" pos="0 -0.0295 0.020" size="0.006 0.0155 0.016" rgba="0 0 0 0" mass="0.005" />
+      <geom name="c10_power_strip_bevel" class="ctool_visual" type="box" pos="0 0 0.016" size="0.124 0.044 0.016" material="ctool_appliance" />
+      <geom name="c10_socket_plate_center" class="ctool_visual" type="cylinder" pos="0 0 0.034" size="0.026 0.002" material="ctool_dark" />
+      <geom name="c10_socket_capture_marker" class="ctool_visual" type="cylinder" pos="0 0 0.037" size="0.033 0.0006" rgba="0.10 0.78 0.92 0.28" />
+      <geom name="c10_socket_slot_center_a" class="ctool_visual" type="box" pos="0 0.008 0.037" size="0.006 0.0025 0.001" rgba="0.015 0.018 0.020 1" />
+      <geom name="c10_socket_slot_center_b" class="ctool_visual" type="box" pos="0 -0.008 0.037" size="0.006 0.0025 0.001" rgba="0.015 0.018 0.020 1" />
+      <geom name="c10_socket_plate_left" class="ctool_visual" type="cylinder" pos="-0.070 0 0.034" size="0.022 0.002" material="ctool_dark" />
+      <geom name="c10_socket_slot_left_a" class="ctool_visual" type="box" pos="-0.070 0.007 0.037" size="0.007 0.0025 0.001" material="ctool_silver" />
+      <geom name="c10_socket_slot_left_b" class="ctool_visual" type="box" pos="-0.070 -0.007 0.037" size="0.007 0.0025 0.001" material="ctool_silver" />
+      <geom name="c10_socket_plate_right" class="ctool_visual" type="cylinder" pos="0.070 0 0.034" size="0.022 0.002" material="ctool_dark" />
+      <geom name="c10_socket_slot_right_a" class="ctool_visual" type="box" pos="0.070 0.007 0.037" size="0.007 0.0025 0.001" material="ctool_silver" />
+      <geom name="c10_socket_slot_right_b" class="ctool_visual" type="box" pos="0.070 -0.007 0.037" size="0.007 0.0025 0.001" material="ctool_silver" />
+      <geom name="c10_strip_switch" class="ctool_visual" type="box" pos="0.108 0 0.038" size="0.010 0.018 0.004" material="ctool_red" />
+      <geom name="c10_strip_indicator" class="ctool_visual" type="sphere" pos="0.096 0.026 0.042" size="0.005" rgba="0.08 0.85 0.25 0.25" />
+      <!-- HL015 route gates and final cover target.  These are visual-only and
+           live on the randomized strip body so the guide remains registered
+           to the fixture under the shared C-tool yaw/XY reset. -->
+      <geom name="hl015_route_gate_a" class="ctool_visual" type="box" pos="0 -0.112 0.041" size="0.010 0.028 0.0012" material="ctool_cyan" />
+      <geom name="hl015_route_gate_b" class="ctool_visual" type="box" pos="0 0.112 0.041" size="0.010 0.028 0.0012" material="ctool_cyan" />
+      <geom name="hl015_cover_target" class="ctool_visual" type="box" pos="0 0 0.040" size="0.105 0.039 0.0012" rgba="0.30 0.92 0.20 0.20" />
+    </body>
+    <body name="c10_charger_plug" pos="-0.23 -0.17 0.920" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="c10_charger_plug_joint" />
+      <site name="c10_charger_socket" pos="-0.083 0 0" size="0.005" rgba="0.3 0.8 1.0 0.8" />
+      <!-- Four rear rails form a physical USB receptacle around the cable
+           tip; the solid front block limits the insertion depth. -->
+      <geom name="c10_charger_head_front" class="ctool_collision" type="box" pos="-0.028 0 0" size="0.022 0.028 0.022" rgba="0 0 0 0" mass="0.031" />
+      <geom name="c10_charger_head_rear_top" class="ctool_collision" type="box" pos="-0.066 0 0.01325" size="0.016 0.028 0.00875" rgba="0 0 0 0" mass="0.006" />
+      <geom name="c10_charger_head_rear_bottom" class="ctool_collision" type="box" pos="-0.066 0 -0.01325" size="0.016 0.028 0.00875" rgba="0 0 0 0" mass="0.006" />
+      <geom name="c10_charger_head_rear_left" class="ctool_collision" type="box" pos="-0.066 0.019 0" size="0.016 0.009 0.0045" rgba="0 0 0 0" mass="0.006" />
+      <geom name="c10_charger_head_rear_right" class="ctool_collision" type="box" pos="-0.066 -0.019 0" size="0.016 0.009 0.0045" rgba="0 0 0 0" mass="0.006" />
+      <geom name="c10_charger_head_front_visual" class="ctool_visual" type="box" pos="-0.028 0 0" size="0.022 0.028 0.022" material="ctool_appliance" />
+      <geom name="c10_charger_head_rear_top_visual" class="ctool_visual" type="box" pos="-0.066 0 0.01325" size="0.016 0.028 0.00875" material="ctool_appliance" />
+      <geom name="c10_charger_head_rear_bottom_visual" class="ctool_visual" type="box" pos="-0.066 0 -0.01325" size="0.016 0.028 0.00875" material="ctool_appliance" />
+      <geom name="c10_charger_head_rear_left_visual" class="ctool_visual" type="box" pos="-0.066 0.019 0" size="0.016 0.009 0.0045" material="ctool_appliance" />
+      <geom name="c10_charger_head_rear_right_visual" class="ctool_visual" type="box" pos="-0.066 -0.019 0" size="0.016 0.009 0.0045" material="ctool_appliance" />
+      <geom name="c10_charger_accent" class="ctool_visual" type="box" pos="-0.044 0 0.023" size="0.028 0.020 0.002" material="ctool_blue" />
+      <geom name="c10_charger_usb_port" class="ctool_visual" type="box" pos="-0.083 0 0" size="0.001 0.011 0.005" material="ctool_dark" />
+      <geom name="c10_charger_prong_a" class="ctool_collision" type="box" pos="0.006 0.008 0" size="0.022 0.002 0.002" rgba="0 0 0 0" mass="0.004" />
+      <geom name="c10_charger_prong_a_visual" class="ctool_visual" type="box" pos="0.006 0.008 0" size="0.022 0.002 0.002" material="ctool_silver" />
+      <geom name="c10_charger_prong_b" class="ctool_collision" type="box" pos="0.006 -0.008 0" size="0.022 0.002 0.002" rgba="0 0 0 0" mass="0.004" />
+      <geom name="c10_charger_prong_b_visual" class="ctool_visual" type="box" pos="0.006 -0.008 0" size="0.022 0.002 0.002" material="ctool_silver" />
+    </body>
+    <body name="c10_charging_cable" pos="-0.23 0.17 0.912" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="c10_charging_cable_joint" />
+      <geom name="c10_cable_connector" class="ctool_collision" type="box" size="0.025 0.014 0.010" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c10_cable_connector_visual" class="ctool_visual" type="box" size="0.025 0.014 0.010" material="ctool_dark" />
+      <geom name="c10_cable_metal_tip" class="ctool_collision" type="box" pos="0.033 0 0" size="0.008 0.0075 0.003" rgba="0 0 0 0" mass="0.003" />
+      <geom name="c10_cable_metal_tip_visual" class="ctool_visual" type="box" pos="0.033 0 0" size="0.008 0.0075 0.003" material="ctool_silver" />
+      <geom name="c10_cable_strain_relief_collision" class="ctool_collision" type="capsule" fromto="-0.025 0 0 -0.050 0 0" size="0.0085" rgba="0 0 0 0" mass="0.004" />
+      <geom name="c10_cable_strain_relief" class="ctool_visual" type="capsule" fromto="-0.025 0 0 -0.050 0 0" size="0.009" material="ctool_dark" />
+      <geom name="c10_cable_tail_a_collision" class="ctool_visual" type="capsule" fromto="-0.050 0 0 -0.105 0.025 0" size="0.0055" rgba="0 0 0 0" mass="0" />
+      <geom name="c10_cable_tail_a" class="ctool_visual" type="capsule" fromto="-0.050 0 0 -0.105 0.025 0" size="0.006" material="ctool_dark" />
+      <geom name="c10_cable_tail_b_collision" class="ctool_visual" type="capsule" fromto="-0.105 0.025 0 -0.165 -0.010 0" size="0.0055" rgba="0 0 0 0" mass="0" />
+      <geom name="c10_cable_tail_b" class="ctool_visual" type="capsule" fromto="-0.105 0.025 0 -0.165 -0.010 0" size="0.006" material="ctool_dark" />
+      <geom name="c10_charge_indicator" class="ctool_visual" type="sphere" pos="-0.018 0 0.013" size="0.005" rgba="0.10 0.82 0.92 0.25" />
+    </body>
+    <!-- HL015: a separate dynamic cover that is seated on the power strip
+         after both connectors are physically inserted.  It lives in this
+         shared C-tool declaration so the task-body catalog and MJCF filter
+         see the same complete root set; non-HL015 previews remove it. -->
+    <!-- Keep the authored fallback in the independently sampled upper lane;
+         reset randomization draws the final center from the same bounds. -->
+    <body name="hl015_cover" pos="-0.21 0.42 0.948" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="hl015_cover_joint" />
+      <geom name="hl015_cover_collision" class="ctool_collision" type="box" size="0.108 0.043 0.008" mass="0.045" rgba="0 0 0 0" />
+      <geom name="hl015_cover_visual" class="ctool_visual" type="box" pos="0 0 0.002" size="0.108 0.043 0.008" material="ctool_appliance" />
+      <geom name="hl015_cover_handle" class="ctool_visual" type="box" pos="0 0 0.012" size="0.030 0.010 0.003" material="ctool_cyan" />
+    </body>
+
+    <!-- C11: xylophone and mallet. -->
+    <body name="c11_xylophone" pos="-0.36 0.02 0.896">
+      <freejoint name="c11_xylophone_joint"/>
+      <geom name="c11_xylophone_rail_left" class="ctool_collision" type="box" pos="-0.070 0 0.010" size="0.009 0.145 0.010" rgba="0 0 0 0" mass="0.020" />
+      <geom name="c11_xylophone_rail_right" class="ctool_collision" type="box" pos="0.070 0 0.010" size="0.009 0.145 0.010" rgba="0 0 0 0" mass="0.020" />
+      <geom name="c11_xylophone_cross_near" class="ctool_collision" type="box" pos="0 -0.135 0.007" size="0.079 0.010 0.007" rgba="0 0 0 0" mass="0.010" />
+      <geom name="c11_xylophone_cross_far" class="ctool_collision" type="box" pos="0 0.135 0.007" size="0.079 0.010 0.007" rgba="0 0 0 0" mass="0.010" />
+      <geom name="c11_prompt_card_border" class="ctool_visual" type="box" pos="0.220 0 0.004" size="0.042 0.132 0.002" material="ctool_dark"/>
+      <geom name="c11_prompt_card_geom" class="ctool_visual" type="box" pos="0.220 0 0.007" size="0.035 0.125 0.002" material="ctool_white"/>
+      <geom name="c11_prompt_slot_0" class="ctool_visual" type="cylinder" pos="0.220 -0.090 0.010" size="0.014 0.002" rgba="0.86 0.10 0.08 1"/>
+      <geom name="c11_prompt_arrow_0" class="ctool_visual" type="capsule" fromto="0.220 -0.073 0.010 0.220 -0.062 0.010" size="0.0025" material="ctool_dark"/>
+      <geom name="c11_prompt_slot_1" class="ctool_visual" type="cylinder" pos="0.220 -0.045 0.010" size="0.014 0.002" rgba="0.16 0.35 0.90 1"/>
+      <geom name="c11_prompt_arrow_1" class="ctool_visual" type="capsule" fromto="0.220 -0.028 0.010 0.220 -0.017 0.010" size="0.0025" material="ctool_dark"/>
+      <geom name="c11_prompt_slot_2" class="ctool_visual" type="cylinder" pos="0.220 0 0.010" size="0.014 0.002" rgba="0.98 0.78 0.18 1"/>
+      <geom name="c11_prompt_arrow_2" class="ctool_visual" type="capsule" fromto="0.220 0.017 0.010 0.220 0.028 0.010" size="0.0025" material="ctool_dark"/>
+      <geom name="c11_prompt_slot_3" class="ctool_visual" type="cylinder" pos="0.220 0.045 0.010" size="0.014 0.002" rgba="0.30 0.92 0.20 1"/>
+      <geom name="c11_prompt_arrow_3" class="ctool_visual" type="capsule" fromto="0.220 0.062 0.010 0.220 0.073 0.010" size="0.0025" material="ctool_dark"/>
+      <geom name="c11_prompt_slot_4" class="ctool_visual" type="cylinder" pos="0.220 0.090 0.010" size="0.014 0.002" rgba="0.48 0.50 0.52 0.35"/>
+    </body>
+    <body name="c11_key_red" pos="-0.360 -0.070 0.922"><freejoint name="c11_key_red_joint"/><geom name="c11_key_red_geom" class="ctool_collision" type="box" size="0.047 0.022 0.006" rgba="0 0 0 0" mass="0.010"/><geom name="c11_key_red_glow" class="ctool_visual" type="box" pos="0 0 0.007" size="0.045 0.020 0.001" material="ctool_red"/></body>
+    <body name="c11_key_yellow" pos="-0.360 -0.010 0.922"><freejoint name="c11_key_yellow_joint"/><geom name="c11_key_yellow_geom" class="ctool_collision" type="box" size="0.051 0.022 0.006" rgba="0 0 0 0" mass="0.010"/><geom name="c11_key_yellow_glow" class="ctool_visual" type="box" pos="0 0 0.007" size="0.049 0.020 0.001" material="ctool_yellow"/></body>
+    <body name="c11_key_blue" pos="-0.360 0.050 0.922"><freejoint name="c11_key_blue_joint"/><geom name="c11_key_blue_geom" class="ctool_collision" type="box" size="0.055 0.022 0.006" rgba="0 0 0 0" mass="0.010"/><geom name="c11_key_blue_glow" class="ctool_visual" type="box" pos="0 0 0.007" size="0.053 0.020 0.001" material="ctool_blue"/></body>
+    <body name="c11_key_green" pos="-0.360 0.110 0.922"><freejoint name="c11_key_green_joint"/><geom name="c11_key_green_geom" class="ctool_collision" type="box" size="0.059 0.022 0.006" rgba="0 0 0 0" mass="0.010"/><geom name="c11_key_green_glow" class="ctool_visual" type="box" pos="0 0 0.007" size="0.057 0.020 0.001" material="ctool_lime"/></body>
+    <body name="c11_xylophone_frame" pos="-0.36 0.02 0.906">
+      <freejoint name="c11_xylophone_frame_joint"/>
+      <inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001"/>
+      <geom name="c11_frame_left_visual" class="ctool_visual" type="box" pos="-0.070 0 0" size="0.009 0.145 0.008" material="ctool_wood"/>
+      <geom name="c11_frame_right_visual" class="ctool_visual" type="box" pos="0.070 0 0" size="0.009 0.145 0.008" material="ctool_wood"/>
+      <geom name="c11_frame_near_visual" class="ctool_visual" type="box" pos="0 -0.135 -0.003" size="0.079 0.010 0.007" material="ctool_wood"/>
+      <geom name="c11_frame_far_visual" class="ctool_visual" type="box" pos="0 0.135 -0.003" size="0.079 0.010 0.007" material="ctool_wood"/>
+    </body>
+    <!-- The 16 mm-radius head and 6 mm-radius handle require a 3.01-degree
+         roll for both capsules to rest on the table.  Author that physical
+         support pose instead of dropping/rolling the mallet at reset. -->
+    <body name="c11_mallet" pos="-0.20 -0.20 0.902"
+          quat="0.999654 0.02630 0 0">
+      <freejoint name="c11_mallet_joint" />
+      <site name="c11_mallet_head_site" pos="0 0.105 0" size="0.006" rgba="0.95 0.72 0.12 0.9" />
+      <geom name="c11_mallet_handle" class="ctool_collision" type="capsule" fromto="0 -0.085 0 0 0.085 0" size="0.006" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c11_mallet_head" class="ctool_collision" type="capsule" fromto="-0.032 0.105 0 0.032 0.105 0" size="0.016" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c11_mallet_handle_visual" class="ctool_visual" type="capsule" fromto="0 -0.085 0 0 0.085 0" size="0.0065" material="ctool_wood" />
+      <geom name="c11_mallet_head_visual" class="ctool_visual" type="capsule" fromto="-0.032 0.105 0 0.032 0.105 0" size="0.0165" material="ctool_dark" />
+    </body>
+    <body name="c11_return_zone" pos="-0.20 -0.20 0.892"><freejoint name="c11_return_zone_joint"/><inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001"/><geom name="c11_return_zone_visual" class="ctool_visual" type="box" size="0.090 0.070 0.002" material="ctool_green"/></body>
+    <!-- C12: set square pushes wood blocks to the baseline. -->
+    <body name="c12_set_square" pos="-0.42 -0.27 0.904">
+      <freejoint name="c12_set_square_joint" />
+      <site name="c12_tool_corner" pos="0 0 0" size="0.005" rgba="0.95 0.60 0.12 0.8" />
+      <geom name="c12_set_square_long_edge" class="ctool_collision" type="box" pos="0.066 0 0" size="0.075 0.009 0.010" rgba="0 0 0 0" mass="0.025" />
+      <geom name="c12_set_square_long_edge_visual" class="ctool_visual" type="box" pos="0.066 0 0.001" size="0.075 0.009 0.010" material="ctool_cyan" />
+      <geom name="c12_set_square_short_edge" class="ctool_collision" type="box" pos="0 0.056 0" size="0.009 0.065 0.010" rgba="0 0 0 0" mass="0.020" />
+      <geom name="c12_set_square_short_edge_visual" class="ctool_visual" type="box" pos="0 0.056 0.001" size="0.009 0.065 0.010" material="ctool_cyan" />
+      <geom name="c12_set_square_hypotenuse" class="ctool_collision" type="capsule" fromto="0.006 0.115 0 0.135 0.006 0" size="0.009" rgba="0 0 0 0" mass="0.020" />
+      <geom name="c12_set_square_hypotenuse_visual" class="ctool_visual" type="capsule" fromto="0.006 0.115 0.001 0.135 0.006 0.001" size="0.0095" material="ctool_cyan" />
+      <geom name="c12_set_square_right_angle_x" class="ctool_visual" type="box" pos="0.022 0.017 0.012" size="0.016 0.002 0.001" material="ctool_dark" />
+      <geom name="c12_set_square_right_angle_y" class="ctool_visual" type="box" pos="0.007 0.032 0.012" size="0.002 0.016 0.001" material="ctool_dark" />
+      <geom name="c12_set_square_tick_0" class="ctool_visual" type="box" pos="0.025 0.012 0.011" size="0.001 0.006 0.001" material="ctool_dark" />
+      <geom name="c12_set_square_tick_1" class="ctool_visual" type="box" pos="0.050 0.012 0.011" size="0.001 0.006 0.001" material="ctool_dark" />
+      <geom name="c12_set_square_tick_2" class="ctool_visual" type="box" pos="0.075 0.012 0.011" size="0.001 0.006 0.001" material="ctool_dark" />
+    </body>
+    <body name="c12_block_0" pos="-0.39 -0.10 0.912"><freejoint name="c12_block_0_joint"/><geom name="c12_block_0_visual" class="ctool_visual" type="mesh" mesh="c12_wood_block_ycb" material="ctool_wood"/><geom name="c12_block_0_geom" class="ctool_collision" type="box" size="0.0215 0.050 0.0215" rgba="0 0 0 0" mass="0.070"/></body>
+    <body name="c12_block_1" pos="-0.28 -0.17 0.912" quat="0.9659258 0 0 0.2588190"><freejoint name="c12_block_1_joint"/><geom name="c12_block_1_visual" class="ctool_visual" type="mesh" mesh="c12_wood_block_ycb" material="ctool_wood"/><geom name="c12_block_1_geom" class="ctool_collision" type="box" size="0.0215 0.050 0.0215" rgba="0 0 0 0" mass="0.070"/></body>
+    <body name="c12_block_2" pos="-0.17 -0.24 0.912" quat="0.9238795 0 0 -0.3826834"><freejoint name="c12_block_2_joint"/><geom name="c12_block_2_visual" class="ctool_visual" type="mesh" mesh="c12_wood_block_ycb" material="ctool_wood"/><geom name="c12_block_2_geom" class="ctool_collision" type="box" size="0.0215 0.050 0.0215" rgba="0 0 0 0" mass="0.070"/></body>
+    <body name="c12_baseline_pad" pos="-0.28 0.000 0.892">
+      <freejoint name="c12_baseline_pad_joint"/>
+      <inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001"/>
+      <geom name="c12_baseline_visual" class="ctool_visual" type="box" size="0.185 0.006 0.002" material="ctool_green"/>
+      <geom name="c12_target_0" class="ctool_visual" type="box" pos="-0.110 0 0.003" size="0.050 0.022 0.001" rgba="0.20 0.55 0.85 0.22"/>
+      <geom name="c12_target_1" class="ctool_visual" type="box" pos="0 0 0.003" size="0.050 0.022 0.001" rgba="0.20 0.55 0.85 0.22"/>
+      <geom name="c12_target_2" class="ctool_visual" type="box" pos="0.110 0 0.003" size="0.050 0.022 0.001" rgba="0.20 0.55 0.85 0.22"/>
+    </body>
+  </worldbody>
+</mujoco>

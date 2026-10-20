@@ -1,0 +1,254 @@
+{
+  "benchmark_task_id": "B320-HS005",
+  "classifier": "DexJoCoABCIsaacLabEnv._hs005_success_now",
+  "false_negative_count": 0,
+  "false_positive_count": 0,
+  "negative_trial_count": 10,
+  "negative_trials": [
+    {
+      "coverage_mask": [
+        0,
+        0,
+        0
+      ],
+      "expected": false,
+      "id": "missing_left_contact",
+      "order_violation": false,
+      "path_length_m": 0.0,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        0,
+        0,
+        0
+      ],
+      "expected": false,
+      "id": "missing_right_contact",
+      "order_violation": false,
+      "path_length_m": 0.0,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        0,
+        0,
+        0
+      ],
+      "expected": false,
+      "id": "missing_scrub_contact",
+      "order_violation": false,
+      "path_length_m": 0.0,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        0,
+        0,
+        0
+      ],
+      "expected": false,
+      "id": "unsafe_handle_grasp",
+      "order_violation": false,
+      "path_length_m": 0.0,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        0,
+        0,
+        0
+      ],
+      "expected": false,
+      "id": "bristle_grasp",
+      "order_violation": false,
+      "path_length_m": 0.0,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        1,
+        1,
+        1
+      ],
+      "expected": false,
+      "id": "band_regression",
+      "order_violation": true,
+      "path_length_m": 0.06,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        1,
+        1,
+        1
+      ],
+      "expected": false,
+      "id": "insufficient_path",
+      "order_violation": false,
+      "path_length_m": 0.04,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        1,
+        1,
+        1
+      ],
+      "expected": false,
+      "id": "no_release_clearance",
+      "order_violation": false,
+      "path_length_m": 0.08,
+      "predicted": false,
+      "release_seen": false,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        1,
+        1,
+        1
+      ],
+      "expected": false,
+      "id": "unstable_release",
+      "order_violation": false,
+      "path_length_m": 0.08,
+      "predicted": false,
+      "release_seen": true,
+      "stability_steps": 0
+    },
+    {
+      "coverage_mask": [
+        1,
+        1,
+        1
+      ],
+      "expected": false,
+      "id": "tipped_bottle",
+      "order_violation": false,
+      "path_length_m": 0.08,
+      "predicted": false,
+      "release_seen": true,
+      "stability_steps": 0
+    }
+  ],
+  "pass": true,
+  "positive_trial_count": 10,
+  "positive_trials": [
+    {
+      "expected": true,
+      "force_n": 0.25,
+      "id": "positive_00",
+      "path_angle_rad": 0.0,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 0.4,
+      "id": "positive_01",
+      "path_angle_rad": 0.17,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 0.55,
+      "id": "positive_02",
+      "path_angle_rad": 0.34,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 0.7,
+      "id": "positive_03",
+      "path_angle_rad": 0.51,
+      "path_length_m": 0.07999999999999999,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 0.85,
+      "id": "positive_04",
+      "path_angle_rad": 0.68,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 1.0,
+      "id": "positive_05",
+      "path_angle_rad": 0.8500000000000001,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 1.15,
+      "id": "positive_06",
+      "path_angle_rad": 1.02,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 1.3,
+      "id": "positive_07",
+      "path_angle_rad": 1.1900000000000002,
+      "path_length_m": 0.08,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 1.45,
+      "id": "positive_08",
+      "path_angle_rad": 1.36,
+      "path_length_m": 0.07999999999999999,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    },
+    {
+      "expected": true,
+      "force_n": 1.5999999999999999,
+      "id": "positive_09",
+      "path_angle_rad": 1.53,
+      "path_length_m": 0.07999999999999999,
+      "predicted": true,
+      "stability_seconds": 0.5,
+      "stability_steps": 60
+    }
+  ],
+  "schema": "dexjoco.b320_hs005.success_classifier_audit.v1"
+}

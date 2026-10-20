@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d05_scissors_objects">
+  <compiler angle="radian" />
+
+  <default>
+    <default class="d05_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="d05_collision">
+      <geom group="3" rgba="0 0 0 0" friction="1.2 0.03 0.002"
+            solref="0.003 1" solimp="0.97 0.995 0.001" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="d05_scissors_tex" file="lightwheel_ycb/scissors/visuals/T_scissors_BC001.png" />
+    <material name="d05_scissors_mat" texture="d05_scissors_tex" specular="0.3" shininess="0.25" />
+    <mesh name="d05_scissors_fixed_vis" file="lightwheel_ycb/scissors/visuals/scissors.obj" />
+    <mesh name="d05_scissors_moving_vis" file="lightwheel_ycb/scissors/visuals/scissors_Prop001.obj" />
+    <mesh name="d05_scissors_link_vis" file="lightwheel_ycb/scissors/visuals/scissors_Prop002.obj" />
+    <mesh name="d05_scissors_trim_vis" file="lightwheel_ycb/scissors/visuals/scissors_Prop003.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="d05_scissors_root_body" pos="-0.38 -0.02 0.930" quat="1 0 0 0">
+      <freejoint name="d05_scissors_root" />
+      <body name="d05_scissors_fixed">
+        <geom class="d05_visual" mesh="d05_scissors_fixed_vis" material="d05_scissors_mat" />
+        <geom class="d05_collision" name="d05_fixed_blade" type="capsule"
+              fromto="-0.004 0.020 0 0.018 0.096 0" size="0.0035" mass="0.012" />
+        <geom class="d05_collision" name="d05_fixed_pivot" type="sphere"
+              pos="-0.0038435 0.004882 -0.000210" size="0.009" mass="0.006" />
+
+        <!-- Four slim bars retain a real finger opening instead of the solid
+             box collision used by the generated scissors task.  Keep this
+             fixed handle on the mesh's negative-x side; the moving handle is
+             on the positive-x side in its own body frame. -->
+        <geom class="d05_collision" name="d05_fixed_handle_left" type="capsule"
+              fromto="-0.045 -0.076 0 -0.045 -0.032 0" size="0.006" mass="0.004" />
+        <geom class="d05_collision" name="d05_fixed_handle_right" type="capsule"
+              fromto="0.005 -0.076 0 0.005 -0.032 0" size="0.006" mass="0.004" />
+        <geom class="d05_collision" name="d05_fixed_handle_near" type="capsule"
+              fromto="-0.045 -0.032 0 0.005 -0.032 0" size="0.006" mass="0.004" />
+        <geom class="d05_collision" name="d05_fixed_handle_far" type="capsule"
+              fromto="-0.045 -0.076 0 0.005 -0.076 0" size="0.006" mass="0.004" />
+        <geom class="d05_visual" mesh="d05_scissors_trim_vis" material="d05_scissors_mat" />
+
+        <body name="d05_scissors_moving">
+          <joint name="d05_scissors_hinge" pos="-0.0038435 0.004882 -0.000210"
+                 axis="0 0 1" limited="true" range="0 0.90" damping="0.035"
+                 armature="0.001" frictionloss="0.003" springref="0.68" stiffness="0.018" />
+          <geom class="d05_visual" mesh="d05_scissors_moving_vis" material="d05_scissors_mat" />
+          <geom class="d05_collision" name="d05_moving_blade" type="capsule"
+                fromto="-0.004 0.020 0 -0.018 0.096 0" size="0.0035" mass="0.012" />
+          <geom class="d05_collision" name="d05_moving_handle_left" type="capsule"
+                fromto="-0.004 -0.076 0 -0.004 -0.032 0" size="0.006" mass="0.004" />
+          <geom class="d05_collision" name="d05_moving_handle_right" type="capsule"
+                fromto="0.046 -0.076 0 0.046 -0.032 0" size="0.006" mass="0.004" />
+          <geom class="d05_collision" name="d05_moving_handle_near" type="capsule"
+                fromto="-0.004 -0.032 0 0.046 -0.032 0" size="0.006" mass="0.004" />
+          <geom class="d05_collision" name="d05_moving_handle_far" type="capsule"
+                fromto="-0.004 -0.076 0 0.046 -0.076 0" size="0.006" mass="0.004" />
+          <body name="d05_scissors_link">
+            <geom class="d05_visual" mesh="d05_scissors_link_vis" material="d05_scissors_mat" />
+          </body>
+        </body>
+
+        <site name="d05_scissors_hinge_site" pos="-0.0038435 0.004882 0" size="0.004" rgba="1 0.65 0.1 0.7" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

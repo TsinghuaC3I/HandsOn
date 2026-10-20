@@ -1,0 +1,49 @@
+{
+  "collision_nodes": 268,
+  "collision_tets": 963,
+  "collision_surface_triangles": 364,
+  "collision_surface": "Shared source-derived volume boundary with separate FEM/contact resolutions; original render surface retained",
+  "source_to_physics_max_sampled_distance_m": 0.0022237246558208714,
+  "physics_to_source_max_sampled_distance_m": 0.0022407662125280793,
+  "physical_surface_triangles": 364,
+  "author": "plaggy",
+  "license": "CC BY 4.0",
+  "url": "https://sketchfab.com/3d-models/cc0-sponge-3-d3cd1801237e479daccedf1f93e46ae7",
+  "archive": "cc0_-_sponge_3.zip",
+  "archive_sha256": "1e2b974aa81ac13782a83869134565189d8844102dc6c91e2fc8b407a9b98097",
+  "obj_sha256": "433a1dcab8c927e109c228c4138ca42b19f742dfe587eb123c8b942479b13dde",
+  "texture_sha256": "16a4aaa9f7a72861a8c3060e7c56de9a62d9308983a822dfbaa16fbac93b9e3d",
+  "mesher": "MeshPy Triangle on the original source cross-section; two conforming extrusions with the same volume boundary",
+  "planar_min_angle_deg": 28,
+  "planar_max_area_mm2": 250,
+  "thickness_cells": 2,
+  "collision_planar_max_area_mm2": 100,
+  "collision_thickness_cells": 3,
+  "collision_minimum_cell_volume_m3": 1.344820917085299e-07,
+  "minimum_contact_embedding_weight": -4.440892098500626e-16,
+  "source_vertices": 290,
+  "source_triangles": 576,
+  "nodes": 87,
+  "tets": 246,
+  "surface_triangles": 142,
+  "bounds": [
+    [
+      -0.038948755,
+      -0.049945505,
+      -0.015
+    ],
+    [
+      0.038948755,
+      0.049945505,
+      0.015
+    ]
+  ],
+  "size": [
+    0.07789751,
+    0.09989101,
+    0.03
+  ],
+  "volume_m3": 0.00019620929990519996,
+  "minimum_cell_volume_m3": 5.422340813767839e-07,
+  "source_to_task": "Baked glTF node transforms, converted Y-up to Z-up, centered bounds. Uniform task scale 1.0."
+}

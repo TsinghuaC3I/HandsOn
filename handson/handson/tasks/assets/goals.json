@@ -1,0 +1,772 @@
+{
+  "t26_place_fruit_in_bucket": [
+    {
+      "values": {
+        "fruit": "apple"
+      },
+      "canonical": "Pick the apple and place it into the bucket."
+    },
+    {
+      "values": {
+        "fruit": "banana"
+      },
+      "canonical": "Pick the banana and place it into the bucket."
+    },
+    {
+      "values": {
+        "fruit": "orange"
+      },
+      "canonical": "Pick the orange and place it into the bucket."
+    },
+    {
+      "values": {
+        "fruit": "pear"
+      },
+      "canonical": "Pick the pear and place it into the bucket."
+    }
+  ],
+  "t24_place_ball_in_bowl": [
+    {
+      "values": {
+        "ball": "tennis ball"
+      },
+      "canonical": "Pick the tennis ball and place it into the bowl."
+    },
+    {
+      "values": {
+        "ball": "mini soccer ball"
+      },
+      "canonical": "Pick the mini soccer ball and place it into the bowl."
+    },
+    {
+      "values": {
+        "ball": "golf ball"
+      },
+      "canonical": "Pick the golf ball and place it into the bowl."
+    }
+  ],
+  "t04_cover_pitcher": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Align the pitcher lid and place it onto the pitcher body."
+    }
+  ],
+  "t09_insert_peg": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Insert the round peg into the socket tray hole."
+    }
+  ],
+  "t44_stack_blocks": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Arrange the four blocks into four distinct height layers with the large wood block on the bottom layer, then keep the hand from touching the blocks for 0.5 seconds."
+    }
+  ],
+  "t03_cover_box": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Align the box lid and place it onto the clear box."
+    }
+  ],
+  "t05_fill_cup": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the mug upright under the faucet with the left hand. Open the right lever outward past 70 percent, fill for half a second, place the mug on the marked pad, and close the faucet."
+    }
+  ],
+  "t15_open_drawers": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pull each highlighted drawer with its assigned hand past 60 percent travel, crossing both thresholds within 1.2 seconds."
+    }
+  ],
+  "t45_stir_pot": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the open pot with the left hand and stir with the right-hand spoon through the six ordered checkpoints and over 650 degrees."
+    }
+  ],
+  "t37_scrub_bottle": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the water bottle with the left hand. Brush its lower, middle, then upper bands with the right hand. Release both objects, leaving the bottle upright and stable."
+    }
+  ],
+  "t20_pass_and_orient_pen": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pass the pen from right-hand-only contact through both-hand contact to left-hand-only contact without dropping it. Hold it tip-up within 2 degrees of vertical."
+    }
+  ],
+  "t32_press_soap_pump": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Stabilize the sponge with the left hand, align the soap nozzle above it with the right hand, and physically depress the dispenser."
+    }
+  ],
+  "t38_set_dual_knobs": [
+    {
+      "values": {
+        "left_angle_degrees": 60,
+        "right_angle_degrees": 60
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 60 degrees counter-clockwise and the right knob to 60 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 80,
+        "right_angle_degrees": 40
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 80 degrees counter-clockwise and the right knob to 40 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 60,
+        "right_angle_degrees": 40
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 60 degrees counter-clockwise and the right knob to 40 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 40,
+        "right_angle_degrees": 80
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 40 degrees counter-clockwise and the right knob to 80 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 40,
+        "right_angle_degrees": 40
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 40 degrees counter-clockwise and the right knob to 40 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 80,
+        "right_angle_degrees": 60
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 80 degrees counter-clockwise and the right knob to 60 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 60,
+        "right_angle_degrees": 80
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 60 degrees counter-clockwise and the right knob to 80 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 40,
+        "right_angle_degrees": 60
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 40 degrees counter-clockwise and the right knob to 60 degrees clockwise, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_angle_degrees": 80,
+        "right_angle_degrees": 80
+      },
+      "canonical": "Turn both knobs together using their assigned hands, set the left knob to 80 degrees counter-clockwise and the right knob to 80 degrees clockwise, release both knobs, and keep the settings stable."
+    }
+  ],
+  "t30_pour_seasonings": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Use the assigned hands to pour salt into the cyan target and pepper into the orange target, with overlapping pouring. Keep each jar's total pouring time below four seconds."
+    }
+  ],
+  "t01_align_blocks_in_midair": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Lift both assigned blocks with their assigned hands, then mate their marked faces in midair and hold the physical contact stable for 0.4 seconds."
+    }
+  ],
+  "t13_load_cans": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pick up both soup cans with their assigned hands and cross-load them into the opposite bin partitions. Release them within the synchronization window and leave them stable."
+    }
+  ],
+  "t46_store_charger": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the drawer open with the left hand and place the charger fully inside with the right. Release the charger, then the drawer, and hold stable for half a second."
+    }
+  ],
+  "t08_hammer_nail": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the wood block with the left hand, keeping its nail inserted. Pick up the hammer with the right hand and strike the nail so it sinks into the block."
+    }
+  ],
+  "t36_scoop_marbles": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Keep the spoon level or slightly nose-down, scoop the marble, carry it over the bowl, and pour it into the bowl."
+    }
+  ],
+  "t50_water_plant": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Grasp the spray bottle and aim it at the plant before pressing, then press the sprayer so that the water lands on the plant or its soil."
+    }
+  ],
+  "t14_move_and_click_mouse": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Move the mouse onto the mouse pad without pressing either button, then click the left mouse button."
+    }
+  ],
+  "t23_photograph_logo": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pick up the camera, aim it at the logo, and press the shutter button."
+    }
+  ],
+  "t02_connect_charger_and_cable": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Insert the charger plug into the power strip first, then insert the charging cable connector into the charger head."
+    }
+  ],
+  "t11_line_up_blocks": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Use only the set square tool to push three scattered wood blocks onto the baseline and align them side by side."
+    }
+  ],
+  "t12_load_and_start_microwave": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Open the microwave door, carry the plate with its food box into the microwave, close the door, then press the green start button."
+    }
+  ],
+  "t21_pass_block": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pick up the left block with the left hand, transfer it to the right hand in the middle, then place it stably inside the right box."
+    }
+  ],
+  "t43_squeeze_scissors": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Lift the scissors clear of the table and make three complete cuts in the air. Try one hand first; the other hand may reposition or assist."
+    }
+  ],
+  "t42_sort_objects": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Find six targets among the clutter and sort boxes, cans, and dishes into their marked baskets. Transfer the far-right target through both hands before placing it."
+    }
+  ],
+  "t31_prepare_coffee": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Take the mug from the cabinet and close both doors. Place it under the coffee outlet, press the green button, and brew for two seconds. Release the filled mug upright on the serving tray."
+    }
+  ],
+  "t06_fit_device_cover": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Use both hands on opposite sides of the device cover to carry it together over the device body, then align it with its matching interface and seat it."
+    }
+  ],
+  "t18_open_micropipette_box": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Open the hinged lid of the micropipette box until it is fully open."
+    }
+  ],
+  "t49_unfold_ruler": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pinch the two outer ruler segments with their assigned hands and unfold them together until the ruler is straight."
+    }
+  ],
+  "t48_unfold_fan": [
+    {
+      "values": {
+        "target_angle_degrees": 60
+      },
+      "canonical": "Use both hands to grasp the two outermost fan ribs and unfold the fan symmetrically to 60 degrees, then hold it steadily on the table."
+    },
+    {
+      "values": {
+        "target_angle_degrees": 120
+      },
+      "canonical": "Use both hands to grasp the two outermost fan ribs and unfold the fan symmetrically to 120 degrees, then hold it steadily on the table."
+    },
+    {
+      "values": {
+        "target_angle_degrees": 90
+      },
+      "canonical": "Use both hands to grasp the two outermost fan ribs and unfold the fan symmetrically to 90 degrees, then hold it steadily on the table."
+    }
+  ],
+  "t34_roll_ball_through_gate": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Roll or flick the tennis ball from its starting side through the opening between the cracker box and the sugar box. Keep it on the table without picking it up or touching either box."
+    }
+  ],
+  "t27_place_largest_fitting_ball": [
+    {
+      "values": {
+        "requested_cup": "J"
+      },
+      "canonical": "Choose the largest ball that fits the large yellow J cup. Place it in that cup, release both hands, and leave ball and cup stable."
+    },
+    {
+      "values": {
+        "requested_cup": "G"
+      },
+      "canonical": "Choose the largest ball that fits the medium orange G cup. Place it in that cup, release both hands, and leave ball and cup stable."
+    },
+    {
+      "values": {
+        "requested_cup": "C"
+      },
+      "canonical": "Choose the largest ball that fits the small green C cup. Place it in that cup, release both hands, and leave ball and cup stable."
+    }
+  ],
+  "t41_sort_nested_cups": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Separate the three nested YCB cups, then place them upright in a straight row from left to right in the main camera: large, medium, small. Release all cups."
+    }
+  ],
+  "t47_trigger_drill_on_block": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Use the right hand to bring the drill into contact with the wood block, then press the drill's trigger and hold it for half a second while keeping the contact."
+    }
+  ],
+  "t28_place_tableware": [
+    {
+      "values": {
+        "requested_tableware": "spoon"
+      },
+      "canonical": "Pick up the spoon and place it on the outer right side of the plate, with the handle pointing toward you. Move only the spoon and leave the plate and distractors in place."
+    },
+    {
+      "values": {
+        "requested_tableware": "knife"
+      },
+      "canonical": "Pick up the knife and place it to the right of the plate, with the handle pointing toward you and the blade facing the plate. Move only the knife and leave the plate and distractors in place."
+    },
+    {
+      "values": {
+        "requested_tableware": "mug"
+      },
+      "canonical": "Pick up the mug and place it above and to the right of the plate, upright with its opening facing up. Move only the mug and leave the plate and distractors in place."
+    },
+    {
+      "values": {
+        "requested_tableware": "fork"
+      },
+      "canonical": "Pick up the fork and place it to the left of the plate, with the handle pointing toward you. Move only the fork and leave the plate and distractors in place."
+    }
+  ],
+  "t39_set_timer": [
+    {
+      "values": {
+        "minutes": 2,
+        "seconds": 1
+      },
+      "canonical": "Hold the timer with the left hand. Enter 2 minutes and 1 second with the right, press START last, then withdraw both hands for one countdown tick. Clear incorrect entries first."
+    },
+    {
+      "values": {
+        "minutes": 2,
+        "seconds": 2
+      },
+      "canonical": "Hold the timer with the left hand. Enter 2 minutes and 2 seconds with the right, press START last, then withdraw both hands for one countdown tick. Clear incorrect entries first."
+    },
+    {
+      "values": {
+        "minutes": 1,
+        "seconds": 2
+      },
+      "canonical": "Hold the timer with the left hand. Enter 1 minute and 2 seconds with the right, press START last, then withdraw both hands for one countdown tick. Clear incorrect entries first."
+    },
+    {
+      "values": {
+        "minutes": 1,
+        "seconds": 1
+      },
+      "canonical": "Hold the timer with the left hand. Enter 1 minute and 1 second with the right, press START last, then withdraw both hands for one countdown tick. Clear incorrect entries first."
+    }
+  ],
+  "t07_flip_sponge": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Hold the skillet level with the left hand. Use the right-hand spatula to lift and flip the sponge once, leaving its opposite face stable inside the skillet. Do not touch the sponge directly."
+    }
+  ],
+  "t29_place_wine_glass": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Place the wine glass upright at the plate center, release it, and leave it stable."
+    }
+  ],
+  "t33_reposition_marker_grasp": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Lift the capped marker with the right hand. Move both thumb and index contact points at least 2.5 cm toward its writing tip while keeping it lifted and grasped."
+    }
+  ],
+  "t25_place_cup_on_plate": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pick up the mug and place it upright in the center of the plate."
+    }
+  ],
+  "t19_orient_cup_upright": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Pick up the cup and place it upright on the table."
+    }
+  ],
+  "t40_slide_knife_blade": [
+    {
+      "values": {
+        "motion": "extend"
+      },
+      "canonical": "Pick up the utility knife with the right hand, then use the left fingertips on its slider to extend the blade fully."
+    },
+    {
+      "values": {
+        "motion": "retract"
+      },
+      "canonical": "Pick up the utility knife with the right hand, then use the left fingertips on its slider to retract the blade fully."
+    }
+  ],
+  "t22_pass_screwdriver": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Touch the screwdriver with the right hand first, then touch it with the left hand while it is airborne, and let it land in the horizontal green target zone."
+    }
+  ],
+  "t10_lift_carton": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Support opposite lower carton sides with both hands, lift the entire carton clear of the table without either side exceeding 12 N, and keep it continuously airborne for 3 seconds."
+    }
+  ],
+  "t16_open_laptop": [
+    {
+      "values": {
+        "target_angle_degrees": 60
+      },
+      "canonical": "Lift the laptop display from its front edge with the right hand and open it to 60 degrees."
+    },
+    {
+      "values": {
+        "target_angle_degrees": 90
+      },
+      "canonical": "Lift the laptop display from its front edge with the right hand and open it to 90 degrees."
+    },
+    {
+      "values": {
+        "target_angle_degrees": 120
+      },
+      "canonical": "Lift the laptop display from its front edge with the right hand and open it to 120 degrees."
+    },
+    {
+      "values": {
+        "target_angle_degrees": 30
+      },
+      "canonical": "Lift the laptop display from its front edge with the right hand and open it to 30 degrees."
+    }
+  ],
+  "t17_open_latched_door": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Depress the near lever past 45 degrees with the left hand for five frames. Push the unlatched door to 45 degrees with the right hand, avoiding the table, frame, and far handle."
+    }
+  ],
+  "t35_rotate_propeller": [
+    {
+      "values": {
+        "mode": "fixed_instruction_or_observed_visual_target"
+      },
+      "canonical": "Spin the airplane propeller through three full turns of accumulated travel, in either direction."
+    }
+  ],
+  "eval_comb01_cover_pitcher_and_box": [
+    {
+      "values": {},
+      "canonical": "First align and seat the pitcher lid, then release it and let it settle. Next align and seat the clear-box lid, release it and let it settle. Both lids must remain correctly seated on their own containers."
+    }
+  ],
+  "eval_comb02_open_laptop_and_click_mouse": [
+    {
+      "values": {
+        "laptop_angle_deg": 30
+      },
+      "canonical": "Open the initially closed laptop to 30 degrees with either hand and let it settle; you may release the screen. Move the mouse onto its pad without pressing either button, then click the left button once. Keep the laptop at the target angle and the mouse on the pad while the scene settles."
+    },
+    {
+      "values": {
+        "laptop_angle_deg": 60
+      },
+      "canonical": "Open the initially closed laptop to 60 degrees with either hand and let it settle; you may release the screen. Move the mouse onto its pad without pressing either button, then click the left button once. Keep the laptop at the target angle and the mouse on the pad while the scene settles."
+    },
+    {
+      "values": {
+        "laptop_angle_deg": 90
+      },
+      "canonical": "Open the initially closed laptop to 90 degrees with either hand and let it settle; you may release the screen. Move the mouse onto its pad without pressing either button, then click the left button once. Keep the laptop at the target angle and the mouse on the pad while the scene settles."
+    },
+    {
+      "values": {
+        "laptop_angle_deg": 120
+      },
+      "canonical": "Open the initially closed laptop to 120 degrees with either hand and let it settle; you may release the screen. Move the mouse onto its pad without pressing either button, then click the left button once. Keep the laptop at the target angle and the mouse on the pad while the scene settles."
+    }
+  ],
+  "eval_comb03_pass_block_and_close_box": [
+    {
+      "values": {},
+      "canonical": "Pick up the left block with the left hand, hand it to the right hand in the middle, and release it stably inside the clear box. Then use the right hand to pick up the lid, align and close the box, and release."
+    }
+  ],
+  "eval_comb04_place_fruit_and_photograph_logo": [
+    {
+      "values": {
+        "fruit": "apple"
+      },
+      "canonical": "Pick the apple, place it in the bucket and release it. Then pick up the camera, aim at the logo on the bucket and press the shutter."
+    },
+    {
+      "values": {
+        "fruit": "banana"
+      },
+      "canonical": "Pick the banana, place it in the bucket and release it. Then pick up the camera, aim at the logo on the bucket and press the shutter."
+    },
+    {
+      "values": {
+        "fruit": "orange"
+      },
+      "canonical": "Pick the orange, place it in the bucket and release it. Then pick up the camera, aim at the logo on the bucket and press the shutter."
+    },
+    {
+      "values": {
+        "fruit": "pear"
+      },
+      "canonical": "Pick the pear, place it in the bucket and release it. Then pick up the camera, aim at the logo on the bucket and press the shutter."
+    }
+  ],
+  "eval_comb05_scrub_bottle_then_fill_cup": [
+    {
+      "values": {},
+      "canonical": "Stabilize the bottle with the left hand and grasp the cleaning brush by its handle with the right hand. Scrub the bottle bands in order, either lower-middle-upper or upper-middle-lower, then release both objects and leave the bottle upright and stable. Next, hold the mug under the faucet with the left hand and open the faucet with the right hand. Keep the stream entering the upright mug for 0.5 seconds, then place the mug on the marked counter pad outside the sink and close the faucet. Leave the scrubbed bottle upright."
+    }
+  ],
+  "eval_comb06_season_and_stir": [
+    {
+      "values": {},
+      "canonical": "Use the left hand for salt and the right hand for pepper. Pour both into the same open pot together, then put down and release the jars. Hold the pot with the left hand and stir with the right-hand spoon through all six angular sectors and more than 650 degrees, keeping the pot stable."
+    }
+  ],
+  "eval_gen01_cover_lunchbox": [
+    {
+      "values": {},
+      "canonical": "Align the lunchbox lid and place it onto the lunchbox."
+    }
+  ],
+  "eval_gen02_open_trash_bin": [
+    {
+      "values": {},
+      "canonical": "The trash bin is fixed after reset at a randomized tabletop pose and yaw. Open its hinged lid from closed to at least 75 degrees. Success is immediate when the physical lid reaches that opening. Either hand may be used; no assigned contact, release, or stable hold is required."
+    }
+  ],
+  "eval_gen03_orient_bottle_upright": [
+    {
+      "values": {},
+      "canonical": "Pick up the yellow mustard bottle and place it upright on the table with its bottom facing down. Release the bottle and keep it upright for 0.5 seconds."
+    }
+  ],
+  "eval_gen04_pass_glue_stick": [
+    {
+      "values": {},
+      "canonical": "Pick up the glue stick with the left hand, transfer it to the right hand in the middle, then place it stably inside the right tray and release it."
+    }
+  ],
+  "eval_gen05_set_mixer_knobs": [
+    {
+      "values": {
+        "left_target_deg": 40,
+        "right_target_deg": -80
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 40 degrees and the right knob to -80 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 40,
+        "right_target_deg": -60
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 40 degrees and the right knob to -60 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 40,
+        "right_target_deg": -40
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 40 degrees and the right knob to -40 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 60,
+        "right_target_deg": -80
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 60 degrees and the right knob to -80 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 60,
+        "right_target_deg": -60
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 60 degrees and the right knob to -60 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 60,
+        "right_target_deg": -40
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 60 degrees and the right knob to -40 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 80,
+        "right_target_deg": -80
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 80 degrees and the right knob to -80 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 80,
+        "right_target_deg": -60
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 80 degrees and the right knob to -60 degrees, release both knobs, and keep the settings stable."
+    },
+    {
+      "values": {
+        "left_target_deg": 80,
+        "right_target_deg": -40
+      },
+      "canonical": "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set the left knob to 80 degrees and the right knob to -40 degrees, release both knobs, and keep the settings stable."
+    }
+  ],
+  "eval_gen06_spray_shoe": [
+    {
+      "values": {},
+      "canonical": "Grasp and aim the spray bottle at the shoe upper before squeezing the trigger. Keep spraying the shoe to complete the task; a spray that entirely misses the shoe upper fails the attempt."
+    }
+  ],
+  "eval_gen07_stack_boxes": [
+    {
+      "values": {},
+      "canonical": "Arrange the four package boxes into four distinct height layers with the large package box on the bottom layer, then keep the hand from touching the boxes for 0.5 seconds."
+    }
+  ],
+  "eval_flex01_compress_sponge_into_mug": [
+    {
+      "values": {},
+      "canonical": "Use the left hand to stabilize the YCB mug. With the right hand, physically grasp and compress the Sponge 3, insert it through the mug rim until it is mostly inside, then release both objects and leave the mug upright and stable."
+    }
+  ],
+  "eval_flex02_fold_towel_twice": [
+    {
+      "values": {},
+      "canonical": "Fold the flat towel in half twice, in any directions. The two folds may be in the same direction or different directions. Release the folded towel and leave it stable on the table."
+    }
+  ],
+  "eval_flex03_pack_pillow": [
+    {
+      "values": {},
+      "canonical": "Use both hands to squeeze and lift the foam pillow, lower it into the open carton so it rests inside with most of the pillow below the rim, then release both hands and keep it stable for one second. Tilted placement and raised corners are allowed."
+    }
+  ]
+}

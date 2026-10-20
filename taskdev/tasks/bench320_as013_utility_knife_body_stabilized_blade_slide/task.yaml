@@ -1,0 +1,435 @@
+schema_version: 1
+task:
+  id: bench320_as013_utility_knife_body_stabilized_blade_slide
+  canonical_name: t40_slide_knife_blade
+  benchmark_id: B320-AS013
+  # A replacement asset has been selected and integrated locally. Its bounded
+  # low-pinning reset/view/origin canary passed, but completion remains
+  # fail-closed until this exact bundle passes a manual successful episode and
+  # fresh-process replay.
+  task_complete: false
+  development_state: manual_bimanual_handheld_episode_and_replay_pending
+  title: "B320-AS013 BimanualHandheldUtilityKnifeSlide"
+  description: >-
+    The right ROKAE/Wuji hand grasps and picks up the utility knife. After that
+    pickup has been observed, any left distal fingertip may touch the slider.
+    Each seeded episode randomly requests either the bottom/inside fully
+    retracted endpoint or the top/outside fully extended endpoint. Success is
+    immediate once pickup, the post-pickup left-slider touch, and the sampled
+    endpoint have all been observed; current terminal contact and a stability
+    hold are not required. The selected replacement asset passed one
+    fresh low-pinning first-reset/contact-view/stable-origin canary and is still
+    awaiting manual interaction, a fresh successful standard-recorder episode,
+    camera validation, and fresh-process PhysX replay; historical full-episode
+    evidence belongs to the prior asset and prior two-hand semantics.
+  taxonomy:
+    family: articulation
+    interactions: [right_hand_grasp, lifted_tool_control, left_hand_fingertip_slide, prismatic_slide, bimanual_coordination, tool_safety]
+    horizon: short
+    handedness: bimanual_right_hold_left_slide
+source:
+  origin: downloaded_external
+  attribution: >-
+    This work is based on "Utility Knife"
+    (https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92)
+    by ahtusik (https://sketchfab.com/ahtusik) licensed under CC-BY-4.0
+    (http://creativecommons.org/licenses/by/4.0/).
+  reference: >-
+    https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92;
+    downloaded archive sha256=85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b;
+    benchmark source row b320_32_scene_wave_20260817/source_rows.json#B320-AS013
+  license: CC-BY-4.0
+  license_url: https://creativecommons.org/licenses/by/4.0/
+  author: ahtusik
+  source_title: Utility Knife
+  archive_name: utility_knife.zip
+  license_file: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/sketchfab_utility_knife/license.txt
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.65, -0.60, 0.84]
+    max: [0.30, 0.60, 1.44]
+  targets:
+    - id: left_fingertip_blade_slider
+      arm: left
+      digits: [thumb, index, middle, ring, pinky]
+      frame: world
+      position_m: [-0.12, 0.045, 0.96]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.015
+    - id: right_hand_housing_grasp
+      arm: right
+      digits: [thumb, index, middle, ring, pinky, palm]
+      frame: world
+      position_m: [-0.12, -0.045, 0.96]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.02
+assets:
+  - id: utility_knife
+    path: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik.usda
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    source_archive: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/utility_knife.zip
+    source_archive_sha256: 85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b
+    source_scene: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/sketchfab_utility_knife/scene.gltf
+    source_conversion:
+      scale_to_meters: 0.008
+      axis_mapping: canonical=[-x,z,y]*0.008 (source glTF x,y,z to task X,Y,Z)
+      ergonomic_scale_xyz: [1.3, 1.3, 2.35]
+      ergonomic_scale_application: baked_into_visual_and_collision_vertices
+      button_target_width_m: 0.023
+      button_target_protrusion_m: 0.0025
+      blade_envelope_correction:
+        method: baked_blade_y_fit_to_retracted_housing_envelope
+        axis: Y
+        clearance_m: 0.004
+        q0_contract: fully_retracted_blade_within_housing_envelope
+        visual_and_collision_vertices: synchronized
+        housing_y_bounds_m: [-0.11726570050991969, 0.08003718630286298]
+        blade_y_bounds_m: [-0.11326570050991969, 0.07603718630286299]
+        blade_length_m: 0.18930288681278268
+      animation_use: reference_only_not_physics
+    integrated_metadata: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik_metadata.json
+    initial_pose:
+      xy_m: [-0.12, 0.0]
+      yaw_deg: 0.0
+      target_table_clearance_m: 0.0
+      z_rule: table_top_plus_target_clearance_minus_scaled_rotated_composed_bbox_min
+    runtime_path: handson/handson/sim/isaaclab/usd/t40_slide_knife_blade/utility_knife_ahtusik/utility_knife_ahtusik.usda
+    articulation:
+      joint_name: PrismaticJoint_utility_knife_3_middle
+      type: prismatic
+      drive_stiffness: 80.0
+      drive_damping: 25.0
+      drive_max_force_n: 12.0
+      joint_static_friction: 3.0
+      joint_dynamic_friction: 2.4
+      source_asset_drive_damping: 1.2
+      source_asset_joint_static_friction: 1.0
+      source_asset_joint_dynamic_friction: 0.8
+      runtime_resistance_policy: high_damping_plus_static_friction_prevents_vertical_creep
+      blade_contact_static_friction_default: 2.0
+      blade_contact_dynamic_friction_default: 1.9
+      blade_contact_friction_range: [0.4, 3.0]
+      blade_contact_friction_combine_mode: max
+      housing_contact_static_friction_default: 2.5
+      housing_contact_dynamic_friction_default: 2.3
+      housing_contact_static_friction_range: [2.3, 2.7]
+      housing_contact_friction_combine_mode: max
+      housing_grip_material_scope: single_housing_collider_including_side_faces
+      authored_axis_body_local: [0.0, 1.0, 0.0]
+      authored_limits_m: [0.0, 0.08]
+      reset:
+        randomized_targets: [retracted_bottom, extended_top]
+        retracted_target_start_progress_range: [0.55, 0.85]
+        extended_target_start_progress_range: [0.15, 0.45]
+        deterministic_target: retracted_bottom
+        deterministic_start_progress: 0.80
+      runtime_target_policy:
+        passive_target: measured_joint_position_during_action_with_0_1mm_write_deadband
+        passive_target_requires_contact: false
+        stable_origin_target_writes: forbidden_reset_target_already_synchronized
+        maximum_deadband_restoring_force_n: 0.008
+        cumulative_return_force_to_reset_pose: false
+        causal_forward_assist_default: false
+        causal_forward_assist_gate: ordered_right_grip_seen_then_pickup_seen_then_left_fingertip_slider_contact_plus_joint_axis_operator_motion
+    collision:
+      enabled: true
+      approximation: welded_connected_component_convexHulls
+      collision_only_prims_invisible: true
+      housing_collider_count: 1
+      blade_collider_count: 1
+      slider_segment_count: 6
+      button_collider_count: 1
+      blade_slider_collider_count: 8
+      total_collider_count: 9
+      sampled_slider_surface_gap_max_m: 0.002965306
+      builder_certification_slider_surface_gap_max_m: 0.002964179
+      slider_geometry_quality_gates:
+        affine_rank: 3
+        minimum_axis_extent_m: 0.0003
+        minimum_singular_value_m: 0.00009
+        minimum_singular_value_ratio: 0.002
+        minimum_volume_m3: 5.0e-10
+        watertight: true
+        winding_consistent: true
+    mass_properties:
+      model: uniform_aabb_box
+      dimensions_source: source_derived_rigid_link_bounds
+      runtime_mass_randomization_scales_inertia: true
+      bodies:
+        - prim: /Asset/E_body_1
+          role: housing
+          mass_kg: 0.17
+          inertia_dimensions_m: [0.06091090279866541, 0.19730288681278269, 0.007809112657368127]
+          diagonal_inertia_kg_m2: [0.0005523499946230037, 5.3424204536789045e-05, 0.0006040463690124212]
+        - prim: /Asset/E_link_blade_2
+          role: blade_and_slider
+          mass_kg: 0.05
+          inertia_dimensions_m: [0.024978873345351222, 0.20007647217591498, 0.007179631655765194]
+          diagonal_inertia_kg_m2: [0.0001670089242878006, 2.814546767981514e-06, 0.0001693939117998449]
+    solver_properties:
+      rigid_body_position_iterations: 16
+      rigid_body_velocity_iterations: 4
+      scene_position_iteration_cap: 64
+      scene_velocity_iteration_cap: 4
+reset:
+  seedable: true
+  max_settle_steps: 1200
+  randomization:
+    target_endpoint: uniform_choice_retracted_bottom_or_extended_top
+    slider_progress:
+      retracted_target_range: [0.55, 0.85]
+      extended_target_range: [0.15, 0.45]
+    knife_xy_offset_m: {x: [-0.05, 0.05], y: [-0.05, 0.05]}
+    knife_yaw_deg: [-180.0, 180.0]
+    knife_pitch_roll_deg: [0.0, 0.0]
+  invariants:
+    - all_required_assets_present
+    - exact_downloaded_source_hashes
+    - integrated_asset_metadata_matches_source
+    - finite_actor_state
+    - blade_joint_seeded_away_from_sampled_target_endpoint
+    - no_initial_interpenetration_above_threshold
+    - utility_knife_inside_table_workspace
+    - targets_inside_workspace
+    - both_robots_at_native_home
+    - both_hands_at_native_home_before_action
+    - success_false_at_reset
+    - task_complete_false_until_fresh_live_recertification
+contact:
+  contact_force_threshold_n: 0.01
+  monitored_pairs:
+    - id: right_hand_knife_housing
+      bodies: ["robot/right_hand/*", "assets/utility_knife/body"]
+      max_penetration_m: 0.005
+    - id: left_fingertip_blade_slider
+      bodies: ["robot/left_hand/fingertips", "assets/utility_knife/blade_slider"]
+      max_penetration_m: 0.005
+    - id: housing_table_support
+      bodies: ["assets/utility_knife/body", "environment/table"]
+      role: pickup_support_readback
+    - id: moving_component_table_support
+      bodies: ["assets/utility_knife/blade_slider", "environment/table"]
+      role: pickup_support_readback
+  allowed_pairs:
+    - id: left_fingertips_slider_button
+      bodies: ["robot/left_hand/left_finger1_to_5_link4", "assets/utility_knife/blade_slider"]
+      hand_region: any_left_distal_fingertip
+      object_region: slider_button_local_aabb
+      object_region_frame: assets/utility_knife/blade_slider
+      local_aabb_source: assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik_metadata.json#button_region.local_bounds_m
+      local_aabb_m:
+        min: [-0.010701819973318965, -0.027380605933234027, -0.0013312251019545022]
+        max: [0.012298180026681038, 0.023822794142819646, 0.001481674399736621]
+      completion_evidence_contact: true
+  incidental_pairs:
+    - id: either_hand_nonbutton_contact
+      bodies: ["robot/left_or_right_hand/*", "assets/utility_knife/*"]
+      terminal: false
+      completion_evidence: false
+      note: >-
+        Incidental contact while grasping or repositioning is recoverable. Only
+        a physical-left distal-fingertip contact inside the slider-button
+        region counts toward the ordered operation.
+  forbidden_pairs:
+    - id: robot_table
+      bodies: ["robot/*", "environment/table"]
+success:
+  logic: all
+  predicates:
+    - id: pickup_seen
+      type: debounced_ordered_event_latch
+      parameters:
+        entity: utility_knife_body
+        reference: authored_or_reset_housing_root_height
+        min_delta_m: 0.02
+        requires_current_during_acquisition:
+          right_hand_housing_contact: true
+          minimum_distinct_contact_owners: 2
+          palm_contact_required: false
+        housing_table_contact_current: false
+        moving_component_table_contact_current: false
+        debounce_physics_substeps: 4
+    - id: left_slider_contact_seen
+      type: debounced_ordered_physx_contact_latch
+      parameters:
+        arm: left
+        hand_bodies: [left_finger1_link4, left_finger2_link4, left_finger3_link4, left_finger4_link4, left_finger5_link4]
+        hand_region: any_distal_fingertip
+        object_region: slider_button_local_aabb
+        object_region_frame: assets/utility_knife/blade_slider
+        requires: [pickup_seen]
+        debounce_physics_substeps: 4
+        prepickup_contact: allowed_but_not_counted
+    - id: sampled_target_endpoint_reached
+      type: randomized_bidirectional_joint_endpoint
+      parameters:
+        joint: PrismaticJoint_utility_knife_3_middle
+        target_choice: [retracted_bottom, extended_top]
+        retracted_bottom_normalized_progress_max: 0.05
+        extended_top_normalized_progress_min: 0.95
+        requires_latched: [pickup_seen, left_slider_contact_seen]
+        requires_current_contact: false
+        requires_terminal_stability_hold: false
+  hold_steps: 1
+  timeout_steps: 1800
+failure:
+  recoverable_guards:
+    - id: ordinary_root_xy_displacement_from_reset
+      former_relative_threshold_m: 0.06
+      terminal: false
+      effect: clear_or_pause_progress_only
+    - id: blade_progress_before_pickup
+      normalized_progress_delta_from_reset_gt: 0.03
+      terminal: false
+      effect: do_not_credit_as_ordered_left_fingertip_slide_progress
+    - id: either_hand_incidental_nonbutton_contact
+      contact_force_threshold_n: 0.01
+      terminal: false
+      effect: diagnostic_only_left_button_region_still_required_for_completion
+  hard_terminal_failures:
+    - id: knife_dropped_after_pickup
+      type: debounced_post_pickup_drop_with_downward_evidence
+      parameters:
+        requires:
+          pickup_seen: true
+          right_grip_contact_now: false
+          contact_report_valid: true
+        any_of:
+          - pickup_lift_m_lte: 0.005
+          - all_of:
+              - pickup_peak_minus_current_lift_m_gte: 0.050
+              - body_velocity_report_valid: true
+              - any_of:
+                  - body_vertical_velocity_mps_lte: -0.02
+                  - housing_or_moving_table_impact_force_n_gt: 0.10
+        debounce_physics_substeps: 4
+      terminal: true
+    - id: nonfinite_physics_state
+      type: invalid_numeric_physics_state
+      immediate: true
+      terminal: true
+    - id: contact_views_unavailable
+      type: missing_required_physx_contact_view
+      immediate: true
+      terminal: true
+    - id: contact_report_invalid
+      type: invalid_or_nonfinite_physx_contact_report
+      immediate: true
+      terminal: true
+    - id: knife_escaped_handheld_workspace
+      type: articulation_root_or_body_outside_absolute_workspace
+      bounds_m:
+        min: [-0.65, -0.60, 0.84]
+        max: [0.30, 0.60, 1.44]
+      terminal: true
+    - id: blade_joint_out_of_limits
+      type: prismatic_joint_outside_authored_limits
+      parameters:
+        joint: PrismaticJoint_utility_knife_3_middle
+        authored_limits_m: [0.0, 0.08]
+        tolerance_m: 0.0001
+      terminal: true
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 1200
+  max_linear_velocity_mps: 5.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, contacts, success, blade_joint]
+  min_successful_episodes: 1
+  diagnostic_action_path:
+    flag: --scripted_as013_success=True
+    implementation_status: implemented
+    completion_evidence: false
+    right_hand_grasp_pose_live_calibration: pending
+    left_fingertip_slider_trajectory_live_calibration: pending
+  public_interaction_state:
+    name: knife_interaction_state
+    shape: [16]
+    recorded: true
+    layout:
+      - right_grip_housing_contact_force
+      - left_slider_moving_contact_force
+      - left_slider_contact_force
+      - table_support_contact_force
+      - right_grip_seen
+      - pickup_seen
+      - left_slider_contact_seen
+      - slide_progress_seen
+      - held_stable_now
+      - failed
+      - drive_assist_active
+      - drive_target
+      - ordered_slide_completion_seen
+      - target_direction
+      - target_progress
+      - target_endpoint_reached
+  public_metrics_recorded: true
+  full_debounce_latch_hidden_current_next_replay_contract: pending
+  fresh_process_full_replay_required: true
+  fresh_process_full_replay_status: pending
+  task_complete: false
+validation:
+  report: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/validation_report.yaml
+  fresh_low_pinning_reset_canary:
+    status: pass
+    evidence: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+    session_id: t40_slide_knife_blade-20260828-225215-140941-e2318df8
+    passed_scope: [low_pinning_allocator, first_reset, nine_contact_views, stable_recording_origin, bounded_idle_control_loop]
+    excluded_scope: [manual_bimanual_handheld_interaction, camera, successful_episode, fresh_process_replay, multi_seed_reset]
+    stable_origin_qualification:
+      metric: velocity_or_static_pose
+      task_velocity_gate_stable: false
+      task_static_pose_gate_stable: true
+      final_boundary_velocity_zero_source: existing_velocity_only_boundary_write
+    allocator_evidence_scope: >-
+      The journal does not serialize the eleven configured capacity readbacks;
+      code/static tests bind those values and the live canary proves that this
+      build crossed the allocator and first-reset boundary.
+    optional_dlss_context_error: auto_disabled_nonblocking
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0, min_collision_shapes: 9}
+    reachability:
+      min_target_fraction: 1.0
+      min_joint_limit_margin_rad: 0.05
+      max_position_error_m: 0.01
+      max_orientation_error_rad: 0.15
+      status: pending_fresh_asset_live_audit
+    contact: {max_penetration_m: 0.005, max_initial_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 1, max_failure_fraction: 0.0}
+    success:
+      min_positive_trials: 10
+      min_negative_trials: 10
+      max_false_positive_fraction: 0.0
+      max_false_negative_fraction: 0.0
+      status: pending_fresh_asset_live_audit
+    camera: {min_frames: 1, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0, max_root_translation_m: 0.01, max_blade_relative_drift_m: 0.002}
+    collection: {min_episodes: 1, max_schema_errors: 0, status: pending_fresh_asset_live_audit}

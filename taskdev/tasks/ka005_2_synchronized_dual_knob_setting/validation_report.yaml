@@ -1,0 +1,108 @@
+schema_version: 1
+task_id: B320-KA005-2
+task_name: t38_set_dual_knobs
+generated_at: "2026-08-22T21:38:52+08:00"
+status: formal_collection_enabled_operator_validation_pending
+
+static_validation:
+  python_compile: pass
+  pytest:
+    status: pass
+    count: 602
+    suites:
+      - handson/tests/test_b320_ka005_2.py
+      - handson/tests/test_recording_origin.py
+      - handson/tests/test_physx_ground_truth.py
+      - handson/tests/test_isaaclab_abc_control_reuse.py
+      - handson/tests/test_b320_benchmark.py
+      - collection_ui/tests/test_b320_collection.py
+  asset_manifest_and_dependency_hashes: pass
+  source_archive_hashes: pass
+  usd_visual_layers:
+    status: pass
+    layers: 3
+    rigid_body_schemas: 0
+    collision_schemas: 0
+
+live_validation:
+  status: pass
+  smoke_runner: run_live_smoke.py
+  evidence: evidence/live_smoke.json
+  evidence_sha256: 88210fea0beacd2a9c04dd7771ed630ab2611027b5cc687a198bc12a9b426635
+  runtime:
+    isaac_sim: "5.1"
+    isaaclab: "2.3.2"
+    physics_hz: 120
+    control_hz: 30
+  seed: 20260822
+  randomized_reset_seed: 20260823
+  zero_action_steps: 30
+  actual_control_hz: 30.0313223728
+  simulation_realtime_factor: 1.0010440791
+  topology:
+    rigid_bodies: 3
+    colliders: 3
+    collider_types: [Cube, Cylinder, Cylinder]
+    revolute_dofs: [left_knob_joint, right_knob_joint]
+    contact_pairs: [LL, LR, RL, RR]
+  reset:
+    deterministic_marker_angles_match_targets: true
+    randomized_marker_angles_match_targets: true
+    fixture_rigid_reset_overlap: []
+    randomized_initial_joint_error_max_rad: 2.04e-08
+  stability:
+    base_drift_m: 0.0
+    joint_drift_rad: [0.0, 0.0]
+    fixture_world_z_m: [0.8899999996, 0.9882390374]
+  observation_space_contains_both_resets: true
+
+formal_initial_state_validation:
+  status: pass
+  evidence: evidence/formal_initial_state_validation.json
+  evidence_sha256: 9a116a7d4455f67703cc5471f63cea3afa689290158da970cdb5e541d623cff0
+  runtime: "Isaac Sim 5.1 / IsaacLab 2.3.2 formal recorder"
+  physx_ground_truth: true
+  stable_recording_origin: true
+  arm_render: live
+  canonical_camera_render: deferred_postrender
+  initial_reset:
+    seed: 20260827
+    physics_steps: 180
+    stable_truth_steps: 60
+    contact_views_readable: [LL, RR, LR, RL]
+    maximum_penetration_depth_m: 0.0
+    final_rotation_drift_rad: 2.9802322387695312e-08
+  manual_r_hard_reset:
+    status: pass
+    next_seed: 20260828
+    scene_generation: 1
+    simulation_app_reused: true
+    physics_steps: 180
+    stable_truth_steps: 60
+    post_reset_control_frames_completed: true
+  ui_preview_start_reset_stop:
+    status: pass
+    max_steps: 100
+    returncode: 0
+    repeated_reset: false
+
+visual_preview:
+  status: pass
+  evidence: evidence/asset_preview.png
+  evidence_sha256: 245896c8b86edad3b14165bce3b7bf59509cdf623d9ba87b687dbf8713938437
+  scope: "Asset/layout preview only; not canonical camera certification."
+
+claims:
+  task_complete: false
+  live_physx_validated: true
+  physical_success_validated: false
+  camera_validated: false
+  operator_accepted: false
+  collection_validated: false
+  fresh_replay_validated: false
+  formal_collection_certified: false
+
+release_gate:
+  collection_support_registered: true
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true

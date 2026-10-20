@@ -1,0 +1,81 @@
+schema_version: 1
+task:
+  id: p006_side_release_buckle_align_press
+  benchmark_id: P0-06
+  title: "P0-06 Side-Release Buckle Align and Press"
+  description: "The right hand stabilizes a female buckle while the left hand aligns and presses the male tongues into its opening. The task stops after the press and has no pull test."
+  taxonomy:
+    family: assembly
+    interactions: [role_specific_bimanual_grasp, precision_alignment, contact_rich_insertion, stabilized_press_fit]
+    horizon: medium
+    handedness: bimanual
+source:
+  origin: open_source
+  attribution: "3DP6 Side Release Buckle - 25mm"
+  reference: "https://www.3dp6.com/library/side-release-buckle-25mm"
+  license: CC0-1.0
+robot:
+  arms: {model: rokae, count: 2}
+  hands: {model: wuji_gen1, generation: 1, count: 2}
+assets:
+  - id: female_side_release_buckle
+    path: taskdev/tasks/p006_side_release_buckle_align_press/assets/side_release_buckle_cc0/female_buckle.usda
+    sha256: ac104be962dc5c83bf43173893e6db4f36be8a5b514e7159030c7958415b56ed
+    mass_kg: 0.12
+  - id: male_side_release_buckle
+    path: taskdev/tasks/p006_side_release_buckle_align_press/assets/side_release_buckle_cc0/male_buckle.usda
+    sha256: 04d0e655310a9ba23ca25edc75b1a1d9963eebe779bc286be7c1bf192b2dc065
+    mass_kg: 0.09
+    derivative: "Matching visual/convex entry chamfer inside each original latch-tooth bound; outer tongues compress inward by 4 mm."
+reset:
+  seedable: true
+  nominal:
+    female_position_m: [-0.18, -0.115, 0.892]
+    male_position_m: [-0.18, 0.135, 0.892]
+    yaw_deg: 90.0
+  randomization:
+    root_x_m: {distribution: uniform, half_range: 0.012}
+    root_y_m: {distribution: uniform, half_range: 0.010}
+    root_yaw_deg: {distribution: uniform, half_range: 4.0}
+  invariants: [assets_present, finite_state, separated, functional_faces_opposed, no_penetration_above_0_005_m, not_initially_successful]
+contact:
+  monitored_pairs:
+    - {id: right_female, bodies: ["robot/right_hand/*", female_side_release_buckle]}
+    - {id: left_male, bodies: ["robot/left_hand/*", male_side_release_buckle]}
+    - {id: buckle_body, bodies: [female_side_release_buckle, male_side_release_buckle]}
+    - {id: left_male_tongue_neg, bodies: ["robot/left_hand/*", "male_side_release_buckle/OuterTongueNeg"]}
+    - {id: left_male_tongue_pos, bodies: ["robot/left_hand/*", "male_side_release_buckle/OuterTonguePos"]}
+  mutual_contact_links: [male_side_release_buckle, "male_side_release_buckle/OuterTongueNeg", "male_side_release_buckle/OuterTonguePos"]
+  diagnostic_pairs:
+    - {id: robot_table, bodies: ["robot/*", environment/table]}
+  penetration_gate: {pair: buckle_body, max_m: 0.005}
+  grip_friction: {static: 1.10, dynamic: 0.90, regions: [female_rear_bar, male_rear_housing]}
+  insertion_friction: {static: 0.75, dynamic: 0.62}
+success:
+  logic: ordered_all
+  predicates:
+    - {id: right_female_role, type: physical_contact, min_force_n: 0.10}
+    - {id: left_male_role, type: physical_contact, min_force_n: 0.10}
+    - {id: transverse_alignment, type: distance, max_m: 0.015}
+    - {id: axis_alignment, type: angle, max_deg: 12.0}
+    - {id: body_contact, type: physical_contact, min_force_n: 0.10}
+    - {id: insertion_depth, type: axial_depth, min_m: 0.018}
+    - {id: latch_dwell, type: consecutive_control_steps, min: 5}
+    - {id: stable_hold, type: consecutive_control_steps, min: 12}
+  pull_test_required: false
+  timeout_steps: 720
+camera:
+  required_views: [head, wrist_left, wrist_right]
+  minimum_resolution: [640, 480]
+stability:
+  physics_hz: 120
+  control_hz: 30
+  minimum_seconds: 10
+collection:
+  format: zarr_v1
+  recorder: scripts/record_demos_zarr.py
+  min_successful_episodes: 3
+  fresh_process_replay_required: true
+validation:
+  contract: taskdev/tasks/p006_side_release_buckle_align_press/ACCEPTANCE.md
+  report: taskdev/tasks/p006_side_release_buckle_align_press/validation_report.yaml

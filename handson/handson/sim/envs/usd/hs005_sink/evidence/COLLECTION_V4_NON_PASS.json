@@ -1,0 +1,72 @@
+{
+  "schema": "dexjoco.b320_hs005.collection_non_pass_evidence.v1",
+  "benchmark_task_id": "B320-HS005",
+  "task_name": "b320_hs005_sink_bottle_stabilized_scrub",
+  "task_complete": false,
+  "run_id": "b320-hs005-collection-v4-20260817T180736Z-fdba871e",
+  "source_commit": "bec8cf1000a1d2c7d3712cfe0ae14d56753f4a50",
+  "scheduler_sha256": "3bca73f695658fd4bbe8dcf4944754a595d662b472344c57ea230f30c5792d63",
+  "policy_sha256": "aa2346d67200334db837decba8ec74477153e42df179be4dd9fcdaaafe418fd4",
+  "runtime": "Isaac Sim 5.1 + IsaacLab 2.3.2 + PhysX",
+  "host": "hp-2",
+  "physical_gpu_index": 7,
+  "physical_gpu_uuid": "GPU-961f572e-9a26-f779-8132-9fb377bdd3bc",
+  "logical_cuda_index": 0,
+  "producer": {
+    "result": "NON_PASS",
+    "exit_code": 2,
+    "collection_pass": false,
+    "success": false,
+    "elapsed_wall_seconds": 1155.7613093852997,
+    "frame_count": 404,
+    "planned_frame_count": 404,
+    "trajectory_state_write_count": 0,
+    "stable_recording_origin_passed": true,
+    "authoritative_usd_ready": true,
+    "contact_view_count": 3,
+    "camera_count": 3,
+    "runtime_truth_valid": true
+  },
+  "failure": {
+    "reason": "empirical world-residual prewarp missed both same-side task roles",
+    "left_bottle_contact_seen": false,
+    "right_brush_contact_seen": false,
+    "maximum_contact_force": 0.0,
+    "coverage_mask": [0, 0, 0],
+    "order_progress": 0,
+    "scrub_path_m": 0.0,
+    "frame_83": {
+      "right_command_xyz": [-0.29178956, 0.01146917, 0.95746416],
+      "right_physical_palm_xyz": [-0.33711094, -0.31851569, 1.01655078],
+      "left_command_xyz": [0.20349537, -0.12013409, 0.9171645],
+      "left_physical_palm_xyz": [-0.1710505, 0.37074518, 1.06538486]
+    }
+  },
+  "zarr": {
+    "path": "/mnt/pfs/luotianwei/dexjoco-taskdev-runs/b320-hs005-collection-v4-20260817T180736Z-fdba871e/evidence/b320_hs005_demo_000__physx_v3/replay.zarr",
+    "sha256": "2378958bf3753bddd205dbcfa3043cb832a65817522686da16aa6258916bfcfb",
+    "array_count": 324,
+    "all_arrays_action_aligned": true,
+    "raw_action_shape": [404, 54],
+    "raw_actions_finite": true
+  },
+  "preview": {
+    "path": "/mnt/pfs/luotianwei/dexjoco-taskdev-runs/b320-hs005-collection-v4-20260817T180736Z-fdba871e/evidence/b320_hs005_demo_000__physx_v3/final_main.png",
+    "sha256": "66aa439d9127dd7cb6053d472df0b9c5a3391500d420cbc482bc34466ac09627",
+    "width": 640,
+    "height": 480,
+    "byte_count": 922446,
+    "mean_rgb": 196.4143,
+    "black_fraction": 0.0
+  },
+  "cleanup": {
+    "scheduler_status": "stopped",
+    "exact_owned_process_group_only": true,
+    "descendants_cleaned": true,
+    "lease_released": true,
+    "stopped_at": "2026-08-17T18:28:25.047638+00:00",
+    "cleanup_exit_zero_is_not_producer_pass": true
+  },
+  "fresh_replay_attempted": false,
+  "promotion_allowed": false
+}

@@ -1,0 +1,17 @@
+env_name: t34_roll_ball_through_gate
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "The tennis ball may start on either side of the centred cracker and sugar boxes. Use the corresponding hand to roll or flick it fully through the opening: left hand for left-to-right or right hand for right-to-left. Keep the ball on the table; do not pick up or throw it, and do not touch either box with the hand or ball because any box contact resets the attempt. The ball does not need to stop after passing."
+robot_type: dual_arm
+time_limit_seconds: 45
+skills:
+  - nonprehensile_manipulation
+  - rolling
+  - directional_contact
+  - sim2real_ycb
+objects:
+  - tennis_ball
+  - 003_cracker_box
+  - 004_sugar_box

@@ -1,0 +1,17 @@
+env_name: t11_line_up_blocks
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Use only the set square tool to push three scattered wood blocks onto the baseline and align them side by side."
+robot_type: single_arm
+time_limit_seconds: 100
+skills:
+  - nonprehensile_manipulation
+  - pushing
+  - environment_contact
+  - multi_object_alignment
+objects:
+  - 036_wood_block
+  - set_square
+  - baseline_pad

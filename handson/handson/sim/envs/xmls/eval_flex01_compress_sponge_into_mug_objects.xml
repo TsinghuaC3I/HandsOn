@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="eval_flex01_compress_sponge_into_mug_objects">
+  <!-- The only task objects are the tracked, unscaled Lightwheel YCB mug
+       below and the tracked YCB sponge authored as a native PhysX volume
+       deformable before the first Isaac reset. -->
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <worldbody>
+    <body name="ycb11_mug" pos="-0.24 0.12 0.9307645">
+      <freejoint name="ycb11_mug_freejoint" />
+      <geom name="ycb11_mug_visual" class="a_series_ycb_visual" material="mug_material" mesh="mug_vis" />
+      <geom name="ycb11_mug_collision_1" class="a_series_ycb_collision" mesh="mug_Collider1_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_2" class="a_series_ycb_collision" mesh="mug_Collider2_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_3" class="a_series_ycb_collision" mesh="mug_Collider3_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_4" class="a_series_ycb_collision" mesh="mug_Collider4_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_5" class="a_series_ycb_collision" mesh="mug_Collider5_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_6" class="a_series_ycb_collision" mesh="mug_Collider6_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_7" class="a_series_ycb_collision" mesh="mug_Collider7_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_8" class="a_series_ycb_collision" mesh="mug_Collider8_m_collision" density="619.54" />
+      <!-- Collider 9 is the source mug's flat 32-sided bottom puck.  Its
+           source-equivalent analytic cylinder avoids PhysX repeatedly
+           changing the active mesh facet while the mug rests on the table. -->
+      <geom name="ycb11_mug_collision_9" class="a_series_ycb_collision" type="cylinder" size="0.03751 0.005112" pos="0.001814 0.014081 -0.0356525" density="619.54" />
+      <geom name="ycb11_mug_collision_10" class="a_series_ycb_collision" mesh="mug_Collider10_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_11" class="a_series_ycb_collision" mesh="mug_Collider11_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_12" class="a_series_ycb_collision" mesh="mug_Collider12_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_13" class="a_series_ycb_collision" mesh="mug_Collider13_m_collision" density="619.54" />
+      <geom name="ycb11_mug_collision_14" class="a_series_ycb_collision" mesh="mug_Collider14_m_collision" density="619.54" />
+    </body>
+  </worldbody>
+</mujoco>

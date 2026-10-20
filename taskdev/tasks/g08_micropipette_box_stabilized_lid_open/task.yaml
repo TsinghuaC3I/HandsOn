@@ -1,0 +1,219 @@
+schema_version: 1
+task:
+  id: t18_open_micropipette_box
+  benchmark_id: G08
+  title: "G08 Micropipette Box Stabilized Lid Open"
+  description: "The 20%-reduced box base is reset at a seeded random XY/yaw pose (x +/-0.12 m, y +/-0.12 m, yaw +/-30 deg) and fixed to the world. Open the real hinged lid from right to left to at least 75 degrees. Success is immediate at that physical joint threshold; either hand may be used, with no assigned-contact, release, or stable-hold requirement."
+  taxonomy:
+    family: articulation
+    interactions: [revolute_joint_target, geometric_completion]
+    horizon: short
+    handedness: either_hand
+source:
+  origin: adapted
+  attribution: "User-provided archive; the archive contains no author, upstream source, copyright, or license metadata."
+  reference: "ZRYZ_LW_Assets_20260820.zip; archive SHA-256 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce"
+  license: unresolved
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/arena_arm_hand_lw_native_articulation_rokae_wuji1.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/arena_arm_hand_lw_native_articulation_rokae_wuji1.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.65, -0.45, 0.89]
+    # The open-lid swept envelope and ordinary operator reach use this height;
+    # leave margin so a valid wrist target is not rejected by the workspace gate.
+    max: [0.25, 0.45, 1.48]
+  targets:
+    - id: left_box_base_stabilization
+      arm: left
+      frame: world
+      # Optional brace target on the visible/source-authored box wall. It is
+      # not a success predicate and no hidden grip proxy is composed here.
+      position_m: [-0.28, 0.120, 0.976]
+      orientation_xyzw: [0.0, 0.0, 1.0, 0.0]
+      clearance_m: 0.02
+    - id: right_lid_grip
+      arm: right
+      frame: world
+      # Optional approach target on the source-authored lid free edge. The
+      # authored edge is near y=0 in the composed closed frame; its hinge/body
+      # origin is at about +0.096 m after the 0.40 composition scale.
+      position_m: [-0.28, -0.096, 1.000]
+      orientation_xyzw: [0.0, 0.0, 1.0, 0.0]
+      clearance_m: 0.02
+assets:
+  - id: micropipette_box
+    path: handson/handson/sim/envs/usd/lw_native_articulation/assets/MicropipetteBox001/MicropipetteBox001.usd
+    kind: usd
+    required: true
+    scale_m: [0.40, 0.40, 0.40]
+    sha256: 6a8a143fe0a72e3b843c38e095057394ddb1b40e7dd1bf08c5185087bc031255
+    source_archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+    provenance: user_provided
+    license_status: unresolved
+    composition:
+      prim_path: /World/Task/LWNativeArticulation/micropipette_box
+      translation_m: [-0.280, 0.0, 0.944810232]
+      # WXYZ identity keeps the source +Y hinge on the left-hand side (+Y)
+      # and the lid rim on the right-hand side (-Y); negative X joint motion
+      # therefore opens right-to-left in the calibrated head-camera view.
+      orientation_wxyz: [1.0, 0.0, 0.0, 0.0]
+      fixed_root: true
+      authored_support_gap_m: 0.000249710
+    articulation:
+      body_count_from_static_source_audit: 2
+      source_collider_count_from_static_audit: 25
+      # G08 uses only the source-authored body colliders. The later hidden
+      # base/lid grasp cuboids were removed because they changed the operator
+      # contact response and could inject a pop-open hinge impulse.
+      integration_grip_collider_count: 0
+      final_composed_collider_count_expected: 25
+      grip_proxy_paths: []
+      ordered_dofs: [Lid001_joint]
+      # The source USD is preserved at -90 degrees.  The composed stage
+      # retains the authored physical hard stop.
+      lower_limit_deg: -90.0
+      upper_limit_deg: 0.0
+      source_authored_lower_limit_deg: -90.0
+      task_hard_stop_deg: 90.0
+    collision:
+      enabled: true
+      approximation: source_authored_convex_collision
+      integration_mass_policy: lw_native_finite_mass_properties_v1
+      # The composed GPU stage uses a bounding cube for the thin bottom
+      # support collider while preserving the source mesh and visual bounds.
+      gpu_support_collider_approximation: boundingCube
+      # Live Isaac Sim 5.1 reported these authored thin convexes as GPU
+      # incompatible. Their tight local AABBs are used only for collision;
+      # visible geometry and articulation topology remain unchanged.
+      gpu_fallback_replacement_approximation: boundingCube
+      gpu_fallback_replacement_colliders:
+        - MicropipetteBox001_Collider14
+        - MicropipetteBox001_Collider22
+        - MicropipetteBox001_Collider23
+        - MicropipetteBox001_Lid001_Collider4
+        - MicropipetteBox001_Lid001_Collider6
+        - MicropipetteBox001_Lid001_Collider7
+        - MicropipetteBox001_Lid001_Collider9
+reset:
+  seedable: true
+  max_settle_steps: 240
+  randomization:
+    initial_lid_angle_deg: {fixed: 0.0, reason: closed_gravity_stable_upper_hard_stop}
+    root_x_m: {uniform: [-0.400, -0.160], nominal: -0.280}
+    root_y_m: {uniform: [-0.120, 0.120], nominal: 0.0}
+    root_yaw_deg: {uniform: [-30.0, 30.0], nominal: 0.0}
+    root_policy: reset_positioned_native_fixed_base
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - task_not_initially_successful
+    - shared_mirrored_bimanual_arm_home
+    - randomized_fixed_base_inside_audited_workspace
+    - native_world_fixed_joint_truth_available
+    - native_articulation_truth_available
+    - assigned_contact_truth_available
+contact:
+  thresholds_n: {on: 0.15, off: 0.05}
+  collision_safety:
+    thin_lid_swept_ccd: true
+    source_contact_offset_m: 0.002
+    hand_stage_ccd: true
+    hand_solver_position_iterations: 64
+    hand_solver_velocity_iterations: 8
+    hand_max_depenetration_velocity_mps: 0.40
+    # Retain the previously validated swept-CCD path. Enabling speculative CCD
+    # on every Wuji link triggered CUDA 700 in an earlier Isaac Sim 5.1 layout.
+    hand_stage_speculative_ccd: false
+  monitored_pairs:
+    - id: left_hand_box_base
+      bodies: ["robot/left_hand/*", "assets/micropipette_box/MicropipetteBox001"]
+      max_penetration_m: 0.005
+    - id: right_hand_box_lid
+      bodies: ["robot/right_hand/*", "assets/micropipette_box/MicropipetteBox001_Lid001"]
+      max_penetration_m: 0.005
+    - id: box_base_table_support
+      bodies: ["assets/micropipette_box/MicropipetteBox001", "environment/table"]
+      max_penetration_m: 0.0005
+      diagnostic_only: true
+      required_during_stable_origin: false
+      required_during_success_evaluation: false
+  forbidden_pairs:
+    - id: arm_table
+      bodies: ["robot/arms/*", "environment/table"]
+success:
+  logic: all
+  timebase: physics_substeps_120_hz
+  predicates:
+    - id: lid_opened
+      type: joint_threshold
+      parameters: {dof: Lid001_joint, direction: negative, threshold_deg: -75.0, hard_stop_deg: -90.0, immediate: true}
+  progress_guard_policy:
+    arming: after_recording_origin_accepted
+    fixed_root_integrity:
+      translation_max_m: 0.030
+      rotation_max_deg: 8.0
+      recoverable: true
+      on_violation: clear_current_attempt_progress_without_terminal_reset
+  terminal_policy:
+    gross_root_escape:
+      translation_exclusive_max_m: 0.200
+      rotation_exclusive_max_deg: 60.0
+      consecutive_hold_s: 0.50
+    first_terminal_reason:
+      structured: true
+      emitted_before_reset_transaction: true
+  # The position threshold is evaluated on every physics substep and latches
+  # success immediately; hand contact and release state are not predicates.
+  hold_steps: 1
+  timeout_steps: 10800
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  required_framing: [left_stabilizing_hand, right_opening_hand, box_base, lid_hinge]
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 0.015
+  max_angular_velocity_radps: 0.08
+  stable_origin_max_dof_speed_rad_s: 0.08
+  table_support_measurement: diagnostic_only
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  recorder: scripts/record_demos_zarr.py
+  fresh_replay: scripts/certify_physx_replay.py
+  required_streams: [action, proprioception, rgb_head, contacts, success, lw_joint_state, lw_contact_state, lw_task_state]
+  min_successful_episodes: 3
+  operator_test_collection_enabled: true
+  launch_scope: operator_test
+validation:
+  report: taskdev/tasks/t18_open_micropipette_box/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 2.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

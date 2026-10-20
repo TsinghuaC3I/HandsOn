@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ceramic Plate Set
+* source:	https://sketchfab.com/3d-models/ceramic-plate-set-6d059ad35b194bc589223d7c172666ed
+* author:	certifieddoc (https://sketchfab.com/certifieddoc)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ceramic Plate Set" (https://sketchfab.com/3d-models/ceramic-plate-set-6d059ad35b194bc589223d7c172666ed) by certifieddoc (https://sketchfab.com/certifieddoc) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

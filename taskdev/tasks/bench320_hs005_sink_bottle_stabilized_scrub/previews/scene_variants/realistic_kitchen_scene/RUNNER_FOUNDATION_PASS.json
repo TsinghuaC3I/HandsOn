@@ -1,0 +1,8 @@
+{
+  "foundation_pass": true,
+  "runner_rc": 0,
+  "schema": "hs005_core_scene_foundation_marker_v1",
+  "summary_path": "/home/user/handson-main/taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/previews/scene_variants/realistic_kitchen_scene/foundation_summary.json",
+  "summary_sha256": "c6a207e7ba2314746ac108b4a4602a7661d36926d50f657a410ec3a4b4bc1eae",
+  "task_complete": false
+}

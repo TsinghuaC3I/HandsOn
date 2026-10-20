@@ -1,0 +1,5 @@
+XY5 selected visual source
+
+This work is based on "Lunchbox" (https://sketchfab.com/3d-models/lunchbox-dc89faa39e2f4f1096630597e4ea6ccb) by tjgatt (https://sketchfab.com/tjgatt), licensed under CC BY 4.0 (http://creativecommons.org/licenses/by/4.0/).
+
+The asset is used as a render-only metallic lunchbox overlay for XY5. The existing Clear_Box and Box_lid collision bodies and articulation remain authoritative.

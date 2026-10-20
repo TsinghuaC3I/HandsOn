@@ -1,0 +1,141 @@
+{
+  "collision_paths": {
+    "bottle": [
+      "/HS005Assets/Bottle/Colliders/body",
+      "/HS005Assets/Bottle/Colliders/shoulder",
+      "/HS005Assets/Bottle/Colliders/cap"
+    ],
+    "brush": [
+      "/HS005Assets/Brush/Colliders/bristles",
+      "/HS005Assets/Brush/Colliders/ferrule",
+      "/HS005Assets/Brush/Colliders/handle",
+      "/HS005Assets/Brush/Colliders/stability_foot"
+    ],
+    "dish_soap": [
+      "/HS005Assets/DishSoap/Colliders/body",
+      "/HS005Assets/DishSoap/Colliders/neck",
+      "/HS005Assets/DishSoap/Colliders/pump"
+    ],
+    "sink": [
+      "/HS005Assets/Sink/Collider",
+      "/HS005Assets/SceneCollision/front_wall",
+      "/HS005Assets/SceneCollision/back_wall",
+      "/HS005Assets/SceneCollision/left_wall",
+      "/HS005Assets/SceneCollision/right_wall",
+      "/HS005Assets/SceneCollision/front_countertop",
+      "/HS005Assets/SceneCollision/back_countertop",
+      "/HS005Assets/SceneCollision/left_countertop",
+      "/HS005Assets/SceneCollision/right_countertop"
+    ],
+    "sponge": [
+      "/HS005Assets/Sponge/Colliders/body"
+    ]
+  },
+  "context_prop_policy": {
+    "dish_soap": "static physical context; not a success entity",
+    "sponge": "static physical context; not a success entity"
+  },
+  "countertop_z": 1.011315,
+  "joint_policy": {
+    "authored_joint_count": 0,
+    "bottle": "free rigid body; no articulation joint",
+    "brush": "free rigid body; no articulation joint",
+    "sink": "static collision owner; no joint required"
+  },
+  "poses": {
+    "bottle": [
+      -0.1,
+      0.11,
+      0.895
+    ],
+    "brush": [
+      -0.191,
+      -0.125,
+      0.9090212400000001
+    ],
+    "dish_soap": [
+      0.16,
+      0.24,
+      0.9930216329714998
+    ],
+    "kitchen_translation": [
+      -1.135,
+      -2.8,
+      0.18151906000000007
+    ],
+    "sink": [
+      -0.15,
+      0.0,
+      0.895
+    ],
+    "sponge": [
+      0.16,
+      -0.18,
+      1.0143149999999999
+    ]
+  },
+  "scene_path": "scene/hs005_assets.usda",
+  "schema": "hs005_asset_layer_v5",
+  "sink_basin_bounds": [
+    -0.34,
+    0.04,
+    -0.2,
+    0.2
+  ],
+  "sink_collision_policy": "full_height_basin_and_open_countertop_ring_v1",
+  "sink_collision_reason": "analytic scene collision seals the basin and countertop while preserving the measured opening and reset-hand clearance",
+  "sink_collision_source": "../assets/modern_apartment_kitchen/sink_collision_source.ply",
+  "sink_floor_top_z": 0.895,
+  "sink_rim_top_z": 1.01367905,
+  "source_scale_xyz": {
+    "bottle": [
+      0.05,
+      0.05,
+      0.05
+    ],
+    "brush": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "dish_soap": [
+      0.035,
+      0.035,
+      0.035
+    ],
+    "kitchen": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "sink": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "sponge": [
+      0.018,
+      0.018,
+      0.018
+    ]
+  },
+  "table_top_z": 0.89,
+  "visual_axis_corrections_deg": {
+    "bottle_rotate_x": 90.0,
+    "brush_rotate_x": 0.0,
+    "dish_soap_rotate_x": 90.0,
+    "kitchen_rotate_xyz": [
+      90.0,
+      0.0,
+      -90.0
+    ],
+    "sponge_rotate_x": 90.0
+  },
+  "visual_paths": {
+    "bottle": "../assets/cc_by_lukemodels75_water_bottle/water_bottle_visual.usd",
+    "brush": "../assets/cc_by_amhyde_cleaning_brush/cleaning_brush_visual.usd",
+    "dish_soap": "../assets/cc_by_mike_nov_dishwashing_dispenser/dishwashing_dispenser_visual.usd",
+    "kitchen": "../assets/modern_apartment_kitchen/modern_apartment_kitchen.usd",
+    "sponge": "../assets/cc_by_requital_dish_sponge/dish_sponge_visual.usd"
+  }
+}

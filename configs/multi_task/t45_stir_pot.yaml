@@ -1,0 +1,7 @@
+env_name: t45_stir_pot
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Hold the Dutch oven fixed with the left hand while the right hand moves the spoon through six ordered checkpoints and over 650 degrees."
+robot_type: dual_arm
+time_limit_seconds: 40
+skills: [bimanual_stabilization, tool_use, circular_stirring]
+objects: [dutch_oven, spoon]

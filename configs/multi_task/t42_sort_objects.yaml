@@ -1,0 +1,41 @@
+env_name: t42_sort_objects
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Find six targets among the clutter and sort boxes, cans, and dishes into their marked baskets. Transfer the far-right target through both hands before placing it."
+robot_type: dual_arm
+scene: cluttered_tabletop
+time_limit_seconds: 210
+skills:
+  - semantic_classification
+  - repeated_pick_and_place
+  - bimanual_handoff
+  - long_horizon_progress
+objects:
+  - 003_cracker_box
+  - 004_sugar_box
+  - 005_tomato_soup_can
+  - 007_tuna_fish_can
+  - 024_bowl
+  - 025_mug
+  - basket_x3
+distractors: 12
+ui_feedback:
+  - category_icons_and_completed_counts
+  - wrong_basket_border_red
+workflow:
+  - observe_categories
+  - clear_occlusion
+  - sort_six_targets
+  - complete_bimanual_handoff
+  - place_in_matching_baskets
+success_criteria:
+  - all_six_targets_in_correct_baskets
+  - no_wrong_objects
+  - at_least_one_valid_bimanual_handoff
+  - all_baskets_upright
+references:
+  - https://arxiv.org/abs/2607.04434
+  - https://scenesmith.github.io/
+  - https://github.com/LightwheelAI/Lightwheel-YCB

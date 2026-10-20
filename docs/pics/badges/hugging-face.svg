@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="32" viewBox="0 0 152 32" role="img" aria-label="Hugging Face">
+  <title>Hugging Face</title>
+  <rect x="0.5" y="0.5" width="151" height="31" rx="6" fill="#EAF3F9" stroke="#C7DCEB"/>
+  <g transform="translate(11 7) scale(.75)" fill="none" stroke="#183449" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></g>
+  <text x="39" y="21" fill="#183449" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">Hugging Face</text>
+</svg>

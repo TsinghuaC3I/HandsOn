@@ -1,0 +1,73 @@
+schema_version: 1
+task_id: synchronized_dual_knob_setting
+manifest_sha256: bac3721d502e3b540cb49eb53c8e743a7f77e04f2c411f44f73e03fc8d85cbfb
+generated_at: "2026-08-19T18:36:00+08:00"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+checks:
+  schema:
+    status: pass
+    summary: "Task registration, semantics, public action wrapper, UI launch path, and asset contracts pass focused regression tests."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g7_regression_hp10/pytest.log
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g7_regression_hp10/pytest_policy_wrapper.log
+    metrics: {tests_passed: 17, tests_failed: 0}
+  assets:
+    status: pass
+    summary: "The self-authored asset has exactly three rigid bodies, three analytic colliders, and two named revolute joints; regeneration is byte-exact."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g2_asset_regeneration_hp10_gpu0_v2
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g3_live_smoke_hp10_gpu0_v5/validation.json
+    metrics:
+      rigid_bodies: 3
+      colliders: 3
+      revolute_joints: 2
+      asset_sha256: 8a36ad81fa298f372af66c418560344912f6620c301d4f90998f445e1c9b7bcf
+  reachability:
+    status: pass
+    summary: "Both native ROKAE/Wuji hands reach and physically turn their assigned knobs through the public 46-D action interface."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g5_physical_success_hp10_gpu0_v7
+    metrics: {left_final_deg: -25.888331, right_final_deg: 33.584566, assigned_hands: 2}
+  contact:
+    status: pass
+    summary: "Success trajectory has assigned contact forces on both knobs and no cross-hand contact."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g5_physical_success_hp10_gpu0_v7/physical_success.json
+    metrics: {left_assigned_force_n: 17.8653, right_assigned_force_n: 15.9763, left_cross_force_n: 0.0, right_cross_force_n: 0.0}
+  reset:
+    status: pass
+    summary: "Three independent live Isaac seed resets are finite, stable, and outside the success state."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g3_live_smoke_hp10_gpu0_v5/validation.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g3_multiseed_hp10_gpu0_v1
+    metrics: {trials: 3, seeds: [20260819, 20260820, 20260821], failures: 0, zero_action_knob_drift_deg: 0.0, panel_root_drift_m: 0.0}
+  success:
+    status: pass
+    summary: "A live public-action trajectory and its independently saved collection episode terminate successfully only after the 15-frame synchronized hold."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g5_physical_success_hp10_gpu0_v7/physical_success.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g6_collection_ui_hp10_gpu0_v3/collection_validation.json
+    metrics: {positive_trials: 2, false_positive_trials: 0, hold_frames: 15, sum_residual_deg: -0.527103, difference_residual_deg: 2.303765}
+  camera:
+    status: pass
+    summary: "Main and both wrist streams are live, non-black, changing, task-relevant, and manually inspected."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g3_live_smoke_hp10_gpu0_v5
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g6_collection_ui_hp10_gpu0_v3/validation_frames
+    metrics: {streams: 3, saved_frames_per_stream: 140, main_resolution: [640, 640], wrist_resolution: [848, 480], maximum_black_fraction: 0.048276}
+  stability:
+    status: pass
+    summary: "Zero-action and successful rollouts stay finite without panel/root drift or exploding bodies."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g3_live_smoke_hp10_gpu0_v5/validation.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g5_physical_success_hp10_gpu0_v7/physical_success.json
+    metrics: {minimum_live_seconds: 2.0, nan_count: 0, exploding_body_count: 0}
+  collection:
+    status: pass
+    summary: "Company collection UI saved one deterministic manual-only PhysX-v3 episode with exact public actions, Zarr ground truth, terminal success, and three H.264 videos."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g6_collection_ui_hp10_gpu0_v3/start_response.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/synchronized_dual_knob_setting/g6_collection_ui_hp10_gpu0_v3/collection_validation.json
+    metrics: {episodes: 1, steps: 140, action_width: 46, action_max_abs_diff: 0.0, video_streams: 3, schema_errors: 0}

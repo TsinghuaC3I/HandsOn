@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="p005_key_padlock_objects">
+  <!--
+    P0-05 uses the YCB key and padlock appearance at a task-local 1.2x scale.
+    One primary blade and its original rear ring are retained; the spare
+    rigid blade is omitted from both visual and collision geometry because it
+    obstructed the side keyway. The original source is kept unchanged; the task-local
+    derivative scales the retained key components and padlock consistently.
+    The original rear ring is neither replaced nor thickened. The key's
+    dynamic collision meshes are pre-scaled in the task-local asset bundle;
+    keeping their MJCF scale at 1 avoids a PhysX GPU convex-mesh scale path.
+    Task-local collision proxies leave the side keyway and shackle channels
+    physically open while preserving the YCB appearance.
+  -->
+  <compiler angle="radian" autolimits="true" />
+  <default>
+    <default class="p005_visual">
+      <geom contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="p005_key_collision">
+      <geom group="0" density="1200" friction="0.78 0.010 0.0002"
+            solref="0.004 1" solimp="0.96 0.995 0.001"
+            rgba="0 0 0 0" />
+    </default>
+    <default class="p005_lock_collision">
+      <geom group="0" density="2200" friction="0.82 0.010 0.0002"
+            solref="0.004 1" solimp="0.96 0.995 0.001"
+            rgba="0 0 0 0" />
+    </default>
+    <default class="p005_keyway_collision">
+      <geom group="0" density="2200" friction="0.30 0.004 0.0001"
+            solref="0.006 1" solimp="0.92 0.990 0.002"
+            rgba="0 0 0 0" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="p005_key_texture"
+             file="lightwheel_ycb/key_berkeley_meshes/visuals/T_key_berkeley_meshes_BC001.png" />
+    <texture type="2d" name="p005_padlock_texture"
+             file="lightwheel_ycb/padlock/visuals/T_padlock_BC001.png" />
+    <material name="p005_key_material" texture="p005_key_texture"
+              specular="0.40" shininess="0.30" />
+    <material name="p005_padlock_material" texture="p005_padlock_texture"
+              specular="0.32" shininess="0.24" />
+    <material name="p005_keyway_material" rgba="0.025 0.030 0.038 1"
+              specular="0.08" shininess="0.05" />
+    <material name="p005_goal_material" rgba="0.10 0.85 0.25 0.52"
+              specular="0" shininess="0" />
+    <mesh name="p005_key_visual_mesh" scale="1.2 1.2 1.2"
+          file="assets/p005_ycb_key_ring/visuals/key_berkeley_meshes_single_operable_key.obj" />
+    <mesh name="p005_key_collider01" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider1_m.obj" />
+    <mesh name="p005_key_collider02" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider2_m.obj" />
+    <mesh name="p005_key_collider04" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider4_m.obj" />
+    <mesh name="p005_key_collider05" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider5_m.obj" />
+    <mesh name="p005_key_collider06" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider6_m.obj" />
+    <mesh name="p005_key_collider07" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider7_m.obj" />
+    <mesh name="p005_key_collider08" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider8_m.obj" />
+    <mesh name="p005_key_collider09" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider9_m.obj" />
+    <mesh name="p005_key_collider10" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider10_m.obj" />
+    <mesh name="p005_key_collider11" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider11_m.obj" />
+    <mesh name="p005_key_collider12" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider12_m.obj" />
+    <mesh name="p005_key_collider13" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider13_m.obj" />
+    <mesh name="p005_key_collider14" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider14_m.obj" />
+    <mesh name="p005_key_collider15" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider15_m.obj" />
+    <mesh name="p005_key_collider16" scale="1 1 1"
+          file="assets/p005_ycb_key_ring/collision/key_berkeley_meshes_Collider16_m.obj" />
+    <mesh name="p005_padlock_visual_mesh" scale="1.2 1.2 1.2"
+          file="lightwheel_ycb/padlock/visuals/padlock.obj" />
+    <mesh name="p005_shackle_visual_mesh" scale="1.2 1.2 1.2"
+          file="lightwheel_ycb/padlock/visuals/padlock_prop.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="p005_padlock_body" pos="-0.300000 0.190000 0.932900000"
+          quat="1 0 0 0">
+      <freejoint name="p005_padlock_root" />
+      <geom name="p005_padlock_visual" class="p005_visual" type="mesh"
+            material="p005_padlock_material" mesh="p005_padlock_visual_mesh" />
+      <!--
+        The rear shell carries hand contact.  Its front edge stops at the
+        side-entry tunnel, so the key can travel 12 mm into the lock without
+        being forced through a solid proxy.
+      -->
+      <geom name="p005_padlock_rear_collision" class="p005_lock_collision"
+            type="box" size="0.016800000 0.014222222 0.019800000"
+            pos="-0.011400000 0 -0.022800000" />
+      <body name="p005_lock_cylinder" pos="0.029400000 0 -0.009720000">
+        <inertial pos="0 0 0" mass="0.012649" diaginertia="1.1098e-6 1.1098e-6 1.1098e-6" />
+        <joint name="p005_lock_cylinder_yaw" type="hinge" axis="-1 0 0"
+               range="0 1.3962634" damping="0.035" armature="0.001"
+               frictionloss="0.015" />
+        <!-- Guide slot rotates with the cylinder, not the free outer shell. -->
+        <geom name="p005_keyway_guide_left" class="p005_keyway_collision"
+              type="box" size="0.012000000 0.003000000 0.007200000"
+              pos="-0.012000000 -0.011160000 0" />
+        <geom name="p005_keyway_guide_right" class="p005_keyway_collision"
+              type="box" size="0.012000000 0.003000000 0.007200000"
+              pos="-0.012000000 0.011160000 0" />
+        <geom name="p005_keyway_guide_front" class="p005_keyway_collision"
+              type="box" size="0.012000000 0.014222222 0.002040000"
+              pos="-0.012000000 0 0.005760000" />
+        <geom name="p005_keyway_guide_back" class="p005_keyway_collision"
+              type="box" size="0.012000000 0.014222222 0.002040000"
+              pos="-0.012000000 0 -0.005760000" />
+        <geom name="p005_lock_cylinder_face" class="p005_visual" type="cylinder"
+              size="0.008000000 0.001333333" quat="0.7071068 0 0.7071068 0"
+              material="p005_keyway_material" />
+        <geom name="p005_keyway_indicator" class="p005_visual" type="box"
+              size="0.002160000 0.005760000 0.001200000" pos="0.001800000 0 0"
+              material="p005_goal_material" />
+        <site name="p005_keyhole" pos="0 0 0" size="0.002222222" rgba="0 0 0 0" />
+        <site name="p005_key_insertion_goal" pos="-0.012000000 0 0" size="0.002222222" rgba="0 0 0 0" />
+      </body>
+      <body name="p005_shackle_slide_body" pos="0 0 0.010666667">
+        <inertial pos="0 0 0" mass="0.077275" diaginertia="1.6647e-5 1.6647e-5 1.6647e-5" />
+        <joint name="p005_shackle_slide_joint" type="slide" axis="0 0 1"
+               range="0 0.030000000" damping="0.10" armature="0.002" frictionloss="0.04" />
+        <body name="p005_shackle">
+          <inertial pos="0 0 0.009777778" mass="0.168566" diaginertia="3.8818e-5 3.8818e-5 2.7869e-5" />
+          <joint name="p005_shackle_hinge_joint" type="hinge"
+                 pos="0.017306667 0 -0.008000000" axis="0 0 1"
+                 range="0 0.90" damping="0.08" armature="0.002" frictionloss="0.025" />
+          <geom name="p005_shackle_visual" class="p005_visual" type="mesh"
+                material="p005_padlock_material" mesh="p005_shackle_visual_mesh" />
+          <geom name="p005_shackle_arc" class="p005_lock_collision" type="capsule"
+                fromto="-0.016800000 0 0.020400000 0.016800000 0 0.020400000" size="0.003600000" />
+          <geom name="p005_shackle_left_leg" class="p005_lock_collision" type="capsule"
+                fromto="-0.016800000 0 -0.004800000 -0.016800000 0 0.020400000" size="0.003600000" />
+          <geom name="p005_shackle_right_leg" class="p005_lock_collision" type="capsule"
+                fromto="0.016800000 0 -0.004800000 0.016800000 0 0.020400000" size="0.003600000" />
+          <site name="p005_shackle_grasp_site" pos="0 0 0.023111111" size="0.002666667" rgba="0 0 0 0" />
+        </body>
+      </body>
+    </body>
+
+    <body name="p005_key_root_body" pos="-0.300000 -0.200000 0.8982965499339415"
+          quat="0.9533049708549274 0.050251833174530844 -0.2929284952151633 -0.05364030664402749">
+      <freejoint name="p005_key_root" />
+      <geom name="p005_key_visual" class="p005_visual" type="mesh"
+            material="p005_key_material" mesh="p005_key_visual_mesh" />
+      <geom name="p005_key_collision01" class="p005_key_collision" type="mesh" mesh="p005_key_collider01" />
+      <geom name="p005_key_collision02" class="p005_key_collision" type="mesh" mesh="p005_key_collider02" />
+      <geom name="p005_key_collision04" class="p005_key_collision" type="mesh" mesh="p005_key_collider04" />
+      <geom name="p005_key_collision05" class="p005_key_collision" type="mesh" mesh="p005_key_collider05" />
+      <geom name="p005_key_collision06" class="p005_key_collision" type="mesh" mesh="p005_key_collider06" />
+      <geom name="p005_key_collision07" class="p005_key_collision" type="mesh" mesh="p005_key_collider07" />
+      <geom name="p005_key_collision08" class="p005_key_collision" type="mesh" mesh="p005_key_collider08" />
+      <geom name="p005_key_collision09" class="p005_key_collision" type="mesh" mesh="p005_key_collider09" />
+      <geom name="p005_key_collision10" class="p005_key_collision" type="mesh" mesh="p005_key_collider10" />
+      <geom name="p005_key_collision11" class="p005_key_collision" type="mesh" mesh="p005_key_collider11" />
+      <geom name="p005_key_collision12" class="p005_key_collision" type="mesh" mesh="p005_key_collider12" />
+      <geom name="p005_key_collision13" class="p005_key_collision" type="mesh" mesh="p005_key_collider13" />
+      <geom name="p005_key_collision14" class="p005_key_collision" type="mesh" mesh="p005_key_collider14" />
+      <geom name="p005_key_collision15" class="p005_key_collision" type="mesh" mesh="p005_key_collider15" />
+      <geom name="p005_key_collision16" class="p005_key_collision" type="mesh" mesh="p005_key_collider16" />
+      <site name="p005_key_tip" pos="-0.001164444 -0.030426667 -0.000888889" size="0.002488889" rgba="0 0 0 0" />
+      <site name="p005_key_bow" pos="-0.0013050 0.0216840 0.0000300" size="0.003111111" rgba="0 0 0 0" />
+    </body>
+  </worldbody>
+  <actuator>
+    <position name="p005_lock_cylinder_drive" joint="p005_lock_cylinder_yaw" kp="0.6" ctrlrange="0 1.3962634" />
+    <position name="p005_shackle_slide_lock" joint="p005_shackle_slide_joint" kp="180" ctrlrange="0 0.030000000" />
+    <position name="p005_shackle_hinge_lock" joint="p005_shackle_hinge_joint" kp="55" ctrlrange="0 0.90" />
+  </actuator>
+</mujoco>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Wuji1_XY3_Fruit_Bucket_Photograph">
+  <!-- Reuse the A01 scene and C06 camera without copying supplier assets.
+       The Isaac preparation filters inactive A-series objects and attaches
+       the original CASIA logo to the existing bucket body. -->
+  <include file="arena_arm_hand_ycb_tasks_rokae_wuji1.xml" />
+  <include file="camera.xml" />
+  <asset>
+    <texture type="2d" name="casia_logo_tex" file="photograph/logo-CASIA.png" />
+    <material name="casia_logo_mat" texture="casia_logo_tex" specular="0.1"
+              shininess="0.05" texuniform="false" texrepeat="1 1" />
+  </asset>
+</mujoco>

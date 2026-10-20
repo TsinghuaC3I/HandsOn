@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="nut_bolt_assembly_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="nba_collision">
+      <geom group="0" friction="1.15 0.018 0.0002" solref="0.004 1" solimp="0.95 0.995 0.001"/>
+    </default>
+    <default class="nba_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0"/>
+    </default>
+    <default class="nba_marker">
+      <geom contype="0" conaffinity="0" group="4" mass="0"/>
+      <site group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="nba_bolt_tex" file="../../lightwheel_ycb/plastic_bolt/visuals/T_plastic_bolt_BC001.png"/>
+    <material name="nba_bolt_mat" texture="nba_bolt_tex" specular="0.35" shininess="0.5"/>
+    <mesh name="nba_bolt_vis" file="../../lightwheel_ycb/plastic_bolt/visuals/plastic_bolt.obj"/>
+
+    <texture type="2d" name="nba_nut_tex" file="../../lightwheel_ycb/plastic_nut/visuals/T_plastic_nut_BC001.png"/>
+    <material name="nba_nut_mat" texture="nba_nut_tex" specular="0.25" shininess="0.45"/>
+    <mesh name="nba_nut_vis" file="../../lightwheel_ycb/plastic_nut/visuals/plastic_nut.obj"/>
+
+    <material name="nba_target_mat" rgba="0.16 0.80 0.34 0.25" specular="0" shininess="0"/>
+    <material name="nba_thread_mat" rgba="0.90 0.82 0.28 0.55" specular="0.1" shininess="0.2"/>
+  </asset>
+
+  <worldbody>
+    <body name="bolt_root_body" pos="0.08 0 0.92" quat="1 0 0 0">
+      <body name="bolt_object">
+        <geom name="nba_bolt_visual" class="nba_visual" type="mesh" mesh="nba_bolt_vis" material="nba_bolt_mat" pos="0 0 0.026" quat="0.7071068 0.7071068 0 0"/>
+        <geom name="nba_bolt_head_collision" class="nba_collision" type="cylinder" size="0.0085 0.0035" pos="0 0 0.0035" density="960" rgba="0.18 0.18 0.18 0.22"/>
+        <geom name="nba_bolt_shaft_collision" class="nba_collision" type="cylinder" size="0.0042 0.027" pos="0 0 0.031" density="960" rgba="0.18 0.18 0.18 0.18"/>
+        <geom name="nba_bolt_thread_visual" class="nba_visual" type="cylinder" size="0.0048 0.027" pos="0 0 0.031" material="nba_thread_mat"/>
+        <geom name="nba_nut_target_depth" class="nba_visual" type="cylinder" size="0.014 0.0012" pos="0 0 0.032" material="nba_target_mat"/>
+        <site name="nba_bolt_base" pos="0 0 0" size="0.004" rgba="0.1 0.7 0.25 0.55"/>
+        <site name="nba_bolt_axis_top" pos="0 0 0.058" size="0.003" rgba="0.1 0.7 0.25 0.55"/>
+      </body>
+    </body>
+
+    <body name="nut_root_body" pos="-0.10 0.15 0.93" quat="1 0 0 0">
+      <freejoint name="nut_root"/>
+      <body name="nut_object">
+        <geom name="nba_nut_visual" class="nba_visual" type="mesh" mesh="nba_nut_vis" material="nba_nut_mat"/>
+        <geom name="nba_nut_collision_0" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="0.0090 0 0" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <geom name="nba_nut_collision_1" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="-0.0090 0 0" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <geom name="nba_nut_collision_2" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="0.0045 0.0078 0" quat="0.8660254 0 0 0.5" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <geom name="nba_nut_collision_3" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="-0.0045 0.0078 0" quat="0.8660254 0 0 -0.5" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <geom name="nba_nut_collision_4" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="0.0045 -0.0078 0" quat="0.8660254 0 0 -0.5" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <geom name="nba_nut_collision_5" class="nba_collision" type="box" size="0.0022 0.0060 0.0042" pos="-0.0045 -0.0078 0" quat="0.8660254 0 0 0.5" density="940" rgba="0.72 0.14 0.10 0.28"/>
+        <site name="nba_nut_center" pos="0 0 0" size="0.004" rgba="0.85 0.1 0.1 0.65"/>
+        <site name="nba_nut_axis_top" pos="0 0 0.008" size="0.0025" rgba="0.85 0.1 0.1 0.55"/>
+        <site name="nba_nut_axis_bottom" pos="0 0 -0.008" size="0.0025" rgba="0.85 0.1 0.1 0.55"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

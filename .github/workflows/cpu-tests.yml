@@ -1,0 +1,28 @@
+name: CPU regression
+on: [push, pull_request]
+jobs:
+  cpu:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements/cpu-test-lock.txt
+      - run: python -m pip install -r requirements/cpu-test-lock.txt
+      - run: python -m pip install --no-deps -e './handson[test]'
+      - run: python -m pip check
+      - run: |
+          mkdir -p outputs/test-tmp
+          export TMPDIR="$PWD/outputs/test-tmp"
+          python -m pytest handson/tests -q --junitxml=cpu-tests.xml
+      - run: python -m handson.evaluation --check
+      - run: python -m handson.robots --check
+      - run: python -m handson.sim.isaaclab.render_assets --packaged-only
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cpu-tests
+          path: cpu-tests.xml

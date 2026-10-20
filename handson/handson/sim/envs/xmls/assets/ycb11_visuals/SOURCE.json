@@ -1,0 +1,25 @@
+{
+  "url": "https://ycb-benchmarks.s3.amazonaws.com/data/google/026_sponge_google_64k.tgz",
+  "license": "CC BY 4.0",
+  "author": "YCB Object and Model Set (Calli, Singh, Walsman, Srinivasa, Abbeel, Dollar)",
+  "archive_sha256": "0341514516e33ffbd22622532190156ad7c04e326da76e8f614da36cf05de2fc",
+  "extracted": {
+    "texture_map.png": "373608e105c6787c8c2f66c1cba3e0de83219a56b4a0e1cf6ab9090c76bd56dc",
+    "textured.mtl": "a779e1d8a29bdbc18ee724b7faa2e1e53591cbc2ee451ff38c64df7222c3f31e",
+    "textured.obj": "0f5bf69748b4621c33c7ff5fb3423c6729b830d21ffbb4ffba86778d41f75c82"
+  },
+  "use": "Unmodified native 4096x4096 albedo photograph; surface UV registration only, geometry not used",
+  "license_url": "https://ycb-benchmarks.s3.amazonaws.com/index.html",
+  "derived_UVs": {
+    "source_mesh": "lightwheel_ycb/sponge/visuals/sponge.obj",
+    "source_author": "LightwheelAI, derived from YCB",
+    "source_license": "CC BY-NC 4.0",
+    "source_url": "https://github.com/LightwheelAI/Lightwheel-YCB",
+    "uv_license": "CC BY-NC 4.0",
+    "registration": "SIFT photographic correspondences + thin plate spline with silhouette and orientation constraints; original OBJ untouched"
+  },
+  "installed_sha256": {
+    "sponge_ycb_scan_4k.png": "373608e105c6787c8c2f66c1cba3e0de83219a56b4a0e1cf6ab9090c76bd56dc",
+    "sponge_4k_face_uvs.npy": "44a17a6850365980d5fc839048f4d3d7be840f8ee44b4ebc5e3eed21196825ce"
+  }
+}

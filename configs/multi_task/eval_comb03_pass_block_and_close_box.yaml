@@ -1,0 +1,34 @@
+env_name: eval_comb03_pass_block_and_close_box
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: 'Pick up the left block with the left hand, hand it to the right hand in the middle, and release it stably inside the clear box. Then use the right hand to pick up the lid, align and close the box, and release.'
+robot_type: dual_arm
+time_limit_seconds: 300
+skills:
+  - bimanual_coordination
+  - handoff
+  - pick_and_place
+  - lid_placement
+objects:
+  - BuildingBlock017
+  - Clear_Box
+  - flat_screwdriver
+  - phillips_screwdriver
+  - spoon
+  - plastic_bolt
+  - a_marbles
+  - b_marbles
+  - hammer
+  - a_Nails
+  - 024_bowl
+  - Box_lid
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX
+runtime:
+  simulator: isaacsim-5.1
+  isaaclab_version: v2.3.2
+  physics_backend: physx
+  physics_hz: 120
+  control_hz: 30

@@ -1,0 +1,9 @@
+-r base.txt
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1
+torchvision==0.22.1
+transformers==5.17.0
+diffusers==0.38.0
+timm==1.0.29
+imageio[ffmpeg]
+loguru

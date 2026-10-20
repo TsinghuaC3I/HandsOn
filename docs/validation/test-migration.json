@@ -1,0 +1,553 @@
+{
+  "retired_or_replaced_functions": {
+    "handson/tests/test_b03_newton_backend.py": [
+      "test_b03_newton_cannot_disable_deferred_camera_rendering",
+      "test_b03_newton_live_main_camera_cannot_override_deferred_rendering"
+    ],
+    "handson/tests/test_b320_as013_collection.py": [
+      "test_as013_articulation_owner_is_discovered_not_assumed",
+      "test_as013_contact_target_stays_fixed_in_moving_blade_frame",
+      "test_as013_fallback_alignment_can_lock_a_live_reachable_rotation",
+      "test_as013_fallback_target_adaptation_is_explicit_and_precontact",
+      "test_as013_late_left_stability_grace_does_not_mask_early_dropouts",
+      "test_as013_late_slide_dropout_keeps_contacting_finger_closed",
+      "test_as013_left_surface_target_projects_along_reachable_contact_trace",
+      "test_as013_lost_recontact_adds_only_bounded_normal_preload",
+      "test_as013_post_success_hold_delays_release_without_latching_success",
+      "test_as013_post_success_overtravel_uses_physical_slide_axis",
+      "test_as013_recovered_late_in_plane_preload_ramps_near_success",
+      "test_as013_release_dwell_holds_captured_pose_before_lift",
+      "test_as013_slide_roll_relief_rotates_about_live_fingertip",
+      "test_as013_slide_roll_relief_waits_for_late_progress",
+      "test_as013_success_release_latches_previous_commands_without_a_jump",
+      "test_as013_success_requires_order_contact_release_support_and_stability"
+    ],
+    "handson/tests/test_b320_bc021_runtime.py": [
+      "test_bc021_cameras_defer_by_default_and_enable_only_for_postrender"
+    ],
+    "handson/tests/test_b320_benchmark.py": [
+      "test_bc025_prompt_and_taskdev_contract_are_synchronized",
+      "test_retired_bc017_bundle_is_absent_and_spawn_fails_before_compose"
+    ],
+    "handson/tests/test_b320_ka005_2.py": [
+      "test_preserved_source_archives_match_intake_hashes"
+    ],
+    "handson/tests/test_bc017_clean_contract.py": [
+      "test_bc017_operator_docs_describe_only_the_selected_pair_as_success"
+    ],
+    "handson/tests/test_c01_asset_alignment.py": [
+      "test_compiled_c01_ycb_colliders_match_visual_bounds_and_target_masses"
+    ],
+    "handson/tests/test_c09_c10_assist.py": [
+      "test_c09_colored_staple_mark_is_guided_to_the_real_staple_zone",
+      "test_c09_formed_stack_cannot_reacquire_a_second_hand",
+      "test_c09_grasp_starts_without_snap_and_then_follows_the_hand_rigidly",
+      "test_c09_pair_alignment_freezes_while_the_commanded_hand_lags",
+      "test_c09_pair_alignment_rejects_a_180_degree_colored_corner_flip",
+      "test_c09_second_paper_uses_its_distinct_visible_grip_tab",
+      "test_c09_second_stack_writer_failure_rolls_back_the_first_sheet",
+      "test_c09_two_hand_stack_waits_for_one_real_release_before_carry",
+      "test_c09_vertical_papers_separated_along_their_normal_do_not_pair",
+      "test_c09_visible_tab_requires_a_real_opposing_pinch",
+      "test_unheld_c09_and_c10_objects_are_never_magnetized"
+    ],
+    "handson/tests/test_c11_c12_assist.py": [
+      "test_c11_assisted_palm_motion_is_not_reused_as_raw_strike_input",
+      "test_c11_carry_offset_keeps_hand_target_on_next_physics_substep",
+      "test_c11_grasp_requires_an_opposing_pinch_on_visible_handle",
+      "test_c11_hovering_or_upward_contact_does_not_count_as_a_strike",
+      "test_c11_live_contact_force_can_arrive_one_substep_after_crossing",
+      "test_c11_missing_complete_hand_colliders_fail_closed",
+      "test_c11_missing_contact_reporters_fail_closed",
+      "test_c11_missing_live_contact_view_fails_closed",
+      "test_c11_repeated_key_requires_lifting_to_rearm",
+      "test_c11_success_requires_released_stable_mallet_at_return_height",
+      "test_c11_vertical_strike_uses_raw_glove_motion"
+    ],
+    "handson/tests/test_c_task_registration.py": [
+      "test_c07_teleop_keeps_vertical_headroom_for_pouring",
+      "test_c08_config_omits_removed_bowl_state"
+    ],
+    "handson/tests/test_dual_knob_panel_contract.py": [
+      "test_asset_contract_is_minimal_and_has_two_named_revolute_joints",
+      "test_asset_paths_and_restoring_drive_are_explicit",
+      "test_asset_provenance_excludes_third_party_geometry",
+      "test_minimal_mjcf_scene_is_well_formed_and_has_no_task_object_payload"
+    ],
+    "handson/tests/test_e01_physx_failure_guards.py": [
+      "test_e01_accepts_finite_bounded_control_frame_readback",
+      "test_e01_changed_surface_topology_fails_closed",
+      "test_e01_large_adjacent_control_frame_node_step_fails_closed",
+      "test_e01_nodal_speed_above_physx_cap_tolerance_fails_closed",
+      "test_e01_nonfinite_readback_fails_closed_before_metrics",
+      "test_e01_relaxed_diagnostic_readback_accepts_fast_contact",
+      "test_e01_relaxed_reset_settle_timeout_records_diagnostics_only",
+      "test_e01_reset_settle_accepts_stable_budget_boundary_state",
+      "test_e01_reset_settle_does_not_run_in_interface_only_mode",
+      "test_e01_reset_settle_rejects_a_transient_quiet_first_frame"
+    ],
+    "handson/tests/test_hs005_vertical_slice.py": [
+      "test_hs005_v4_non_pass_evidence_is_fail_closed_and_hash_bound"
+    ],
+    "handson/tests/test_isaaclab_abc_control_reuse.py": [
+      "test_abc_standalone_camera_sensors_render_after_latest_pose_update",
+      "test_b02_applies_mujoco_soft_hand_actuators_to_robot_cfg",
+      "test_b02_bolt_is_a_fixed_runtime_fixture",
+      "test_b02_can_opt_into_collection_safe_250hz_physics",
+      "test_b02_defaults_to_120hz_without_changing_wuji1_a_tasks",
+      "test_b02_legacy_500hz_request_remains_available",
+      "test_b02_mujoco_soft_hand_maps_source_joint_drives",
+      "test_b02_nut_grasp_assist_is_disabled_for_mujoco_parameter_test",
+      "test_b02_nut_uses_source_mass_and_mujoco_friction",
+      "test_b02_requires_real_thread_travel_and_twist_before_success",
+      "test_b05_success_requires_more_than_ninety_percent_coverage",
+      "test_c01_deterministic_and_fallback_layouts_pass_the_same_gate",
+      "test_c07_alignment_discards_saved_lift_then_rate_limits_fresh_input",
+      "test_c07_alignment_progress_commits_only_after_pitcher_write",
+      "test_c07_collection_controller_has_no_action_phase_state_writer",
+      "test_c07_cup_lock_arms_before_smooth_hand_object_alignment",
+      "test_c07_empty_lock_rebases_from_the_last_controlled_pair",
+      "test_c07_grasp_requires_closure_then_attaches_in_place",
+      "test_c07_handle_grasp_accepts_standard_and_asymmetric_real_pinches",
+      "test_c07_handle_grasp_rejects_air_and_invalid_pinch_geometry",
+      "test_c07_handle_sensor_matches_the_visible_outer_grip",
+      "test_c07_last_staged_ball_does_not_unlock_inside_the_mouth",
+      "test_c07_locked_pour_ignores_xy_but_accepts_wrist_rotation",
+      "test_c07_locked_pour_waits_for_palm_then_reaches_mouth_down_sixty",
+      "test_c07_natural_wrist_rotation_requests_full_pour_without_lift",
+      "test_c07_operator_release_always_removes_wrench_without_root_pin",
+      "test_c07_particle_delivery_requires_current_physical_cup_occupancy",
+      "test_c07_particle_drain_starts_at_total_tilt_threshold",
+      "test_c07_particle_exit_is_safe_over_receiver_across_release_arc",
+      "test_c07_particle_mjcf_radius_matches_runtime_geometry",
+      "test_c07_particle_mouth_staging_has_full_surface_clearance",
+      "test_c07_particle_release_requires_two_successful_outside_writes",
+      "test_c07_particle_stage_write_failure_does_not_advance",
+      "test_c07_particle_staging_is_bounded_top_first_and_single_active",
+      "test_c07_particles_still_in_pouring_mug_are_not_spills",
+      "test_c07_physical_grip_wrench_is_finite_and_bounded",
+      "test_c07_post_pour_hand_rebase_preserves_world_motion",
+      "test_c07_pour_lock_canonicalizes_reverse_tilt_before_vertical_control",
+      "test_c07_pour_xy_lock_preserves_height_and_full_orientation",
+      "test_c07_reachable_glove_stroke_crosses_particle_release_angle",
+      "test_c07_requires_full_pad_contact_stability_and_half_second_release",
+      "test_c07_reset_randomizes_visible_ycb_layout_away_from_hand_home",
+      "test_c07_reset_reasserts_dynamic_pitcher_and_particles",
+      "test_c07_return_pin_centers_uprights_and_detaches_visual_grasp",
+      "test_c07_rim_or_wall_intersections_do_not_count_as_inside",
+      "test_c07_runtime_leaves_tcp_fingers_pitcher_and_particles_unassisted",
+      "test_c07_upward_hand_motion_raises_bottom_around_fixed_spout",
+      "test_c07_vessel_and_particles_use_wakeable_viscous_reset_physics",
+      "test_c08_assist_writes_only_the_table_safe_tongs_pose",
+      "test_c08_centered_cube_waits_for_real_two_pad_contact",
+      "test_c08_centered_release_opens_immediately_without_hand_tracking",
+      "test_c08_collision_guard_clamps_the_attached_hand_command",
+      "test_c08_cradle_authors_the_measured_static_support_pose",
+      "test_c08_cup_lock_centers_jaw_midpoint_without_locking_rotation",
+      "test_c08_cup_lock_remains_until_released_ice_reaches_glass",
+      "test_c08_drop_lock_centers_actual_offset_ice_over_glass",
+      "test_c08_drop_path_centers_without_lifting_over_randomized_cup",
+      "test_c08_failed_open_writer_never_releases_through_closed_pads",
+      "test_c08_failed_tool_follow_keeps_latch_armed_for_retry",
+      "test_c08_glass_entry_moves_hand_and_tool_together_before_opening",
+      "test_c08_hand_command_continuously_drives_tongs_target",
+      "test_c08_hand_grip_uses_real_rotated_cube_width",
+      "test_c08_has_no_fixed_bowl_fixture",
+      "test_c08_ice_must_be_between_both_jaws_before_capture",
+      "test_c08_latched_cube_does_not_reopen_after_live_pose_deflection",
+      "test_c08_latched_tongs_hold_the_real_contact_aperture",
+      "test_c08_later_drop_preserves_operator_selected_height",
+      "test_c08_legacy_space_action_is_a_noop",
+      "test_c08_lock_zone_follows_actual_ice_not_tongs_midpoint",
+      "test_c08_max_opening_is_one_and_a_half_ice_side_lengths",
+      "test_c08_missing_cup_pose_aborts_lock_without_dropping_ice",
+      "test_c08_missing_live_pose_holds_last_verified_tool_target",
+      "test_c08_nonrandomized_fallback_keeps_ice_clear_of_neighboring_pads",
+      "test_c08_off_center_cup_approach_does_not_install_hand_target",
+      "test_c08_one_frame_handle_contact_never_freezes_a_fist",
+      "test_c08_one_inner_jaw_contact_never_latches",
+      "test_c08_only_real_pad_inner_faces_qualify_close_candidate",
+      "test_c08_opening_away_from_glass_cannot_drop_held_ice",
+      "test_c08_preserves_imported_physx_topology_before_first_reset",
+      "test_c08_release_uses_live_and_collision_clipped_ice_pose",
+      "test_c08_reset_randomizes_cup_and_all_ice_with_seeded_clearance",
+      "test_c08_settle_slots_follow_delivery_order_not_cube_name",
+      "test_c08_stale_joint_readback_still_releases_in_finite_time",
+      "test_c08_swept_rim_crossing_settles_and_pins_delivered_ice",
+      "test_c08_table_guard_preserves_tangential_hand_motion",
+      "test_c08_tongs_grasp_requires_opposing_visible_rail_contacts",
+      "test_c08_tongs_grasp_starts_in_place_without_fixed_point_snap",
+      "test_c08_tongs_grip_visual_is_locked_while_raw_open_intent_is_kept",
+      "test_c08_tongs_guard_ignores_loose_and_latched_ice",
+      "test_c08_tongs_leave_table_vertically_before_full_pickup_motion",
+      "test_c08_tongs_negative_roll_clearance_uses_flat_spring_box",
+      "test_c08_tongs_rigid_follow_waits_for_physical_pickup_clearance",
+      "test_c08_tongs_spring_is_stiff_enough_to_hold_open_during_pickup",
+      "test_c08_tongs_sweep_radius_includes_every_box_collider_corner",
+      "test_c08_tongs_swept_guard_ignores_glass_and_stops_at_table",
+      "test_c08_tongs_table_clearance_uses_all_box_collider_corners",
+      "test_c08_transient_cup_loss_restarts_stale_readback_open_timer",
+      "test_c08_unlatched_tongs_follow_live_hand_closure",
+      "test_c08_upper_stack_contact_counts_as_a_real_drop",
+      "test_c08_uses_bounded_single_environment_physx_gpu_buffers",
+      "test_c08_verified_pickup_ignores_hidden_raw_open_hand_intent",
+      "test_c08_visual_fingers_cannot_open_past_verified_grip",
+      "test_c09_c12_live_runtime_is_physics_only_and_action_passthrough",
+      "test_c09_stapler_base_is_a_randomizable_fixed_fixture",
+      "test_c11_sequence_is_randomized_and_wrong_hit_restarts_progress",
+      "test_deferred_arm_switch_is_limited_to_abcd_tasks",
+      "test_offline_accurate_camera_visibility_uses_two_render_groups",
+      "test_offline_render_passes_average_static_rtx_samples",
+      "test_path_tracing_keeps_final_progressive_sample",
+      "test_single_arm_recording_camera_poses_match_mujoco_contract",
+      "test_visual_randomization_is_derived_from_episode_seed_without_advancing_physics_rng",
+      "test_wrist_camera_optical_centers_clear_the_circular_lens_housing",
+      "test_wrist_recording_camera_uses_circular_mount_body_when_available"
+    ],
+    "handson/tests/test_isaaclab_d13_d19.py": [
+      "test_d13_d19_interface_observation_contract",
+      "test_d13_d19_scene_filter_keeps_only_requested_task",
+      "test_d13_scene_lifts_tray_payloads_above_tabletop",
+      "test_d15_scene_lifts_free_payloads_above_tabletop",
+      "test_d19_seeded_layout_is_reproducible_and_changes_with_seed",
+      "test_d19_strict_cover_reveal_and_basket_sequence",
+      "test_d19_wrong_first_cover_is_recorded"
+    ],
+    "handson/tests/test_isaaclab_e02_rope_knot.py": [
+      "test_e02_contact_geometry_helpers_distinguish_crossing_and_penetration",
+      "test_e02_initial_pose_randomization_is_seed_reproducible_and_safe",
+      "test_e02_interface_preserves_d_series_training_contract",
+      "test_e02_live_condition_panel_uses_english_only",
+      "test_e02_requires_knot_then_measurable_two_end_pull",
+      "test_e02_rope_physics_and_english_conditions_are_explicit",
+      "test_e02_surface_mesh_is_a_continuous_tube_with_stable_node_order"
+    ],
+    "handson/tests/test_isaaclab_e03_untie_rope.py": [
+      "test_e03_all_random_knot_templates_start_tied_and_collision_safe",
+      "test_e03_interface_reuses_c_series_robot_and_training_contract",
+      "test_e03_mesh_and_scene_metadata_are_explicit",
+      "test_e03_seed_and_recorded_initial_state_reconstruct_exact_template",
+      "test_e03_success_requires_knot_removal_and_extended_released_rope"
+    ],
+    "handson/tests/test_isaaclab_e04_cats_cradle.py": [
+      "test_e04_all_templates_are_closed_collision_layered_surface_tubes",
+      "test_e04_every_random_cycle_transition_requires_its_exact_target",
+      "test_e04_interface_reuses_c_series_robot_and_closed_loop_contract",
+      "test_e04_random_transition_and_replay_are_seed_reproducible",
+      "test_e04_records_all_named_steps_and_keeps_clock_terminal"
+    ],
+    "handson/tests/test_isaaclab_e05_fold_wipe.py": [
+      "test_e05_cloth_mesh_and_scene_metadata_are_explicit",
+      "test_e05_fold_then_full_reachable_sweep_satisfies_ordered_success",
+      "test_e05_interface_reuses_c_series_robot_and_training_contract",
+      "test_e05_reachable_mask_is_derived_from_c01_max_arm_reach",
+      "test_e05_seed_and_recorded_initial_state_reconstruct_exact_cloth",
+      "test_e05_wiping_before_fold_never_counts_coverage"
+    ],
+    "handson/tests/test_isaaclab_e_collection.py": [
+      "test_detached_e01_randomize_keeps_physical_initial_state_deterministic",
+      "test_e01_captures_finite_timed_out_garment_baseline",
+      "test_e01_detached_hands_force_imported_collision_shapes_on",
+      "test_e01_interface_preserves_d_series_robot_and_training_contract",
+      "test_e01_live_reset_writes_dedicated_surface_tensor_view",
+      "test_e01_recorded_initial_parameters_reconstruct_the_same_surface",
+      "test_e01_resolves_garmentlab_asset_from_configured_root",
+      "test_e01_resolves_garmentlab_texture_from_official_textures_directory",
+      "test_e01_rest_shape_mode_defaults_to_tabletop_wrinkles",
+      "test_e01_scene_and_garmentlab_physics_metadata_are_explicit",
+      "test_e01_scene_uses_shirt2_as_one_native_surface_mesh",
+      "test_e01_shirt2_asset_identity_and_world_placement_are_explicit",
+      "test_e01_success_requires_a_compact_released_stable_fold",
+      "test_e01_surface_buffers_support_v3_warp_and_proxy_arrays",
+      "test_e01_tabletop_rest_shape_preserves_footprint_and_flattens_z",
+      "test_e01_top578_preset_starts_inside_head_camera_view",
+      "test_e01_uses_detached_hand_control_without_online_arm_ik",
+      "test_f01_diagnostic_success_condition_rows_are_english",
+      "test_f01_diagnostic_success_requires_partial_overlap_in_right_target",
+      "test_f01_formal_collection_disables_direct_nodal_velocity_assist",
+      "test_f01_grasp_assist_writes_bounded_local_velocity",
+      "test_f01_grasp_candidate_selects_only_local_nodes"
+    ],
+    "handson/tests/test_isaaclab_smooth_grasp_profile.py": [
+      "test_b02_restores_its_original_120hz_default_and_500hz_opt_in",
+      "test_only_b02_retains_its_legacy_rate_override",
+      "test_soft_hand_actuator_profile_is_b02_only"
+    ],
+    "handson/tests/test_isaaclab_task_layout.py": [
+      "test_b02_isaac_reset_starts_nut_on_table_without_thread_helper",
+      "test_c07_free_particles_are_contained_upright_and_spill_under_gravity",
+      "test_c07_preview_keeps_ycb_pitcher_and_target_mug_hollow",
+      "test_c08_starts_without_bowl_and_ice_rest_on_table",
+      "test_g01_variants_share_preview_scene_and_success_contract",
+      "test_loaded_tray_gate_is_registered_with_owned_scene_and_labels"
+    ],
+    "handson/tests/test_loaded_tray_gate_assets.py": [
+      "test_asset_masses_and_collision_shapes_are_physical",
+      "test_authored_body_poses_match_runtime_scene_metadata",
+      "test_bridge_handles_have_finger_clearance_and_stay_inside_gate",
+      "test_gate_clearance_is_passable_for_tray_and_narrow_for_hands",
+      "test_initial_layout_is_supported_separated_and_not_pre_crossed",
+      "test_scene_uses_owned_primitive_assets_and_expected_includes",
+      "test_target_pose_fits_on_far_side_of_table",
+      "test_tray_and_payloads_are_independent_dynamic_bodies"
+    ],
+    "handson/tests/test_loaded_tray_gate_contract.py": [
+      "test_brief_role_loss_during_crossing_can_recover",
+      "test_crossing_role_loss_has_two_frame_grace_then_fails",
+      "test_drop_and_deep_penetration_fail_immediately",
+      "test_excessive_handle_contact_is_debounced_and_fail_closed",
+      "test_excessive_tilt_is_sustained_before_failure",
+      "test_final_pose_without_ordered_history_is_not_success",
+      "test_geometry_helpers_handle_yaw_and_cylinder_tilt",
+      "test_minor_gate_brush_is_tolerated_but_sustained_collision_is_not",
+      "test_one_hand_never_establishes_grasp_or_crossing",
+      "test_ordered_dual_hand_transport_can_reach_stable_success",
+      "test_payload_loss_after_lift_is_debounced_then_fails"
+    ],
+    "handson/tests/test_lw_native_articulation_contract.py": [
+      "test_120_hz_hold_release_and_stability_boundaries_are_not_off_by_one",
+      "test_assigned_contact_hysteresis_uses_exact_on_and_off_boundaries",
+      "test_fixed_tasks_still_fail_when_target_is_lost_after_hold",
+      "test_g08_every_seed_uses_the_physically_stable_closed_hard_stop",
+      "test_g08_four_degree_lid_rebound_is_recoverable_and_can_retry",
+      "test_g08_only_sustained_gross_escape_is_terminal",
+      "test_g08_releases_only_right_hand_and_keeps_left_stabilizer",
+      "test_g08_requires_left_stabilization_while_right_opens_lid",
+      "test_g08_soft_root_drift_invalidates_attempt_without_terminal_reset",
+      "test_g08_stabilizer_loss_restarts_attempt_without_terminal_reset",
+      "test_g08_support_loss_is_recoverable_but_cannot_count_toward_success",
+      "test_g08_target_window_loss_restarts_attempt_and_can_retry",
+      "test_g10_fixed_root_drift_debounce_ignores_a_transient_solver_overshoot",
+      "test_joint_limit_and_locked_fan_joint_fail_closed",
+      "test_missing_truth_fails_closed",
+      "test_motion_without_assigned_contact_cannot_be_retroactively_counted",
+      "test_nan_truth_fails_closed",
+      "test_positive_physical_sequence_succeeds",
+      "test_recording_origin_prime_rejects_nonfinite_truth_without_task_failure",
+      "test_recording_origin_truth_primes_action_zero_without_advancing_state",
+      "test_root_fixture_drift_fails_and_first_reason_is_stable",
+      "test_seeded_reset_sampling_is_deterministic_and_never_starts_at_target",
+      "test_signed_wrong_direction_motion_fails_closed",
+      "test_single_hand_cannot_unfold_both_ruler_sides",
+      "test_specs_are_immutable_and_match_native_authored_dof_order",
+      "test_start_skew_over_half_second_fails_g10",
+      "test_target_entry_skew_over_half_second_fails_g10",
+      "test_target_hold_without_required_release_never_succeeds",
+      "test_update_returns_fixed_observation_conditions_and_metric_schema"
+    ],
+    "handson/tests/test_lw_native_articulation_runtime_review.py": [
+      "test_capture_rejects_floating_classification_for_fixed_task",
+      "test_capture_requires_exact_fixed_base_articulation_and_filters_links",
+      "test_g08_live_callback_arms_after_origin_and_forwards_support_validity",
+      "test_g08_recording_origin_requires_active_table_support",
+      "test_ruler_fixed_middle_anchor_matches_the_audited_source_offset"
+    ],
+    "handson/tests/test_lw_native_articulation_tasks.py": [
+      "test_abc_registry_uses_the_same_root_and_assigned_role_body_names",
+      "test_config_rejects_every_wrong_runtime_before_environment_import",
+      "test_g05_wires_complete_hand_collision_shell_into_robot_assets",
+      "test_g08_layout_matches_right_to_left_head_camera_opening",
+      "test_g08_operator_text_matches_keep_left_contact_success_semantics",
+      "test_g08_wires_scoped_lid_anti_tunnelling",
+      "test_g10_wires_thin_link_anti_tunnelling_and_fixed_root_debounce",
+      "test_manifest_hashes_and_selected_asset_texture_closure_are_exact",
+      "test_only_selected_local_assets_are_ingested_and_collection_is_enabled",
+      "test_reset_state_builds_last_joint_vector_with_one_array_input",
+      "test_scene_specs_match_the_pure_physical_contract_and_role_paths",
+      "test_task_ids_mapping_yaml_and_fixed_runtime_contract_are_aligned",
+      "test_task_preview_registers_the_family_as_task_only_native_scenes"
+    ],
+    "handson/tests/test_manus_raw_recording.py": [
+      "test_vendor_manus_publisher_emits_all_index_spread_rows_with_honest_count"
+    ],
+    "handson/tests/test_newton_cross_gpu_determinism.py": [
+      "test_b03_physics_source_fingerprint_is_a_stable_sha256"
+    ],
+    "handson/tests/test_obs_adapter_passthrough.py": [
+      "test_e01_actual_hand_state_is_forwarded_and_stacked_on_both_transition_sides"
+    ],
+    "handson/tests/test_p003_contract.py": [
+      "test_completed_release_retreats_only_after_stability_success",
+      "test_configure_rotation_servo_is_bounded_from_live_palm_not_stale_command",
+      "test_controlled_setdown_records_placement_before_release_hold",
+      "test_endpoint_only_or_release_without_history_is_negative",
+      "test_extended_release_uses_safe_hand_and_retreats_before_success",
+      "test_forbidden_or_nonfinite_readback_cannot_start_valid_sequence",
+      "test_four_targets_are_distinct_and_prompts_are_direction_specific",
+      "test_nonextended_staging_does_not_weaken_formal_placement",
+      "test_place_smoothly_curls_left_ring_finger_to_measured_clearance_pose",
+      "test_placement_zone_uses_whole_ruler_center_not_articulation_root",
+      "test_release_lifts_palms_before_switching_to_safe_hand",
+      "test_scripted_policy_captures_roles_then_follows_s0_and_s2_readback",
+      "test_scripted_policy_has_canonical_54d_layout_and_continuous_clearance",
+      "test_seeded_reset_is_repeatable_bounded_balanced_and_never_at_target",
+      "test_shape_requires_joint_angles_and_all_three_directions",
+      "test_strict_stage_sequence_reaches_success_only_after_release_hold"
+    ],
+    "handson/tests/test_p003_runtime_registration.py": [
+      "test_p003_collection_config_matches_runtime_hand_roles_and_target_cues",
+      "test_p003_does_not_spawn_the_unneeded_center_rig",
+      "test_p003_interface_runtime_keeps_cpu_physx_and_isolated_gpu_rendering",
+      "test_p003_is_registered_as_an_isaac_collection_task",
+      "test_p003_live_condition_rows_use_font_safe_human_labels",
+      "test_p003_native_camera_capture_refuses_synthetic_fallback",
+      "test_p003_native_camera_warmup_happens_once_before_reset_observation",
+      "test_p003_physics_substep_has_no_direct_object_state_write",
+      "test_p003_preview_condition_labels_match_roles_and_are_font_safe",
+      "test_p003_quaternion_direction_readback_uses_physical_body_rotation",
+      "test_p003_registration_files_bind_the_same_task_name",
+      "test_p003_table_contact_report_is_authored_before_simulation_reset",
+      "test_p003_task_mjcf_selects_the_task_only_robot_placeholder"
+    ],
+    "handson/tests/test_physx_ground_truth.py": [
+      "test_e01_schema_merges_hand_and_deformable_ground_truth"
+    ],
+    "handson/tests/test_recording_origin.py": [
+      "test_b02_uses_its_soft_hand_near_zero_joint_limit",
+      "test_canonical_contact_metrics_accept_absolute_tolerance_boundary",
+      "test_canonical_contact_metrics_apply_relative_tolerance",
+      "test_canonical_contact_metrics_reject_above_absolute_tolerance",
+      "test_e01_detached_wrench_controller_opts_out_of_generic_joint_restore"
+    ],
+    "handson/tests/test_rokae_wuji_controller.py": [
+      "test_bimanual_palm_to_site_matches_mirrored_left_hand_mount",
+      "test_direct_qpos_path_writes_limited_target",
+      "test_haorui_ik_uses_command_q_for_reference",
+      "test_haorui_new_backend_uses_haorui_new_before_fast_ik",
+      "test_haorui_position_only_solver_ignores_orientation_convergence",
+      "test_hold_current_arms_uses_command_q_not_disturbed_qpos",
+      "test_physics_callbacks_strictly_bracket_one_mujoco_step",
+      "test_wrist_limit_sequence_is_joint_step_limited"
+    ],
+    "handson/tests/test_sim_teleop_manual_reset.py": [
+      "test_b02_closed_wuji_hand_converges_spread_and_squeezes_flexion",
+      "test_b02_loose_wuji_hand_does_not_trigger_grasp_compensation",
+      "test_b02_open_wuji_hand_keeps_spread_unchanged",
+      "test_b02_partial_wuji_pinch_compensates_only_after_original_closure_threshold"
+    ],
+    "handson/tests/test_synchronized_dual_knob_registration.py": [
+      "test_task_config_builds_interface_only_policy_environment",
+      "test_task_config_rejects_mujoco",
+      "test_task_is_registered_for_preview_environment_and_collection"
+    ],
+    "handson/tests/test_synchronized_dual_knob_semantics.py": [
+      "test_canary_requires_opposite_directions_relation_contacts_and_low_speed",
+      "test_hold_resets_when_contact_breaks_and_one_hand_cannot_succeed",
+      "test_nonfinite_hard_limit_and_forbidden_direction_fail_closed",
+      "test_serial_target_entry_outside_window_never_succeeds",
+      "test_success_requires_15_uninterrupted_synchronized_frames",
+      "test_sustained_cross_contact_fails_but_one_frame_does_not",
+      "test_target_table_is_finite_unique_and_contains_ka005_canary"
+    ],
+    "handson/tests/test_t23_photograph_logo.py": [
+      "test_base_photograph_keeps_legacy_shutter_and_disables_c06_collision",
+      "test_c06_compiles_real_shutter_and_only_accepts_fingertips",
+      "test_c06_does_not_use_stale_contact_to_trigger",
+      "test_c06_easy_capture_accepts_practical_variations",
+      "test_c06_held_shutter_cannot_succeed_after_late_alignment_but_repress_can",
+      "test_c06_logo_behind_camera_is_not_in_frame",
+      "test_c06_logo_capture_accepts_a_centered_clear_132px_logo",
+      "test_c06_logo_capture_accepts_any_visible_sample",
+      "test_c06_logo_capture_rejects_center_outside_frame",
+      "test_c06_mechanical_shutter_thresholds_remain_diagnostic",
+      "test_c06_missed_touch_flashes_then_returns_to_live_screen",
+      "test_c06_press_edge_is_idempotent_within_one_physics_frame",
+      "test_c06_recent_alignment_survives_brief_press_motion",
+      "test_c06_requires_fingertip_contact_for_press_edge",
+      "test_c06_success_ignores_non_core_quality_diagnostics",
+      "test_c06_success_requires_logo_capture_on_the_press_edge",
+      "test_c06_successful_touch_flashes_and_keeps_captured_frame",
+      "test_c06_tiny_logo_dimensions_are_diagnostic_only",
+      "test_c06_touch_triggers_without_waiting_for_mechanical_travel"
+    ],
+    "handson/tests/test_wuji2_hand_specs.py": [
+      "test_all_mujoco_wuji1_scenes_have_generated_wuji2_variant"
+    ]
+  },
+  "new_or_renamed_functions": {
+    "handson/tests/test_b320_as013_collection.py": [
+      "test_as013_pre_action_settling_cannot_advance_success_or_read_contact",
+      "test_as013_success_requires_pickup_then_left_slider_and_sampled_endpoint"
+    ],
+    "handson/tests/test_b320_bc021_runtime.py": [
+      "test_bc021_cameras_use_live_paper_rendering_by_default"
+    ],
+    "handson/tests/test_b320_benchmark.py": [
+      "test_xy4_unavailable_contact_metric_exports_null_without_changing_checker"
+    ],
+    "handson/tests/test_c09_c10_assist.py": [
+      "test_unheld_c10_objects_are_never_magnetized"
+    ],
+    "handson/tests/test_isaaclab_abc_control_reuse.py": [
+      "test_c01_deterministic_layout_passes_and_unsafe_fallback_is_rejected",
+      "test_render_captures_each_camera_after_exposure_and_accumulation",
+      "test_transfer_coverage_helper_requires_ninety_percent_and_release"
+    ],
+    "handson/tests/test_lw_native_articulation_contract.py": [
+      "test_escape_guard_requires_continuous_duration_and_latches_failure",
+      "test_fixed_lid_base_drift_rejects_target_then_allows_recovery",
+      "test_invalid_physics_readback_cannot_succeed",
+      "test_lid_target_is_position_only_and_inclusive",
+      "test_reset_is_repeatable_and_does_not_start_successful",
+      "test_ruler_needs_both_straight_joints_with_either_angle_sign",
+      "test_specs_are_immutable_and_transfer_preserves_opening_thresholds"
+    ],
+    "handson/tests/test_lw_native_articulation_runtime_review.py": [
+      "test_capture_rejects_fixed_classification_for_floating_task",
+      "test_capture_requires_exact_floating_ruler_articulation_and_filters_links",
+      "test_fixed_lid_callback_arms_after_origin_without_table_support_gate",
+      "test_fixed_lid_origin_records_table_support_without_requiring_it",
+      "test_ruler_root_body_position_matches_the_source_offset"
+    ],
+    "handson/tests/test_lw_native_articulation_tasks.py": [
+      "test_native_assets_remain_hash_pinned_after_packaging",
+      "test_public_config_scene_and_checker_agree",
+      "test_retired_fan_prototype_is_not_a_public_task",
+      "test_wrong_runtime_is_rejected_before_kit_start"
+    ],
+    "handson/tests/test_policy_wrapper_wuji.py": [
+      "test_native_54d_wuji_commands_preserve_all_hand_joints"
+    ],
+    "handson/tests/test_recording_origin.py": [
+      "test_canonical_contact_metrics_accept_four_ulp_zero_boundary",
+      "test_canonical_contact_metrics_apply_four_ulp_tolerance",
+      "test_canonical_contact_metrics_reject_five_ulp_zero_delta"
+    ],
+    "handson/tests/test_deployment_contract.py": [
+      "test_bad_yaml_reports_usage_error_before_starting_worker",
+      "test_incomplete_worker_is_infrastructure_failure",
+      "test_shipped_configs_only_reference_released_tasks"
+    ]
+  },
+  "baseline_commit": "fea6d4e5b5076b6474baee6a259bb0b8faab0b3c",
+  "scope": "Top-level test functions; renames and rewritten tests appear in both lists. Parameterized case counts differ.",
+  "retirement_reasons": [
+    "Prototype tasks absent from the released 66-task registry",
+    "Removed MuJoCo environments, collection UI and vendor SDK",
+    "Unshipped historical acceptance/source archives",
+    "Superseded renderer and pre-paper task-contract assertions; replaced with current behavior checks"
+  ],
+  "dedicated_files_deleted": [
+    "handson/tests/test_dual_knob_panel_contract.py",
+    "handson/tests/test_e01_physx_failure_guards.py",
+    "handson/tests/test_isaaclab_d13_d19.py",
+    "handson/tests/test_isaaclab_e02_rope_knot.py",
+    "handson/tests/test_isaaclab_e03_untie_rope.py",
+    "handson/tests/test_isaaclab_e04_cats_cradle.py",
+    "handson/tests/test_isaaclab_e05_fold_wipe.py",
+    "handson/tests/test_isaaclab_e_collection.py",
+    "handson/tests/test_loaded_tray_gate_assets.py",
+    "handson/tests/test_loaded_tray_gate_contract.py",
+    "handson/tests/test_p003_contract.py",
+    "handson/tests/test_p003_runtime_registration.py",
+    "handson/tests/test_rokae_wuji_controller.py",
+    "handson/tests/test_synchronized_dual_knob_registration.py",
+    "handson/tests/test_synchronized_dual_knob_semantics.py",
+    "handson/tests/test_t23_photograph_logo.py"
+  ],
+  "removed_configs_by_directory": {
+    "multi_task": 63,
+    "rand_obj": 12,
+    "rand_full": 12
+  }
+}

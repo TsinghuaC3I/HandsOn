@@ -1,0 +1,11 @@
+Model Information:
+* title:	Door Handle
+* source:	https://sketchfab.com/3d-models/door-handle-b17802a127954b868a1250f55597142d
+* author:	Helindu (https://sketchfab.com/Helindu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Door Handle" (https://sketchfab.com/3d-models/door-handle-b17802a127954b868a1250f55597142d) by Helindu (https://sketchfab.com/Helindu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

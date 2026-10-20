@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="h01_chinese_chess_objects">
+  <asset>
+    <texture name="h01_board_base_color" type="2d" file="assets/h01_chinese_chess/h01_board_baseColor.png"/>
+    <texture name="h01_piece_wood_texture" type="2d" file="assets/h01_chinese_chess/h01_piece_wood.png"/>
+    <material name="h01_board_surface" rgba="1 1 1 1" specular="0.15" shininess="0.18" texture="h01_board_base_color" texuniform="false"/>
+    <material name="h01_piece_wood" rgba="0.72 0.42 0.18 1" specular="0.08" shininess="0.18" texture="h01_piece_wood_texture" texuniform="false"/>
+    <material name="h01_red_text" rgba="0.85 0.015 0.01 1" specular="0.05" shininess="0.12"/>
+    <material name="h01_black_text" rgba="0.015 0.015 0.015 1" specular="0.05" shininess="0.12"/>
+    <mesh name="h01_chess_board_mesh" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_board_068.obj" scale="0.873 0.873 1"/>
+    <!-- Closed source mesh used to audit the recessed surface, straight-edge plateaus, and downloaded board bottom. -->
+    <mesh name="h01_chess_board_support_mesh" file="assets/h01_chinese_chess/h01_chess_board_support.obj" scale="0.873 0.873 1"/>
+    <mesh name="h01_chess_red_general_mesh" file="assets/h01_chinese_chess/h01_chess_red_general.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_general_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_general_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_general_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_general_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_advisor_mesh" file="assets/h01_chinese_chess/h01_chess_red_advisor.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_advisor_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_advisor_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_advisor_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_advisor_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_elephant_mesh" file="assets/h01_chinese_chess/h01_chess_red_elephant.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_elephant_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_elephant_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_elephant_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_elephant_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_horse_mesh" file="assets/h01_chinese_chess/h01_chess_red_horse.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_horse_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_horse_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_horse_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_horse_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_chariot_mesh" file="assets/h01_chinese_chess/h01_chess_red_chariot.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_chariot_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_chariot_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_chariot_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_chariot_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_cannon_mesh" file="assets/h01_chinese_chess/h01_chess_red_cannon.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_cannon_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_cannon_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_cannon_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_cannon_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_soldier_mesh" file="assets/h01_chinese_chess/h01_chess_red_soldier.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_soldier_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_soldier_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_red_soldier_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_red_soldier_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_general_mesh" file="assets/h01_chinese_chess/h01_chess_black_general.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_general_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_general_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_general_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_general_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_advisor_mesh" file="assets/h01_chinese_chess/h01_chess_black_advisor.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_advisor_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_advisor_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_advisor_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_advisor_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_elephant_mesh" file="assets/h01_chinese_chess/h01_chess_black_elephant.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_elephant_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_elephant_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_elephant_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_elephant_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_horse_mesh" file="assets/h01_chinese_chess/h01_chess_black_horse.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_horse_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_horse_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_horse_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_horse_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_chariot_mesh" file="assets/h01_chinese_chess/h01_chess_black_chariot.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_chariot_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_chariot_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_chariot_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_chariot_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_cannon_mesh" file="assets/h01_chinese_chess/h01_chess_black_cannon.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_cannon_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_cannon_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_cannon_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_cannon_text.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_soldier_mesh" file="assets/h01_chinese_chess/h01_chess_black_soldier.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_soldier_wood" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_soldier_wood.obj" class="h01_piece_mesh"/>
+    <mesh name="h01_chess_black_soldier_text" file="assets/h01_chinese_chess/optimized_visuals/h01_chess_black_soldier_text.obj" class="h01_piece_mesh"/>
+  </asset>
+  <default>
+    <!-- A 44.25 mm diameter is about 79% of the 55.872 mm grid spacing.  Only
+         X/Y are scaled so the source pieces retain their natural 15 mm
+         thickness. -->
+    <default class="h01_piece_mesh">
+      <mesh scale="1.485 1.485 1"/>
+    </default>
+    <default class="h01_piece">
+      <!-- Keep each piece fully dynamic.  The transparent analytic cylinder
+           below is inscribed in the scaled 44.25 x 44.24 x 15 mm source mesh;
+           its planar base avoids convex-mesh micro-rocking on the board. -->
+      <joint limited="false" damping="2.0" armature="0.002"/>
+      <!-- Keep board contact moderate while giving the side pinch more hold. -->
+      <geom condim="4" friction="0.95 0.06 0.006" solref="0.01 1" solimp="0.92 0.98 0.005"/>
+    </default>
+  </default>
+  <worldbody>
+    <body name="h01_board" pos="0 0 0">
+      <!-- Source-derived inscribed rectangle: X comes from the top/bottom straight-edge intersection, Y from the left/right straight-edge intersection, and Z spans the downloaded recessed surface to the downloaded board bottom. A primitive preserves that physical support while avoiding Isaac 5.1's GPU convex cook failure on this extremely thin board mesh. -->
+      <geom name="h01_board_collision" type="box" pos="-0.267 0 0.891837100025" size="0.246206004795 0.273732334704 0.001837302575" material="h01_board_surface" friction="1.1 0.04 0.004" group="3"/>
+      <geom name="h01_board_visual" type="mesh" mesh="h01_chess_board_mesh" pos="-0.267 0 0.899536" quat="0 0 0 1" material="h01_board_surface" contype="0" conaffinity="0" group="1"/>
+      <site name="h01_board_center" pos="-0.267 0 0.899" size="0.006" rgba="0.9 0.2 0.1 0"/>
+      <site name="h01_raised_waypoint" pos="-0.267 -0.120 1.0211744026" size="0.008" rgba="0.1 0.6 1 0"/>
+    </body>
+    <body name="h01_black_chariot_0" pos="-0.043512 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_chariot_0_joint"/>
+      <geom name="h01_black_chariot_0_visual_wood" type="mesh" mesh="h01_chess_black_chariot_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_chariot_0_visual_text" type="mesh" mesh="h01_chess_black_chariot_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_chariot_0_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_horse_1" pos="-0.099384 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_horse_1_joint"/>
+      <geom name="h01_black_horse_1_visual_wood" type="mesh" mesh="h01_chess_black_horse_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_horse_1_visual_text" type="mesh" mesh="h01_chess_black_horse_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_horse_1_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_elephant_2" pos="-0.155256 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_elephant_2_joint"/>
+      <geom name="h01_black_elephant_2_visual_wood" type="mesh" mesh="h01_chess_black_elephant_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_elephant_2_visual_text" type="mesh" mesh="h01_chess_black_elephant_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_elephant_2_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_advisor_3" pos="-0.211128 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_advisor_3_joint"/>
+      <geom name="h01_black_advisor_3_visual_wood" type="mesh" mesh="h01_chess_black_advisor_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_advisor_3_visual_text" type="mesh" mesh="h01_chess_black_advisor_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_advisor_3_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_general_4" pos="-0.267 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_general_4_joint"/>
+      <geom name="h01_black_general_4_visual_wood" type="mesh" mesh="h01_chess_black_general_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_general_4_visual_text" type="mesh" mesh="h01_chess_black_general_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_general_4_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_advisor_5" pos="-0.322872 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_advisor_5_joint"/>
+      <geom name="h01_black_advisor_5_visual_wood" type="mesh" mesh="h01_chess_black_advisor_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_advisor_5_visual_text" type="mesh" mesh="h01_chess_black_advisor_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_advisor_5_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_elephant_6" pos="-0.378744 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_elephant_6_joint"/>
+      <geom name="h01_black_elephant_6_visual_wood" type="mesh" mesh="h01_chess_black_elephant_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_elephant_6_visual_text" type="mesh" mesh="h01_chess_black_elephant_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_elephant_6_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_horse_7" pos="-0.434616 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_horse_7_joint"/>
+      <geom name="h01_black_horse_7_visual_wood" type="mesh" mesh="h01_chess_black_horse_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_horse_7_visual_text" type="mesh" mesh="h01_chess_black_horse_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_horse_7_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_chariot_8" pos="-0.490488 -0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_chariot_8_joint"/>
+      <geom name="h01_black_chariot_8_visual_wood" type="mesh" mesh="h01_chess_black_chariot_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_chariot_8_visual_text" type="mesh" mesh="h01_chess_black_chariot_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_chariot_8_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_cannon_1" pos="-0.099384 -0.139680 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_cannon_1_joint"/>
+      <geom name="h01_black_cannon_1_visual_wood" type="mesh" mesh="h01_chess_black_cannon_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_cannon_1_visual_text" type="mesh" mesh="h01_chess_black_cannon_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_cannon_1_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_cannon_7" pos="-0.434616 -0.139680 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_cannon_7_joint"/>
+      <geom name="h01_black_cannon_7_visual_wood" type="mesh" mesh="h01_chess_black_cannon_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_cannon_7_visual_text" type="mesh" mesh="h01_chess_black_cannon_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_cannon_7_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_soldier_0" pos="-0.043512 -0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_soldier_0_joint"/>
+      <geom name="h01_black_soldier_0_visual_wood" type="mesh" mesh="h01_chess_black_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_0_visual_text" type="mesh" mesh="h01_chess_black_soldier_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_0_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_soldier_2" pos="-0.155256 -0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_soldier_2_joint"/>
+      <geom name="h01_black_soldier_2_visual_wood" type="mesh" mesh="h01_chess_black_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_2_visual_text" type="mesh" mesh="h01_chess_black_soldier_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_2_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_soldier_4" pos="-0.267 -0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_soldier_4_joint"/>
+      <geom name="h01_black_soldier_4_visual_wood" type="mesh" mesh="h01_chess_black_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_4_visual_text" type="mesh" mesh="h01_chess_black_soldier_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_4_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_soldier_6" pos="-0.378744 -0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_soldier_6_joint"/>
+      <geom name="h01_black_soldier_6_visual_wood" type="mesh" mesh="h01_chess_black_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_6_visual_text" type="mesh" mesh="h01_chess_black_soldier_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_6_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_black_soldier_8" pos="-0.490488 -0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_black_soldier_8_joint"/>
+      <geom name="h01_black_soldier_8_visual_wood" type="mesh" mesh="h01_chess_black_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_8_visual_text" type="mesh" mesh="h01_chess_black_soldier_text" material="h01_black_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_black_soldier_8_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_chariot_0" pos="-0.043512 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_chariot_0_joint"/>
+      <geom name="h01_red_chariot_0_visual_wood" type="mesh" mesh="h01_chess_red_chariot_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_chariot_0_visual_text" type="mesh" mesh="h01_chess_red_chariot_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_chariot_0_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_horse_1" pos="-0.099384 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_horse_1_joint"/>
+      <geom name="h01_red_horse_1_visual_wood" type="mesh" mesh="h01_chess_red_horse_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_horse_1_visual_text" type="mesh" mesh="h01_chess_red_horse_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_horse_1_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_elephant_2" pos="-0.155256 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_elephant_2_joint"/>
+      <geom name="h01_red_elephant_2_visual_wood" type="mesh" mesh="h01_chess_red_elephant_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_elephant_2_visual_text" type="mesh" mesh="h01_chess_red_elephant_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_elephant_2_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_advisor_3" pos="-0.211128 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_advisor_3_joint"/>
+      <geom name="h01_red_advisor_3_visual_wood" type="mesh" mesh="h01_chess_red_advisor_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_advisor_3_visual_text" type="mesh" mesh="h01_chess_red_advisor_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_advisor_3_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_general_4" pos="-0.267 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_general_4_joint"/>
+      <geom name="h01_red_general_4_visual_wood" type="mesh" mesh="h01_chess_red_general_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_general_4_visual_text" type="mesh" mesh="h01_chess_red_general_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_general_4_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_advisor_5" pos="-0.322872 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_advisor_5_joint"/>
+      <geom name="h01_red_advisor_5_visual_wood" type="mesh" mesh="h01_chess_red_advisor_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_advisor_5_visual_text" type="mesh" mesh="h01_chess_red_advisor_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_advisor_5_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_elephant_6" pos="-0.378744 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_elephant_6_joint"/>
+      <geom name="h01_red_elephant_6_visual_wood" type="mesh" mesh="h01_chess_red_elephant_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_elephant_6_visual_text" type="mesh" mesh="h01_chess_red_elephant_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_elephant_6_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_horse_7" pos="-0.434616 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_horse_7_joint"/>
+      <geom name="h01_red_horse_7_visual_wood" type="mesh" mesh="h01_chess_red_horse_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_horse_7_visual_text" type="mesh" mesh="h01_chess_red_horse_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_horse_7_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_chariot_8" pos="-0.490488 0.251424 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_chariot_8_joint"/>
+      <geom name="h01_red_chariot_8_visual_wood" type="mesh" mesh="h01_chess_red_chariot_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_chariot_8_visual_text" type="mesh" mesh="h01_chess_red_chariot_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_chariot_8_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_cannon_1" pos="-0.099384 0.139680 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_cannon_1_joint"/>
+      <geom name="h01_red_cannon_1_visual_wood" type="mesh" mesh="h01_chess_red_cannon_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_cannon_1_visual_text" type="mesh" mesh="h01_chess_red_cannon_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_cannon_1_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_cannon_7" pos="-0.434616 0.139680 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_cannon_7_joint"/>
+      <geom name="h01_red_cannon_7_visual_wood" type="mesh" mesh="h01_chess_red_cannon_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_cannon_7_visual_text" type="mesh" mesh="h01_chess_red_cannon_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_cannon_7_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_soldier_0" pos="-0.043512 0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_soldier_0_joint"/>
+      <geom name="h01_red_soldier_0_visual_wood" type="mesh" mesh="h01_chess_red_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_0_visual_text" type="mesh" mesh="h01_chess_red_soldier_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_0_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_soldier_2" pos="-0.155256 0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_soldier_2_joint"/>
+      <geom name="h01_red_soldier_2_visual_wood" type="mesh" mesh="h01_chess_red_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_2_visual_text" type="mesh" mesh="h01_chess_red_soldier_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_2_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_soldier_4" pos="-0.267 0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_soldier_4_joint"/>
+      <geom name="h01_red_soldier_4_visual_wood" type="mesh" mesh="h01_chess_red_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_4_visual_text" type="mesh" mesh="h01_chess_red_soldier_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_4_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_soldier_6" pos="-0.378744 0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_soldier_6_joint"/>
+      <geom name="h01_red_soldier_6_visual_wood" type="mesh" mesh="h01_chess_red_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_6_visual_text" type="mesh" mesh="h01_chess_red_soldier_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_6_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+    <body name="h01_red_soldier_8" pos="-0.490488 0.083808 0.9011744026" childclass="h01_piece">
+      <freejoint name="h01_red_soldier_8_joint"/>
+      <geom name="h01_red_soldier_8_visual_wood" type="mesh" mesh="h01_chess_red_soldier_wood" material="h01_piece_wood" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_8_visual_text" type="mesh" mesh="h01_chess_red_soldier_text" material="h01_red_text" contype="0" conaffinity="0" group="1"/>
+      <geom name="h01_red_soldier_8_collision" type="cylinder" size="0.0221265 0.0075" rgba="0 0 0 0" mass="0.032" group="3"/>
+    </body>
+  </worldbody>
+</mujoco>

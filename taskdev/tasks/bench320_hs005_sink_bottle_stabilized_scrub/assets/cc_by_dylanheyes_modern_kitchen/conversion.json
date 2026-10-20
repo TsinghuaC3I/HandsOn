@@ -1,0 +1,68 @@
+{
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 5674648,
+    "default_prim": "/World",
+    "filename": "modern_kitchen_visual.usd",
+    "forbidden_schema_count": 0,
+    "mesh_count": 29,
+    "sha256": "2844379cbb6a6826ea7ebc45f35e62edb34975506f873dbe098f8b2300b083a4",
+    "textures": {
+      "file_count": 13,
+      "max_dimension": 1024,
+      "resized_count": 2
+    }
+  },
+  "schema": "hs005_kitchen_background_conversion_v1",
+  "source": {
+    "archive": "modern_kitchen.zip",
+    "archive_sha256": "369e98dd793cccfae7cbf998a2cc8d839006ba38d3791aa7690cf5248a29e24d",
+    "author": "dylanheyes",
+    "author_url": "https://sketchfab.com/dylanheyes",
+    "directory": "cc_by_dylanheyes_modern_kitchen",
+    "id": "modern_kitchen",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "output": "modern_kitchen_visual.usd",
+    "profile": {
+      "bounds_source": [
+        [
+          -6.484412227361722,
+          -0.3586747342057717,
+          -4.950645316454859
+        ],
+        [
+          16.10360173457235,
+          7.315565206018525,
+          7.942678676469381
+        ]
+      ],
+      "extents_source": [
+        22.588013961934074,
+        7.674239940224297,
+        12.893323992924241
+      ],
+      "geometry_count": 29,
+      "mesh_node_count": 29,
+      "triangle_count": 72561
+    },
+    "source_url": "https://sketchfab.com/3d-models/modern-kitchen-9843a830b96142a9a53f45f25304d93c",
+    "title": "Modern Kitchen"
+  }
+}

@@ -1,0 +1,20 @@
+task_id: XY4
+env_name: eval_comb05_scrub_bottle_then_fill_cup
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+robot_type: dual_arm
+objects: [hs005_bottle, hs005_brush, ceramic_mug, faucet_fixture, faucet_handle]
+prompt: >-
+  Stabilize the bottle with the left hand and grasp the cleaning brush by its
+  handle with the right hand. Scrub the lower, middle and upper bottle bands
+  in order, then release both objects and leave the bottle upright and stable.
+  Next, hold the mug under the faucet with the left hand and open the faucet
+  with the right hand. Keep the stream entering the upright mug for 0.5 seconds,
+  then place the mug on the marked counter pad outside the sink and close the
+  faucet. Leave the scrubbed bottle upright.
+sim_backend: isaacsim
+arm_type: rokae
+hand_type: wuji1
+randomize: true
+control_hz: 30
+physics_hz: 120
+time_limit_seconds: 90

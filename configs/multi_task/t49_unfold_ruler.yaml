@@ -1,0 +1,60 @@
+env_name: t49_unfold_ruler
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pull both outer ruler segments through their real hinges until all three segments are straight. The ruler starts at a randomized tabletop pose and remains free to move; either hand may be used. Success is immediate when both absolute hinge angles reach 175–180 degrees; +180 and −180 are equivalent, and no release or stability hold is required."
+robot_type: dual_arm
+time_limit_seconds: 90
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx
+  control_hz: 30
+  physics_hz: 120
+  arm_type: rokae
+  hand_type: wuji1
+skills:
+  - bimanual_articulation
+  - dual_hinge_unfolding
+  - straightness_target
+objects:
+  - folding_ruler
+  - left_outer_segment
+  - middle_segment
+  - right_outer_segment
+workflow:
+  - move_outer_segments_through_real_hinges
+  - pull_until_ruler_is_straight
+success_criteria:
+  - ruler_straightness_reaches_target
+# The free-root ruler starts at the audited z=.8958 m pose and settles onto the
+# tabletop under gravity; ordinary tabletop motion remains allowed. A gross
+# escape beyond 750 mm / 270 degrees is the terminal safety condition.
+collision_safety:
+  thin_link_speculative_ccd: false
+  thin_link_swept_ccd: true
+  hand_solver_iterations: {position: 64, velocity: 8}
+  hand_max_depenetration_velocity_mps: 0.40
+  source_and_grip_contact_offset_m: 0.002
+  # Source/render geometry remains immutable; composed integration uses a
+  # GPU-compatible bounding cube for each long ``*_Collider1`` mesh.
+  gpu_long_link_approximation: boundingCube
+  gpu_long_link_scope: [Ruler035_Collider1, Ruler035_prop001_Collider1, Ruler035_prop002_Collider1]
+passive_settling:
+  policy: g10_free_root_passive_hinge_damping_v2
+  fixed_root: false
+  link_linear_damping: 2.0
+  link_angular_damping: 8.0
+  joint_friction: 0.03
+  passive_velocity_drive: {stiffness: 0.0, damping: 0.05, max_force_nm: 0.15}
+  reset_hinge_angles_deg: [-90.0, 90.0]
+fixed_root_drift:
+  fixed_root: false
+  root_pose_constraint: false
+  translation_limit_m: 0.002
+  rotation_limit_deg: 1.0
+  recoverable: true
+  on_soft_violation: clear_current_attempt_progress_without_terminal_reset
+  gross_escape_translation_m: 0.750
+  gross_escape_rotation_deg: 270.0
+  gross_escape_hold_s: 0.50

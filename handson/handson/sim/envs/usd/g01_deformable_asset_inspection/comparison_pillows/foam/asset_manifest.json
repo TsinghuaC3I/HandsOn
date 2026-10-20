@@ -1,0 +1,49 @@
+{
+  "profile": "foam",
+  "revision": "sewn-pillow-v2",
+  "mesher": "TetGen constrained Delaunay q1.7/8",
+  "node_count": 753,
+  "tet_count": 3000,
+  "surface_vertex_count": 8744,
+  "surface_face_count": 17484,
+  "boundary_nonmanifold_edges": 0,
+  "minimum_tet_volume_m3": 2.4188510505406577e-05,
+  "volume_m3": 0.05105629626429569,
+  "boundary_volume_m3": 0.05105629626429567,
+  "boundary_edge_p95_m": 0.01895891218004152,
+  "bounds_min": [
+    -0.4,
+    -0.2111,
+    -0.11000000000000001
+  ],
+  "bounds_max": [
+    0.4,
+    0.2111,
+    0.11000000000000001
+  ],
+  "visual_collision_max_error_m": 0.0,
+  "parameters": {
+    "label": "Resilient foam pillow",
+    "youngs_modulus": 400000.0,
+    "poissons_ratio": 0.33,
+    "density_kg_m3": 55.0,
+    "damping": 0.18,
+    "solver_position_iterations": 255,
+    "half_height_m": 0.11,
+    "color": [
+      0.24,
+      0.41,
+      0.48
+    ],
+    "seam_half_thickness_m": 0.018873994638069706,
+    "mass": 2.808096294536263
+  },
+  "collision_node_count": 19110,
+  "collision_tet_count": 89409,
+  "render_face_count": 79152,
+  "render_vertex_count": 39578,
+  "piping_radius_m": 0.0008,
+  "simulation_mesher": "PhysX TetMaker voxel resolution 16; Z scaled by 0.110/0.09325",
+  "simulation_volume_m3": 0.07256562910770951,
+  "usd_sha256": "33bc3580d714acb131e65ad2fc2279d06bba2a5a5ac1a140928bf1eacfff5646"
+}

@@ -1,0 +1,105 @@
+{
+  "blocks": {
+    "block_a": {
+      "active_mesh_count": 2,
+      "collider_count": 1,
+      "normalization_scale": 0.04639759584804431,
+      "normalized_local_bounds_max_m": [
+        0.0375,
+        0.03744508789019451,
+        0.03749999851617847
+      ],
+      "normalized_local_bounds_min_m": [
+        -0.0375,
+        -0.03744508789019451,
+        -0.03749999851617847
+      ],
+      "normalized_target_max_extent_m": 0.075,
+      "normalized_translation_m": [
+        -0.00895151227426505,
+        -0.07532505658709157,
+        0.009827128565785175
+      ],
+      "source_bounds_max_m": [
+        1.001162052154541,
+        2.4305169786515872,
+        0.5964289624191751
+      ],
+      "source_bounds_min_m": [
+        -0.6153010129928594,
+        0.816420937432984,
+        -1.0200340387670865
+      ],
+      "source_extents_m": [
+        1.6164630651474003,
+        1.6140960412186032,
+        1.6164630011862617
+      ],
+      "source_mesh": "Object_0",
+      "source_node": "Object_2",
+      "visible_mesh_count": 1,
+      "wrapper_sha256": "e13c11bf98ce158ed1aa36b7e44554b9fa958b40fc4d486b41512b6ad342b333"
+    },
+    "block_b": {
+      "active_mesh_count": 2,
+      "collider_count": 1,
+      "normalization_scale": 0.04639759584804431,
+      "normalized_local_bounds_max_m": [
+        0.0375,
+        0.03744508789019451,
+        0.03749999851617847
+      ],
+      "normalized_local_bounds_min_m": [
+        -0.0375,
+        -0.03744508789019451,
+        -0.03749999851617847
+      ],
+      "normalized_target_max_extent_m": 0.075,
+      "normalized_translation_m": [
+        -0.00895151227426505,
+        -0.07532505658709157,
+        0.009827128565785175
+      ],
+      "source_bounds_max_m": [
+        1.001162052154541,
+        2.4305169786515872,
+        0.5964289624191751
+      ],
+      "source_bounds_min_m": [
+        -0.6153010129928594,
+        0.816420937432984,
+        -1.0200340387670865
+      ],
+      "source_extents_m": [
+        1.6164630651474003,
+        1.6140960412186032,
+        1.6164630011862617
+      ],
+      "source_mesh": "Object_0",
+      "source_node": "Object_2",
+      "visible_mesh_count": 1,
+      "wrapper_sha256": "e13c11bf98ce158ed1aa36b7e44554b9fa958b40fc4d486b41512b6ad342b333"
+    }
+  },
+  "conversion": {
+    "converter": "omni.kit.asset_converter 5.0.17",
+    "output": "source/converted_scene.usd",
+    "runtime": "Isaac Sim 5.1",
+    "selected_nodes": {
+      "block_a": "Object_2",
+      "block_b": "Object_2"
+    },
+    "source_root": "/BlocksSketchfab_obj_cleaner_materialmerger_gles"
+  },
+  "schema": "bc021_old_fashioned_wooden_blocks_v1",
+  "source": {
+    "archive_filename": "old_fashioned_wooden_blocks.zip",
+    "archive_sha256": "983de66500f8ab94997929442d355cec21c9afa66d0fa27af7860202a760c6b8",
+    "author": "CurlyFryWhy",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_scene_sha256": "21eaed105a8dcf877747e403233a32d8093402ebdb87c4cdc2d33219b59f57c8",
+    "source_url": "https://sketchfab.com/3d-models/old-fashioned-wooden-blocks-8331752cf38243638b0681f5ea230c28",
+    "title": "Old Fashioned Wooden Blocks"
+  }
+}

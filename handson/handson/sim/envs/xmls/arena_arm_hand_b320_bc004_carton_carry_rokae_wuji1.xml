@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji1_B320_BC004_D08_Aligned">
+  <include file="rokae_wuji1_bimanual.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+  <statistic center="-0.05 0 1.02" extent=".9" />
+
+  <visual>
+    <headlight diffuse=".25 .25 .25" ambient=".30 .30 .30" />
+    <global azimuth="160" elevation="-20" offheight="2048" offwidth="2048" />
+    <quality offsamples="8" />
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".30 .50 .70" rgb2="0 0 0"
+             width="32" height="512" />
+    <texture name="bc004_floor_texture" type="2d" builtin="checker"
+             width="512" height="512" rgb1=".82 .84 .86" rgb2=".72 .74 .76" />
+    <material name="bc004_floor_material" texture="bc004_floor_texture"
+              texrepeat="2 2" texuniform="true" reflectance=".01" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="3 3 .01" type="plane"
+          material="bc004_floor_material" />
+
+    <camera name="front" pos="1.28 0 1.62"
+            quat=".5963678 .3799282 .3799282 .5963678" fovy="48" />
+    <camera name="back" pos="-1.30 0 2.20"
+            quat=".6532815 .2705981 -.2705981 -.6532815" fovy="48" />
+    <camera name="left" pos="-1 .8 2"
+            quat="-.3535 -.146424 .3535 .853424" fovy="45" />
+    <camera name="right" pos="-1 -.8 2"
+            quat=".853424 .3535 -.146424 -.3535" fovy="45" />
+    <camera name="top0" pos=".17 0 1.85" quat=".707 0 0 -.707" fovy="48" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse=".65 .65 .65"
+           specular=".06 .06 .06" />
+
+    <!-- BC004 keeps the collision-clear lateral home required by the carton's
+         0.47 m width while matching D08's target height and orientation. -->
+    <body name="target_right" pos="-.12 -.36 1.08" quat="0 1 0 0" mocap="true">
+      <geom name="target_right" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".6 .3 .3 0" />
+    </body>
+    <body name="target_left" pos="-.12 .36 1.08" quat="0 1 0 0" mocap="true">
+      <geom name="target_left" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".3 .3 .6 0" />
+    </body>
+  </worldbody>
+</mujoco>

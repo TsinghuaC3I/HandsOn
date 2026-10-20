@@ -1,0 +1,98 @@
+{
+  "source_repository": "https://github.com/llltttwww/handson",
+  "source_revision": "282390f0fec08daca53e2d6b03f6ad8772b609f4",
+  "source_file": "handson/handson/sim/envs/xmls/d_long_horizon_objects.xml",
+  "source_sha256": "bc98b70a7e5e78d3e0a2b19b771bd197b51cb1d9ecc454bea7a75fa85aad4a47",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 HandsOn contributors",
+  "license_file": "LICENSE",
+  "geometry_changes": "none",
+  "bodies": [
+    {
+      "source_body": "d15_box_left",
+      "body": "gen2_lunchbox",
+      "source_mass_kg": 0.33999999999999997,
+      "mass_kg": 0.09,
+      "centre_of_mass_m": [
+        0.0,
+        0.0,
+        0.019411764705882354
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.0005886465051903114,
+        0.0008930582698961939,
+        0.0012877058823529412
+      ],
+      "components": [
+        {
+          "type": "box",
+          "size": ".14 .11 .012",
+          "pos": "",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        },
+        {
+          "type": "box",
+          "size": ".010 .11 .055",
+          "pos": ".14 0 .055",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        },
+        {
+          "type": "box",
+          "size": ".010 .11 .055",
+          "pos": "-.14 0 .055",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        },
+        {
+          "type": "box",
+          "size": ".14 .010 .055",
+          "pos": "0 .11 .055",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        },
+        {
+          "type": "box",
+          "size": ".14 .010 .055",
+          "pos": "0 -.11 .055",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        }
+      ],
+      "geometry_sha256": "1597d27ffd8c2c7f2a5909245460ede6a464b1c685c97c0dc0797e74b2bac1a9"
+    },
+    {
+      "source_body": "d15_lid_left",
+      "body": "gen2_lid",
+      "source_mass_kg": 0.12,
+      "mass_kg": 0.04,
+      "centre_of_mass_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.00019285333333333342,
+        0.0003008533333333334,
+        0.000492
+      ],
+      "components": [
+        {
+          "type": "box",
+          "size": ".15 .12 .008",
+          "pos": "",
+          "quat": "",
+          "euler": "",
+          "material": "dlong_cyan"
+        }
+      ],
+      "geometry_sha256": "3c7726092d2f72f7ae80c6c8de8db9dbea785dc2b8c1f367c4c2ed1241a16769"
+    }
+  ]
+}

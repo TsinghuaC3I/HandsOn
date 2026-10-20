@@ -1,0 +1,107 @@
+{
+  "collision": {
+    "approximation": "convexDecomposition",
+    "derivation": "source exact mesh topology then PhysX convex decomposition",
+    "placeholder_primitives": false,
+    "policy": "source meshes carry collision APIs"
+  },
+  "conversion": {
+    "convert_stage_up_z": true,
+    "embed_textures": false,
+    "isaac_sim": "5.1",
+    "merge_all_meshes": false,
+    "single_mesh": false,
+    "use_meter_as_world_unit": true
+  },
+  "provenance": {
+    "archive_name": "painted_wooden_cabinet_4k.gltf.zip",
+    "archive_sha256": "dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf",
+    "author": "Kirill Sannikov / Poly Haven",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "platform": "Poly Haven",
+    "source_url": "https://polyhaven.com/a/painted_wooden_cabinet",
+    "title": "Painted Wooden Cabinet"
+  },
+  "runtime_components": [
+    {
+      "collision": "source_exact_mesh_topology_then_physx_convex_decomposition",
+      "mesh_count": 3,
+      "path": "painted_cabinet_body.usd",
+      "sha256": "4ec7520f2b415f6ee2adcb8fc24733b69900a51cb9478d6951a7a190e522b033",
+      "size_bytes": 133869,
+      "source_node": "/World/painted_wooden_cabinet"
+    },
+    {
+      "collision": "source_exact_mesh_topology_then_physx_convex_decomposition",
+      "mesh_count": 1,
+      "path": "painted_cabinet_door_right.usd",
+      "sha256": "20b73b6b3f51b6811368fc7b8f3905fd6e522da859146f58908ce5f712329f98",
+      "size_bytes": 33260,
+      "source_node": "/World/painted_wooden_cabinet_door_02"
+    },
+    {
+      "collision": "source_exact_mesh_topology_then_physx_convex_decomposition",
+      "mesh_count": 1,
+      "path": "painted_cabinet_door_left.usd",
+      "sha256": "ac8b8177efbeb2ede8f70e56dacd21f127dc85274944592d14578d4295f4d44b",
+      "size_bytes": 10684,
+      "source_node": "/World/painted_wooden_cabinet_door_01"
+    }
+  ],
+  "schema": "dexjoco.fu001.polyhaven-painted-cabinet-asset",
+  "schema_version": 1,
+  "scene_frame": {
+    "converter_source_to_runtime": "(x,y,z) -> (x,-z,y)",
+    "extra_rotation": "Rz(-90 degrees)",
+    "orientation_wxyz": [0.5, 0.5, -0.5, -0.5],
+    "source_to_world": "(x,y,z) -> (-z,-x,y)"
+  },
+  "source": {
+    "hinge_axis_runtime": "+Z after +90 degrees about X",
+    "hinge_axis_source": "+Y",
+    "independent_nodes": [
+      "/World/painted_wooden_cabinet",
+      "/World/painted_wooden_cabinet_door_02",
+      "/World/painted_wooden_cabinet_door_01"
+    ],
+    "measured_bounds_source_m": {
+      "depth_z": 0.5465,
+      "height_y": 1.1819,
+      "width_x": 1.1947
+    },
+    "members": [
+      {
+        "path": "painted_wooden_cabinet_4k.gltf",
+        "sha256": "c6cdc9c71589e9176a7829e439af86aab37f785c701e49a605f4ef837fbbbb80",
+        "size_bytes": 9253
+      },
+      {
+        "path": "painted_wooden_cabinet.bin",
+        "sha256": "1023d773d84c42f2709ec297247d90b0e2833e37241fbe852e2f33b41ae10cda",
+        "size_bytes": 78072
+      },
+      {
+        "path": "textures/painted_wooden_cabinet_arm_4k.jpg",
+        "sha256": "a4e4b31a082876f4e6b615dce65e063e94d6bfd6c7d8a74d6d6697280aa7d156",
+        "size_bytes": 8038338
+      },
+      {
+        "path": "textures/painted_wooden_cabinet_diff_4k.jpg",
+        "sha256": "730e6e287df5901e9ca36639edeba2d6e77939514fa3a2fb4c13812eec735135",
+        "size_bytes": 10388113
+      },
+      {
+        "path": "textures/painted_wooden_cabinet_nor_gl_4k.jpg",
+        "sha256": "dd76bd501447bc5f25f108d0feacd17e3835c71fd73ca6ad062f4620040ab6b7",
+        "size_bytes": 6999269
+      }
+    ],
+    "orientation_mapping_source_to_runtime": "(x,y,z) -> (x,-z,y)",
+    "source_format": "glTF 2.0",
+    "source_units": "meters",
+    "source_up_axis": "Y"
+  },
+  "task_id": "B320-FU001",
+  "task_name": "b320_synchronized_double_cabinet_open"
+}

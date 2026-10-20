@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="sponge_slot_compress_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="sponge_slot_visual">
+      <geom contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="sponge_slot_collision">
+      <geom group="0" solref="0.012 1" solimp="0.94 0.99 0.001 0.5 2" friction="1.10 0.010 0.0001"/>
+    </default>
+    <default class="sponge_slot_region">
+      <geom type="box" contype="0" conaffinity="0" group="4" mass="0"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="sponge_slot_sponge_tex" file="../../lightwheel_ycb/sponge/visuals/T_sponge_BC001.png"/>
+    <material name="sponge_slot_sponge_mat" texture="sponge_slot_sponge_tex" specular="0.18" shininess="0"/>
+    <mesh name="sponge_slot_sponge_vis" file="../../lightwheel_ycb/sponge/visuals/sponge.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="sponge_root_body" pos="-0.20 -0.08 0.936" quat="1 0 0 0">
+      <freejoint name="sponge_root"/>
+      <body name="sponge_object">
+        <geom class="sponge_slot_visual" type="mesh" material="sponge_slot_sponge_mat" mesh="sponge_slot_sponge_vis"/>
+        <geom name="sponge_proxy_collision" class="sponge_slot_collision" type="box" size="0.035767 0.0567915 0.0068855" density="260" rgba="0.98 0.82 0.18 0.45"/>
+        <geom name="sponge_deform_shell" class="sponge_slot_region" size="0.035767 0.0567915 0.0068855" rgba="0.95 0.72 0.08 0.18"/>
+        <site name="sponge_center" pos="0 0 0" size="0.006" rgba="0.95 0.72 0.08 0.75"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

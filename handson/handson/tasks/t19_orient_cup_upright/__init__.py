@@ -1,0 +1,1 @@
+"""Cup upright-orientation task."""

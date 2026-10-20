@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d02_microwave_payload">
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <default>
+    <default class="d02_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="d02_collision">
+      <geom group="3" condim="6" friction="1.8 0.08 0.006"
+            solref="0.0025 1" solimp="0.98 0.995 0.001"
+            margin="0.001" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="d02_plate_texture"
+             file="lightwheel_ycb/plate/visuals/T_plate_BC001.png" />
+    <material name="d02_plate_material" texture="d02_plate_texture"
+              specular="0.3" shininess="0.12" />
+    <mesh name="d02_plate_visual_mesh"
+          file="lightwheel_ycb/plate/visuals/plate.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="d02_plate" pos="-0.31 -0.34 0.945" quat="1 0 0 0">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.18"
+                diaginertia="0.00076914 0.00076914 0.001521" />
+      <freejoint name="d02_plate_free" />
+      <geom name="d02_plate_visual" class="d02_visual" type="mesh"
+            mesh="d02_plate_visual_mesh" material="d02_plate_material" />
+      <!-- A low pedestal leaves a real finger gap under the rim while the
+           thin upper disk supports the payload.  Both shapes stay inside the
+           visual plate's original 24 mm height envelope: unlike the retired
+           tall lip boxes, they cannot overlap D02's low microwave shell at
+           reset and destabilize the first PhysX step. -->
+      <geom name="d02_plate_pedestal_collision" type="cylinder"
+            pos="0 0 -0.008" size="0.085 0.004"
+            condim="6" friction="1.5 0.20 0.02"
+            solref="0.003 1" solimp="0.95 0.99 0.001"
+            mass="0.03" rgba="0 0 0 0" group="3" />
+      <geom name="d02_plate_collision" type="cylinder"
+            pos="0 0 0.008" size="0.125 0.004"
+            condim="6" friction="1.5 0.20 0.02"
+            solref="0.003 1" solimp="0.95 0.99 0.001"
+            mass="0.15" rgba="0 0 0 0" group="3" />
+      <site name="d02_plate_center" pos="0 0 0.014" size="0.004"
+            rgba="0 0 0 0" />
+    </body>
+
+    <body name="003_cracker_box" pos="-0.31 -0.34 1.074" quat="1 0 0 0">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.12"
+                diaginertia="0.00048836118973 0.00070788822868 0.00029127046793" />
+      <joint name="003_cracker_box_freejoint" type="free"
+             damping="0.8" armature="0.006" />
+      <geom name="003_cracker_box_visual" class="a_series_ycb_visual"
+            material="cracker_box_material" mesh="cracker_box_vis" />
+      <geom name="003_cracker_box_collision_1" class="a_series_ycb_collision"
+            type="box" size="0.079906 0.0299465 0.106359" mass="0.12" />
+      <site name="003_cracker_box_center" pos="0 0 0" size="0.004"
+            rgba="0 0 0 0" />
+    </body>
+
+    <body name="008_pudding_box" pos="-0.31 -0.34 1.013" quat="1 0 0 0">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.07"
+                diaginertia="0.00005388598945916668 0.00011819915569583334 0.00007910567898333334" />
+      <joint name="008_pudding_box_freejoint" type="free"
+             damping="0.8" armature="0.006" />
+      <geom name="008_pudding_box_visual" class="a_series_ycb_visual"
+            material="pudding_box_material" mesh="pudding_box_vis" />
+      <geom name="008_pudding_box_collision_1" class="a_series_ycb_collision"
+            type="box" size="0.055437 0.017804 0.0446365" mass="0.07" />
+      <site name="008_pudding_box_center" pos="0 0 0" size="0.004"
+            rgba="0 0 0 0" />
+    </body>
+  </worldbody>
+
+</mujoco>

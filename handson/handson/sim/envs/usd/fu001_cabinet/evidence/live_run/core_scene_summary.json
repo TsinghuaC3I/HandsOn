@@ -1,0 +1,519 @@
+{
+  "articulation_view": {
+    "errors": [],
+    "pass": true,
+    "selected_dof_count": 21,
+    "selected_path": "/World/FU001CoreScene/DoubleCabinet44781/root_joint"
+  },
+  "asset_hashes": {
+    "dexjoco/dexjoco/sim/envs/xmls/rokae_wuji1_bimanual.xml": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+    "dexjoco/dexjoco/sim/isaaclab/abc_collection_env.py": "4fe8595b02f38df67082298c4fc34c3d78084c85049ef67bb03f1acd30839f4e",
+    "dexjoco/dexjoco/sim/isaaclab/recording_cameras.py": "de9dd06135fca38ded56bb9146de1219ec9571532f089d38285794d526a805eb",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/config.yaml": "96d93a6f2232a7aa605375b1e90bd6d11ef9cc83c751ff0b64c7fb170c305a67",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_0.jpg": "ac39178048c84f7b229abc893d1a2b0ae42f176c99dffb2da26c4e04111af8de",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_1.jpg": "f9b500da9e46f8c1afc63f81299b04c0d98a08bd00ead03a4b4df7e66e18860c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_2.png": "fca29c933bfbec5df7928d871076df9ae70598d378ce42ce973ec95d4310189a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_3.jpg": "7af4d6d5200361e3ca22c0b59f8e61d6dfa5386eea23f5ccee7acdb13f7b2c9c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_4.jpg": "172ef612abe5c96b979e8b1fc45a29c4f2ae5d91aa093b37559deec49762651d",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_5.png": "fca29c933bfbec5df7928d871076df9ae70598d378ce42ce973ec95d4310189a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_base.usd": "d49014e865264e889bd64182af6b493bb23cc251d87d1833c156fb72233dd93f",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_physics.usd": "cb141c0188ba6c03d55ca5c9c49ba228372641e24575896d2826f2d4dd49127a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_robot.usd": "5ddec04dd3e11190a48a5a450ebf8bbfca0555b9c87675ae3daf288327e42b07",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_sensor.usd": "75e6ea61cf2d8fda098865629dfbfa44beb7c2cde97726b4dd8a505eba92f8e1",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/meta.json": "0dd38866c35edae121bfb73491e2432f3f904b25b4217852d2369b3280896f7c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/mobility.usd": "9d3caff24dcf4b8465baa0d8186e588da33c1f4ce5cebd864358ababf15e9c46",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/source_rows.authoritative.json": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987"
+  },
+  "checks": {
+    "asset_hashes": true,
+    "cabinet_topology": true,
+    "door_joints": true,
+    "dual_rokae_wuji": true,
+    "head_camera_preview": true,
+    "identity_scale_and_table_pose": true,
+    "lighting": true,
+    "robot_cabinet_initial_clearance": true,
+    "zero_action_stability": true
+  },
+  "core_scene_pass": true,
+  "elapsed_wall_seconds": 6.059199571609497,
+  "head_camera": {
+    "bytes": 922446,
+    "expected_prim_path": "/World/RecordCameras/head_camera",
+    "metrics": {
+      "black_fraction": 0.0,
+      "dtype": "uint8",
+      "entropy_bits": 5.73574027436689,
+      "mean_rgb": 190.66061631944444,
+      "shape_hwc": [
+        480,
+        640,
+        3
+      ],
+      "std_rgb": 33.57889117336441,
+      "unique_values": 175
+    },
+    "pass": true,
+    "path": "/mnt/pfs/luotianwei/dexjoco-task-worktrees/dexjoco-taskdev-worktrees/b320-fu001-core-scene-framed-r2-20260817T101457Z-e623f3c0/taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_head_preview.png",
+    "prim_path": "/World/RecordCameras/head_camera",
+    "sha256": "40c52b60845521dfa57c5f08b84c31fadc36a71de5918d213a86cb5a4caf01bf"
+  },
+  "hidden_native_fixture_paths": [
+    "/World/Task/c10_charger_plug/c10_charger_plug",
+    "/World/Task/c10_charging_cable/c10_charging_cable",
+    "/World/Task/c10_power_strip/c10_power_strip"
+  ],
+  "initial_clearance": {
+    "cabinet_collider_count": 54,
+    "maximum_aabb_overlap_m": 0.0,
+    "overlap_pairs": [],
+    "pass": true,
+    "robot_collider_count": 60,
+    "threshold_m": 0.002
+  },
+  "joints": {
+    "joints": {
+      "joint_11": {
+        "body0_owner_paths": [
+          "/World/FU001CoreScene/DoubleCabinet44781/base_link"
+        ],
+        "body1_owner_paths": [
+          "/World/FU001CoreScene/DoubleCabinet44781/link_11"
+        ],
+        "drive_damping": 7.0,
+        "drive_max_force": 80.0,
+        "drive_stiffness": 35.0,
+        "initial_fraction": 0.15,
+        "initial_state_authored": false,
+        "initial_target_deg": 13.5,
+        "lower_limit_deg": 0.0,
+        "path": "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_11",
+        "upper_limit_deg": 90.0
+      },
+      "target_joint_revolute": {
+        "body0_owner_paths": [
+          "/World/FU001CoreScene/DoubleCabinet44781/base_link"
+        ],
+        "body1_owner_paths": [
+          "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute"
+        ],
+        "drive_damping": 7.0,
+        "drive_max_force": 80.0,
+        "drive_stiffness": 35.0,
+        "initial_fraction": 0.15,
+        "initial_state_authored": false,
+        "initial_target_deg": 13.5,
+        "lower_limit_deg": -0.0,
+        "path": "/World/FU001CoreScene/DoubleCabinet44781/joints/target_joint_revolute",
+        "upper_limit_deg": 90.0
+      }
+    },
+    "required_joint_names": [
+      "target_joint_revolute",
+      "joint_11"
+    ]
+  },
+  "lights": {
+    "distant": {
+      "intensity": 2500.0,
+      "path": "/World/FU001CoreScene/DistantLight"
+    },
+    "dome": {
+      "intensity": 350.0,
+      "path": "/World/FU001CoreScene/DomeLight"
+    }
+  },
+  "placement": {
+    "composed_world_scale_xyz": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "initial_oriented_aabb_m": [
+      [
+        -0.4107050166891755,
+        -0.6988350278220143,
+        -0.7230710144083097
+      ],
+      [
+        0.373959060550051,
+        0.6875650631988827,
+        0.6055620134630184
+      ]
+    ],
+    "source_identity_scale_xyz": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "table_clearance_m": 0.0019999999999998908,
+    "table_top_z_m": 0.89,
+    "translation_xyz_m": [
+      0.41837297806956225,
+      0.005634982311565839,
+      1.6150710144083096
+    ],
+    "world_aabb_m": [
+      [
+        0.007667961380386501,
+        -0.6932000455104486,
+        0.8919999999999999
+      ],
+      [
+        0.7923320386196133,
+        0.6932000455104486,
+        2.2206330278713278
+      ]
+    ],
+    "yaw_deg": 0.0
+  },
+  "render_mode": "RayTracedLighting",
+  "robot": {
+    "pass": true,
+    "sides": {
+      "left": {
+        "arm_joint_names": [
+          "joint1_left",
+          "joint2_left",
+          "joint3_left",
+          "joint4_left",
+          "joint5_left",
+          "joint6_left",
+          "joint7_left"
+        ],
+        "hand_joint_names": [
+          "left_finger1_joint1",
+          "left_finger1_joint2",
+          "left_finger1_joint3",
+          "left_finger1_joint4",
+          "left_finger2_joint1",
+          "left_finger2_joint2",
+          "left_finger2_joint3",
+          "left_finger2_joint4",
+          "left_finger3_joint1",
+          "left_finger3_joint2",
+          "left_finger3_joint3",
+          "left_finger3_joint4",
+          "left_finger4_joint1",
+          "left_finger4_joint2",
+          "left_finger4_joint3",
+          "left_finger4_joint4",
+          "left_finger5_joint1",
+          "left_finger5_joint2",
+          "left_finger5_joint3",
+          "left_finger5_joint4"
+        ],
+        "pass": true,
+        "present": true,
+        "root_path": "/World/DexJoCoRobots/LeftRobot"
+      },
+      "right": {
+        "arm_joint_names": [
+          "joint1_right",
+          "joint2_right",
+          "joint3_right",
+          "joint4_right",
+          "joint5_right",
+          "joint6_right",
+          "joint7_right"
+        ],
+        "hand_joint_names": [
+          "right_finger1_joint1",
+          "right_finger1_joint2",
+          "right_finger1_joint3",
+          "right_finger1_joint4",
+          "right_finger2_joint1",
+          "right_finger2_joint2",
+          "right_finger2_joint3",
+          "right_finger2_joint4",
+          "right_finger3_joint1",
+          "right_finger3_joint2",
+          "right_finger3_joint3",
+          "right_finger3_joint4",
+          "right_finger4_joint1",
+          "right_finger4_joint2",
+          "right_finger4_joint3",
+          "right_finger4_joint4",
+          "right_finger5_joint1",
+          "right_finger5_joint2",
+          "right_finger5_joint3",
+          "right_finger5_joint4"
+        ],
+        "pass": true,
+        "present": true,
+        "root_path": "/World/DexJoCoRobots/RightRobot"
+      }
+    }
+  },
+  "runner_rc": 0,
+  "schema": "fu001_core_scene_live_v1",
+  "scope": "core_scene_only",
+  "source_asset": "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/mobility.usd",
+  "stability": {
+    "after": {
+      "available": true,
+      "positions_rad": [
+        7.72530802350957e-06,
+        0.0,
+        0.0,
+        0.23561407625675201,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23561407625675201
+      ],
+      "velocities_rad_s": [
+        3.585671720429673e-06,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        2.610567753436044e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        2.6127756427740678e-05
+      ]
+    },
+    "before": {
+      "available": true,
+      "positions_rad": [
+        4.232565800066368e-07,
+        0.0,
+        0.0,
+        0.23423944413661957,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.23424369096755981
+      ],
+      "velocities_rad_s": [
+        8.392824497605034e-07,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        0.007056305650621653,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        -7.66275931596283e-13,
+        0.007043137215077877
+      ]
+    },
+    "finite": true,
+    "maximum_dof_position_drift_rad": 0.0013746321201324463,
+    "maximum_dof_speed_rad_s": 2.6127756427740678e-05,
+    "pass": true,
+    "physics_hz": 120,
+    "settle_steps": 120,
+    "zero_action_seconds": 3.0,
+    "zero_action_steps": 360
+  },
+  "success_motion_executed": false,
+  "task_complete": false,
+  "task_id": "B320-FU001",
+  "topology": {
+    "articulation_root_paths": [
+      "/World/FU001CoreScene/DoubleCabinet44781/root_joint"
+    ],
+    "collision_count": 54,
+    "collision_owner_map": {
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_11/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_12/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_13/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_15/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_16/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_17/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_18/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_19/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_2/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_20/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_21/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_22/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_3/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_4/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_5/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_6/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_69/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_8/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_9/World": "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_25/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_26/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_28/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_29/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_30/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_31/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_32/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_34/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_35/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_36/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_37/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_39/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_40/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_42/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_43/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_44/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_7/World": "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_58/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_59/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_60/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_61/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_63/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_64/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_66/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_67/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_68/World": "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_46/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_47/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_48/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_49/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_51/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_52/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_54/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_55/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_56/World": "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute"
+    },
+    "collision_paths": [
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_2/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_16/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_15/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_12/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_11/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_69/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_6/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_3/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_8/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_4/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_9/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_22/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_21/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_5/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_18/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_19/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_13/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_20/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link/collisions/original_17/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_34/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_40/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_37/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_35/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_7/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_26/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_39/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_36/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_30/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_32/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_25/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_31/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_29/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_28/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_42/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_43/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0/collisions/original_44/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_63/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_58/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_60/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_59/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_61/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_64/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_68/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_67/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11/collisions/original_66/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_52/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_46/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_49/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_48/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_47/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_51/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_54/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_56/World",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute/collisions/original_55/World"
+    ],
+    "gprim_count": 108,
+    "pass": true,
+    "revolute_joint_paths": [
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_12",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_13",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_14",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_15",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_16",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_17",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/joint_18",
+      "/World/FU001CoreScene/DoubleCabinet44781/joints/target_joint_revolute"
+    ],
+    "rigid_body_count": 22,
+    "rigid_body_paths": [
+      "/World/FU001CoreScene/DoubleCabinet44781/base_link",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_0",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_1",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_10",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_11",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_12",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_13",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_14",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_15",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_16",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_17",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_18",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_2",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_3",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_4",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_5",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_6",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_7",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_8",
+      "/World/FU001CoreScene/DoubleCabinet44781/link_9",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_prismatic",
+      "/World/FU001CoreScene/DoubleCabinet44781/target_link_revolute"
+    ]
+  }
+}

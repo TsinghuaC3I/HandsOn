@@ -1,0 +1,104 @@
+schema_version: 1
+task: p006_side_release_buckle_align_press
+branch: release/collection
+base_commit: a7f0affb
+acceptance_contract: taskdev/tasks/p006_side_release_buckle_align_press/ACCEPTANCE.md
+geometric_speed_and_dwell_thresholds_changed: false
+contract_amendment: "Remove obsolete robot/table veto; gate excessive penetration on buckle-body contact, preserve invalid-contact fail-closed behavior."
+historical_evidence_notice: "The historical_checks below describe older assets and are not recertification of the repaired kit."
+overall_status: requires_human_collection_platform
+
+historical_checks:
+  source_and_license: {status: passed, result: "Source page and exact CC0 STL were independently inspected; immutable SHA-256 is recorded."}
+  deterministic_asset_conversion: {status: passed, result: "CPU audit found 204 triangles and 15 connected solids; generated USD hashes are frozen."}
+  semantic_success_contract:
+    status: passed
+    result: "16/16 pytest checks passed; standalone gate passed 1,000 deterministic resets, 10/10 positives, 10/10 negatives, exact hashes, and no pull state."
+    evidence: evidence/cpu_contract_acceptance_hp14.json
+  static_registration:
+    status: passed
+    result: "Task mapping imports as P0-06; UI order/label/steps, Isaac capability, preview, base spec, PhysX-only runtime, config, and asset bindings are present."
+    evidence: evidence/platform_static_acceptance_hp14.json
+  usd_live_parse:
+    status: passed
+    result: "Full Isaac 5.1 scene composed one female and one male rigid body; both exact USD hashes were enforced at load."
+    evidence: evidence/runtime_reset_smoke_hp10_v1.json
+  multipose_geometry:
+    status: passed
+    result: "7/7 separated/contact/18 mm/22.6 mm/low-contact/+8 deg/-8 deg poses stayed finite; worst buckle penetration 0.003196721 m <= 0.005 m."
+    evidence: evidence/live_physics_acceptance_hp10_v3.json
+  reset:
+    status: passed
+    result: "20/20 seeded resets were finite, non-successful, non-failed, and measured zero penetration; maximum XY writeback error was 2.14e-8 m and maximum relative axis error 6.95 deg."
+    evidence: evidence/live_physics_acceptance_hp10_v3.json
+  reachability:
+    status: passed
+    result: "40/40 corrected finger-workspace grasp targets solved; minimum joint-limit margin 0.3474 rad, maximum position error 0.000138 m, maximum orientation error 0.000116 rad."
+    evidence: evidence/live_physics_acceptance_hp10_v3.json
+  contact_instrumentation:
+    status: passed
+    result: "Four exact PhysX views initialized: right-female 1x21, left-male 1x21, buckle-body 1x1, robot-table 1x66."
+    evidence: evidence/runtime_reset_smoke_hp10_v1.json
+  ten_second_stability:
+    status: passed
+    result: "1,200 physics steps: zero NaNs, zero explosive samples, zero measured penetration, zero forbidden force; peak object speeds 0.1635 m/s and 0.00352 rad/s."
+    evidence: evidence/live_physics_acceptance_hp10_v3.json
+  pre_human_action_diagnostic:
+    status: requires_human_teleoperation
+    result: "A 480-step action-only diagnostic produced correct right-female and left-male physical contacts with 1.85 N peak robot-table force and no failure, but its simple open-loop grasp did not retain both low-profile parts through lift. It is diagnostic only and is not a generated dataset or successful episode."
+    evidence: evidence/pre_human_action_diagnostic_hp10.json
+  collection_load_and_start:
+    status: requires_collection_workstation
+    result: "The normal record_demos_zarr.py preview entry selected P0-06, constructed the dual-arm scene, and declared all three recording cameras on HP-10, but the headless node has no valid Vulkan/GPU foundation and never reached Environment reset complete. Normal UI start remains a human workstation gate."
+    evidence: evidence/normal_recorder_preview_hp10.json
+  cameras:
+    status: requires_collection_workstation
+    result: "Thirty valid frames from head and both wrist cameras require an RTX/Vulkan-enabled collection workstation."
+  successful_episodes:
+    status: requires_human_teleoperation
+    result: "Three accepted __physx_v3 episodes remain required; the first must explicitly verify independent lift/retention of both 16 mm-tall parts before press."
+  fresh_process_replay:
+    status: blocked_by_human_episodes
+    result: "Run only after at least one accepted human episode exists."
+
+  runtime_load_reset_step:
+    status: passed
+    result: "Dual ROKAE/Wuji scene loaded; seeded reset and four zero-action control steps stayed finite, non-successful, non-failed, and at zero measured penetration."
+    evidence: evidence/runtime_reset_smoke_hp10_v1.json
+
+not_claimed:
+  - pull_test_or_tensile_retention
+  - deformable_prong_simulation
+  - scripted_or_assisted_successful_episode
+  - acceptance_complete
+
+checks:
+  focused_cpu_regressions:
+    status: passed
+    result: "42 tests: source/hash reproducibility, inward joint limits, source-bounded chamfers, visual/collider equivalence, rear-only friction, all articulated contacts, negative cases and read-only status."
+    evidence: evidence/operator_repair_smoke.json
+  cpu_semantics:
+    status: passed
+    result: "1,000 reproducible reset samples; 10 positive and 10 negative trials; normal table contact allowed; invalid contact rejected."
+    evidence: evidence/operator_repair_cpu_contract.json
+  static_registration:
+    status: passed
+    result: "Canonical identity, native collection/preview, task YAML, UI and declared three cameras. Static check only."
+    evidence: evidence/operator_repair_registration.json
+  native_51_reset_origin_idle:
+    status: passed
+    result: "Seeds 17/17/42, production origin gates and 180 idle control steps each; no terminal or false success. Required current/next recording fields selectable."
+    evidence: evidence/operator_repair_smoke.json
+  gym_observation_space:
+    status: not_certified
+    result: "observation_space.contains was false with PhysX ground-truth observation fields enabled; field-selector checks do not certify the complete Gym space."
+  native_force_press_fixture:
+    status: passed
+    result: "Force-only diagnostic of aligned insertion: both tongues compress inward, depth exceeds 18 mm and final motion meets unchanged speed limits. No hand contact and no false task success. All 15 composed colliders invisible; rear-only friction verified. Not a natural human grasp or accepted episode."
+    evidence: evidence/operator_repair_press_fixture.json
+  natural_grasp_press_ok:
+    status: requires_human_teleoperation
+    result: "Operator must confirm pickup, retention, three-tongue alignment and actual OK in the normal collection UI."
+  cameras_recording_replay:
+    status: not_retested
+    result: "Three-camera first-contact sweep, successful episode save and fresh-process physical replay remain unverified for the new assets."

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="marker_uncap_draw_cap_objects">
+  <default>
+    <default class="mudc_collision">
+      <geom group="0" friction="1.0 0.015 0.0002" solref="0.005 1" solimp="0.95 0.995 0.001" />
+    </default>
+    <default class="mudc_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="mudc_large_marker_texture" file="../../lightwheel_ycb/large_marker/visuals/T_large_marker_BC001.png" />
+    <material name="mudc_large_marker_material" texture="mudc_large_marker_texture" specular="0.31" shininess="0.35" />
+    <material name="mudc_marker_body_mat" rgba="0.93 0.93 0.88 1" specular="0.25" shininess="0.35" />
+    <material name="mudc_marker_band_mat" rgba="0.10 0.12 0.14 1" />
+    <material name="mudc_marker_tip_mat" rgba="0.02 0.02 0.02 1" />
+    <material name="mudc_cap_mat" rgba="0.05 0.18 0.42 1" specular="0.25" shininess="0.35" />
+    <material name="mudc_cap_end_mat" rgba="0.02 0.08 0.22 1" />
+    <material name="mudc_paper_mat" rgba="0.96 0.97 0.94 1" specular="0.05" shininess="0.1" />
+    <material name="mudc_line_mat" rgba="0.08 0.18 0.22 0.82" />
+    <material name="mudc_target_mat" rgba="0.95 0.36 0.13 0.86" />
+    <material name="mudc_cradle_mat" rgba="0.18 0.23 0.26 1" specular="0.2" shininess="0.25" />
+    <mesh name="mudc_large_marker_vis" file="../../lightwheel_ycb/large_marker/visuals/large_marker.obj" />
+    <mesh name="mudc_large_marker_lid_vis" file="../../lightwheel_ycb/large_marker/visuals/optimized_visuals/large_marker_Lid.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="mudc_paper_body" pos="0.075 0.135 0.921" quat="1 0 0 0">
+      <geom name="mudc_paper_sheet" class="mudc_collision" type="box" size="0.145 0.105 0.001" rgba="0.96 0.97 0.94 1" density="250" friction="0.9 0.004 0.0001" />
+      <geom name="mudc_paper_visual" class="mudc_visual" type="box" size="0.147 0.107 0.0011" pos="0 0 0.0002" material="mudc_paper_mat" />
+      <geom name="mudc_target_line_01" class="mudc_visual" type="capsule" fromto="-0.095 -0.045 0.002 0.000 0.040 0.002" size="0.0022" material="mudc_line_mat" />
+      <geom name="mudc_target_line_12" class="mudc_visual" type="capsule" fromto="0.000 0.040 0.002 0.100 -0.025 0.002" size="0.0022" material="mudc_line_mat" />
+      <geom name="mudc_target_point_0_visual" class="mudc_visual" type="sphere" pos="-0.095 -0.045 0.003" size="0.006" material="mudc_target_mat" />
+      <geom name="mudc_target_point_1_visual" class="mudc_visual" type="sphere" pos="0.000 0.040 0.003" size="0.006" material="mudc_target_mat" />
+      <geom name="mudc_target_point_2_visual" class="mudc_visual" type="sphere" pos="0.100 -0.025 0.003" size="0.006" material="mudc_target_mat" />
+      <site name="mudc_paper_top" pos="0 0 0.002" size="0.002" rgba="0 0 0 0" />
+      <site name="mudc_target_point_0" pos="-0.095 -0.045 0.002" size="0.004" rgba="0.95 0.36 0.13 0.65" />
+      <site name="mudc_target_point_1" pos="0.000 0.040 0.002" size="0.004" rgba="0.95 0.36 0.13 0.65" />
+      <site name="mudc_target_point_2" pos="0.100 -0.025 0.002" size="0.004" rgba="0.95 0.36 0.13 0.65" />
+    </body>
+
+    <body name="mudc_marker_cradle" pos="-0.005 -0.105 0.936" quat="1 0 0 0">
+      <geom name="mudc_cradle_base" class="mudc_collision" type="box" size="0.082 0.028 0.008" pos="0 0 0" material="mudc_cradle_mat" friction="0.9 0.005 0.0001" />
+      <geom name="mudc_cradle_left_wall" class="mudc_collision" type="box" size="0.082 0.004 0.022" pos="0 0.024 0.020" material="mudc_cradle_mat" friction="0.9 0.005 0.0001" />
+      <geom name="mudc_cradle_right_wall" class="mudc_collision" type="box" size="0.082 0.004 0.022" pos="0 -0.024 0.020" material="mudc_cradle_mat" friction="0.9 0.005 0.0001" />
+      <site name="mudc_cradle_center" pos="0 0 0.030" size="0.004" rgba="0.1 0.5 0.9 0.35" />
+    </body>
+
+    <body name="marker_root_body" pos="-0.005 -0.105 0.974" quat="1 0 0 0">
+      <freejoint name="marker_root" />
+      <geom name="mudc_marker_mesh_visual" class="mudc_visual" type="mesh" mesh="mudc_large_marker_vis" material="mudc_large_marker_material" quat="0.7071068 0 0 -0.7071068" />
+      <geom name="mudc_marker_body_collision" class="mudc_collision" type="capsule" fromto="-0.054 0 0 0.052 0 0" size="0.010" density="700" material="mudc_marker_body_mat" />
+      <geom name="mudc_marker_body_visual" class="mudc_visual" type="capsule" fromto="-0.056 0 0 0.054 0 0" size="0.0105" material="mudc_marker_body_mat" />
+      <geom name="mudc_marker_black_band" class="mudc_visual" type="cylinder" pos="0.043 0 0" quat="0.7071068 0 0.7071068 0" size="0.0108 0.004" material="mudc_marker_band_mat" />
+      <geom name="mudc_marker_tip_collision" class="mudc_collision" type="capsule" fromto="0.052 0 0 0.065 0 -0.010" size="0.0032" density="900" material="mudc_marker_tip_mat" />
+      <geom name="mudc_marker_tip_visual" class="mudc_visual" type="capsule" fromto="0.052 0 0 0.066 0 -0.010" size="0.0035" material="mudc_marker_tip_mat" />
+      <site name="mudc_marker_center" pos="0 0 0" size="0.004" rgba="0.2 0.7 0.9 0.45" />
+      <site name="mudc_marker_tip" pos="0.064 0 0" size="0.004" rgba="0.02 0.02 0.02 0.70" />
+      <site name="mudc_marker_tip_contact" pos="0.065 0 -0.010" size="0.003" rgba="0.02 0.02 0.02 0.75" />
+    </body>
+
+    <body name="cap_root_body" pos="0.077 -0.105 0.974" quat="1 0 0 0">
+      <freejoint name="cap_root" />
+      <geom name="mudc_cap_mesh_visual" class="mudc_visual" type="mesh" mesh="mudc_large_marker_lid_vis" material="mudc_large_marker_material" quat="0.7071068 0 0 -0.7071068" />
+      <geom name="mudc_cap_collision" class="mudc_collision" type="capsule" fromto="-0.027 0 0 0.027 0 0" size="0.013" density="760" material="mudc_cap_mat" />
+      <geom name="mudc_cap_visual" class="mudc_visual" type="capsule" fromto="-0.028 0 0 0.028 0 0" size="0.0135" material="mudc_cap_mat" />
+      <geom name="mudc_cap_end_visual" class="mudc_visual" type="cylinder" pos="0.029 0 0" quat="0.7071068 0 0.7071068 0" size="0.013 0.0018" material="mudc_cap_end_mat" />
+      <site name="mudc_cap_center" pos="0 0 0" size="0.004" rgba="0.05 0.18 0.42 0.65" />
+      <site name="mudc_cap_open_end" pos="-0.027 0 0" size="0.003" rgba="0.05 0.18 0.42 0.55" />
+    </body>
+  </worldbody>
+</mujoco>

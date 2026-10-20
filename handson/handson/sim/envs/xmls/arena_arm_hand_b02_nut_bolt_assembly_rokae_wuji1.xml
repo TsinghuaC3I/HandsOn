@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji1_B02_Nut_Bolt_Assembly">
+  <include file="rokae_wuji1_right.xml" />
+  <include file="b02_nut_bolt_objects.xml" />
+  <include file="b02_nut_bolt_scene.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+</mujoco>

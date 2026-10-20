@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Arena_Allegro_D02_Bimanual_Microwave_Cook">
+  <include file="panda_allegro_bimanual.xml" />
+  <include file="d02_microwave_payload.xml" />
+  <include file="d02_microwave.xml" />
+
+  <option timestep=".002" noslip_iterations="5" noslip_tolerance="0" />
+  <statistic center="-0.05 0 1.05" extent=".9" />
+  <visual>
+    <headlight diffuse=".4 .4 .4" ambient=".5 .5 .5" />
+    <global azimuth="160" elevation="-20" offheight="2048" offwidth="2048" />
+    <quality offsamples="8" />
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0"
+             width="32" height="512" />
+    <texture name="d02_floor_texture" type="2d" builtin="checker"
+             width="512" height="512" rgb1=".82 .84 .86" rgb2=".72 .74 .76" />
+    <material name="d02_floor_material" texture="d02_floor_texture"
+              texrepeat="2 2" texuniform="true" reflectance="0.01" />
+    <material name="d02_table_material" rgba=".13 .14 .15 1"
+              specular=".18" shininess=".12" />
+    <material name="d02_leg_material" rgba=".45 .46 .47 1"
+              reflectance=".2" shininess=".3" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="3 3 0.01" type="plane"
+          material="d02_floor_material" />
+    <body name="table" pos="-0.15 0 0">
+      <geom name="table_collision" type="box" size="0.4 0.8 0.03"
+            pos="0 0 0.89" friction="1 0.005 0.0001" group="3" />
+      <geom name="table_visual" type="box" size="0.4 0.8 0.03"
+            pos="0 0 0.89" contype="0" conaffinity="0" group="1"
+            material="d02_table_material" />
+      <site name="table_top" pos="0 0 0.92" size="0.002 0.002 0.002"
+            rgba="0 0 0 0" />
+      <geom name="table_leg_1" pos="0.32 0.72 0.43" type="cylinder"
+            size="0.04 0.43" contype="0" conaffinity="0" group="1"
+            material="d02_leg_material" />
+      <geom name="table_leg_2" pos="0.32 -0.72 0.43" type="cylinder"
+            size="0.04 0.43" contype="0" conaffinity="0" group="1"
+            material="d02_leg_material" />
+      <geom name="table_leg_3" pos="-0.32 0.72 0.43" type="cylinder"
+            size="0.04 0.43" contype="0" conaffinity="0" group="1"
+            material="d02_leg_material" />
+      <geom name="table_leg_4" pos="-0.32 -0.72 0.43" type="cylinder"
+            size="0.04 0.43" contype="0" conaffinity="0" group="1"
+            material="d02_leg_material" />
+    </body>
+
+    <camera name="front" pos="1.25 0 1.60"
+            quat="0.5963678 0.3799282 0.3799282 0.5963678" fovy="45" />
+    <camera name="back" pos="-1.30 0 2.20"
+            quat="0.6532815 0.2705981 -0.2705981 -0.6532815" fovy="45" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1" specular=".3 .3 .3" />
+    <body name="target_right" pos="-0.12 -0.38 1.02" quat="0 1 0 0"
+          mocap="true">
+      <geom name="target_right" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".6 .3 .3 0" />
+    </body>
+    <body name="target_left" pos="-0.12 0.38 1.02" quat="0 1 0 0"
+          mocap="true">
+      <geom name="target_left" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".3 .3 .6 0" />
+    </body>
+  </worldbody>
+
+  <sensor>
+    <jointpos name="microwave_joint" joint="microjoint" />
+    <framepos name="d02_plate_pos" objtype="body" objname="d02_plate" />
+    <framequat name="d02_plate_quat" objtype="body" objname="d02_plate" />
+    <framepos name="003_cracker_box_pos" objtype="body" objname="003_cracker_box" />
+    <framepos name="008_pudding_box_pos" objtype="body" objname="008_pudding_box" />
+  </sensor>
+</mujoco>

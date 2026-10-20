@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="451.178" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="BuildingBlock033_material" file="visuals/T_BuildingBlock033_BC001.png"/>
+    <material name="BuildingBlock033_material" texture="BuildingBlock033_material" specular="0.1" shininess="0.4472"/>
+    <mesh name="BuildingBlock033_vis" file="visuals/optimized_visuals/BuildingBlock033.obj"/>
+    <mesh name="BuildingBlock033_Collider1_m_collision" file="collision/BuildingBlock033_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="1e-08" material="BuildingBlock033_material" mesh="BuildingBlock033_vis"/>
+        <geom name="BuildingBlock033_Collider1_m" class="collision" type="mesh" mesh="BuildingBlock033_Collider1_m_collision"/>
+      <geom size="0.014925 0.014925 0.014925" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

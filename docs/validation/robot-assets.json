@@ -1,0 +1,708 @@
+{
+  "schema": 1,
+  "date": "2026-10-15",
+  "scope": "Robot assets, attribution and three standalone estimated-dynamics profiles. No new 66-task embodiment or learned-policy evaluation.",
+  "asset_check": {
+    "verified": true,
+    "scope": "Asset hashes, resources and URDF graphs; no physics, controller or task rollout.",
+    "robots": [
+      {
+        "robot": "abb_irb120",
+        "verified_files": 41,
+        "entries": {
+          "right": {
+            "links": 10,
+            "movable_joints": 6,
+            "independent_joints": 6,
+            "mesh_resources": 14,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 7
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "Apache-2.0"
+      },
+      {
+        "robot": "allegro",
+        "verified_files": 23,
+        "entries": {
+          "right": {
+            "format": "mjcf",
+            "mesh_resources": 11
+          },
+          "left": {
+            "format": "mjcf",
+            "mesh_resources": 11
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "BSD-2-Clause"
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "verified_files": 34,
+        "entries": {
+          "right": {
+            "links": 10,
+            "movable_joints": 6,
+            "independent_joints": 6,
+            "mesh_resources": 14,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 0
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "BSD-3-Clause"
+      },
+      {
+        "robot": "kuka_kr6_r700",
+        "verified_files": 47,
+        "entries": {
+          "right": {
+            "links": 10,
+            "movable_joints": 6,
+            "independent_joints": 6,
+            "mesh_resources": 14,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 0
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "Apache-2.0"
+      },
+      {
+        "robot": "panda",
+        "verified_files": 77,
+        "entries": {
+          "right": {
+            "format": "mjcf",
+            "mesh_resources": 67
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "Apache-2.0"
+      },
+      {
+        "robot": "rokae_ar5",
+        "verified_files": 22,
+        "entries": {
+          "right": {
+            "links": 11,
+            "movable_joints": 7,
+            "independent_joints": 7,
+            "mesh_resources": 9,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 9
+          },
+          "left": {
+            "links": 11,
+            "movable_joints": 7,
+            "independent_joints": 7,
+            "mesh_resources": 9,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 9
+          }
+        },
+        "benchmark_qualified": true,
+        "license": "Source-specific; exact AR5-08 redistribution license not recorded"
+      },
+      {
+        "robot": "sharpa_wave",
+        "verified_files": 90,
+        "entries": {
+          "right": {
+            "links": 33,
+            "movable_joints": 22,
+            "independent_joints": 22,
+            "mesh_resources": 22,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 33
+          },
+          "left": {
+            "links": 33,
+            "movable_joints": 22,
+            "independent_joints": 22,
+            "mesh_resources": 22,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 33
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "Apache-2.0"
+      },
+      {
+        "robot": "tianji_m6_ccs",
+        "verified_files": 17,
+        "entries": {
+          "right": {
+            "links": 10,
+            "movable_joints": 7,
+            "independent_joints": 7,
+            "mesh_resources": 8,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 8
+          },
+          "left": {
+            "links": 10,
+            "movable_joints": 7,
+            "independent_joints": 7,
+            "mesh_resources": 9,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 8
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "BSD declared in upstream package.xml; variant and license text not supplied"
+      },
+      {
+        "robot": "ur5e",
+        "verified_files": 30,
+        "entries": {
+          "right": {
+            "links": 13,
+            "movable_joints": 6,
+            "independent_joints": 6,
+            "mesh_resources": 14,
+            "mesh_file_dependencies": 0,
+            "links_with_inertia": 7
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "BSD-3-Clause"
+      },
+      {
+        "robot": "wuji1",
+        "verified_files": 57,
+        "entries": {
+          "right": {
+            "format": "mjcf",
+            "mesh_resources": 26
+          },
+          "left": {
+            "format": "mjcf",
+            "mesh_resources": 26
+          }
+        },
+        "benchmark_qualified": true,
+        "license": "MIT"
+      },
+      {
+        "robot": "wuji2",
+        "verified_files": 48,
+        "entries": {
+          "right": {
+            "format": "mjcf",
+            "mesh_resources": 21
+          },
+          "left": {
+            "format": "mjcf",
+            "mesh_resources": 21
+          }
+        },
+        "benchmark_qualified": false,
+        "license": "MIT"
+      }
+    ]
+  },
+  "reproducible_xacro": {
+    "version": "2.1.1",
+    "generated_urdfs_checked": 8,
+    "byte_identical": true
+  },
+  "cpu_tests": {
+    "platform": "Linux x86_64",
+    "python": "3.11.16",
+    "full_suite_passed": 1867,
+    "skipped": 10,
+    "subtests_passed": 9,
+    "failures": 0,
+    "errors": 0,
+    "final_robot_focused_passed": 25,
+    "pip_check": "No broken requirements found.",
+    "scope": "CPU suite covers the asset/API changes. The final standalone Isaac clock/drive implementation is separately qualified below."
+  },
+  "mjcf_imports": {
+    "mujoco": "3.3.0",
+    "checks": [
+      {
+        "robot": "wuji1",
+        "side": "left",
+        "loaded": true,
+        "nq": 20,
+        "nv": 20,
+        "nu": 20
+      },
+      {
+        "robot": "wuji1",
+        "side": "right",
+        "loaded": true,
+        "nq": 20,
+        "nv": 20,
+        "nu": 20
+      },
+      {
+        "robot": "wuji2",
+        "side": "left",
+        "loaded": true,
+        "nq": 20,
+        "nv": 20,
+        "nu": 20
+      },
+      {
+        "robot": "wuji2",
+        "side": "right",
+        "loaded": true,
+        "nq": 20,
+        "nv": 20,
+        "nu": 20
+      },
+      {
+        "robot": "allegro",
+        "side": "left",
+        "loaded": true,
+        "nq": 16,
+        "nv": 16,
+        "nu": 16
+      },
+      {
+        "robot": "allegro",
+        "side": "right",
+        "loaded": true,
+        "nq": 16,
+        "nv": 16,
+        "nu": 16
+      },
+      {
+        "robot": "panda",
+        "side": "right",
+        "loaded": true,
+        "nq": 9,
+        "nv": 9,
+        "nu": 7
+      }
+    ]
+  },
+  "sharpa_urdf_imports": {
+    "mujoco": "3.3.0",
+    "left_dof": 22,
+    "right_dof": 22,
+    "loaded": true,
+    "scope": "Compilation/import only, no hand actuation or manipulation task qualification."
+  },
+  "wheel": {
+    "sha256": "83e7f6e8e65e4a5c4ff82e3282df508598d38e26aaff97c6b610d96f9a0d96b5",
+    "verified_robot_dependency_files": 486,
+    "extracted_files": 504,
+    "relocated_robot_catalog_passed": true,
+    "final_simulation_module_matches_source": true,
+    "scope": "All catalog descriptions, robot dependencies and robot API extracted from the wheel; other package modules were not tested here.",
+    "build_and_relocation_python": "3.12; source/API regression separately passed on supported Python 3.11.16"
+  },
+  "standalone_simulation": {
+    "isaac_sim": "5.1.0.0",
+    "physics": "PhysX CPU dynamics, RTX rendering",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "driver": "570.153.02",
+    "source_sha256": {
+      "robots/simulation.py": "8715f7b5e0ca52c13b732be28698e6aba5466fc74faee4590adf7a5a8709fbc5",
+      "assets/robots/kuka_kr6_r700/simulation.json": "4278ec9f281909ba75a3be1cb784a0744dc68965e040f39caba7090854d8ebf1",
+      "assets/robots/abb_irb120/simulation.json": "30652611558babf292b805a3f1dfe62eda3c6f14ed0b68c5a3182c90fed33dab",
+      "assets/robots/fanuc_lrmate200id/simulation.json": "e1d65a4c0292fd8fea8b114342024a8be8b000d7e13d89e59958d97f20cebdc2"
+    },
+    "models": [
+      {
+        "robot": "kuka_kr6_r700",
+        "scope": "Standalone fixed-base gravity hold and bounded joint motion; no task or payload qualification",
+        "profile_status": "estimated simulation profile; not manufacturer-identified dynamics",
+        "drive_type": "force",
+        "actual_stiffness_nm_rad": [
+          2000.0,
+          2000.0,
+          1500.0,
+          600.0,
+          400.0,
+          300.0
+        ],
+        "actual_damping_nm_s_rad": [
+          100.0,
+          100.0,
+          80.0,
+          40.0,
+          30.000001907348633,
+          20.0
+        ],
+        "profile_source_sha256": "84133f161d3f8a895282260b6d57a98dcb4f5f3a4ba6143bbbf8285d243ed90f",
+        "physics_steps": 2160,
+        "physics_dt": 0.004166666666666667,
+        "control_dt": 0.016666666666666666,
+        "physical_duration_s": 9.000000469386578,
+        "clock_verified": true,
+        "dof_names": [
+          "joint_a1",
+          "joint_a2",
+          "joint_a3",
+          "joint_a4",
+          "joint_a5",
+          "joint_a6"
+        ],
+        "gravity_hold_max_error_rad": 0.042753707617521286,
+        "motion_max_error_rad": 0.053062313083301935,
+        "joint_motion_range_rad": [
+          0.24065126478672028,
+          0.2411932572722435,
+          0.2407331019639969,
+          0.23879998922348022,
+          0.23845139890909195,
+          0.23868059366941452
+        ],
+        "joint_limit_violation_rad": 0.0,
+        "self_collision_enabled": false,
+        "passed": true,
+        "artifacts_sha256": {
+          "held.png": "2097010a1eed885907bfd3391d58e4c1bd5127d5ab394778ce0386f2c42fe6f6",
+          "scene.usda": "77f47f6ffc177a57b960e09bb4c9aadf18f45795959937d63fb501187f1de73d",
+          "trajectory.json": "d1124da1e9c0c2f5a2e03de5bec50601c28a5a93a14ff68ea16cb4c4d925bbc7",
+          "motion.png": "12a5676365b85a2924498eed5ab64e41a738b590e0da6bb32e9e1a5985bd740e",
+          "result.json": "cda621f43d713e0a1ded69daf8c9f3f33b79979efad7d04ad1c7e00916547f9f",
+          "final.png": "8addb5c94bae56832f760edf1a48eca9c19f1468bea4bf43e3e2fb9259425e43",
+          "robot.urdf": "07eb859719d54f74eb8099ca2447c7aa694f42839922fbffa71a0d2af7857682",
+          "initial.png": "f077783902ea5c931bcc02a6376192cc8a2bff327d28b85a519770b5f4a9119e"
+        },
+        "clean_exit": true,
+        "owned_processes_remaining": 0,
+        "gravity_hold_max_error_deg": 2.4496070050202876,
+        "motion_max_error_deg": 3.040246590875011
+      },
+      {
+        "robot": "abb_irb120",
+        "scope": "Standalone fixed-base gravity hold and bounded joint motion; no task or payload qualification",
+        "profile_status": "estimated simulation profile; not manufacturer-identified dynamics",
+        "drive_type": "force",
+        "actual_stiffness_nm_rad": [
+          2000.0,
+          2000.0,
+          1500.0,
+          600.0,
+          400.0,
+          300.0
+        ],
+        "actual_damping_nm_s_rad": [
+          100.0,
+          100.0,
+          80.0,
+          40.0,
+          30.000001907348633,
+          20.0
+        ],
+        "profile_source_sha256": "4721e9f133967f81c567b63118710898cd45914e60b8aba13c32ddbe7ac870d2",
+        "physics_steps": 2160,
+        "physics_dt": 0.004166666666666667,
+        "control_dt": 0.016666666666666666,
+        "physical_duration_s": 9.000000469386578,
+        "clock_verified": true,
+        "dof_names": [
+          "joint_1",
+          "joint_2",
+          "joint_3",
+          "joint_4",
+          "joint_5",
+          "joint_6"
+        ],
+        "gravity_hold_max_error_rad": 0.0037703749258071184,
+        "motion_max_error_rad": 0.015089531459812063,
+        "joint_motion_range_rad": [
+          0.23930670320987701,
+          0.24232295155525208,
+          0.24029121547937393,
+          0.238688662648201,
+          0.23837411403656006,
+          0.23868287354707718
+        ],
+        "joint_limit_violation_rad": 0.0,
+        "self_collision_enabled": false,
+        "passed": true,
+        "artifacts_sha256": {
+          "held.png": "fbbc6cb203d90c5af2cc9d6e137f593c4a9621f4e3040451bd010a17689f9146",
+          "scene.usda": "5fd31880a1c7277c6ce73d7e4f668062538617dd0ae70a6a7f9c8091922b8bf3",
+          "trajectory.json": "7eaa29b244047c453046a84311e3ef0e30fff97ebd69adaf21d0b9f0b8f5bac6",
+          "motion.png": "c5c32dae93bb7d343764220ef9d387580a782bae1a61b1a3bdd4eb64ede1360b",
+          "result.json": "05aea3194716b64b4bd53cd15b86dece202123085c3010f1393e403f77a737a3",
+          "final.png": "68bb6e3c55f7e5a7ef5b472cecf77ee5838b8170536c8b37534918818b3820d7",
+          "robot.urdf": "176845ff4cef1c4be4b958dc9c1b0b63e094199df382a10b790ac50dcd292411",
+          "initial.png": "d60cf825a4f5d1703c11e7838ccce907a8893777768466c77f8608bdac827949"
+        },
+        "clean_exit": true,
+        "owned_processes_remaining": 0,
+        "gravity_hold_max_error_deg": 0.21602657043069878,
+        "motion_max_error_deg": 0.8645664674771112
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "scope": "Standalone fixed-base gravity hold and bounded joint motion; no task or payload qualification",
+        "profile_status": "estimated simulation profile; not manufacturer-identified dynamics",
+        "drive_type": "force",
+        "actual_stiffness_nm_rad": [
+          2000.0,
+          2000.0,
+          1500.0,
+          600.0,
+          400.0,
+          300.0
+        ],
+        "actual_damping_nm_s_rad": [
+          100.0,
+          100.0,
+          80.0,
+          40.0,
+          30.000001907348633,
+          20.0
+        ],
+        "profile_source_sha256": "c9103aa8a329b5a8eaafe8d04acca793ea9b4cfbb2e4b6d190d5ddab8c5b914a",
+        "physics_steps": 2160,
+        "physics_dt": 0.004166666666666667,
+        "control_dt": 0.016666666666666666,
+        "physical_duration_s": 9.000000469386578,
+        "clock_verified": true,
+        "dof_names": [
+          "joint_1",
+          "joint_2",
+          "joint_3",
+          "joint_4",
+          "joint_5",
+          "joint_6"
+        ],
+        "gravity_hold_max_error_rad": 0.008044691756367683,
+        "motion_max_error_rad": 0.018878057007572696,
+        "joint_motion_range_rad": [
+          0.23945172876119614,
+          0.24369025230407715,
+          0.23911625146865845,
+          0.23873908817768097,
+          0.23835458606481552,
+          0.2386801913380623
+        ],
+        "joint_limit_violation_rad": 0.0,
+        "self_collision_enabled": false,
+        "passed": true,
+        "artifacts_sha256": {
+          "held.png": "6e9de71b69d30fe2d08125fa3b48373fdd6d37291d5b2be5710027efa3dacd1d",
+          "scene.usda": "955788a65ca2d12c9b2c3612bd458cb475ee462de8d750f2ab9d79496e40eb9d",
+          "trajectory.json": "22a0df563ce9da863867bef119f1c3ef7469441262949c9a19ae0f69bb080453",
+          "motion.png": "5372c3244e0277286c14599b771de644b5fe9c2907342afbf1bbf596ee8ff7d7",
+          "result.json": "471dd5bd4907d007f4137a458fb39865e9d2fcd4974afdbf4814b57a32eb5888",
+          "final.png": "8398a0bc548c5c0c23acd71a3964ed7f1e244b68c5f1d92139dc09b0e8d0e369",
+          "robot.urdf": "78d6e3a083ae4aae3099062e35038fb9aa9538096cb3945e4e299ee7dd150290",
+          "initial.png": "e40229fca620a040c02c9f489c281dc5deca5355553572f6493d4d72a351d47e"
+        },
+        "clean_exit": true,
+        "owned_processes_remaining": 0,
+        "gravity_hold_max_error_deg": 0.4609268851235538,
+        "motion_max_error_deg": 1.081632991941284
+      }
+    ],
+    "visual_checks": [
+      {
+        "robot": "kuka_kr6_r700",
+        "frame": "initial",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 199.86,
+        "std_rgb": 33.35,
+        "bytes": 672073,
+        "sha256": "f077783902ea5c931bcc02a6376192cc8a2bff327d28b85a519770b5f4a9119e"
+      },
+      {
+        "robot": "kuka_kr6_r700",
+        "frame": "held",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.41,
+        "std_rgb": 31.22,
+        "bytes": 639517,
+        "sha256": "2097010a1eed885907bfd3391d58e4c1bd5127d5ab394778ce0386f2c42fe6f6"
+      },
+      {
+        "robot": "kuka_kr6_r700",
+        "frame": "motion",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.21,
+        "std_rgb": 31.06,
+        "bytes": 652522,
+        "sha256": "12a5676365b85a2924498eed5ab64e41a738b590e0da6bb32e9e1a5985bd740e"
+      },
+      {
+        "robot": "kuka_kr6_r700",
+        "frame": "final",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.47,
+        "std_rgb": 30.97,
+        "bytes": 685078,
+        "sha256": "8addb5c94bae56832f760edf1a48eca9c19f1468bea4bf43e3e2fb9259425e43"
+      },
+      {
+        "robot": "abb_irb120",
+        "frame": "initial",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 199.57,
+        "std_rgb": 34.74,
+        "bytes": 705052,
+        "sha256": "d60cf825a4f5d1703c11e7838ccce907a8893777768466c77f8608bdac827949"
+      },
+      {
+        "robot": "abb_irb120",
+        "frame": "held",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.04,
+        "std_rgb": 32.33,
+        "bytes": 649956,
+        "sha256": "fbbc6cb203d90c5af2cc9d6e137f593c4a9621f4e3040451bd010a17689f9146"
+      },
+      {
+        "robot": "abb_irb120",
+        "frame": "motion",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.17,
+        "std_rgb": 31.69,
+        "bytes": 697116,
+        "sha256": "c5c32dae93bb7d343764220ef9d387580a782bae1a61b1a3bdd4eb64ede1360b"
+      },
+      {
+        "robot": "abb_irb120",
+        "frame": "final",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.15,
+        "std_rgb": 31.92,
+        "bytes": 685784,
+        "sha256": "68bb6e3c55f7e5a7ef5b472cecf77ee5838b8170536c8b37534918818b3820d7"
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "frame": "initial",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 200.82,
+        "std_rgb": 33.67,
+        "bytes": 630669,
+        "sha256": "e40229fca620a040c02c9f489c281dc5deca5355553572f6493d4d72a351d47e"
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "frame": "held",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.67,
+        "std_rgb": 31.61,
+        "bytes": 604798,
+        "sha256": "6e9de71b69d30fe2d08125fa3b48373fdd6d37291d5b2be5710027efa3dacd1d"
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "frame": "motion",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.91,
+        "std_rgb": 31.38,
+        "bytes": 628463,
+        "sha256": "5372c3244e0277286c14599b771de644b5fe9c2907342afbf1bbf596ee8ff7d7"
+      },
+      {
+        "robot": "fanuc_lrmate200id",
+        "frame": "final",
+        "dimensions": [
+          1280,
+          960
+        ],
+        "mean_rgb": 201.88,
+        "std_rgb": 31.1,
+        "bytes": 631101,
+        "sha256": "8398a0bc548c5c0c23acd71a3964ed7f1e244b68c5f1d92139dc09b0e8d0e369"
+      }
+    ],
+    "contact_sheet_reviewed": true,
+    "thresholds": {
+      "gravity_hold_max_error_rad": 0.08,
+      "motion_max_error_rad": 0.1,
+      "minimum_joint_motion_range_rad": 0.15,
+      "joint_limit_violation_rad": 0.01
+    }
+  },
+  "retained_diagnostic_history": [
+    {
+      "attempt": "kuka01",
+      "outcome": "URDF import failed because a hash-only mesh basename began with a digit; fixed by a mesh_ prefix."
+    },
+    {
+      "attempt": "kuka02",
+      "outcome": "SingleArticulation did not expose get_dof_limits; changed to explicit source joint limits."
+    },
+    {
+      "attempt": "kuka03",
+      "outcome": "SingleArticulation did not expose set_max_efforts; authored joint drive limits in USD."
+    },
+    {
+      "attempt": "kuka04",
+      "outcome": "Motion/holding failed under importer acceleration-drive defaults. Fixed explicit force-drive type and degree/radian gain conversion, retaining the original test thresholds."
+    },
+    {
+      "attempts": [
+        "kuka05",
+        "abb01",
+        "fanuc01"
+      ],
+      "outcome": "Motion checks passed, but the mixed render/physics loop could advance extra physics ticks. Superseded by explicit physics steps and render-only updates with actual-clock assertions; old claimed duration is not used."
+    }
+  ],
+  "license_provenance_gaps": [
+    {
+      "robot": "tianji_m6_ccs",
+      "gap": "Upstream declares BSD but provides neither license text nor specific BSD variant."
+    },
+    {
+      "robot": "rokae_ar5",
+      "gap": "Exact AR5-08 redistribution license is not recorded; related AR5-07 Apache sources do not establish it."
+    }
+  ],
+  "limitations": [
+    "Estimated dynamics are not manufacturer-identified inertias or certified payload limits.",
+    "Fixed-base, unloaded, small-amplitude joint tests with self-collision disabled. No arm/hand assembly or manipulation task validation.",
+    "Native 66-task evaluator remains ROKAE AR5-5_08 / Wuji Hand 1 / PhysX.",
+    "Other newly packaged embodiments have asset/import checks only; no new standalone Isaac dynamics claim is made for them."
+  ],
+  "distribution_context": {
+    "status": "historical complete-author-installation snapshot before externalization",
+    "current_distribution_receipt": "robot-asset-distribution.json",
+    "external_models": [
+      "tianji_m6_ccs",
+      "rokae_ar5"
+    ],
+    "note": "This historical asset/wheel receipt is not a current public-package completeness certificate. Native GPU evidence used the complete original files."
+  }
+}

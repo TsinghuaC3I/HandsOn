@@ -1,0 +1,16 @@
+env_name: t36_scoop_marbles
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Use the right hand to control the spoon: keep it level or slightly nose-down, scoop the marble, carry it over the bowl, and pour it into the bowl. The left hand may touch the marble but must not pick it up or lift it. The right hand must never touch the marble directly."
+robot_type: dual_arm
+time_limit_seconds: 80
+skills:
+  - tool_use
+  - contact_control
+  - force_control
+objects:
+  - spoon
+  - a_marbles
+  - 024_bowl

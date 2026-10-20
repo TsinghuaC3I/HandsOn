@@ -1,0 +1,1079 @@
+{
+  "asset_id": "polyhaven-flathead-screwdriver-as019",
+  "author": "Dylan Detwiller",
+  "author_url": "https://polyhaven.com/all?a=Dylan%20Detwiller",
+  "bounds_m": {
+    "source": {
+      "center_m": [
+        0.0,
+        0.08323346823453903,
+        0.0
+      ],
+      "extent_m": [
+        0.03002973645925522,
+        0.26129384338855743,
+        0.03002973459661007
+      ],
+      "max_m": [
+        0.01501486822962761,
+        0.21388038992881775,
+        0.015014867298305035
+      ],
+      "min_m": [
+        -0.01501486822962761,
+        -0.047413453459739685,
+        -0.015014867298305035
+      ]
+    },
+    "task_local": {
+      "center_m": [
+        0.0050000008195638795,
+        0.025,
+        0.0
+      ],
+      "extent_m": [
+        0.26000000163912773,
+        0.029881039014832172,
+        0.029881037161410228
+      ],
+      "max_m": [
+        0.13500000163912776,
+        0.03994051950741609,
+        0.014940518580705114
+      ],
+      "min_m": [
+        -0.125,
+        0.010059480492583917,
+        -0.014940518580705114
+      ]
+    }
+  },
+  "colliders": [
+    {
+      "approximation": "convexHull",
+      "collision_only": true,
+      "convex_hull_centroid_m": [
+        -0.0868533490691061,
+        0.024999999999999977,
+        2.870294070305295e-19
+      ],
+      "convex_hull_volume_m3": 6.042293383215532e-05,
+      "internal_partition_cut_source_y_m": 0.02714129351079464,
+      "material_mass_role": "wood",
+      "name": "TailMain",
+      "path": "/FlatheadScrewdriver/Colliders/TailMain",
+      "protrusion_audit": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 30,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.02714129351079464
+        ],
+        "external_hull_face_count": 518,
+        "maximum_gap_sample_m": [
+          -0.08544921483503,
+          0.01124420076992,
+          -0.01129317186379
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.001071206080625018,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 1587,
+        "source_derived_hull_vertices": true
+      },
+      "rigid_owner": "/FlatheadScrewdriver",
+      "source_component": "wood_handle",
+      "source_derived": true,
+      "source_hull_vertex_count": 276,
+      "source_y_range_m": [
+        -0.047413453459739685,
+        0.02714129351079464
+      ],
+      "task_local_bounds_m": {
+        "center_m": [
+          -0.08790721188995196,
+          0.025,
+          0.0
+        ],
+        "extent_m": [
+          0.0741855762200961,
+          0.029881039014832172,
+          0.029881037161410228
+        ],
+        "max_m": [
+          -0.0508144237799039,
+          0.03994051950741609,
+          0.014940518580705114
+        ],
+        "min_m": [
+          -0.125,
+          0.010059480492583917,
+          -0.014940518580705114
+        ]
+      },
+      "triangle_count": 548,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "collision_only": true,
+      "convex_hull_centroid_m": [
+        -0.03566784414920656,
+        0.024999999999999998,
+        1.6302637647339048e-19
+      ],
+      "convex_hull_volume_m3": 1.69856952438856e-05,
+      "internal_partition_cut_source_y_m": 0.02714129351079464,
+      "material_mass_role": "wood",
+      "name": "HandleNeck",
+      "path": "/FlatheadScrewdriver/Colliders/HandleNeck",
+      "protrusion_audit": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 30,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.02714129351079464
+        ],
+        "external_hull_face_count": 222,
+        "maximum_gap_sample_m": [
+          -0.03392943668761,
+          0.01442422382573,
+          -0.00706651031852
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.0020438335134678473,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 699,
+        "source_derived_hull_vertices": true
+      },
+      "rigid_owner": "/FlatheadScrewdriver",
+      "source_component": "wood_handle",
+      "source_derived": true,
+      "source_hull_vertex_count": 128,
+      "source_y_range_m": [
+        0.02714129351079464,
+        0.061649926006793976
+      ],
+      "task_local_bounds_m": {
+        "center_m": [
+          -0.03364554526908937,
+          0.025,
+          0.0
+        ],
+        "extent_m": [
+          0.03433775702162907,
+          0.028221907590883874,
+          0.028221909444305818
+        ],
+        "max_m": [
+          -0.016476666758274833,
+          0.03911095379544194,
+          0.014110954722152909
+        ],
+        "min_m": [
+          -0.0508144237799039,
+          0.010889046204558063,
+          -0.014110954722152909
+        ]
+      },
+      "triangle_count": 252,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "collision_only": true,
+      "convex_hull_centroid_m": [
+        -0.005930663072749692,
+        0.02500000014341365,
+        1.8414863539164573e-14
+      ],
+      "convex_hull_volume_m3": 4.829314631814424e-06,
+      "internal_partition_cut_source_y_m": null,
+      "material_mass_role": "steel",
+      "name": "Ferrule",
+      "path": "/FlatheadScrewdriver/Colliders/Ferrule",
+      "protrusion_audit": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 28,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.061093542724847794,
+          0.08428783714771271
+        ],
+        "external_hull_face_count": 96,
+        "maximum_gap_sample_m": [
+          -0.00625322655795,
+          0.02500000046504,
+          -0.00835856457713
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.0009909420477220061,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 320,
+        "source_derived_hull_vertices": true
+      },
+      "rigid_owner": "/FlatheadScrewdriver",
+      "source_component": "steel_ferrule",
+      "source_derived": true,
+      "source_hull_vertex_count": 64,
+      "source_y_range_m": [
+        0.061093542724847794,
+        0.08428783714771271
+      ],
+      "task_local_bounds_m": {
+        "center_m": [
+          -0.005490573084820288,
+          0.025,
+          0.0
+        ],
+        "extent_m": [
+          0.023079443854310794,
+          0.017188071621703504,
+          0.0171880716217035
+        ],
+        "max_m": [
+          0.006049148842335109,
+          0.033594035810851755,
+          0.00859403581085175
+        ],
+        "min_m": [
+          -0.017030295011975685,
+          0.01640596418914825,
+          -0.00859403581085175
+        ]
+      },
+      "triangle_count": 124,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "collision_only": true,
+      "convex_hull_centroid_m": [
+        0.04835526164323775,
+        0.02500000000000001,
+        2.179512382219099e-20
+      ],
+      "convex_hull_volume_m3": 1.3342694745536899e-06,
+      "internal_partition_cut_source_y_m": 0.18961845338344574,
+      "material_mass_role": "steel",
+      "name": "Stem",
+      "path": "/FlatheadScrewdriver/Colliders/Stem",
+      "protrusion_audit": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 20,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.0639905035495758,
+          0.18961845338344574
+        ],
+        "external_hull_face_count": 24,
+        "maximum_gap_sample_m": [
+          -0.01414767899083,
+          0.02405688236575,
+          0.00163352802161
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 6.487671074313977e-15,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 96,
+        "source_derived_hull_vertices": true
+      },
+      "rigid_owner": "/FlatheadScrewdriver",
+      "source_component": "steel_shaft_blade",
+      "source_derived": true,
+      "source_hull_vertex_count": 24,
+      "source_y_range_m": [
+        0.0639905035495758,
+        0.18961845338344574
+      ],
+      "task_local_bounds_m": {
+        "center_m": [
+          0.04835526164323776,
+          0.025,
+          0.0
+        ],
+        "extent_m": [
+          0.12500588126814177,
+          0.0037724710003361195,
+          0.003772471000336116
+        ],
+        "max_m": [
+          0.11085820227730864,
+          0.02688623550016806,
+          0.001886235500168058
+        ],
+        "min_m": [
+          -0.01414767899083312,
+          0.02311376449983194,
+          -0.001886235500168058
+        ]
+      },
+      "triangle_count": 44,
+      "visibility": "invisible"
+    },
+    {
+      "approximation": "convexHull",
+      "collision_only": true,
+      "convex_hull_centroid_m": [
+        0.12145303051107864,
+        0.02500000000000001,
+        2.799586234619983e-20
+      ],
+      "convex_hull_volume_m3": 3.137876208958298e-07,
+      "internal_partition_cut_source_y_m": 0.18961845338344574,
+      "material_mass_role": "steel",
+      "name": "FlatBlade",
+      "path": "/FlatheadScrewdriver/Colliders/FlatBlade",
+      "protrusion_audit": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 10,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.18961845338344574
+        ],
+        "external_hull_face_count": 62,
+        "maximum_gap_sample_m": [
+          0.11732501383299,
+          0.0276982529553,
+          1.1794e-10
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.00022099396455010312,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 199,
+        "source_derived_hull_vertices": true
+      },
+      "rigid_owner": "/FlatheadScrewdriver",
+      "source_component": "steel_shaft_blade",
+      "source_derived": true,
+      "source_hull_vertex_count": 38,
+      "source_y_range_m": [
+        0.18961845338344574,
+        0.21388038992881775
+      ],
+      "task_local_bounds_m": {
+        "center_m": [
+          0.1229291019582182,
+          0.025,
+          0.0
+        ],
+        "extent_m": [
+          0.024141799361819122,
+          0.007020540820882423,
+          0.004094348533177339
+        ],
+        "max_m": [
+          0.13500000163912776,
+          0.028510270410441213,
+          0.0020471742665886697
+        ],
+        "min_m": [
+          0.11085820227730864,
+          0.02148972958955879,
+          -0.0020471742665886697
+        ]
+      },
+      "triangle_count": 72,
+      "visibility": "invisible"
+    }
+  ],
+  "collision_summary": {
+    "all_collision_only": true,
+    "all_invisible": true,
+    "all_source_derived": true,
+    "approximation": "convexHull",
+    "count": 5,
+    "paths": [
+      "/FlatheadScrewdriver/Colliders/TailMain",
+      "/FlatheadScrewdriver/Colliders/HandleNeck",
+      "/FlatheadScrewdriver/Colliders/Ferrule",
+      "/FlatheadScrewdriver/Colliders/Stem",
+      "/FlatheadScrewdriver/Colliders/FlatBlade"
+    ],
+    "physics_material_binding_purpose": "physics",
+    "physics_material_binding_strength": "strongerThanDescendants",
+    "physics_material_path": "/FlatheadScrewdriver/Looks/PhysicsMaterial",
+    "rigid_owner": "/FlatheadScrewdriver",
+    "visual_has_no_collision_api": true
+  },
+  "commercial_use": true,
+  "license": "CC0-1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "normalization": {
+    "baked_into_authored_vertices": true,
+    "formula": "p_task = uniform_scale * Rz(-90deg) * p_source + translation",
+    "linear_determinant": 0.9852184158760293,
+    "matrix_row_major": [
+      [
+        0.0,
+        0.9950483266936156,
+        0.0,
+        -0.0778213224721204
+      ],
+      [
+        -0.9950483266936156,
+        0.0,
+        0.0,
+        0.025
+      ],
+      [
+        0.0,
+        0.0,
+        0.9950483266936156,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "orientation_preserving": true,
+    "rotation_axis": "Z",
+    "rotation_degrees": -90.0,
+    "rotation_matrix_row_major": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "rotation_quaternion_wxyz": [
+      0.7071067811865476,
+      0.0,
+      0.0,
+      -0.7071067811865476
+    ],
+    "translation_m": [
+      -0.0778213224721204,
+      0.025,
+      0.0
+    ],
+    "uniform_scale": 0.9950483266936156
+  },
+  "physics_material": {
+    "binding_purpose": "physics",
+    "binding_strength": "strongerThanDescendants",
+    "bound_collider_paths": [
+      "/FlatheadScrewdriver/Colliders/TailMain",
+      "/FlatheadScrewdriver/Colliders/HandleNeck",
+      "/FlatheadScrewdriver/Colliders/Ferrule",
+      "/FlatheadScrewdriver/Colliders/Stem",
+      "/FlatheadScrewdriver/Colliders/FlatBlade"
+    ],
+    "dynamic_friction": 0.68,
+    "episode_randomization_owner": "AS019 collection environment",
+    "material_api_count": 1,
+    "path": "/FlatheadScrewdriver/Looks/PhysicsMaterial",
+    "restitution": 0.0,
+    "static_friction": 0.68
+  },
+  "protrusion_audit": {
+    "acceptance_limit_m": 0.0021,
+    "all_pass": true,
+    "maximum_sampled_surface_gap_m": 0.0020438335134678473,
+    "method": "per-collider exact source-triangle distance samples; artificial internal partition caps excluded",
+    "per_collider": {
+      "Ferrule": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 28,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.061093542724847794,
+          0.08428783714771271
+        ],
+        "external_hull_face_count": 96,
+        "maximum_gap_sample_m": [
+          -0.00625322655795,
+          0.02500000046504,
+          -0.00835856457713
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.0009909420477220061,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 320,
+        "source_derived_hull_vertices": true
+      },
+      "FlatBlade": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 10,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.18961845338344574
+        ],
+        "external_hull_face_count": 62,
+        "maximum_gap_sample_m": [
+          0.11732501383299,
+          0.0276982529553,
+          1.1794e-10
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.00022099396455010312,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 199,
+        "source_derived_hull_vertices": true
+      },
+      "HandleNeck": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 30,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.02714129351079464
+        ],
+        "external_hull_face_count": 222,
+        "maximum_gap_sample_m": [
+          -0.03392943668761,
+          0.01442422382573,
+          -0.00706651031852
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.0020438335134678473,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 699,
+        "source_derived_hull_vertices": true
+      },
+      "Stem": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 20,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.0639905035495758,
+          0.18961845338344574
+        ],
+        "external_hull_face_count": 24,
+        "maximum_gap_sample_m": [
+          -0.01414767899083,
+          0.02405688236575,
+          0.00163352802161
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 6.487671074313977e-15,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 96,
+        "source_derived_hull_vertices": true
+      },
+      "TailMain": {
+        "acceptance_limit_m": 0.0021,
+        "excluded_internal_partition_cap_face_count": 30,
+        "excluded_partition_or_open_shell_cap_source_y_m": [
+          0.02714129351079464
+        ],
+        "external_hull_face_count": 518,
+        "maximum_gap_sample_m": [
+          -0.08544921483503,
+          0.01124420076992,
+          -0.01129317186379
+        ],
+        "maximum_hull_vertex_to_source_vertex_distance_m": 0.0,
+        "maximum_sampled_surface_gap_m": 0.001071206080625018,
+        "method": "hull_vertices_plus_external_face_edge_midpoints_and_centroids_to_exact_source_triangles",
+        "pass": true,
+        "sample_count": 1587,
+        "source_derived_hull_vertices": true
+      }
+    }
+  },
+  "provenance": {
+    "archive_path": "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip",
+    "archive_retained_unchanged": true,
+    "archive_sha256": "0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb",
+    "archive_size_bytes": 27238057,
+    "author_page": "https://polyhaven.com/all?a=Dylan%20Detwiller",
+    "license_deed": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "poly_haven_license_page": "https://polyhaven.com/license",
+    "source_page": "https://polyhaven.com/a/flathead_screwdriver"
+  },
+  "rigid_body": {
+    "center_of_mass_m": [
+      -0.03348301709027515,
+      0.02500000005176284,
+      0.0
+    ],
+    "contact_report_api_count": 1,
+    "contact_report_threshold_n": 0.0,
+    "mass_api_count": 1,
+    "mass_kg": 0.18,
+    "mass_model": {
+      "center_of_mass_finite": true,
+      "center_of_mass_m": [
+        -0.03348301709027515,
+        0.02500000005176284,
+        0.0
+      ],
+      "diagonal_inertia_kg_m2": [
+        1.675622035881759e-05,
+        0.0005475141670886149,
+        0.0005475256089299615
+      ],
+      "inertia_model": "sum_of_piece_uniform_aabb_diagonals_plus_parallel_axis_terms",
+      "method": "five_source_derived_convex_hull_density_proxies_normalized_to_nominal_mass",
+      "nominal_mass_kg": 0.18,
+      "normalization_factor": 1.7137404443118656,
+      "overlap_policy": "component proxy overlaps are retained explicitly; the resulting density weights are uniformly normalized to the measured nominal mass",
+      "pieces": [
+        {
+          "density_kg_m3": 700.0,
+          "material": "wood",
+          "name": "TailMain",
+          "normalized_mass_kg": 0.07248445783050102,
+          "path": "/FlatheadScrewdriver/Colliders/TailMain",
+          "proxy_aabb_dimensions_m": [
+            0.0741855762200961,
+            0.029881039014832172,
+            0.029881037161410228
+          ],
+          "proxy_centroid_m": [
+            -0.0868533490691061,
+            0.024999999999999977,
+            2.870294070305295e-19
+          ],
+          "proxy_convex_hull_volume_m3": 6.042293383215532e-05,
+          "raw_density_mass_kg": 0.04229605368250872
+        },
+        {
+          "density_kg_m3": 700.0,
+          "material": "wood",
+          "name": "HandleNeck",
+          "normalized_mass_kg": 0.020376351039941714,
+          "path": "/FlatheadScrewdriver/Colliders/HandleNeck",
+          "proxy_aabb_dimensions_m": [
+            0.03433775702162907,
+            0.028221907590883874,
+            0.028221909444305818
+          ],
+          "proxy_centroid_m": [
+            -0.03566784414920656,
+            0.024999999999999998,
+            1.6302637647339048e-19
+          ],
+          "proxy_convex_hull_volume_m3": 1.69856952438856e-05,
+          "raw_density_mass_kg": 0.011889986670719919
+        },
+        {
+          "density_kg_m3": 7850.0,
+          "material": "steel",
+          "name": "Ferrule",
+          "normalized_mass_kg": 0.06496810565235243,
+          "path": "/FlatheadScrewdriver/Colliders/Ferrule",
+          "proxy_aabb_dimensions_m": [
+            0.023079443854310794,
+            0.017188071621703504,
+            0.0171880716217035
+          ],
+          "proxy_centroid_m": [
+            -0.005930663072749692,
+            0.02500000014341365,
+            1.8414863539164573e-14
+          ],
+          "proxy_convex_hull_volume_m3": 4.829314631814424e-06,
+          "raw_density_mass_kg": 0.03791011985974323
+        },
+        {
+          "density_kg_m3": 7850.0,
+          "material": "steel",
+          "name": "Stem",
+          "normalized_mass_kg": 0.01794974376290419,
+          "path": "/FlatheadScrewdriver/Colliders/Stem",
+          "proxy_aabb_dimensions_m": [
+            0.12500588126814177,
+            0.0037724710003361195,
+            0.003772471000336116
+          ],
+          "proxy_centroid_m": [
+            0.04835526164323775,
+            0.02500000000000001,
+            2.179512382219099e-20
+          ],
+          "proxy_convex_hull_volume_m3": 1.3342694745536899e-06,
+          "raw_density_mass_kg": 0.010474015375246466
+        },
+        {
+          "density_kg_m3": 7850.0,
+          "material": "steel",
+          "name": "FlatBlade",
+          "normalized_mass_kg": 0.004221341714300623,
+          "path": "/FlatheadScrewdriver/Colliders/FlatBlade",
+          "proxy_aabb_dimensions_m": [
+            0.024141799361819122,
+            0.007020540820882423,
+            0.004094348533177339
+          ],
+          "proxy_centroid_m": [
+            0.12145303051107864,
+            0.02500000000000001,
+            2.799586234619983e-20
+          ],
+          "proxy_convex_hull_volume_m3": 3.137876208958298e-07,
+          "raw_density_mass_kg": 0.0024632328240322635
+        }
+      ],
+      "principal_axes_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "raw_density_mass_kg": 0.1050334084122506,
+      "steel_density_kg_m3": 7850.0,
+      "support_region": {
+        "center_m": [
+          -0.07073833337913742,
+          0.025,
+          0.0
+        ],
+        "contains_center_of_mass": true,
+        "definition": "union_aabb_of_wooden_tail_main_and_handle_neck_proxies",
+        "extent_m": [
+          0.10852333324172517,
+          0.029881039014832172,
+          0.029881037161410228
+        ],
+        "max_m": [
+          -0.016476666758274833,
+          0.03994051950741609,
+          0.014940518580705114
+        ],
+        "min_m": [
+          -0.125,
+          0.010059480492583917,
+          -0.014940518580705114
+        ]
+      },
+      "wood_density_kg_m3": 700.0
+    },
+    "owner": "/FlatheadScrewdriver",
+    "rigid_body_api_count": 1,
+    "starts_asleep": true
+  },
+  "runtime": {
+    "center_of_mass_m": [
+      -0.03348301709027515,
+      0.02500000005176284,
+      0.0
+    ],
+    "collider_count": 5,
+    "collider_paths": [
+      "/FlatheadScrewdriver/Colliders/TailMain",
+      "/FlatheadScrewdriver/Colliders/HandleNeck",
+      "/FlatheadScrewdriver/Colliders/Ferrule",
+      "/FlatheadScrewdriver/Colliders/Stem",
+      "/FlatheadScrewdriver/Colliders/FlatBlade"
+    ],
+    "collision_approximation": "convexHull",
+    "default_dynamic_friction": 0.68,
+    "default_prim": "/FlatheadScrewdriver",
+    "default_restitution": 0.0,
+    "default_static_friction": 0.68,
+    "isaac_sim_version": "5.1.0.0",
+    "mass_kg": 0.18,
+    "path": "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/runtime/flathead_screwdriver.usd",
+    "physics_material_path": "/FlatheadScrewdriver/Looks/PhysicsMaterial",
+    "rigid_owner": "/FlatheadScrewdriver",
+    "sha256": "5ff790e9049bd953c7c1e0d495bd63fd93cfcac945a48d5180faa87e637b7bec",
+    "size_bytes": 71924,
+    "stage_meters_per_unit": 1.0,
+    "stage_up_axis": "Z",
+    "starts_asleep": true,
+    "visual_mesh_paths": [
+      "/FlatheadScrewdriver/Visual/SourceMesh"
+    ]
+  },
+  "schema_version": "as019.polyhaven_asset.v1",
+  "semantic_ranges": {
+    "blade_start_local_x_m": 0.11085820227730864,
+    "handle_neck_local_x_m": [
+      -0.0508144237799039,
+      -0.016476666758274833
+    ],
+    "left_middle_grasp_recommended_local_x_m": [
+      -0.075,
+      -0.025
+    ],
+    "right_tail_grasp_recommended_local_x_m": [
+      -0.12,
+      -0.08
+    ],
+    "tail_main_local_x_m": [
+      -0.125,
+      -0.0508144237799039
+    ],
+    "tail_point_local_m": [
+      -0.125,
+      0.025,
+      0.0
+    ],
+    "task_local_tail_axis": "-X",
+    "task_local_tip_axis": "+X",
+    "tip_point_local_m": [
+      0.13500000163912776,
+      0.025,
+      0.0
+    ],
+    "wood_handle_local_x_m": [
+      -0.125,
+      -0.016476666758274833
+    ]
+  },
+  "source": {
+    "archive_path": "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip",
+    "archive_sha256": "0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb",
+    "bounds_m": {
+      "center_m": [
+        0.0,
+        0.08323346823453903,
+        0.0
+      ],
+      "extent_m": [
+        0.03002973645925522,
+        0.26129384338855743,
+        0.03002973459661007
+      ],
+      "max_m": [
+        0.01501486822962761,
+        0.21388038992881775,
+        0.015014867298305035
+      ],
+      "min_m": [
+        -0.01501486822962761,
+        -0.047413453459739685,
+        -0.015014867298305035
+      ]
+    },
+    "components": {
+      "steel_ferrule": {
+        "source_bounds_m": {
+          "center_m": [
+            0.0,
+            0.07269068993628025,
+            0.0
+          ],
+          "extent_m": [
+            0.01727360486984253,
+            0.023194294422864914,
+            0.01727360486984253
+          ],
+          "max_m": [
+            0.008636802434921265,
+            0.08428783714771271,
+            0.008636802434921265
+          ],
+          "min_m": [
+            -0.008636802434921265,
+            0.061093542724847794,
+            -0.008636802434921265
+          ]
+        },
+        "source_triangle_count": 280,
+        "task_local_bounds_m": {
+          "center_m": [
+            -0.005490573084820288,
+            0.025,
+            0.0
+          ],
+          "extent_m": [
+            0.023079443854310794,
+            0.017188071621703504,
+            0.0171880716217035
+          ],
+          "max_m": [
+            0.006049148842335109,
+            0.033594035810851755,
+            0.00859403581085175
+          ],
+          "min_m": [
+            -0.017030295011975685,
+            0.01640596418914825,
+            -0.00859403581085175
+          ]
+        },
+        "unique_welded_vertex_count": 160
+      },
+      "steel_shaft_blade": {
+        "source_bounds_m": {
+          "center_m": [
+            0.0,
+            0.13893544673919678,
+            0.0
+          ],
+          "extent_m": [
+            0.007055477239191532,
+            0.14988988637924194,
+            0.004114723298698664
+          ],
+          "max_m": [
+            0.003527738619595766,
+            0.21388038992881775,
+            0.002057361649349332
+          ],
+          "min_m": [
+            -0.003527738619595766,
+            0.0639905035495758,
+            -0.002057361649349332
+          ]
+        },
+        "source_triangle_count": 140,
+        "task_local_bounds_m": {
+          "center_m": [
+            0.06042616132414732,
+            0.025,
+            0.0
+          ],
+          "extent_m": [
+            0.14914768062996087,
+            0.007020540820882423,
+            0.004094348533177339
+          ],
+          "max_m": [
+            0.13500000163912776,
+            0.028510270410441213,
+            0.0020471742665886697
+          ],
+          "min_m": [
+            -0.01414767899083312,
+            0.02148972958955879,
+            -0.0020471742665886697
+          ]
+        },
+        "unique_welded_vertex_count": 77
+      },
+      "wood_handle": {
+        "source_bounds_m": {
+          "center_m": [
+            0.0,
+            0.007118236273527145,
+            0.0
+          ],
+          "extent_m": [
+            0.03002973645925522,
+            0.10906337946653366,
+            0.03002973459661007
+          ],
+          "max_m": [
+            0.01501486822962761,
+            0.061649926006793976,
+            0.015014867298305035
+          ],
+          "min_m": [
+            -0.01501486822962761,
+            -0.047413453459739685,
+            -0.015014867298305035
+          ]
+        },
+        "source_triangle_count": 1880,
+        "task_local_bounds_m": {
+          "center_m": [
+            -0.07073833337913742,
+            0.025,
+            0.0
+          ],
+          "extent_m": [
+            0.10852333324172517,
+            0.029881039014832172,
+            0.029881037161410228
+          ],
+          "max_m": [
+            -0.016476666758274833,
+            0.03994051950741609,
+            0.014940518580705114
+          ],
+          "min_m": [
+            -0.125,
+            0.010059480492583917,
+            -0.014940518580705114
+          ]
+        },
+        "unique_welded_vertex_count": 942
+      }
+    },
+    "coordinate_system": "glTF 2.0 right-handed Y-up metres",
+    "longitudinal_axis": "+Y tip / -Y wooden tail",
+    "material_count": 1,
+    "material_name": "flathead_screwdriver",
+    "member_allowlist": [
+      "flathead_screwdriver_4k.gltf",
+      "flathead_screwdriver.bin",
+      "textures/flathead_screwdriver_arm_4k.jpg",
+      "textures/flathead_screwdriver_diff_4k.jpg",
+      "textures/flathead_screwdriver_nor_gl_4k.jpg"
+    ],
+    "members": [
+      {
+        "compressed_size_bytes": 2848,
+        "compression_method": 0,
+        "crc32": "c528517a",
+        "path": "flathead_screwdriver_4k.gltf",
+        "sha256": "657eb5aab940361252ecd071ed3b8e5a1f159fd27b74417829792c43419ff0c1",
+        "size_bytes": 2848
+      },
+      {
+        "compressed_size_bytes": 63656,
+        "compression_method": 0,
+        "crc32": "e208c44a",
+        "path": "flathead_screwdriver.bin",
+        "sha256": "d6cf744aa352c7ed92532c2aaa98e84baf2936361aa07025a6665a8d9ca0b9b0",
+        "size_bytes": 63656
+      },
+      {
+        "compressed_size_bytes": 7707968,
+        "compression_method": 0,
+        "crc32": "db0fb6dc",
+        "path": "textures/flathead_screwdriver_arm_4k.jpg",
+        "sha256": "97043e2b562a0acb7835d9da26259ad17abbbe820649b97c6458af1bb5998439",
+        "size_bytes": 7707968
+      },
+      {
+        "compressed_size_bytes": 7975278,
+        "compression_method": 0,
+        "crc32": "e71ed3ab",
+        "path": "textures/flathead_screwdriver_diff_4k.jpg",
+        "sha256": "d3df707481cd6a14bbe0a075fb06abc9684316d0933a816682f7e935b586f4b1",
+        "size_bytes": 7975278
+      },
+      {
+        "compressed_size_bytes": 11487473,
+        "compression_method": 0,
+        "crc32": "452117aa",
+        "path": "textures/flathead_screwdriver_nor_gl_4k.jpg",
+        "sha256": "b85b2ca09f710358b5a8b037654b7b676db58b8e4f4d4538b30466583676c730",
+        "size_bytes": 11487473
+      }
+    ],
+    "mesh_count": 1,
+    "mesh_name": "Cylinder.005",
+    "node_count": 1,
+    "node_name": "flathead_screwdriver",
+    "primitive_count": 1,
+    "scene_count": 1,
+    "triangle_count": 2300,
+    "vertex_count": 1558
+  },
+  "source_url": "https://polyhaven.com/a/flathead_screwdriver",
+  "title": "Flathead Screwdriver",
+  "visual": {
+    "collision_api_authored": false,
+    "material_path": "/FlatheadScrewdriver/Looks/PolyHavenPBR",
+    "mesh_count": 1,
+    "mesh_paths": [
+      "/FlatheadScrewdriver/Visual/SourceMesh"
+    ],
+    "pbr_workflow": "UsdPreviewSurface diffuse + glTF ARM(G roughness/B metallic) + OpenGL normal",
+    "source_derived": true,
+    "texture_paths": [
+      "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/runtime/textures/flathead_screwdriver_arm_4k.jpg",
+      "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/runtime/textures/flathead_screwdriver_diff_4k.jpg",
+      "sim/envs/usd/as019_task_assets/polyhaven_flathead_screwdriver/runtime/textures/flathead_screwdriver_nor_gl_4k.jpg"
+    ],
+    "visible_mesh_count": 1
+  }
+}

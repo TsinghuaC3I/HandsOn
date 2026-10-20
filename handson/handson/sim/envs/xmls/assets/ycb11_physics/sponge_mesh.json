@@ -1,0 +1,35 @@
+{
+  "source_sha256": "7c777cdb08df9217329579e0e912336f68cb819509b9513baff77adb655946f0",
+  "grid": [
+    9,
+    13,
+    3
+  ],
+  "nodes": 351,
+  "tets": 1152,
+  "collision_grid": [
+    9,
+    13,
+    4
+  ],
+  "collision_nodes": 468,
+  "collision_tets": 1728,
+  "collision_regularization": 0.5,
+  "contact_surface_max_gap_m": 0.0017125109218967122,
+  "contact_surface_max_expansion_m": 0.004258165949501853,
+  "collision_min_volume_m3": 3.2142113619895025e-08,
+  "collision_volume_m3": 0.00010007763359023552,
+  "simulation_cell_min_volume_m3": 1.2640503747717364e-08,
+  "source_bounds": [
+    [
+      -0.035943,
+      -0.0571505,
+      -0.0068975
+    ],
+    [
+      0.036057,
+      0.0568495,
+      0.0071025
+    ]
+  ]
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="ycb10_collection_scene">
+  <statistic center="0.0 0.0 1.0" extent="0.8" />
+  <visual>
+    <headlight diffuse="0.4 0.4 0.4" ambient="0.5 0.5 0.5" />
+    <global azimuth="160" elevation="-20" offheight="2048" offwidth="2048" />
+    <quality offsamples="8" />
+  </visual>
+  <asset>
+    <texture type="skybox" name="ycb10_sky" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="32" height="512" />
+    <texture type="2d" name="ycb10_floor_texture" file="table_arena/textures/light-gray-floor-tile.png" />
+    <material name="ycb10_floor_material" texture="ycb10_floor_texture" texrepeat="2 2" texuniform="true" reflectance="0.01" shininess="0" specular="0" />
+    <texture type="2d" name="ycb10_table_texture" builtin="flat" width="1" height="1" rgb1="0.72 0.72 0.68" rgb2="0.72 0.72 0.68" />
+    <material name="table_ceramic" texture="ycb10_table_texture" reflectance="0" shininess="0" specular="0.2" />
+    <material name="ycb10_table_legs" rgba="0.45 0.46 0.47 1" reflectance="0.2" shininess="0.3" specular="0.2" />
+  </asset>
+  <worldbody>
+    <geom name="floor" type="plane" size="3 3 0.01" material="ycb10_floor_material" />
+    <body name="table" pos="-0.15 0 0">
+      <geom name="table_collision" type="box" size="0.4 0.8 0.03" pos="0 0 0.86" friction="1 0.005 0.0001" group="3" />
+      <geom name="table_visual" type="box" size="0.4 0.8 0.03" pos="0 0 0.86" contype="0" conaffinity="0" group="1" material="table_ceramic" />
+      <site name="table_top" pos="0 0 0.89" size="0.002" rgba="0 0 0 0" />
+      <geom name="ycb10_table_leg_1" type="cylinder" pos="0.32 0.72 0.43" size="0.04 0.43" contype="0" conaffinity="0" group="1" material="ycb10_table_legs" />
+      <geom name="ycb10_table_leg_2" type="cylinder" pos="0.32 -0.72 0.43" size="0.04 0.43" contype="0" conaffinity="0" group="1" material="ycb10_table_legs" />
+      <geom name="ycb10_table_leg_3" type="cylinder" pos="-0.32 0.72 0.43" size="0.04 0.43" contype="0" conaffinity="0" group="1" material="ycb10_table_legs" />
+      <geom name="ycb10_table_leg_4" type="cylinder" pos="-0.32 -0.72 0.43" size="0.04 0.43" contype="0" conaffinity="0" group="1" material="ycb10_table_legs" />
+    </body>
+    <camera name="front" pos="1.30 0.0 1.60" quat="0.5963678 0.3799282 0.3799282 0.5963678" fovy="45" />
+    <camera name="back" pos="-0.8 0.0 0.7" quat="-0.5963678 -0.3799282 0.3799282 0.5963678" fovy="45" />
+    <camera name="left" pos="-1 0.8 2" quat="-0.353500 -0.146424 0.353500 0.853424" fovy="45" />
+    <camera name="right" pos="-1 -0.8 2" quat="0.853424 0.353500 -0.146424 -0.353500" fovy="45" />
+    <camera name="top0" pos="0.17 0 1.8" quat="0.707 0 0 -0.707" fovy="45" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse="0.8 0.8 0.8" specular="0.15 0.15 0.15" />
+    <body name="target" pos="0.15 0 0.5" quat="0 1 0 0" mocap="true">
+      <geom name="target" type="box" size="0.03 0.03 0.03" contype="0" conaffinity="0" rgba="0.6 0.3 0.3 0" />
+    </body>
+  </worldbody>
+</mujoco>

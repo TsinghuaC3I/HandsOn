@@ -1,0 +1,13 @@
+Model Information:
+* title:	Modern Apartment
+* source:	https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5
+* author:	Visthétique (https://sketchfab.com/visthetique)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+This work is based on "Modern Apartment"
+(https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5)
+by Visthétique (https://sketchfab.com/visthetique), licensed under CC-BY-4.0
+(http://creativecommons.org/licenses/by/4.0/).

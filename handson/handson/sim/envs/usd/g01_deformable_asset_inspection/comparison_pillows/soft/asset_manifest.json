@@ -1,0 +1,46 @@
+{
+  "profile": "soft",
+  "revision": "sewn-pillow-v2",
+  "mesher": "TetGen constrained Delaunay q1.7/8",
+  "node_count": 721,
+  "tet_count": 2832,
+  "surface_vertex_count": 7558,
+  "surface_face_count": 15112,
+  "boundary_nonmanifold_edges": 0,
+  "minimum_tet_volume_m3": 2.0505260042083303e-05,
+  "volume_m3": 0.039926857514815804,
+  "boundary_volume_m3": 0.0399268575148158,
+  "boundary_edge_p95_m": 0.018370694642291362,
+  "bounds_min": [
+    -0.4,
+    -0.2111,
+    -0.09325
+  ],
+  "bounds_max": [
+    0.4,
+    0.2111,
+    0.09325
+  ],
+  "visual_collision_max_error_m": 0.0,
+  "parameters": {
+    "label": "Soft filling pillow",
+    "youngs_modulus": 30000.0,
+    "poissons_ratio": 0.45,
+    "mass": 0.55,
+    "damping": 0.25,
+    "color": [
+      0.82,
+      0.79,
+      0.71
+    ],
+    "seam_half_thickness_m": 0.009
+  },
+  "collision_node_count": 16489,
+  "collision_tet_count": 77125,
+  "render_face_count": 69664,
+  "render_vertex_count": 34834,
+  "piping_radius_m": 0.0008,
+  "simulation_mesher": "PhysX TetMaker voxel resolution 16",
+  "simulation_volume_m3": 0.05807097485073506,
+  "usd_sha256": "ec322a9f2734373a8666df366c0246f8a8d6a102b8c168e32de750be372fa706"
+}

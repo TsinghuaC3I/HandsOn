@@ -1,0 +1,8 @@
+env_name: t15_open_drawers
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Use each assigned hand to pull the highlighted drawer on its side beyond 60 percent travel; each side independently selects one of three drawers per episode, and both thresholds must be crossed within 1.2 seconds."
+robot_type: dual_arm
+b320_runtime: bc017
+time_limit_seconds: 30
+skills: [bimanual_articulation, synchronized_opening, assigned_hand_roles]
+objects: [left_drawer, right_drawer]

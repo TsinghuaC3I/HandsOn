@@ -1,0 +1,77 @@
+schema_version: 1
+task_id: t13_load_cans
+canonical_task_id: B320-BC012
+runtime_task_name: t13_load_cans
+manifest_sha256: b3493a8a209735ae59865c41d5bff1e1670e6f0e6e38430be11c6035a5ad380b
+generated_at: "2026-08-20T14:27:48Z"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  physics_backend: physx
+task_complete: false
+checks:
+  schema:
+    status: pass
+    summary: "Physical-only action/observation, event, replay, scene, and Wuji-profile CPU regressions pass."
+    evidence: []
+    metrics: {error_count: 0, related_test_pass_count: 85, action_dimension: 54, camera_count: 3}
+  assets:
+    status: pass
+    summary: "Hash-bound YCB cans and SceneSmith open bin composed successfully in the accepted live Isaac Sim scene."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/asset_inventory.json, sha256: d15f752a145da59768bcdcbff90df19d4443c45d447a2b85d9a48d9f11717080}
+    metrics: {missing_count: 0, all_scales_verified: true, all_collision_shapes_verified: true}
+  reachability:
+    status: pending
+    summary: "The prior pass used the removed D6 grasp assist; physical-only reach/grasp/transport needs a new live run."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/live_collection_pass_20260819T173334Z/collection_summary.json, sha256: 766388d6ecada5c9f4ebaaefd3b9aeda90991511660d8b4b6aaace949fc0f3ba}
+    metrics: {target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.0, max_orientation_error_rad: 0.0, rokae_model_verified: true, wuji_gen1_verified: true}
+  contact:
+    status: pending
+    summary: "Physical-only assigned-hand contact, lift, and release-loss events need a new live run."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/final_validation_metrics.json, sha256: a502ee0afff9e7d46011073feacafae24c9c83ca8efe99ff22789be7922b922d}
+    metrics: {max_penetration_m: 0.004498695954680443, forbidden_events: 0, required_pairs_observed: true, release_delta_frames: 0}
+  reset:
+    status: pending
+    summary: "CPU reset regression passes, but the physical-only runtime needs a new live same-seed reset check."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/final_validation_metrics.json, sha256: a502ee0afff9e7d46011073feacafae24c9c83ca8efe99ff22789be7922b922d}
+    metrics: {trials: 2, failure_fraction: 0.0, deterministic: true, same_seed_max_pose_error_m: 0.0}
+  success:
+    status: pending
+    summary: "CPU semantics remain testable, but live physical-only placement and 15-frame stability are not yet revalidated."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/live_collection_pass_20260819T173334Z/collection_summary.json, sha256: 766388d6ecada5c9f4ebaaefd3b9aeda90991511660d8b4b6aaace949fc0f3ba}
+    metrics: {positive_trials: 1, negative_trials: 11, false_positive_fraction: 0.0, false_negative_fraction: 0.0, hold_steps_observed: 15}
+  camera:
+    status: pass
+    summary: "Head and both wrist RGB frames are non-black uint8 images at the required 640x480 resolution."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/live_collection_pass_20260819T173334Z/collection_summary.json, sha256: 766388d6ecada5c9f4ebaaefd3b9aeda90991511660d8b4b6aaace949fc0f3ba}
+    metrics: {frames: 1, black_fraction: 0.0, mean_rgb: 162.21212131076388, width: 640, height: 480, primary: head, stream_count: 3}
+  stability:
+    status: pending
+    summary: "The prior stability pass used assisted transport and does not certify the physical-only runtime."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/live_collection_pass_20260819T173334Z/collection_summary.json, sha256: 766388d6ecada5c9f4ebaaefd3b9aeda90991511660d8b4b6aaace949fc0f3ba}
+    metrics: {sim_seconds: 0.5, nan_count: 0, exploding_body_count: 0, observed_control_frames: 15}
+  collection:
+    status: pending
+    summary: "A new action-only physical-grasp episode and fresh-process replay are required after assist removal."
+    evidence:
+      - {path: taskdev/tasks/t13_load_cans/evidence/live_collection_pass_20260819T173334Z/collection_summary.json, sha256: 766388d6ecada5c9f4ebaaefd3b9aeda90991511660d8b4b6aaace949fc0f3ba}
+      - {path: taskdev/tasks/t13_load_cans/evidence/fresh_replay_pass_20260819T191454Z/fresh_process_replay.json, sha256: b08730a998847c1f0ded7a55e64d2ad32ea7e93c7a4183a55e55852bd50e3be4}
+    metrics:
+      episodes: 1
+      schema_errors: 0
+      streams: [action, proprioception, current_truth, next_truth, bc012_task_state, rgb_head, rgb_wrist_left, rgb_wrist_right, contacts, success, reset_seed, reset_options]
+      recorded_steps: 648
+      terminal_step: 647
+      episode_physx_field_count: 75
+      replay_max_pose_error: 0.0
+      replay_max_hidden_state_error: 0.0
+      replay_max_physical_field_error: 0.0
+      collection_state_writes: 0
+      replay_state_writes: 0

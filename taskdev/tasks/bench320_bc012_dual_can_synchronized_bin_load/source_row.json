@@ -1,0 +1,9 @@
+{
+  "task_id": "B320-BC012",
+  "excel_row": 173,
+  "objective": "同时拾取两个罐头并放入箱内左右分区。",
+  "left_role": "搬运左侧罐头到左分区",
+  "right_role": "搬运右侧罐头到右分区",
+  "exact_assets": "dexverse_tomato_soup_can: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/ycb/005_tomato_soup_can/textured.usd\ndexverse_authored_open_bin: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_open_bin/dexverse_authored_open_bin.glb",
+  "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。"
+}

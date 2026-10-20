@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="sujeo_utensil_operation_objects">
+  <default>
+    <default class="suo_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="suo_tool_collision">
+      <geom group="0" friction="1.15 0.018 0.0002" solref="0.004 1" solimp="0.96 0.995 0.001" density="1050" rgba="0.5 0 0 0.35" />
+    </default>
+    <default class="suo_tableware_collision">
+      <geom group="0" friction="0.85 0.01 0.0002" solref="0.006 1" solimp="0.95 0.995 0.001" rgba="0.5 0 0 0.20" />
+    </default>
+    <default class="suo_food_collision">
+      <geom group="0" friction="0.9 0.015 0.0002" solref="0.004 1" solimp="0.97 0.996 0.001" density="650" rgba="0.95 0.38 0.16 1" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="suo_spoon_tex" file="../../lightwheel_ycb/spoon/visuals/T_spoon_BC001.png" />
+    <texture type="2d" name="suo_bowl_tex" file="../../lightwheel_ycb/bowl/visuals/T_bowl_BC001.png" />
+    <texture type="2d" name="suo_plate_tex" file="../../lightwheel_ycb/plate/visuals/T_plate_BC001.png" />
+    <texture type="2d" name="suo_fork_tex" file="../../lightwheel_ycb/fork/visuals/T_fork_BC001.png" />
+    <material name="suo_spoon_mat" texture="suo_spoon_tex" specular="0.33" shininess="0.60" />
+    <material name="suo_bowl_mat" texture="suo_bowl_tex" specular="0.80" shininess="0.42" />
+    <material name="suo_plate_mat" texture="suo_plate_tex" specular="0.35" shininess="0.15" />
+    <material name="suo_fork_mat" texture="suo_fork_tex" specular="0.75" shininess="0.45" />
+    <material name="suo_steel_mat" rgba="0.68 0.70 0.72 1" specular="0.55" shininess="0.70" />
+    <material name="suo_chopstick_mat" rgba="0.49 0.49 0.50 1" specular="0.45" shininess="0.62" />
+    <material name="suo_rest_mat" rgba="0.28 0.30 0.32 1" specular="0.30" shininess="0.45" />
+    <material name="suo_target_plate_mat" rgba="0.14 0.75 0.30 0.24" specular="0" shininess="0" />
+    <material name="suo_target_bowl_mat" rgba="0.10 0.45 0.95 0.20" specular="0" shininess="0" />
+    <material name="suo_food_orange_mat" rgba="0.95 0.38 0.16 1" specular="0.15" shininess="0.25" />
+    <material name="suo_food_green_mat" rgba="0.20 0.64 0.30 1" specular="0.12" shininess="0.20" />
+    <material name="suo_food_yellow_mat" rgba="0.96 0.74 0.20 1" specular="0.15" shininess="0.25" />
+
+    <mesh name="suo_spoon_vis" file="../../lightwheel_ycb/spoon/visuals/spoon.obj" />
+    <mesh name="suo_bowl_vis" file="../../lightwheel_ycb/bowl/visuals/bowl.obj" />
+    <mesh name="suo_plate_vis" file="../../lightwheel_ycb/plate/visuals/plate.obj" />
+    <mesh name="suo_fork_vis" file="../../lightwheel_ycb/fork/visuals/fork.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="bowl_root_body" pos="-0.18 0.16 0.947" quat="1 0 0 0">
+      <geom name="suo_bowl_visual" class="suo_visual" type="mesh" mesh="suo_bowl_vis" material="suo_bowl_mat" />
+      <geom name="suo_bowl_collision" class="suo_tableware_collision" type="cylinder" size="0.083 0.027" pos="0 0 0" />
+      <site name="suo_bowl_center" pos="0 0 0.030" size="0.004" rgba="0.1 0.45 1 0.5" />
+      <site name="suo_bowl_rim" pos="0.080 0 0.028" size="0.003" rgba="0.1 0.45 1 0.35" />
+    </body>
+
+    <body name="plate_root_body" pos="0.12 0.18 0.932" quat="1 0 0 0">
+      <geom name="suo_plate_visual" class="suo_visual" type="mesh" mesh="suo_plate_vis" material="suo_plate_mat" />
+      <geom name="suo_plate_collision" class="suo_tableware_collision" type="cylinder" size="0.130 0.012" pos="0 0 0" />
+      <site name="suo_plate_center" pos="0 0 0.018" size="0.004" rgba="0.1 0.9 0.35 0.5" />
+    </body>
+
+    <body name="suo_bowl_target_zone" pos="-0.18 0.16 0.984" quat="1 0 0 0">
+      <geom name="suo_bowl_target_zone_visual" class="suo_visual" type="cylinder" size="0.054 0.001" material="suo_target_bowl_mat" />
+    </body>
+
+    <body name="suo_plate_target_zone" pos="0.12 0.18 0.954" quat="1 0 0 0">
+      <geom name="suo_plate_target_zone_visual" class="suo_visual" type="cylinder" size="0.060 0.001" material="suo_target_plate_mat" />
+    </body>
+
+    <body name="utensil_rest_body" pos="-0.03 -0.22 0.930" quat="1 0 0 0">
+      <geom name="suo_utensil_rest_base" class="suo_tableware_collision" type="box" size="0.125 0.025 0.006" material="suo_rest_mat" />
+      <geom name="suo_utensil_rest_left_rail" class="suo_visual" type="box" size="0.120 0.004 0.006" pos="0 0.015 0.010" material="suo_rest_mat" />
+      <geom name="suo_utensil_rest_right_rail" class="suo_visual" type="box" size="0.120 0.004 0.006" pos="0 -0.015 0.010" material="suo_rest_mat" />
+      <site name="suo_rest_center" pos="0 0 0.018" size="0.004" rgba="0.7 0.7 0.8 0.45" />
+    </body>
+
+    <body name="spoon_root_body" pos="-0.23 -0.12 0.940" quat="1 0 0 0">
+      <freejoint name="spoon_root" />
+      <geom name="suo_spoon_visual" class="suo_visual" type="mesh" mesh="suo_spoon_vis" material="suo_spoon_mat" />
+      <geom name="suo_spoon_handle_collision" class="suo_tool_collision" type="capsule" fromto="0 -0.098 0 0 0.096 0" size="0.0072" material="suo_steel_mat" />
+      <geom name="suo_spoon_bowl_collision" class="suo_tool_collision" type="sphere" pos="0 -0.098 0" size="0.018" material="suo_steel_mat" />
+      <site name="suo_spoon_tip" pos="0 -0.098 0" size="0.004" rgba="0.95 0.68 0.10 0.75" />
+      <site name="suo_spoon_handle" pos="0 0.086 0" size="0.004" rgba="0.2 0.2 0.9 0.45" />
+    </body>
+
+    <body name="fork_root_body" pos="-0.31 -0.06 0.937" quat="1 0 0 0">
+      <freejoint name="fork_root" />
+      <geom name="suo_fork_visual" class="suo_visual" type="mesh" mesh="suo_fork_vis" material="suo_fork_mat" />
+      <geom name="suo_fork_collision" class="suo_tool_collision" type="capsule" fromto="0 -0.098 0 0 0.098 0" size="0.0055" material="suo_steel_mat" />
+      <site name="suo_fork_tip" pos="0 -0.098 0" size="0.004" rgba="0.95 0.38 0.15 0.65" />
+      <site name="suo_fork_handle" pos="0 0.084 0" size="0.004" rgba="0.75 0.2 0.2 0.45" />
+    </body>
+
+    <body name="chopstick_left_root_body" pos="-0.205 -0.245 0.936" quat="1 0 0 0">
+      <freejoint name="chopstick_left_root" />
+      <geom name="suo_chopstick_left_collision" class="suo_tool_collision" type="capsule" fromto="0 -0.115 0 0 0.115 0" size="0.0033" material="suo_chopstick_mat" />
+      <site name="suo_chopstick_left_tip" pos="0 -0.115 0" size="0.0035" rgba="0.95 0.68 0.10 0.75" />
+      <site name="suo_chopstick_left_handle" pos="0 0.105 0" size="0.0035" rgba="0.1 0.6 1 0.45" />
+    </body>
+
+    <body name="chopstick_right_root_body" pos="-0.185 -0.245 0.936" quat="1 0 0 0">
+      <freejoint name="chopstick_right_root" />
+      <geom name="suo_chopstick_right_collision" class="suo_tool_collision" type="capsule" fromto="0 -0.115 0 0 0.115 0" size="0.0033" material="suo_chopstick_mat" />
+      <site name="suo_chopstick_right_tip" pos="0 -0.115 0" size="0.0035" rgba="0.95 0.68 0.10 0.75" />
+      <site name="suo_chopstick_right_handle" pos="0 0.105 0" size="0.0035" rgba="0.1 0.6 1 0.45" />
+    </body>
+
+    <body name="food_bit_1_body" pos="-0.18 0.16 0.990" quat="1 0 0 0">
+      <freejoint name="food_bit_1_root" />
+      <geom name="suo_food_bit_1" class="suo_food_collision" type="sphere" size="0.012" material="suo_food_orange_mat" />
+    </body>
+
+    <body name="food_bit_2_body" pos="-0.16 0.14 0.990" quat="1 0 0 0">
+      <freejoint name="food_bit_2_root" />
+      <geom name="suo_food_bit_2" class="suo_food_collision" type="sphere" size="0.011" material="suo_food_green_mat" />
+    </body>
+
+    <body name="food_bit_3_body" pos="-0.20 0.14 0.990" quat="1 0 0 0">
+      <freejoint name="food_bit_3_root" />
+      <geom name="suo_food_bit_3" class="suo_food_collision" type="sphere" size="0.010" material="suo_food_yellow_mat" />
+    </body>
+  </worldbody>
+</mujoco>

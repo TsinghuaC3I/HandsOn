@@ -1,0 +1,8 @@
+{
+  "foundation_pass": true,
+  "runner_rc": 0,
+  "schema": "hs005_core_scene_foundation_marker_v1",
+  "summary_path": "/home/user/handson-main/taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/previews/scene_variants/modern_kitchen/foundation_summary.json",
+  "summary_sha256": "aaef98b69d967a60b1b416fed131cc8cfe3300aee68bd5b39c0fc70e9597b9cd",
+  "task_complete": false
+}

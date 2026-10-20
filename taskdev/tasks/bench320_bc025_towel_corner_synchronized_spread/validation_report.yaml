@@ -1,0 +1,134 @@
+schema_version: 1
+task_id: bench320_bc025_towel_corner_synchronized_spread
+generated_at: "2026-08-28T00:20:58+08:00"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  framework: IsaacLab 2.3.2
+  physics_backend: PhysX
+release:
+  scope: physical_integration_audit
+  core_scene_ready: false
+  full_task_ready: false
+  task_complete: false
+  collection_policy_changed: false
+  physical_replay_certified: false
+  replay_scope: diagnostic_state_guided
+checks:
+  schema:
+    status: pass
+    summary: "The current BC025/towel focused suite and the task registration audit pass; taskdev YAML files also parse and all changed Python entry points compile."
+    evidence:
+      - scripts/audit_task_registration.py
+      - handson/tests/test_b320_benchmark.py
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/task.yaml
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/WORKLOG.md
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/evidence/static_contract.json
+    metrics:
+      focused_tests_passed: 10
+      focused_tests_deselected: 150
+      registration_checks_passed: 10
+      registration_checks_total: 10
+      taskdev_yaml_parse: true
+      python_compile: true
+  assets:
+    status: pass
+    summary: "Terry Cloth archive and Pillow024 USD are hash-locked; the former supplies render maps and the latter supplies audited physics parameters only."
+    evidence:
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/ASSET_CANDIDATES.md
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/ASSET_INTEGRATION.md
+      - handson/handson/sim/isaaclab/b320_bc025_assets.py
+    metrics:
+      material_archive_sha256: 35df068d309815a136aea26a19553d121a050b680418ae803a304976491a29ef
+      collision_source_sha256: 8b08e24ba0e8bc359f8802fce393fddb6234b31ca60a8e51a85404638cc80305
+      material_license: CC0_1.0
+      pillow_license: unresolved_user_provided_source
+      resolved_material_maps: 4
+      local_asset_resolution: pass
+  reachability:
+    status: pending
+    summary: "Reset hand/palm/finger envelope and target reach are not yet revalidated after the root-frame synchronization patch."
+    evidence: [/tmp/bc025_stage_audit_compact.log]
+    metrics: {}
+  contact:
+    status: pending
+    summary: "A prior live sweep observed real localized surface nodal response, but the final authored/reset/settled collision-overlap validator has not yet been run after the reset-frame patch."
+    evidence:
+      - /tmp/bc025_contact_gate_probe.log
+      - /tmp/bc025_deformable_contact_sweep.log
+      - /tmp/bc025_stage_audit_compact.log
+    metrics:
+      contact_witness: localized_surface_nodal_response_after_proxy_approach
+      rigid_deformable_manifold_report: unavailable_in_isaacsim_5_1_public_view
+      unapproved_overlap_gate: pending
+  reset:
+    status: pending
+    summary: "Non-Isaac interface tests prove deterministic bounded XY sampling; live same-seed/different-seed root-synchronized reset proof is pending a clean Isaac 5.1 process."
+    evidence:
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/TASK_CONTRACT.md
+      - /tmp/bc025_rand_probe_clean.log
+      - /tmp/bc025_root_sync_probe_20260827b.log
+    metrics:
+      translation_bounds_m: {x: [-0.03, 0.03], y: [-0.03, 0.03]}
+      root_frame_sync_implemented: true
+      live_reverification: pending
+  success:
+    status: pending
+    summary: "The ordered assigned-contact, spread, coverage, release, and 15-frame stability state machine has focused false-positive coverage; no complete live success episode is claimed."
+    evidence: [handson/tests/test_b320_benchmark.py]
+    metrics:
+      physical_replay_certified: false
+      complete_live_episode: false
+  camera:
+    status: pending
+    summary: "A prior default deferred-camera probe produced real RTX reset frames for ego and both wrists with visible Terry Cloth, table, target, and hands. The required post-contact and human-viewport evidence is still pending."
+    evidence:
+      - /tmp/bc025_image_probe3/ego_reset.png
+      - /tmp/bc025_image_probe3/wrist_left_reset.png
+      - /tmp/bc025_image_probe3/wrist_right_reset.png
+    metrics:
+      streams: [ego, wrist_left, wrist_right]
+      fallback_frames: 0
+      canonical_deferred_path: true
+      immediate_postrender_path: unsupported_after_cuda_700_probe
+      reset_probe_only: true
+      post_contact_frames: 0
+      human_viewport_verified: false
+  stability:
+    status: pending
+    summary: "Earlier non-randomized reset and zero-action evidence was clean; the latest randomized root-sync retry was invalidated by same-GPU Isaac contention before reset, so final live stability remains unverified."
+    evidence:
+      - /tmp/bc025_env_probe_after_joint_patch.log
+      - /tmp/bc025_root_sync_probe_20260827b.log
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/evidence/live_run/bc025_latest_attempt.json
+    metrics:
+      isaac_sim_version: "5.1.0.0"
+      physics_hz: 120
+      zero_action_steps_previous: 8
+      latest_live_blocker: gpu_resource_contention_before_environment_ready
+      latest_live_phase: construct_environment
+      latest_kit_log: /home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260828_001642.log
+      latest_host_signal: same_gpu_parallel_isaac_process_and_cuda_700
+  collection:
+    status: pending
+    summary: "Collection access is preserved, but no formal recording or fresh-process physical replay claim is made for the surface-solver lifecycle."
+    evidence:
+      - taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/task.yaml
+      - handson/handson/sim/isaaclab/b320_towel_env.py
+    metrics:
+      collection_policy_changed: false
+      replay_scope: diagnostic_state_guided
+      successful_episodes: 0
+live_validation_attempt:
+  status: pending_clean_single_process_reverification
+  command_scope: "single BC025 validator process; randomize=3 resets; images=disabled diagnostic; zero-action steps=2"
+  runtime_path: /home/user/miniconda3/envs/isaacsim/bin/python
+  phase_reached: construct_environment
+  validation_json_written: false
+  kit_log: /home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260828_001642.log
+  observed_marker: "PxgCudaMemoryAllocator.cpp; CUDA illegal memory access; Cuda context manager error"
+  concurrent_process_observed: /tmp/fu001_collision_plan.py
+  host_observation: "A parallel FU001 Isaac process was observed on the same GPU during this attempt; no active BC025 compute process remains."
+  interpretation: "This attempt is invalid due to GPU resource contention before environment_ready, not a BC025 physics pass or failure."
+  cpu_diagnostic: "Not a valid substitute: Isaac Sim 5.1 surface-deformable bodies require GPU dynamics."
+  evidence_record: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/evidence/live_run/bc025_retry_contention_20260828.json

@@ -1,0 +1,200 @@
+{
+  "schema": "handson_core_scene_manifest_v2",
+  "task_id": "B320-HS005",
+  "task_slug": "bench320_hs005_sink_bottle_stabilized_scrub",
+  "generated_at": "2026-08-26T19:52:00Z",
+  "scope": "core_scene_only",
+  "source_authority": {
+    "path": "/mnt/pfs/luotianwei/handson-taskdev-orchestration/b320_32_scene_wave_20260817/source_rows.json",
+    "sha256": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987",
+    "excel_row": 268,
+    "objective": "一手固定水瓶，另一手沿瓶身目标带刷洗。"
+  },
+  "composition": {
+    "portable_layer": "scene/hs005_assets.usda",
+    "portable_layer_bytes": 17532,
+    "portable_layer_sha256": "ea706ecab4785bab4b7f7aa96a6c83b488602b1b47a8866674063f03e3679cba",
+    "live_root": "/World/Task/HS005Assets",
+    "foundation_live_root": "/World/HS005",
+    "table_top_z_m": 0.89,
+    "kitchen_counter_top_z_m": 1.011315,
+    "up_axis": "Z",
+    "meters_per_unit": 1.0,
+    "collision_prim_count": 20,
+    "all_collision_prims_invisible": true
+  },
+  "assets": {
+    "kitchen_background": {
+      "path": "assets/modern_apartment_kitchen/modern_apartment_kitchen.usd",
+      "source_archive_sha256": "d1b8f506f69fd66ccf1b816d651a884eab999d9db2f4a1ad9f7f491d0044a2a6",
+      "source_author": "Visthétique",
+      "source_license": "CC-BY-4.0",
+      "source_url": "https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5",
+      "visual_sha256": "12ac915b9d442399f10af5b302d9c6ef887e32c8aa1d0f6addd3a1dbc5f58524",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "pose_xyz_m": [-1.135, -2.8, 0.18151906],
+      "visual_rotate_xyz_deg": [90.0, 0.0, -90.0],
+      "body_policy": "render_only",
+      "material_overrides": {
+        "Plane_007_Wood049_0": "light warm countertop",
+        "Sink_Sink2Metal_001_0": "stainless steel",
+        "Sink_Sink4Metal_001_0": "stainless steel"
+      }
+    },
+    "sink": {
+      "path": "assets/modern_apartment_kitchen/sink_collision_source.ply",
+      "source_sha256": "46839123013a8785fcc70b9744fae0745972561e8c399c14c06b394b4f774082",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "pose_xyz_m": [-0.15, 0.0, 0.895],
+      "body_policy": "static",
+      "collision_owner": "/HS005Assets/SceneCollision",
+      "colliders": [
+        "analytic_basin_floor",
+        "four_full_height_basin_walls",
+        "four_piece_open_countertop_ring"
+      ],
+      "collision_approximation": "full_height_basin_and_open_countertop_ring_v1",
+      "source_mesh_collision_enabled": false,
+      "floor_top_z_m": 0.895,
+      "safety_reason": "scene-owned analytic collision seals the visible basin and countertop while preserving reset-hand clearance"
+    },
+    "bottle": {
+      "path": "assets/cc_by_lukemodels75_water_bottle/water_bottle_visual.usd",
+      "source_path": "assets/cc_by_lukemodels75_water_bottle/source/scene.gltf",
+      "source_archive_sha256": "b85aefd87746787b4cf321797dc880f267aa7c9b8f5e8ee72c7b83e34077dde5",
+      "source_sha256": "d6e6579114ef8dea94f4f80f36182e57651269593e6ec5a01478d8bc5f188775",
+      "visual_sha256": "8a1256a6f4c6cf7ad226c42d83f1aa6679801c3fbbcc00a9cd758e51e569e0ea",
+      "source_author": "LukeModels75",
+      "source_license": "CC-BY-4.0",
+      "scale_xyz": [0.05, 0.05, 0.05],
+      "pose_xyz_m": [-0.1, 0.11, 0.895],
+      "visual_rotate_x_deg": 90.0,
+      "body_policy": "free rigid body",
+      "mass_kg": 0.6,
+      "colliders": ["body", "shoulder", "cap"]
+    },
+    "brush": {
+      "path": "assets/cc_by_amhyde_cleaning_brush/cleaning_brush_visual.usd",
+      "source_path": "assets/cc_by_amhyde_cleaning_brush/source/scene.gltf",
+      "source_archive_sha256": "4d566c7c98ce8eca8a6981bcb096c5b8cd6ab81cc5d01c03d76b6a7e997b845c",
+      "source_sha256": "1aae1c43dc9f06bc1d8cb4224a1a1ecbc537a188dd57059f132fe35e70c5f3aa",
+      "visual_sha256": "8c8a8e4150a9b82aa48b2139d400217275b9b50c404acbb60fb8142562a5bbc1",
+      "source_author": "amhyde",
+      "source_license": "CC-BY-4.0",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "pose_xyz_m": [-0.191, -0.125, 0.90902124],
+      "body_policy": "free rigid body",
+      "mass_kg": 0.11,
+      "colliders": ["bristles", "ferrule", "handle", "stability_foot"]
+    },
+    "dish_soap": {
+      "path": "assets/cc_by_mike_nov_dishwashing_dispenser/dishwashing_dispenser_visual.usd",
+      "source_path": "assets/cc_by_mike_nov_dishwashing_dispenser/source/scene.gltf",
+      "source_archive_sha256": "f11f776e355be49bb933c3ea2b43f52b9ee323f9a380fb6e3a63a42bf9407b01",
+      "source_sha256": "cf8f25d6d101e6a4224d277098eb8585b97eb5bcbf6e3d43428155ce3be00fd5",
+      "visual_sha256": "63757fb9b302d6da49b08073fcd7feff9316a37acccdb5b69809ada862ca63d8",
+      "source_author": "Mike Nov",
+      "source_license": "CC-BY-4.0",
+      "scale_xyz": [0.035, 0.035, 0.035],
+      "pose_xyz_m": [0.16, 0.24, 0.993021633],
+      "support_surface_z_m": 1.011315,
+      "body_policy": "static physical context",
+      "colliders": ["body", "neck", "pump"]
+    },
+    "sponge": {
+      "path": "assets/cc_by_requital_dish_sponge/dish_sponge_visual.usd",
+      "source_path": "assets/cc_by_requital_dish_sponge/source/scene.gltf",
+      "source_archive_sha256": "2003f17f0913bb7383d48a369fa345fb5ea18f405ea4a6ecb9f51646e852a914",
+      "source_sha256": "875ad3a55f1327dfac573f50366d33baf035b85c460526bc00ba8a27fd988ea9",
+      "visual_sha256": "17cf9caca532499991af0589a9ab3875ded6d070929fc005f0b27aef9b6e7ea6",
+      "source_author": "Requital (Azamkhon)",
+      "source_license": "CC-BY-4.0",
+      "scale_xyz": [0.018, 0.018, 0.018],
+      "pose_xyz_m": [0.16, -0.18, 1.014315],
+      "support_surface_z_m": 1.011315,
+      "body_policy": "static physical context",
+      "colliders": ["body"]
+    }
+  },
+  "reset_layout": {
+    "analytic_pass": true,
+    "support_gaps_m": {
+      "sink_to_table": 0.005,
+      "bottle_to_basin": 0.0,
+      "brush_to_basin": 0.0000000082,
+      "dish_soap_to_counter": 0.003,
+      "sponge_to_counter": 0.0030002504
+    },
+    "inside_basin_margins_m": {
+      "bottle_front": 0.2053,
+      "bottle_back": 0.1053,
+      "bottle_right": 0.2753,
+      "bottle_left": 0.0553,
+      "brush_front": 0.0553832351,
+      "brush_back": 0.0402854621,
+      "brush_right": 0.0609787599,
+      "brush_left": 0.3109787618
+    },
+    "forbidden_aabb_overlap_m": {
+      "bottle_brush": 0.0,
+      "bottle_dish_soap": 0.0,
+      "bottle_sponge": 0.0,
+      "brush_dish_soap": 0.0,
+      "brush_sponge": 0.0,
+      "dish_soap_sponge": 0.0
+    },
+    "randomization_contract": {
+      "bottle_xy_m": 0.02,
+      "bottle_yaw_deg": 8.0,
+      "brush_xy_m": 0.015,
+      "brush_yaw_deg": 10.0,
+      "friction_range": [0.55, 0.9],
+      "mass_scale_range": [0.85, 1.15],
+      "sampled_seed_count": 32,
+      "same_seed_positions_repeat_exactly": true,
+      "bottle_xy_span_m": [0.03826622740511907, 0.0379626168533323],
+      "brush_xy_span_m": [0.029364691636879346, 0.028902436485335487]
+    }
+  },
+  "rendering": {
+    "renderer": "RayTracedLighting",
+    "tonemap": "ACES",
+    "film_iso": 200,
+    "head_camera_prim": "/World/RecordCameras/head_camera",
+    "resolution_hw": [480, 640]
+  },
+  "foundation_evidence": {
+    "status": "historical_pending_collision_revalidation",
+    "valid_for_current_scene": false,
+    "run_id": "local-20260827T0348-context-clear",
+    "git_head": "51a71d980652c4eb25e134f1a35069a225d64d7a",
+    "prelaunch_worktree_clean": false,
+    "worktree_status_sha256": "3b34dc2736e00294617dc1d556be4289fd9fb49c21d2f77f6e63bf741a7f15bd",
+    "summary": "previews/scene_variants/modern_apartment/foundation_summary.json",
+    "summary_sha256": "f2056e70b49f78f3f7b1eb19a6ab436989322247d2db5cf1136fcde0b74fb6d0",
+    "preview": "previews/scene_variants/modern_apartment/reset_head.png",
+    "preview_sha256": "50bddc98583ff98f6eda7524a18bc4359c70e8d9d7473b65fbf4564bab8a9c0b",
+    "preview_bytes": 922446,
+    "preview_mean_rgb": 135.220166015625,
+    "preview_black_fraction": 0.011181640625,
+    "preview_unique_rgb_count": 17726,
+    "physics_hz": 240,
+    "warmup_steps": 120,
+    "zero_action_steps": 120,
+    "bottle_displacement_m": 3.7349634943885454e-7,
+    "brush_displacement_m": 1.0536712127723508e-7,
+    "bottle_final_linear_speed_m_s": 0.00035069739084550014,
+    "brush_final_linear_speed_m_s": 0.00032826833043727574
+  },
+  "claims": {
+    "core_scene_ready": true,
+    "initial_layout_checked": true,
+    "zero_action_stability_checked": false,
+    "head_camera_checked": true,
+    "reachability_validated": false,
+    "grasp_validated": false,
+    "scrub_path_validated": false,
+    "action_tuning_performed": false,
+    "task_complete": false
+  }
+}

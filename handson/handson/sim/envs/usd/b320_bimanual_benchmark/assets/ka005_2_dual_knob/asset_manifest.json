@@ -1,0 +1,149 @@
+{
+  "clean_room": true,
+  "generated_files": {
+    "project_boxy_enclosure_visual.usda": "25f65c32657aeb8e2c2a618ea46a20df04a0f019db1efab274ab128a55e1c953",
+    "rotary_knob_fixed_visual.usda": "d1339c60aab5fea5e85de065c8dab68856f3f23f71e677ec2e98263f53971ad0",
+    "rotary_knob_moving_visual.usda": "d0425ff6d36ce4ace198e3b79b29649f0080b9839774383cb9cbd74049acc472"
+  },
+  "physics": {
+    "runtime_base_collider": "analytic box derived from enclosure dimensions",
+    "runtime_knob_colliders": "analytic cylinders derived from normalized moving bounds",
+    "visual_files_contain_physics_schemas": false
+  },
+  "runtime_dependencies": {
+    "licenses/Project_Boxy_MIT.txt": "90b44f9ef7974080a40c9ee16023fe57de255141874621ea8a5ab83958dfd87b",
+    "licenses/Rotary_Knob_CC-BY-4.0.txt": "b9cd4d70048be2e7822600ef9c1938c79ee4279af637aae49717fec14ebf3ec2",
+    "textures/Black_Nickel_baseColor.jpeg": "56611787607ce27f595533365fa8d494cd29086168134104020571ffe64041fd",
+    "textures/Black_Nickel_metallicRoughness.png": "317ef14f5d3a253a7085fa95898a8f4da02880893892690d8226daa7cce775ed",
+    "textures/Black_Nickel_normal.jpeg": "a5e702ed0917fd1a530520f972f2d966e0a7039308f46dec8d5a9b697418eb69",
+    "textures/Grey_painted_damaged_metal_baseColor.jpeg": "67ef0438e0828e3951ea45d6be6318cd503becf8628049e1cc452e868b3f8a65",
+    "textures/Grey_painted_damaged_metal_metallicRoughness.png": "f57d5395fd528dad4ee3e50634ed6324fc8e72085f3c5ff7e0847e0780b027e3",
+    "textures/Grey_painted_damaged_metal_normal.jpeg": "9efa20cab04f6a5af21e27e6c989c411782371bc7f427cf1e91c2edf35db6aed"
+  },
+  "schema": "handson_ka005_2_asset_manifest_v1",
+  "sources": {
+    "project_boxy": {
+      "author": "abusetech",
+      "geometry": {
+        "collision_authored_in_visual_asset": false,
+        "lid_thickness_m": 0.0045,
+        "moving_visual": false,
+        "rounding_radius_m": 0.012,
+        "runtime_dimensions_m": [
+          0.21,
+          0.49,
+          0.05
+        ],
+        "source_design": "Project Boxy parameterized body/lid/chamfer design",
+        "source_dimensions_unit": "millimetres"
+      },
+      "license": "MIT",
+      "original_archive_sha256": "0726041e66f680b6b5dc61b0dcb5c76219bcf42f83b5825bd7913681635e6299",
+      "source_url": "https://github.com/abusetech/project-boxy",
+      "title": "Project Boxy"
+    },
+    "rotary_knob": {
+      "author": "0x.anas",
+      "geometry": {
+        "axis_conversion": "Rx(+90deg): (x,y,z)->(x,-z,y)",
+        "component_bounds": {
+          "Grip_1": {
+            "max_m": [
+              0.02959201200116266,
+              0.03001443326606071,
+              0.04823903711269415
+            ],
+            "min_m": [
+              -0.02959201200116269,
+              -0.0300144332703534,
+              0.006100309265408425
+            ]
+          },
+          "Index line_3": {
+            "max_m": [
+              0.018184240910053898,
+              0.0010993985014675456,
+              0.045936021069884085
+            ],
+            "min_m": [
+              0.008051900887804291,
+              -0.0010993985014675482,
+              0.045936021069884085
+            ]
+          },
+          "Knob base_0": {
+            "max_m": [
+              0.030240735704025995,
+              0.030240737184248478,
+              0.008249128251216502
+            ],
+            "min_m": [
+              -0.03024073563534325,
+              -0.03024073415512076,
+              0.0
+            ]
+          },
+          "Top face_2": {
+            "max_m": [
+              0.021151229780157335,
+              0.021085492888241603,
+              0.045931059014247655
+            ],
+            "min_m": [
+              -0.021151229710387437,
+              -0.021085489859113883,
+              0.045931059014247655
+            ]
+          }
+        },
+        "fixed_bounds_m": {
+          "max": [
+            0.030240735704025995,
+            0.030240737184248478,
+            0.008249128251216502
+          ],
+          "min": [
+            -0.03024073563534325,
+            -0.03024073415512076,
+            0.0
+          ]
+        },
+        "moving_bounds_m": {
+          "max": [
+            0.02959201200116266,
+            0.03001443326606071,
+            0.04823903711269415
+          ],
+          "min": [
+            -0.02959201200116269,
+            -0.0300144332703534,
+            0.006100309265408425
+          ]
+        },
+        "runtime_axis": "+Z",
+        "source_axis": "+Y",
+        "source_axis_origin_m": [
+          1.1128251633821682,
+          0.017617717385292053,
+          0.01674270018251406
+        ],
+        "source_grip_diameter_m": 0.4027450172817154,
+        "target_grip_diameter_m": 0.06,
+        "uniform_scale": 0.14897763454645227,
+        "zero_index_rotation_deg": -128.27392874322675
+      },
+      "license": "CC-BY-4.0",
+      "original_archive_sha256": "9f65d6d81959812851dc12205d3412c0fbe3f4958e0fa8cb4c17bb4451e9b87b",
+      "selected_nodes": [
+        "Knob base_0",
+        "Grip_1",
+        "Top face_2",
+        "Index line_3"
+      ],
+      "source_url": "https://sketchfab.com/3d-models/rotary-knob-d3dd68a3c5ae4b3dbe861f2bcffa376e",
+      "title": "Rotary Knob"
+    }
+  },
+  "task_id": "B320-KA005-2",
+  "task_name": "t38_set_dual_knobs"
+}

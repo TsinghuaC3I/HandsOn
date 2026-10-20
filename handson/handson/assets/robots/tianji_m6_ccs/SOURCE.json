@@ -1,0 +1,52 @@
+{
+  "model": "Tianji Marvin M6-CCS",
+  "repository": "https://github.com/fiveages-sim/robot-descriptions-tianji",
+  "revision": "b9e73d4b50a071457fe08e5c710f0bcda7731b29",
+  "license": "BSD declared in upstream package.xml; variant and license text not supplied",
+  "upstream_blob_ids": {
+    "m6_ccs_description/README.md": "f6dee483fb690cceccae1ba5ec7806fda63736d4",
+    "m6_ccs_description/meshes/base.glb": "2bbae9f691e5a64e48996d4fb8f3473a989da3e2",
+    "m6_ccs_description/meshes/desktop_base.glb": "ae2c5302aacb96876af137411eb6b249f4c104c6",
+    "m6_ccs_description/meshes/link1.glb": "d47b3687e5fc48ea54c7d68e3c7617c5d0e15960",
+    "m6_ccs_description/meshes/link2.glb": "034ea69fd66138259859b1d8420225a9c5f88e4b",
+    "m6_ccs_description/meshes/link3.glb": "3ac4006ce52b2d70b3c778803cf54171bc1d08a5",
+    "m6_ccs_description/meshes/link4.glb": "9445cbfbb1eeb99171c5f85a2b810f015647f5c0",
+    "m6_ccs_description/meshes/link5.glb": "9174b0aacfc521a4062e99b0e41d6355482ee7c7",
+    "m6_ccs_description/meshes/link6.glb": "8fed7a5f234a9fa1be3c920d0d258bb9d4b303e9",
+    "m6_ccs_description/meshes/link7.glb": "8a9d8f33db78b2352dd2a276ac784f69d2648e66",
+    "m6_ccs_description/meshes/link7_r.glb": "0c12d61b0054266f590594916cd1be22c9992552",
+    "m6_ccs_description/package.xml": "021e6cb0376adea42272ddbe03bcb355fc7f4595",
+    "m6_ccs_description/xacro/arm.xacro": "59fa8f1ff55a4d5118688316f95a5bc8edb1b50d"
+  },
+  "changes": [
+    "Expanded xacro using xacro 2.1.1; retained source descriptions and meshes.",
+    "Rewrote mesh resource locations to package-relative paths.",
+    "For Sharpa URDF, normalized the optional MuJoCo meshdir/strippath importer settings."
+  ],
+  "qualification": "Packaged description only; task controllers, contacts, resets and success paths have not been qualified on this embodiment.",
+  "license_note": "Upstream package.xml declares BSD but the pinned repository has no LICENSE file. No specific BSD variant or additional redistribution grant is inferred.",
+  "schema": 1,
+  "robot_id": "tianji_m6_ccs",
+  "packaged_files": {
+    "assets/robots/tianji_m6_ccs/expand_left.xacro": "ecdd0abcfcf92832b38ea73543df91428f956612c2a2960ef464a7ac322e7ad6",
+    "assets/robots/tianji_m6_ccs/expand_right.xacro": "0213c5342ba2fd2d3f85210cee5e9c4dd059e508cb6c547eedd8148413761c97"
+  },
+  "external_files": {
+    "assets/robots/tianji_m6_ccs/model_left.urdf": "55281903b72b284c88f24ce66a140373dc8a074f09dbcb273b91746f8a9599f6",
+    "assets/robots/tianji_m6_ccs/model_right.urdf": "20e36fb1a94ba562ca16a2dceb3510bcf3a627ce8e5207b24a2bf12826af112c",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/README.md": "86f3226a61b88523f77e0ce62bbbafa410678a9e88cbe524db65bc0853cfb8a8",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/base.glb": "8821b7a2d45b5fe2751107a8979e1a725c49ff9de46e630e3ae0f34b9b323586",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/desktop_base.glb": "9cb16fb0e81e98b29e8bcac17b26843162c4247a505ae8546a02cac5f16f59df",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link1.glb": "486ed18e3e94d477fd3cc7e66af61e45c165fc31234251869d143d8f16c80ec5",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link2.glb": "8388f126219522057b91f7e339ed9b46fa058f77865cae42d7bb703cb5d312ef",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link3.glb": "80aa9f1b7ba3b620fcf343dee755ae4a50a1c014c0ca160597c17d881ad9aa99",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link4.glb": "3cfc52fe697fa5994846309ddebe2a7c58f56c688c7a77db34983c329ab90184",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link5.glb": "3e58cb48d9c0cc81dbb13641655e2e8b640ab8ef95f58c306ac02d4e250ab7ca",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link6.glb": "caec7f0ff2a7bb3964da8f1447cec285ae5474d1a392c942841a9089d3eec253",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link7.glb": "22d4704ebddefcf3e7b996b13d19f398b86a0ae40c8e176934266d8acd583a0f",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/meshes/link7_r.glb": "a7050276d3ea12bc034510ac02a03ae2fbf71bc1cabde4bb9aa46ed59f170159",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/package.xml": "3270630d430222359f3acbff526eb370fae3436bb9fed29bd5d928887087d525",
+    "assets/robots/tianji_m6_ccs/source/m6_ccs_description/xacro/arm.xacro": "3a0e1d464f636d643e6e8982af34e493bd771beccd53a3696ddecd799f61614e"
+  },
+  "distribution": "user-supplied; external.json records acquisition and expected hashes"
+}

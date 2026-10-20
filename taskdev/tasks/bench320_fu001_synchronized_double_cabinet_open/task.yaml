@@ -1,0 +1,222 @@
+schema_version: 1
+task:
+  id: bench320_fu001_synchronized_double_cabinet_open
+  title: "B320-FU001 SynchronizedDoubleCabinetOpen"
+  description: "Use both Wuji gen1 hands concurrently to open the two independently authored doors of the reviewed Poly Haven cabinet within one synchronization window, then release both handles while the doors remain open."
+  taxonomy:
+    family: articulation
+    interactions: [dual_articulation, synchronized_contact, constrained_rotation]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "Adapted from benchmark workbook source row 215; visible cabinet from Poly Haven Painted Wooden Cabinet by Kirill Sannikov / Poly Haven."
+  reference: taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/source_rows.authoritative.json
+  license: "CC0 1.0 — https://polyhaven.com/license"
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.55, -0.42, 0.89]
+    max: [0.05, 0.42, 1.65]
+  targets:
+    - id: left_door_handle
+      arm: left
+      frame: world
+      position_m: [-0.278, 0.015, 1.176]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: right_door_handle
+      arm: right
+      frame: world
+      position_m: [-0.293, -0.024, 1.174]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: polyhaven_painted_cabinet_body
+    path: handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd
+    kind: usd
+    required: true
+    scale_m: [0.55, 0.55, 0.55]
+    collision:
+      enabled: true
+      approximation: convex_decomposition
+      derivation: source_mesh_topology_then_physx_convex_decomposition
+  - id: polyhaven_painted_cabinet_door_left
+    path: handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd
+    kind: usd
+    required: true
+    scale_m: [0.55, 0.55, 0.55]
+    collision:
+      enabled: true
+      approximation: convex_decomposition
+      derivation: source_mesh_topology_then_physx_convex_decomposition
+  - id: polyhaven_painted_cabinet_door_right
+    path: handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd
+    kind: usd
+    required: true
+    scale_m: [0.55, 0.55, 0.55]
+    collision:
+      enabled: true
+      approximation: convex_decomposition
+      derivation: source_mesh_topology_then_physx_convex_decomposition
+  - id: polyhaven_painted_cabinet_manifest
+    path: handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/asset_manifest.json
+    kind: config
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: false
+      approximation: none
+  - id: polyhaven_painted_cabinet_source_archive
+    path: taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip
+    kind: other
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: false
+      approximation: none
+reset:
+  seedable: true
+  max_settle_steps: 300
+  startup_staging:
+    mode: collision_clear_spread_home
+    arm_home_source: _C_TOOL_SPREAD_ARM_HOME
+    tcp_y_m: [-0.36, 0.36]
+    hand_door_collision_filtering: false
+    contact_policy: ordinary_hand_door_and_table_contacts_remain_enabled
+    rationale: "Use the verified spread-home placement during constructor reset because the selected cabinet occupies the normal tabletop hand envelope; operator/IK approaches the handles after reset."
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - selected_source_hash_bound
+    - source_hinge_axis_maps_to_runtime_z
+    - two_door_joints_start_between_10_and_30_percent
+  selected_asset:
+    id: cabinet-polyhaven-painted
+    archive_sha256: dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf
+    source_url: https://polyhaven.com/a/painted_wooden_cabinet
+    license_url: https://polyhaven.com/license
+    uniform_scale: 0.55
+    runtime_orientation_wxyz: [0.5, 0.5, -0.5, -0.5]
+    source_to_runtime: "(x,y,z) -> (-z,-x,y)"
+    hinge_axis_source: "+Y"
+    hinge_axis_runtime: "+Z"
+  randomization:
+    environment_rng: true
+    fixture_translation_range_m: [[-0.03, -0.03, 0.0], [0.03, 0.03, 0.0]]
+    fixture_translation_applied_range_m: [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    fixture_translation_mode: fixed_articulated_root_exempt
+    fixture_translation_exemption_reason: "The selected cabinet base is attached to /World/Task/B320Benchmark/fixture_base/world_fixed_joint; moving this fixed articulation root is not implemented or PhysX-verified. The source ±0.03 m range remains an explicit pending gate."
+    constrained_door_translation_range_m: [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+    door_angle_fraction_range: [0.10, 0.30]
+contact:
+  monitored_pairs:
+    - id: left_hand_left_door
+      bodies: ["/World/HandsOnRobots/LeftRobot/left_*", "/World/Task/B320Benchmark/cabinet_door_left"]
+      max_penetration_m: 0.005
+    - id: right_hand_right_door
+      bodies: ["/World/HandsOnRobots/RightRobot/right_*", "/World/Task/B320Benchmark/cabinet_door_right"]
+      max_penetration_m: 0.005
+  allowlisted_pairs:
+    - table_fixture_support
+    - left_hand_left_door
+    - right_hand_right_door
+  forbidden_pairs:
+    - id: arm_cabinet_body
+      bodies: ["/World/HandsOnRobots/*Robot/*arm*", "/World/Task/B320Benchmark/fixture_base"]
+    - id: cross_hand_wrong_door
+      bodies: ["/World/HandsOnRobots/LeftRobot/left_*", "/World/Task/B320Benchmark/cabinet_door_right"]
+    - id: right_hand_wrong_door
+      bodies: ["/World/HandsOnRobots/RightRobot/right_*", "/World/Task/B320Benchmark/cabinet_door_left"]
+success:
+  logic: all
+  timebase: control_frames_30_hz
+  predicates:
+    - id: left_door_open
+      type: joint_fraction
+      parameters: {joint: target_joint_revolute, minimum_fraction: 0.8}
+    - id: right_door_open
+      type: joint_fraction
+      parameters: {joint: joint_11, minimum_absolute_fraction: 0.8}
+    - id: synchronized_entry
+      type: first_true_time_delta
+      parameters: {predicates: [left_door_open, right_door_open], maximum_seconds: 1.0}
+    - id: distinct_hand_contact
+      type: bimanual_distinct_contact
+      parameters: {left_pair: left_hand_left_door, right_pair: right_hand_right_door}
+    - id: release_after_threshold
+      type: release_time_delta_after_joint_threshold
+      parameters: {maximum_seconds: 1.0, require_both_after_threshold: true, release_force_max_n: 0.05}
+  hold_steps: 12
+  timeout_steps: 960
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  streams:
+    ego: {resolution_hwc: [480, 640, 3]}
+    wrist_left: {resolution_hwc: [480, 640, 3]}
+    wrist_right: {resolution_hwc: [480, 640, 3]}
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 300
+  max_linear_velocity_mps: 20.0
+  max_angular_velocity_radps: 50.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, contacts, success]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability:
+      min_target_fraction: 1.0
+      min_joint_limit_margin_rad: 0.05
+      max_position_error_m: 0.01
+      max_orientation_error_rad: 0.15
+    contact:
+      max_penetration_m: 0.005
+      max_forbidden_events: 0
+    reset:
+      min_trials: 20
+      max_failure_fraction: 0.0
+    success:
+      min_positive_trials: 10
+      min_negative_trials: 10
+      max_false_positive_fraction: 0.0
+      max_false_negative_fraction: 0.0
+    camera:
+      min_frames: 30
+      max_black_fraction: 0.0
+      min_mean_rgb: 30.0
+      min_width: 640
+      min_height: 480
+    stability:
+      min_sim_seconds: 10.0
+      max_nan_count: 0
+      max_exploding_body_count: 0
+    collection:
+      min_episodes: 3
+      max_schema_errors: 0

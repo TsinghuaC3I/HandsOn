@@ -1,0 +1,1244 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="584.166" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="a_colored_wood_blocks_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_001_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_002_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_003_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_004_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_005_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_006_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_007_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_009_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_010_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_011_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_012_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_013_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_014_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_015_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_017_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_018_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_019_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_020_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_022_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_023_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_024_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_025_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_026_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_027_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_029_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_030_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_031_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_032_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_033_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_035_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_036_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_037_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_038_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_039_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_041_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_042_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_043_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_044_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_045_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_047_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_048_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_049_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_050_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_051_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_053_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_054_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_055_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_056_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_057_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_059_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_060_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_061_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_062_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_063_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_065_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_066_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_067_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_068_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_069_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_071_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_072_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_073_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_074_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_075_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_076_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_077_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_078_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_079_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_080_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_081_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_083_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_084_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_085_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_086_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_087_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_089_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_090_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_091_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_092_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_093_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_095_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_096_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_097_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_098_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_099_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_101_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_102_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_103_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_104_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_105_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_107_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_108_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_109_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_110_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_111_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_113_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_114_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_115_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_116_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_117_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_119_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_120_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_121_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_122_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_123_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_125_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_126_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_127_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_128_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <texture type="2d" name="a_colored_wood_blocks_Lid_material" file="visuals/T_a_colored_wood_blocks_BC001.png"/>
+    <material name="a_colored_wood_blocks_material" texture="a_colored_wood_blocks_material" specular="0.310345" rgba="1 1 1 0.3"/>
+    <material name="a_colored_wood_blocks_001_material" texture="a_colored_wood_blocks_001_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_002_material" texture="a_colored_wood_blocks_002_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_003_material" texture="a_colored_wood_blocks_003_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_004_material" texture="a_colored_wood_blocks_004_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_005_material" texture="a_colored_wood_blocks_005_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_006_material" texture="a_colored_wood_blocks_006_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_007_material" texture="a_colored_wood_blocks_007_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_009_material" texture="a_colored_wood_blocks_009_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_010_material" texture="a_colored_wood_blocks_010_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_011_material" texture="a_colored_wood_blocks_011_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_012_material" texture="a_colored_wood_blocks_012_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_013_material" texture="a_colored_wood_blocks_013_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_014_material" texture="a_colored_wood_blocks_014_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_015_material" texture="a_colored_wood_blocks_015_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_017_material" texture="a_colored_wood_blocks_017_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_018_material" texture="a_colored_wood_blocks_018_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_019_material" texture="a_colored_wood_blocks_019_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_020_material" texture="a_colored_wood_blocks_020_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_022_material" texture="a_colored_wood_blocks_022_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_023_material" texture="a_colored_wood_blocks_023_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_024_material" texture="a_colored_wood_blocks_024_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_025_material" texture="a_colored_wood_blocks_025_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_026_material" texture="a_colored_wood_blocks_026_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_027_material" texture="a_colored_wood_blocks_027_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_029_material" texture="a_colored_wood_blocks_029_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_030_material" texture="a_colored_wood_blocks_030_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_031_material" texture="a_colored_wood_blocks_031_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_032_material" texture="a_colored_wood_blocks_032_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_033_material" texture="a_colored_wood_blocks_033_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_035_material" texture="a_colored_wood_blocks_035_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_036_material" texture="a_colored_wood_blocks_036_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_037_material" texture="a_colored_wood_blocks_037_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_038_material" texture="a_colored_wood_blocks_038_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_039_material" texture="a_colored_wood_blocks_039_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_041_material" texture="a_colored_wood_blocks_041_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_042_material" texture="a_colored_wood_blocks_042_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_043_material" texture="a_colored_wood_blocks_043_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_044_material" texture="a_colored_wood_blocks_044_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_045_material" texture="a_colored_wood_blocks_045_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_047_material" texture="a_colored_wood_blocks_047_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_048_material" texture="a_colored_wood_blocks_048_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_049_material" texture="a_colored_wood_blocks_049_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_050_material" texture="a_colored_wood_blocks_050_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_051_material" texture="a_colored_wood_blocks_051_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_053_material" texture="a_colored_wood_blocks_053_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_054_material" texture="a_colored_wood_blocks_054_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_055_material" texture="a_colored_wood_blocks_055_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_056_material" texture="a_colored_wood_blocks_056_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_057_material" texture="a_colored_wood_blocks_057_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_059_material" texture="a_colored_wood_blocks_059_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_060_material" texture="a_colored_wood_blocks_060_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_061_material" texture="a_colored_wood_blocks_061_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_062_material" texture="a_colored_wood_blocks_062_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_063_material" texture="a_colored_wood_blocks_063_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_065_material" texture="a_colored_wood_blocks_065_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_066_material" texture="a_colored_wood_blocks_066_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_067_material" texture="a_colored_wood_blocks_067_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_068_material" texture="a_colored_wood_blocks_068_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_069_material" texture="a_colored_wood_blocks_069_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_071_material" texture="a_colored_wood_blocks_071_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_072_material" texture="a_colored_wood_blocks_072_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_073_material" texture="a_colored_wood_blocks_073_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_074_material" texture="a_colored_wood_blocks_074_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_075_material" texture="a_colored_wood_blocks_075_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_076_material" texture="a_colored_wood_blocks_076_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_077_material" texture="a_colored_wood_blocks_077_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_078_material" texture="a_colored_wood_blocks_078_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_079_material" texture="a_colored_wood_blocks_079_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_080_material" texture="a_colored_wood_blocks_080_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_081_material" texture="a_colored_wood_blocks_081_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_083_material" texture="a_colored_wood_blocks_083_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_084_material" texture="a_colored_wood_blocks_084_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_085_material" texture="a_colored_wood_blocks_085_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_086_material" texture="a_colored_wood_blocks_086_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_087_material" texture="a_colored_wood_blocks_087_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_089_material" texture="a_colored_wood_blocks_089_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_090_material" texture="a_colored_wood_blocks_090_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_091_material" texture="a_colored_wood_blocks_091_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_092_material" texture="a_colored_wood_blocks_092_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_093_material" texture="a_colored_wood_blocks_093_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_095_material" texture="a_colored_wood_blocks_095_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_096_material" texture="a_colored_wood_blocks_096_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_097_material" texture="a_colored_wood_blocks_097_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_098_material" texture="a_colored_wood_blocks_098_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_099_material" texture="a_colored_wood_blocks_099_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_101_material" texture="a_colored_wood_blocks_101_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_102_material" texture="a_colored_wood_blocks_102_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_103_material" texture="a_colored_wood_blocks_103_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_104_material" texture="a_colored_wood_blocks_104_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_105_material" texture="a_colored_wood_blocks_105_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_107_material" texture="a_colored_wood_blocks_107_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_108_material" texture="a_colored_wood_blocks_108_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_109_material" texture="a_colored_wood_blocks_109_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_110_material" texture="a_colored_wood_blocks_110_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_111_material" texture="a_colored_wood_blocks_111_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_113_material" texture="a_colored_wood_blocks_113_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_114_material" texture="a_colored_wood_blocks_114_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_115_material" texture="a_colored_wood_blocks_115_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_116_material" texture="a_colored_wood_blocks_116_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_117_material" texture="a_colored_wood_blocks_117_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_119_material" texture="a_colored_wood_blocks_119_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_120_material" texture="a_colored_wood_blocks_120_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_121_material" texture="a_colored_wood_blocks_121_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_122_material" texture="a_colored_wood_blocks_122_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_123_material" texture="a_colored_wood_blocks_123_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_125_material" texture="a_colored_wood_blocks_125_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_126_material" texture="a_colored_wood_blocks_126_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_127_material" texture="a_colored_wood_blocks_127_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_128_material" texture="a_colored_wood_blocks_128_material" specular="0.310345"/>
+    <material name="a_colored_wood_blocks_Lid_material" texture="a_colored_wood_blocks_Lid_material" specular="0.310345"/>
+    <mesh name="a_colored_wood_blocks_001_vis" file="visuals/a_colored_wood_blocks_001.obj"/>
+    <mesh name="a_colored_wood_blocks_002_vis" file="visuals/a_colored_wood_blocks_002.obj"/>
+    <mesh name="a_colored_wood_blocks_003_vis" file="visuals/a_colored_wood_blocks_003.obj"/>
+    <mesh name="a_colored_wood_blocks_004_vis" file="visuals/a_colored_wood_blocks_004.obj"/>
+    <mesh name="a_colored_wood_blocks_005_vis" file="visuals/a_colored_wood_blocks_005.obj"/>
+    <mesh name="a_colored_wood_blocks_006_vis" file="visuals/a_colored_wood_blocks_006.obj"/>
+    <mesh name="a_colored_wood_blocks_007_vis" file="visuals/a_colored_wood_blocks_007.obj"/>
+    <mesh name="a_colored_wood_blocks_009_vis" file="visuals/a_colored_wood_blocks_009.obj"/>
+    <mesh name="a_colored_wood_blocks_010_vis" file="visuals/a_colored_wood_blocks_010.obj"/>
+    <mesh name="a_colored_wood_blocks_011_vis" file="visuals/a_colored_wood_blocks_011.obj"/>
+    <mesh name="a_colored_wood_blocks_012_vis" file="visuals/a_colored_wood_blocks_012.obj"/>
+    <mesh name="a_colored_wood_blocks_013_vis" file="visuals/a_colored_wood_blocks_013.obj"/>
+    <mesh name="a_colored_wood_blocks_014_vis" file="visuals/a_colored_wood_blocks_014.obj"/>
+    <mesh name="a_colored_wood_blocks_015_vis" file="visuals/a_colored_wood_blocks_015.obj"/>
+    <mesh name="a_colored_wood_blocks_017_vis" file="visuals/a_colored_wood_blocks_017.obj"/>
+    <mesh name="a_colored_wood_blocks_018_vis" file="visuals/a_colored_wood_blocks_018.obj"/>
+    <mesh name="a_colored_wood_blocks_019_vis" file="visuals/a_colored_wood_blocks_019.obj"/>
+    <mesh name="a_colored_wood_blocks_020_vis" file="visuals/a_colored_wood_blocks_020.obj"/>
+    <mesh name="a_colored_wood_blocks_022_vis" file="visuals/a_colored_wood_blocks_022.obj"/>
+    <mesh name="a_colored_wood_blocks_023_vis" file="visuals/a_colored_wood_blocks_023.obj"/>
+    <mesh name="a_colored_wood_blocks_024_vis" file="visuals/a_colored_wood_blocks_024.obj"/>
+    <mesh name="a_colored_wood_blocks_025_vis" file="visuals/a_colored_wood_blocks_025.obj"/>
+    <mesh name="a_colored_wood_blocks_026_vis" file="visuals/a_colored_wood_blocks_026.obj"/>
+    <mesh name="a_colored_wood_blocks_027_vis" file="visuals/a_colored_wood_blocks_027.obj"/>
+    <mesh name="a_colored_wood_blocks_029_vis" file="visuals/a_colored_wood_blocks_029.obj"/>
+    <mesh name="a_colored_wood_blocks_030_vis" file="visuals/a_colored_wood_blocks_030.obj"/>
+    <mesh name="a_colored_wood_blocks_031_vis" file="visuals/a_colored_wood_blocks_031.obj"/>
+    <mesh name="a_colored_wood_blocks_032_vis" file="visuals/a_colored_wood_blocks_032.obj"/>
+    <mesh name="a_colored_wood_blocks_033_vis" file="visuals/a_colored_wood_blocks_033.obj"/>
+    <mesh name="a_colored_wood_blocks_035_vis" file="visuals/a_colored_wood_blocks_035.obj"/>
+    <mesh name="a_colored_wood_blocks_036_vis" file="visuals/a_colored_wood_blocks_036.obj"/>
+    <mesh name="a_colored_wood_blocks_037_vis" file="visuals/a_colored_wood_blocks_037.obj"/>
+    <mesh name="a_colored_wood_blocks_038_vis" file="visuals/a_colored_wood_blocks_038.obj"/>
+    <mesh name="a_colored_wood_blocks_039_vis" file="visuals/a_colored_wood_blocks_039.obj"/>
+    <mesh name="a_colored_wood_blocks_041_vis" file="visuals/a_colored_wood_blocks_041.obj"/>
+    <mesh name="a_colored_wood_blocks_042_vis" file="visuals/a_colored_wood_blocks_042.obj"/>
+    <mesh name="a_colored_wood_blocks_043_vis" file="visuals/a_colored_wood_blocks_043.obj"/>
+    <mesh name="a_colored_wood_blocks_044_vis" file="visuals/a_colored_wood_blocks_044.obj"/>
+    <mesh name="a_colored_wood_blocks_045_vis" file="visuals/a_colored_wood_blocks_045.obj"/>
+    <mesh name="a_colored_wood_blocks_047_vis" file="visuals/a_colored_wood_blocks_047.obj"/>
+    <mesh name="a_colored_wood_blocks_048_vis" file="visuals/a_colored_wood_blocks_048.obj"/>
+    <mesh name="a_colored_wood_blocks_049_vis" file="visuals/a_colored_wood_blocks_049.obj"/>
+    <mesh name="a_colored_wood_blocks_050_vis" file="visuals/a_colored_wood_blocks_050.obj"/>
+    <mesh name="a_colored_wood_blocks_051_vis" file="visuals/a_colored_wood_blocks_051.obj"/>
+    <mesh name="a_colored_wood_blocks_053_vis" file="visuals/a_colored_wood_blocks_053.obj"/>
+    <mesh name="a_colored_wood_blocks_054_vis" file="visuals/a_colored_wood_blocks_054.obj"/>
+    <mesh name="a_colored_wood_blocks_055_vis" file="visuals/a_colored_wood_blocks_055.obj"/>
+    <mesh name="a_colored_wood_blocks_056_vis" file="visuals/a_colored_wood_blocks_056.obj"/>
+    <mesh name="a_colored_wood_blocks_057_vis" file="visuals/a_colored_wood_blocks_057.obj"/>
+    <mesh name="a_colored_wood_blocks_059_vis" file="visuals/a_colored_wood_blocks_059.obj"/>
+    <mesh name="a_colored_wood_blocks_060_vis" file="visuals/a_colored_wood_blocks_060.obj"/>
+    <mesh name="a_colored_wood_blocks_061_vis" file="visuals/a_colored_wood_blocks_061.obj"/>
+    <mesh name="a_colored_wood_blocks_062_vis" file="visuals/a_colored_wood_blocks_062.obj"/>
+    <mesh name="a_colored_wood_blocks_063_vis" file="visuals/a_colored_wood_blocks_063.obj"/>
+    <mesh name="a_colored_wood_blocks_065_vis" file="visuals/a_colored_wood_blocks_065.obj"/>
+    <mesh name="a_colored_wood_blocks_066_vis" file="visuals/a_colored_wood_blocks_066.obj"/>
+    <mesh name="a_colored_wood_blocks_067_vis" file="visuals/a_colored_wood_blocks_067.obj"/>
+    <mesh name="a_colored_wood_blocks_068_vis" file="visuals/a_colored_wood_blocks_068.obj"/>
+    <mesh name="a_colored_wood_blocks_069_vis" file="visuals/a_colored_wood_blocks_069.obj"/>
+    <mesh name="a_colored_wood_blocks_071_vis" file="visuals/a_colored_wood_blocks_071.obj"/>
+    <mesh name="a_colored_wood_blocks_072_vis" file="visuals/a_colored_wood_blocks_072.obj"/>
+    <mesh name="a_colored_wood_blocks_073_vis" file="visuals/a_colored_wood_blocks_073.obj"/>
+    <mesh name="a_colored_wood_blocks_074_vis" file="visuals/a_colored_wood_blocks_074.obj"/>
+    <mesh name="a_colored_wood_blocks_075_vis" file="visuals/a_colored_wood_blocks_075.obj"/>
+    <mesh name="a_colored_wood_blocks_076_vis" file="visuals/a_colored_wood_blocks_076.obj"/>
+    <mesh name="a_colored_wood_blocks_077_vis" file="visuals/a_colored_wood_blocks_077.obj"/>
+    <mesh name="a_colored_wood_blocks_078_vis" file="visuals/a_colored_wood_blocks_078.obj"/>
+    <mesh name="a_colored_wood_blocks_079_vis" file="visuals/a_colored_wood_blocks_079.obj"/>
+    <mesh name="a_colored_wood_blocks_080_vis" file="visuals/a_colored_wood_blocks_080.obj"/>
+    <mesh name="a_colored_wood_blocks_081_vis" file="visuals/a_colored_wood_blocks_081.obj"/>
+    <mesh name="a_colored_wood_blocks_083_vis" file="visuals/a_colored_wood_blocks_083.obj"/>
+    <mesh name="a_colored_wood_blocks_084_vis" file="visuals/a_colored_wood_blocks_084.obj"/>
+    <mesh name="a_colored_wood_blocks_085_vis" file="visuals/a_colored_wood_blocks_085.obj"/>
+    <mesh name="a_colored_wood_blocks_086_vis" file="visuals/a_colored_wood_blocks_086.obj"/>
+    <mesh name="a_colored_wood_blocks_087_vis" file="visuals/a_colored_wood_blocks_087.obj"/>
+    <mesh name="a_colored_wood_blocks_089_vis" file="visuals/a_colored_wood_blocks_089.obj"/>
+    <mesh name="a_colored_wood_blocks_090_vis" file="visuals/a_colored_wood_blocks_090.obj"/>
+    <mesh name="a_colored_wood_blocks_091_vis" file="visuals/a_colored_wood_blocks_091.obj"/>
+    <mesh name="a_colored_wood_blocks_092_vis" file="visuals/a_colored_wood_blocks_092.obj"/>
+    <mesh name="a_colored_wood_blocks_093_vis" file="visuals/a_colored_wood_blocks_093.obj"/>
+    <mesh name="a_colored_wood_blocks_095_vis" file="visuals/a_colored_wood_blocks_095.obj"/>
+    <mesh name="a_colored_wood_blocks_096_vis" file="visuals/a_colored_wood_blocks_096.obj"/>
+    <mesh name="a_colored_wood_blocks_097_vis" file="visuals/a_colored_wood_blocks_097.obj"/>
+    <mesh name="a_colored_wood_blocks_098_vis" file="visuals/a_colored_wood_blocks_098.obj"/>
+    <mesh name="a_colored_wood_blocks_099_vis" file="visuals/a_colored_wood_blocks_099.obj"/>
+    <mesh name="a_colored_wood_blocks_101_vis" file="visuals/a_colored_wood_blocks_101.obj"/>
+    <mesh name="a_colored_wood_blocks_102_vis" file="visuals/a_colored_wood_blocks_102.obj"/>
+    <mesh name="a_colored_wood_blocks_103_vis" file="visuals/a_colored_wood_blocks_103.obj"/>
+    <mesh name="a_colored_wood_blocks_104_vis" file="visuals/a_colored_wood_blocks_104.obj"/>
+    <mesh name="a_colored_wood_blocks_105_vis" file="visuals/a_colored_wood_blocks_105.obj"/>
+    <mesh name="a_colored_wood_blocks_107_vis" file="visuals/a_colored_wood_blocks_107.obj"/>
+    <mesh name="a_colored_wood_blocks_108_vis" file="visuals/a_colored_wood_blocks_108.obj"/>
+    <mesh name="a_colored_wood_blocks_109_vis" file="visuals/a_colored_wood_blocks_109.obj"/>
+    <mesh name="a_colored_wood_blocks_110_vis" file="visuals/a_colored_wood_blocks_110.obj"/>
+    <mesh name="a_colored_wood_blocks_111_vis" file="visuals/a_colored_wood_blocks_111.obj"/>
+    <mesh name="a_colored_wood_blocks_113_vis" file="visuals/a_colored_wood_blocks_113.obj"/>
+    <mesh name="a_colored_wood_blocks_114_vis" file="visuals/a_colored_wood_blocks_114.obj"/>
+    <mesh name="a_colored_wood_blocks_115_vis" file="visuals/a_colored_wood_blocks_115.obj"/>
+    <mesh name="a_colored_wood_blocks_116_vis" file="visuals/a_colored_wood_blocks_116.obj"/>
+    <mesh name="a_colored_wood_blocks_117_vis" file="visuals/a_colored_wood_blocks_117.obj"/>
+    <mesh name="a_colored_wood_blocks_119_vis" file="visuals/a_colored_wood_blocks_119.obj"/>
+    <mesh name="a_colored_wood_blocks_120_vis" file="visuals/a_colored_wood_blocks_120.obj"/>
+    <mesh name="a_colored_wood_blocks_121_vis" file="visuals/a_colored_wood_blocks_121.obj"/>
+    <mesh name="a_colored_wood_blocks_122_vis" file="visuals/a_colored_wood_blocks_122.obj"/>
+    <mesh name="a_colored_wood_blocks_123_vis" file="visuals/a_colored_wood_blocks_123.obj"/>
+    <mesh name="a_colored_wood_blocks_125_vis" file="visuals/a_colored_wood_blocks_125.obj"/>
+    <mesh name="a_colored_wood_blocks_126_vis" file="visuals/a_colored_wood_blocks_126.obj"/>
+    <mesh name="a_colored_wood_blocks_127_vis" file="visuals/a_colored_wood_blocks_127.obj"/>
+    <mesh name="a_colored_wood_blocks_128_vis" file="visuals/a_colored_wood_blocks_128.obj"/>
+    <mesh name="a_colored_wood_blocks_vis" file="visuals/optimized_visuals/a_colored_wood_blocks.obj"/>
+    <mesh name="a_colored_wood_blocks_Lid_vis" file="visuals/optimized_visuals/a_colored_wood_blocks_Lid.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider1_m_collision" file="collision/a_colored_wood_blocks_Collider1_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider2_m_collision" file="collision/a_colored_wood_blocks_Collider2_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider3_m_collision" file="collision/a_colored_wood_blocks_Collider3_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider4_m_collision" file="collision/a_colored_wood_blocks_Collider4_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider5_m_collision" file="collision/a_colored_wood_blocks_Collider5_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider6_m_collision" file="collision/a_colored_wood_blocks_Collider6_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider7_m_collision" file="collision/a_colored_wood_blocks_Collider7_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Collider8_m_collision" file="collision/a_colored_wood_blocks_Collider8_m.obj"/>
+    <mesh name="a_colored_wood_blocks_Lid_Collider1_m_collision" file="collision/a_colored_wood_blocks_Lid_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_material" mesh="a_colored_wood_blocks_vis"/>
+        <geom name="a_colored_wood_blocks_Collider1_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider1_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider2_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider2_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider3_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider3_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider4_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider4_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider5_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider5_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider6_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider6_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider7_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider7_m_collision"/>
+        <geom name="a_colored_wood_blocks_Collider8_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Collider8_m_collision"/>
+        <geom class="collision" size="0.059 0.059 0.0037" pos="-0.00002850 -0.00011900 -0.08620850" type="box"/>
+        <geom name="a_colored_wood_blocks_Collider10_0" class="collision" size="0.0015 0.0083 0.01345" pos="-0.05452850 -0.00011900 0.06429150" quat="0.9919671155120975 0.0 0.12649601473014555 0.0" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_1" class="collision" size="0.0015 0.0083 0.01345" pos="-0.05267145 -0.01422467 0.06429150" quat="0.9834806596930479 -0.01651108152296148 0.12541381873442542 0.12947799143915642" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_2" class="collision" size="0.0015 0.0083 0.01345" pos="-0.04722685 -0.02736906 0.06429150" quat="0.9581664985259917 -0.03273965254395535 0.12218574750726972 0.25674056820033647" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_3" class="collision" size="0.0015 0.0083 0.01345" pos="-0.03856575 -0.03865639 0.06429150" quat="0.9164577663497212 -0.04840803641660435 0.11686703450031535 0.3796102221419631" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_4" class="collision" size="0.0015 0.0083 0.01345" pos="-0.02727838 -0.04731745 0.06429150" quat="0.8590681144684933 -0.0632481414967162 0.10954868479274665 0.49598460960088125" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_5" class="collision" size="0.0015 0.0083 0.01345" pos="-0.01413398 -0.05276200 0.06429150" quat="0.7869795003233248 -0.0770060482860676 0.10035591796188713 0.6038725232433091" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_6" class="collision" size="0.0015 0.0083 0.01345" pos="-0.00002830 -0.05461900 0.06429150" quat="0.7014253858494608 -0.08944635408570889 0.08944602553150799 0.7014279623334999" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_7" class="collision" size="0.0015 0.0083 0.01345" pos="0.01407736 -0.05276190 0.06429150" quat="0.6038696325021183 -0.10035620082021966 0.07700567965767807 0.7869817184656499" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_8" class="collision" size="0.0015 0.0083 0.01345" pos="0.02722173 -0.04731725 0.06429150" quat="0.49598145406415295 -0.10954891711540374 0.06324773910150144 0.859069936315897" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_9" class="collision" size="0.0015 0.0083 0.01345" pos="0.03850903 -0.03865611 0.06429150" quat="0.37960685580205766 -0.11686721231217337 0.048407607139690216 0.916459160729744" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_10" class="collision" size="0.0015 0.0083 0.01345" pos="0.04717005 -0.02736871 0.06429150" quat="0.2567370486565321 -0.12218586776590425 0.03273920373042317 0.9581674415802931" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_11" class="collision" size="0.0015 0.0083 0.01345" pos="0.05261455 -0.01422428 0.06429150" quat="0.1294743789121046 -0.12541387938216825 0.01651062085217107 0.983481135285632" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_12" class="collision" size="0.0015 0.0083 0.01345" pos="0.05447150 -0.00011860 0.06429150" quat="-3.6436986711474836e-06 -0.12649601472929214 -4.646458068720754e-07 0.9919671155054054" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_13" class="collision" size="0.0015 0.0083 0.01345" pos="0.05261435 0.01398706 0.06429150" quat="-0.12948160396446123 -0.12541375808499042 -0.016511542193529107 0.9834801840871942" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_14" class="collision" size="0.0015 0.0083 0.01345" pos="0.04716965 0.02713140 0.06429150" quat="-0.2567440877406768 -0.12218562724698664 -0.0327401013570458 0.9581655554587624" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_15" class="collision" size="0.0015 0.0083 0.01345" pos="0.03850847 0.03841867 0.06429150" quat="-0.37961358847674653 -0.11686685668688053 -0.04840846569286531 0.9164563719573333" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_16" class="collision" size="0.0015 0.0083 0.01345" pos="0.02722104 0.04707965 0.06429150" quat="-0.4959877651309175 -0.10954845246861147 -0.06324854389107756 0.8590662926094985" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_17" class="collision" size="0.0015 0.0083 0.01345" pos="0.01407659 0.05252410 0.06429150" quat="-0.6038754139763522 -0.10035563510220054 -0.07700641691341813 0.7869772821703814" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_18" class="collision" size="0.0015 0.0083 0.01345" pos="-0.00002910 0.05438100 0.06429150" quat="-0.7014305388080749 -0.08944569697610026 -0.08944668263870294 0.7014228093559579" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_19" class="collision" size="0.0015 0.0083 0.01345" pos="-0.01413475 0.05252379 0.06429150" quat="-0.7869839365973568 -0.07700531102824956 -0.10035648367719817 0.6038667417527799" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_20" class="collision" size="0.0015 0.0083 0.01345" pos="-0.02727908 0.04707905 0.06429150" quat="-0.85907175815171 -0.06324733670543334 -0.10954914943658277 0.49597829852073255" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_21" class="collision" size="0.0015 0.0083 0.01345" pos="-0.03856632 0.03841782 0.06429150" quat="-0.9164605550974014 -0.04840717786212293 -0.11686739012245456 0.3796034894570303" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_22" class="collision" size="0.0015 0.0083 0.01345" pos="-0.04722725 0.02713036 0.06429150" quat="-0.9581683846216665 -0.032738754916449224 -0.1221859880228902 0.25673352910926345" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider10_23" class="collision" size="0.0015 0.0083 0.01345" pos="-0.05267166 0.01398590 0.06429150" quat="-0.9834816108649467 -0.016510160181157862 -0.12541394002821896 0.1294707663833056" type="box" rgba="1 1 1 0.6"/>
+        <geom name="a_colored_wood_blocks_Collider11_0" class="collision" size="0.00335 0.00705 0.0052" pos="-0.04572850 -0.00011900 0.08079150" type="box" quat="1.0 0.0 0.0 0.0"/>
+        <geom name="a_colored_wood_blocks_Collider11_1" class="collision" size="0.00335 0.00705 0.0052" pos="-0.04417130 -0.01194706 0.08079150" type="box" quat="0.9914448214196411 0.0 0.0 0.13052649570173921"/>
+        <geom name="a_colored_wood_blocks_Collider11_2" class="collision" size="0.00335 0.00705 0.0052" pos="-0.03960583 -0.02296905 0.08079150" type="box" quat="0.9659256678396477 0.0 0.0 0.2588196364430847"/>
+        <geom name="a_colored_wood_blocks_Collider11_3" class="collision" size="0.00335 0.00705 0.0052" pos="-0.03234322 -0.03243384 0.08079150" type="box" quat="0.923879181092213 0.0 0.0 0.3826842807646819"/>
+        <geom name="a_colored_wood_blocks_Collider11_4" class="collision" size="0.00335 0.00705 0.0052" pos="-0.02287840 -0.03969642 0.08079150" type="box" quat="0.8660247915829389 0.0 0.0 0.5000010603626028"/>
+        <geom name="a_colored_wood_blocks_Collider11_5" class="collision" size="0.00335 0.00705 0.0052" pos="-0.01185640 -0.04426185 0.08079150" type="box" quat="0.7933524085796444 0.0 0.0 0.608762643236982"/>
+        <geom name="a_colored_wood_blocks_Collider11_6" class="collision" size="0.00335 0.00705 0.0052" pos="-0.00002833 -0.04581900 0.08079150" type="box" quat="0.7071054825112362 0.0 0.0 0.7071080798594737"/>
+        <geom name="a_colored_wood_blocks_Collider11_7" class="collision" size="0.00335 0.00705 0.0052" pos="0.01179972 -0.04426176 0.08079150" type="box" quat="0.6087597290867591 0.0 0.0 0.7933546446843402"/>
+        <geom name="a_colored_wood_blocks_Collider11_8" class="collision" size="0.00335 0.00705 0.0052" pos="0.02282169 -0.03969625 0.08079150" type="box" quat="0.4999978792725456 0.0 0.0 0.8660266281835433"/>
+        <geom name="a_colored_wood_blocks_Collider11_9" class="collision" size="0.00335 0.00705 0.0052" pos="0.03228646 -0.03243360 0.08079150" type="box" quat="0.3826808871643772 0.0 0.0 0.9238805867638336"/>
+        <geom name="a_colored_wood_blocks_Collider11_10" class="collision" size="0.00335 0.00705 0.0052" pos="0.03954900 -0.02296876 0.08079150" type="box" quat="0.258816088398246 0.0 0.0 0.9659266185307409"/>
+        <geom name="a_colored_wood_blocks_Collider11_11" class="collision" size="0.00335 0.00705 0.0052" pos="0.04411439 -0.01194673 0.08079150" type="box" quat="0.1305228539206808 0.0 0.0 0.9914453008635427"/>
+        <geom name="a_colored_wood_blocks_Collider11_12" class="collision" size="0.00335 0.00705 0.0052" pos="0.04567150 -0.00011866 0.08079150" type="box" quat="-3.673205103443822e-06 0.0 0.0 0.9999999999932538"/>
+        <geom name="a_colored_wood_blocks_Collider11_13" class="collision" size="0.00335 0.00705 0.0052" pos="0.04411422 0.01170938 0.08079150" type="box" quat="-0.13053013748103645 0.0 0.0 0.9914443419623624"/>
+        <geom name="a_colored_wood_blocks_Collider11_14" class="collision" size="0.00335 0.00705 0.0052" pos="0.03954867 0.02273134 0.08079150" type="box" quat="-0.2588231844844313 0.0 0.0 0.965924717135522"/>
+        <geom name="a_colored_wood_blocks_Collider11_15" class="collision" size="0.00335 0.00705 0.0052" pos="0.03228598 0.03219608 0.08079150" type="box" quat="-0.3826876743598231 0.0 0.0 0.9238777754081272"/>
+        <geom name="a_colored_wood_blocks_Collider11_16" class="collision" size="0.00335 0.00705 0.0052" pos="0.02282111 0.03945858 0.08079150" type="box" quat="-0.5000042414459139 0.0 0.0 0.8660229549706498"/>
+        <geom name="a_colored_wood_blocks_Collider11_17" class="collision" size="0.00335 0.00705 0.0052" pos="0.01179907 0.04402393 0.08079150" type="box" quat="-0.6087655573789913 0.0 0.0 0.7933501724642443"/>
+        <geom name="a_colored_wood_blocks_Collider11_18" class="collision" size="0.00335 0.00705 0.0052" pos="-0.00002900 0.04558100 0.08079150" type="box" quat="-0.7071106771981704 0.0 0.0 0.7071028851534583"/>
+        <geom name="a_colored_wood_blocks_Collider11_19" class="collision" size="0.00335 0.00705 0.0052" pos="-0.01185704 0.04402367 0.08079150" type="box" quat="-0.7933568807783318 0.0 0.0 0.6087568149283225"/>
+        <geom name="a_colored_wood_blocks_Collider11_20" class="collision" size="0.00335 0.00705 0.0052" pos="-0.02287898 0.03945808 0.08079150" type="box" quat="-0.8660284647724628 0.0 0.0 0.499994698175742"/>
+        <geom name="a_colored_wood_blocks_Collider11_21" class="collision" size="0.00335 0.00705 0.0052" pos="-0.03234370 0.03219536 0.08079150" type="box" quat="-0.9238819924229886 0.0 0.0 0.3826774935589091"/>
+        <geom name="a_colored_wood_blocks_Collider11_22" class="collision" size="0.00335 0.00705 0.0052" pos="-0.03960617 0.02273047 0.08079150" type="box" quat="-0.9659275692088014 0.0 0.0 0.25881254034991497"/>
+        <geom name="a_colored_wood_blocks_Collider11_23" class="collision" size="0.00335 0.00705 0.0052" pos="-0.04417148 0.01170841 0.08079150" type="box" quat="-0.9914457802940674 0.0 0.0 0.13051921213786108"/>
+        <geom name="a_colored_wood_blocks_Collider12_0" class="collision" size="0.0016" pos="-0.04982850 -0.00011900 0.07949150" quat="1.0 0.0 0.0 0.0"/>
+        <geom name="a_colored_wood_blocks_Collider12_1" class="collision" size="0.0016" pos="-0.04976015 -0.00272733 0.07953150" quat="0.9996567996328789 0.0 0.0 0.026197002648210295"/>
+        <geom name="a_colored_wood_blocks_Collider12_2" class="collision" size="0.0016" pos="-0.04955527 -0.00532849 0.07957150" quat="0.9986274341044994 0.0 0.0 0.05237602365456791"/>
+        <geom name="a_colored_wood_blocks_Collider12_3" class="collision" size="0.0016" pos="-0.04921444 -0.00791536 0.07961150" quat="0.9969126099721161 0.0 0.0 0.07851909371983234"/>
+        <geom name="a_colored_wood_blocks_Collider12_4" class="collision" size="0.0016" pos="-0.04873859 -0.01048082 0.07965150" quat="0.9945135042922724 0.0 0.0 0.10460826822151542"/>
+        <geom name="a_colored_wood_blocks_Collider12_5" class="collision" size="0.0016" pos="-0.04812902 -0.01301784 0.07969150" quat="0.9914317638128686 0.0 0.0 0.13062563953108347"/>
+        <geom name="a_colored_wood_blocks_Collider12_6" class="collision" size="0.0016" pos="-0.04738741 -0.01551945 0.07973150" quat="0.9876695038428325 0.0 0.0 0.15655334930576648"/>
+        <geom name="a_colored_wood_blocks_Collider12_7" class="collision" size="0.0016" pos="-0.04651579 -0.01797878 0.07977150" quat="0.9832293068001698 0.0 0.0 0.1823736007465379"/>
+        <geom name="a_colored_wood_blocks_Collider12_8" class="collision" size="0.0016" pos="-0.04551656 -0.02038909 0.07981150" quat="0.978114220439391 0.0 0.0 0.2080686708138505"/>
+        <geom name="a_colored_wood_blocks_Collider12_9" class="collision" size="0.0016" pos="-0.04439246 -0.02274375 0.07985150" quat="0.9723277557595298 0.0 0.0 0.23362092239274365"/>
+        <geom name="a_colored_wood_blocks_Collider12_10" class="collision" size="0.0016" pos="-0.04314657 -0.02503630 0.07989150" quat="0.965873884594191 0.0 0.0 0.2590128163989721"/>
+        <geom name="a_colored_wood_blocks_Collider12_11" class="collision" size="0.0016" pos="-0.04178232 -0.02726045 0.07993150" quat="0.9587570368852811 0.0 0.0 0.2842269238178461"/>
+        <geom name="a_colored_wood_blocks_Collider12_12" class="collision" size="0.0016" pos="-0.04030345 -0.02941010 0.07997150" quat="0.9509820976422934 0.0 0.0 0.3092459376675201"/>
+        <geom name="a_colored_wood_blocks_Collider12_13" class="collision" size="0.0016" pos="-0.03871402 -0.03147934 0.08001150" quat="0.9425544035892326 0.0 0.0 0.33405268487851764"/>
+        <geom name="a_colored_wood_blocks_Collider12_14" class="collision" size="0.0016" pos="-0.03701839 -0.03346249 0.08005150" quat="0.9334797395014848 0.0 0.0 0.35863013808133887"/>
+        <geom name="a_colored_wood_blocks_Collider12_15" class="collision" size="0.0016" pos="-0.03522122 -0.03535410 0.08009150" quat="0.9237643342351428 0.0 0.0 0.3829614272940597"/>
+        <geom name="a_colored_wood_blocks_Collider12_16" class="collision" size="0.0016" pos="-0.03332744 -0.03714900 0.08013150" quat="0.9134148564515151 0.0 0.0 0.4070298515018994"/>
+        <geom name="a_colored_wood_blocks_Collider12_17" class="collision" size="0.0016" pos="-0.03134225 -0.03884224 0.08017150" quat="0.9024384100397511 0.0 0.0 0.43081889012080965"/>
+        <geom name="a_colored_wood_blocks_Collider12_18" class="collision" size="0.0016" pos="-0.02927110 -0.04042918 0.08021150" quat="0.8908425292407273 0.0 0.0 0.45431221433721547"/>
+        <geom name="a_colored_wood_blocks_Collider12_19" class="collision" size="0.0016" pos="-0.02711968 -0.04190546 0.08025150" quat="0.8786351734755384 0.0 0.0 0.477493698316125"/>
+        <geom name="a_colored_wood_blocks_Collider12_20" class="collision" size="0.0016" pos="-0.02489388 -0.04326703 0.08029150" quat="0.8658247218821448 0.0 0.0 0.5003474302699142"/>
+        <geom name="a_colored_wood_blocks_Collider12_21" class="collision" size="0.0016" pos="-0.02259983 -0.04451016 0.08033150" quat="0.852419967563926 0.0 0.0 0.52285772338019"/>
+        <geom name="a_colored_wood_blocks_Collider12_22" class="collision" size="0.0016" pos="-0.02024382 -0.04563143 0.08037150" quat="0.8384301115540886 0.0 0.0 0.5450091265652333"/>
+        <geom name="a_colored_wood_blocks_Collider12_23" class="collision" size="0.0016" pos="-0.01783231 -0.04662775 0.08041150" quat="0.8238647565000696 0.0 0.0 0.5667864350856334"/>
+        <geom name="a_colored_wood_blocks_Collider12_24" class="collision" size="0.0016" pos="-0.01537193 -0.04749641 0.08045150" quat="0.8087339000722725 0.0 0.0 0.5881747009808322"/>
+        <geom name="a_colored_wood_blocks_Collider12_25" class="collision" size="0.0016" pos="-0.01286943 -0.04823501 0.08049150" quat="0.7930479281016594 0.0 0.0 0.6091592433294151"/>
+        <geom name="a_colored_wood_blocks_Collider12_26" class="collision" size="0.0016" pos="-0.01033168 -0.04884153 0.08053150" quat="0.7768176074509077 0.0 0.0 0.6297256583261059"/>
+        <geom name="a_colored_wood_blocks_Collider12_27" class="collision" size="0.0016" pos="-0.00776565 -0.04931429 0.08057150" quat="0.7600540786240294 0.0 0.0 0.6498598291685506"/>
+        <geom name="a_colored_wood_blocks_Collider12_28" class="collision" size="0.0016" pos="-0.00517837 -0.04965201 0.08061150" quat="0.7427688481195197 0.0 0.0 0.6695479357470995"/>
+        <geom name="a_colored_wood_blocks_Collider12_29" class="collision" size="0.0016" pos="-0.00257696 -0.04985375 0.08065150" quat="0.7249737805322883 0.0 0.0 0.6887764641309411"/>
+        <geom name="a_colored_wood_blocks_Collider12_30" class="collision" size="0.0016" pos="0.00003144 -0.04991896 0.08069150" quat="0.7066810904097932 0.0 0.0 0.7075322158440742"/>
+        <geom name="a_colored_wood_blocks_Collider12_31" class="collision" size="0.0016" pos="0.00263968 -0.04984747 0.08073150" quat="0.6879033338679656 0.0 0.0 0.725802316924752"/>
+        <geom name="a_colored_wood_blocks_Collider12_32" class="collision" size="0.0016" pos="0.00524060 -0.04963947 0.08077150" quat="0.6686533999726835 0.0 0.0 0.7435742267621779"/>
+        <geom name="a_colored_wood_blocks_Collider12_33" class="collision" size="0.0016" pos="0.00782705 -0.04929552 0.08081150" quat="0.6489445018927062 0.0 0.0 0.7608357467043905"/>
+        <geom name="a_colored_wood_blocks_Collider12_34" class="collision" size="0.0016" pos="0.01039194 -0.04881658 0.08085150" quat="0.6287901678301474 0.0 0.0 0.7775750284314273"/>
+        <geom name="a_colored_wood_blocks_Collider12_35" class="collision" size="0.0016" pos="0.01292823 -0.04820396 0.08089150" quat="0.6082042317347056 0.0 0.0 0.7937805820880204"/>
+        <geom name="a_colored_wood_blocks_Collider12_36" class="collision" size="0.0016" pos="0.01542894 -0.04745934 0.08093150" quat="0.587200823808032 0.0 0.0 0.809441284170241"/>
+        <geom name="a_colored_wood_blocks_Collider12_37" class="collision" size="0.0016" pos="0.01788722 -0.04658476 0.08097150" quat="0.5657943608047485 0.0 0.0 0.8245463851606809"/>
+        <geom name="a_colored_wood_blocks_Collider12_38" class="collision" size="0.0016" pos="0.02029632 -0.04558263 0.08101150" quat="0.5439995361367788 0.0 0.0 0.8390855169069299"/>
+        <geom name="a_colored_wood_blocks_Collider12_39" class="collision" size="0.0016" pos="0.02264963 -0.04445569 0.08105150" quat="0.5218313097877771 0.0 0.0 0.8530486997382817"/>
+        <geom name="a_colored_wood_blocks_Collider12_40" class="collision" size="0.0016" pos="0.02494068 -0.04320705 0.08109150" quat="0.49930489804458655 0.0 0.0 0.8664263493157887"/>
+        <geom name="a_colored_wood_blocks_Collider12_41" class="collision" size="0.0016" pos="0.02716319 -0.04184012 0.08113150" quat="0.47643576305276736 0.0 0.0 0.8792092832109584"/>
+        <geom name="a_colored_wood_blocks_Collider12_42" class="collision" size="0.0016" pos="0.02931106 -0.04035866 0.08117150" quat="0.45323960220336945 0.0 0.0 0.8913887272085795"/>
+        <geom name="a_colored_wood_blocks_Collider12_43" class="collision" size="0.0016" pos="0.03137838 -0.03876674 0.08121150" quat="0.4297323373582315 0.0 0.0 0.9029563213293493"/>
+        <geom name="a_colored_wood_blocks_Collider12_44" class="collision" size="0.0016" pos="0.03335949 -0.03706873 0.08125150" quat="0.40593010392120316 0.0 0.0 0.9139041255681699"/>
+        <geom name="a_colored_wood_blocks_Collider12_45" class="collision" size="0.0016" pos="0.03524894 -0.03526928 0.08129150" quat="0.3818492397627922 0.0 0.0 0.9242246253441734"/>
+        <geom name="a_colored_wood_blocks_Collider12_46" class="collision" size="0.0016" pos="0.03704155 -0.03337334 0.08133150" quat="0.35750627400583823 0.0 0.0 0.9339107366587358"/>
+        <geom name="a_colored_wood_blocks_Collider12_47" class="collision" size="0.0016" pos="0.03873240 -0.03138612 0.08137150" quat="0.33291791567991036 0.0 0.0 0.9429558109579389"/>
+        <geom name="a_colored_wood_blocks_Collider12_48" class="collision" size="0.0016" pos="0.04031685 -0.02931306 0.08141150" quat="0.3081010422522174 0.0 0.0 0.9513536396961424"/>
+        <geom name="a_colored_wood_blocks_Collider12_49" class="collision" size="0.0016" pos="0.04179054 -0.02715986 0.08145150" quat="0.28307268804290164 0.0 0.0 0.9590984585975343"/>
+        <geom name="a_colored_wood_blocks_Collider12_50" class="collision" size="0.0016" pos="0.04314943 -0.02493243 0.08149150" quat="0.25785003253266936 0.0 0.0 0.9661849516127341"/>
+        <geom name="a_colored_wood_blocks_Collider12_51" class="collision" size="0.0016" pos="0.04438979 -0.02263688 0.08153150" quat="0.23245038857078226 0.0 0.0 0.9726082545677331"/>
+        <geom name="a_colored_wood_blocks_Collider12_52" class="collision" size="0.0016" pos="0.04550823 -0.02027952 0.08157150" quat="0.2068911904915052 0.0 0.0 0.9783639585026667"/>
+        <geom name="a_colored_wood_blocks_Collider12_53" class="collision" size="0.0016" pos="0.04650165 -0.01786682 0.08161150" quat="0.1811899821471665 0.0 0.0 0.9834481126981278"/>
+        <geom name="a_colored_wood_blocks_Collider12_54" class="collision" size="0.0016" pos="0.04736735 -0.01540539 0.08165150" quat="0.15536440486604464 0.0 0.0 0.9878572273869437"/>
+        <geom name="a_colored_wood_blocks_Collider12_55" class="collision" size="0.0016" pos="0.04810293 -0.01290201 0.08169150" quat="0.1294321853433476 0.0 0.0 0.9915882761495546"/>
+        <geom name="a_colored_wood_blocks_Collider12_56" class="collision" size="0.0016" pos="0.04870639 -0.01036353 0.08173150" quat="0.10341112347359632 0.0 0.0 0.9946386979913503"/>
+        <geom name="a_colored_wood_blocks_Collider12_57" class="collision" size="0.0016" pos="0.04917607 -0.00779693 0.08177150" quat="0.07731908013276394 0.0 0.0 0.997006399100539"/>
+        <geom name="a_colored_wood_blocks_Collider12_58" class="collision" size="0.0016" pos="0.04951067 -0.00520925 0.08181150" quat="0.051173964918557475 0.0 0.0 0.9986897542853408"/>
+        <geom name="a_colored_wood_blocks_Collider12_59" class="collision" size="0.0016" pos="0.04970928 -0.00260760 0.08185150" quat="0.02499372385725682 0.0 0.0 0.9996876080895208"/>
+        <geom name="a_colored_wood_blocks_Collider12_60" class="collision" size="0.0016" pos="0.04977136 0.00000089 0.08189150" quat="-0.0012036729144509067 0.0 0.0 0.9999992755854952"/>
+        <geom name="a_colored_wood_blocks_Collider12_61" class="collision" size="0.0016" pos="0.04969672 0.00260904 0.08193150" quat="-0.027400243484186362 0.0 0.0 0.9996245428444659"/>
+        <geom name="a_colored_wood_blocks_Collider12_62" class="collision" size="0.0016" pos="0.04948559 0.00520970 0.08197150" quat="-0.05357800650667585 0.0 0.0 0.9985636670832615"/>
+        <geom name="a_colored_wood_blocks_Collider12_63" class="collision" size="0.0016" pos="0.04913853 0.00779574 0.08201150" quat="-0.07971899354615991 0.0 0.0 0.9968173764877835"/>
+        <geom name="a_colored_wood_blocks_Collider12_64" class="collision" size="0.0016" pos="0.04865650 0.01036005 0.08205150" quat="-0.10580526140994083 0.0 0.0 0.9943868697131787"/>
+        <geom name="a_colored_wood_blocks_Collider12_65" class="collision" size="0.0016" pos="0.04804083 0.01289560 0.08209150" quat="-0.13181890446460326 0.0 0.0 0.9912738150610818"/>
+        <geom name="a_colored_wood_blocks_Collider12_66" class="collision" size="0.0016" pos="0.04729320 0.01539541 0.08213150" quat="-0.1577420669264542 0.0 0.0 0.9874803493344919"/>
+        <geom name="a_colored_wood_blocks_Collider12_67" class="collision" size="0.0016" pos="0.04641566 0.01785264 0.08217150" quat="-0.1835569551177459 0.0 0.0 0.9830090763710688"/>
+        <geom name="a_colored_wood_blocks_Collider12_68" class="collision" size="0.0016" pos="0.04541063 0.02026053 0.08221150" quat="-0.20924584968026946 0.0 0.0 0.9778630652558579"/>
+        <geom name="a_colored_wood_blocks_Collider12_69" class="collision" size="0.0016" pos="0.04428086 0.02261248 0.08225150" quat="-0.23479111773793535 0.0 0.0 0.9720458482146668"/>
+        <geom name="a_colored_wood_blocks_Collider12_70" class="collision" size="0.0016" pos="0.04302946 0.02490203 0.08229150" quat="-0.2601752249999924 0.0 0.0 0.965561418189544"/>
+        <geom name="a_colored_wood_blocks_Collider12_71" class="collision" size="0.0016" pos="0.04165986 0.02712289 0.08233150" quat="-0.28538074779657774 0.0 0.0 0.9584142260980197"/>
+        <geom name="a_colored_wood_blocks_Collider12_72" class="collision" size="0.0016" pos="0.04017582 0.02926897 0.08237150" quat="-0.3103903850383369 0.0 0.0 0.9506091777779936"/>
+        <geom name="a_colored_wood_blocks_Collider12_73" class="collision" size="0.0016" pos="0.03858141 0.03133438 0.08241150" quat="-0.33518697009190396 0.0 0.0 0.9421516306203631"/>
+        <geom name="a_colored_wood_blocks_Collider12_74" class="collision" size="0.0016" pos="0.03688101 0.03331344 0.08245150" quat="-0.3597534825630915 0.0 0.0 0.9330473898917072"/>
+        <geom name="a_colored_wood_blocks_Collider12_75" class="collision" size="0.0016" pos="0.03507929 0.03520072 0.08249150" quat="-0.3840730599797015 0.0 0.0 0.9233027047495468"/>
+        <geom name="a_colored_wood_blocks_Collider12_76" class="collision" size="0.0016" pos="0.03318120 0.03699105 0.08253150" quat="-0.40812900936593866 0.0 0.0 0.9129242639529184"/>
+        <geom name="a_colored_wood_blocks_Collider12_77" class="collision" size="0.0016" pos="0.03119194 0.03867951 0.08257150" quat="-0.4319048187004815 0.0 0.0 0.901919191271205"/>
+        <geom name="a_colored_wood_blocks_Collider12_78" class="collision" size="0.0016" pos="0.02911698 0.04026146 0.08261150" quat="-0.4553841682503455 0.0 0.0 0.8902950405943758"/>
+        <geom name="a_colored_wood_blocks_Collider12_79" class="collision" size="0.0016" pos="0.02696200 0.04173256 0.08265150" quat="-0.47855094177276014 0.0 0.0 0.8780597907479903"/>
+        <geom name="a_colored_wood_blocks_Collider12_80" class="collision" size="0.0016" pos="0.02473294 0.04308877 0.08269150" quat="-0.5013892375773696 0.0 0.0 0.8652218400165267"/>
+        <geom name="a_colored_wood_blocks_Collider12_81" class="collision" size="0.0016" pos="0.02243590 0.04432637 0.08273150" quat="-0.5238833794411648 0.0 0.0 0.8517900003787933"/>
+        <geom name="a_colored_wood_blocks_Collider12_82" class="collision" size="0.0016" pos="0.02007720 0.04544196 0.08277150" quat="-0.5460179273686543 0.0 0.0 0.8377734914593796"/>
+        <geom name="a_colored_wood_blocks_Collider12_83" class="collision" size="0.0016" pos="0.01766330 0.04643248 0.08281150" quat="-0.5677776881898884 0.0 0.0 0.8231819342002994"/>
+        <geom name="a_colored_wood_blocks_Collider12_84" class="collision" size="0.0016" pos="0.01520083 0.04729521 0.08285150" quat="-0.5891477259890625 0.0 0.0 0.8080253442571691"/>
+        <geom name="a_colored_wood_blocks_Collider12_85" class="collision" size="0.0016" pos="0.01269656 0.04802778 0.08289150" quat="-0.6101133723565406 0.0 0.0 0.7923141251244543"/>
+        <geom name="a_colored_wood_blocks_Collider12_86" class="collision" size="0.0016" pos="0.01015736 0.04862819 0.08293150" quat="-0.630660236457262 0.0 0.0 0.7760590609945034"/>
+        <geom name="a_colored_wood_blocks_Collider12_87" class="collision" size="0.0016" pos="0.00759019 0.04909477 0.08297150" quat="-0.6507742149086218 0.0 0.0 0.7592713093552707"/>
+        <geom name="a_colored_wood_blocks_Collider12_88" class="collision" size="0.0016" pos="0.00500212 0.04942626 0.08301150" quat="-0.6704415014610422 0.0 0.0 0.7419623933318071"/>
+        <geom name="a_colored_wood_blocks_Collider12_89" class="collision" size="0.0016" pos="0.00240023 0.04962174 0.08305150" quat="-0.6896485964745933 0.0 0.0 0.7241441937767806"/>
+        <geom name="a_colored_wood_blocks_Collider12_90" class="collision" size="0.0016" pos="-0.00020833 0.04968068 0.08309150" quat="-0.708382316185155 0.0 0.0 0.7058289411154484"/>
+        <geom name="a_colored_wood_blocks_Collider12_91" class="collision" size="0.0016" pos="-0.00281639 0.04960290 0.08313150" quat="-0.726629801753763 0.0 0.0 0.6870292069506849"/>
+        <geom name="a_colored_wood_blocks_Collider12_92" class="collision" size="0.0016" pos="-0.00541680 0.04938864 0.08317150" quat="-0.7443785280929249 0.0 0.0 0.6677578954338247"/>
+        <geom name="a_colored_wood_blocks_Collider12_93" class="collision" size="0.0016" pos="-0.00800242 0.04903847 0.08321150" quat="-0.7616163124638495 0.0 0.0 0.6480282344072426"/>
+        <geom name="a_colored_wood_blocks_Collider12_94" class="collision" size="0.0016" pos="-0.01056614 0.04855335 0.08325150" quat="-0.778331322838688 0.0 0.0 0.6278537663247535"/>
+        <geom name="a_colored_wood_blocks_Collider12_95" class="collision" size="0.0016" pos="-0.01310095 0.04793463 0.08329150" quat="-0.7945120860220461 0.0 0.0 0.6072483389560623"/>
+        <geom name="a_colored_wood_blocks_Collider12_96" class="collision" size="0.0016" pos="-0.01559986 0.04718399 0.08333150" quat="-0.8101474955261945 0.0 0.0 0.5862260958816442"/>
+        <geom name="a_colored_wood_blocks_Collider12_97" class="collision" size="0.0016" pos="-0.01805603 0.04630350 0.08337150" quat="-0.825226819194569 0.0 0.0 0.564801466784581"/>
+        <geom name="a_colored_wood_blocks_Collider12_98" class="collision" size="0.0016" pos="-0.02046271 0.04529557 0.08341150" quat="-0.839739706568332 0.0 0.0 0.5429891575460157"/>
+        <geom name="a_colored_wood_blocks_Collider12_99" class="collision" size="0.0016" pos="-0.02281330 0.04416297 0.08345150" quat="-0.8536761959909339 0.0 0.0 0.5208041401510252"/>
+        <geom name="a_colored_wood_blocks_Collider12_100" class="collision" size="0.0016" pos="-0.02510134 0.04290881 0.08349150" quat="-0.8670267214458025 0.0 0.0 0.4982616424118385"/>
+        <geom name="a_colored_wood_blocks_Collider12_101" class="collision" size="0.0016" pos="-0.02732055 0.04153654 0.08353150" quat="-0.879782119122463 0.0 0.0 0.4753771375154556"/>
+        <geom name="a_colored_wood_blocks_Collider12_102" class="collision" size="0.0016" pos="-0.02946484 0.04004992 0.08357150" quat="-0.8919336337065845 0.0 0.0 0.45216633340284"/>
+        <geom name="a_colored_wood_blocks_Collider12_103" class="collision" size="0.0016" pos="-0.03152833 0.03845302 0.08361150" quat="-0.9034729243896344 0.0 0.0 0.42864516198697716"/>
+        <geom name="a_colored_wood_blocks_Collider12_104" class="collision" size="0.0016" pos="-0.03350534 0.03675024 0.08365150" quat="-0.9143920705940153 0.0 0.0 0.40482976821719696"/>
+        <geom name="a_colored_wood_blocks_Collider12_105" class="collision" size="0.0016" pos="-0.03539046 0.03494625 0.08369150" quat="-0.924683577409755 0.0 0.0 0.3807364989972693"/>
+        <geom name="a_colored_wood_blocks_Collider12_106" class="collision" size="0.0016" pos="-0.03717850 0.03304601 0.08373150" quat="-0.9343403807390188 0.0 0.0 0.3563818919648771"/>
+        <geom name="a_colored_wood_blocks_Collider12_107" class="collision" size="0.0016" pos="-0.03886456 0.03105472 0.08377150" quat="-0.9433558521449111 0.0 0.0 0.3317826641401695"/>
+        <geom name="a_colored_wood_blocks_Collider12_108" class="collision" size="0.0016" pos="-0.04044401 0.02897785 0.08381150" quat="-0.9517238034012394 0.0 0.0 0.30695570045118725"/>
+        <geom name="a_colored_wood_blocks_Collider12_109" class="collision" size="0.0016" pos="-0.04191251 0.02682111 0.08385150" quat="-0.9594384907401171 0.0 0.0 0.28191804214403543"/>
+        <geom name="a_colored_wood_blocks_Collider12_110" class="collision" size="0.0016" pos="-0.04326604 0.02459041 0.08389150" quat="-0.9664946187944905 0.0 0.0 0.2566868750857598"/>
+        <geom name="a_colored_wood_blocks_Collider12_111" class="collision" size="0.0016" pos="-0.04450087 0.02229189 0.08393150" quat="-0.9728873442328821 0.0 0.0 0.23127951796795496"/>
+        <geom name="a_colored_wood_blocks_Collider12_112" class="collision" size="0.0016" pos="-0.04561363 0.01993184 0.08397150" quat="-0.9786122790838572 0.0 0.0 0.20571341041920166"/>
+        <geom name="a_colored_wood_blocks_Collider12_113" class="collision" size="0.0016" pos="-0.04660124 0.01751675 0.08401150" quat="-0.9836654937479306 0.0 0.0 0.18000610103449316"/>
+        <geom name="a_colored_wood_blocks_Collider12_114" class="collision" size="0.0016" pos="-0.04746101 0.01505325 0.08405150" quat="-0.9880435196948465 0.0 0.0 0.15417523532986646"/>
+        <geom name="a_colored_wood_blocks_Collider12_115" class="collision" size="0.0016" pos="-0.04819057 0.01254810 0.08409150" quat="-0.9917433518443804 0.0 0.0 0.12823854363050735"/>
+        <geom name="a_colored_wood_blocks_Collider12_116" class="collision" size="0.0016" pos="-0.04878791 0.01000818 0.08413150" quat="-0.9947624506290285 0.0 0.0 0.1022138289006421"/>
+        <geom name="a_colored_wood_blocks_Collider12_117" class="collision" size="0.0016" pos="-0.04925141 0.00744045 0.08417150" quat="-0.9970987437371681 0.0 0.0 0.0761189545235697"/>
+        <geom name="a_colored_wood_blocks_Collider12_118" class="collision" size="0.0016" pos="-0.04957978 0.00485198 0.08421150" quat="-0.9987506275354944 0.0 0.0 0.04997183204022258"/>
+        <geom name="a_colored_wood_blocks_Collider12_119" class="collision" size="0.0016" pos="-0.04977213 0.00224985 0.08425150" quat="-0.9997169681697553 0.0 0.0 0.023790408854671624"/>
+        <geom name="a_colored_wood_blocks_Collider12_120" class="collision" size="0.0016" pos="-0.04982792 -0.00035877 0.08429150" quat="-0.9999971023430301 0.0 0.0 -0.002407344084985105"/>
+        <geom name="a_colored_wood_blocks_Collider12_121" class="collision" size="0.0016" pos="-0.04974701 -0.00296674 0.08433150" quat="-0.9995908377710163 0.0 0.0 -0.028603444621894326"/>
+        <geom name="a_colored_wood_blocks_Collider12_122" class="collision" size="0.0016" pos="-0.04952962 -0.00556689 0.08437150" quat="-0.9984984533140147 0.0 0.0 -0.05477991173341323"/>
+        <geom name="a_colored_wood_blocks_Collider12_123" class="collision" size="0.0016" pos="-0.04917633 -0.00815208 0.08441150" quat="-0.9967206987855184 0.0 0.0 -0.08091877787329657"/>
+        <geom name="a_colored_wood_blocks_Collider12_124" class="collision" size="0.0016" pos="-0.04868813 -0.01071522 0.08445150" quat="-0.9942587944375413 0.0 0.0 -0.10700210130463371"/>
+        <geom name="a_colored_wood_blocks_Collider12_125" class="collision" size="0.0016" pos="-0.04806636 -0.01324928 0.08449150" quat="-0.9911144301230354 0.0 0.0 -0.1330119784150699"/>
+        <geom name="a_colored_wood_blocks_Collider12_126" class="collision" size="0.0016" pos="-0.04731271 -0.01574729 0.08453150" quat="-0.9872897641359747 0.0 0.0 -0.15893055600585893"/>
+        <geom name="a_colored_wood_blocks_Collider12_127" class="collision" size="0.0016" pos="-0.04642926 -0.01820240 0.08457150" quat="-0.9827874217299012 0.0 0.0 -0.18474004354631196"/>
+        <geom name="a_colored_wood_blocks_Collider12_128" class="collision" size="0.0016" pos="-0.04541844 -0.02060786 0.08461150" quat="-0.9776104933159483 0.0 0.0 -0.21042272538523088"/>
+        <geom name="a_colored_wood_blocks_Collider12_129" class="collision" size="0.0016" pos="-0.04428301 -0.02295708 0.08465150" quat="-0.9717625323415803 0.0 0.0 -0.23596097291094412"/>
+        <geom name="a_colored_wood_blocks_Collider12_130" class="collision" size="0.0016" pos="-0.04302610 -0.02524361 0.08469150" quat="-0.9652475528515038 0.0 0.0 -0.26133725665159874"/>
+        <geom name="a_colored_wood_blocks_Collider12_131" class="collision" size="0.0016" pos="-0.04165116 -0.02746117 0.08473150" quat="-0.9580700267324244 0.0 0.0 -0.2865341583074028"/>
+        <geom name="a_colored_wood_blocks_Collider12_132" class="collision" size="0.0016" pos="-0.04016195 -0.02960367 0.08477150" quat="-0.9502348806435402 0.0 0.0 -0.31153438270655914"/>
+        <geom name="a_colored_wood_blocks_Collider12_133" class="collision" size="0.0016" pos="-0.03856258 -0.03166523 0.08481150" quat="-0.9417474926348798 0.0 0.0 -0.336320769676684"/>
+        <geom name="a_colored_wood_blocks_Collider12_134" class="collision" size="0.0016" pos="-0.03685742 -0.03364019 0.08485150" quat="-0.9326136884558038 0.0 0.0 -0.3608763058235619"/>
+        <geom name="a_colored_wood_blocks_Collider12_135" class="collision" size="0.0016" pos="-0.03505116 -0.03552314 0.08489150" quat="-0.9228397375562074 0.0 0.0 -0.3851841362091518"/>
+        <geom name="a_colored_wood_blocks_Collider12_136" class="collision" size="0.0016" pos="-0.03314877 -0.03730889 0.08493150" quat="-0.9124323487831643 0.0 0.0 -0.40922757592082926"/>
+        <geom name="a_colored_wood_blocks_Collider12_137" class="collision" size="0.0016" pos="-0.03115545 -0.03899255 0.08497150" quat="-0.90139866577597 0.0 0.0 -0.4329901215239224"/>
+        <geom name="a_colored_wood_blocks_Collider12_138" class="collision" size="0.0016" pos="-0.02907668 -0.04056950 0.08501150" quat="-0.8897462620627421 0.0 0.0 -0.4564554623896818"/>
+        <geom name="a_colored_wood_blocks_Collider12_139" class="collision" size="0.0016" pos="-0.02691817 -0.04203541 0.08505150" quat="-0.8774831358619449 0.0 0.0 -0.47960749189090807"/>
+        <geom size="0.0652535 0.065211 0.0900245" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+
+    <body name="a_colored_wood_blocks_001">
+      <joint name="a_colored_wood_blocks_001_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_001_material" mesh="a_colored_wood_blocks_001_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.03387150 0.02818100 0.02499150" type="box"/> 
+   </body>  
+    <body name="a_colored_wood_blocks_002">
+      <joint name="a_colored_wood_blocks_002_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_002_material" mesh="a_colored_wood_blocks_002_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00507150 0.02548100 0.02479150" type="box"/>
+   </body>  
+    <body name="a_colored_wood_blocks_003">
+      <joint name="a_colored_wood_blocks_003_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_003_material" mesh="a_colored_wood_blocks_003_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.03272850 0.02638100 0.02479150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_004">
+      <joint name="a_colored_wood_blocks_004_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_004_material" mesh="a_colored_wood_blocks_004_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02982850 0.00098100 0.02479150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_005">
+      <joint name="a_colored_wood_blocks_005_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_005_material" mesh="a_colored_wood_blocks_005_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.00552850 -0.00581900 0.02479150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_006">
+      <joint name="a_colored_wood_blocks_006_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_006_material" mesh="a_colored_wood_blocks_006_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.01617150 -0.01571900 0.02499150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_007">
+      <joint name="a_colored_wood_blocks_007_joint" type="free" armature="0.0001"/> 
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_007_material" mesh="a_colored_wood_blocks_007_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.03022850 -0.03521900 0.02479150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_009">
+      <joint name="a_colored_wood_blocks_009_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_009_material" mesh="a_colored_wood_blocks_009_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.04731900 0.00099150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_010">
+      <joint name="a_colored_wood_blocks_010_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_010_material" mesh="a_colored_wood_blocks_010_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.01567150 -0.00031900 0.04879150" type="box"/>
+   </body>
+    <body name="a_colored_wood_blocks_011">
+      <joint name="a_colored_wood_blocks_011_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_011_material" mesh="a_colored_wood_blocks_011_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.04698100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_012">
+          <joint name="a_colored_wood_blocks_012_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_012_material" mesh="a_colored_wood_blocks_012_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.04698100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_013">
+          <joint name="a_colored_wood_blocks_013_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_013_material" mesh="a_colored_wood_blocks_013_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.04698100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_014">
+          <joint name="a_colored_wood_blocks_014_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_014_material" mesh="a_colored_wood_blocks_014_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.04698100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_015">
+          <joint name="a_colored_wood_blocks_015_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_015_material" mesh="a_colored_wood_blocks_015_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.04698100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_017">
+          <joint name="a_colored_wood_blocks_017_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_017_material" mesh="a_colored_wood_blocks_017_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.02348100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_018">
+          <joint name="a_colored_wood_blocks_018_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_018_material" mesh="a_colored_wood_blocks_018_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.02348100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_019">
+          <joint name="a_colored_wood_blocks_019_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_019_material" mesh="a_colored_wood_blocks_019_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.02348100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_020">
+          <joint name="a_colored_wood_blocks_020_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_020_material" mesh="a_colored_wood_blocks_020_vis"/>
+          <geom class="collision" size="0.01135 0.01135 0.01135" pos="-0.02232850 0.02348100 -0.07000850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_022">
+          <joint name="a_colored_wood_blocks_022_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_022_material" mesh="a_colored_wood_blocks_022_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.02348100 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_023">
+          <joint name="a_colored_wood_blocks_023_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_023_material" mesh="a_colored_wood_blocks_023_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.00011900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_024">
+          <joint name="a_colored_wood_blocks_024_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_024_material" mesh="a_colored_wood_blocks_024_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.00011900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_025">
+          <joint name="a_colored_wood_blocks_025_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_025_material" mesh="a_colored_wood_blocks_025_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.00011900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_026">
+          <joint name="a_colored_wood_blocks_026_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_026_material" mesh="a_colored_wood_blocks_026_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.00011900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_027">
+          <joint name="a_colored_wood_blocks_027_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_027_material" mesh="a_colored_wood_blocks_027_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.00011900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_029">
+          <joint name="a_colored_wood_blocks_029_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_029_material" mesh="a_colored_wood_blocks_029_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.02381900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_030">
+          <joint name="a_colored_wood_blocks_030_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_030_material" mesh="a_colored_wood_blocks_030_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.02381900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_031">
+          <joint name="a_colored_wood_blocks_031_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_031_material" mesh="a_colored_wood_blocks_031_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.02381900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_032">
+          <joint name="a_colored_wood_blocks_032_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_032_material" mesh="a_colored_wood_blocks_032_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.02381900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_033">
+          <joint name="a_colored_wood_blocks_033_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_033_material" mesh="a_colored_wood_blocks_033_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.02381900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_035">
+          <joint name="a_colored_wood_blocks_035_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_035_material" mesh="a_colored_wood_blocks_035_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.04741900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_036">
+          <joint name="a_colored_wood_blocks_036_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_036_material" mesh="a_colored_wood_blocks_036_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.04741900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_037">
+          <joint name="a_colored_wood_blocks_037_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_037_material" mesh="a_colored_wood_blocks_037_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.04741900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_038">
+          <joint name="a_colored_wood_blocks_038_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_038_material" mesh="a_colored_wood_blocks_038_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.04741900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_039">
+          <joint name="a_colored_wood_blocks_039_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_039_material" mesh="a_colored_wood_blocks_039_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.04741900 -0.07060850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_041">
+          <joint name="a_colored_wood_blocks_041_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_041_material" mesh="a_colored_wood_blocks_041_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.04698100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_042">
+          <joint name="a_colored_wood_blocks_042_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_042_material" mesh="a_colored_wood_blocks_042_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.04698100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_043">
+          <joint name="a_colored_wood_blocks_043_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_043_material" mesh="a_colored_wood_blocks_043_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.04698100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_044">
+          <joint name="a_colored_wood_blocks_044_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_044_material" mesh="a_colored_wood_blocks_044_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.04698100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_045">
+          <joint name="a_colored_wood_blocks_045_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_045_material" mesh="a_colored_wood_blocks_045_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.04698100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_047">
+          <joint name="a_colored_wood_blocks_047_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_047_material" mesh="a_colored_wood_blocks_047_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.02348100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_048">
+          <joint name="a_colored_wood_blocks_048_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_048_material" mesh="a_colored_wood_blocks_048_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.02348100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_049">
+          <joint name="a_colored_wood_blocks_049_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_049_material" mesh="a_colored_wood_blocks_049_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.02348100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_050">
+          <joint name="a_colored_wood_blocks_050_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_050_material" mesh="a_colored_wood_blocks_050_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.02348100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_051">
+          <joint name="a_colored_wood_blocks_051_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_051_material" mesh="a_colored_wood_blocks_051_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.02348100 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_053">
+          <joint name="a_colored_wood_blocks_053_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_053_material" mesh="a_colored_wood_blocks_053_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.00011900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_054">
+          <joint name="a_colored_wood_blocks_054_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_054_material" mesh="a_colored_wood_blocks_054_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.00011900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_055">
+          <joint name="a_colored_wood_blocks_055_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_055_material" mesh="a_colored_wood_blocks_055_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.00011900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_056">
+          <joint name="a_colored_wood_blocks_056_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_056_material" mesh="a_colored_wood_blocks_056_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.00011900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_057">
+          <joint name="a_colored_wood_blocks_057_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_057_material" mesh="a_colored_wood_blocks_057_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.00011900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_059">
+          <joint name="a_colored_wood_blocks_059_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_059_material" mesh="a_colored_wood_blocks_059_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.02381900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_060">
+          <joint name="a_colored_wood_blocks_060_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_060_material" mesh="a_colored_wood_blocks_060_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.02381900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_061">
+          <joint name="a_colored_wood_blocks_061_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_061_material" mesh="a_colored_wood_blocks_061_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.02381900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_062">
+          <joint name="a_colored_wood_blocks_062_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_062_material" mesh="a_colored_wood_blocks_062_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.02381900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_063">
+          <joint name="a_colored_wood_blocks_063_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_063_material" mesh="a_colored_wood_blocks_063_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.02381900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_065">
+          <joint name="a_colored_wood_blocks_065_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_065_material" mesh="a_colored_wood_blocks_065_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.04741900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_066">
+          <joint name="a_colored_wood_blocks_066_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_066_material" mesh="a_colored_wood_blocks_066_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.04741900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_067">
+          <joint name="a_colored_wood_blocks_067_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_067_material" mesh="a_colored_wood_blocks_067_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.04741900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_068">
+          <joint name="a_colored_wood_blocks_068_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_068_material" mesh="a_colored_wood_blocks_068_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.04741900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_069">
+          <joint name="a_colored_wood_blocks_069_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_069_material" mesh="a_colored_wood_blocks_069_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.04741900 -0.04680850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_071">
+          <joint name="a_colored_wood_blocks_071_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_071_material" mesh="a_colored_wood_blocks_071_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.04698100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_072">
+          <joint name="a_colored_wood_blocks_072_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_072_material" mesh="a_colored_wood_blocks_072_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.04698100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_073">
+          <joint name="a_colored_wood_blocks_073_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_073_material" mesh="a_colored_wood_blocks_073_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.04698100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_074">
+          <joint name="a_colored_wood_blocks_074_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_074_material" mesh="a_colored_wood_blocks_074_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.04698100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_075">
+          <joint name="a_colored_wood_blocks_075_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_075_material" mesh="a_colored_wood_blocks_075_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.04698100 -0.02290850" type="box"/>
+        
+        </body>
+        <body name="a_colored_wood_blocks_077">
+          <joint name="a_colored_wood_blocks_077_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_077_material" mesh="a_colored_wood_blocks_077_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.02348100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_078">
+          <joint name="a_colored_wood_blocks_078_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_078_material" mesh="a_colored_wood_blocks_078_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.02348100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_079">
+          <joint name="a_colored_wood_blocks_079_joint" type="free" armature="0.0001"/>
+
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_079_material" mesh="a_colored_wood_blocks_079_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.02348100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_080">
+          <joint name="a_colored_wood_blocks_080_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_080_material" mesh="a_colored_wood_blocks_080_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.02348100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_081">
+          <joint name="a_colored_wood_blocks_081_joint" type="free" armature="0.0001"/>
+
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_081_material" mesh="a_colored_wood_blocks_081_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.02348100 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_083">
+          <joint name="a_colored_wood_blocks_083_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_083_material" mesh="a_colored_wood_blocks_083_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.00011900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_084">
+          <joint name="a_colored_wood_blocks_084_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_084_material" mesh="a_colored_wood_blocks_084_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.00011900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_085">
+          <joint name="a_colored_wood_blocks_085_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_085_material" mesh="a_colored_wood_blocks_085_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.00011900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_086">
+          <joint name="a_colored_wood_blocks_086_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_086_material" mesh="a_colored_wood_blocks_086_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.00011900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_087">
+          <joint name="a_colored_wood_blocks_087_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_087_material" mesh="a_colored_wood_blocks_087_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.00011900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_089">
+          <joint name="a_colored_wood_blocks_089_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_089_material" mesh="a_colored_wood_blocks_089_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.02381900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_090">
+          <joint name="a_colored_wood_blocks_090_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_090_material" mesh="a_colored_wood_blocks_090_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.02381900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_091">
+          <joint name="a_colored_wood_blocks_091_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_091_material" mesh="a_colored_wood_blocks_091_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.02381900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_092">
+          <joint name="a_colored_wood_blocks_092_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_092_material" mesh="a_colored_wood_blocks_092_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.02381900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_093">
+          <joint name="a_colored_wood_blocks_093_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_093_material" mesh="a_colored_wood_blocks_093_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.02381900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_095">
+          <joint name="a_colored_wood_blocks_095_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_095_material" mesh="a_colored_wood_blocks_095_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.04741900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_096">
+          <joint name="a_colored_wood_blocks_096_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_096_material" mesh="a_colored_wood_blocks_096_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.04741900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_097">
+          <joint name="a_colored_wood_blocks_097_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_097_material" mesh="a_colored_wood_blocks_097_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.04741900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_098">
+          <joint name="a_colored_wood_blocks_098_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_098_material" mesh="a_colored_wood_blocks_098_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.04741900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_099">
+          <joint name="a_colored_wood_blocks_099_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_099_material" mesh="a_colored_wood_blocks_099_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.04741900 -0.02290850" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_101">
+          <joint name="a_colored_wood_blocks_101_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_101_material" mesh="a_colored_wood_blocks_101_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.04698100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_102">
+          <joint name="a_colored_wood_blocks_102_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_102_material" mesh="a_colored_wood_blocks_102_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.04698100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_103">
+          <joint name="a_colored_wood_blocks_103_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_103_material" mesh="a_colored_wood_blocks_103_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.04698100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_104">
+          <joint name="a_colored_wood_blocks_104_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_104_material" mesh="a_colored_wood_blocks_104_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.04698100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_105">
+          <joint name="a_colored_wood_blocks_105_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_105_material" mesh="a_colored_wood_blocks_105_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.04698100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_107">
+          <joint name="a_colored_wood_blocks_107_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_107_material" mesh="a_colored_wood_blocks_107_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 0.02348100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_108">
+          <joint name="a_colored_wood_blocks_108_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_108_material" mesh="a_colored_wood_blocks_108_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 0.02348100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_109">
+          <joint name="a_colored_wood_blocks_109_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_109_material" mesh="a_colored_wood_blocks_109_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 0.02348100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_110">
+          <joint name="a_colored_wood_blocks_110_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_110_material" mesh="a_colored_wood_blocks_110_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 0.02348100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_111">
+          <joint name="a_colored_wood_blocks_111_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_111_material" mesh="a_colored_wood_blocks_111_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 0.02348100 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_113">
+          <joint name="a_colored_wood_blocks_113_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_113_material" mesh="a_colored_wood_blocks_113_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.00011900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_114">
+          <joint name="a_colored_wood_blocks_114_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_114_material" mesh="a_colored_wood_blocks_114_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.00011900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_115">
+          <joint name="a_colored_wood_blocks_115_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_115_material" mesh="a_colored_wood_blocks_115_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.00011900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_116">
+          <joint name="a_colored_wood_blocks_116_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_116_material" mesh="a_colored_wood_blocks_116_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.00011900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_117">
+          <joint name="a_colored_wood_blocks_117_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_117_material" mesh="a_colored_wood_blocks_117_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.00011900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_119">
+          <joint name="a_colored_wood_blocks_119_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_119_material" mesh="a_colored_wood_blocks_119_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.02381900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_120">
+          <joint name="a_colored_wood_blocks_120_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_120_material" mesh="a_colored_wood_blocks_120_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.02381900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_121">
+          <joint name="a_colored_wood_blocks_121_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_121_material" mesh="a_colored_wood_blocks_121_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.02381900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_122">
+          <joint name="a_colored_wood_blocks_122_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_122_material" mesh="a_colored_wood_blocks_122_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.02381900 0.00099150" type="box"/>
+        </body>
+        <body name="a_colored_wood_blocks_123">
+          <joint name="a_colored_wood_blocks_123_joint" type="free" armature="0.0001"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_123_material" mesh="a_colored_wood_blocks_123_vis"/>
+          <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.04512850 -0.02381900 0.00099150" type="box"/>
+    </body>
+    <body name="a_colored_wood_blocks_125">
+      <joint name="a_colored_wood_blocks_125_joint" type="free" armature="0.0002"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_125_material" mesh="a_colored_wood_blocks_125_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.04577150 -0.04741900 0.00099150" type="box"/>
+    </body>
+    <body name="a_colored_wood_blocks_126">
+      <joint name="a_colored_wood_blocks_126_joint" type="free" armature="0.0002"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_126_material" mesh="a_colored_wood_blocks_126_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.02307150 -0.04741900 0.00099150" type="box"/>
+    </body>
+    <body name="a_colored_wood_blocks_127">
+      <joint name="a_colored_wood_blocks_127_joint" type="free" armature="0.0002"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_127_material" mesh="a_colored_wood_blocks_127_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="-0.02232850 -0.04731900 0.00099150" type="box"/>
+    </body>
+     <body name="a_colored_wood_blocks_128">
+      <joint name="a_colored_wood_blocks_128_joint" type="free" armature="0.0002"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_128_material" mesh="a_colored_wood_blocks_128_vis"/>
+      <geom class="collision" size="0.0113 0.0117 0.0119" pos="0.00037150 -0.04731900 0.00099150" type="box"/>
+
+
+    
+    
+    
+    </body>
+    <body name="a_colored_wood_blocks_Lid">
+      <joint name="a_colored_wood_blocks_Lid_joint" type="free" armature="0.0001"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_colored_wood_blocks_Lid_material" mesh="a_colored_wood_blocks_Lid_vis"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider1_m" class="collision" type="mesh" mesh="a_colored_wood_blocks_Lid_Collider1_m_collision"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_1" class="collision" size="0.00105 0.0083 0.00465" pos="-0.05170552 -0.01396585 0.08289150" type="box" quat="0.9914448214196411 0.0 0.0 0.13052649570173921"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_2" class="collision" size="0.00105 0.0083 0.00465" pos="-0.04636083 -0.02686906 0.08289150" type="box" quat="0.9659256678396477 0.0 0.0 0.2588196364430847"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_3" class="collision" size="0.00105 0.0083 0.00465" pos="-0.03785864 -0.03794928 0.08289150" type="box" quat="0.923879181092213 0.0 0.0 0.3826842807646819"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_4" class="collision" size="0.00105 0.0083 0.00465" pos="-0.02677839 -0.04645142 0.08289150" type="box" quat="0.8660247915829389 0.0 0.0 0.5000010603626028"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_5" class="collision" size="0.00105 0.0083 0.00465" pos="-0.01387516 -0.05179607 0.08289150" type="box" quat="0.7933524085796444 0.0 0.0 0.608762643236982"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_6" class="collision" size="0.00105 0.0083 0.00465" pos="-0.00002830 -0.05361900 0.08289150" type="box" quat="0.7071054825112362 0.0 0.0 0.7071080798594737"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_7" class="collision" size="0.00105 0.0083 0.00465" pos="0.01381854 -0.05179597 0.08289150" type="box" quat="0.6087597290867591 0.0 0.0 0.7933546446843402"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_8" class="collision" size="0.00105 0.0083 0.00465" pos="0.02672173 -0.04645123 0.08289150" type="box" quat="0.4999978792725456 0.0 0.0 0.8660266281835433"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_9" class="collision" size="0.00105 0.0083 0.00465" pos="0.03780192 -0.03794900 0.08289150" type="box" quat="0.3826808871643772 0.0 0.0 0.9238805867638336"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_10" class="collision" size="0.00105 0.0083 0.00465" pos="0.04630402 -0.02686872 0.08289150" type="box" quat="0.258816088398246 0.0 0.0 0.9659266185307409"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_11" class="collision" size="0.00105 0.0083 0.00465" pos="0.05164862 -0.01396547 0.08289150" type="box" quat="0.1305228539206808 0.0 0.0 0.9914453008635427"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_12" class="collision" size="0.00105 0.0083 0.00465" pos="0.05347150 -0.00011861 0.08289150" type="box" quat="-3.673205103443822e-06 0.0 0.0 0.9999999999932538"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_13" class="collision" size="0.00105 0.0083 0.00465" pos="0.05164842 0.01372823 0.08289150" type="box" quat="-0.13053013748103645 0.0 0.0 0.9914443419623624"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_14" class="collision" size="0.00105 0.0083 0.00465" pos="0.04630363 0.02663140 0.08289150" type="box" quat="-0.2588231844844313 0.0 0.0 0.965924717135522"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_15" class="collision" size="0.00105 0.0083 0.00465" pos="0.03780137 0.03771156 0.08289150" type="box" quat="-0.3826876743598231 0.0 0.0 0.9238777754081272"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_16" class="collision" size="0.00105 0.0083 0.00465" pos="0.02672105 0.04621362 0.08289150" type="box" quat="-0.5000042414459139 0.0 0.0 0.8660229549706498"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_17" class="collision" size="0.00105 0.0083 0.00465" pos="0.01381778 0.05155818 0.08289150" type="box" quat="-0.6087655573789913 0.0 0.0 0.7933501724642443"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_18" class="collision" size="0.00105 0.0083 0.00465" pos="-0.00002909 0.05338100 0.08289150" type="box" quat="-0.7071106771981704 0.0 0.0 0.7071028851534583"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_19" class="collision" size="0.00105 0.0083 0.00465" pos="-0.01387592 0.05155787 0.08289150" type="box" quat="-0.7933568807783318 0.0 0.0 0.6087568149283225"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_20" class="collision" size="0.00105 0.0083 0.00465" pos="-0.02677907 0.04621303 0.08289150" type="box" quat="-0.8660284647724628 0.0 0.0 0.499994698175742"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_21" class="collision" size="0.00105 0.0083 0.00465" pos="-0.03785920 0.03771073 0.08289150" type="box" quat="-0.9238819924229886 0.0 0.0 0.3826774935589091"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_22" class="collision" size="0.00105 0.0083 0.00465" pos="-0.04636122 0.02663038 0.08289150" type="box" quat="-0.9659275692088014 0.0 0.0 0.25881254034991497"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider2_23" class="collision" size="0.00105 0.0083 0.00465" pos="-0.05170573 0.01372709 0.08289150" type="box" quat="-0.9914457802940674 0.0 0.0 0.13051921213786108"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_0" class="collision" size="0.00155" pos="-0.05152850 0.00128100 0.08179150" quat="1.0 0.0 0.0 0.0"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_1" class="collision" size="0.00155" pos="-0.05153114 -0.00141829 0.08183150" quat="0.9996567996328789 0.0 0.0 0.026197002648210295"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_2" class="collision" size="0.00155" pos="-0.05139240 -0.00411401 0.08187150" quat="0.9986274341044994 0.0 0.0 0.05237602365456791"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_3" class="collision" size="0.00155" pos="-0.05111265 -0.00679876 0.08191150" quat="0.9969126099721161 0.0 0.0 0.07851909371983234"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_4" class="collision" size="0.00155" pos="-0.05069268 -0.00946518 0.08195150" quat="0.9945135042922724 0.0 0.0 0.10460826822151542"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_5" class="collision" size="0.00155" pos="-0.05013362 -0.01210594 0.08199150" quat="0.9914317638128686 0.0 0.0 0.13062563953108347"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_6" class="collision" size="0.00155" pos="-0.04943702 -0.01471379 0.08203150" quat="0.9876695038428325 0.0 0.0 0.15655334930576648"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_7" class="collision" size="0.00155" pos="-0.04860479 -0.01728158 0.08207150" quat="0.9832293068001698 0.0 0.0 0.1823736007465379"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_8" class="collision" size="0.00155" pos="-0.04763921 -0.01980226 0.08211150" quat="0.978114220439391 0.0 0.0 0.2080686708138505"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_9" class="collision" size="0.00155" pos="-0.04654293 -0.02226890 0.08215150" quat="0.9723277557595298 0.0 0.0 0.23362092239274365"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_10" class="collision" size="0.00155" pos="-0.04531896 -0.02467474 0.08219150" quat="0.965873884594191 0.0 0.0 0.2590128163989721"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_11" class="collision" size="0.00155" pos="-0.04397066 -0.02701317 0.08223150" quat="0.9587570368852811 0.0 0.0 0.2842269238178461"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_12" class="collision" size="0.00155" pos="-0.04250174 -0.02927777 0.08227150" quat="0.9509820976422934 0.0 0.0 0.3092459376675201"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_13" class="collision" size="0.00155" pos="-0.04091622 -0.03146233 0.08231150" quat="0.9425544035892326 0.0 0.0 0.33405268487851764"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_14" class="collision" size="0.00155" pos="-0.03921846 -0.03356084 0.08235150" quat="0.9334797395014848 0.0 0.0 0.35863013808133887"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_15" class="collision" size="0.00155" pos="-0.03741312 -0.03556756 0.08239150" quat="0.9237643342351428 0.0 0.0 0.3829614272940597"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_16" class="collision" size="0.00155" pos="-0.03550515 -0.03747696 0.08243150" quat="0.9134148564515151 0.0 0.0 0.4070298515018994"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_17" class="collision" size="0.00155" pos="-0.03349980 -0.03928381 0.08247150" quat="0.9024384100397511 0.0 0.0 0.43081889012080965"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_18" class="collision" size="0.00155" pos="-0.03140256 -0.04098314 0.08251150" quat="0.8908425292407273 0.0 0.0 0.45431221433721547"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_19" class="collision" size="0.00155" pos="-0.02921920 -0.04257030 0.08255150" quat="0.8786351734755384 0.0 0.0 0.477493698316125"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_20" class="collision" size="0.00155" pos="-0.02695570 -0.04404093 0.08259150" quat="0.8658247218821448 0.0 0.0 0.5003474302699142"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_21" class="collision" size="0.00155" pos="-0.02461828 -0.04539098 0.08263150" quat="0.852419967563926 0.0 0.0 0.52285772338019"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_22" class="collision" size="0.00155" pos="-0.02221337 -0.04661676 0.08267150" quat="0.8384301115540886 0.0 0.0 0.5450091265652333"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_23" class="collision" size="0.00155" pos="-0.01974755 -0.04771489 0.08271150" quat="0.8238647565000696 0.0 0.0 0.5667864350856334"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_24" class="collision" size="0.00155" pos="-0.01722760 -0.04868237 0.08275150" quat="0.8087339000722725 0.0 0.0 0.5881747009808322"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_25" class="collision" size="0.00155" pos="-0.01466044 -0.04951653 0.08279150" quat="0.7930479281016594 0.0 0.0 0.6091592433294151"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_26" class="collision" size="0.00155" pos="-0.01205311 -0.05021510 0.08283150" quat="0.7768176074509077 0.0 0.0 0.6297256583261059"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_27" class="collision" size="0.00155" pos="-0.00941277 -0.05077614 0.08287150" quat="0.7600540786240294 0.0 0.0 0.6498598291685506"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_28" class="collision" size="0.00155" pos="-0.00674667 -0.05119812 0.08291150" quat="0.7427688481195197 0.0 0.0 0.6695479357470995"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_29" class="collision" size="0.00155" pos="-0.00406212 -0.05147988 0.08295150" quat="0.7249737805322883 0.0 0.0 0.6887764641309411"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_30" class="collision" size="0.00155" pos="-0.00136651 -0.05162065 0.08299150" quat="0.7066810904097932 0.0 0.0 0.7075322158440742"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_31" class="collision" size="0.00155" pos="0.00133278 -0.05162004 0.08303150" quat="0.6879033338679656 0.0 0.0 0.725802316924752"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_32" class="collision" size="0.00155" pos="0.00402833 -0.05147805 0.08307150" quat="0.6686533999726835 0.0 0.0 0.7435742267621779"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_33" class="collision" size="0.00155" pos="0.00671274 -0.05119508 0.08311150" quat="0.6489445018927062 0.0 0.0 0.7608357467043905"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_34" class="collision" size="0.00155" pos="0.00937865 -0.05077189 0.08315150" quat="0.6287901678301474 0.0 0.0 0.7775750284314273"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_35" class="collision" size="0.00155" pos="0.01201874 -0.05020966 0.08319150" quat="0.6082042317347056 0.0 0.0 0.7937805820880204"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_36" class="collision" size="0.00155" pos="0.01462575 -0.04950992 0.08323150" quat="0.587200823808032 0.0 0.0 0.809441284170241"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_37" class="collision" size="0.00155" pos="0.01719254 -0.04867460 0.08327150" quat="0.5657943608047485 0.0 0.0 0.8245463851606809"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_38" class="collision" size="0.00155" pos="0.01971205 -0.04770598 0.08331150" quat="0.5439995361367788 0.0 0.0 0.8390855169069299"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_39" class="collision" size="0.00155" pos="0.02217737 -0.04660673 0.08335150" quat="0.5218313097877771 0.0 0.0 0.8530486997382817"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_40" class="collision" size="0.00155" pos="0.02458174 -0.04537987 0.08339150" quat="0.49930489804458655 0.0 0.0 0.8664263493157887"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_41" class="collision" size="0.00155" pos="0.02691854 -0.04402876 0.08343150" quat="0.47643576305276736 0.0 0.0 0.8792092832109584"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_42" class="collision" size="0.00155" pos="0.02918137 -0.04255711 0.08347150" quat="0.45323960220336945 0.0 0.0 0.8913887272085795"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_43" class="collision" size="0.00155" pos="0.03136402 -0.04096897 0.08351150" quat="0.4297323373582315 0.0 0.0 0.9029563213293493"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_44" class="collision" size="0.00155" pos="0.03346049 -0.03926868 0.08355150" quat="0.40593010392120316 0.0 0.0 0.9139041255681699"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_45" class="collision" size="0.00155" pos="0.03546503 -0.03746093 0.08359150" quat="0.3818492397627922 0.0 0.0 0.9242246253441734"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_46" class="collision" size="0.00155" pos="0.03737213 -0.03555066 0.08363150" quat="0.35750627400583823 0.0 0.0 0.9339107366587358"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_47" class="collision" size="0.00155" pos="0.03917657 -0.03354313 0.08367150" quat="0.33291791567991036 0.0 0.0 0.9429558109579389"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_48" class="collision" size="0.00155" pos="0.04087338 -0.03144385 0.08371150" quat="0.3081010422522174 0.0 0.0 0.9513536396961424"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_49" class="collision" size="0.00155" pos="0.04245791 -0.02925858 0.08375150" quat="0.28307268804290164 0.0 0.0 0.9590984585975343"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_50" class="collision" size="0.00155" pos="0.04392581 -0.02699331 0.08379150" quat="0.25785003253266936 0.0 0.0 0.9661849516127341"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_51" class="collision" size="0.00155" pos="0.04527305 -0.02465427 0.08383150" quat="0.23245038857078226 0.0 0.0 0.9726082545677331"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_52" class="collision" size="0.00155" pos="0.04649593 -0.02224788 0.08387150" quat="0.2068911904915052 0.0 0.0 0.9783639585026667"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_53" class="collision" size="0.00155" pos="0.04759109 -0.01978074 0.08391150" quat="0.1811899821471665 0.0 0.0 0.9834481126981278"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_54" class="collision" size="0.00155" pos="0.04855554 -0.01725963 0.08395150" quat="0.15536440486604464 0.0 0.0 0.9878572273869437"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_55" class="collision" size="0.00155" pos="0.04938661 -0.01469147 0.08399150" quat="0.1294321853433476 0.0 0.0 0.9915882761495546"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_56" class="collision" size="0.00155" pos="0.05008203 -0.01208330 0.08403150" quat="0.10341112347359632 0.0 0.0 0.9946386979913503"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_57" class="collision" size="0.00155" pos="0.05063990 -0.00944229 0.08407150" quat="0.07731908013276394 0.0 0.0 0.997006399100539"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_58" class="collision" size="0.00155" pos="0.05105867 -0.00677568 0.08411150" quat="0.051173964918557475 0.0 0.0 0.9986897542853408"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_59" class="collision" size="0.00155" pos="0.05133720 -0.00409080 0.08415150" quat="0.02499372385725682 0.0 0.0 0.9996876080895208"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_60" class="collision" size="0.00155" pos="0.05147472 -0.00139502 0.08419150" quat="-0.0012036729144509067 0.0 0.0 0.9999992755854952"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_61" class="collision" size="0.00155" pos="0.05147086 0.00130427 0.08423150" quat="-0.027400243484186362 0.0 0.0 0.9996245428444659"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_62" class="collision" size="0.00155" pos="0.05132563 0.00399965 0.08427150" quat="-0.05357800650667585 0.0 0.0 0.9985636670832615"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_63" class="collision" size="0.00155" pos="0.05103943 0.00668372 0.08431150" quat="-0.07971899354615991 0.0 0.0 0.9968173764877835"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_64" class="collision" size="0.00155" pos="0.05061303 0.00934912 0.08435150" quat="-0.10580526140994083 0.0 0.0 0.9943868697131787"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_65" class="collision" size="0.00155" pos="0.05004762 0.01198852 0.08439150" quat="-0.13181890446460326 0.0 0.0 0.9912738150610818"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_66" class="collision" size="0.00155" pos="0.04934474 0.01459469 0.08443150" quat="-0.1577420669264542 0.0 0.0 0.9874803493344919"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_67" class="collision" size="0.00155" pos="0.04850633 0.01716047 0.08447150" quat="-0.1835569551177459 0.0 0.0 0.9830090763710688"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_68" class="collision" size="0.00155" pos="0.04753468 0.01967881 0.08451150" quat="-0.20924584968026946 0.0 0.0 0.9778630652558579"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_69" class="collision" size="0.00155" pos="0.04643247 0.02214281 0.08455150" quat="-0.23479111773793535 0.0 0.0 0.9720458482146668"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_70" class="collision" size="0.00155" pos="0.04520271 0.02454570 0.08459150" quat="-0.2601752249999924 0.0 0.0 0.965561418189544"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_71" class="collision" size="0.00155" pos="0.04384879 0.02688087 0.08463150" quat="-0.28538074779657774 0.0 0.0 0.9584142260980197"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_72" class="collision" size="0.00155" pos="0.04237442 0.02914193 0.08467150" quat="-0.3103903850383369 0.0 0.0 0.9506091777779936"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_73" class="collision" size="0.00155" pos="0.04078365 0.03132267 0.08471150" quat="-0.33518697009190396 0.0 0.0 0.9421516306203631"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_74" class="collision" size="0.00155" pos="0.03908084 0.03341709 0.08475150" quat="-0.3597534825630915 0.0 0.0 0.9330473898917072"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_75" class="collision" size="0.00155" pos="0.03727068 0.03541945 0.08479150" quat="-0.3840730599797015 0.0 0.0 0.9233027047495468"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_76" class="collision" size="0.00155" pos="0.03535812 0.03732425 0.08483150" quat="-0.40812900936593866 0.0 0.0 0.9129242639529184"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_77" class="collision" size="0.00155" pos="0.03334842 0.03912627 0.08487150" quat="-0.4319048187004815 0.0 0.0 0.901919191271205"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_78" class="collision" size="0.00155" pos="0.03124710 0.04082055 0.08491150" quat="-0.4553841682503455 0.0 0.0 0.8902950405943758"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_79" class="collision" size="0.00155" pos="0.02905992 0.04240245 0.08495150" quat="-0.47855094177276014 0.0 0.0 0.8780597907479903"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_80" class="collision" size="0.00155" pos="0.02679289 0.04386763 0.08499150" quat="-0.5013892375773696 0.0 0.0 0.8652218400165267"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_81" class="collision" size="0.00155" pos="0.02445223 0.04521205 0.08503150" quat="-0.5238833794411648 0.0 0.0 0.8517900003787933"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_82" class="collision" size="0.00155" pos="0.02204437 0.04643203 0.08507150" quat="-0.5460179273686543 0.0 0.0 0.8377734914593796"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_83" class="collision" size="0.00155" pos="0.01957591 0.04752423 0.08511150" quat="-0.5677776881898884 0.0 0.0 0.8231819342002994"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_84" class="collision" size="0.00155" pos="0.01705364 0.04848563 0.08515150" quat="-0.5891477259890625 0.0 0.0 0.8080253442571691"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_85" class="collision" size="0.00155" pos="0.01448448 0.04931362 0.08519150" quat="-0.6101133723565406 0.0 0.0 0.7923141251244543"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_86" class="collision" size="0.00155" pos="0.01187547 0.05000590 0.08523150" quat="-0.630660236457262 0.0 0.0 0.7760590609945034"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_87" class="collision" size="0.00155" pos="0.00923379 0.05056058 0.08527150" quat="-0.6507742149086218 0.0 0.0 0.7592713093552707"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_88" class="collision" size="0.00155" pos="0.00656668 0.05097614 0.08531150" quat="-0.6704415014610422 0.0 0.0 0.7419623933318071"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_89" class="collision" size="0.00155" pos="0.00388147 0.05125144 0.08535150" quat="-0.6896485964745933 0.0 0.0 0.7241441937767806"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_90" class="collision" size="0.00155" pos="0.00118552 0.05138572 0.08539150" quat="-0.708382316185155 0.0 0.0 0.7058289411154484"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_91" class="collision" size="0.00155" pos="-0.00151375 0.05137861 0.08543150" quat="-0.726629801753763 0.0 0.0 0.6870292069506849"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_92" class="collision" size="0.00155" pos="-0.00420896 0.05123014 0.08547150" quat="-0.7443785280929249 0.0 0.0 0.6677578954338247"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_93" class="collision" size="0.00155" pos="-0.00689268 0.05094070 0.08551150" quat="-0.7616163124638495 0.0 0.0 0.6480282344072426"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_94" class="collision" size="0.00155" pos="-0.00955756 0.05051110 0.08555150" quat="-0.778331322838688 0.0 0.0 0.6278537663247535"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_95" class="collision" size="0.00155" pos="-0.01219629 0.04994251 0.08559150" quat="-0.7945120860220461 0.0 0.0 0.6072483389560623"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_96" class="collision" size="0.00155" pos="-0.01480161 0.04923650 0.08563150" quat="-0.8101474955261945 0.0 0.0 0.5862260958816442"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_97" class="collision" size="0.00155" pos="-0.01736638 0.04839500 0.08567150" quat="-0.825226819194569 0.0 0.0 0.564801466784581"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_98" class="collision" size="0.00155" pos="-0.01988355 0.04742032 0.08571150" quat="-0.839739706568332 0.0 0.0 0.5429891575460157"/>
+      <geom name="a_colored_wood_blocks_Lid_Collider3_99" class="collision" size="0.00155" pos="-0.02234622 0.04631514 0.08575150" quat="-0.8536761959909339 0.0 0.0 0.5208041401510252"/>
+      </body>
+  </worldbody>
+</mujoco>

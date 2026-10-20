@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="359.759" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="master_chef_can_material" file="visuals/T_master_chef_can_BC001.png"/>
+    <material name="master_chef_can_material" texture="master_chef_can_material" specular="0.5" shininess="0.5"/>
+    <mesh name="master_chef_can_vis" file="visuals/master_chef_can.obj"/>
+    <mesh name="master_chef_can_Collider1_m_collision" file="collision/master_chef_can_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="master_chef_can_material" mesh="master_chef_can_vis"/>
+        <geom name="master_chef_can_Collider1_m" class="collision" type="mesh" mesh="master_chef_can_Collider1_m_collision"/>
+      <geom size="0.051707 0.051744 0.0692425" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

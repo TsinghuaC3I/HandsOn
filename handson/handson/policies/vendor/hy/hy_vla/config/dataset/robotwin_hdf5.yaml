@@ -1,0 +1,140 @@
+# =============================================================================
+# RoboTwin HDF5 dataset config
+# =============================================================================
+source: "robotwin"
+
+# HDF5 root directory. The dataset assumes one sub-folder per RoboTwin task.
+# Set this to the local directory where you stored the RoboTwin data.
+hdf5_dir: "/path/to/robotwin/hdf5"
+
+# -----------------------------------------------------------------------------
+# Image augmentation
+# -----------------------------------------------------------------------------
+image_aug: True              # ColorJitter + image_corrupt (gauss/laplace/poisson)
+camera_randomcrop_aug: True  # head-camera random crop -> resize back
+# Probability of randomly masking conditions (except states) during training.
+# Set 0 to disable.
+cond_mask_prob: 0.0
+# Per-camera external-cam mask probability. < 0 falls back to ``cond_mask_prob``.
+cam_ext_mask_prob: -1.0
+
+# -----------------------------------------------------------------------------
+# History (image / video-encoder) sampling
+# -----------------------------------------------------------------------------
+# Total number of images per camera that the dataset emits in one sample.
+# Includes the current frame at slot ``K-1``. With ``use_video_encoder=True``
+# below, the model consumes the full K-frame stack via the MEM space-time
+# attention path; with ``use_video_encoder=False`` only the current frame is
+# used (the older slots are dropped by ``prepare_images``).
+img_history_size: 6
+# Temporal stride between sampled history frames, measured in *action steps*
+# (post-downsample). The effective raw-frame stride is
+# ``img_history_interval * downsample_rate`` so history spacing stays aligned
+# with the action timeline regardless of ``downsample_rate``.
+img_history_interval: 5
+# RoboTwin is deterministic simulated data, so we disable in-bucket random
+# jitter: each slot takes exactly ``max(step_id - (K-1-k)*interval, 0)``.
+# Flip to True for noisy / real-world datasets.
+img_history_random_sample: False
+
+# -----------------------------------------------------------------------------
+# Action chunk
+# -----------------------------------------------------------------------------
+# Number of future action steps predicted per call. Must match the value
+# used when generating ``mean_std_path`` (downsample_rate=3 -> chunk=20).
+action_chunk_size: 20
+# State / action dimensionality (32 = padded RoboTwin EE+gripper representation
+# inherited from the upstream pipeline).
+state_dim: 32
+# Number of cameras consumed by the model.
+num_cameras: 3
+
+image_size: 224
+auto_adjust_image_brightness: True
+
+# -----------------------------------------------------------------------------
+# Action / state normalization
+# -----------------------------------------------------------------------------
+# Single mean/std pkl produced by
+# ``utils/hdf5_normalization_process_relabs_chunk_ee.py``. Schema::
+#
+#   {
+#     "qpos_mean":         (20,),          # per-frame proprio
+#     "qpos_std":          (20,),
+#     "action_mean":       (chunk, 20),    # relative half (always)
+#     "action_std":        (chunk, 20),
+#     "action_mean_abs":   (chunk, 20),    # absolute half (only for with_absolute act_type)
+#     "action_std_abs":    (chunk, 20),
+#     "first_frame":       None,
+#   }
+#
+# The absolute keys are required iff ``act_type=relative_chunk_ee_RT_with_absolute``;
+# they are silently ignored for all other act_types (so a single relative-only
+# pkl is also usable here).
+mean_std_path: "/path/to/robotwin/norm_stats.pkl"
+
+# Optional slice along the chunk axis applied to the loaded mean/std (e.g. set
+# to 20 to keep the first 20 future steps of a longer (50,20) pkl). null = no
+# slice (use the file as-is). Applied uniformly to both halves when present.
+mean_std_chunk_slice: 20
+
+# -----------------------------------------------------------------------------
+# Action representation
+# -----------------------------------------------------------------------------
+#   relative_chunk_ee_RT               : RT-relative wrist-frame, 20d
+#   relative_chunk_ee_RT_with_absolute : 20d actions but the chunk is doubled
+#                                        along the time axis to (2*chunk, 20):
+#                                        first half RT_relative, second half
+#                                        absolute PosRotMat over the SAME
+#                                        ``action_chunk_size`` future steps.
+#                                        mean/std are concatenated along axis
+#                                        0; the same single ``mean_std_path``
+#                                        pkl carries both halves (under
+#                                        ``action_mean`` / ``action_std`` and
+#                                        ``action_mean_abs`` / ``action_std_abs``).
+act_type: "relative_chunk_ee_RT_with_absolute"
+
+# -----------------------------------------------------------------------------
+# Sampling cadence
+# -----------------------------------------------------------------------------
+downsample_rate: 3
+
+# -----------------------------------------------------------------------------
+# Episode filter
+# -----------------------------------------------------------------------------
+# Drop episodes flagged ``is_dirty=1`` in dataset_index.csv. Recommended
+# for the open-source release (the released checkpoint trains with this on).
+filter_dirty: True
+
+# -----------------------------------------------------------------------------
+# Sample enumeration
+# -----------------------------------------------------------------------------
+# When True, switches the dataset from "infinite uniform random sampling" to
+# a finite, deterministic enumeration of all valid (episode, step) pairs.
+# REQUIRED True for the iter-based / epoch-aware training loop in
+# ``train.py``; the loop relies on ``len(dataloader)`` being finite and on
+# ``__getitem__(idx)`` resolving deterministically so accelerate's default
+# RandomSampler + per-rank sharding gives an unbiased no-repeat / no-miss
+# epoch with a fresh shuffle every iter() rebuild.
+deterministic: True
+
+# -----------------------------------------------------------------------------
+# Video-encoder (MEM) switch
+# -----------------------------------------------------------------------------
+# When True, the dataset emits a per-camera K-frame stack (K = ``img_history_size``)
+# and the collator returns 5D ``(B, K, C, H, W)`` tensors for the three main
+# camera keys, wiring the MEM space-time attention path end-to-end. Required
+# Required True for the released VLA post-training checkpoint.
+use_video_encoder: True
+
+# -----------------------------------------------------------------------------
+# UMI coordinate frame
+# -----------------------------------------------------------------------------
+# When True, convert EE poses from native RoboTwin world frame to UMI
+# world frame before normalisation.  Requires norm_stats.pkl computed
+# with the same setting.
+umi_coord_frame: False
+# When True (only meaningful with ``umi_coord_frame=True``), additionally
+# convert gripper values from RoboTwin convention (open=1, close=0,
+# normalised 0-1) to UMI convention (open=0, close=90, raw mm).
+umi_gripper_space: False

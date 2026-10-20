@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="scissors_cut_paper_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="scissors_cut_paper_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="scissors_cut_paper_collision">
+      <geom group="3" density="900" friction="0.95 0.20 0.01" solref="0.006 1" solimp="0.95 0.98 0.001"/>
+    </default>
+    <default class="scissors_cut_paper_region">
+      <geom type="box" contype="0" conaffinity="0" group="4" mass="0"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="scissors_cut_paper_scissors_tex" file="../../lightwheel_ycb/scissors/visuals/T_scissors_BC001.png"/>
+    <material name="scissors_cut_paper_scissors_mat" texture="scissors_cut_paper_scissors_tex" specular="0.31" shininess="0"/>
+    <material name="paper_strip_mat" rgba="0.96 0.94 0.84 1" specular="0.03"/>
+    <material name="paper_cut_edge_mat" rgba="0.92 0.25 0.12 1" specular="0.02"/>
+    <material name="paper_cut_line_mat" rgba="0.10 0.22 0.95 1" specular="0.02"/>
+
+    <mesh name="scissors_vis" file="../../lightwheel_ycb/scissors/visuals/scissors.obj"/>
+    <mesh name="scissors_Prop001_vis" file="../../lightwheel_ycb/scissors/visuals/scissors_Prop001.obj"/>
+    <mesh name="scissors_Prop002_vis" file="../../lightwheel_ycb/scissors/visuals/scissors_Prop002.obj"/>
+    <mesh name="scissors_Prop003_vis" file="../../lightwheel_ycb/scissors/visuals/scissors_Prop003.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="paper_strip_body" pos="0.08 0.18 0.92">
+      <geom name="paper_strip_uncut" type="box" size="0.030 0.145 0.0015" pos="0 0 0.0015"
+            material="paper_strip_mat" friction="1.2 0.01 0.001" group="3"/>
+      <geom name="paper_strip_lower_half" class="scissors_cut_paper_region" size="0.030 0.068 0.0017" pos="0 -0.0385 0.0017"
+            material="paper_strip_mat" rgba="0.96 0.94 0.84 0"/>
+      <geom name="paper_strip_upper_half" class="scissors_cut_paper_region" size="0.030 0.068 0.0017" pos="0 0.0385 0.0017"
+            material="paper_strip_mat" rgba="0.96 0.94 0.84 0"/>
+      <geom name="paper_cut_gap" class="scissors_cut_paper_region" size="0.031 0.004 0.0018" pos="0 0 0.0019"
+            material="paper_cut_edge_mat" rgba="0.92 0.25 0.12 0"/>
+      <geom name="paper_cut_line_visual" class="scissors_cut_paper_region" size="0.032 0.001 0.0020" pos="0 0 0.0040"
+            material="paper_cut_line_mat" rgba="0.10 0.22 0.95 0.60"/>
+      <site name="paper_cut_line_center" pos="0 0 0.004" size="0.006" rgba="0.10 0.22 0.95 0.70"/>
+    </body>
+
+    <body name="scissors_root_body" pos="-0.18 -0.14 0.934" quat="1 0 0 0">
+      <freejoint name="scissors_root"/>
+      <body name="scissors_object">
+        <site name="scissors_hinge_site" pos="-0.0038435 0.004882 -0.000210" size="0.004" rgba="0.95 0.65 0.10 0.85"/>
+        <site name="scissors_fixed_blade_tip" pos="0.018 0.096 0" size="0.004" rgba="0.20 0.80 0.95 0.85"/>
+        <geom class="scissors_cut_paper_visual" material="scissors_cut_paper_scissors_mat" mesh="scissors_vis"/>
+        <geom name="scissors_fixed_blade_proxy" class="scissors_cut_paper_collision" type="capsule"
+              fromto="-0.004 0.020 0.000 0.018 0.096 0.000" size="0.0035"/>
+        <geom name="scissors_fixed_handle_proxy" class="scissors_cut_paper_collision" type="box"
+              size="0.023 0.030 0.006" pos="0.020 -0.050 0.000"/>
+        <geom name="scissors_fixed_pivot_proxy" class="scissors_cut_paper_collision" type="sphere"
+              size="0.009" pos="-0.0038435 0.004882 -0.000210"/>
+
+        <body name="scissors_Prop001">
+          <joint name="scissors_Prop001_joint" pos="-0.0038435 0.004882 -0.000210" axis="0 0 1"
+                 limited="true" range="0 0.872665" damping="0.10" armature="0.002" frictionloss="0.015"/>
+          <site name="scissors_moving_blade_tip" pos="-0.018 0.096 0" size="0.004" rgba="0.95 0.30 0.20 0.85"/>
+          <geom class="scissors_cut_paper_visual" material="scissors_cut_paper_scissors_mat" mesh="scissors_Prop001_vis"/>
+          <geom name="scissors_moving_blade_proxy" class="scissors_cut_paper_collision" type="capsule"
+                fromto="-0.004 0.020 0.000 -0.018 0.096 0.000" size="0.0035"/>
+          <geom name="scissors_moving_handle_proxy" class="scissors_cut_paper_collision" type="box"
+                size="0.023 0.030 0.006" pos="-0.021 -0.050 0.000"/>
+          <body name="scissors_Prop002">
+            <geom class="scissors_cut_paper_visual" material="scissors_cut_paper_scissors_mat" mesh="scissors_Prop002_vis"/>
+          </body>
+        </body>
+
+        <body name="scissors_Prop003">
+          <geom class="scissors_cut_paper_visual" material="scissors_cut_paper_scissors_mat" mesh="scissors_Prop003_vis"/>
+          <geom name="scissors_thumb_handle_proxy" class="scissors_cut_paper_collision" type="box"
+                size="0.018 0.025 0.006" pos="0.004 -0.075 0.000"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,184 @@
+schema_version: 1
+task_id: G08
+manifest_task_id: t18_open_micropipette_box
+task_name: t18_open_micropipette_box
+state: bug_iteration
+updated_at: "2026-09-01T23:07:01+08:00"
+runtime_contract:
+  isaac_sim: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+  physics_hz: 120
+  control_hz: 30
+current_arm_home_change:
+  policy: shared_mirrored_bimanual_home
+  tcp_home_xyz_m: {right: [-0.10, -0.16, 1.07], left: [-0.10, 0.16, 1.07]}
+  task_local_spread_override_removed: true
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_initial_stability: pending
+current_operator_change:
+  requested_at: "2026-08-31"
+  hand_reset: shared_tabletop_home_restored
+  controller: shared_full_pose_control_restored
+  hidden_g08_grip_colliders: removed
+  retained_collision_repair: seven_gpu_incompatible_source_colliders_use_tight_bounding_cube_approximations
+  composed_topology: {bodies: 2, colliders: 25, dofs: 1, fixed_base: true}
+  success: {predicate: physical_lid_joint_at_or_beyond_negative_75_degrees, immediate: true, assigned_contact_required: false, release_required: false, hold_required: false}
+  reset_randomization: {root_x_m: [-0.320, -0.240], root_y_m: [-0.030, 0.030], root_yaw_deg: [-8.0, 8.0]}
+  static_validation: {status: pass, focused_tests_passed: 140}
+  live_stability_validation:
+    status: pass_task_checks_manual_interrupt_after_teardown_hang
+    evidence: taskdev/tasks/t18_open_micropipette_box/evidence/live_immediate_open_restore_20260831.json
+    evidence_sha256: 3258f76b55c290310983408dc43dfc3e864e6d632b6bb55381d348a702244a94
+    topology: {bodies: 2, colliders: 25, dofs: 1, fixed_base: true}
+    reset_seeds: [20260831, 20260832, 20260833]
+    zero_action_physics_substeps: 240
+    max_root_translation_drift_m: 0.0
+    max_root_rotation_drift_deg: 0.0
+    max_lid_drift_rad: 0.0
+  live_operator_manipulation_validation: pending
+selected_asset:
+  provenance: user_provided
+  archive: /home/user/下载/ZRYZ_LW_Assets_20260820.zip
+  archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  usd: handson/handson/sim/envs/usd/lw_native_articulation/assets/MicropipetteBox001/MicropipetteBox001.usd
+  usd_sha256: 6a8a143fe0a72e3b843c38e095057394ddb1b40e7dd1bf08c5185087bc031255
+  author: unresolved
+  upstream_source: unresolved
+  license: unresolved
+live_evidence:
+  lid_collision_fix_iteration:
+    status: scripted_physical_contact_pass_operator_task_trial_pending
+    source_session: 20260829-155405_collector_001_18_open_micropipette_box
+    root_cause: seven_authored_convexes_rejected_by_isaac_sim_5_1_gpu_cooker_including_lid_main_panel_and_long_rims
+    correction: tight_composed_bounding_cube_approximations_without_visual_or_topology_changes
+    evidence: taskdev/tasks/t18_open_micropipette_box/evidence/live_lid_collision_fix_20260829.json
+    evidence_sha256: 9a2217485dd549fccc0dfbaeb692cac70db10b6359517763189e3ac85c456113
+    gpu_fallback_messages_after_fix: 0
+    zero_action: {status: pass, physics_frames: 1200, sim_seconds: 10.0, seeds: [20260829, 20260830, 20260831], same_seed_exact_repeat: true, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+    scripted_right_hand_lid_contact: {status: pass, continuous_contact_s: 1.0, active_samples: 31, maximum_penetration_m: 0.00005330238491296768, penetration_limit_m: 0.005, automatic_reset: false, task_failure: false}
+  current_fixed_base_iteration:
+    status: task_semantics_pass_host_gpu_teardown_xid_not_release_certified
+    semantics: "Each seeded reset randomizes box X by +/-0.04 m, Y by +/-0.03 m, and yaw by +/-8 degrees, then writes a native world-fixed articulation root before action zero. The lid remains closed at reset."
+    table_support_policy: diagnostic_only_not_a_progress_success_or_terminal_gate
+    prior_floating_evidence_status: superseded_for_current_runtime_semantics
+    evidence: taskdev/tasks/t18_open_micropipette_box/evidence/live_fixed_base_reset_smoke_20260829.json
+    evidence_sha256: aeceb404dd66c11f636f36a1b316101ee94d39e68c39da9af3d7994940d7ee27
+    validated_scope: {topology: "2 bodies / 25 colliders / 1 DOF / fixed_base=true", same_seed_exact_repeat: true, different_seed_pose_change: true, zero_action_physics_frames: 240, root_drift_m: 0.0, root_rotation_drift_deg: 0.0}
+    host_caveat: "The task checks passed before process teardown, but the host then logged the recurring order-7 page-allocation failure and NVRM Xid 31. GPU Recovery Action remained None; do not treat this as a clean release-certification run."
+    required_live_rerun: [seeded_reset_matrix, head_and_wrist_camera_framing, assigned_hand_reach, intended_contact, physical_success, negative_trials, zarr_recording, fresh_process_replay]
+  first_attempt:
+    status: fail
+    path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability.json
+    sha256: f46044ec4ff22112091dbf46d450eb785dfa163eb725c40920f512b4a385b18b
+    finding: "The -2 degree lid reset closed back to 0 degrees under gravity, and the original bottom collision allowed the audited base plane to sink by 1.272335 mm; stable-origin acceptance correctly failed."
+  corrected_rerun:
+    status: pass
+    path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json
+    sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1
+    topology: {bodies: 2, colliders: 25, dofs: 1}
+    post_accept_physics_frames: 240
+    physics_hz: 120
+    truth_unreadable_frames: 0
+    min_support_force_n: 9.80262279510498
+    min_support_contact_points: 12
+    signed_clearance_range_m: [-0.000001498318531023557, -0.0000014387138862481663]
+    physx_separation_range_m: [-0.000001534237526357174, -0.0000014150282368063927]
+    stable_origin_accepted: true
+    same_seed_repeat_passed: true
+    different_seed_passed: true
+    same_process_hard_reset_passed: true
+  touch_reset_bug_iteration:
+    status: contract_and_live_static_fix_pass_operator_sustained_touch_pending
+    source_session: 20260823-042911_collector_001_18_open_micropipette_box
+    pre_fix_reproductions:
+      - {event_ordinal: 3, event_sha256: 470938fd541f6f786f7e0a5758a4ffa3eb962f7bc717035797da150ce40b9540, first_cause: root_translation_drift, root_translation_error_m: 0.0308439, root_rotation_error_deg: 7.6015, contact_context: right_hand_touched_base_without_assigned_left_base_or_right_lid_contact}
+      - {event_ordinal: 5, event_sha256: ed503d15f083911060462a30fe66511678ca3f0e1ce8d42e0973a58813602fa1, first_cause: root_translation_drift, root_translation_error_m: 0.0304021, root_rotation_error_deg: 0.494, contact_context: right_hand_touched_lid_without_assigned_left_base_contact}
+    root_cause: "The 30 mm / 8 degree success envelope was incorrectly treated as an immediate per-substep terminal failure, so ordinary contact triggered recorder hard reset."
+    contract_arming: after_recording_origin_accepted
+    recoverable_progress_guard: {translation_max_m: 0.030, rotation_max_deg: 8.0, on_violation: clear_current_attempt_progress_without_terminal_reset}
+    recoverable_release_and_stabilize_guards: {events: [stabilizer_contact_lost, target_lost], target_loss_includes_single_frame_speed_spike: true, on_event: clear_current_attempt_progress_without_terminal_reset}
+    recoverable_wrong_direction_guard: {tolerance_deg: 3.0, on_violation: clear_current_attempt_progress_without_terminal_reset}
+    terminal_gross_escape: {translation_exclusive_max_m: 0.200, rotation_exclusive_max_deg: 60.0, consecutive_hold_s: 0.50}
+    support_success_gate: live_base_to_table_support_truth_and_valid_support_required_each_physics_substep
+    structured_first_terminal_reason_emitted_before_reset: true
+    focused_four_file_validation: {status: pass, passed: 126, scope: post_origin_arming_recoverable_root_support_contact_target_wrong_direction_gross_escape_terminal_task_and_ui_contracts}
+    persistent_live_static_evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_soft_contact_guard_fix.json, sha256: fb4b967c6858e010bc085d514812cfd77ca87e9019bcd354e3dcc2cea5b75858, status: pass, topology: {bodies: 2, colliders: 25, dofs: 1}, physics_frames: 240, truth_unreadable_frames: 0, min_support_force_n: 9.8026, min_support_contact_points: 12, renderable_collision_only_paths: [], scope: not_operator_touch_evidence}
+completed_gates:
+  - current_fixed_base_zero_action_1200_physics_frame_stability_regression
+  - g08_gpu_convex_fallback_eliminated
+  - scripted_right_hand_lid_contact_one_second_without_reset
+  - scripted_right_hand_lid_penetration_below_contract_limit
+  - current_fixed_base_first_physx_scene_construction
+  - current_fixed_base_same_seed_exact_repeat_smoke
+  - current_fixed_base_different_seed_pose_change_smoke
+  - current_fixed_base_zero_action_240_physics_frame_stability_smoke
+  - task_contract_authored
+  - supplied_archive_safety_and_integrity_checked
+  - selected_asset_bytes_hash_bound
+  - static_source_usd_audited
+  - runtime_and_scene_scaffold_implemented
+  - task_registration_static_ready
+  - static_task_manifest_schema_passed
+  - shared_physical_contract_tests_35_passed
+  - collection_registration_tests_15_passed
+  - live_first_physx_scene_construction
+  - exact_live_2_body_25_collider_1_dof_inventory
+  - bounded_initial_table_support_audit
+  - zero_action_240_physics_frame_stability
+  - stable_recording_origin_acceptance
+  - same_seed_repeat_reset_validation
+  - different_seed_reset_validation
+  - same_process_physx_hard_reset_validation
+  - operator_test_collection_enabled
+  - post_fix_four_file_focused_validation_126_passed
+  - recoverable_root_progress_guard_contract_passed
+  - sustained_gross_escape_terminal_contract_passed
+  - continuous_live_support_success_gate_contract_passed
+  - structured_first_terminal_reason_contract_passed
+  - post_fix_live_static_initial_state_and_support_audit_passed
+  - recording_origin_acceptance_arming_contract_passed
+  - wait_release_and_stabilize_contact_target_loss_recovery_contract_passed
+  - four_degree_wrong_direction_excursion_clear_and_retry_contract_passed
+pending_gates:
+  - current_fixed_base_seeded_random_reset_matrix
+  - current_fixed_base_head_and_wrist_camera_framing
+  - post_fix_operator_preview_start_reset_stop
+  - operator_sustained_intended_contact_at_least_one_second_without_reset
+  - live_assigned_hand_contact_and_reachability
+  - formal_twenty_reset_trial_threshold
+  - physical_positive_and_negative_success_trials
+  - canonical_head_and_wrist_camera_validation
+  - successful_zarr_episode_recorded_and_reviewed
+  - fresh_process_physical_replay
+  - operator_acceptance
+  - asset_author_source_and_license_resolution
+  - redistribution_permission
+  - formal_collection_certification
+release_gate:
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+  redistribution_blocked: true
+  reason: "Operator test collection is enabled for start/reset/stop and trial episode capture. This is not task acceptance or certification: physical success/negative trials, canonical cameras, reviewed Zarr output, fresh-process replay, operator acceptance, asset rights, and redistribution remain pending."
+blocked: false
+blocked_reason: null
+notes:
+  - "The 2026-08-29 15:54 collection exposed severe right-hand/lid visual penetration. Its Kit log identified seven GPU-incompatible authored convexes; four belonged to the lid, including its broad top panel and two long rims."
+  - "The composed stage now gives those seven source meshes tight boundingCube collision approximations without changing the visible asset or articulation topology. A fresh Isaac Sim 5.1 log contained zero convex GPU-fallback messages."
+  - "A 1200-frame zero-action run passed three randomized seeds and same-seed repetition with zero root drift. A scripted physical right-hand/lid probe then held contact for 1.0 second without reset or task failure; maximum penetration was 0.0533 mm against the 5 mm contract limit. This collision regression does not replace the pending full operator success/record/replay trial."
+  - "On 2026-08-29 the operator requested FU015-style behavior because the floating box was too light to stabilize. G08 now reset-positions a native fixed-base articulation with conservative seeded XY/yaw randomization; table-contact force remains recorded only as diagnostics."
+  - "All live evidence below predates the fixed-base semantic change and is retained as historical evidence only. It does not validate the current reset, reach, camera, success, recording, or replay contract."
+  - "The 2026-08-29 fixed-base smoke validated the new task topology, deterministic same-seed reset, changed different-seed pose, and 240 zero-action physics frames. During process teardown the host repeated its order-7 allocation failure and Xid 31 pattern; no further Isaac runs were attempted in this change."
+  - "The first live failure remains immutable evidence: gravity closed the -2 degree lid reset and the original base collision did not support the intended bottom envelope."
+  - "The corrected rerun passed exact 2/25/1 topology and all 240 consecutive post-accept 120 Hz frames with zero unreadable samples."
+  - "Minimum table support was 9.802622795 N with 12 contact points; clearance and separation were about 1.4-1.6 micrometres of signed contact compression, within [-0.25, +0.50] mm. This is a bounded-contact claim, not literal zero penetration."
+  - "Stable origin passed for same-seed repetition, a different seed, and a rebuilt same-process hard reset."
+  - "The user then reproduced automatic resets on ordinary contact. Two retained pre-fix trajectories first failed at 30.8439 mm and 30.4021 mm root translation, just above the old immediate 30 mm terminal threshold."
+  - "The 30 mm / 8 degree envelope is now a recoverable progress/success guard: leaving it clears the current attempt without terminating. Only translation above 0.2 m or rotation above 60 degrees continuously for 0.5 seconds is a root-escape terminal."
+  - "The task contract arms only after recording-origin acceptance. WAIT_RELEASE/STABILIZE stabilizer-contact loss, target loss (including a one-frame target-speed spike), and a tested 4 degree wrong-direction excursion clear the attempt and allow retry instead of causing an automatic-reset terminal."
+  - "Live base-to-table support truth now gates progress and success on every physics substep, and a structured first-terminal reason is emitted before any true terminal reset. The final four-file focused suite passed 126 tests; persistent live static evidence passed 2/25/1 topology, all 240 frames, at least 9.8026 N/12-point support, and zero renderable collision-only paths."
+  - "The post-fix live evidence did not include a real touch. A formal UI operator must still sustain intended contact for at least one second without automatic reset; this gate remains pending and is not claimed as passed."
+  - "Operator workflow, live assigned-hand reach/contact, physical positive and negative success trials, canonical cameras, Zarr recording, and fresh-process replay remain unverified."
+  - "Operator test collection is enabled, but collection validation and formal certification remain pending. Asset author, upstream source, license, and redistribution permission remain unresolved, so redistribution stays blocked."

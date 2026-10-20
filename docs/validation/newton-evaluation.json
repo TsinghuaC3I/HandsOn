@@ -1,0 +1,237 @@
+{
+  "schema": "handson.newton_evaluation_validation.v1",
+  "date": "2026-10-15",
+  "scope": "Two Wuji1 tasks, real DP checkpoints, bounded integration only",
+  "supported_tasks": [
+    "t09_insert_peg",
+    "t26_place_fruit_in_bucket"
+  ],
+  "tested_models": [
+    "dp"
+  ],
+  "runtime": {
+    "physics_backend": "newton",
+    "hand_type": "wuji1",
+    "rendering": "handson",
+    "action_contract": "right26_left26_world_palm",
+    "runtime_quaternion_order": "xyzw",
+    "graphics_transform_sync": "newton_fabric_cpu_hierarchy",
+    "versions": {
+      "isaacsim": "6.0.1.0",
+      "isaaclab": "6.1.14",
+      "isaaclab-newton": "0.13.6",
+      "newton": "1.4.0",
+      "warp-lang": "1.15.0",
+      "mujoco-warp": "3.10.0.3"
+    },
+    "paper_physics_protocol": false,
+    "control_dt": 0.03333333333333333,
+    "physics_dt": 0.008333333333333333,
+    "n_substeps": 4
+  },
+  "isaaclab_commit": "ffff603eafc6b74264a5261cc0183d6a65390d78",
+  "hardware": "NVIDIA RTX 5090",
+  "runtime_source_sha256": {
+    "handson/handson/evaluation/__init__.py": "8e2fea836fe9af7980bb09149af5dde16a1f0a6b4291c8928e7c42ad7b2097f7",
+    "handson/handson/evaluation/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "handson/handson/evaluation/as019_bridge.py": "ab373b449b2ef9dabf2781b84572ca8de4064f2384cde587995aa8978d298c74",
+    "handson/handson/evaluation/backends.py": "8166d0608d6051fbb28ac019238cb22f981eaa7a387302c584bb553311efe28f",
+    "handson/handson/evaluation/boundary.py": "acd407b748c6934d701752cfaeeb9c070aa53e9597829e60484cc822ded44be5",
+    "handson/handson/evaluation/camera_randomization.py": "78a0ada800ef6d103188107993b87077fe141d5ece020c1a43dade2a3ce46996",
+    "handson/handson/evaluation/cameras.py": "ce50da8e9654afeb68c3e70cdf4ab6613ea324c08dcde71df727a048afad776f",
+    "handson/handson/evaluation/carton.py": "3746c44c361116999da11b5db88fff514be398ef5e56a84653aad2cb611a1cbf",
+    "handson/handson/evaluation/cli.py": "4a6bd4a6d1b52d2095e4919c1f96615484439cdf1c60722ba396f6874ee47939",
+    "handson/handson/evaluation/contact_numeric.py": "fe1ac67d681fa0975c0a06b45b07581df1a1d1d053292eb0d162d0424c467b6c",
+    "handson/handson/evaluation/contracts.py": "329caa0ab6a86c965c5a3bd1fa2411d4fa235e90245991c06b69b6839ef5ac5b",
+    "handson/handson/evaluation/eef52.py": "468867f903fd72d0dc2e1795049f91c6efaceb09df77edf6e3f777865d02d1cd",
+    "handson/handson/evaluation/evidence.py": "9cdfeef973a7c6cf38c0f517295153e64aaa7d736721b129067ff06253170ea2",
+    "handson/handson/evaluation/force_observer.py": "887338668a6295b6b3e91ad75a315341578fe0947da38a61b1d493fa2ed99309",
+    "handson/handson/evaluation/goals.py": "fb353005bd70b331991f628d7199842ca2410c0a664f75adee1c2048c3873e0a",
+    "handson/handson/evaluation/history.py": "ac77039828fdea0e675e7e399c9807db5b1af459fe4832c3e6d07b21fed99fb6",
+    "handson/handson/evaluation/language.py": "1a9cfe3eaf12974b149ad4bac456973ccd7256d67b86d95c08c73cd93380c9bd",
+    "handson/handson/evaluation/native.py": "29ac0ac943714154491b4b7cb769421e5dc33c0df194eaf3ae9f1d71c7ee7c05",
+    "handson/handson/evaluation/newton_runtime.py": "0f4f2b91d8ae1c3f32440e5008c7a86bec07bd8c8b8ab2130bf0ab6f67aebf46",
+    "handson/handson/evaluation/policy.py": "58a9db55d5c2ddb44e84a6d827ee69099f8cdd9dfe99e3c8ca7cb28994c88d17",
+    "handson/handson/evaluation/readback.py": "96d1d2bb015e6167d4b2fc44921f225394e36fc21a4dc241605d4d3aca70dee8",
+    "handson/handson/evaluation/rollout.py": "abb46118a28e4162640eaedd2efaae014ae9aee3a48c11cdb450bec7fda541b7",
+    "handson/handson/evaluation/schedule.py": "e430278f05ccf1a78869ff66f33571b5d2e0d2f5441124cf0f20b1df2e70da72",
+    "handson/handson/evaluation/setting_runtime.py": "6cec7470f74171653b7f3c8e384b9949571036fde817f8b9a48edababc351ecd",
+    "handson/handson/evaluation/settings.py": "d5fd93ea707c7c58235aaf36154ba3fe6b2b97acdd1add77cd58b0c643ef7555",
+    "handson/handson/evaluation/task_adapters.py": "b38ae02ddf091f43be8bc580750523e016d61f45cc2993800bbec32062b66d83",
+    "handson/handson/evaluation/task_contracts.py": "bc3db3ea5a0658f59dc6b09b84506736f18f4f25489db5c4583b6344e4877d8c",
+    "handson/handson/eef52.py": "38412002a368fdc365464a17fa54d78efa02ba11f046cc3e92079ba81005e807",
+    "handson/handson/sim/isaaclab/abc_collection_env.py": "4241fac88f844a1e4afc955df3f6951f88d13b7b6ab755c6712e6259e97633cc",
+    "handson/handson/sim/isaaclab/calibrated_cameras.py": "ec1ad9cec34920335ac7e4a4ed9406908ec5a56f2ac03ffdae1ed33e1ac86e55"
+  },
+  "runs": [
+    {
+      "raw_newton_orientation_audit_passed": true,
+      "task": "t09_insert_peg",
+      "actions": 90,
+      "inference_requests": 3,
+      "action_range": [
+        -0.5561959743499756,
+        2.4439125061035156
+      ],
+      "action_change_max": 0.7864552438259125,
+      "views": {
+        "main": {
+          "frames": 4,
+          "mean": [
+            138.6193802042675,
+            138.44256928181107,
+            138.93309344912828,
+            140.36128268930523
+          ],
+          "first_last_abs_mean": 11.431638693728857
+        },
+        "wrist_left": {
+          "frames": 4,
+          "mean": [
+            166.50035950602725,
+            165.927998067348,
+            165.97819870283018,
+            165.99663178066038
+          ],
+          "first_last_abs_mean": 0.6586265068134172
+        },
+        "wrist_right": {
+          "frames": 4,
+          "mean": [
+            169.53215736373167,
+            156.35115058307127,
+            157.63152106263104,
+            158.77530873296647
+          ],
+          "first_last_abs_mean": 42.85072638233753
+        }
+      },
+      "camera_contract_passed": true,
+      "checkpoint_sha256": "974714c2075c7bc0ca655662b7abb83f6431771ed79c69383cf9bb20f4745168",
+      "physics_steps": 720,
+      "physical_seconds": 3.0,
+      "measured_state_change_max": 1.7114616482071199,
+      "seed": 1,
+      "control_hz": 30,
+      "physics_dt": 0.004166666666666667,
+      "substeps": 8,
+      "frame_steps": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "native_success_observed": false,
+      "counts_as_formal_trial": false,
+      "termination_scope": "bounded_policy_integration",
+      "appearance_manifest_sha256": "7e1fff0a856e670be5955e30b20aba09cac9eb648852bb5146721eed03e79c5f",
+      "render_mode": "PathTracing",
+      "samples_per_pixel": 32,
+      "render_does_not_advance_physics": true,
+      "first_middle_last_all_views_reviewed": true,
+      "video_sha256": {
+        "main": "d31722a5ec23710cb06ab10687cd2f3dcf2bc3197d78ae76bdafe2b6eb87a86d",
+        "wrist_left": "0bea77da8d1f95610df30230fe01043f97b8e899abf8b9927aa12ec4e2015d1c",
+        "wrist_right": "89ea9fc8be07f59bb00b77c2f2ad582fe26467c634ecd5c735a5ac1cf0adaeba"
+      }
+    },
+    {
+      "raw_newton_orientation_audit_passed": true,
+      "task": "t26_place_fruit_in_bucket",
+      "actions": 90,
+      "inference_requests": 3,
+      "action_range": [
+        -0.6676653027534485,
+        2.062239408493042
+      ],
+      "action_change_max": 1.1972091794013977,
+      "views": {
+        "main": {
+          "frames": 4,
+          "mean": [
+            90.62924147801196,
+            90.3367429417122,
+            93.54179189435337,
+            96.26974368982566
+          ],
+          "first_last_abs_mean": 19.239918358053604
+        },
+        "wrist_left": {
+          "frames": 4,
+          "mean": [
+            159.32810534591195,
+            158.48725104821804,
+            158.66147962526205,
+            158.72259073637318
+          ],
+          "first_last_abs_mean": 0.8838115828092243
+        },
+        "wrist_right": {
+          "frames": 4,
+          "mean": [
+            150.53235554245282,
+            148.10053639281972,
+            135.25778138102726,
+            129.89076667321802
+          ],
+          "first_last_abs_mean": 60.331408051624734
+        }
+      },
+      "camera_contract_passed": true,
+      "checkpoint_sha256": "03c9b6b3df9d657f94a893090721046b809599aef18ee004e09e0d77ead928c7",
+      "physics_steps": 360,
+      "physical_seconds": 3.0,
+      "measured_state_change_max": 1.2178164944052696,
+      "seed": 1,
+      "control_hz": 30,
+      "physics_dt": 0.008333333333333333,
+      "substeps": 4,
+      "frame_steps": [
+        0,
+        30,
+        60,
+        90
+      ],
+      "native_success_observed": false,
+      "counts_as_formal_trial": false,
+      "termination_scope": "bounded_policy_integration",
+      "appearance_manifest_sha256": "7e1fff0a856e670be5955e30b20aba09cac9eb648852bb5146721eed03e79c5f",
+      "render_mode": "PathTracing",
+      "samples_per_pixel": 32,
+      "render_does_not_advance_physics": true,
+      "first_middle_last_all_views_reviewed": true,
+      "video_sha256": {
+        "main": "4ae14eb83eae83c6ba9acff56b0aa933e2cb6126dac9efa1f1612dfdf21517c7",
+        "wrist_left": "7210942c916722664d49bd2b71edec31b6435be12dd5d3ff17d66643b924864c",
+        "wrist_right": "6f3b560baa980983c3f96e967d9c1babaf95a88bc33e8d5cbb303cadab75faab"
+      }
+    }
+  ],
+  "validation": {
+    "local_regression_passed": 147,
+    "local_regression_skipped": 2,
+    "subtests_passed": 9,
+    "actual_runtime_camera_tests_passed": 4,
+    "all_physx_cpu_factories": 66,
+    "newton_cpu_factories": 2,
+    "worker_entry_executed": true,
+    "outer_cli_supervisor_gpu_tested": false,
+    "gpu_processes_and_locks_released": true
+  },
+  "limitations": {
+    "full_task_success_rates_validated": false,
+    "other_newton_tasks_and_models_validated": false,
+    "physx_image_pixel_equivalence_certified": false,
+    "fresh_install_tested": false,
+    "existing_lab_setup_adjustments": [
+      "coverage requirement 7.6.1 to 7.4.4",
+      "isaaclab_rl packaging requirement below 24 to 26.0"
+    ],
+    "host_driver": "570.153.02",
+    "sim6_minimum_driver": "570.158.01",
+    "test_only_driver_check_override": true,
+    "driver_override_in_release": false,
+    "failed_attempts_preserved": true,
+    "prior_segfault_root_cause_isolated": false
+  }
+}

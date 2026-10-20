@@ -1,0 +1,139 @@
+schema_version: 1
+task:
+  id: B320-BC017
+  name: t15_open_drawers
+  title: "B320-BC017 Dual Drawer Synchronized Open"
+  description: "Use each assigned hand to pull the highlighted drawer on its side beyond 60 percent travel; each side independently selects one of three drawers per episode, and both thresholds must be crossed within 1.2 seconds."
+  clean_room_replacement: true
+
+runtime:
+  simulator: isaac_sim
+  simulator_version: "5.1"
+  isaaclab_version: "2.3.2"
+  physics_backend: physx
+  physics_hz: 120
+  success_event_clock: physics_step
+  arm_render: live
+  canonical_camera_render: deferred_postrender
+
+robot:
+  arms: {model: rokae, count: 2}
+  hands: {model: wuji1, count: 2}
+  role_assignment:
+    left_hand: cyan_outlined_selected_left_drawer
+    right_hand: orange_outlined_selected_right_drawer
+    same_hand_substitution_allowed: false
+
+asset:
+  selection_status: integrated
+  recommended_source: https://polyhaven.com/a/metal_office_desk
+  required_license: CC0 1.0
+  baseline_uniform_scale: 0.45
+  task_scale_multiplier: 1.55
+  runtime_uniform_scale: 0.6975
+  drawer_travel_m: 0.248
+  moving_drawer_collision: source_body_sdf_plus_three_source_handle_convex_hulls
+  required_structure:
+    - fixed_desk_body
+    - three_independent_left_drawer_visuals_and_colliders
+    - three_independent_right_drawer_visuals_and_colliders
+    - six_prismatic_joints
+    - complete_local_material_and_texture_closure
+
+reset:
+  seedable: true
+  initial_condition: all_six_drawers_physically_closed_and_below_threshold
+  reset_all:
+    - all_six_drawer_positions_and_velocities
+    - independently_sampled_left_and_right_target_indices
+    - assigned_and_wrong_hand_contact_history
+    - threshold_crossing_events
+    - synchronization_window
+    - truth_validity
+    - success_latch
+
+target_selection:
+  candidates_per_side: [top, middle, bottom]
+  independently_randomized_between_sides: true
+  resampled: every_episode
+  fixed_within_episode: true
+  left_marker: emissive_cyan_outline
+  right_marker: emissive_orange_outline
+  success_scope: selected_pair_only
+  nonselected_drawer_motion_terminal: false
+
+success:
+  selected_left_open_fraction: "(selected_left_q - selected_left_closed_q) / (selected_left_open_q - selected_left_closed_q)"
+  selected_right_open_fraction: "(selected_right_q - selected_right_closed_q) / (selected_right_open_q - selected_right_closed_q)"
+  threshold: "> 0.60"
+  assigned_contact_causality: "assigned hand contacts its selected drawer on the preceding and crossing physics samples, with no other-hand contact on that selected drawer"
+  synchronization: "absolute first qualifying crossing-time difference <= 1.2 s (144 steps at 120 Hz)"
+  final_condition: both_selected_drawers_remain_strictly_beyond_threshold_for_2_physics_samples
+  nonselected_drawers_count_toward_success: false
+  nonselected_drawer_motion_terminal: false
+  deglitch_hold_seconds: 0.016666666666666666
+  release_required: false
+  prohibited_shortcuts:
+    - wrong_hand_or_same_hand_substitution
+    - proximity_only_contact
+    - control_frame_only_event_timing
+    - task_logic_writing_drawer_state
+    - exactly_60_percent
+    - sequential_crossings_over_1_2_seconds
+    - nonselected_drawer_satisfying_a_selected_target
+
+truth:
+  hard_terminal_failure_when_missing_or_invalid:
+    - either_selected_target_index
+    - either_selected_drawer_dof_position
+    - either_selected_drawer_assigned_or_wrong_hand_contact_channel
+    - finite_physics_timestamp
+    - normalized_travel_outside_minus_5_to_105_percent
+
+observations:
+  fixed_shape_required: true
+  required:
+    - two_selected_target_indices
+    - six_normalized_drawer_progress_values
+    - twelve_hand_drawer_contact_channels
+    - two_selected_causal_contact_armed_flags
+    - two_selected_threshold_event_flags_and_ages
+    - truth_validity
+    - monotonic_success_or_failure_terminal_latch
+    - first_success_step_or_failure_reason
+
+camera:
+  views: [head, wrist_left, wrist_right]
+  head_resolution_wh: [1280, 640]
+  wrist_resolution_wh: [848, 480]
+  framing_requirement: all_six_drawers_both_selected_outlines_and_both_hands_remain_readable
+
+environment:
+  visual_root: /World/VisualEnvironment/BC017Study
+  composition: post_physx_and_tensor_initialization
+  render_only: true
+  physical_supports: canonical_floor_and_bc017_worktable
+
+collection:
+  raw_action_stream_required: true
+  physical_truth_trace_required: true
+  physical_replay_supported: true
+  episode_metadata_required:
+    - selected_left_drawer_level
+    - selected_right_drawer_level
+  collection_ready: true
+
+validation:
+  runtime_checks:
+    - runtime_usd_exists
+    - six_drawer_dofs_available
+    - twelve_contact_channels_available
+    - two_selected_target_indices_available
+    - cyan_and_orange_selected_outlines_available
+    - fixed_fixture_pose_available
+    - three_camera_capture_available
+  claims:
+    asset_integrated: true
+    preview_ready: true
+    closed_and_full_travel_penetration_validated: true
+    collection_ready: true

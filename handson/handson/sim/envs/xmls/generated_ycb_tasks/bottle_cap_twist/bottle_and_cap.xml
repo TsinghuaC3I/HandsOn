@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="bottle_cap_twist_primitives">
+  <default>
+    <default class="bct_collision">
+      <geom group="0" friction="1.1 0.015 0.0002" solref="0.004 1" solimp="0.95 0.995 0.001" />
+    </default>
+    <default class="bct_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+  </default>
+
+  <asset>
+    <material name="bct_bottle_body_mat" rgba="0.86 0.91 0.96 0.58" specular="0.35" shininess="0.35" />
+    <material name="bct_bottle_liquid_mat" rgba="0.48 0.66 0.86 0.38" specular="0.15" shininess="0.2" />
+    <material name="bct_bottle_neck_mat" rgba="0.78 0.86 0.92 0.72" specular="0.25" shininess="0.3" />
+    <material name="bct_cap_mat" rgba="0.10 0.34 0.82 1" specular="0.35" shininess="0.45" />
+    <material name="bct_cap_top_mat" rgba="0.06 0.18 0.46 1" specular="0.3" shininess="0.35" />
+    <material name="bct_mouth_mat" rgba="0.95 0.95 0.98 0.65" specular="0.2" shininess="0.25" />
+    <material name="bct_target_mat" rgba="0.16 0.80 0.34 0.28" specular="0" shininess="0" />
+  </asset>
+
+  <worldbody>
+    <body name="bottle_root_body" pos="0.08 0 0.92" quat="1 0 0 0">
+      <geom name="bct_bottle_body_collision" class="bct_collision" type="cylinder" size="0.037 0.078" pos="0 0 0.078" density="900" rgba="0.76 0.86 0.96 0.22" />
+      <geom name="bct_bottle_body_visual" class="bct_visual" type="cylinder" size="0.039 0.078" pos="0 0 0.078" material="bct_bottle_body_mat" />
+      <geom name="bct_bottle_liquid_visual" class="bct_visual" type="cylinder" size="0.034 0.052" pos="0 0 0.062" material="bct_bottle_liquid_mat" />
+      <geom name="bct_bottle_shoulder_visual" class="bct_visual" type="sphere" size="0.039" pos="0 0 0.155" material="bct_bottle_body_mat" />
+      <geom name="bct_bottle_neck_collision" class="bct_collision" type="cylinder" size="0.022 0.030" pos="0 0 0.190" density="900" rgba="0.74 0.83 0.92 0.30" />
+      <geom name="bct_bottle_neck_visual" class="bct_visual" type="cylinder" size="0.023 0.030" pos="0 0 0.190" material="bct_bottle_neck_mat" />
+      <geom name="bct_bottle_mouth_ring_visual" class="bct_visual" type="cylinder" size="0.024 0.0015" pos="0 0 0.221" material="bct_mouth_mat" />
+      <site name="bct_bottle_mouth" pos="0 0 0.221" size="0.005" rgba="0.95 0.95 0.98 0.6" />
+      <site name="bct_bottle_axis_top" pos="0 0 0.245" size="0.003" rgba="0.1 0.7 0.2 0.45" />
+      <geom name="bct_recap_target_zone" class="bct_visual" type="cylinder" size="0.036 0.0012" pos="0 0 0.2225" material="bct_target_mat" />
+    </body>
+
+    <body name="cap_root_body" pos="0.08 0 1.159" quat="1 0 0 0">
+      <freejoint name="cap_root" />
+      <geom name="bct_cap_collision" class="bct_collision" type="cylinder" size="0.030 0.0175" density="760" material="bct_cap_mat" />
+      <geom name="bct_cap_visual" class="bct_visual" type="cylinder" size="0.031 0.0175" material="bct_cap_mat" />
+      <geom name="bct_cap_top_visual" class="bct_visual" type="cylinder" size="0.029 0.002" pos="0 0 0.019" material="bct_cap_top_mat" />
+      <geom name="bct_cap_grip_0" class="bct_visual" type="box" size="0.002 0.004 0.015" pos="0.031 0 0" material="bct_cap_top_mat" />
+      <geom name="bct_cap_grip_1" class="bct_visual" type="box" size="0.002 0.004 0.015" pos="-0.031 0 0" material="bct_cap_top_mat" />
+      <geom name="bct_cap_grip_2" class="bct_visual" type="box" size="0.004 0.002 0.015" pos="0 0.031 0" material="bct_cap_top_mat" />
+      <geom name="bct_cap_grip_3" class="bct_visual" type="box" size="0.004 0.002 0.015" pos="0 -0.031 0" material="bct_cap_top_mat" />
+      <site name="bct_cap_center" pos="0 0 0" size="0.004" rgba="0.05 0.18 0.75 0.65" />
+      <site name="bct_cap_bottom" pos="0 0 -0.0175" size="0.003" rgba="0.05 0.18 0.75 0.55" />
+    </body>
+  </worldbody>
+</mujoco>

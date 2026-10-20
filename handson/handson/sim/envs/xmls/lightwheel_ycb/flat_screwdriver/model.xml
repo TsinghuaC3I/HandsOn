@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1381.52" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="flat_screwdriver_material" file="visuals/T_flat_screwdriver_BC001.png"/>
+    <material name="flat_screwdriver_material" texture="flat_screwdriver_material" specular="0.3103" shininess="0.2828"/>
+    <mesh name="flat_screwdriver_vis" file="visuals/flat_screwdriver.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider1_m_collision" file="collision/flat_screwdriver_Collider1_Collider1_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider2_m_collision" file="collision/flat_screwdriver_Collider1_Collider2_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider3_m_collision" file="collision/flat_screwdriver_Collider1_Collider3_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider4_m_collision" file="collision/flat_screwdriver_Collider1_Collider4_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider5_m_collision" file="collision/flat_screwdriver_Collider1_Collider5_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider6_m_collision" file="collision/flat_screwdriver_Collider1_Collider6_m.obj"/>
+    <mesh name="flat_screwdriver_Collider1_Collider7_m_collision" file="collision/flat_screwdriver_Collider1_Collider7_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="flat_screwdriver_material" mesh="flat_screwdriver_vis"/>
+        <geom name="flat_screwdriver_Collider1_Collider1_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider1_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider2_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider2_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider3_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider3_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider4_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider4_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider5_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider5_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider6_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider6_m_collision"/>
+        <geom name="flat_screwdriver_Collider1_Collider7_m" class="collision" type="mesh" mesh="flat_screwdriver_Collider1_Collider7_m_collision"/>
+      <geom size="0.015635 0.107792 0.016082" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

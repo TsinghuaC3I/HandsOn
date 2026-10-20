@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="203.129" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="cracker_box_material" file="visuals/T_cracker_box_BC001.png"/>
+    <material name="cracker_box_material" texture="cracker_box_material" specular="0.310345" shininess="0"/>
+    <mesh name="cracker_box_vis" file="visuals/cracker_box.obj"/>
+    <mesh name="cracker_box_Collider1_m_collision" file="collision/cracker_box_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="cracker_box_material" mesh="cracker_box_vis"/>
+        <geom name="cracker_box_Collider1_m" class="collision" type="mesh" mesh="cracker_box_Collider1_m_collision"/>
+      <geom size="0.079906 0.0299465 0.1063595" pos="0.0 -0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

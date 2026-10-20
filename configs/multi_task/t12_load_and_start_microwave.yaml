@@ -1,0 +1,16 @@
+env_name: t12_load_and_start_microwave
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Open the microwave door, carry the plate with its food box into the microwave, close the door, then press the green start button."
+robot_type: dual_arm
+time_limit_seconds: 180
+skills:
+  - bimanual_coordination
+  - articulated_object
+  - sequential_manipulation
+objects:
+  - microwave
+  - plate
+  - 003_cracker_box_or_008_pudding_box

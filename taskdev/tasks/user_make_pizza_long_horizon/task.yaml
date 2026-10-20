@@ -1,0 +1,218 @@
+schema_version: 1
+task:
+  id: user_make_pizza_long_horizon
+  title: "Prepare, bake, and cut a pizza"
+  description: "User-requested long-horizon food-preparation task using an externally sourced white pizza-dough mesh, realistic Poly Haven tableware, and Kenney ingredients/tools: knead and shape the dough, add sauce and toppings, pan-bake, then perform two cross-cuts so the source pizza asset's eight independent slice nodes can be separated and plated."
+  taxonomy:
+    family: long_horizon
+    interactions: [kneading, rolling, ingredient_placement, pan_cooking, tool_use, cutting, pick_place]
+    horizon: long
+    handedness: bimanual
+source:
+  origin: original
+  attribution: "Task brief supplied by the user; ingredient/tool meshes are exact files from Kenney Food Kit 2.0, the white Pizza Dough mesh is by michael.diaz029 on Sketchfab (CC BY 4.0), and bowl, cutting board, brass pan, and serving plate are exact Poly Haven models (CC0). No task geometry is authored in this task; the dough's runtime material is overridden to solid white."
+  reference: "https://kenney.nl/assets/food-kit; https://sketchfab.com/3d-models/pizza-dough-608fa60edb4a41dcb24e4f1580d576d4; https://polyhaven.com/a/wooden_bowl_01; https://polyhaven.com/a/wooden_cutting_board; https://polyhaven.com/a/brass_pan_01; https://polyhaven.com/a/carved_wooden_plate"
+  license: "Kenney CC0 1.0; Pizza Dough CC BY 4.0 (author attribution retained in assets/sketchfab_pizza_dough/license.txt); Poly Haven assets CC0 1.0 (asset-level notices retained beside downloaded files)"
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [-0.7071067812, 0.0, 0.0, 0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.55, -0.45, 0.90]
+    max: [0.15, 0.45, 1.40]
+  targets:
+    - id: bowl_kneading
+      arm: either
+      frame: world
+      position_m: [-0.18, 0.25, 1.00]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: dough_shaping_board
+      arm: either
+      frame: world
+      position_m: [-0.02, 0.20, 0.98]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: pan_cooking
+      arm: either
+      frame: world
+      position_m: [-0.08, -0.18, 1.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: pizza_cutting
+      arm: either
+      frame: world
+      position_m: [0.02, 0.05, 1.00]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: shared_colormap
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/colormap.png
+    kind: texture
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: false, approximation: none}
+  - id: raw_dough
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/sketchfab_pizza_dough/pizza_dough.glb
+    kind: mesh
+    required: true
+    scale_m: [0.008, 0.008, 0.008]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: kneading_bowl
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/polyhaven_wooden_bowl_01/wooden_bowl_01.gltf
+    kind: mesh
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: rolling_pin
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/rollingPin.glb
+    kind: mesh
+    required: true
+    scale_m: [0.12, 0.12, 0.12]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: cutting_board
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/polyhaven_wooden_cutting_board/wooden_cutting_board.gltf
+    kind: mesh
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: ketchup_sauce
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/bottle-ketchup.glb
+    kind: mesh
+    required: true
+    scale_m: [0.12, 0.12, 0.12]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: cheese_topping
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/cheese.glb
+    kind: mesh
+    required: true
+    scale_m: [0.08, 0.08, 0.08]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: tomato_topping
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/tomato-slice.glb
+    kind: mesh
+    required: true
+    scale_m: [0.08, 0.08, 0.08]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: pepper_topping
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/pepper.glb
+    kind: mesh
+    required: true
+    scale_m: [0.08, 0.08, 0.08]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: frying_pan
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/polyhaven_brass_pan_01/brass_pan_01.gltf
+    kind: mesh
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: assembled_pizza_slices
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/pizza.glb
+    kind: mesh
+    required: true
+    scale_m: [0.08, 0.08, 0.08]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: pizza_cutter
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/kenney_food_kit/pizza-cutter.glb
+    kind: mesh
+    required: true
+    scale_m: [0.12, 0.12, 0.12]
+    collision: {enabled: true, approximation: convex_hull}
+  - id: serving_plate
+    path: taskdev/tasks/user_make_pizza_long_horizon/assets/polyhaven_carved_wooden_plate/carved_wooden_plate.gltf
+    kind: mesh
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: true, approximation: convex_hull}
+reset:
+  seedable: true
+  max_settle_steps: 480
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - success_false_at_reset
+contact:
+  monitored_pairs:
+    - id: hand_dough
+      bodies: ["robot/hands/*", "assets/raw_dough"]
+      max_penetration_m: 0.005
+    - id: hand_rolling_pin
+      bodies: ["robot/hands/*", "assets/rolling_pin"]
+      max_penetration_m: 0.005
+    - id: cutter_pizza
+      bodies: ["robot/hands/*", "assets/pizza_cutter"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: robot_table
+      bodies: ["robot/*", "environment/table"]
+    - id: hand_pan_during_cut
+      bodies: ["robot/hands/*", "assets/frying_pan"]
+success:
+  logic: all
+  predicates:
+    - id: kneading_stage
+      type: ordered_contact_stage
+      parameters: {object: assets/raw_dough, container: assets/kneading_bowl, minimum_duration_s: 1.0, status: pending_action_validation}
+    - id: shaped_dough_stage
+      type: rolling_contact_stage
+      parameters: {tool: assets/rolling_pin, object: assets/raw_dough, target: assets/cutting_board, status: pending_action_validation}
+    - id: toppings_in_order
+      type: ordered_placement
+      parameters: {order: [assets/ketchup_sauce, assets/cheese_topping, assets/tomato_topping, assets/pepper_topping], target: assets/raw_dough, status: pending_action_validation}
+    - id: cooked_pizza_stage
+      type: pan_cook_hold
+      parameters: {object: assets/assembled_pizza_slices, pan: assets/frying_pan, minimum_duration_s: 2.0, status: pending_action_validation}
+    - id: two_complete_cross_cuts
+      type: tool_path_intersection
+      parameters: {tool: assets/pizza_cutter, object: assets/assembled_pizza_slices, required_paths: 2, status: pending_action_validation}
+    - id: eight_slices_plated
+      type: relative_pose_set
+      parameters: {objects: assets/assembled_pizza_slices.slice1_to_slice8, target: assets/serving_plate, status: pending_action_validation}
+    - id: physical_state_only
+      type: write_audit
+      parameters: {max_object_pose_writes_during_action: 0, max_object_velocity_writes_during_action: 0}
+  hold_steps: 30
+  timeout_steps: 3600
+camera:
+  primary: head
+  prim_path: /World/envs/env_0/HeadRecordCamera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 480
+  max_linear_velocity_mps: 5.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, contacts, success, task_stage, ingredient_order, cut_paths, slice_poses]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/user_make_pizza_long_horizon/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

@@ -1,0 +1,495 @@
+{
+  "articulation_view": {
+    "errors": [],
+    "pass": true,
+    "selected_dof_count": 2,
+    "selected_path": "/World/Task/B320Benchmark/fixture_base/world_fixed_joint"
+  },
+  "asset_hashes": {
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/LICENSE.txt": "788190065ebb1ee7d31ab2b6b3b4685e9f081b683cc8df3e55b9dfb089421fa4",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/asset_manifest.json": "9a16c02611c5c82ec274774f6607df52fbc940f79187aa7eed8856a655003ba6",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd": "4ec7520f2b415f6ee2adcb8fc24733b69900a51cb9478d6951a7a190e522b033",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd": "ac8b8177efbeb2ede8f70e56dacd21f127dc85274944592d14578d4295f4d44b",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd": "20b73b6b3f51b6811368fc7b8f3905fd6e522da859146f58908ce5f712329f98",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_arm_4k.jpg": "a4e4b31a082876f4e6b615dce65e063e94d6bfd6c7d8a74d6d6697280aa7d156",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_diff_4k.jpg": "730e6e287df5901e9ca36639edeba2d6e77939514fa3a2fb4c13812eec735135",
+    "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_nor_gl_4k.jpg": "dd76bd501447bc5f25f108d0feacd17e3835c71fd73ca6ad062f4620040ab6b7",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip": "dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf"
+  },
+  "checks": {
+    "asset_hashes": true,
+    "cabinet_topology": true,
+    "door_joints": true,
+    "dual_rokae_wuji": true,
+    "head_camera_preview": true,
+    "lighting": true,
+    "robot_cabinet_initial_clearance": true,
+    "selected_scale_and_table_pose": true,
+    "zero_action_stability": true
+  },
+  "core_scene_pass": true,
+  "elapsed_wall_seconds": 0.4600658416748047,
+  "head_camera": {
+    "bytes": 922446,
+    "camera_keys": [
+      "head_camera",
+      "wrist_left_camera",
+      "wrist_right_camera"
+    ],
+    "deferred_camera_render": false,
+    "expected_prim_path": "/World/RecordCameras/head_camera",
+    "metrics": {
+      "black_fraction": 0.0060546875,
+      "dtype": "uint8",
+      "entropy_bits": 6.15607571165402,
+      "mean_rgb": 176.747705078125,
+      "shape_hwc": [
+        480,
+        640,
+        3
+      ],
+      "std_rgb": 45.36465976177833,
+      "unique_values": 243
+    },
+    "pass": true,
+    "path": "/tmp/fu001_runtime_cpu_final2_223508/fu001_head_preview.png",
+    "prim_path": "/World/RecordCameras/head_camera",
+    "sha256": "56ce970e1f9396c07187cfbfbb83fd2b6c6a87f67ffc589c53befc031743ad57",
+    "stage_prim_is_camera": true
+  },
+  "hidden_native_fixture_paths": [],
+  "historical_asset": "/home/user/dexjoco_collection_latest/taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/mobility.usd",
+  "historical_asset_hashes": {
+    "dexjoco/dexjoco/sim/envs/xmls/rokae_wuji1_bimanual.xml": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+    "dexjoco/dexjoco/sim/isaaclab/abc_collection_env.py": "d7e45610df6d90e7f913784f0997399383ecac3e92d32d1601c45ecd54ebc4bf",
+    "dexjoco/dexjoco/sim/isaaclab/recording_cameras.py": "f6c67996290f451e9552d7612951b6a9c1502ca4614e0f9f7aa538fe11859ad7",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/config.yaml": "96d93a6f2232a7aa605375b1e90bd6d11ef9cc83c751ff0b64c7fb170c305a67",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_0.jpg": "ac39178048c84f7b229abc893d1a2b0ae42f176c99dffb2da26c4e04111af8de",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_1.jpg": "f9b500da9e46f8c1afc63f81299b04c0d98a08bd00ead03a4b4df7e66e18860c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_2.png": "fca29c933bfbec5df7928d871076df9ae70598d378ce42ce973ec95d4310189a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_3.jpg": "7af4d6d5200361e3ca22c0b59f8e61d6dfa5386eea23f5ccee7acdb13f7b2c9c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_4.jpg": "172ef612abe5c96b979e8b1fc45a29c4f2ae5d91aa093b37559deec49762651d",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/materials/textures/texture_5.png": "fca29c933bfbec5df7928d871076df9ae70598d378ce42ce973ec95d4310189a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_base.usd": "d49014e865264e889bd64182af6b493bb23cc251d87d1833c156fb72233dd93f",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_physics.usd": "cb141c0188ba6c03d55ca5c9c49ba228372641e24575896d2826f2d4dd49127a",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_robot.usd": "5ddec04dd3e11190a48a5a450ebf8bbfca0555b9c87675ae3daf288327e42b07",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/configuration/mobility_sensor.usd": "75e6ea61cf2d8fda098865629dfbfa44beb7c2cde97726b4dd8a505eba92f8e1",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/meta.json": "0dd38866c35edae121bfb73491e2432f3f904b25b4217852d2369b3280896f7c",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/mobility.usd": "9d3caff24dcf4b8465baa0d8186e588da33c1f4ce5cebd864358ababf15e9c46",
+    "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/source_rows.authoritative.json": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987"
+  },
+  "initial_clearance": {
+    "cabinet_collider_count": 5,
+    "maximum_aabb_overlap_m": 0.0,
+    "overlap_pairs": [],
+    "pass": true,
+    "robot_collider_count": 60,
+    "threshold_m": 0.002
+  },
+  "joints": {
+    "joints": {
+      "joint_11": {
+        "body0_owner_paths": [
+          "/World/Task/B320Benchmark/fixture_base"
+        ],
+        "body1_owner_paths": [
+          "/World/Task/B320Benchmark/cabinet_door_right"
+        ],
+        "drive_authoring": "canonical_spawn_before_physx_init",
+        "drive_damping": 7.0,
+        "drive_max_force": 80.0,
+        "drive_stiffness": 35.0,
+        "initial_fraction": 0.15,
+        "initial_state_authored": false,
+        "initial_target_deg": -0.23561944901923448,
+        "lower_limit_deg": -90.0,
+        "path": "/World/Task/B320Benchmark/joint_11",
+        "upper_limit_deg": 0.0
+      },
+      "target_joint_revolute": {
+        "body0_owner_paths": [
+          "/World/Task/B320Benchmark/fixture_base"
+        ],
+        "body1_owner_paths": [
+          "/World/Task/B320Benchmark/cabinet_door_left"
+        ],
+        "drive_authoring": "canonical_spawn_before_physx_init",
+        "drive_damping": 7.0,
+        "drive_max_force": 80.0,
+        "drive_stiffness": 35.0,
+        "initial_fraction": 0.15,
+        "initial_state_authored": false,
+        "initial_target_deg": 0.23561944901923448,
+        "lower_limit_deg": 0.0,
+        "path": "/World/Task/B320Benchmark/target_joint_revolute",
+        "upper_limit_deg": 90.0
+      }
+    },
+    "required_joint_names": [
+      "target_joint_revolute",
+      "joint_11"
+    ]
+  },
+  "lights": {
+    "distant": {
+      "intensity": 2500.0,
+      "path": "/World/FU001CoreScene/DistantLight"
+    },
+    "dome": {
+      "intensity": 350.0,
+      "path": "/World/FU001CoreScene/DomeLight"
+    }
+  },
+  "placement": {
+    "composed_world_scale_xyz": [
+      0.55,
+      0.55,
+      0.55
+    ],
+    "historical_reference_asset": "/home/user/dexjoco_collection_latest/taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/dv_double_cabinet_44781/mobility.usd",
+    "historical_reference_selected": false,
+    "initial_oriented_aabb_m": [
+      [
+        -0.3338337848692329,
+        -0.3299833667274687,
+        0.891000000013845
+      ],
+      [
+        0.005315813808350528,
+        0.3270876508319952,
+        1.5410283781546628
+      ]
+    ],
+    "runtime_orientation_wxyz": [
+      0.5,
+      0.5,
+      -0.5,
+      -0.5
+    ],
+    "runtime_scale": 0.55,
+    "selected_asset_bundle": "polyhaven_painted_wooden_cabinet",
+    "selected_asset_id": "cabinet-polyhaven-painted",
+    "selected_runtime_components": {
+      "body": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd",
+      "door_left": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd",
+      "door_right": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd"
+    },
+    "source_identity_scale_xyz": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "spawn_evidence": {
+      "asset_bundle": "polyhaven_painted_wooden_cabinet",
+      "asset_manifest": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/asset_manifest.json",
+      "body_visual_path": "/World/Task/B320Benchmark/fixture_base/source_visual",
+      "collision_paths": {
+        "cabinet_door_left": [
+          "/World/Task/B320Benchmark/cabinet_door_left/source_visual/painted_wooden_cabinet_door_01/commode_016"
+        ],
+        "cabinet_door_right": [
+          "/World/Task/B320Benchmark/cabinet_door_right/source_visual/painted_wooden_cabinet_door_02/commode_015"
+        ],
+        "fixture_base": [
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet/commode_014",
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_02/commode_017",
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_01/commode_018"
+        ]
+      },
+      "collision_policy": "source_mesh_topology_then_physx_convex_decomposition",
+      "door_pivot_compensation": "source node translation cancelled once in link visual parent",
+      "door_source_pivots_m": {
+        "cabinet_door_left": [
+          -0.5682284236,
+          0.5324437022,
+          0.2114711404
+        ],
+        "cabinet_door_right": [
+          0.5677881241,
+          0.5334159732,
+          0.2114711404
+        ]
+      },
+      "door_visual_paths": {
+        "cabinet_door_left": "/World/Task/B320Benchmark/cabinet_door_left/source_visual",
+        "cabinet_door_right": "/World/Task/B320Benchmark/cabinet_door_right/source_visual"
+      },
+      "door_world_pivots_w": {
+        "cabinet_door_left": [
+          -0.26630912722,
+          0.31252563298,
+          1.184048013445
+        ],
+        "cabinet_door_right": [
+          -0.26630912722,
+          -0.31228346825500003,
+          1.184582762495
+        ]
+      },
+      "hinge_axis_runtime": "+Z",
+      "hinge_axis_source": "+Y",
+      "internal_collision_filter": {
+        "leaf_paths": {
+          "cabinet_door_left": [
+            "/World/Task/B320Benchmark/cabinet_door_left/source_visual/painted_wooden_cabinet_door_01/commode_016"
+          ],
+          "cabinet_door_right": [
+            "/World/Task/B320Benchmark/cabinet_door_right/source_visual/painted_wooden_cabinet_door_02/commode_015"
+          ]
+        },
+        "reason": "source closed-pose shell/leaf mesh overlap; preserve hand/table contacts",
+        "scope": "source cabinet shell colliders <-> source door colliders",
+        "shell_paths": [
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet/commode_014",
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_02/commode_017",
+          "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_01/commode_018"
+        ],
+        "type": "UsdPhysics.FilteredPairsAPI"
+      },
+      "joint_axis": {
+        "joint_11": "Z",
+        "target_joint_revolute": "Z"
+      },
+      "joint_limits_deg": {
+        "joint_11": [
+          -90.0,
+          0.0
+        ],
+        "target_joint_revolute": [
+          0.0,
+          90.0
+        ]
+      },
+      "license": "CC0 1.0",
+      "license_url": "https://polyhaven.com/license",
+      "placeholder_collision": false,
+      "root_home_w": [
+        -0.15,
+        0.0,
+        0.891203977235
+      ],
+      "runtime_components": {
+        "body": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd",
+        "door_left": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd",
+        "door_right": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd"
+      },
+      "runtime_orientation_wxyz": [
+        0.5,
+        0.5,
+        -0.5,
+        -0.5
+      ],
+      "runtime_scale": 0.55,
+      "source_archive": "/home/user/dexjoco_collection_latest/taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip",
+      "source_archive_sha256": "dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf",
+      "source_to_runtime": "(x,y,z) -> (-z,-x,y)",
+      "source_url": "https://polyhaven.com/a/painted_wooden_cabinet"
+    },
+    "table_clearance_m": 0.0010000000138450371,
+    "table_top_z_m": 0.89,
+    "translation_xyz_m": [
+      -0.15,
+      0.0,
+      0.891203977235
+    ],
+    "world_aabb_m": [
+      [
+        -0.3338337848692329,
+        -0.3299833667274687,
+        0.891000000013845
+      ],
+      [
+        0.005315813808350528,
+        0.3270876508319952,
+        1.5410283781546628
+      ]
+    ]
+  },
+  "render_mode": "RayTracedLighting",
+  "reset_info": {
+    "canonical_env_reset": true,
+    "isaac_warnings": [],
+    "reset_phase": "constructor_before_runner_stage_mutations",
+    "second_reset_avoided": true,
+    "seed": 0
+  },
+  "reset_staging": {
+    "arm_home_source": "_C_TOOL_SPREAD_ARM_HOME",
+    "contact_policy": "ordinary_hand_door_and_table_contacts_remain_enabled",
+    "hand_door_collision_filtering": false,
+    "mode": "collision_clear_spread_home",
+    "tcp_y_m": [
+      -0.36,
+      0.36
+    ]
+  },
+  "robot": {
+    "pass": true,
+    "sides": {
+      "left": {
+        "arm_joint_names": [
+          "joint1_left",
+          "joint2_left",
+          "joint3_left",
+          "joint4_left",
+          "joint5_left",
+          "joint6_left",
+          "joint7_left"
+        ],
+        "hand_joint_names": [
+          "left_finger1_joint1",
+          "left_finger1_joint2",
+          "left_finger1_joint3",
+          "left_finger1_joint4",
+          "left_finger2_joint1",
+          "left_finger2_joint2",
+          "left_finger2_joint3",
+          "left_finger2_joint4",
+          "left_finger3_joint1",
+          "left_finger3_joint2",
+          "left_finger3_joint3",
+          "left_finger3_joint4",
+          "left_finger4_joint1",
+          "left_finger4_joint2",
+          "left_finger4_joint3",
+          "left_finger4_joint4",
+          "left_finger5_joint1",
+          "left_finger5_joint2",
+          "left_finger5_joint3",
+          "left_finger5_joint4"
+        ],
+        "pass": true,
+        "present": true,
+        "root_path": "/World/DexJoCoRobots/LeftRobot"
+      },
+      "right": {
+        "arm_joint_names": [
+          "joint1_right",
+          "joint2_right",
+          "joint3_right",
+          "joint4_right",
+          "joint5_right",
+          "joint6_right",
+          "joint7_right"
+        ],
+        "hand_joint_names": [
+          "right_finger1_joint1",
+          "right_finger1_joint2",
+          "right_finger1_joint3",
+          "right_finger1_joint4",
+          "right_finger2_joint1",
+          "right_finger2_joint2",
+          "right_finger2_joint3",
+          "right_finger2_joint4",
+          "right_finger3_joint1",
+          "right_finger3_joint2",
+          "right_finger3_joint3",
+          "right_finger3_joint4",
+          "right_finger4_joint1",
+          "right_finger4_joint2",
+          "right_finger4_joint3",
+          "right_finger4_joint4",
+          "right_finger5_joint1",
+          "right_finger5_joint2",
+          "right_finger5_joint3",
+          "right_finger5_joint4"
+        ],
+        "pass": true,
+        "present": true,
+        "root_path": "/World/DexJoCoRobots/RightRobot"
+      }
+    }
+  },
+  "runner_rc": 0,
+  "schema": "fu001_core_scene_live_v1",
+  "scope": "core_scene_only",
+  "selected_asset": {
+    "archive": "/home/user/dexjoco_collection_latest/taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip",
+    "bundle": "polyhaven_painted_wooden_cabinet",
+    "hashes": {
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/LICENSE.txt": "788190065ebb1ee7d31ab2b6b3b4685e9f081b683cc8df3e55b9dfb089421fa4",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/asset_manifest.json": "9a16c02611c5c82ec274774f6607df52fbc940f79187aa7eed8856a655003ba6",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd": "4ec7520f2b415f6ee2adcb8fc24733b69900a51cb9478d6951a7a190e522b033",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd": "ac8b8177efbeb2ede8f70e56dacd21f127dc85274944592d14578d4295f4d44b",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd": "20b73b6b3f51b6811368fc7b8f3905fd6e522da859146f58908ce5f712329f98",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_arm_4k.jpg": "a4e4b31a082876f4e6b615dce65e063e94d6bfd6c7d8a74d6d6697280aa7d156",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_diff_4k.jpg": "730e6e287df5901e9ca36639edeba2d6e77939514fa3a2fb4c13812eec735135",
+      "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/textures/painted_wooden_cabinet_nor_gl_4k.jpg": "dd76bd501447bc5f25f108d0feacd17e3835c71fd73ca6ad062f4620040ab6b7",
+      "taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip": "dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf"
+    },
+    "runtime_components": {
+      "body": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd",
+      "door_left": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd",
+      "door_right": "/home/user/dexjoco_collection_latest/dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd"
+    },
+    "runtime_scale": 0.55
+  },
+  "source_asset": "polyhaven_painted_wooden_cabinet",
+  "stability": {
+    "after": {
+      "available": true,
+      "positions_rad": [
+        0.3141592741012573,
+        -0.3141592741012573
+      ],
+      "velocities_rad_s": [
+        -1.5723315704985197e-10,
+        -4.716851909059017e-10
+      ]
+    },
+    "before": {
+      "available": true,
+      "positions_rad": [
+        0.3141592741012573,
+        -0.3141592741012573
+      ],
+      "velocities_rad_s": [
+        -1.5723204682682734e-10,
+        -4.716851909059017e-10
+      ]
+    },
+    "finite": true,
+    "maximum_dof_position_drift_rad": 0.0,
+    "maximum_dof_speed_rad_s": 4.716851909059017e-10,
+    "pass": true,
+    "physics_hz": 120,
+    "settle_steps": 120,
+    "zero_action_seconds": 3.0,
+    "zero_action_steps": 360
+  },
+  "success_motion_executed": false,
+  "task_complete": false,
+  "task_id": "B320-FU001",
+  "topology": {
+    "articulation_root_paths": [
+      "/World/Task/B320Benchmark/fixture_base/world_fixed_joint"
+    ],
+    "collision_count": 5,
+    "collision_owner_map": {
+      "/World/Task/B320Benchmark/cabinet_door_left/source_visual/painted_wooden_cabinet_door_01/commode_016": "/World/Task/B320Benchmark/cabinet_door_left",
+      "/World/Task/B320Benchmark/cabinet_door_right/source_visual/painted_wooden_cabinet_door_02/commode_015": "/World/Task/B320Benchmark/cabinet_door_right",
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet/commode_014": "/World/Task/B320Benchmark/fixture_base",
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_01/commode_018": "/World/Task/B320Benchmark/fixture_base",
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_02/commode_017": "/World/Task/B320Benchmark/fixture_base"
+    },
+    "collision_paths": [
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet/commode_014",
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_02/commode_017",
+      "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_01/commode_018",
+      "/World/Task/B320Benchmark/cabinet_door_left/source_visual/painted_wooden_cabinet_door_01/commode_016",
+      "/World/Task/B320Benchmark/cabinet_door_right/source_visual/painted_wooden_cabinet_door_02/commode_015"
+    ],
+    "gprim_count": 5,
+    "pass": true,
+    "revolute_joint_paths": [
+      "/World/Task/B320Benchmark/target_joint_revolute",
+      "/World/Task/B320Benchmark/joint_11"
+    ],
+    "rigid_body_count": 3,
+    "rigid_body_paths": [
+      "/World/Task/B320Benchmark/fixture_base",
+      "/World/Task/B320Benchmark/cabinet_door_left",
+      "/World/Task/B320Benchmark/cabinet_door_right"
+    ]
+  }
+}

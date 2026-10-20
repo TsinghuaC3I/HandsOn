@@ -1,0 +1,141 @@
+schema_version: 1
+task:
+  id: d20_microwave_hot_dog_plating
+  canonical_id: D20
+  title: "D20 Microwave Hot Dog Heating and Plating"
+  description: "Use tongs to load a hot dog into a microwave, close the door, press start, stop heating inside the done window signalled by the indicator light, take the hot dog out with the tongs, plate it, arrange fork/mustard/mug around the plate, and leave the microwave stopped and closed."
+  task_complete: false
+  runtime_family: isaac_sim_5_1
+  simulator_version: "5.1"
+  isaaclab_version: "2.3.2"
+  physics_backend: physx
+  newton_allowed: false
+  environment: HandsOnDLongHorizonIsaacLabEnv
+  action_shape: [54]
+  action_layout: [right_tcp_pose_7, left_tcp_pose_7, right_wuji_20, left_wuji_20]
+  proprioception: [tcp_pose, gripper_pose, hot_dog_pose, tongs_pose, microwave_pose, tableware_poses, tray_pose, microwave_state, tongs_state, workflow_progress, table_delta_height]
+  taxonomy:
+    family: long_horizon
+    interactions: [tool_use_tongs, articulated_door, button_press, timed_state_tracking, hot_food_handling, table_setting]
+    horizon: long
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "User proposal hotdog-cook-task.md (Task 3); microwave geometry from the validated D02 shell; tongs from C08; YCB tableware from Lightwheel-YCB."
+  reference: "DexEval/hotdog-cook-task.md"
+  license: "RoboCasa microwave mesh, hot_dog_2 scan and Lightwheel-YCB (CC BY-NC 4.0) as already used by D02/C08/A-D tasks; procedural tongs, tray and cavity visuals are project geometry."
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    native_dofs_each: 20
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.75, -0.80, 0.84]
+    max: [0.35, 0.80, 1.70]
+  targets:
+    - {id: hot_dog_grasp, arm: either, frame: world, position_m: [-0.43, 0.06, 0.97], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.03}
+    - {id: tongs_handle, arm: either, frame: world, position_m: [-0.30, 0.03, 0.97], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.03}
+    - {id: microwave_button, arm: either, frame: world, position_m: [-0.4058, 0.193, 1.03], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.02}
+    - {id: cavity_front, arm: either, frame: world, position_m: [-0.28, 0.51, 1.00], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.02}
+    - {id: door_handle, arm: left, frame: world, position_m: [-0.455, 0.298, 1.11], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.02}
+    - {id: plate_centre, arm: either, frame: world, position_m: [-0.26, -0.28, 0.97], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.03}
+    - {id: mug_goal, arm: right, frame: world, position_m: [-0.18, -0.41, 1.00], orientation_xyzw: [0, 0, 0, 1], clearance_m: 0.03}
+assets:
+  - {id: microwave, path: handson/handson/sim/envs/xmls/robocasa_microwave/visuals/microwave2_0.obj, kind: obj, required: true, scale_m: [0.6, 0.6, 0.6], collision: {enabled: true, approximation: analytic_boxes_from_d02}, joint: {path: d20_door_joint, type: hinge, range_rad: [-1.6, 0.0], root_fixed: true}}
+  - {id: hot_dog, path: handson/handson/sim/envs/xmls/hot_dog_2/visual/model_normalized_0.obj, kind: obj, required: true, scale_m: [0.174, 0.174, 0.174], collision: {enabled: true, approximation: box_144x64x62mm}}
+  - {id: tongs, path: handson/handson/sim/envs/xmls/d_long_horizon_objects.xml, kind: mjcf_procedural, required: true, scale_m: [1, 1, 1], collision: {enabled: true, approximation: capsules_and_boxes}, joint: {path: d20_tongs_joint, type: hinge, range_rad: [0.0, 0.5], root_fixed: false}}
+  - {id: plate, path: handson/handson/sim/envs/xmls/lightwheel_ycb/plate/visuals/plate.obj, kind: obj, required: true, scale_m: [1, 1, 1], collision: {enabled: true, approximation: two_cylinders}}
+  - {id: fork, path: handson/handson/sim/envs/xmls/lightwheel_ycb/fork/visuals/fork.obj, kind: obj, required: true, scale_m: [1, 1, 1], collision: {enabled: true, approximation: convex_decomposition, collider_count: 12}}
+  - {id: mustard_bottle, path: handson/handson/sim/envs/xmls/lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj, kind: obj, required: true, scale_m: [1, 1, 1], collision: {enabled: true, approximation: convex_decomposition, collider_count: 6}}
+  - {id: mug, path: handson/handson/sim/envs/xmls/lightwheel_ycb/mug/visuals/mug.obj, kind: obj, required: true, scale_m: [1, 1, 1], collision: {enabled: true, approximation: convex_decomposition, collider_count: 14}}
+reset:
+  seedable: true
+  max_settle_steps: 240
+  bounded_retry_count: 32
+  action_zero_state_writes_allowed: false
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - microwave_root_fixed_door_closed_button_up
+    - tongs_open_on_cradle
+    - free_bodies_supported_on_table_or_tray
+    - task_complete_false_at_reset
+contact:
+  monitored_pairs:
+    - {id: hand_hot_dog, bodies: ["robot/*hand*/*", "task/d20_hot_dog"], max_penetration_m: 0.005}
+    - {id: hand_tongs, bodies: ["robot/*hand*/*", "task/d20_tongs*"], max_penetration_m: 0.005}
+    - {id: hand_button, bodies: ["robot/*hand*/*", "task/d20_start_button_body"], max_penetration_m: 0.005}
+  forbidden_pairs:
+    - {id: robot_table, bodies: ["robot/*", "environment/table"]}
+    - {id: hand_heated_hot_dog, bodies: ["robot/*hand*/*", "task/d20_hot_dog"], armed_when: cook_progress_gt_0}
+  exact_owner_required: true
+success:
+  logic: all
+  predicates:
+    - {id: ordered_load_start_stop_remove_plate, type: ordered_event_history}
+    - {id: cook_window, type: scalar_band, parameters: {metric: d20_cook_progress, min: 0.90, max: 1.10, running: false}}
+    - {id: hot_dog_plated, type: relative_position, parameters: {object: d20_hot_dog, frame: d20_plate, xy_radius_m: 0.05, z_range_m: [0.0, 0.09]}}
+    - {id: table_setting, type: relative_layout, parameters: {fork: [0.0, 0.17], mustard: [-0.02, -0.15], mug: [0.08, -0.13], tolerance_m: 0.06, upright: [mustard, mug], on: d20_serving_tray}}
+    - {id: microwave_off_closed, type: joint_and_state, parameters: {door_abs_rad_max: 0.08, running: false}}
+    - {id: no_heated_hand_contact, type: contact_count_zero, parameters: {pair: hand_hot_dog, armed_when: cook_progress_gt_0, fail_closed_without_evidence: true}}
+    - {id: hands_clear_stable, type: release_stability, parameters: {clearance_m: 0.11, hold_seconds: 0.5}}
+  hold_steps: 15
+  hold_seconds: 0.5
+  timeout_steps: 7200
+  terminal_failures: [hot_dog_burnt, hand_inside_running_microwave, hot_dog_or_tableware_dropped]
+  timeout_is_truncation: true
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  canonical_streams:
+    - {key: front, source: head_camera, resolution: [640, 480]}
+    - {key: wrist_left, source: wrist_left_camera}
+    - {key: wrist_right, source: wrist_right_camera}
+  reject_black_or_constant: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 0.045
+  max_angular_velocity_radps: 0.50
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, rgb_wrist_left, rgb_wrist_right, contacts, success, current_and_next_physx_truth, low_level_joint_targets, microwave_state, tongs_state, workflow_progress, rewards_and_dones]
+  min_successful_episodes: 1
+  production_min_successful_episodes: 3
+  fresh_process_full_trajectory_replay: required
+  state_restore_after_action_zero: forbidden
+validation:
+  report: taskdev/tasks/d20_microwave_hot_dog_plating/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 3, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 1, min_negative_trials: 1, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 2.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 1, max_schema_errors: 0}
+  live_runner: scripts/preview_isaaclab_task.py
+  scheduler_only: false
+  host: handpose-dev-1
+  physical_gpu: 0

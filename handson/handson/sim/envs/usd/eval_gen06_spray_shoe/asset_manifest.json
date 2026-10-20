@@ -1,0 +1,127 @@
+{
+  "task_id": "GEN7",
+  "task_name": "eval_gen06_spray_shoe",
+  "spray_source_uid": "7441b159f92e469d96401bbe1756f8b9",
+  "shoe_source_uid": "4315ca048b954be7abaca9fa1dfee785",
+  "bottle_source_transform": [
+    [
+      -0.00022053819400230743,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.00022053819400230743,
+      0.0
+    ],
+    [
+      0.0,
+      0.00022053819400230743,
+      0.0,
+      -0.0004263623226347432
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "shoe_source_transform": [
+    [
+      1.1106340599658886,
+      0.0,
+      0.0,
+      -0.6671976905485402
+    ],
+    [
+      0.0,
+      0.0,
+      -1.1106340599658886,
+      0.001209897496751118
+    ],
+    [
+      0.0,
+      1.1106340599658886,
+      0.0,
+      0.004241279234765898
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "bottle_bounds": [
+    [
+      -0.022053819400230743,
+      -0.051160832108235965,
+      0.0
+    ],
+    [
+      0.022053819400230743,
+      0.04841643305480494,
+      0.22
+    ]
+  ],
+  "shoe_bounds": [
+    [
+      -0.05354583673432989,
+      -0.135,
+      0.0
+    ],
+    [
+      0.05354583673432989,
+      0.135,
+      0.12607298770345268
+    ]
+  ],
+  "bottle_support_min_z": 0.0,
+  "shoe_support_min_z": 0.0,
+  "hinge_pivot": [
+    -1.9186822878200745e-05,
+    0.03197803813033458,
+    0.200263394219465
+  ],
+  "hinge_axis": [
+    -1,
+    0,
+    0
+  ],
+  "hinge_range_rad": [
+    0,
+    0.45
+  ],
+  "nozzle_local": [
+    0.0,
+    0.04787137825220003,
+    0.20957614746156264
+  ],
+  "nozzle_forward_local": [
+    0,
+    1,
+    0
+  ],
+  "bottle_mass_kg": 0.142,
+  "trigger_mass_kg": 0.008,
+  "bottle_collider_count": 43,
+  "trigger_collider_count": 3,
+  "shoe_collider_approximation": "none (kinematic source triangle mesh)",
+  "shoe_target_triangles": 1337,
+  "bottle_visual_faces": 1592,
+  "shoe_visual_faces": 17108,
+  "removed_source_geometry": [
+    "Static overlapping internal decorative component: 130 faces",
+    "Four unused shoes",
+    "Included foot",
+    "Source floor"
+  ],
+  "new_visible_geometry": false,
+  "source_sha256": {
+    "spray_bottle.glb": "7beca1e27985e94e5084f74358e11987e05da2ba628e4c3322d919ea1fda5446",
+    "sneakers.glb": "e00aa8dc21daacfd1ef24418cbce02d4a050d882e6e25a253f2b43ff71694638"
+  }
+}

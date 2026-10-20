@@ -1,0 +1,19 @@
+env_name: t46_store_charger
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Hold the drawer open with the left hand, place the charger fully inside with the right hand, release the charger, then release the left hand and keep the result stable for 0.5 seconds."
+robot_type: dual_arm
+runtime_family: isaac_sim_5_1
+physics_backend: physx
+time_limit_seconds: 90
+skills:
+  - bimanual_coordination
+  - articulated_fixture_hold
+  - grasp_and_place
+  - released_containment
+  - ordered_stability
+objects:
+  - fu006_drawer
+  - fu006_charger

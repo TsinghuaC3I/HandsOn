@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "date": "2026-10-17",
+  "scope": "Release integration, source/license audit, CPU regression and relocated wheel verification. No new GPU rollout.",
+  "base_release_commit": "02685d64682bc47509974697ca47af5d2619fcbf",
+  "rokae": {
+    "distribution": "bundled",
+    "license": "Apache-2.0",
+    "license_basis": "Explicit license declaration in the pinned rokae_description 0.0.5 package.xml, publicly available through a third-party mirror. Not an official manufacturer-hosted mirror or new endorsement.",
+    "repository": "https://github.com/Airomantic/ar3_ws",
+    "revision": "49a02dbf4af2412612d2b2d6af9704d47efb4322",
+    "public_mesh_downloads_verified": 16,
+    "byte_identical_mesh_matches": 16,
+    "restored_unchanged_runtime_files": 74,
+    "physics_or_visual_parameters_replaced": false,
+    "parameter_differences": "../../handson/handson/assets/robots/rokae_ar5/parameter-comparison.json",
+    "license_declaration_sha256": "441c1f0ffcfd6bbe1869e35e91261e482a5a2c35255dae421f925a50f3b35350"
+  },
+  "tianji": {
+    "distribution": "user-supplied",
+    "excluded_paths": 15,
+    "public_source_archive_downloaded": true,
+    "source_only_import_passed": true,
+    "generated_urdfs": 2,
+    "xacro": "2.1.1",
+    "expected_sha256_verified": true,
+    "included_in_wheel_or_sdist": false
+  },
+  "cpu_regression": {
+    "platform": "macOS arm64",
+    "python": "3.11.17",
+    "full_run": {
+      "passed": 1886,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 11,
+      "subtests_passed": 9
+    },
+    "failure": "A 15-second subprocess import timeout in test_bc021_renderer_complete_status_binds_quality_evidence while large package I/O was running. No assertion failure.",
+    "isolated_recheck": {
+      "passed": 1,
+      "failed": 0,
+      "seconds": 4.73,
+      "code_or_timeout_changed": false
+    },
+    "unique_tests_passed_across_full_run_and_recheck": 1887,
+    "skip_reason": "Torch not installed",
+    "pip_check": "No broken requirements found.",
+    "prior_repairs": [
+      "Updated seven verified naming-only hash bindings.",
+      "Made the recording manifest test use a real small temporary Git repository instead of depending on a large developer diff completing within five seconds."
+    ],
+    "invocation": "python -m pytest handson/tests -q, from repository root",
+    "ci_fixture_recheck": {
+      "issue": "CI TMPDIR is inside the checkout; the no-repository fixture now uses GIT_CEILING_DIRECTORIES to prevent parent-repository discovery.",
+      "focused_file": "handson/tests/test_recording_fields.py",
+      "passed": 38,
+      "failed": 0,
+      "seconds": 1.68,
+      "temporary_directory_inside_checkout": true,
+      "production_code_changed": false
+    }
+  },
+  "cpu_factories": {
+    "physx": 66,
+    "newton": 2,
+    "scope": "Construction only; no reset, rendering, inference or success certification."
+  },
+  "reproducible_source_urdfs": 6,
+  "packaging": {
+    "build_input_external_files_present": 15,
+    "expected_external_files": 15,
+    "verified_dependencies_and_python_modules": 1970,
+    "archives": [
+      {
+        "file": "handson-0.0.1-py3-none-any.whl",
+        "sha256": "4dd709f2c7ae6fed0aee73dd46ffebdda5bc4d3cd3ca8495f7c81760bc808c00",
+        "bytes": 1819096250,
+        "files": 6737,
+        "excluded_external_files": 0,
+        "checked_files": 1970
+      },
+      {
+        "file": "handson-0.0.1.tar.gz",
+        "sha256": "67405310bd5bb487528dbb1ac56869e04c505c9c6072d633e4cad4077e48651d",
+        "bytes": 1815141022,
+        "files": 6822,
+        "excluded_external_files": 0,
+        "checked_files": 1972
+      }
+    ],
+    "source_commit": "8164e186ff379666a2a50b6af58b8c0e073f4b2c",
+    "subsequent_change": "Only a Git discovery boundary in the recording test fixture and validation notes changed afterward. Packaged runtime modules, robot/rendering assets and wheel bytes are unchanged."
+  },
+  "relocated_wheel": {
+    "installed_package_used": true,
+    "bundled_robot_models": 10,
+    "external_models_absent": [
+      "tianji_m6_ccs"
+    ],
+    "bundled_robot_files": 531,
+    "complete_render_bundle": true,
+    "cpu_factories": {
+      "physx": 66,
+      "newton": 2
+    },
+    "scope": "Relocated pip wheel installation; CPU construction/integrity only, no GPU rollout."
+  },
+  "render_manifest_sha256": "5f70aa593acf49b72cad870e9db36b5b4574666aba3bc7801f2c36bb9846e227",
+  "limitations": [
+    "Only the ROKAE/Wuji paper pair is qualified for the released evaluator; other asset models are not arbitrary benchmark-ready combinations.",
+    "Newton supports only t09_insert_peg and t26_place_fruit_in_bucket, with separate prior bounded GPU evidence.",
+    "Trained policy checkpoints remain external inputs.",
+    "The previously reported RTX 4090 CUDA 700 was not retested; no access to that failing environment was supplied.",
+    "Historical Git commits still contain excluded Tianji assets. The repository remains private pending a separately reviewed clean-history publication action."
+  ],
+  "evidence_sha256": {
+    "cpu-tests-complete.xml": "51fcfcb30e825f89374f9f829ad3e24fe872380ea711e5fc261798dfda45cdaa",
+    "timeout-recheck.xml": "f69096f0b3c42bf09e6e8ac327e6011720f2297d4cf87d44a3c9ca2c56366d19",
+    "package-validation.json": "519812f8e333bac2deae41f850ac8b2a1d9d01cc8333626aa7aa3ea861b8a08e",
+    "relocated-validation.json": "262b14ef0468f69e1893997d4069a652e77257652026cf26b214684611b66e02",
+    "public-rokae-download-verified.json": "5b742fbca2f4ef79c1824517fb2e1b04bf17c9864fc797687d314c7eb9c2cd58",
+    "public-rokae-parameter-comparison.json": "f69c855243612a3bf4c533517ecde781509de448c4b319d2cf4cbce4d7c4ff37",
+    "tianji-public-import.json": "57f868cda4b023e45d3cf23c0208d0f3e4f553fcfcaf503a9a7959106354e7d0"
+  }
+}

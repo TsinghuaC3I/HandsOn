@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="2765" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="hammer_material" file="visuals/T_hammer_BC001.png"/>
+    <material name="hammer_material" texture="hammer_material" specular="0.3333" shininess="0.5"/>
+    <mesh name="hammer_vis" file="visuals/optimized_visuals/hammer.obj"/>
+    <mesh name="hammer_Collider1_m_collision" file="collision/hammer_Collider1_m.obj"/>
+    <mesh name="hammer_Collider2_m_collision" file="collision/hammer_Collider2_m.obj"/>
+    <mesh name="hammer_Collider3_m_collision" file="collision/hammer_Collider3_m.obj"/>
+    <mesh name="hammer_Collider4_m_collision" file="collision/hammer_Collider4_m.obj"/>
+    <mesh name="hammer_Collider5_m_collision" file="collision/hammer_Collider5_m.obj"/>
+    <mesh name="hammer_Collider6_m_collision" file="collision/hammer_Collider6_m.obj"/>
+    <mesh name="hammer_Collider7_m_collision" file="collision/hammer_Collider7_m.obj"/>
+    <mesh name="hammer_Collider8_m_collision" file="collision/hammer_Collider8_m.obj"/>
+    <mesh name="hammer_Collider9_m_collision" file="collision/hammer_Collider9_m.obj"/>
+    <mesh name="hammer_Collider10_m_collision" file="collision/hammer_Collider10_m.obj"/>
+    <mesh name="hammer_Collider11_m_collision" file="collision/hammer_Collider11_m.obj"/>
+    <mesh name="hammer_Collider12_m_collision" file="collision/hammer_Collider12_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="hammer_material" mesh="hammer_vis"/>
+        <geom name="hammer_Collider1_m" class="collision" type="mesh" mesh="hammer_Collider1_m_collision"/>
+        <geom name="hammer_Collider2_m" class="collision" type="mesh" mesh="hammer_Collider2_m_collision"/>
+        <geom name="hammer_Collider3_m" class="collision" type="mesh" mesh="hammer_Collider3_m_collision"/>
+        <geom name="hammer_Collider4_m" class="collision" type="mesh" mesh="hammer_Collider4_m_collision"/>
+        <geom name="hammer_Collider5_m" class="collision" type="mesh" mesh="hammer_Collider5_m_collision"/>
+        <geom name="hammer_Collider6_m" class="collision" type="mesh" mesh="hammer_Collider6_m_collision"/>
+        <geom name="hammer_Collider7_m" class="collision" type="mesh" mesh="hammer_Collider7_m_collision"/>
+        <geom name="hammer_Collider8_m" class="collision" type="mesh" mesh="hammer_Collider8_m_collision"/>
+        <geom name="hammer_Collider9_m" class="collision" type="mesh" mesh="hammer_Collider9_m_collision"/>
+        <geom name="hammer_Collider10_m" class="collision" type="mesh" mesh="hammer_Collider10_m_collision"/>
+        <geom name="hammer_Collider11_m" class="collision" type="mesh" mesh="hammer_Collider11_m_collision"/>
+        <geom name="hammer_Collider12_m" class="collision" type="mesh" mesh="hammer_Collider12_m_collision"/>
+      <geom size="0.059062 0.1595415 0.013639" pos="-0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

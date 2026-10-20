@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d_long_horizon_objects">
+  <!-- All D-long hinge ranges and Euler rotations are authored in radians.
+       Without this declaration MuJoCo/Isaac's MJCF importer treats values
+       such as 1.45 as degrees, collapsing the D09/D10 doors to ~0.025 rad. -->
+  <compiler angle="radian" />
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <default>
+    <default class="dlong_object">
+      <joint damping="0.002" armature="0.0001" />
+      <geom condim="4" friction="1.25 0.04 0.004"
+            solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </default>
+    <default class="dlong_fixture">
+      <geom condim="4" friction="1.3 0.04 0.004"
+            solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </default>
+    <default class="dlong_marker">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+  </default>
+
+  <asset>
+    <!-- D09 licensed appearance meshes and asset-derived collision meshes. -->
+    <mesh name="d09_cabinet_body_visual" file="assets/t31_prepare_coffee/d09_cabinet_body_visual.obj"/>
+    <mesh name="d09_cabinet_body_collision" file="assets/t31_prepare_coffee/d09_cabinet_body_collision.obj"/>
+    <mesh name="d09_cabinet_fixed_door_visual" file="assets/t31_prepare_coffee/d09_cabinet_fixed_door_visual.obj"/>
+    <mesh name="d09_cabinet_fixed_door_collision" file="assets/t31_prepare_coffee/d09_cabinet_fixed_door_collision.obj"/>
+    <mesh name="d09_cabinet_moving_door_visual" file="assets/t31_prepare_coffee/d09_cabinet_moving_door_visual.obj"/>
+    <mesh name="d09_cabinet_moving_door_collision" file="assets/t31_prepare_coffee/d09_cabinet_moving_door_collision.obj"/>
+    <mesh name="d09_coffee_machine_visual" file="assets/t31_prepare_coffee/d09_coffee_machine_visual.obj"/>
+    <mesh name="d09_coffee_machine_collision" file="assets/t31_prepare_coffee/d09_coffee_machine_collision.obj"/>
+    <mesh name="d09_coffee_button_visual" file="assets/t31_prepare_coffee/d09_coffee_button_visual.obj"/>
+    <mesh name="d09_coffee_button_collision" file="assets/t31_prepare_coffee/d09_coffee_button_collision.obj"/>
+    <!-- The licensed mug visual was exported in millimetres with its height
+         along +Y.  Restore metre scale here; the geom below rotates +Y to
+         the task body's +Z so it matches the audited collision hull. -->
+    <mesh name="d09_mug_visual" file="assets/t31_prepare_coffee/d09_mug_visual.obj"
+          scale="1000 1000 1000"/>
+    <mesh name="d09_mug_body_collision" file="assets/t31_prepare_coffee/d09_mug_body_collision.obj"/>
+    <mesh name="d09_mug_handle_upper_collision" file="assets/t31_prepare_coffee/d09_mug_handle_upper_collision.obj"/>
+    <mesh name="d09_mug_handle_outer_collision" file="assets/t31_prepare_coffee/d09_mug_handle_outer_collision.obj"/>
+    <mesh name="d09_mug_handle_lower_collision" file="assets/t31_prepare_coffee/d09_mug_handle_lower_collision.obj"/>
+    <mesh name="d09_tray_visual" file="assets/t31_prepare_coffee/d09_tray_visual.obj" scale=".006 .0035 .0036"/>
+    <mesh name="d09_tray_collision" file="assets/t31_prepare_coffee/d09_tray_collision.obj" scale=".006 .0035 .0036"/>
+    <texture type="2d" name="d09_cabinet_base_color" file="assets/t31_prepare_coffee/textures/cabinet_base_color.png"/>
+    <texture type="2d" name="d09_coffee_machine_base_color" file="assets/t31_prepare_coffee/textures/coffee_machine_base_color.png"/>
+    <texture type="2d" name="d09_mug_base_color" file="assets/t31_prepare_coffee/textures/mug_base_color.png"/>
+    <texture type="2d" name="d09_tray_base_color" file="assets/t31_prepare_coffee/textures/tray_base_color.jpg"/>
+    <material name="d09_cabinet_material" rgba=".38 .20 .10 1" specular=".16" shininess=".12"/>
+    <material name="d09_cabinet_door_material" rgba=".82 .58 .30 1" specular=".12" shininess=".08"/>
+    <material name="d09_cabinet_handle_material" rgba=".10 .12 .14 1"
+              specular=".72" shininess=".80" reflectance=".12"/>
+    <material name="d09_coffee_machine_material" texture="d09_coffee_machine_base_color" specular=".72" shininess=".82" reflectance=".12"/>
+    <material name="d09_coffee_button_material" rgba=".12 .82 .24 1"
+              emission=".10" specular=".52" shininess=".68"/>
+    <material name="d09_mug_material" texture="d09_mug_base_color" specular=".30" shininess=".45"/>
+    <material name="d09_tray_material" rgba=".58 .62 .64 1" specular=".48" shininess=".36"/>
+    <material name="d09_coffee_water" rgba=".08 .55 .98 .72"
+              specular=".55" shininess=".70"/>
+    <!-- D08 licensed visual-only meshes; analytic geoms remain the collision model. -->
+    <mesh name="d08_toaster_visual_complete" file="assets/d08_toast_bread/toaster_complete.obj"/>
+    <mesh name="d08_toaster_lever_visual" file="assets/d08_toast_bread/toaster_lever.stl"/>
+    <mesh name="d08_bread_visual_realistic" file="assets/d08_toast_bread/bread_slice_realistic.obj"/>
+    <mesh name="d08_bread_tray_visual" file="assets/d08_toast_bread/bread_tray.obj"/>
+    <texture type="2d" name="d08_toaster_base_color" file="assets/d08_toast_bread/toaster_base_color.png"/>
+    <material name="d08_toaster_complete_mat" texture="d08_toaster_base_color"
+              rgba="1 1 1 1" specular="0.75" shininess="0.85" reflectance="0.18"/>
+    <material name="d08_toaster_lever_mat" rgba=".12 .13 .14 1"
+              specular="0.72" shininess="0.82" reflectance="0.12"/>
+    <texture type="2d" name="d08_bread_base_color" file="assets/d08_toast_bread/bread_base_color.png"/>
+    <material name="d08_bread_realistic_mat" texture="d08_bread_base_color"
+              rgba="1 1 1 1" specular="0.10" shininess="0.16"/>
+    <texture type="2d" name="d08_bread_tray_base_color" file="assets/d08_toast_bread/bread_tray_base_color.png"/>
+    <material name="d08_bread_tray_mat" texture="d08_bread_tray_base_color"
+              rgba="1 1 1 1" specular="0.30" shininess="0.40" reflectance="0.08"/>
+
+    <texture type="2d" name="d06_tomato_texture"
+             file="lightwheel_ycb/tomato_soup_can/visuals/T_tomato_soup_can_BC001.png" />
+    <material name="d06_tomato_material" texture="d06_tomato_texture"
+              specular="0.31" shininess="0.3" />
+    <mesh name="d06_tomato_visual_mesh"
+          file="lightwheel_ycb/tomato_soup_can/visuals/tomato_soup_can.obj" />
+    <mesh name="d06_tomato_collision_mesh"
+          file="lightwheel_ycb/tomato_soup_can/collision/tomato_soup_can_Collider1_m.obj" />
+    <texture type="2d" name="d06_tuna_texture"
+             file="lightwheel_ycb/tuna_fish_can/visuals/T_tuna_fish_can_BC001.png" />
+    <material name="d06_tuna_material" texture="d06_tuna_texture"
+              specular="0.45" shininess="0.5" />
+    <mesh name="d06_tuna_visual_mesh"
+          file="lightwheel_ycb/tuna_fish_can/visuals/tuna_fish_can.obj" />
+    <mesh name="d06_tuna_collision_mesh"
+          file="lightwheel_ycb/tuna_fish_can/collision/tuna_fish_can_Collider1_m.obj" />
+
+    <!-- Reuse the production C05 mouse shell instead of a primitive D07
+         placeholder.  The original asset is approximately 230 mm long at
+         scale .12; D07 uses half scale for a realistic desktop mouse. -->
+    <mesh name="d07_mouse_shell_dark"
+          file="mouse/textured_objs_thickness/original-2/original-2.obj"
+          scale=".06 .06 .06" />
+    <mesh name="d07_mouse_shell_gray"
+          file="mouse/textured_objs_thickness/original-1/original-1.obj"
+          scale=".06 .06 .06" />
+    <material name="d07_mouse_dark" rgba=".08 .09 .10 1"
+              specular=".22" shininess=".20" />
+    <material name="d07_mouse_gray" rgba=".28 .30 .32 1"
+              specular=".18" shininess=".16" />
+
+    <!-- Semantic production visuals for D09 through D12.  Simple, continuous
+         collision hulls remain below so PhysX manipulation stays robust. -->
+    <texture type="2d" name="d10_plate_texture"
+             file="lightwheel_ycb/plate/visuals/T_plate_BC001.png" />
+    <material name="d10_plate_material" texture="d10_plate_texture"
+              specular=".42" shininess=".35" />
+    <mesh name="d10_plate_visual_mesh"
+          file="lightwheel_ycb/plate/visuals/plate.obj"
+          scale=".60 .60 .60" />
+    <mesh name="d12_plate_visual_mesh"
+          file="lightwheel_ycb/plate/visuals/plate.obj" />
+    <texture type="2d" name="d11_skillet_texture"
+             file="lightwheel_ycb/skillet/visuals/T_skillet_BC001.png" />
+    <material name="d11_skillet_material" texture="d11_skillet_texture"
+              specular=".36" shininess=".28" />
+    <mesh name="d11_skillet_visual_mesh"
+          file="lightwheel_ycb/skillet/visuals/skillet.obj" />
+    <texture type="2d" name="d11_sponge_texture"
+             file="lightwheel_ycb/sponge/visuals/T_sponge_BC001.png" />
+    <material name="d11_sponge_material" texture="d11_sponge_texture"
+              specular=".10" shininess=".04" />
+    <mesh name="d11_sponge_visual_mesh"
+          file="lightwheel_ycb/sponge/visuals/sponge.obj" />
+    <texture type="2d" name="d12_knife_texture"
+             file="lightwheel_ycb/knife/visuals/T_knife_BC001.png" />
+    <material name="d12_knife_material" texture="d12_knife_texture"
+              specular=".55" shininess=".45" />
+    <mesh name="d12_knife_visual_mesh"
+          file="lightwheel_ycb/knife/visuals/knife.obj" />
+
+    <material name="dlong_black" rgba=".035 .04 .045 1" />
+    <material name="dlong_dark_gray" rgba=".12 .14 .16 1"
+              specular=".35" shininess=".30" />
+    <material name="dlong_white" rgba=".93 .94 .92 1" />
+    <material name="dlong_gray" rgba=".38 .42 .45 1" />
+    <material name="dlong_light_gray" rgba=".70 .73 .75 1" />
+    <material name="dlong_red" rgba=".78 .09 .08 1" />
+    <material name="dlong_green" rgba=".10 .66 .25 1" />
+    <material name="dlong_blue" rgba=".08 .30 .76 1" />
+    <material name="dlong_yellow" rgba=".94 .70 .10 1" />
+    <material name="dlong_orange" rgba=".90 .35 .08 1" />
+    <material name="dlong_purple" rgba=".49 .20 .68 1" />
+    <material name="dlong_cyan" rgba=".08 .66 .72 1" />
+    <material name="dlong_wood" rgba=".58 .38 .19 1" />
+    <material name="dlong_steel" rgba=".57 .61 .64 1"
+              specular=".65" shininess=".55" />
+    <material name="dlong_bread" rgba=".93 .70 .38 1" />
+    <material name="d08_bread_crumb" rgba=".96 .84 .58 1" />
+    <material name="d08_toaster_shell" rgba=".80 .84 .86 1"
+              specular=".72" shininess=".62" />
+    <material name="dlong_meat" rgba=".68 .16 .16 1" />
+    <material name="d12_meat_fat" rgba=".96 .72 .62 1" />
+    <material name="dlong_water" rgba=".08 .48 .95 .16" />
+    <material name="dlong_goal_red" rgba=".82 .08 .08 .32" />
+    <material name="dlong_goal_green" rgba=".08 .78 .23 .32" />
+  </asset>
+
+  <contact>
+    <!-- The spring button slides through a close-fitting opening in the
+         toaster shell.  Exclude only this internal parent/child pair; the
+         button collider remains active against both robot hands. -->
+    <exclude body1="d08_toaster" body2="d08_toaster_button" />
+    <!-- The closed cabinet door is a hinged fixture, not a second payload.
+         Exclude its intentional frame contact while retaining door↔object
+         contacts during the actual open/remove motion. -->
+    <exclude body1="d09_cabinet" body2="d09_cabinet_door" />
+    <exclude body1="d09_cabinet" body2="d09_cabinet_right_door" />
+    <!-- The start button travels inside the machine housing.  Preserve hand
+         contact on the button but remove its intentional parent overlap. -->
+    <exclude body1="d09_coffee_machine" body2="d09_coffee_button" />
+    <exclude body1="d13_cabinet" body2="d13_cabinet_door" />
+  </contact>
+
+  <worldbody>
+    <!-- D06: six Lightwheel-YCB targets, three category baskets, and clutter. -->
+    <body name="d06_cracker_box" pos="-.43 -.16 .997">
+      <freejoint name="d06_cracker_box_joint" />
+      <geom name="d06_cracker_box_visual" class="a_series_ycb_visual"
+            material="cracker_box_material" mesh="cracker_box_vis" />
+      <geom name="d06_cracker_box_collision" class="a_series_ycb_collision"
+            mesh="cracker_box_Collider1_m_collision" mass=".12" />
+    </body>
+    <body name="d06_sugar_box" pos="-.30 .10 .979">
+      <freejoint name="d06_sugar_box_joint" />
+      <geom name="d06_sugar_box_visual" class="a_series_ycb_visual"
+            material="sugar_box_material" mesh="sugar_box_vis" />
+      <geom name="d06_sugar_box_collision" class="a_series_ycb_collision"
+            mesh="sugar_box_Collider1_m_collision" mass=".10" />
+    </body>
+    <body name="d06_tomato_soup_can" pos="-.40 .34 .940">
+      <freejoint name="d06_tomato_soup_can_joint" />
+      <geom name="d06_tomato_soup_can_visual" type="mesh"
+            contype="0" conaffinity="0" group="1" mass="0"
+            material="d06_tomato_material" mesh="d06_tomato_visual_mesh" />
+      <geom name="d06_tomato_soup_can_collision" type="mesh"
+            class="dlong_object" mesh="d06_tomato_collision_mesh" mass=".35"
+            rgba="0 0 0 0" />
+    </body>
+    <body name="d06_tuna_fish_can" pos="-.24 -.38 .907">
+      <freejoint name="d06_tuna_fish_can_joint" />
+      <geom name="d06_tuna_fish_can_visual" type="mesh"
+            contype="0" conaffinity="0" group="1" mass="0"
+            material="d06_tuna_material" mesh="d06_tuna_visual_mesh" />
+      <geom name="d06_tuna_fish_can_collision" type="mesh"
+            class="dlong_object" mesh="d06_tuna_collision_mesh" mass=".17"
+            rgba="0 0 0 0" />
+    </body>
+    <body name="d06_bowl" pos="-.34 .57 .890">
+      <freejoint name="d06_bowl_joint" />
+      <geom name="d06_bowl_visual" class="a_series_ycb_visual"
+            material="bowl_material" mesh="bowl_vis" pos="0 0 .027397" />
+      <!-- Keep the bowl physically resting on the table, but preserve its
+           open cavity so a complete-collision Wuji hand can pinch the rim.
+           The old full-height cylinder blocked the inner fingers while its
+           flush bottom prevented them from approaching underneath. -->
+      <geom name="d06_bowl_hollow_bottom" class="dlong_object"
+            type="cylinder" size=".061 .005" pos="0 0 .005"
+            mass=".12" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_000" class="dlong_object" type="box"
+            size=".006 .028 .022" pos=".067 0 .032" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_045" class="dlong_object" type="box"
+            size=".006 .028 .022" pos=".047376 .047376 .032"
+            quat=".923880 0 0 .382683" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_090" class="dlong_object" type="box"
+            size=".006 .028 .022" pos="0 .067 .032"
+            quat=".707107 0 0 .707107" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_135" class="dlong_object" type="box"
+            size=".006 .028 .022" pos="-.047376 .047376 .032"
+            quat=".382683 0 0 .923880" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_180" class="dlong_object" type="box"
+            size=".006 .028 .022" pos="-.067 0 .032" quat="0 0 0 1"
+            mass=".01" friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_225" class="dlong_object" type="box"
+            size=".006 .028 .022" pos="-.047376 -.047376 .032"
+            quat="-.382683 0 0 .923880" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_270" class="dlong_object" type="box"
+            size=".006 .028 .022" pos="0 -.067 .032"
+            quat="-.707107 0 0 .707107" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+      <geom name="d06_bowl_hollow_wall_315" class="dlong_object" type="box"
+            size=".006 .028 .022" pos=".047376 -.047376 .032"
+            quat="-.923880 0 0 .382683" mass=".01"
+            friction="1.6 .04 .004" rgba="0 0 0 0" />
+    </body>
+    <body name="d06_mug" pos="-.34 -.67 .936">
+      <freejoint name="d06_mug_joint" />
+      <geom name="d06_mug_visual" class="a_series_ycb_visual"
+            material="mug_material" mesh="mug_vis" />
+      <!-- A thin bottom and eight tangent wall panels preserve the visible
+           mug's open cavity.  The old full-height cylinder made the entire
+           interior an invisible solid obstacle. -->
+      <geom name="d06_mug_hollow_bottom" class="dlong_object" type="cylinder"
+            size=".039 .003" pos="0 0 -.042" mass=".044"
+            rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_000" class="dlong_object" type="box"
+            size=".003 .017 .042" pos=".039 0 0" mass=".022"
+            rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_045" class="dlong_object" type="box"
+            size=".003 .017 .042" pos=".027577 .027577 0"
+            quat=".923880 0 0 .382683" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_090" class="dlong_object" type="box"
+            size=".003 .017 .042" pos="0 .039 0"
+            quat=".707107 0 0 .707107" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_135" class="dlong_object" type="box"
+            size=".003 .017 .042" pos="-.027577 .027577 0"
+            quat=".382683 0 0 .923880" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_180" class="dlong_object" type="box"
+            size=".003 .017 .042" pos="-.039 0 0"
+            quat="0 0 0 1" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_225" class="dlong_object" type="box"
+            size=".003 .017 .042" pos="-.027577 -.027577 0"
+            quat="-.382683 0 0 .923880" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_270" class="dlong_object" type="box"
+            size=".003 .017 .042" pos="0 -.039 0"
+            quat="-.707107 0 0 .707107" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_hollow_wall_315" class="dlong_object" type="box"
+            size=".003 .017 .042" pos=".027577 -.027577 0"
+            quat="-.923880 0 0 .382683" mass=".022" rgba="0 0 0 0" />
+      <geom name="d06_mug_handle" class="dlong_object" type="capsule"
+            fromto="0 -.036 .018 0 -.075 .018" size=".009" mass=".02"
+            rgba="0 0 0 0" />
+    </body>
+
+    <body name="d06_basket_box" pos=".06 -.47 .900">
+      <freejoint name="d06_basket_box_joint" />
+      <geom class="dlong_fixture" type="box" size=".14 .115 .008"
+            mass=".16" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos=".14 0 .07" mass=".04" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos="-.14 0 .07" mass=".04" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 .115 .07" mass=".04" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 -.115 .07" mass=".04" material="dlong_blue" />
+      <geom name="d06_basket_box_border" class="dlong_marker" type="box"
+            size=".145 .006 .008" pos="0 -.122 .143" material="dlong_green" />
+      <geom name="d06_basket_box_border_left"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos=".147 0 .143" material="dlong_green" />
+      <geom name="d06_basket_box_border_right"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos="-.147 0 .143" material="dlong_green" />
+      <geom name="d06_box_category_icon" class="dlong_marker" type="box"
+            size=".035 .006 .026" pos="0 -.123 .075" material="dlong_white" />
+    </body>
+    <body name="d06_basket_can" pos=".06 0 .900">
+      <freejoint name="d06_basket_can_joint" />
+      <geom class="dlong_fixture" type="box" size=".14 .115 .008"
+            mass=".16" material="dlong_red" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos=".14 0 .07" mass=".04" material="dlong_red" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos="-.14 0 .07" mass=".04" material="dlong_red" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 .115 .07" mass=".04" material="dlong_red" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 -.115 .07" mass=".04" material="dlong_red" />
+      <geom name="d06_basket_can_border" class="dlong_marker" type="box"
+            size=".145 .006 .008" pos="0 -.122 .143" material="dlong_green" />
+      <geom name="d06_basket_can_border_left"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos=".147 0 .143" material="dlong_green" />
+      <geom name="d06_basket_can_border_right"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos="-.147 0 .143" material="dlong_green" />
+      <geom name="d06_can_category_icon" class="dlong_marker" type="cylinder"
+            size=".026 .035" pos="0 -.123 .075" quat=".7071 .7071 0 0"
+            material="dlong_white" />
+    </body>
+    <body name="d06_basket_dish" pos=".06 .47 .900">
+      <freejoint name="d06_basket_dish_joint" />
+      <geom class="dlong_fixture" type="box" size=".14 .115 .008"
+            mass=".16" material="dlong_yellow" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos=".14 0 .07" mass=".04" material="dlong_yellow" />
+      <geom class="dlong_fixture" type="box" size=".008 .115 .07"
+            pos="-.14 0 .07" mass=".04" material="dlong_yellow" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 .115 .07" mass=".04" material="dlong_yellow" />
+      <geom class="dlong_fixture" type="box" size=".14 .008 .07"
+            pos="0 -.115 .07" mass=".04" material="dlong_yellow" />
+      <geom name="d06_basket_dish_border" class="dlong_marker" type="box"
+            size=".145 .006 .008" pos="0 -.122 .143" material="dlong_green" />
+      <geom name="d06_basket_dish_border_left"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos=".147 0 .143" material="dlong_green" />
+      <geom name="d06_basket_dish_border_right"
+            class="dlong_marker" type="box" size=".006 .122 .008"
+            pos="-.147 0 .143" material="dlong_green" />
+      <geom name="d06_dish_category_icon" class="dlong_marker" type="ellipsoid"
+            size=".042 .008 .018" pos="0 -.123 .075" material="dlong_white" />
+    </body>
+
+    <body name="d06_distractor_0" pos="-.46 -.48 .920"><freejoint /><geom class="dlong_object" type="box" size=".032 .026 .030" mass=".06" material="dlong_orange" /></body>
+    <body name="d06_distractor_1" pos="-.22 -.55 .922"><freejoint /><geom class="dlong_object" type="sphere" size=".031" mass=".05" material="dlong_green" /></body>
+    <body name="d06_distractor_2" pos="-.47 .02 .925"><freejoint /><geom class="dlong_object" type="cylinder" size=".025 .035" mass=".07" material="dlong_purple" /></body>
+    <body name="d06_distractor_3" pos="-.22 .24 .918">
+      <freejoint />
+      <!-- Isaac represents non-uniform ellipsoid collisions through scaled
+           primitives, which can inject a lateral reset impulse. -->
+      <geom class="dlong_marker" type="ellipsoid" size=".040 .023 .028"
+            material="dlong_cyan" />
+      <geom class="dlong_object" type="box" size=".040 .023 .028"
+            mass=".06" rgba="0 0 0 0" />
+    </body>
+    <body name="d06_distractor_4" pos="-.45 .49 .920"><freejoint /><geom class="dlong_object" type="box" size=".028 .034 .030" mass=".06" material="dlong_white" /></body>
+    <body name="d06_distractor_5" pos="-.20 .67 .918"><freejoint /><geom class="dlong_object" type="sphere" size=".028" mass=".05" material="dlong_orange" /></body>
+    <body name="d06_distractor_6" pos="-.18 -.23 .908" quat=".70710678 .70710678 0 0">
+      <freejoint />
+      <geom class="dlong_marker" type="capsule" size=".018 .045"
+            material="dlong_gray" />
+      <geom class="dlong_object" type="box" size=".018 .018 .063"
+            mass=".05" rgba="0 0 0 0" />
+    </body>
+    <body name="d06_distractor_7" pos="-.48 .22 .913"><freejoint /><geom class="dlong_object" type="cylinder" size=".032 .023" mass=".06" material="dlong_blue" /></body>
+    <body name="d06_distractor_8" pos="-.29 -.27 .915"><freejoint /><geom class="dlong_object" type="box" size=".044 .018 .025" mass=".06" material="dlong_yellow" /></body>
+    <body name="d06_distractor_9" pos="-.17 .43 .916">
+      <freejoint />
+      <geom class="dlong_marker" type="ellipsoid" size=".026 .040 .026"
+            material="dlong_red" />
+      <geom class="dlong_object" type="box" size=".026 .040 .026"
+            mass=".05" rgba="0 0 0 0" />
+    </body>
+    <body name="d06_distractor_10" pos="-.45 -.65 .907" quat=".70710678 .70710678 0 0">
+      <freejoint />
+      <geom class="dlong_marker" type="capsule" size=".017 .038"
+            material="dlong_purple" />
+      <geom class="dlong_object" type="box" size=".017 .017 .055"
+            mass=".05" rgba="0 0 0 0" />
+    </body>
+    <body name="d06_distractor_11" pos="-.20 .04 .914"><freejoint /><geom class="dlong_object" type="sphere" size=".024" mass=".04" material="dlong_cyan" /></body>
+
+    <!-- D07: office goal regions and a sliding drawer. -->
+    <body name="d07_keyboard_frame" pos="-.375 -.200 .898">
+      <geom name="d07_keyboard_goal" class="dlong_marker" type="box"
+            size=".225 .090 .006"
+            material="dlong_goal_red" />
+      <geom class="dlong_marker" type="box" size=".225 .005 .008"
+            pos="0 .090 .008" material="dlong_red" />
+      <geom class="dlong_marker" type="box" size=".225 .005 .008"
+            pos="0 -.090 .008" material="dlong_red" />
+    </body>
+    <body name="d07_keyboard" pos="-.312 -.470 .904">
+      <freejoint name="d07_keyboard_joint" />
+      <geom class="dlong_object" type="box" size=".205 .070 .014"
+            mass=".42" material="dlong_black" />
+      <!-- Five separated key rows make the keyboard readable from the head
+           and wrist cameras; all keycaps are visual-only. -->
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.171 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.133 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.095 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.057 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.019 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".019 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".057 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".095 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".133 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".171 -.050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.171 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.133 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.095 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.057 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.019 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".019 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".057 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".095 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".133 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".171 -.025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.171 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.133 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.095 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.057 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.019 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".019 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".057 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".095 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".133 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".171 0 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.171 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.133 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.095 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.057 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos="-.019 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".019 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".057 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".095 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".133 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".018 .008 .003" pos=".171 .025 .017" material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".026 .008 .003" pos="-.163 .050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".026 .008 .003" pos="-.105 .050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".065 .008 .003" pos="0 .050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".026 .008 .003" pos=".105 .050 .017" material="dlong_light_gray" />
+      <geom class="dlong_marker" type="box" size=".026 .008 .003" pos=".163 .050 .017" material="dlong_light_gray" />
+      <!-- Dark separators remain visible after the 640x640 recording resize,
+           so adjacent keycaps do not collapse into barcode-like strips. -->
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos="-.152 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos="-.114 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos="-.076 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos="-.038 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos="0 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos=".038 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos=".076 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos=".114 -.012 .021" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .041 .004" pos=".152 -.012 .021" material="dlong_black" />
+    </body>
+    <body name="d07_mouse_pad" pos="-.405 .100 .896">
+      <geom name="d07_mouse_goal" class="dlong_marker" type="box"
+            size=".105 .080 .004"
+            material="dlong_blue" />
+    </body>
+    <body name="d07_mouse" pos="-.300 -.090 .905">
+      <freejoint name="d07_mouse_joint" />
+      <geom name="d07_mouse_visual_dark" class="dlong_marker" type="mesh"
+            mesh="d07_mouse_shell_dark" material="d07_mouse_dark"
+            quat=".5 .5 .5 .5" pos="0 0 -.005" />
+      <geom name="d07_mouse_visual_gray" class="dlong_marker" type="mesh"
+            mesh="d07_mouse_shell_gray" material="d07_mouse_gray"
+            quat=".5 .5 .5 .5" pos="0 0 -.005" />
+      <geom class="dlong_object" type="box" size=".054 .028 .015"
+            mass=".09" rgba="0 0 0 0" />
+    </body>
+    <body name="d07_stand" pos="-.260 .160 .902">
+      <geom class="dlong_fixture" type="cylinder" size=".060 .010"
+            material="dlong_wood" />
+      <geom name="d07_figurine_goal" class="dlong_marker" type="cylinder"
+            size=".050 .003"
+            pos="0 0 .012" material="dlong_goal_red" />
+    </body>
+    <body name="d07_figurine" pos="-.150 .015 .914">
+      <freejoint name="d07_figurine_joint" />
+      <!-- A small bear-like desk ornament, with a single conservative
+           collision hull so fingers cannot tunnel between visual pieces. -->
+      <geom class="dlong_marker" type="ellipsoid" size=".030 .024 .040"
+            pos="0 0 .045" material="dlong_orange" />
+      <geom class="dlong_marker" type="sphere" size=".028"
+            pos="0 0 .102" material="dlong_orange" />
+      <geom class="dlong_marker" type="sphere" size=".012"
+            pos="0 -.023 .124" material="dlong_yellow" />
+      <geom class="dlong_marker" type="sphere" size=".012"
+            pos="0 .023 .124" material="dlong_yellow" />
+      <geom class="dlong_marker" type="capsule" size=".009"
+            fromto="-.010 -.018 .015 -.012 -.021 -.012" material="dlong_orange" />
+      <geom class="dlong_marker" type="capsule" size=".009"
+            fromto="-.010 .018 .015 -.012 .021 -.012" material="dlong_orange" />
+      <geom class="dlong_marker" type="capsule" size=".008"
+            fromto="0 -.020 .065 0 -.048 .043" material="dlong_yellow" />
+      <geom class="dlong_marker" type="capsule" size=".008"
+            fromto="0 .020 .065 0 .048 .043" material="dlong_yellow" />
+      <geom class="dlong_marker" type="sphere" size=".006"
+            pos="-.026 -.010 .108" material="dlong_black" />
+      <geom class="dlong_marker" type="sphere" size=".006"
+            pos="-.026 .010 .108" material="dlong_black" />
+      <geom class="dlong_object" type="box" size=".034 .052 .069"
+            pos="0 0 .045" mass=".11" rgba="0 0 0 0" />
+    </body>
+    <!-- Face the drawer toward the operator.  Its local +X slide therefore
+         opens toward world -X, keeping the handle in the reachable band. -->
+    <body name="d07_drawer" pos="-.068 .500 .900" quat="0 0 0 1">
+      <geom class="dlong_fixture" type="box" size=".20 .16 .025"
+            pos="0 0 .025" material="dlong_gray" />
+      <geom name="d07_drawer_top" class="dlong_fixture" type="box"
+            size=".20 .17 .012"
+            pos="0 0 .205" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".020 .17 .11"
+            pos="-.20 0 .12" material="dlong_gray" />
+      <body name="d07_drawer_tray" pos="0 0 .065">
+        <joint name="d07_drawer_joint" type="slide" axis="1 0 0"
+               range="0 .18" limited="true" damping="2" frictionloss=".15"
+               stiffness="20" springref="0" />
+        <geom class="dlong_fixture" type="box" size=".17 .145 .012"
+              mass=".45" material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="box" size=".012 .145 .055"
+              pos=".17 0 .055" mass=".08" material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="box" size=".17 .010 .055"
+              pos="0 .145 .055" mass=".06" material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="box" size=".17 .010 .055"
+              pos="0 -.145 .055" mass=".06" material="dlong_light_gray" />
+        <geom class="dlong_marker" type="box" size=".045 .010 .012"
+              pos=".183 0 .070" material="dlong_steel" />
+        <geom name="d07_alarm_goal" class="dlong_marker" type="box"
+              size=".065 .045 .002" pos="-.075 0 .016"
+              material="dlong_goal_red" />
+      </body>
+    </body>
+    <body name="d07_alarm_clock" pos="-.425 .325 .942">
+      <freejoint name="d07_alarm_clock_joint" />
+      <!-- Classic twin-bell alarm clock.  Its white face points toward the
+           operator camera at -X. -->
+      <geom class="dlong_marker" type="cylinder" size=".046 .024"
+            quat=".70710678 0 .70710678 0" material="dlong_red" />
+      <geom class="dlong_marker" type="cylinder" size=".038 .002"
+            pos="-.026 0 0" quat=".70710678 0 .70710678 0"
+            material="dlong_white" />
+      <geom class="dlong_marker" type="box" size=".002 .018 .002"
+            pos="-.029 0 .006" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".002 .002 .014"
+            pos="-.029 0 .012" material="dlong_black" />
+      <geom class="dlong_marker" type="sphere" size=".018"
+            pos="0 -.035 .050" material="dlong_steel" />
+      <geom class="dlong_marker" type="sphere" size=".018"
+            pos="0 .035 .050" material="dlong_steel" />
+      <geom class="dlong_marker" type="capsule" size=".006"
+            fromto="0 -.025 -.038 0 -.035 -.052" material="dlong_black" />
+      <geom class="dlong_marker" type="capsule" size=".006"
+            fromto="0 .025 -.038 0 .035 -.052" material="dlong_black" />
+      <!-- Keep the proven compact physical body from the original D07
+           alarm.  The visual bells and feet do not justify the replacement
+           52 x 56 x 52 mm half-extent cube: that tall, deep box rocked on its
+           first table manifold and could be driven into the support.  Shift
+           the compact body down 10 mm so its bottom still matches the table
+           while retaining the richer visual model above. -->
+      <geom class="dlong_object" type="box" size=".055 .025 .042"
+            pos="0 0 -.010" mass=".20" rgba="0 0 0 0" />
+    </body>
+    <body name="d07_misc_0" pos="-.465 .560 .899">
+      <freejoint />
+      <!-- Pen -->
+      <geom class="dlong_marker" type="capsule" size=".008"
+            fromto="-.055 0 0 .050 0 0" material="dlong_blue" />
+      <geom class="dlong_marker" type="capsule" size=".006"
+            fromto=".050 0 0 .065 0 0" material="dlong_orange" />
+      <geom class="dlong_object" type="box" size=".065 .009 .009"
+            mass=".05" rgba="0 0 0 0" />
+    </body>
+    <body name="d07_misc_1" pos="-.160 -.190 .908">
+      <freejoint />
+      <!-- Eraser with paper sleeve -->
+      <geom class="dlong_object" type="box" size=".040 .024 .018"
+            mass=".06" material="dlong_red" />
+      <geom class="dlong_marker" type="box" size=".018 .025 .019"
+            pos="0 0 .001" material="dlong_white" />
+    </body>
+    <body name="d07_misc_2" pos="-.475 -.065 .911">
+      <freejoint />
+      <!-- Compact desk stapler -->
+      <geom class="dlong_marker" type="box" size=".050 .018 .006"
+            pos="0 0 -.014" material="dlong_black" />
+      <geom class="dlong_marker" type="box" size=".050 .020 .009"
+            pos="0 0 .010" quat=".9962 0 .0872 0" material="dlong_cyan" />
+      <geom class="dlong_marker" type="cylinder" size=".006 .020"
+            pos="-.042 0 -.002" quat=".70710678 .70710678 0 0"
+            material="dlong_steel" />
+      <geom class="dlong_object" type="box" size=".052 .022 .021"
+            mass=".06" rgba="0 0 0 0" />
+    </body>
+
+    <!-- D08: toaster, two bread slices, basket, and plate. -->
+    <!-- Center the 160 mm-wide collision shell between the mirrored home
+         hands so the first PhysX frame cannot push either arm off reset. -->
+    <body name="d08_toaster" pos="-.38 0 .900">
+      <!-- The downloaded toaster is the only rendered shell.  Every named
+           primitive below is collision-only and is hidden again after the
+           Isaac MJCF import so importer opacity bugs cannot expose boxes. -->
+      <geom name="d08_toaster_complete_visual" type="mesh" mesh="d08_toaster_visual_complete" material="d08_toaster_complete_mat" contype="0" conaffinity="0" density="0" group="1"/>
+      <geom name="d08_toaster_collision_base" class="dlong_fixture" type="box"
+            size=".095 .052 .015" pos=".0045 0 .015" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_collision_side_n" class="dlong_fixture" type="box"
+            size=".095 .006 .047" pos=".0045 -.047 .079" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_collision_side_p" class="dlong_fixture" type="box"
+            size=".095 .006 .047" pos=".0045 .047 .079" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_collision_divider" class="dlong_fixture" type="box"
+            size=".095 .004 .047" pos=".0045 0 .079" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_collision_front" class="dlong_fixture" type="box"
+            size=".006 .052 .047" pos="-.087 0 .079" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_collision_back" class="dlong_fixture" type="box"
+            size=".006 .052 .047" pos=".096 0 .079" group="3" rgba="0 0 0 0"/>
+      <!-- Internal guides align each 12 mm slice while leaving 4 mm of
+           clearance per face.  Their upper section keeps bread vertical on
+           the raised rack; the end stops keep its bottom edge level. -->
+      <geom name="d08_slot_0_guide_n" class="dlong_fixture" type="box"
+            size=".052 .002 .0475" pos="0 -.044 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_0_guide_p" class="dlong_fixture" type="box"
+            size=".052 .002 .0475" pos="0 -.020 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_0_guide_front" class="dlong_fixture" type="box"
+            size=".002 .010 .0475" pos="-.056 -.032 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_0_guide_back" class="dlong_fixture" type="box"
+            size=".002 .010 .0475" pos=".056 -.032 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_1_guide_n" class="dlong_fixture" type="box"
+            size=".052 .002 .0475" pos="0 .020 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_1_guide_p" class="dlong_fixture" type="box"
+            size=".052 .002 .0475" pos="0 .044 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_1_guide_front" class="dlong_fixture" type="box"
+            size=".002 .010 .0475" pos="-.056 .032 .0725" group="3" rgba="0 0 0 0"/>
+      <geom name="d08_slot_1_guide_back" class="dlong_fixture" type="box"
+            size=".002 .010 .0475" pos=".056 .032 .0725" group="3" rgba="0 0 0 0"/>
+      <!-- Stable physical stops: the low pair always catches bread during the
+           toast cycle; collection code enables the high pair before loading
+           and after popping.  Both remain fixed to avoid GPU articulation
+           crashes, while matching visuals move with the lever below. -->
+      <geom name="d08_toaster_low_stop_slot_0" class="dlong_fixture" type="box"
+            size=".049 .009 .003" pos="0 -.032 .040"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_low_stop_slot_1" class="dlong_fixture" type="box"
+            size=".049 .009 .003" pos="0 .032 .040"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_rack_slot_0" class="dlong_fixture" type="box"
+            size=".049 .010 .008" pos="0 -.032 .090"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="d08_toaster_rack_slot_1" class="dlong_fixture" type="box"
+            size=".049 .010 .008" pos="0 .032 .090"
+            group="3" rgba="0 0 0 0"/>
+      <!-- Preserve the original model's upper switch as the physical lever.
+           Positive joint travel follows local -Z, so a hand pushes it down.
+           The two rack pads share this already-stable link: at q=0 their
+           toaster-local center is z=90 mm; at q=50 mm it is z=40 mm. -->
+      <body name="d08_toaster_button" pos="-.088919 0 .120480">
+        <joint name="d08_start_button_joint" type="slide" axis="0 0 -1"
+               range="0 .050" limited="true" damping="16" frictionloss=".04"
+               stiffness="240" springref="-.010" />
+        <geom name="d08_toaster_lever_visual" type="mesh"
+              mesh="d08_toaster_lever_visual" material="d08_toaster_lever_mat"
+              pos="-.0105 0 0"
+              contype="0" conaffinity="0" density="0" group="1"/>
+        <geom name="d08_toaster_lever_collision" class="dlong_fixture"
+              type="box" size=".008 .022 .012" pos="-.0105 0 0"
+              mass=".025" group="3" rgba="0 0 0 0"/>
+        <!-- The moving shelf is rigidly attached to the physical lever.  D08
+             collection logic latches both slices to this shelf during the
+             toast cycle and releases them after the shelf returns to the top. -->
+        <geom name="d08_toaster_moving_rack_collision" class="dlong_fixture"
+              type="box" size=".049 .041 .003" pos=".088919 0 -.030480"
+              density="0" friction="1.2 .01 .001"
+              group="3" rgba="0 0 0 0"/>
+        <geom name="d08_toaster_rack_slot_0_visual" type="box"
+              size=".049 .009 .002" pos=".088919 -.032 -.030480"
+              material="dlong_steel" contype="0" conaffinity="0"
+              density="0" group="1"/>
+        <geom name="d08_toaster_rack_slot_1_visual" type="box"
+              size=".049 .009 .002" pos=".088919 .032 -.030480"
+              material="dlong_steel" contype="0" conaffinity="0"
+              density="0" group="1"/>
+      </body>
+    </body>
+    <body name="d08_bread_basket" pos="-.38 -.44 .900">
+      <!-- Shallow visual tray; only its flat floor participates in collision. -->
+      <geom name="d08_bread_tray_visual" type="mesh" mesh="d08_bread_tray_visual" material="d08_bread_tray_mat" contype="0" conaffinity="0" density="0" group="1"/>
+      <geom name="d08_bread_tray_floor" class="dlong_fixture" type="box"
+            size=".084 .115 .004" pos="0 0 .004" group="3" rgba="0 0 0 0"/>
+      <!-- Low dividers keep the slices in the basket while leaving a
+           40 to 50 mm finger clearance above the table.  The operator-facing
+           side is visual-only so the hand cannot wedge against its rim. -->
+    </body>
+    <body name="d08_bread_0" pos="-.38 -.495 .916"
+          quat=".70710678 .70710678 0 0">
+      <!-- Textured visual slice; the hidden analytic box remains the collision shape. -->
+      <geom name="d08_bread_0_realistic_visual" type="mesh" mesh="d08_bread_visual_realistic" material="d08_bread_realistic_mat" contype="0" conaffinity="0" density="0" group="1"/>
+      <freejoint name="d08_bread_0_joint" />
+      <geom name="d08_bread_0_collision" class="dlong_object" type="box"
+            size=".045 .006 .044" mass=".035" group="3" rgba="0 0 0 0" />
+    </body>
+    <body name="d08_bread_1" pos="-.38 -.385 .916"
+          quat=".70710678 .70710678 0 0">
+      <!-- Textured visual slice; the hidden analytic box remains the collision shape. -->
+      <geom name="d08_bread_1_realistic_visual" type="mesh" mesh="d08_bread_visual_realistic" material="d08_bread_realistic_mat" contype="0" conaffinity="0" density="0" group="1"/>
+      <freejoint name="d08_bread_1_joint" />
+      <geom name="d08_bread_1_collision" class="dlong_object" type="box"
+            size=".045 .006 .044" mass=".035" group="3" rgba="0 0 0 0" />
+    </body>
+    <body name="d08_plate" pos="-.38 .42 .908">
+      <geom class="dlong_fixture" type="cylinder" size=".14 .008"
+            material="dlong_white" />
+      <geom class="dlong_marker" type="cylinder" size=".115 .002"
+            pos="0 0 .010" material="dlong_goal_red" />
+      <geom class="dlong_marker" type="cylinder" size=".095 .002"
+            pos="0 0 .013" material="dlong_white" />
+    </body>
+
+    <!-- D09: licensed cabinet, coffee machine, mug, and serving tray. -->
+    <body name="d09_cabinet" pos="-.350 .580 .900" quat=".573576 0 0 .819152">
+      <geom name="d09_cabinet_body_visual" type="mesh" mesh="d09_cabinet_body_visual"
+            quat="1 0 0 0" material="d09_cabinet_material"
+            contype="0" conaffinity="0" density="0" group="1"/>
+      <!-- The licensed cabinet is a concave shell.  Isaac's MJCF importer
+           convexifies this mesh into a solid block, so a mug spawned in the
+           visible cavity is expelled by more than 10 cm on the first PhysX
+           frame.  Preserve the mesh as visual-only reference geometry and
+           use a thin analytic open-front shell for physical support. -->
+      <geom name="d09_cabinet_body_collision" type="mesh"
+            mesh="d09_cabinet_body_collision" quat="1 0 0 0"
+            contype="0" conaffinity="0" density="0" group="1" rgba="0 0 0 0"/>
+      <geom name="d09_cabinet_support_floor" class="dlong_fixture" type="box"
+            size=".210 .068 .006" pos="0 -.010 .006" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_cabinet_support_top" class="dlong_fixture" type="box"
+            size=".210 .068 .006" pos="0 -.010 .235" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_cabinet_side_left" class="dlong_fixture" type="box"
+            size=".004 .068 .108" pos="-.217 -.010 .120" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_cabinet_side_right" class="dlong_fixture" type="box"
+            size=".004 .068 .108" pos=".217 -.010 .120" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_cabinet_support_back" class="dlong_fixture" type="box"
+            size=".213 .004 .108" pos="0 -.080 .120" group="3" rgba="0 0 0 0"/>
+      <!-- Operator-left door: hinge at cabinet-local +X, opens negative. -->
+      <body name="d09_cabinet_door" pos=".222280 .073245 0">
+        <joint name="d09_cabinet_door_joint" type="hinge" axis="0 0 1"
+               range="-1.45 0" limited="true" damping="0" frictionloss=".04" />
+        <geom name="d09_cabinet_moving_door_visual" type="mesh"
+              mesh="d09_cabinet_fixed_door_visual" pos="-.222280 -.073245 0"
+              quat="1 0 0 0" material="d09_cabinet_door_material"
+              contype="0" conaffinity="0" density="0" group="1"/>
+        <geom name="d09_cabinet_moving_door_collision" class="dlong_fixture" type="mesh"
+              mesh="d09_cabinet_fixed_door_collision" pos="-.222280 -.073245 0"
+              quat="1 0 0 0"
+              mass=".55" group="3" rgba="0 0 0 0"/>
+        <!-- A full-size U handle replaces the source mesh's undersized baked-in
+             grip.  Separate invisible capsules make the enlarged affordance
+             physically graspable in both MuJoCo and PhysX. -->
+        <geom name="d09_cabinet_handle_grip_visual" class="dlong_marker"
+              type="capsule" fromto="-.180 .041 .070 -.180 .041 .175"
+              size=".011" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_handle_upper_mount_visual" class="dlong_marker"
+              type="capsule" fromto="-.180 .010 .175 -.180 .041 .175"
+              size=".010" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_handle_lower_mount_visual" class="dlong_marker"
+              type="capsule" fromto="-.180 .010 .070 -.180 .041 .070"
+              size=".010" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_handle_grip_collision" class="dlong_fixture"
+              type="capsule" fromto="-.180 .041 .070 -.180 .041 .175"
+              size=".011" mass=".012" group="3" rgba="0 0 0 0"/>
+        <geom name="d09_cabinet_handle_upper_mount_collision" class="dlong_fixture"
+              type="capsule" fromto="-.180 .010 .175 -.180 .041 .175"
+              size=".010" mass=".010" group="3" rgba="0 0 0 0"/>
+        <geom name="d09_cabinet_handle_lower_mount_collision" class="dlong_fixture"
+              type="capsule" fromto="-.180 .010 .070 -.180 .041 .070"
+              size=".010" mass=".010" group="3" rgba="0 0 0 0"/>
+      </body>
+      <!-- Operator-right door: the source's rebased moving-door mesh already
+           starts at this outer hinge and extends toward the centre seam. -->
+      <body name="d09_cabinet_right_door" pos="-.222280 .073245 0">
+        <joint name="d09_cabinet_right_door_joint" type="hinge" axis="0 0 1"
+               range="0 1.45" limited="true" damping="0" frictionloss=".04" />
+        <geom name="d09_cabinet_right_door_visual" type="mesh"
+              mesh="d09_cabinet_moving_door_visual" quat="1 0 0 0"
+              material="d09_cabinet_door_material"
+              contype="0" conaffinity="0" density="0" group="1"/>
+        <geom name="d09_cabinet_right_door_collision" class="dlong_fixture"
+              type="mesh" mesh="d09_cabinet_moving_door_collision"
+              quat="1 0 0 0" mass=".55" group="3" rgba="0 0 0 0"/>
+        <geom name="d09_cabinet_right_handle_grip_visual" class="dlong_marker"
+              type="capsule" fromto=".180 .041 .070 .180 .041 .175"
+              size=".011" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_right_handle_upper_mount_visual" class="dlong_marker"
+              type="capsule" fromto=".180 .010 .175 .180 .041 .175"
+              size=".010" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_right_handle_lower_mount_visual" class="dlong_marker"
+              type="capsule" fromto=".180 .010 .070 .180 .041 .070"
+              size=".010" material="d09_cabinet_handle_material"/>
+        <geom name="d09_cabinet_right_handle_grip_collision" class="dlong_fixture"
+              type="capsule" fromto=".180 .041 .070 .180 .041 .175"
+              size=".011" mass=".012" group="3" rgba="0 0 0 0"/>
+        <geom name="d09_cabinet_right_handle_upper_mount_collision" class="dlong_fixture"
+              type="capsule" fromto=".180 .010 .175 .180 .041 .175"
+              size=".010" mass=".010" group="3" rgba="0 0 0 0"/>
+        <geom name="d09_cabinet_right_handle_lower_mount_collision" class="dlong_fixture"
+              type="capsule" fromto=".180 .010 .070 .180 .041 .070"
+              size=".010" mass=".010" group="3" rgba="0 0 0 0"/>
+      </body>
+    </body>
+    <body name="d09_coffee_machine" pos="-.100 .120 .900">
+      <geom name="d09_coffee_machine_visual" type="mesh" mesh="d09_coffee_machine_visual"
+            quat=".707107 0 0 .707107" material="d09_coffee_machine_material"
+            contype="0" conaffinity="0" density="0" group="1"/>
+      <!-- A convexified copy of the concave source mesh seals the outlet bay.
+           Keep it as a hidden visual reference and reproduce the licensed
+           model's rotated C profile: base Z=[0,.055], right column
+           X=[.0147,.140], and head Z=[.209,.325]. -->
+      <geom name="d09_coffee_machine_collision" type="mesh"
+            mesh="d09_coffee_machine_collision" quat=".707107 0 0 .707107"
+            contype="0" conaffinity="0" density="0" group="1" rgba="0 0 0 0"/>
+      <geom name="d09_coffee_machine_base_collision" class="dlong_fixture"
+            type="box" size=".1275 .1085 .0275" pos=".0125 -.1315 .0275"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="d09_coffee_machine_column_collision" class="dlong_fixture"
+            type="box" size=".06265 .1085 .135" pos=".07735 -.1315 .190"
+            group="3" rgba="0 0 0 0"/>
+      <geom name="d09_coffee_machine_head_collision" class="dlong_fixture"
+            type="box" size=".129 .1085 .058" pos=".011 -.1315 .267"
+            group="3" rgba="0 0 0 0"/>
+      <!-- The circular brewer projects below the head.  Its centre and
+           radius come directly from the source mesh cross-section. -->
+      <geom name="d09_coffee_machine_group_collision" class="dlong_fixture"
+            type="cylinder" size=".0235 .0165" pos="-.0533 -.0872 .1935"
+            group="3" rgba="0 0 0 0"/>
+      <body name="d09_coffee_button" pos="-.117488 -.079022 .268290">
+        <joint name="d09_start_button_joint" type="slide" axis="1 0 0"
+               range="0 .008" limited="true" damping=".25" frictionloss=".02" />
+        <geom name="d09_coffee_button_visual" type="mesh" mesh="d09_coffee_button_visual"
+              quat=".707107 0 0 .707107" material="d09_coffee_button_material"
+              contype="0" conaffinity="0" density="0" group="1"/>
+        <geom name="d09_coffee_button_collision" class="dlong_fixture" type="box"
+              size=".003 .007 .026"
+              mass=".01" group="3" rgba="0 0 0 0"/>
+      </body>
+      <!-- The group-head outlet is centred at (-.0533,-.0872) and bottoms at
+           Z=.1771 in the source mesh.  A mug standing on the model-matched
+           .055 m base reaches Z=.152, leaving this 25 mm visible stream. -->
+      <geom name="d09_water_stream" class="dlong_marker" type="cylinder"
+            size=".006 .0125" pos="-.0533 -.0872 .1645"
+            material="d09_coffee_water"/>
+    </body>
+    <body name="d09_mug" pos="-.381 .622 .913"
+          quat=".573576 0 0 .819152">
+      <freejoint name="d09_mug_joint" />
+      <geom name="d09_mug_visual" type="mesh" mesh="d09_mug_visual"
+            quat=".707107 .707107 0 0" material="d09_mug_material"
+            contype="0" conaffinity="0" density="0" group="1"/>
+      <geom name="d09_mug_body_collision" class="dlong_object" type="mesh"
+            mesh="d09_mug_body_collision" mass=".20" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_mug_handle_upper_collision" class="dlong_object" type="mesh"
+            mesh="d09_mug_handle_upper_collision" mass=".0067" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_mug_handle_outer_collision" class="dlong_object" type="mesh"
+            mesh="d09_mug_handle_outer_collision" mass=".0066" group="3" rgba="0 0 0 0"/>
+      <geom name="d09_mug_handle_lower_collision" class="dlong_object" type="mesh"
+            mesh="d09_mug_handle_lower_collision" mass=".0067" group="3" rgba="0 0 0 0"/>
+    </body>
+    <body name="d09_tray" pos="-.36 -.58 .900">
+      <geom name="d09_tray_visual" type="mesh" mesh="d09_tray_visual"
+            quat=".707107 .707107 0 0" material="d09_tray_material"
+            contype="0" conaffinity="0" density="0" group="1"/>
+      <geom name="d09_tray_collision" class="dlong_fixture" type="mesh"
+            mesh="d09_tray_collision" quat=".707107 .707107 0 0"
+            group="3" rgba="0 0 0 0"/>
+    </body>
+
+    <!-- D10: dishwasher door, sliding upper rack, and class-specific slots. -->
+    <body name="d10_dishwasher" pos="-.42 0 .890">
+      <geom class="dlong_fixture" type="box" size=".20 .28 .025"
+            pos="0 0 .025" material="dlong_gray" />
+      <!-- The operator/robot is on -X.  Keep the solid side on +X so the
+           dishwasher opening, door handle, and rack all face the hand. -->
+      <geom class="dlong_fixture" type="box" size=".025 .28 .20"
+            pos=".20 0 .20" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".20 .018 .20"
+            pos="0 .28 .20" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".20 .018 .20"
+            pos="0 -.28 .20" material="dlong_gray" />
+      <body name="d10_dishwasher_door" pos="-.225 0 .015">
+        <joint name="d10_door_joint" type="hinge" axis="0 1 0"
+               range="-1.45 0" limited="true" damping=".20" frictionloss=".03" />
+        <geom class="dlong_fixture" type="box" size=".012 .28 .20"
+              pos="0 0 .20" mass="1.1" material="dlong_steel" />
+        <geom class="dlong_fixture" type="cylinder" size=".012 .20"
+              pos="-.03 0 .33" quat=".7071 .7071 0 0"
+              mass=".10" material="dlong_black" />
+      </body>
+      <body name="d10_rack" pos="0 0 .125">
+        <joint name="d10_rack_joint" type="slide" axis="1 0 0"
+               range="-.20 0" limited="true" damping=".20" frictionloss=".04" />
+        <geom class="dlong_fixture" type="box" size=".16 .22 .010"
+              mass=".50" material="dlong_light_gray" />
+        <geom name="d10_mug_slot" class="dlong_marker" type="cylinder"
+              size=".055 .004" pos="0 -.12 .014" material="dlong_goal_red" />
+        <geom name="d10_bowl_slot" class="dlong_marker" type="cylinder"
+              size=".060 .004" pos="0 0 .014" material="dlong_goal_red" />
+        <geom name="d10_plate_slot" class="dlong_marker" type="box"
+              size=".075 .030 .004" pos="0 .12 .014" material="dlong_goal_red" />
+      </body>
+    </body>
+    <body name="d10_mug" pos="-.44 -.45 .940">
+      <freejoint name="d10_mug_joint" />
+      <geom name="d10_mug_visual" class="a_series_ycb_visual"
+            material="mug_material" mesh="mug_vis" />
+      <geom class="dlong_object" type="cylinder" size=".042 .045"
+            mass=".20" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="capsule"
+            fromto="0 -.035 .015 0 -.075 .015" size=".009"
+            mass=".02" rgba="0 0 0 0" />
+    </body>
+    <body name="d10_bowl" pos="-.44 .405 .890">
+      <freejoint name="d10_bowl_joint" />
+      <geom name="d10_bowl_visual" class="a_series_ycb_visual"
+            material="bowl_material" mesh="bowl_vis" pos="0 0 .027397" />
+      <!-- A flat base plus four continuous inner wall proxies avoids the
+           persistent PhysX cylinder rocking seen at reset while preserving a
+           genuinely hollow, graspable bowl collision volume. -->
+      <geom name="d10_bowl_collision_base" class="dlong_object" type="box"
+            size=".058 .058 .008" pos="0 0 .008"
+            mass=".10" rgba="0 0 0 0" />
+      <geom name="d10_bowl_collision_left" class="dlong_object" type="box"
+            size=".010 .058 .024" pos="-.066 0 .032"
+            mass=".02" rgba="0 0 0 0" />
+      <geom name="d10_bowl_collision_right" class="dlong_object" type="box"
+            size=".010 .058 .024" pos=".066 0 .032"
+            mass=".02" rgba="0 0 0 0" />
+      <geom name="d10_bowl_collision_front" class="dlong_object" type="box"
+            size=".056 .010 .024" pos="0 -.066 .032"
+            mass=".02" rgba="0 0 0 0" />
+      <geom name="d10_bowl_collision_back" class="dlong_object" type="box"
+            size=".056 .010 .024" pos="0 .066 .032"
+            mass=".02" rgba="0 0 0 0" />
+    </body>
+    <body name="d10_plate" pos="-.44 .585 .898">
+      <freejoint name="d10_plate_joint" />
+      <geom name="d10_plate_visual" class="dlong_marker" type="mesh"
+            mesh="d10_plate_visual_mesh" material="d10_plate_material" />
+      <geom class="dlong_object" type="cylinder" size=".075 .008"
+            mass=".16" rgba="0 0 0 0" />
+    </body>
+
+    <!-- D11: sink, two-axis faucet, pan, sponge, and water feedback. -->
+    <body name="d11_sink" pos="-.26 0 .890">
+      <geom name="d11_sink_bottom" class="dlong_fixture" type="box"
+            size=".345 .23 .012" pos=".085 0 .014" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".018 .23 .055"
+            pos=".43 0 .058" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".018 .23 .055"
+            pos="-.26 0 .058" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".345 .018 .055"
+            pos=".085 .23 .058" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".345 .018 .055"
+            pos=".085 -.23 .058" material="dlong_steel" />
+    </body>
+    <body name="d11_faucet" pos="-.26 0 .919">
+      <geom class="dlong_fixture" type="cylinder" size=".035 .095"
+            pos="-.20 0 .095" material="dlong_steel" />
+      <geom class="dlong_fixture" type="capsule"
+            fromto="-.20 0 .19 -.025 0 .19" size=".018"
+            material="dlong_steel" />
+      <body name="d11_faucet_valve" pos="-.20 -.095 .16">
+        <joint name="d11_faucet_valve_joint" type="hinge" axis="1 0 0"
+               range="0 1.0" limited="true" damping=".35" frictionloss=".04" />
+        <geom class="dlong_fixture" type="box" size=".012 .055 .012"
+              mass=".04" material="dlong_blue" />
+      </body>
+      <body name="d11_faucet_arm" pos="0 0 .19">
+        <joint name="d11_faucet_swivel_joint" type="hinge" axis="0 0 1"
+               range="-1.4 1.4" limited="true" damping=".5" frictionloss=".06" />
+        <geom class="dlong_marker" type="sphere" size=".025"
+              material="dlong_steel" />
+        <geom class="dlong_fixture" type="capsule"
+              fromto=".025 0 0 .12 0 0" size=".018"
+              mass=".12" material="dlong_steel" />
+        <geom class="dlong_fixture" type="capsule"
+              fromto=".12 0 0 .12 0 -.10" size=".018"
+              mass=".07" material="dlong_steel" />
+        <!-- Keep the visual stream on the articulated arm link.  A nested
+             body with no joint and only a zero-mass marker was imported by
+             Isaac as an invalid negative-mass rigid link, which injected
+             persistent constraint velocity into the otherwise fixed faucet. -->
+        <geom name="d11_water_stream" class="dlong_marker" type="cylinder"
+              size=".009 .12" pos=".12 0 -.22" material="dlong_water" />
+      </body>
+    </body>
+    <!-- The analytic pan bottom is 25 mm below its body origin.  Start it
+         exactly on the 0.890 m tabletop instead of dropping it 10 mm during
+         the recording-origin gate. -->
+    <body name="d11_pan" pos="-.185 -.510 .915" quat="0 0 0 1">
+      <freejoint name="d11_pan_joint" />
+      <geom name="d11_pan_visual" class="dlong_marker" type="mesh"
+            mesh="d11_skillet_visual_mesh" material="d11_skillet_material"
+            pos=".11 0 .020" euler="0 0 -1.57079632679" />
+      <geom class="dlong_object" type="cylinder" size=".145 .025"
+            mass=".48" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="capsule"
+            fromto=".13 0 .015 .31 0 .015" size=".025"
+            mass=".14" rgba="0 0 0 0" />
+      <geom name="d11_pan_coverage_0" class="dlong_marker" type="box"
+            size=".055 .045 .003" pos="-.06 -.05 .029" material="dlong_water" />
+      <geom name="d11_pan_coverage_1" class="dlong_marker" type="box"
+            size=".055 .045 .003" pos="-.06 .05 .029" material="dlong_water" />
+      <geom name="d11_pan_coverage_2" class="dlong_marker" type="box"
+            size=".055 .045 .003" pos=".06 -.05 .029" material="dlong_water" />
+      <geom name="d11_pan_coverage_3" class="dlong_marker" type="box"
+            size=".055 .045 .003" pos=".06 .05 .029" material="dlong_water" />
+    </body>
+    <body name="d11_sponge" pos="-.27 .38 .902">
+      <freejoint name="d11_sponge_joint" />
+      <geom name="d11_sponge_visual" class="dlong_marker" type="mesh"
+            mesh="d11_sponge_visual_mesh" material="d11_sponge_material" />
+      <geom class="dlong_object" type="box" size=".040 .060 .012"
+            mass=".035" rgba="0 0 0 0" />
+    </body>
+
+    <!-- D12: knife drawer, board alignment target, meat, and safety zone.
+         Isaac's importer maps the authored positive-X slide to world -X,
+         toward the operator.  This keeps the tray clear of the fixed +X
+         rear wall and puts the handle on the visible front face. -->
+    <body name="d12_drawer" pos="-.24 .30 .900" quat="0 0 0 1">
+      <geom class="dlong_fixture" type="box" size=".20 .22 .025"
+            pos="0 0 .025" material="dlong_gray" />
+      <!-- The fixed wall and lintel are on the rear (+world-X) face, leaving
+           the moving tray and knife unobstructed from the operator side. -->
+      <geom name="d12_drawer_back_wall" class="dlong_fixture" type="box"
+            size=".020 .22 .035" pos=".20 0 .055" material="dlong_gray" />
+      <geom name="d12_drawer_top" class="dlong_fixture" type="box"
+            size=".020 .22 .012" pos=".200 0 .194" material="dlong_gray" />
+      <body name="d12_drawer_tray" pos="0 0 .065">
+        <joint name="d12_drawer_joint" type="slide" axis="1 0 0"
+               range="0 .18" limited="true" damping=".30" frictionloss=".04"
+               stiffness="1.5" springref="0" />
+        <geom class="dlong_fixture" type="box" size=".17 .205 .012"
+              mass=".45" material="dlong_light_gray" />
+        <!-- This shallow shelf is rigidly attached to the sliding tray.  The
+             free knife rests on it and is carried out by contact/friction,
+             while remaining independently graspable once lifted. -->
+        <geom name="d12_knife_shelf" class="dlong_fixture" type="box"
+              size=".145 .160 .004" pos="0 0 .025"
+              mass=".08" friction=".80 .06 .003"
+              material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="box" size=".17 .010 .055"
+              pos="0 .205 .055" mass=".06" material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="box" size=".17 .010 .055"
+              pos="0 -.205 .055" mass=".06" material="dlong_light_gray" />
+        <!-- An open-frame handle exposes the knife instead of hiding it
+             behind the former solid front panel. -->
+        <geom name="d12_drawer_handle_support_left"
+              class="dlong_fixture" type="capsule"
+              fromto="-.195 -.130 .012 -.195 -.130 .075" size=".010"
+              mass=".02" material="dlong_steel" />
+        <geom name="d12_drawer_handle_support_right"
+              class="dlong_fixture" type="capsule"
+              fromto="-.195 .130 .012 -.195 .130 .075" size=".010"
+              mass=".02" material="dlong_steel" />
+        <geom name="d12_drawer_handle" class="dlong_fixture" type="capsule"
+              fromto="-.195 -.130 .075 -.195 .130 .075" size=".012"
+              mass=".04" material="dlong_steel" />
+      </body>
+    </body>
+    <body name="d12_knife" pos="-.24 .30 1.005">
+      <freejoint name="d12_knife_joint" />
+      <geom name="d12_knife_visual" class="dlong_marker" type="mesh"
+            mesh="d12_knife_visual_mesh" material="d12_knife_material" />
+      <geom name="d12_knife_collision" class="dlong_object" type="box"
+            size=".012 .110 .010" mass=".14" friction=".65 .04 .003"
+            rgba="0 0 0 0" />
+      <!-- A real raised grip makes the handle both visible and wrappable by
+           Wuji fingers; the old flat box offered no positive purchase. -->
+      <geom name="d12_knife_grip" class="dlong_object" type="capsule"
+            fromto="0 -.105 .012 0 -.045 .012" size=".012"
+            mass=".04" friction=".75 .05 .003" material="dlong_red" />
+    </body>
+    <body name="d12_board_goal" pos="-.36 -.02 .898">
+      <inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6" />
+      <geom name="d12_board_goal_outline" class="dlong_marker" type="box"
+            size=".19 .14 .004" mass=".001"
+            material="dlong_goal_red" />
+      <geom name="d12_board_center" class="dlong_marker" type="cylinder"
+            size=".075 .003" pos="0 0 .006" material="dlong_goal_green" />
+      <geom name="d12_knife_safe_zone" class="dlong_marker" type="box"
+            size=".055 .225 .004" pos=".145 0 .008" material="dlong_goal_red" />
+    </body>
+    <body name="d12_cutting_board" pos="-.01 -.20 .901">
+      <freejoint name="d12_cutting_board_joint" />
+      <!-- Explicit inertial data prevents imported marker metadata from
+           changing the board's mass/COM.  The 4 mm reset gap lets PhysX settle
+           onto the tabletop instead of starting coplanar with it. -->
+      <inertial pos="0 0 0" mass=".38"
+                diaginertia=".0025 .0064 .0085" />
+      <geom name="d12_cutting_board_collision" class="dlong_object"
+            type="box" size=".19 .14 .010" mass=".32"
+            friction=".32 .025 .002" material="dlong_wood" />
+      <!-- A raised near-side bar sits above the board surface, so the lowered
+           Wuji fingers can wrap around it instead of trying to pinch a flat
+           board that is flush with the tabletop. -->
+      <geom name="d12_cutting_board_handle_near" class="dlong_object"
+            type="capsule" fromto="-.215 -.105 .075 -.215 .105 .075"
+            size=".012" mass=".03" friction=".55 .04 .003"
+            material="dlong_wood" />
+      <geom name="d12_cutting_board_handle_near_left" class="dlong_object"
+            type="capsule" fromto="-.215 -.105 .010 -.215 -.105 .075"
+            size=".008" mass=".01" friction=".55 .04 .003"
+            material="dlong_wood" />
+      <geom name="d12_cutting_board_handle_near_right" class="dlong_object"
+            type="capsule" fromto="-.215 .105 .010 -.215 .105 .075"
+            size=".008" mass=".01" friction=".55 .04 .003"
+            material="dlong_wood" />
+    </body>
+    <body name="d12_plate" pos="-.44 -.57 .908">
+      <geom class="dlong_fixture" type="cylinder" size=".13 .008"
+            rgba="0 0 0 0" />
+      <geom name="d12_plate_visual" class="dlong_marker" type="mesh"
+            mesh="d12_plate_visual_mesh" material="d10_plate_material" />
+    </body>
+    <body name="d12_meat" pos="-.44 -.57 .937">
+      <freejoint name="d12_meat_joint" />
+      <!-- Keep the rounded food appearance, but rest it on a flat continuous
+           hull.  The former ellipsoid had a point-like support and rocked
+           indefinitely on the plate in GPU PhysX. -->
+      <geom class="dlong_marker" type="ellipsoid" size=".070 .050 .025"
+            pos="0 0 .005" material="dlong_meat" />
+      <geom name="d12_meat_collision" class="dlong_object" type="box"
+            size=".070 .050 .020" mass=".18" rgba="0 0 0 0" />
+      <geom class="dlong_marker" type="capsule" size=".005"
+            fromto="-.040 -.018 .028 .040 -.018 .028"
+            material="d12_meat_fat" />
+      <geom class="dlong_marker" type="capsule" size=".004"
+            fromto="-.032 .020 .028 .032 .020 .028"
+            material="d12_meat_fat" />
+    </body>
+
+    <!-- D13: tea tray, cabinet, and three payloads. -->
+    <body name="d13_service_zone" pos="-.08 -.48 .898">
+      <inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6" />
+      <geom name="d13_service_outline" class="dlong_marker" type="box"
+            size=".25 .17 .004" mass=".001" material="dlong_goal_green" />
+    </body>
+    <body name="d13_tray" pos="-.28 -.08 .902">
+      <freejoint name="d13_tray_joint" />
+      <geom class="dlong_object" type="box" size=".23 .15 .010"
+            mass=".60" material="dlong_wood" />
+      <geom class="dlong_object" type="box" size=".010 .15 .025"
+            pos=".23 0 .025" mass=".04" material="dlong_wood" />
+      <geom class="dlong_object" type="box" size=".010 .15 .025"
+            pos="-.23 0 .025" mass=".04" material="dlong_wood" />
+      <geom class="dlong_object" type="box" size=".23 .010 .025"
+            pos="0 .15 .025" mass=".04" material="dlong_wood" />
+      <geom class="dlong_object" type="box" size=".23 .010 .025"
+            pos="0 -.15 .025" mass=".04" material="dlong_wood" />
+      <geom name="d13_tray_left_zone" class="dlong_marker" type="cylinder"
+            size=".075 .003" pos="0 .075 .014" material="dlong_goal_red" />
+      <geom name="d13_tray_right_zone" class="dlong_marker" type="cylinder"
+            size=".065 .003" pos="0 -.075 .014" material="dlong_goal_red" />
+      <geom name="d13_tray_tea_zone" class="dlong_marker" type="box"
+            size=".045 .025 .003" pos=".13 0 .014" material="dlong_goal_red" />
+    </body>
+    <!-- Keep a small lateral clearance from the tray across the seeded reset
+         jitter; the kettle is still inside the operator reach envelope. -->
+    <body name="d13_kettle" pos="-.38 .20 .956">
+      <freejoint name="d13_kettle_joint" />
+      <geom class="dlong_object" type="cylinder" size=".065 .055"
+            mass=".42" material="dlong_steel" />
+      <geom class="dlong_object" type="capsule" size=".016"
+            fromto=".045 0 .035 .115 0 .075" mass=".06" material="dlong_steel" />
+      <geom class="dlong_object" type="capsule" size=".010"
+            fromto="-.045 -.055 .045 -.045 .055 .045" mass=".04"
+            material="dlong_black" />
+    </body>
+    <body name="d13_cabinet" pos="-.40 .50 .900">
+      <geom class="dlong_fixture" type="box" size=".18 .16 .015"
+            pos="0 0 .015" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".015 .16 .13"
+            pos="-.18 0 .13" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".18 .015 .13"
+            pos="0 .16 .13" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".18 .015 .13"
+            pos="0 -.16 .13" material="dlong_gray" />
+      <body name="d13_cabinet_door" pos=".18 .16 .13">
+        <!-- Open away from the fixed side frame; the success predicate uses
+             |delta|, so reversing the hinge sign preserves task semantics. -->
+        <joint name="d13_cabinet_door_joint" type="hinge" axis="0 0 -1"
+               range="-1.7 0" limited="true" damping=".8" frictionloss=".08" />
+        <!-- Move the panel a few millimetres clear of the fixed side frame;
+             the cabinet/door pair is also explicitly excluded below. -->
+        <geom class="dlong_fixture" type="box" size=".012 .16 .13"
+              pos=".012 -.16 0" mass=".38" material="dlong_light_gray" />
+        <geom class="dlong_fixture" type="sphere" size=".018"
+              pos=".03 -.29 0" mass=".02" material="dlong_black" />
+      </body>
+    </body>
+    <!-- Rest on the cabinet floor with a small support margin; the former
+         pose began 20 mm inside the floor at the first PhysX frame. -->
+    <body name="d13_mug" pos="-.40 .50 .986">
+      <freejoint name="d13_mug_joint" />
+      <geom class="dlong_object" type="cylinder" size=".045 .055"
+            mass=".24" material="dlong_white" />
+      <geom class="dlong_object" type="capsule" size=".009"
+            fromto="0 -.040 0 0 -.078 0" mass=".03" material="dlong_white" />
+    </body>
+    <!-- Use the clear handoff lane instead of the cabinet front wall. -->
+    <body name="d13_tea_bag" pos="-.16 .28 .922">
+      <freejoint name="d13_tea_bag_joint" />
+      <geom class="dlong_object" type="box" size=".035 .025 .006"
+            mass=".025" material="dlong_yellow" />
+    </body>
+
+    <!-- D14: sink, articulated faucet, colander, and three fruits. -->
+    <body name="d14_sink" pos="-.26 .05 .900">
+      <geom name="d14_sink_bottom" class="dlong_fixture" type="box"
+            size=".22 .23 .012" pos="0 0 -.002" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".012 .23 .075"
+            pos=".22 0 .065" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".012 .23 .075"
+            pos="-.22 0 .065" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".22 .012 .075"
+            pos="0 .23 .065" material="dlong_steel" />
+      <geom class="dlong_fixture" type="box" size=".22 .012 .075"
+            pos="0 -.23 .065" material="dlong_steel" />
+    </body>
+    <body name="d14_faucet" pos="-.26 .05 .920">
+      <geom class="dlong_fixture" type="cylinder" size=".035 .10"
+            pos="-.10 0 .10" material="dlong_steel" />
+      <body name="d14_faucet_valve" pos=".02 -.07 .11">
+        <joint name="d14_faucet_valve_joint" type="hinge" axis="0 1 0"
+               range="0 1.0" limited="true" damping=".4" frictionloss=".03" />
+        <geom class="dlong_fixture" type="capsule" size=".015"
+              fromto="-.05 0 0 .05 0 0" mass=".05" material="dlong_red" />
+      </body>
+      <body name="d14_faucet_arm" pos=".02 0 .20">
+        <joint name="d14_faucet_swivel_joint" type="hinge" axis="0 0 1"
+               range="-1.0 1.0" limited="true" damping=".35" frictionloss=".03" />
+        <geom class="dlong_fixture" type="capsule" size=".018"
+              fromto="0 0 0 .20 0 0" mass=".10" material="dlong_steel" />
+        <geom name="d14_water_stream" class="dlong_marker" type="cylinder"
+              size=".010 .13" pos=".20 0 -.13" material="dlong_water" />
+      </body>
+    </body>
+    <body name="d14_drying_area" pos="-.25 .55 .898">
+      <inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6" />
+      <geom name="d14_drying_outline" class="dlong_marker" type="box"
+            size=".20 .16 .004" mass=".001" material="dlong_goal_green" />
+    </body>
+    <body name="d14_colander" pos="-.40 -.58 .912">
+      <freejoint name="d14_colander_joint" />
+      <geom class="dlong_object" type="cylinder" size=".15 .010"
+            mass=".24" material="dlong_steel" />
+      <geom class="dlong_marker" type="cylinder" size=".15 .055"
+            pos="0 0 .055" rgba=".55 .58 .60 .22" />
+      <geom class="dlong_object" type="box" size=".012 .11 .055"
+            pos=".145 0 .055" mass=".04" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="box" size=".012 .11 .055"
+            pos="-.145 0 .055" mass=".04" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="box" size=".11 .012 .055"
+            pos="0 .145 .055" mass=".04" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="box" size=".11 .012 .055"
+            pos="0 -.145 .055" mass=".04" rgba="0 0 0 0" />
+      <geom class="dlong_object" type="capsule" size=".012"
+            fromto="-.14 0 .06 -.22 0 .06" mass=".04" material="dlong_steel" />
+      <geom class="dlong_object" type="capsule" size=".012"
+            fromto=".14 0 .06 .22 0 .06" mass=".04" material="dlong_steel" />
+    </body>
+    <!-- Horizontal support avoids the former capsule-through-table pose. -->
+    <body name="d14_banana" pos="-.45 -.32 .950" quat="1 0 0 0">
+      <freejoint name="d14_banana_joint" />
+      <geom name="d14_banana_visual" class="dlong_object" type="capsule" size=".025"
+            fromto="-.07 0 0 .07 0 0" mass=".10" material="dlong_yellow" />
+    </body>
+    <body name="d14_apple" pos="-.28 -.32 .955">
+      <freejoint name="d14_apple_joint" />
+      <geom name="d14_apple_visual" class="dlong_object" type="sphere" size=".045"
+            mass=".16" material="dlong_red" />
+    </body>
+    <body name="d14_orange" pos="-.11 -.32 .952">
+      <freejoint name="d14_orange_joint" />
+      <geom name="d14_orange_visual" class="dlong_object" type="sphere" size=".042"
+            mass=".15" material="dlong_orange" />
+    </body>
+
+    <!-- D15: two lunch boxes, loose lids, and twelve class-coded foods. -->
+    <body name="d15_goal_left" pos="-.18 .42 .898">
+      <inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6" />
+      <geom name="d15_goal_left_outline" class="dlong_marker" type="box"
+            size=".16 .13 .004" mass=".001" material="dlong_goal_green" />
+    </body>
+    <body name="d15_goal_right" pos="-.18 -.42 .898">
+      <inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6" />
+      <geom name="d15_goal_right_outline" class="dlong_marker" type="box"
+            size=".16 .13 .004" mass=".001" material="dlong_goal_green" />
+    </body>
+    <body name="d15_box_left" pos="-.42 .24 .910">
+      <freejoint name="d15_box_left_joint" />
+      <geom class="dlong_object" type="box" size=".14 .11 .012"
+            mass=".22" material="dlong_cyan" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055"
+            pos=".14 0 .055" mass=".03" material="dlong_cyan" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055"
+            pos="-.14 0 .055" mass=".03" material="dlong_cyan" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055"
+            pos="0 .11 .055" mass=".03" material="dlong_cyan" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055"
+            pos="0 -.11 .055" mass=".03" material="dlong_cyan" />
+    </body>
+    <body name="d15_box_right" pos="-.42 -.24 .910">
+      <freejoint name="d15_box_right_joint" />
+      <geom class="dlong_object" type="box" size=".14 .11 .012"
+            mass=".22" material="dlong_blue" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055" pos=".14 0 .055" mass=".03" material="dlong_blue" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055" pos="-.14 0 .055" mass=".03" material="dlong_blue" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055" pos="0 .11 .055" mass=".03" material="dlong_blue" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055" pos="0 -.11 .055" mass=".03" material="dlong_blue" />
+    </body>
+    <body name="d15_lid_left" pos="-.06 .20 .904">
+      <freejoint name="d15_lid_left_joint" />
+      <geom class="dlong_object" type="box" size=".15 .12 .008" mass=".12" material="dlong_cyan" />
+    </body>
+    <body name="d15_lid_right" pos="-.06 -.20 .904">
+      <freejoint name="d15_lid_right_joint" />
+      <geom class="dlong_object" type="box" size=".15 .12 .008" mass=".12" material="dlong_blue" />
+    </body>
+    <body name="d15_food_0_0" pos="-.48 .62 .918"><freejoint/><geom class="dlong_object" type="box" size=".025 .025 .028" mass=".05" material="dlong_red"/></body>
+    <body name="d15_food_0_1" pos="-.40 .62 .918"><freejoint/><geom class="dlong_object" type="box" size=".025 .025 .028" mass=".05" material="dlong_red"/></body>
+    <body name="d15_food_0_2" pos="-.32 .62 .918"><freejoint/><geom class="dlong_object" type="box" size=".025 .025 .028" mass=".05" material="dlong_red"/></body>
+    <body name="d15_food_0_3" pos="-.24 .62 .918"><freejoint/><geom class="dlong_object" type="box" size=".025 .025 .028" mass=".05" material="dlong_red"/></body>
+    <body name="d15_food_1_0" pos="-.48 0 .920"><freejoint/><geom class="dlong_object" type="sphere" size=".030" mass=".05" material="dlong_green"/></body>
+    <body name="d15_food_1_1" pos="-.40 0 .920"><freejoint/><geom class="dlong_object" type="sphere" size=".030" mass=".05" material="dlong_green"/></body>
+    <body name="d15_food_1_2" pos="-.32 0 .920"><freejoint/><geom class="dlong_object" type="sphere" size=".030" mass=".05" material="dlong_green"/></body>
+    <body name="d15_food_1_3" pos="-.24 0 .920"><freejoint/><geom class="dlong_object" type="sphere" size=".030" mass=".05" material="dlong_green"/></body>
+    <body name="d15_food_2_0" pos="-.48 -.62 .920"><freejoint/><geom class="dlong_object" type="cylinder" size=".026 .030" mass=".05" material="dlong_yellow"/></body>
+    <body name="d15_food_2_1" pos="-.40 -.62 .920"><freejoint/><geom class="dlong_object" type="cylinder" size=".026 .030" mass=".05" material="dlong_yellow"/></body>
+    <body name="d15_food_2_2" pos="-.32 -.62 .920"><freejoint/><geom class="dlong_object" type="cylinder" size=".026 .030" mass=".05" material="dlong_yellow"/></body>
+    <body name="d15_food_2_3" pos="-.24 -.62 .920"><freejoint/><geom class="dlong_object" type="cylinder" size=".026 .030" mass=".05" material="dlong_yellow"/></body>
+
+    <!-- D16: broom, dustpan, blocks, bin, and return markers. -->
+    <body name="d16_bin" pos="-.12 .48 .900">
+      <geom class="dlong_fixture" type="box" size=".16 .14 .012" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".012 .14 .09" pos=".16 0 .09" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".012 .14 .09" pos="-.16 0 .09" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".16 .012 .09" pos="0 .14 .09" material="dlong_blue" />
+      <geom class="dlong_fixture" type="box" size=".16 .012 .09" pos="0 -.14 .09" material="dlong_blue" />
+    </body>
+    <body name="d16_broom_goal" pos="-.42 .66 .898"><inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6"/><geom name="d16_broom_goal_outline" class="dlong_marker" type="box" size=".20 .035 .004" mass=".001" material="dlong_goal_green"/></body>
+    <body name="d16_dustpan_goal" pos="-.18 -.62 .898"><inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6"/><geom name="d16_dustpan_goal_outline" class="dlong_marker" type="box" size=".14 .12 .004" mass=".001" material="dlong_goal_green"/></body>
+    <!-- Point the broom head away from the bin while keeping it supported. -->
+    <body name="d16_broom" pos="-.42 .62 .925" quat=".70710678 0 0 .70710678">
+      <freejoint name="d16_broom_joint" />
+      <geom class="dlong_object" type="capsule" size=".018" fromto="-.26 0 0 .26 0 0" mass=".24" material="dlong_wood" />
+      <geom class="dlong_object" type="box" size=".045 .13 .025" pos=".28 0 0" mass=".12" material="dlong_yellow" />
+    </body>
+    <body name="d16_dustpan" pos="-.22 -.54 .912">
+      <freejoint name="d16_dustpan_joint" />
+      <geom class="dlong_object" type="box" size=".14 .12 .010" mass=".30" material="dlong_gray" />
+      <geom class="dlong_object" type="box" size=".010 .12 .055" pos="-.14 0 .055" mass=".05" material="dlong_gray" />
+      <geom class="dlong_object" type="capsule" size=".016" fromto="-.14 0 .08 -.30 0 .08" mass=".08" material="dlong_gray" />
+    </body>
+    <body name="d16_block_0" pos="-.43 -.20 .914"><freejoint/><geom class="dlong_object" type="box" size=".024 .024 .024" mass=".04" material="dlong_red"/></body>
+    <body name="d16_block_1" pos="-.34 -.12 .914"><freejoint/><geom class="dlong_object" type="box" size=".024 .024 .024" mass=".04" material="dlong_green"/></body>
+    <body name="d16_block_2" pos="-.25 -.26 .914"><freejoint/><geom class="dlong_object" type="box" size=".024 .024 .024" mass=".04" material="dlong_orange"/></body>
+    <body name="d16_block_3" pos="-.16 -.14 .914"><freejoint/><geom class="dlong_object" type="box" size=".024 .024 .024" mass=".04" material="dlong_purple"/></body>
+    <body name="d16_block_4" pos="-.08 -.28 .914"><freejoint/><geom class="dlong_object" type="box" size=".024 .024 .024" mass=".04" material="dlong_cyan"/></body>
+
+    <!-- D17: headphones, stands, and a floating-base hinged laptop. -->
+    <body name="d17_headphone_stand" pos="-.28 .40 .900">
+      <geom class="dlong_fixture" type="cylinder" size=".08 .012" material="dlong_black" />
+      <geom class="dlong_fixture" type="capsule" size=".018" fromto="0 0 .01 0 0 .25" material="dlong_black" />
+      <geom class="dlong_fixture" type="capsule" size=".018" fromto="0 -.10 .25 0 .10 .25" material="dlong_black" />
+    </body>
+    <!-- Hang the ear cups above the stand rather than through the tabletop. -->
+    <body name="d17_headphones" pos="-.42 .52 .945" quat=".70710678 0 .70710678 0">
+      <freejoint name="d17_headphones_joint" />
+      <geom class="dlong_object" type="capsule" size=".014" fromto="0 -.10 .07 0 .10 .07" mass=".10" material="dlong_black" />
+      <geom class="dlong_object" type="capsule" size=".014" fromto="0 -.10 .07 0 -.10 -.05" mass=".06" material="dlong_black" />
+      <geom class="dlong_object" type="capsule" size=".014" fromto="0 .10 .07 0 .10 -.05" mass=".06" material="dlong_black" />
+      <geom class="dlong_object" type="box" size=".020 .035 .045" pos="0 -.10 -.06" mass=".05" material="dlong_gray" />
+      <geom class="dlong_object" type="box" size=".020 .035 .045" pos="0 .10 -.06" mass=".05" material="dlong_gray" />
+    </body>
+    <body name="d17_flat_stand" pos="-.38 -.22 .900"><geom class="dlong_fixture" type="box" size=".23 .17 .008" material="dlong_gray"/></body>
+    <body name="d17_vertical_stand" pos="-.10 .10 .900">
+      <geom class="dlong_fixture" type="box" size=".15 .15 .010" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".012 .15 .12" pos="-.035 0 .12" material="dlong_gray" />
+      <geom class="dlong_fixture" type="box" size=".012 .15 .12" pos=".035 0 .12" material="dlong_gray" />
+      <geom name="d17_insertion_marker" class="dlong_marker" type="box" size=".025 .12 .004" pos="0 0 .015" material="dlong_goal_green" />
+    </body>
+    <body name="d17_laptop" pos="-.38 -.22 .922">
+      <freejoint name="d17_laptop_freejoint" />
+      <geom class="dlong_object" type="box" size=".20 .145 .012" mass=".85" material="dlong_gray" />
+      <body name="d17_laptop_screen" pos="-.20 0 .012" quat=".707 0 .707 0">
+        <!-- The negative sweep folds the screen into the vertical stand
+             instead of driving it through the flat tabletop. -->
+        <joint name="d17_laptop_hinge_joint" type="hinge" axis="0 1 0" range="-1.92 0" limited="true" damping=".8" frictionloss=".08" />
+        <geom class="dlong_object" type="box" size=".012 .145 .115" pos="0 0 .115" mass=".45" material="dlong_black" />
+        <geom class="dlong_marker" type="box" size=".013 .125 .095" pos=".013 0 .115" material="dlong_blue" />
+      </body>
+    </body>
+
+    <!-- D18: floating carton with hinged lid, basket, and four fragile eggs. -->
+    <body name="d18_carton_goal" pos="-.26 .18 .898"><inertial pos="0 0 0" mass=".001" diaginertia="1e-6 1e-6 1e-6"/><geom name="d18_carton_goal_outline" class="dlong_marker" type="box" size=".19 .14 .004" mass=".001" material="dlong_goal_green"/></body>
+    <body name="d18_basket" pos="-.35 -.45 .900">
+      <geom class="dlong_fixture" type="box" size=".17 .14 .012" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".012 .14 .07" pos=".17 0 .07" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".012 .14 .07" pos="-.17 0 .07" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".17 .012 .07" pos="0 .14 .07" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".17 .012 .07" pos="0 -.14 .07" material="dlong_wood" />
+    </body>
+    <body name="d18_carton" pos="-.26 .18 .912">
+      <freejoint name="d18_carton_freejoint" />
+      <geom class="dlong_object" type="box" size=".18 .13 .012" mass=".35" material="dlong_light_gray" />
+      <geom class="dlong_object" type="box" size=".010 .13 .055" pos=".18 0 .055" mass=".03" material="dlong_light_gray" />
+      <geom class="dlong_object" type="box" size=".010 .13 .055" pos="-.18 0 .055" mass=".03" material="dlong_light_gray" />
+      <geom name="d18_slot_0" class="dlong_marker" type="cylinder" size=".043 .004" pos="-.085 -.055 .018" material="dlong_goal_red" />
+      <geom name="d18_slot_1" class="dlong_marker" type="cylinder" size=".043 .004" pos="-.085 .055 .018" material="dlong_goal_red" />
+      <geom name="d18_slot_2" class="dlong_marker" type="cylinder" size=".043 .004" pos=".085 -.055 .018" material="dlong_goal_red" />
+      <geom name="d18_slot_3" class="dlong_marker" type="cylinder" size=".043 .004" pos=".085 .055 .018" material="dlong_goal_red" />
+      <body name="d18_carton_lid" pos="-.18 0 .07">
+        <joint name="d18_carton_lid_joint" type="hinge" axis="0 1 0" range="0 1.75" limited="true" damping=".6" frictionloss=".05" />
+        <geom class="dlong_object" type="box" size=".18 .13 .010" pos=".18 0 0" mass=".16" material="dlong_light_gray" />
+      </body>
+    </body>
+    <body name="d18_egg_0" pos="-.43 -.50 .972"><freejoint/><geom name="d18_egg_0_visual" class="dlong_object" type="ellipsoid" size=".032 .032 .045" mass=".06" material="dlong_white"/></body>
+    <body name="d18_egg_1" pos="-.34 -.50 .972"><freejoint/><geom name="d18_egg_1_visual" class="dlong_object" type="ellipsoid" size=".032 .032 .045" mass=".06" material="dlong_white"/></body>
+    <body name="d18_egg_2" pos="-.43 -.40 .972"><freejoint/><geom name="d18_egg_2_visual" class="dlong_object" type="ellipsoid" size=".032 .032 .045" mass=".06" material="dlong_white"/></body>
+    <body name="d18_egg_3" pos="-.34 -.40 .972"><freejoint/><geom name="d18_egg_3_visual" class="dlong_object" type="ellipsoid" size=".032 .032 .045" mass=".06" material="dlong_white"/></body>
+
+    <!-- D19: randomized colored blocks, movable covers, and basket. -->
+    <!-- Preserve the three memory lanes while clearing the +Y cover from the
+         basket wall. -->
+    <body name="d19_basket" pos="-.35 .52 .900">
+      <geom class="dlong_fixture" type="box" size=".16 .13 .012" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".012 .13 .08" pos=".16 0 .08" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".012 .13 .08" pos="-.16 0 .08" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".16 .012 .08" pos="0 .13 .08" material="dlong_wood" />
+      <geom class="dlong_fixture" type="box" size=".16 .012 .08" pos="0 -.13 .08" material="dlong_wood" />
+    </body>
+    <body name="d19_red_block" pos="-.42 -.32 .925"><freejoint name="d19_red_block_joint"/><geom class="dlong_object" type="box" size=".035 .035 .035" mass=".09" material="dlong_red"/></body>
+    <body name="d19_green_block" pos="-.42 0 .925"><freejoint name="d19_green_block_joint"/><geom class="dlong_object" type="box" size=".035 .035 .035" mass=".09" material="dlong_green"/></body>
+    <body name="d19_blue_block" pos="-.42 .32 .925"><freejoint name="d19_blue_block_joint"/><geom class="dlong_object" type="box" size=".035 .035 .035" mass=".09" material="dlong_blue"/></body>
+    <body name="d19_cover_0" pos="-.16 -.32 .930"><freejoint name="d19_cover_0_joint"/><geom class="dlong_object" type="cylinder" size=".060 .040" mass=".12" material="dlong_gray"/></body>
+    <body name="d19_cover_1" pos="-.16 0 .930"><freejoint name="d19_cover_1_joint"/><geom class="dlong_object" type="cylinder" size=".060 .040" mass=".12" material="dlong_gray"/></body>
+    <body name="d19_cover_2" pos="-.16 .32 .930"><freejoint name="d19_cover_2_joint"/><geom class="dlong_object" type="cylinder" size=".060 .040" mass=".12" material="dlong_gray"/></body>
+  </worldbody>
+</mujoco>

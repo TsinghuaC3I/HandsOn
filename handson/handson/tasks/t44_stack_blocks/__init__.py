@@ -1,0 +1,1 @@
+"""Block stacking task."""

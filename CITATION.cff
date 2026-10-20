@@ -1,0 +1,93 @@
+cff-version: 1.2.0
+message: "If you use HandsOn in your work, please cite the manuscript."
+title: "HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation"
+authors:
+  - family-names: Luo
+    given-names: Tianwei
+  - family-names: He
+    given-names: Yiming
+  - family-names: Wu
+    given-names: Hongjin
+  - family-names: Pan
+    given-names: Ting
+  - family-names: Ren
+    given-names: Debin
+  - family-names: Guo
+    given-names: Haorui
+  - family-names: Yang
+    given-names: Junlin
+  - family-names: Zuo
+    given-names: Yuxin
+  - family-names: Kou
+    given-names: Zhehao
+  - family-names: Yang
+    given-names: Kaisen
+  - family-names: Lai
+    given-names: Zhuoqun
+  - family-names: Ding
+    given-names: Yi
+  - family-names: Yu
+    given-names: Jiale
+  - family-names: Zhang
+    given-names: Yuchen
+  - family-names: Qiu
+    given-names: Zijie
+  - family-names: Li
+    given-names: Haozhan
+  - family-names: Ding
+    given-names: Ning
+type: software
+license: MIT
+repository-code: "https://github.com/TsinghuaC3I/HandsOn"
+keywords:
+  - embodied AI
+  - dexterous manipulation
+  - benchmark
+  - simulation
+  - Isaac Sim
+abstract: >-
+  A simulation data platform and benchmark for generalizable dexterous
+  manipulation, built on NVIDIA Isaac Sim 5.1 with a ROKAE-Wuji bimanual
+  platform. It provides 66 tasks with 18,000 curated demonstrations.
+preferred-citation:
+  type: article
+  title: "HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation"
+  authors:
+    - family-names: Luo
+      given-names: Tianwei
+    - family-names: He
+      given-names: Yiming
+    - family-names: Wu
+      given-names: Hongjin
+    - family-names: Pan
+      given-names: Ting
+    - family-names: Ren
+      given-names: Debin
+    - family-names: Guo
+      given-names: Haorui
+    - family-names: Yang
+      given-names: Junlin
+    - family-names: Zuo
+      given-names: Yuxin
+    - family-names: Kou
+      given-names: Zhehao
+    - family-names: Yang
+      given-names: Kaisen
+    - family-names: Lai
+      given-names: Zhuoqun
+    - family-names: Ding
+      given-names: Yi
+    - family-names: Yu
+      given-names: Jiale
+    - family-names: Zhang
+      given-names: Yuchen
+    - family-names: Qiu
+      given-names: Zijie
+    - family-names: Li
+      given-names: Haozhan
+    - family-names: Ding
+      given-names: Ning
+  year: 2026
+  journal: "arXiv"
+  doi: "10.48550/arXiv.2610.26765"
+  url: "https://arxiv.org/abs/2610.26765"

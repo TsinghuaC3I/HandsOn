@@ -1,0 +1,137 @@
+# The referenced live evidence below predates the current free-root composition
+# and the GPU-safe long-link collision approximation.  It is retained for
+# traceability only and must not certify the current runtime.
+schema_version: 1
+task_id: t49_unfold_ruler
+benchmark_id: G10
+manifest_sha256: 906a889e263160e22229154107ed55d1faa6c1326f47d03faef852d1e21adb0d
+generated_at: "2026-08-23T04:03:22+08:00"
+superseded_at: "2026-08-31T06:03:29+08:00"
+status: implementation_changed_live_validation_rerun_required
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+current_arm_home_adjustment:
+  updated_at: "2026-09-01T23:07:01+08:00"
+  policy: shared_mirrored_bimanual_home
+  tcp_home_xyz_m: {right: [-0.10, -0.16, 1.07], left: [-0.10, 0.16, 1.07]}
+  raised_home_override_removed: true
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_first_physx_and_operator_validation: pending
+static_validation:
+  status: pass
+  task_manifest_schema: {status: pass, error_count: 0}
+  yaml_parse: pass
+  python_compile: pass
+  git_diff_check: pass
+  shared_contract_pytest: {status: pass, passed: 35, suite: handson/tests/test_lw_native_articulation_contract.py}
+  collection_registration_pytest: {status: pass, passed: 15, suite: collection_ui/tests/test_lw_native_asset_collection.py}
+  focused_static_integration_pytest: {status: pass, passed: 244, skipped: 3, scope: "LW contracts/runtime/static registration, task layout, recording-origin, and collection UI; environment-marked skips remained skipped"}
+  asset_archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  asset_manifest_sha256: 911543839cae9c74030046d7cc6156935fba631647e369a386a1ab20a838e37a
+  selected_usd_sha256: 55f3823f9ae46ba34f5bfcc12332aaa512cf99eb344e2db8bfa92a8825ca0369
+  scope: "Static source, contract, task-registration, and manifest checks only; no live Isaac result is implied."
+live_validation:
+  status: stale_requires_rerun_after_free_root_and_gpu_collision_fix
+  evidence_status: historical_superseded
+  evidence_stale_reason: "The referenced evidence was generated with a world-fixed root (fixed_base=true); the current G10 contract is free_root (fixed_base=false) and now uses a composed GPU-safe boundingCube for the three long Collider1 meshes."
+  evidence: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json
+  evidence_sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5
+  first_physx_scene_construction: stale
+  exact_body_collider_dof_inventory:
+    status: stale
+    rigid_bodies: 3
+    colliders: 7
+    revolute_dofs: 2
+    dof_names: [Prop001_joint, Prop002_joint]
+    historical_fixed_base: true
+    current_expected_fixed_base: false
+    fixture_reset_overlap: []
+  nonpenetrating_initial_state:
+    status: stale
+    initial_geometry_gate_passed: true
+    maximum_penetration_depth_m: 0.0
+  zero_action_240_physics_step_stability:
+    status: stale
+    physics_hz: 120
+    control_steps: 60
+    physics_steps: 240
+    sampled_physics_frames: 240
+    truth_unreadable: false
+    max_q_drift_rad: 0.0
+    max_abs_qd_rad_s: 0.0000234086637647124
+    max_root_translation_drift_m: 0.0
+    max_root_rotation_drift_deg: 0.0
+  stable_recording_origin:
+    status: stale
+    accepted_trials: 4
+    initial_settle_steps_per_trial: 120
+    recording_origin_physics_steps_per_trial: 180
+    max_reset_coordinate_drift: 0.0
+    max_reset_translation_drift_m: 0.0
+  seeded_reset_and_same_process_hard_reset:
+    status: stale
+    same_seed_repeat: pass
+    different_seed_reset: pass
+    same_process_hard_reset: pass
+    scene_rebuilt: true
+    process_restarted: false
+  operator_manual_r_reset: pending
+  operator_start_reset_stop: pending
+  physical_success_and_negative_trials: pending
+  canonical_camera: pending
+  zarr_recording: pending
+  fresh_process_replay: pending
+claims:
+  task_complete: false
+  live_physx_validated: false
+  stable_initial_state_validated: false
+  stable_recording_origin_validated: false
+  reset_validated: false
+  operator_accepted: false
+  physical_success_validated: false
+  camera_validated: false
+  collection_validated: false
+  fresh_replay_validated: false
+  formal_collection_certified: false
+release_gate:
+  asset_provenance: user_provided
+  asset_author_and_upstream_source_resolved: false
+  asset_license_resolved: false
+  redistribution_allowed: false
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+checks:
+  schema: {status: pending, summary: "Task manifest static schema validation passed with zero errors; immutable certification evidence and the full report gate remain pending.", evidence: [], metrics: {}}
+  assets:
+    status: pending
+    summary: "Archive, manifest, USD, and texture bytes are hash-bound. The prior live 3-body/7-collider/2-DOF topology is historical because it used a world-fixed root; current free-root GPU composition must be rerun after the integration-layer boundingCube fix. Operator collision checks and license provenance remain pending."
+    evidence:
+      - {path: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json, sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5}
+    metrics: {}
+  reachability: {status: pending, summary: "Nominal non-crossed Ruler035/Prop002 outer-link targets are authored from the true serial source topology with a free Prop001 middle link; current free-root reachability has not been measured with live physical TCPs.", evidence: [], metrics: {}}
+  contact:
+    status: pending
+    summary: "Historical initial-state evidence reported readable assigned contact views, an empty initial contact manifold, and zero measured initial penetration, but it used the superseded world-fixed composition; current assigned-hand contact and operator penetration trials remain pending."
+    evidence:
+      - {path: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json, sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5}
+    metrics: {}
+  reset:
+    status: pending
+    summary: "Four historical stable-origin trials passed with a world-fixed root; the current free-root/GPU-safe composition requires a fresh 20-trial matrix and operator manual-R reset before this check can pass."
+    evidence:
+      - {path: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json, sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5}
+    metrics: {trials: 4, failure_fraction: 0.0, deterministic: true, same_process_hard_reset: true}
+  success: {status: pending, summary: "The updated straightness-only contract passes CPU tests: both hinge positions in the straight target windows latch success without contact, synchronized motion, release, or a stability hold; live positive and negative trials are pending.", evidence: [], metrics: {}}
+  camera: {status: pending, summary: "Canonical head/wrist camera initialization, framing, and non-black frame evidence are pending.", evidence: [], metrics: {}}
+  stability:
+    status: stale
+    summary: "Historical evidence remained exact for 240 consecutive 120 Hz physics frames, but that run used a world-fixed root and cannot certify the current free-root/GPU-safe composition; rerun is required."
+    evidence:
+      - {path: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json, sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5}
+    metrics: {sim_seconds: 2.0, nan_count: 0, exploding_body_count: 0, physics_frames: 240, max_q_drift_rad: 0.0, max_abs_qd_rad_s: 0.0000234086637647124, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+  collection: {status: pending, summary: "Operator test collection is enabled for start/reset/stop and trial capture, but a successful reviewed Zarr episode and fresh-process physical replay remain pending; collection is not yet validated or certified.", evidence: [], metrics: {}}

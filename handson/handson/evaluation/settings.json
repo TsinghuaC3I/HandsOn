@@ -1,0 +1,1490 @@
+{
+  "t12_load_and_start_microwave": {
+    "short_id": "D02",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "cracker_box",
+        "source_commit": "c70ab76cc54718943997a7403c8bdb65b5d46b5c",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      },
+      {
+        "setting_id": "pudding_box",
+        "source_commit": "c70ab76cc54718943997a7403c8bdb65b5d46b5c",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      }
+    ]
+  },
+  "t32_press_soap_pump": {
+    "short_id": "KA020",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "majority_rule",
+        "source_commit": "97697a8e12c1f5c0fff568c4cf0dc36239d75d8a",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t37_scrub_bottle": {
+    "short_id": "HS005",
+    "effective_physics_target": {
+      "physics_dt": 0.004166666666666667,
+      "live_physics_dt": 0.004166666666666667,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 8,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "17d1dd8179977cced49ad96ceaea0050a19603eb",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t43_squeeze_scissors": {
+    "short_id": "D05",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "9c5579dec2d7303ac734213fc9a414caca433bcf",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t20_pass_and_orient_pen": {
+    "short_id": "BC011",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "black_pen_negative_x",
+        "source_commit": "b62fa09914b0301005bb6c4ffb2be8c1b7f300c6",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      },
+      {
+        "setting_id": "the_pen_positive_x",
+        "source_commit": "b62fa09914b0301005bb6c4ffb2be8c1b7f300c6",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      }
+    ]
+  },
+  "t42_sort_objects": {
+    "short_id": "D06",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "b30291ffb19521514bc412581c915c544413b962",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t31_prepare_coffee": {
+    "short_id": "D09",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "narrow_tray",
+        "source_commit": "01eadb537dd1b6f84be40b807c36d5a2f7e227f8",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t30_pour_seasonings": {
+    "short_id": "BC014",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "pour_cap_4s",
+        "source_commit": "6f0c5169add5f5bacf81c4228d0a52d4525494ba",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t05_fill_cup": {
+    "short_id": "KA021",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "main",
+        "source_commit": "b64b0fec84981e9c7a1d4c23d3038e21a95af45b",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t01_align_blocks_in_midair": {
+    "short_id": "BC021",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "new",
+        "source_commit": "7193b8c44209213d7ea253593971e550f4b63f11",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t45_stir_pot": {
+    "short_id": "KA012",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "17d1dd8179977cced49ad96ceaea0050a19603eb",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t15_open_drawers": {
+    "short_id": "BC017",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "small_upper_d6",
+        "source_commit": "cd52f335eda473e4fa5270d9a2f334a179e196f5",
+        "selection_probability": {
+          "numerator": 13941,
+          "denominator": 32860
+        }
+      },
+      {
+        "setting_id": "large_upper_contact",
+        "source_commit": "08c51c595c4e9a49cbb393d89ecb17443a531a37",
+        "selection_probability": {
+          "numerator": 13550,
+          "denominator": 32860
+        }
+      },
+      {
+        "setting_id": "large_six_contact",
+        "source_commit": "b48ad10be634a1b4ab2352156b578dbde020a8e9",
+        "selection_probability": {
+          "numerator": 5369,
+          "denominator": 32860
+        }
+      }
+    ]
+  },
+  "t21_pass_block": {
+    "short_id": "D03",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "friction_4_4",
+        "source_commit": "049fdce323a398c56a47186ca2f0c35ac467d9c8",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      },
+      {
+        "setting_id": "friction_4_2p5",
+        "source_commit": "fd7ea00b916a77d764c66769bba90a037d97f695",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 2
+        }
+      }
+    ]
+  },
+  "t13_load_cans": {
+    "short_id": "BC012",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "a82f9c66aa02a30ac7e0461ba78a1fe0317bb7a0",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  },
+  "t38_set_dual_knobs": {
+    "short_id": "KA005-2",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "knob_pair_00",
+        "initial_degrees": [
+          -80,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_01",
+        "initial_degrees": [
+          -80,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_02",
+        "initial_degrees": [
+          -80,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_03",
+        "initial_degrees": [
+          -80,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_04",
+        "initial_degrees": [
+          -80,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_05",
+        "initial_degrees": [
+          -80,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_06",
+        "initial_degrees": [
+          -80,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_07",
+        "initial_degrees": [
+          -80,
+          80
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_08",
+        "initial_degrees": [
+          -60,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_09",
+        "initial_degrees": [
+          -60,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_10",
+        "initial_degrees": [
+          -60,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_11",
+        "initial_degrees": [
+          -60,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_12",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_13",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_14",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_15",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_16",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_17",
+        "initial_degrees": [
+          -60,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_18",
+        "initial_degrees": [
+          -60,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_19",
+        "initial_degrees": [
+          -60,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_20",
+        "initial_degrees": [
+          -60,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_21",
+        "initial_degrees": [
+          -60,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_22",
+        "initial_degrees": [
+          -60,
+          80
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_23",
+        "initial_degrees": [
+          -60,
+          80
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_24",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_25",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_26",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_27",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_28",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          80,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_29",
+        "initial_degrees": [
+          -40,
+          0
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_30",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_31",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_32",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_33",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_34",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_35",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_36",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_37",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_38",
+        "initial_degrees": [
+          -40,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_39",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_40",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_41",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_42",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_43",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_44",
+        "initial_degrees": [
+          -40,
+          60
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_45",
+        "initial_degrees": [
+          -40,
+          80
+        ],
+        "target_degrees": [
+          40,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_46",
+        "initial_degrees": [
+          -40,
+          80
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_47",
+        "initial_degrees": [
+          -40,
+          80
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_48",
+        "initial_degrees": [
+          0,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_49",
+        "initial_degrees": [
+          0,
+          0
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_50",
+        "initial_degrees": [
+          0,
+          0
+        ],
+        "target_degrees": [
+          80,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_51",
+        "initial_degrees": [
+          0,
+          0
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_52",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_53",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_54",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_55",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -80
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_56",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_57",
+        "initial_degrees": [
+          0,
+          40
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_58",
+        "initial_degrees": [
+          0,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_59",
+        "initial_degrees": [
+          0,
+          60
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_60",
+        "initial_degrees": [
+          0,
+          60
+        ],
+        "target_degrees": [
+          80,
+          -60
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_61",
+        "initial_degrees": [
+          0,
+          60
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_62",
+        "initial_degrees": [
+          0,
+          80
+        ],
+        "target_degrees": [
+          60,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      },
+      {
+        "setting_id": "knob_pair_63",
+        "initial_degrees": [
+          0,
+          80
+        ],
+        "target_degrees": [
+          80,
+          -40
+        ],
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 64
+        }
+      }
+    ]
+  },
+  "t46_store_charger": {
+    "short_id": "FU006",
+    "effective_physics_target": {
+      "physics_dt": 0.008333333333333333,
+      "live_physics_dt": 0.008333333333333333,
+      "control_dt": 0.03333333333333333,
+      "n_substeps": 4,
+      "solver": {
+        "solver_type": 1,
+        "enable_ccd": false,
+        "enable_enhanced_determinism": true,
+        "max_position_iteration_count": 64,
+        "max_velocity_iteration_count": 4,
+        "bounce_threshold_velocity": 0.2,
+        "friction_offset_threshold": 0.01,
+        "friction_correlation_distance": 0.00625,
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    "profiles": [
+      {
+        "setting_id": "native",
+        "source_commit": "a4edf6d7831c384d0bb59d8e8506edc24ad4b61d",
+        "selection_probability": {
+          "numerator": 1,
+          "denominator": 1
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="card_slot_insert_credit_card">
+  <default>
+    <default class="ycb_card_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="ycb_card_collision">
+      <geom type="box" group="0" density="1132.9" friction="0.9 0.02 0.0001"
+            solref="0.006 1" solimp="0.96 0.995 0.001" rgba="0.5 0 0 0.35" />
+    </default>
+    <default class="ycb_card_region">
+      <geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0" />
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="ycb_card_material"
+             file="../lightwheel_ycb/Blank_credit_card/visuals/T_Blank_credit_card_BC001.png" />
+    <material name="ycb_card_material" texture="ycb_card_material" specular="0.3333" />
+    <mesh name="ycb_card_visual_mesh"
+          file="../lightwheel_ycb/Blank_credit_card/visuals/Blank_credit_card.obj" />
+  </asset>
+  <worldbody>
+    <body name="card_root_body" pos="-0.24 0.02 0.93" quat="1 0 0 0">
+      <freejoint name="card_root" />
+      <body name="ycb_card_object">
+        <geom class="ycb_card_visual" material="ycb_card_material" mesh="ycb_card_visual_mesh" />
+        <geom name="card_collision_box" class="ycb_card_collision" size="0.027 0.0425 0.0005" />
+        <geom name="card_reg_bbox" class="ycb_card_region" type="box" size="0.027 0.0425 0.0005" />
+        <site name="card_center" pos="0 0 0" size="0.003" rgba="0 1 0 0.35" group="4" />
+        <site name="card_front_tip" pos="0 0.0425 0" size="0.0025" rgba="0.95 0.70 0.15 0.55" group="4" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

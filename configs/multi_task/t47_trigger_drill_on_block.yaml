@@ -1,0 +1,16 @@
+env_name: t47_trigger_drill_on_block
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Bring the unpowered YCB drill into physical contact with the YCB wood block, then press the physical trigger to at least 80 percent and hold for 0.5 seconds while maintaining drill-block contact. Any grasp and any finger may be used. If already pressed, release the trigger while in contact before pressing again. Do not drill the block."
+robot_type: single_arm
+sim_backend: isaacsim
+time_limit_seconds: 60
+skills:
+  - tool_object_contact
+  - physical_trigger_press
+  - ordered_contact_actuation
+objects:
+  - ycb_power_drill
+  - ycb_wood_block

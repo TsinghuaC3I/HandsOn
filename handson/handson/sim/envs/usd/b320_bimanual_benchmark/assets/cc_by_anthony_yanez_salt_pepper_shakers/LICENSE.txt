@@ -1,0 +1,11 @@
+Model Information:
+* title:	Salt And Pepper Shakers
+* source:	https://sketchfab.com/3d-models/salt-and-pepper-shakers-5f2adebdda754e40915d1330a61fa70c
+* author:	Anthony Yanez (https://sketchfab.com/paulyanez)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Salt And Pepper Shakers" (https://sketchfab.com/3d-models/salt-and-pepper-shakers-5f2adebdda754e40915d1330a61fa70c) by Anthony Yanez (https://sketchfab.com/paulyanez) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

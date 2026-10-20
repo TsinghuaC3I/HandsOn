@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="78.2709" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="064_Rope_material" file="visuals/T_064_Rope_BC001.png"/>
+    <material name="064_Rope_material" texture="064_Rope_material" specular="0.310345"/>
+    <mesh name="064_Rope_vis" file="visuals/064_Rope.obj"/>
+    <mesh name="064_Rope_Collider1_m_collision" file="collision/064_Rope_Collider1_m.obj"/>
+    <mesh name="064_Rope_Collider2_m_collision" file="collision/064_Rope_Collider2_m.obj"/>
+    <mesh name="064_Rope_Collider3_m_collision" file="collision/064_Rope_Collider3_m.obj"/>
+    <mesh name="064_Rope_Collider4_m_collision" file="collision/064_Rope_Collider4_m.obj"/>
+    <mesh name="064_Rope_Collider5_m_collision" file="collision/064_Rope_Collider5_m.obj"/>
+    <mesh name="064_Rope_Collider6_m_collision" file="collision/064_Rope_Collider6_m.obj"/>
+    <mesh name="064_Rope_Collider7_m_collision" file="collision/064_Rope_Collider7_m.obj"/>
+    <mesh name="064_Rope_Collider8_m_collision" file="collision/064_Rope_Collider8_m.obj"/>
+    <mesh name="064_Rope_Collider9_m_collision" file="collision/064_Rope_Collider9_m.obj"/>
+    <mesh name="064_Rope_Collider10_m_collision" file="collision/064_Rope_Collider10_m.obj"/>
+    <mesh name="064_Rope_Collider11_m_collision" file="collision/064_Rope_Collider11_m.obj"/>
+    <mesh name="064_Rope_Collider12_m_collision" file="collision/064_Rope_Collider12_m.obj"/>
+    <mesh name="064_Rope_Collider13_m_collision" file="collision/064_Rope_Collider13_m.obj"/>
+    <mesh name="064_Rope_Collider14_m_collision" file="collision/064_Rope_Collider14_m.obj"/>
+    <mesh name="064_Rope_Collider15_m_collision" file="collision/064_Rope_Collider15_m.obj"/>
+    <mesh name="064_Rope_Collider16_m_collision" file="collision/064_Rope_Collider16_m.obj"/>
+    <mesh name="064_Rope_Collider17_m_collision" file="collision/064_Rope_Collider17_m.obj"/>
+    <mesh name="064_Rope_Collider18_m_collision" file="collision/064_Rope_Collider18_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="064_Rope_material" mesh="064_Rope_vis"/>
+        <geom name="064_Rope_Collider1_m" class="collision" type="mesh" mesh="064_Rope_Collider1_m_collision"/>
+        <geom name="064_Rope_Collider2_m" class="collision" type="mesh" mesh="064_Rope_Collider2_m_collision"/>
+        <geom name="064_Rope_Collider3_m" class="collision" type="mesh" mesh="064_Rope_Collider3_m_collision"/>
+        <geom name="064_Rope_Collider4_m" class="collision" type="mesh" mesh="064_Rope_Collider4_m_collision"/>
+        <geom name="064_Rope_Collider5_m" class="collision" type="mesh" mesh="064_Rope_Collider5_m_collision"/>
+        <geom name="064_Rope_Collider6_m" class="collision" type="mesh" mesh="064_Rope_Collider6_m_collision"/>
+        <geom name="064_Rope_Collider7_m" class="collision" type="mesh" mesh="064_Rope_Collider7_m_collision"/>
+        <geom name="064_Rope_Collider8_m" class="collision" type="mesh" mesh="064_Rope_Collider8_m_collision"/>
+        <geom name="064_Rope_Collider9_m" class="collision" type="mesh" mesh="064_Rope_Collider9_m_collision"/>
+        <geom name="064_Rope_Collider10_m" class="collision" type="mesh" mesh="064_Rope_Collider10_m_collision"/>
+        <geom name="064_Rope_Collider11_m" class="collision" type="mesh" mesh="064_Rope_Collider11_m_collision"/>
+        <geom name="064_Rope_Collider12_m" class="collision" type="mesh" mesh="064_Rope_Collider12_m_collision"/>
+        <geom name="064_Rope_Collider13_m" class="collision" type="mesh" mesh="064_Rope_Collider13_m_collision"/>
+        <geom name="064_Rope_Collider14_m" class="collision" type="mesh" mesh="064_Rope_Collider14_m_collision"/>
+        <geom name="064_Rope_Collider15_m" class="collision" type="mesh" mesh="064_Rope_Collider15_m_collision"/>
+        <geom name="064_Rope_Collider16_m" class="collision" type="mesh" mesh="064_Rope_Collider16_m_collision"/>
+        <geom name="064_Rope_Collider17_m" class="collision" type="mesh" mesh="064_Rope_Collider17_m_collision"/>
+        <geom name="064_Rope_Collider18_m" class="collision" type="mesh" mesh="064_Rope_Collider18_m_collision"/>
+      <geom size="0.0408725 0.0687095 0.022863" pos="0.0 0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

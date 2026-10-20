@@ -1,0 +1,248 @@
+schema_version: 1
+task:
+  id: bench320_as019_screwdriver_safe_orientation_handover
+  task_complete: false
+  development_state: bug_iteration
+  title: "B320-AS019 Screwdriver Safe-Orientation Handover"
+  description: "The right hand contacts the screwdriver first, the left hand contacts it while it is airborne, and the screwdriver then lands in the horizontal target zone. Contact location, simultaneous touch, tip direction, and a final stability hold are not success requirements."
+  taxonomy:
+    family: tool_use
+    interactions: [bimanual_contact_order, airborne_handover, zone_landing]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "B320-AS019 benchmark semantics adapted with Poly Haven Flathead Screwdriver by Dylan Detwiller under CC0 1.0; the horizontal safety/tool-zone marker remains task-local procedural geometry."
+  reference: https://polyhaven.com/a/flathead_screwdriver
+  license: CC0-1.0
+  license_url: https://creativecommons.org/publicdomain/zero/1.0/
+  author: Dylan Detwiller
+  author_url: https://polyhaven.com/all?a=Dylan%20Detwiller
+  source_title: Flathead Screwdriver
+  source_archive: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip
+  source_archive_sha256: 0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb
+  authoritative_record:
+    source_rows_sha256: c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987
+    excel_row: 260
+    objective_zh: "将螺丝刀从右手交给左手，保持刀尖朝外且不触碰接收手掌。"
+    left_role_zh: "从刀柄中部接收并放入工具区"
+    right_role_zh: "从刀柄尾部交付后完全释放"
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [-0.7071067812, 0.0, 0.0, 0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.55, -0.45, 0.90]
+    max: [0.25, 0.45, 1.30]
+  targets:
+    - id: giver_handle_presentation
+      arm: right
+      frame: world
+      position_m: [-0.22, -0.08, 1.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.04
+    - id: receiver_handle_acquisition
+      arm: left
+      frame: world
+      position_m: [-0.13, 0.08, 1.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.04
+assets:
+  - id: screwdriver
+    path: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/runtime/flathead_screwdriver.usd
+    kind: usd
+    required: true
+    scale_m: [1.75, 1.75, 1.75]
+    source_archive: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip
+    source_archive_sha256: 0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb
+    visual:
+      source: polyhaven_flathead_screwdriver_pbr
+      visible_mesh_count: 1
+    normalization:
+      mode: uniform_compatibility
+      overall_length_m: 0.455
+      sharp_tip_axis_local: [1.0, 0.0, 0.0]
+      handle_tail_axis_local: [-1.0, 0.0, 0.0]
+      reset_layout: horizontal_with_handle_tail_to_operator_right
+    rigid_body:
+      owner_count: 1
+      nominal_mass_kg: 0.18
+    reset_pose:
+      position_m: [-0.145, -0.025, 0.9463459075162339]
+      orientation_wxyz: [0.7071067811865476, 0.0, 0.0, 0.7071067811865476]
+      safe_tip_axis_world: [0.0, 1.0, 0.0]
+    collision:
+      enabled: true
+      approximation: convexHull
+      derivation: source_derived
+      expected_shape_count: 5
+      collision_only_prims_invisible: true
+      single_rigid_owner: true
+      component_roles: [tail_main, handle_neck, ferrule, stem, flat_blade]
+  - id: safe_orientation_tool_zone_marker
+    path: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/scene/as019_core_scene.usda
+    kind: usd
+    required: false
+    scale_m: [1.0, 1.0, 1.0]
+    reset_pose:
+      position_m: [-0.300, -0.020, 0.924]
+      orientation_wxyz: [0.7071067811865476, 0.0, 0.0, 0.7071067811865476]
+    size_m: [0.52, 0.14, 0.0015]
+    geometry_source: procedural_task_marker
+    layout: horizontal
+    collision:
+      enabled: false
+      approximation: none
+reset:
+  seedable: true
+  max_settle_steps: 240
+  canonical_pose_only_in_core_scene: true
+  authoritative_randomization_contract:
+    object_xy_m: 0.035
+    object_yaw_rad: 0.2094395102
+    object_friction_range: [0.45, 0.85]
+    object_mass_multiplier_range: [0.8, 1.2]
+    target_marker_xy_m: 0.025
+    reject_fallen_penetrating_or_unreachable: true
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - screwdriver_tip_matches_safe_axis_world
+    - initial_success_false
+contact:
+  table_safety_runtime:
+    contact_reporting: implemented_pending_1_75_live_revalidation
+    exact_filtered_views: implemented_batched_owner_records
+    fail_closed_support_and_penetration_gates: implemented_pending_1_75_live_revalidation
+    invalid_query_policy: implemented_fail_closed_and_cpu_verified
+    terminal_arm_after_control_steps: 3
+    terminal_debounce_control_steps: 3
+  monitored_pairs:
+    - id: arm_table_diagnostic
+      bodies: ["robot/arms/*", "environment/table"]
+      max_penetration_m: 1.0
+      physical_contact_allowed: true
+      threshold_enforced: false
+      failure_effect: none
+      runtime_status: diagnostic_telemetry_only
+    - id: screwdriver_table_support
+      bodies: ["assets/screwdriver", "environment/table"]
+      max_separation_m: 0.003
+      max_penetration_m: 0.005
+      required_for_zone_placement: true
+      runtime_status: pending_1_75_live_revalidation
+    - id: hand_table_clearance
+      bodies: ["robot/hands/*", "environment/table"]
+      shallow_contact_allowed: true
+      max_penetration_m: 0.005
+      runtime_status: pending_1_75_live_revalidation
+    - id: giver_receiver_screwdriver
+      bodies: ["robot/hands/*", "assets/screwdriver"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: marker_contacts
+      bodies: ["*", "assets/safe_orientation_tool_zone_marker"]
+success:
+  logic: all
+  predicates:
+    - id: right_hand_contact_first
+      type: physical_contact_order
+      parameters:
+        hand: right
+        contact_required: true
+        contact_location: any_screwdriver_surface
+        validation_status: pending_new_asset_physical_validation
+    - id: left_hand_airborne_contact
+      type: physical_contact_after_ordered_contact
+      parameters:
+        hand: left
+        after: right_hand_contact_first
+        minimum_table_gap_m: 0.010
+        contact_required: true
+        contact_location: any_screwdriver_surface
+        validation_status: pending_new_asset_physical_validation
+    - id: target_zone_landed
+      type: supported_zone_containment
+      parameters:
+        table_support_required: true
+        orientation_required: false
+        hold_steps: 1
+        validation_status: pending_new_asset_physical_validation
+  progress_rollback:
+    debounce_control_steps: 0
+    cases: []
+    effect: none
+  hold_steps: 1
+  timeout_steps: 3600
+camera:
+  primary: head
+  prim_path: /World/envs/env_0/HeadRecordCamera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 5.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, contacts, success, safe_orientation]
+  min_successful_episodes: 3
+validation:
+  workflow_state: bug_iteration
+  validation_status: partial_pass_resize_and_runtime_rate_stage0_acquisition_pending
+  report: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/validation_report.yaml
+  automatic_policy:
+    stage0_canary_max_steps: 320
+    positive_max_steps: 1200
+    production_episode_timeout_steps: 3600
+    scope: validation_budget_with_separate_production_hard_limit
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability:
+      min_target_fraction: 1.0
+      min_joint_limit_margin_rad: 0.05
+      max_position_error_m: 0.01
+      max_orientation_error_rad: 0.1745329252
+    contact:
+      max_penetration_m: 0.005
+      max_forbidden_events: 0
+    reset:
+      min_trials: 20
+      max_failure_fraction: 0.0
+    success:
+      min_positive_trials: 10
+      min_negative_trials: 10
+      max_false_positive_fraction: 0.0
+      max_false_negative_fraction: 0.0
+    camera:
+      min_frames: 30
+      max_black_fraction: 0.0
+      min_mean_rgb: 30.0
+      min_width: 640
+      min_height: 480
+    stability:
+      min_sim_seconds: 10.0
+      max_nan_count: 0
+      max_exploding_body_count: 0
+    collection:
+      min_episodes: 3
+      max_schema_errors: 0

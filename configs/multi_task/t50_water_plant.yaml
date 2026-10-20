@@ -1,0 +1,15 @@
+env_name: t50_water_plant
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Grasp and aim the spray bottle before pressing; pressing emits water immediately, and water that misses both the plant and soil fails the attempt."
+robot_type: single_arm
+time_limit_seconds: 70
+skills:
+  - contact_control
+  - force_control
+  - aiming
+objects:
+  - spray_bottle
+  - plant

@@ -1,0 +1,128 @@
+{
+  "contacts": {
+    "max_penetration_depth_m": 0.0,
+    "max_separation_m": 0.0,
+    "robot_arm_or_base_contacts": [],
+    "robot_hand_contacts": [],
+    "row_count": 0,
+    "rows": [],
+    "sampled_steps": 120,
+    "table_contacts": []
+  },
+  "device": "cpu",
+  "exact_overlap": {
+    "internal_cabinet_pairs": [],
+    "pair_count": 0,
+    "pairs": [],
+    "query_errors": [],
+    "robot_arm_or_base_pairs": [],
+    "robot_hand_pairs": [],
+    "table_pairs": []
+  },
+  "inventory": {
+    "cabinet": {
+      "cabinet_door_left": [
+        "/World/Task/B320Benchmark/cabinet_door_left/source_visual/painted_wooden_cabinet_door_01/commode_016"
+      ],
+      "cabinet_door_right": [
+        "/World/Task/B320Benchmark/cabinet_door_right/source_visual/painted_wooden_cabinet_door_02/commode_015"
+      ],
+      "fixture_base": [
+        "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet/commode_014",
+        "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_01/commode_018",
+        "/World/Task/B320Benchmark/fixture_base/source_visual/painted_wooden_cabinet_drawer_02/commode_017"
+      ]
+    },
+    "counts": {
+      "cabinet": 5,
+      "robot": 60,
+      "table": 1
+    },
+    "robots": {
+      "Left": [
+        "/World/DexJoCoRobots/LeftRobot/base_left/attachment_left/collisions/left_wrist_fisheye_flange_assembly/left_wrist_fisheye_flange_assembly",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link2/collisions/left_finger1_link2_col2/left_finger1_link2_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link3/collisions/left_finger1_link3_col2/left_finger1_link3_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link4/collisions/left_finger1_link4_col2/left_finger1_link4_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link4/collisions/left_finger1_tip_link_col2/left_finger1_tip_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link2/collisions/left_finger2_link2_col2/left_finger2_link2_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link3/collisions/left_finger2_link3_col2/left_finger2_link3_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link4/collisions/left_finger2_link4_col2/left_finger2_link4_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link4/collisions/left_finger2_tip_link_col2/left_finger2_tip_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link2/collisions/left_finger3_link2_col2/left_finger3_link2_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link3/collisions/left_finger3_link3_col2/left_finger3_link3_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link4/collisions/left_finger3_link4_col2/left_finger3_link4_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link4/collisions/left_finger3_tip_link_col2/left_finger3_tip_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link2/collisions/left_finger4_link2_col2/left_finger4_link2_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link3/collisions/left_finger4_link3_col2/left_finger4_link3_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link4/collisions/left_finger4_link4_col2/left_finger4_link4_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link4/collisions/left_finger4_tip_link_col2/left_finger4_tip_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link2/collisions/left_finger5_link2_col2/left_finger5_link2_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link3/collisions/left_finger5_link3_col2/left_finger5_link3_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link4/collisions/left_finger5_link4_col2/left_finger5_link4_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link4/collisions/left_finger5_tip_link_col2/left_finger5_tip_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link0_left/collisions/rokae_link0_left_AR5_5_08L_W4C6C11_base/rokae_link0_left_AR5_5_08L_W4C6C11_base",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link1_left/collisions/rokae_link1_left_AR5_5_08L_W4C6C11_link1/rokae_link1_left_AR5_5_08L_W4C6C11_link1",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link2_left/collisions/rokae_link2_left_AR5_5_08L_W4C6C11_link2/rokae_link2_left_AR5_5_08L_W4C6C11_link2",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link3_left/collisions/rokae_link3_left_AR5_5_08L_W4C6C11_link3/rokae_link3_left_AR5_5_08L_W4C6C11_link3",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link4_left/collisions/rokae_link4_left_AR5_5_08L_W4C6C11_link4/rokae_link4_left_AR5_5_08L_W4C6C11_link4",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link5_left/collisions/rokae_link5_left_AR5_5_08L_W4C6C11_link5/rokae_link5_left_AR5_5_08L_W4C6C11_link5",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link6_left/collisions/rokae_link6_left_AR5_5_08L_W4C6C11_link6/rokae_link6_left_AR5_5_08L_W4C6C11_link6",
+        "/World/DexJoCoRobots/LeftRobot/base_left/link7_left/collisions/rokae_link7_left_AR5_5_08L_W4C6C11_link7/rokae_link7_left_AR5_5_08L_W4C6C11_link7"
+      ],
+      "Right": [
+        "/World/DexJoCoRobots/RightRobot/base_right/attachment_right/collisions/right_wrist_fisheye_flange_assembly/right_wrist_fisheye_flange_assembly",
+        "/World/DexJoCoRobots/RightRobot/base_right/link0_right/collisions/rokae_link0_right_AR5_5_08R_W4C1C9_ZY2_base/rokae_link0_right_AR5_5_08R_W4C1C9_ZY2_base",
+        "/World/DexJoCoRobots/RightRobot/base_right/link1_right/collisions/rokae_link1_right_AR5_5_08R_W4C1C9_ZY2_link1/rokae_link1_right_AR5_5_08R_W4C1C9_ZY2_link1",
+        "/World/DexJoCoRobots/RightRobot/base_right/link2_right/collisions/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2",
+        "/World/DexJoCoRobots/RightRobot/base_right/link3_right/collisions/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3",
+        "/World/DexJoCoRobots/RightRobot/base_right/link4_right/collisions/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4",
+        "/World/DexJoCoRobots/RightRobot/base_right/link5_right/collisions/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5",
+        "/World/DexJoCoRobots/RightRobot/base_right/link6_right/collisions/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6",
+        "/World/DexJoCoRobots/RightRobot/base_right/link7_right/collisions/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link2/collisions/right_finger1_link2_col2/right_finger1_link2_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link3/collisions/right_finger1_link3_col2/right_finger1_link3_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link4/collisions/right_finger1_link4_col2/right_finger1_link4_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link4/collisions/right_finger1_tip_link_col2/right_finger1_tip_link_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link2/collisions/right_finger2_link2_col2/right_finger2_link2_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link3/collisions/right_finger2_link3_col2/right_finger2_link3_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link4/collisions/right_finger2_link4_col2/right_finger2_link4_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link4/collisions/right_finger2_tip_link_col2/right_finger2_tip_link_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link2/collisions/right_finger3_link2_col2/right_finger3_link2_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link3/collisions/right_finger3_link3_col2/right_finger3_link3_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link4/collisions/right_finger3_link4_col2/right_finger3_link4_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link4/collisions/right_finger3_tip_link_col2/right_finger3_tip_link_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link2/collisions/right_finger4_link2_col2/right_finger4_link2_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link3/collisions/right_finger4_link3_col2/right_finger4_link3_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link4/collisions/right_finger4_link4_col2/right_finger4_link4_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link4/collisions/right_finger4_tip_link_col2/right_finger4_tip_link_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link2/collisions/right_finger5_link2_col2/right_finger5_link2_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link3/collisions/right_finger5_link3_col2/right_finger5_link3_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link4/collisions/right_finger5_link4_col2/right_finger5_link4_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link4/collisions/right_finger5_tip_link_col2/right_finger5_tip_link_col2",
+        "/World/DexJoCoRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2"
+      ]
+    },
+    "table_candidates": [
+      "/World/Task/B320Benchmark/worktable/geometry/mesh"
+    ]
+  },
+  "isaac_version_target": "5.1",
+  "query": {
+    "api": "omni.physx.get_physx_scene_query_interface().overlap_shape",
+    "depth_source": "ContactData.separation (negative = penetration)",
+    "mesh_behavior": "PhysX convex representation of each input collision gprim"
+  },
+  "schema": "fu001_exact_physx_shape_overlap_audit_v1",
+  "task": "b320_synchronized_double_cabinet_open",
+  "verdict": {
+    "contact_arm_or_base": false,
+    "contact_hand": false,
+    "contact_table": false,
+    "exact_query_arm_or_base_overlap": false,
+    "exact_query_hand_overlap": false,
+    "startup_contact_clear_for_arm_or_base": true,
+    "startup_shape_clear_for_arm_or_base": true
+  }
+}

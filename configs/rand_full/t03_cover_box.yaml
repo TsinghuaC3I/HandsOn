@@ -1,0 +1,6 @@
+env_name: t03_cover_box
+camera_mapping:
+  base: random_camera
+  wrist: wrist
+prompt: "Align the box lid and place it onto the clear box."
+robot_type: single_arm

@@ -1,0 +1,20 @@
+env_name: t28_place_tableware
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Follow the sampled single-step table-setting instruction. Move only the named YCB tableware object and leave the plate and distractors in place."
+robot_type: dual_arm
+time_limit_seconds: 90
+skills:
+  - semantic_spatial_reasoning
+  - precision_grasping
+  - signed_orientation_placement
+  - disturbance_avoidance
+objects:
+  - YCB_plate
+  - YCB_fork
+  - YCB_knife
+  - YCB_spoon
+  - YCB_mug
+  - YCB_gelatin_box

@@ -1,0 +1,38 @@
+{
+  "model": "Wonik Allegro Hand V3",
+  "license": "BSD-2-Clause",
+  "changes": [
+    "Original release files are unchanged. Portable MJCF export resolves existing mesh paths.",
+    "Allegro right export aligns mesh declaration names with existing geometry references; Panda export uses the existing Panda-hand model."
+  ],
+  "qualification": "Existing asset; not a qualified alternative paper evaluation configuration.",
+  "repository": "https://github.com/simlabrobotics/allegro_hand_ros",
+  "source_note": "Upstream derivation and BSD notice retained in packaged asset README/LICENSE; historical source revision was not recorded.",
+  "schema": 1,
+  "robot_id": "allegro",
+  "packaged_files": {
+    "assets/robots/allegro/model_left.xml": "10d039d1aefc64e285d7d5628137c88bc72cd17e7e5089e4cf2a64b63d191cd1",
+    "assets/robots/allegro/model_right.xml": "8b913a80312adfff06539378681c5786eec1243d78c34fc7cb4e745d1fe5a4b1",
+    "sim/envs/xmls/wonik_allegro/LICENSE": "09c187439ecece8b00330e71eb988d3d30f29373c580dc31ab54200d0aa4deb4",
+    "sim/envs/xmls/wonik_allegro/README.md": "59e686bef444b058af72dac73d8fec11df2519d91306427fe0c4f2f12cc72206",
+    "sim/envs/xmls/wonik_allegro/allegro_hand.png": "c23b303879ca9db0a1e4291d7e5b41dac2a0cb4140f679cb0f7ed03f66c91906",
+    "sim/envs/xmls/wonik_allegro/assets/base_link.stl": "4060e1ae52bca21367e15a1dfab16bc7c2e81849566631b7f55e2cf376b7bc85",
+    "sim/envs/xmls/wonik_allegro/assets/base_link_left.stl": "9f66c1cb8d27b9f07e49101a7997a49c60d3cc3ccbc8de96065322df68f47a0b",
+    "sim/envs/xmls/wonik_allegro/assets/link_0.0.stl": "32b90a6744d472a6ffaee02cbf32eb8a5600b1da0944e86aeb9f53503a9f8ac9",
+    "sim/envs/xmls/wonik_allegro/assets/link_1.0.stl": "e3dfb35b6682f62f18ca6ed0b39cb94ff627b68e0e3373cf7212390574604680",
+    "sim/envs/xmls/wonik_allegro/assets/link_12.0_left.stl": "1749ba567bf36729a81eaecf384bc4f5483be8c496af54d230500b96f1d81dcc",
+    "sim/envs/xmls/wonik_allegro/assets/link_12.0_right.stl": "c5418fc127311eefee1d8ee69dfcfde2157d038286900bee91608d2701b00f13",
+    "sim/envs/xmls/wonik_allegro/assets/link_13.0.stl": "e906896afc078a12c9c377e3a2b07f375583d3b869581f9962030cabc888be29",
+    "sim/envs/xmls/wonik_allegro/assets/link_14.0.stl": "a9e4983e4bff7fc7d868b4965c9865edb2669b946434095703766202b5de01ff",
+    "sim/envs/xmls/wonik_allegro/assets/link_15.0.stl": "bf963adb775b79b27649f4f5dff4ced58ef676ce86cc677de49d3810382d11e0",
+    "sim/envs/xmls/wonik_allegro/assets/link_15.0_tip.stl": "a7147c765d4b6d2eb16fa14bba2e8eceec4a750bc346260893ca02aca1fd7a63",
+    "sim/envs/xmls/wonik_allegro/assets/link_2.0.stl": "9c98477c65b45f5a3de1df0e1b54281da2385f4eafd057d103ab40893771c2d0",
+    "sim/envs/xmls/wonik_allegro/assets/link_3.0.stl": "fe333088176395aa7d8a913aa953d3cd649c4c77753224239b78b2c99e3e314c",
+    "sim/envs/xmls/wonik_allegro/assets/link_3.0_tip.stl": "9c3fa04fea0dfa1257c8a1b02d2b7d982b0d985c1ddda1edf148827944835f39",
+    "sim/envs/xmls/wonik_allegro/assets/link_4.0.stl": "f80ac4d443169c56507afaa0b3c72ec3679312bc80cbaebd03e73e96dd18c408",
+    "sim/envs/xmls/wonik_allegro/left_hand.xml": "17a016ab05b77331ce1ef071da7fc57ea0ca2e1389f950d30d08901b051270b0",
+    "sim/envs/xmls/wonik_allegro/right_hand.xml": "dd0e61d44c2bd43f8594a81fb6ccb0f06706da50abc6f5eebb8ea7b13ddf9257",
+    "sim/envs/xmls/wonik_allegro/scene_left.xml": "c312e41e9a4a9462b8166bc948136c3221e30f41aa17e6754b8a1f6ded99a487",
+    "sim/envs/xmls/wonik_allegro/scene_right.xml": "0b00d0c2ba7fcda880420291fa2da0766b5b269054c70a6169e4a26a31532f7e"
+  }
+}

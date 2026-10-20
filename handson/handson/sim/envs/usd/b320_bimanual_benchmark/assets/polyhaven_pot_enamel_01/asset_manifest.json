@@ -1,0 +1,96 @@
+{
+  "files": [
+    {
+      "path": "pot_enamel_01_4k.gltf",
+      "sha256": "714d4854b402a4c784ece2b7e370fe2c10c686d996d95e582101d03d138fb09d",
+      "size_bytes": 4018
+    },
+    {
+      "path": "pot_enamel_01.bin",
+      "sha256": "134771c9f71269f791ad9e52910f25542e94b5e83adff1c9acc620c93d486d13",
+      "size_bytes": 270448
+    },
+    {
+      "path": "textures/pot_enamel_01_arm_4k.jpg",
+      "sha256": "ddb1fe94398c6d038ffdee0e69d21565171993e50e9ff24ea68f558b0248cebb",
+      "size_bytes": 6785303
+    },
+    {
+      "path": "textures/pot_enamel_01_diff_4k.jpg",
+      "sha256": "c3a01f8c6caa5a53001e9058547bfd50124b95dc5379c285ab799e4416c1fffb",
+      "size_bytes": 7227766
+    },
+    {
+      "path": "textures/pot_enamel_01_nor_gl_4k.jpg",
+      "sha256": "e10987ce33c53f874a8e1b93d5fc009b00487f7d3209e2c0145ab0687a87a892",
+      "size_bytes": 8246935
+    }
+  ],
+  "provenance": {
+    "creator_source_url": "https://sketchfab.com/3d-models/retro-enamel-pot-with-flame-pattern-a30e9b9ae2bd4ad0be1f5e604a42489e",
+    "download_archive": "pot_enamel_01_4k.gltf.zip",
+    "download_archive_sha256": "bf50e5d0f73a720502447cbc7090ccf6fc8ddefb7fbe2dc1ded13b5053efd2ee",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "platform": "Poly Haven",
+    "source_url": "https://polyhaven.com/a/pot_enamel_01",
+    "title": "Pot Enamel 01"
+  },
+  "runtime": {
+    "components": [
+      {
+        "bounds_source_xyz_m": {
+          "max": [
+            0.13146506249904633,
+            0.13155460357666016,
+            0.09021023660898209
+          ],
+          "min": [
+            -0.13146506249904633,
+            0.0,
+            -0.09021023660898209
+          ]
+        },
+        "collision_approximation": "convexDecomposition",
+        "path": "pot_base.usd",
+        "sha256": "26d2bf42d40cea5a045f2b3ee394751d175c523d00f4e2bed402127efb29566c",
+        "size_bytes": 585847,
+        "source_node": "pot_enamel_01_base"
+      },
+      {
+        "bounds_source_xyz_m": {
+          "max": [
+            0.09023720771074295,
+            0.04943358898162842,
+            0.09023720771074295
+          ],
+          "min": [
+            -0.09023720771074295,
+            0.0,
+            -0.09023720771074295
+          ]
+        },
+        "collision_approximation": "convexHull",
+        "path": "pot_lid.usd",
+        "sha256": "33ba1dbdca54060e0ae2e5f3ed9969aa22702feeac83de4350257a68eccc66e0",
+        "size_bytes": 243354,
+        "source_node": "pot_enamel_01_lid"
+      }
+    ],
+    "required_spawn_orientation": "+90 degrees about X",
+    "uniform_scale": 0.78
+  },
+  "schema": "handson.ka012.polyhaven-pot-asset",
+  "schema_version": 1,
+  "source_structure": {
+    "fully_modeled_interior": true,
+    "independent_nodes": [
+      "pot_enamel_01_base",
+      "pot_enamel_01_lid"
+    ],
+    "lid_removable": true,
+    "source_up_axis": "Y"
+  },
+  "task_id": "B320-KA012",
+  "task_name": "t45_stir_pot"
+}

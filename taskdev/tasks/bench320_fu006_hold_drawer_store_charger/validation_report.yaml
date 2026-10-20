@@ -1,0 +1,116 @@
+schema_version: 1
+task_id: t46_store_charger
+canonical_task_id: B320-FU006
+generated_at: "2026-08-21T07:16:00+08:00"
+task_complete: false
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab_version: "2.3.2"
+  physics_backend: physx
+checks:
+  identity_ui:
+    status: pass
+    summary: "Canonical config, mapping, collection capability, YAML catalog, UI order/image/steps, and isaac_sim_5_1 runtime declaration are CPU-tested."
+    evidence: [handson/tests/test_fu006_collection.py]
+    metrics: {error_count: 0}
+  assets:
+    status: pass
+    summary: "Exact bundles are packaged. Probe 4 live-confirmed package-local composition, exact drawer articulation/link ownership, charger rigid-body ownership, and first-PhysX initialization."
+    evidence:
+      - handson/handson/sim/envs/xmls/assets/bench320_fu006
+      - taskdev/tasks/t46_store_charger/asset_contract.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t162921z/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t162921z/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t171750z_r2/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t171750z_r2/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t173744z_r3/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t173744z_r3/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/stdout.log
+    metrics: {missing_count: 0, packaged_file_count: 20, live_attempts: 4, live_compositions: 3, exact_prim_preflights: 1, first_physx_passes: 1, offline_pxr_compositions: 1}
+  reset_truth:
+    status: pass
+    summary: "Seeds 320006-320010 live-confirmed finite bounded randomization, fixed drawer-root/DOF truth at q=0.098 m, exact contact owners, negative initial task state, and repeatable first-PhysX initialization."
+    evidence:
+      - handson/tests/test_fu006_collection.py
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-20260820T220705Z-c7c6699e/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320007-20260820T222539Z-e4162a0a/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320008-20260820T223440Z-eea05c5e/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-probe-s320009-20260820T224410Z-4e950007/probe/probe_report.json
+    metrics: {cpu_seeded_trials: 2, live_seeded_trials: 5, drawer_reset_error_m: 2.563e-9}
+  success_failure_stability:
+    status: pass
+    summary: "Three randomized physical trajectories passed the unchanged ordered left-contact/open, eight-support containment, right-release, and 0.5 s stability gates. Focused negative tests retain drop, escape, closure, order-violation, and timeout semantics."
+    evidence:
+      - handson/tests/test_fu006_collection.py
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-20260820T220705Z-c7c6699e/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320007-20260820T222539Z-e4162a0a/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320008-20260820T223440Z-eea05c5e/episode_candidate/episode_manifest.json
+    metrics: {cpu_positive_cases: 1, cpu_negative_semantics: 5, live_positive_cases: 3, ordered_gates_per_episode: 6, stability_frames: 15}
+  tensor_zero_action:
+    status: pass
+    summary: "Seed 320009 completed first PhysX/reset and 240 zero-action steps with valid tensor views. Charger translation drift was 1.6324e-7 m; drawer q remained 0.0979999974 m and no task failure occurred."
+    evidence:
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t162921z/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t162921z/run.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t162921z/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t171750z_r2/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t171750z_r2/run.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t171750z_r2/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t173744z_r3/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t173744z_r3/run.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t173744z_r3/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/probe_report.json
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/run.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-probe-s320009-20260820T224410Z-4e950007/probe/probe_report.json
+    metrics: {attempts: 5, passing_attempts: 2, latest_steps: 240, max_charger_translation_drift_m: 1.6323404237781945e-7}
+  cameras:
+    status: pass
+    summary: "Seed 320009 captured visually inspected, non-black ego, wrist_left, and wrist_right PNGs at 640x480, 848x480, and 848x480. All three successful Zarr episodes also contain the canonical camera fields."
+    evidence:
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/preview_ego.png
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/preview_wrist_left.png
+      - taskdev/tasks/t46_store_charger/evidence/probe_20260817t175836z_r4/preview_wrist_right.png
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-probe-s320009-20260820T224410Z-4e950007/probe/preview_ego.png
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-probe-s320009-20260820T224410Z-4e950007/probe/preview_wrist_left.png
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-probe-s320009-20260820T224410Z-4e950007/probe/preview_wrist_right.png
+    metrics: {camera_count_declared: 3, latest_captured_frames: 3, non_black_frames: 3, successful_zarr_episodes_with_cameras: 3}
+  collection:
+    status: pass
+    summary: "Seeds 320006, 320007, and 320008 each produced a successful Zarr episode through the unchanged 54-D action boundary. All six ordered physical gates passed, task_complete stayed false, and no state write occurred after action 0."
+    evidence:
+      - scripts/fu006_vertical_slice.py
+      - scripts/fu006_scheduler_collection.py
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t180608z_r1/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t180608z_r1/offline_policy_geometry_audit.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t180608z_r1/run.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t180608z_r1/stdout.log
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t183239z_r2_scheduler_root_abort/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t183239z_r2_scheduler_root_abort/run.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t183239z_r2_scheduler_root_abort/scheduler_contract_audit.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t184411z_r3_contact_failure/attempt_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t184411z_r3_contact_failure/episode_candidate_failure_report.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t184411z_r3_contact_failure/phase_truth_summary.json
+      - taskdev/tasks/t46_store_charger/evidence/collect_20260817t184411z_r3_contact_failure/post_cleanup_audit.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-20260820T220705Z-c7c6699e/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320007-20260820T222539Z-e4162a0a/episode_candidate/episode_manifest.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-s320008-20260820T223440Z-eea05c5e/episode_candidate/episode_manifest.json
+    metrics: {successful_episodes: 3, zarr_candidates: 3, action_dimension: 54, step_counts: [2163, 2165, 2165], state_writes_after_action_zero: 0}
+  fresh_replay:
+    status: pass
+    summary: "A separate fresh Isaac Sim 5.1 process hash-verified and replayed all 2163 actions from seed 320006, performed zero state restores after action 0, and independently reached the same ordered terminal success."
+    evidence:
+      - scripts/fu006_vertical_slice.py
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-collect-20260820T220705Z-c7c6699e/episode_candidate/fresh_replay_report.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-vertical-slice-replay-20260820T221739Z-d25c1129/run.json
+    metrics: {replays: 1, recorded_steps: 2163, replayed_steps: 2163, state_restores_after_action_zero: 0, success: true}
+  collection_ui_smoke:
+    status: pass
+    summary: "The production record_demos_zarr.py route loaded FU006, accepted the stable physical origin on attempt 1, enabled teleoperation, created all three camera encoders, and consumed three 54-D control steps before the intentional max_steps stop."
+    evidence:
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-ui-collection-smoke-v3-20260820T231144Z-5d8b5926/stdout.log
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-ui-collection-smoke-v3-20260820T231144Z-5d8b5926/live_preview.png
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/bench320-fu006-ui-collection-smoke-v3-20260820T231144Z-5d8b5926/ui_collect_smoke/.physical_replay_pending/.physx_session_history/fu006-ui-smoke-v3-320010-e13211a6b463/events/00000000/event.json
+    metrics: {stable_origin_attempt: 1, initialization_contact_samples: 181, invalid_contact_samples: 0, control_steps: 3, action_dimension: 54, camera_encoders: 3}

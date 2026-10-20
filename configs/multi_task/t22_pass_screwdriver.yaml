@@ -1,0 +1,19 @@
+env_name: t22_pass_screwdriver
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Touch the screwdriver with the right hand first, then touch it with the left hand while it is airborne, and let it land in the horizontal green target zone."
+robot_type: dual_arm
+time_limit_seconds: 120
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX
+skills:
+  - bimanual_coordination
+  - ordered_handover
+  - physical_contact_order
+  - airborne_handover
+  - zone_landing
+objects:
+  - polyhaven_flathead_screwdriver
+  - target_marker

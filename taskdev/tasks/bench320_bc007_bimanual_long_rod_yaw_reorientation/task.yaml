@@ -1,0 +1,126 @@
+schema_version: 1
+task:
+  id: bench320_bc007_bimanual_long_rod_yaw_reorientation
+  title: "B320-BC007 Bimanual Long-Rod Reorientation"
+  description: "Two ROKAE arms with Wuji generation-1 hands grasp distinct ends of a long rod, lift it into a prescribed height band, yaw it 90 degrees without table support, and hold it level and stable at the target."
+  taxonomy:
+    family: tool_use
+    interactions: [bimanual_distributed_grasp, long_object_transport, airborne_yaw_reorientation]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "Authoritative B320-BC007 task definition and the existing DexVerse authored stick asset."
+  reference: "HandsOn benchmark expansion handoff B320-BC007; DexVerse assets/core_assets/dexverse_authored/Stick/stick.usda sha256=52584f8606e08d290e514fdb6d63a06f36b31d99908902a7e29c5b5cd2bda516"
+  license: BSD-3-Clause
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.70, -0.48, 0.84]
+    max: [0.12, 0.48, 1.30]
+  targets:
+    - {id: left_end_pregrasp, arm: left, frame: world, position_m: [-0.45, 0.23, 0.97], orientation_xyzw: [0.0, 0.0, 0.0, 1.0], clearance_m: 0.03}
+    - {id: right_end_pregrasp, arm: right, frame: world, position_m: [-0.45, -0.23, 0.97], orientation_xyzw: [0.0, 0.0, 0.0, 1.0], clearance_m: 0.03}
+    - {id: left_end_target, arm: left, frame: world, position_m: [-0.63, 0.0, 1.10], orientation_xyzw: [0.0, 0.0, 0.7071067812, 0.7071067812], clearance_m: 0.03}
+    - {id: right_end_target, arm: right, frame: world, position_m: [-0.17, 0.0, 1.10], orientation_xyzw: [0.0, 0.0, 0.7071067812, 0.7071067812], clearance_m: 0.03}
+assets:
+  - id: long_rod
+    path: taskdev/tasks/bench320_bc007_bimanual_long_rod_yaw_reorientation/assets/dexverse_stick/stick.usda
+    kind: usd
+    required: true
+    scale_m: [0.0225, 0.0225, 0.23]
+    collision: {enabled: true, approximation: convex_12_sided_prism}
+    physics:
+      mass_kg: 0.22
+      friction: {static: 1.10, dynamic: 0.90}
+      damping: {linear: 0.25, angular: 5.00}
+      sleep_threshold: 0.0
+reset:
+  seedable: true
+  max_settle_steps: 300
+  layout:
+    table_top_z_m: 0.89
+    rod_center_xyz_m: [-0.45, 0.0, 0.9125]
+    rod_xy_jitter_m: 0.02
+    rod_yaw_jitter_degrees: 8.0
+    target_center_offset_xyz_m: [0.05, 0.0, 0.1865]
+    target_yaw_delta_degrees: 90.0
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - rod_starts_supported_on_table
+    - rod_starts_awake_with_measured_table_support
+    - initial_success_false
+contact:
+  monitored_pairs:
+    - {id: left_hand_left_end, bodies: ["robot/left_hand/*", "assets/long_rod/left_end"], max_penetration_m: 0.005}
+    - {id: right_hand_right_end, bodies: ["robot/right_hand/*", "assets/long_rod/right_end"], max_penetration_m: 0.005}
+    - {id: rod_table, bodies: ["assets/long_rod", "environment/table"], max_penetration_m: 0.005}
+  forbidden_pairs:
+    - {id: same_end_substitution, bodies: ["robot/both_hands/same_end", "assets/long_rod"]}
+    - {id: table_assisted_rotation, bodies: ["assets/long_rod", "environment/table"]}
+    - {id: strong_robot_rod_collision, bodies: ["robot/hands/*", "assets/long_rod"]}
+success:
+  logic: all
+  predicates:
+    - {id: distinct_end_roles, type: simultaneous_role_contacts, parameters: {left: local_minus_z_end, right: local_plus_z_end, same_end_substitution_allowed: false}}
+    - {id: height_band, type: scalar_range, parameters: {value: rod_center_z, strict_min_m: 1.02, strict_max_m: 1.14}}
+    - {id: horizontal_yaw_rotation, type: ordered_yaw_progress, parameters: {target_delta_degrees: 90.0, strict_min_progress_degrees: 75.0, strict_max_error_degrees: 8.0}}
+    - {id: target_position, type: position_error, parameters: {strict_max_m: 0.04}}
+    - {id: endpoint_levelness, type: endpoint_height_difference, parameters: {strict_max_m: 0.03}}
+    - {id: hand_separation, type: distance, parameters: {strict_min_m: 0.25}}
+    - {id: terminal_linear_speed, type: linear_speed, parameters: {strict_max_mps: 0.08}}
+    - {id: terminal_angular_speed, type: angular_speed, parameters: {strict_max_radps: 0.30}}
+    - {id: no_table_assist, type: forbidden_contact, parameters: {pair: rod_table}}
+  hold_steps: 15
+  timeout_steps: 2700
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  streams:
+    ego: {resolution_hwc: [480, 640, 3]}
+    wrist_left: {resolution_hwc: [480, 640, 3]}
+    wrist_right: {resolution_hwc: [480, 640, 3]}
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 300
+  hold_action: "zero Cartesian fields plus absolute actual reset hand-joint targets"
+  max_linear_velocity_mps: 0.08
+  max_angular_velocity_radps: 0.30
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, current_truth, next_truth, physx_task_controller_state, bc007_task_state, rgb_head, rgb_wrist_left, rgb_wrist_right, contacts, success, reset_seed, reset_options]
+  min_successful_episodes: 1
+validation:
+  report: taskdev/tasks/bench320_bc007_bimanual_long_rod_yaw_reorientation/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 8, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 1, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 1, max_black_fraction: 0.0, min_mean_rgb: 2.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 1, max_schema_errors: 0}

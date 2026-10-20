@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1416.7" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="phillips_screwdriver_material" file="visuals/T_phillips_screwdriver_BC001.png"/>
+    <texture type="2d" name="phillips_screwdriver_prop_material" file="visuals/T_phillips_screwdriver_BC001.png"/>
+    <material name="phillips_screwdriver_material" texture="phillips_screwdriver_material" specular="0.3103" shininess="0.1414"/>
+    <material name="phillips_screwdriver_prop_material" texture="phillips_screwdriver_prop_material" specular="10" shininess="0.1"/>
+    <mesh name="phillips_screwdriver_vis" file="visuals/phillips_screwdriver.obj"/>
+    <mesh name="phillips_screwdriver_prop_vis" file="visuals/phillips_screwdriver_prop.obj"/>
+    <mesh name="phillips_screwdriver_Collider1_m_collision" file="collision/phillips_screwdriver_Collider1_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider2_m_collision" file="collision/phillips_screwdriver_Collider2_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider3_m_collision" file="collision/phillips_screwdriver_Collider3_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider4_m_collision" file="collision/phillips_screwdriver_Collider4_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider5_m_collision" file="collision/phillips_screwdriver_Collider5_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider6_m_collision" file="collision/phillips_screwdriver_Collider6_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider7_m_collision" file="collision/phillips_screwdriver_Collider7_m.obj"/>
+    <mesh name="phillips_screwdriver_Collider8_m_collision" file="collision/phillips_screwdriver_Collider8_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="phillips_screwdriver_material" mesh="phillips_screwdriver_vis"/>
+        <geom name="phillips_screwdriver_Collider1_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider1_m_collision"/>
+        <geom name="phillips_screwdriver_Collider2_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider2_m_collision"/>
+        <geom name="phillips_screwdriver_Collider3_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider3_m_collision"/>
+        <geom name="phillips_screwdriver_Collider4_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider4_m_collision"/>
+        <geom name="phillips_screwdriver_Collider5_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider5_m_collision"/>
+        <geom name="phillips_screwdriver_Collider6_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider6_m_collision"/>
+        <geom name="phillips_screwdriver_Collider7_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider7_m_collision"/>
+        <geom name="phillips_screwdriver_Collider8_m" class="collision" type="mesh" mesh="phillips_screwdriver_Collider8_m_collision"/>
+        <body name="phillips_screwdriver_prop">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="phillips_screwdriver_prop_material" mesh="phillips_screwdriver_prop_vis"/>
+        </body>
+      <geom size="0.016441 0.107674 0.0164415" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

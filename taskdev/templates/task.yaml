@@ -1,0 +1,129 @@
+schema_version: 1
+task:
+  id: ${TASK_ID}
+  title: "${TASK_TITLE}"
+  description: "Replace with an observable, simulator-independent task definition."
+  taxonomy:
+    family: pick_place
+    interactions: [precision_grasp, transport, controlled_release]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: original
+  attribution: "Created for this benchmark."
+  reference: null
+  license: project
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: taskdev/tasks/${TASK_ID}/assets/REPLACE_WITH_ROKAE_ASSET
+    base_poses:
+      - {position_m: [-0.45, 0.0, 0.0], orientation_xyzw: [0.0, 0.0, 0.0, 1.0]}
+      - {position_m: [0.45, 0.0, 0.0], orientation_xyzw: [0.0, 0.0, 1.0, 0.0]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: taskdev/tasks/${TASK_ID}/assets/REPLACE_WITH_WUJI_GEN1_ASSET
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.75, -0.65, 0.55]
+    max: [0.75, 0.65, 1.45]
+  targets:
+    - id: primary_interaction
+      arm: either
+      frame: world
+      position_m: [0.0, 0.0, 0.85]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: primary_object
+    path: taskdev/tasks/${TASK_ID}/assets/REPLACE_WITH_TASK_ASSET
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: convex_decomposition
+reset:
+  seedable: true
+  max_settle_steps: 300
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+contact:
+  monitored_pairs:
+    - id: hand_primary_object
+      bodies: ["robot/hands/*", "assets/primary_object"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: arm_table
+      bodies: ["robot/arms/*", "environment/table"]
+success:
+  logic: all
+  predicates:
+    - id: object_at_goal
+      type: relative_pose
+      parameters:
+        object: assets/primary_object
+        target: goal/primary
+        position_tolerance_m: 0.02
+        orientation_tolerance_rad: 0.15
+  hold_steps: 30
+  timeout_steps: 1800
+camera:
+  primary: head
+  prim_path: /World/Robot/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 300
+  max_linear_velocity_mps: 20.0
+  max_angular_velocity_radps: 50.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, contacts, success]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/${TASK_ID}/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability:
+      min_target_fraction: 1.0
+      min_joint_limit_margin_rad: 0.05
+      max_position_error_m: 0.01
+      max_orientation_error_rad: 0.15
+    contact:
+      max_penetration_m: 0.005
+      max_forbidden_events: 0
+    reset:
+      min_trials: 20
+      max_failure_fraction: 0.0
+    success:
+      min_positive_trials: 10
+      min_negative_trials: 10
+      max_false_positive_fraction: 0.0
+      max_false_negative_fraction: 0.0
+    camera:
+      min_frames: 30
+      max_black_fraction: 0.0
+      min_mean_rgb: 30.0
+      min_width: 640
+      min_height: 480
+    stability:
+      min_sim_seconds: 10.0
+      max_nan_count: 0
+      max_exploding_body_count: 0
+    collection:
+      min_episodes: 3
+      max_schema_errors: 0

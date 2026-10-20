@@ -1,0 +1,19 @@
+env_name: t07_flip_sponge
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Stabilize the YCB skillet with the left hand. With the right hand, grasp the YCB spatula, slide its blade under the YCB sponge, lift and flip the sponge once, then leave the opposite face stable inside the skillet. Do not touch the sponge directly with either hand."
+robot_type: dual_arm
+time_limit_seconds: 100
+skills:
+  - bimanual_stabilization
+  - tool_grasping
+  - tool_insertion
+  - dynamic_reorientation
+  - containment
+  - release_and_stability
+objects:
+  - ycb08_skillet
+  - ycb08_spatula
+  - ycb08_sponge

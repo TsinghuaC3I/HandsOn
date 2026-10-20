@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="211.49" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="plate_material" file="visuals/T_plate_BC001.png"/>
+    <material name="plate_material" texture="plate_material" specular="0.3333" shininess="0"/>
+    <mesh name="plate_vis" file="visuals/plate.obj"/>
+    <mesh name="plate_Collider1_m_collision" file="collision/plate_Collider1_m.obj"/>
+    <mesh name="plate_Collider2_m_collision" file="collision/plate_Collider2_m.obj"/>
+    <mesh name="plate_Collider3_m_collision" file="collision/plate_Collider3_m.obj"/>
+    <mesh name="plate_Collider4_m_collision" file="collision/plate_Collider4_m.obj"/>
+    <mesh name="plate_Collider5_m_collision" file="collision/plate_Collider5_m.obj"/>
+    <mesh name="plate_Collider6_m_collision" file="collision/plate_Collider6_m.obj"/>
+    <mesh name="plate_Collider7_m_collision" file="collision/plate_Collider7_m.obj"/>
+    <mesh name="plate_Collider8_m_collision" file="collision/plate_Collider8_m.obj"/>
+    <mesh name="plate_Collider9_m_collision" file="collision/plate_Collider9_m.obj"/>
+    <mesh name="plate_Collider10_m_collision" file="collision/plate_Collider10_m.obj"/>
+    <mesh name="plate_Collider11_m_collision" file="collision/plate_Collider11_m.obj"/>
+    <mesh name="plate_Collider12_m_collision" file="collision/plate_Collider12_m.obj"/>
+    <mesh name="plate_Collider13_m_collision" file="collision/plate_Collider13_m.obj"/>
+    <mesh name="plate_Collider14_m_collision" file="collision/plate_Collider14_m.obj"/>
+    <mesh name="plate_Collider15_m_collision" file="collision/plate_Collider15_m.obj"/>
+    <mesh name="plate_Collider16_m_collision" file="collision/plate_Collider16_m.obj"/>
+    <mesh name="plate_Collider17_m_collision" file="collision/plate_Collider17_m.obj"/>
+    <mesh name="plate_Collider18_m_collision" file="collision/plate_Collider18_m.obj"/>
+    <mesh name="plate_Collider19_m_collision" file="collision/plate_Collider19_m.obj"/>
+    <mesh name="plate_Collider20_m_collision" file="collision/plate_Collider20_m.obj"/>
+    <mesh name="plate_Collider21_m_collision" file="collision/plate_Collider21_m.obj"/>
+    <mesh name="plate_Collider22_m_collision" file="collision/plate_Collider22_m.obj"/>
+    <mesh name="plate_Collider23_m_collision" file="collision/plate_Collider23_m.obj"/>
+    <mesh name="plate_Collider24_m_collision" file="collision/plate_Collider24_m.obj"/>
+    <mesh name="plate_Collider25_m_collision" file="collision/plate_Collider25_m.obj"/>
+    <mesh name="plate_Collider26_m_collision" file="collision/plate_Collider26_m.obj"/>
+    <mesh name="plate_Collider27_m_collision" file="collision/plate_Collider27_m.obj"/>
+    <mesh name="plate_Collider28_m_collision" file="collision/plate_Collider28_m.obj"/>
+    <mesh name="plate_Collider29_m_collision" file="collision/plate_Collider29_m.obj"/>
+    <mesh name="plate_Collider30_m_collision" file="collision/plate_Collider30_m.obj"/>
+    <mesh name="plate_Collider31_m_collision" file="collision/plate_Collider31_m.obj"/>
+    <mesh name="plate_Collider32_m_collision" file="collision/plate_Collider32_m.obj"/>
+    <mesh name="plate_Collider33_m_collision" file="collision/plate_Collider33_m.obj"/>
+    <mesh name="plate_Collider34_m_collision" file="collision/plate_Collider34_m.obj"/>
+    <mesh name="plate_Collider35_m_collision" file="collision/plate_Collider35_m.obj"/>
+    <mesh name="plate_Collider36_m_collision" file="collision/plate_Collider36_m.obj"/>
+    <mesh name="plate_Collider37_m_collision" file="collision/plate_Collider37_m.obj"/>
+    <mesh name="plate_Collider38_m_collision" file="collision/plate_Collider38_m.obj"/>
+    <mesh name="plate_Collider39_m_collision" file="collision/plate_Collider39_m.obj"/>
+    <mesh name="plate_Collider40_m_collision" file="collision/plate_Collider40_m.obj"/>
+    <mesh name="plate_Collider41_m_collision" file="collision/plate_Collider41_m.obj"/>
+    <mesh name="plate_Collider42_m_collision" file="collision/plate_Collider42_m.obj"/>
+    <mesh name="plate_Collider43_m_collision" file="collision/plate_Collider43_m.obj"/>
+    <mesh name="plate_Collider44_m_collision" file="collision/plate_Collider44_m.obj"/>
+    <mesh name="plate_Collider45_m_collision" file="collision/plate_Collider45_m.obj"/>
+    <mesh name="plate_Collider46_m_collision" file="collision/plate_Collider46_m.obj"/>
+    <mesh name="plate_Collider47_m_collision" file="collision/plate_Collider47_m.obj"/>
+    <mesh name="plate_Collider48_m_collision" file="collision/plate_Collider48_m.obj"/>
+    <mesh name="plate_Collider49_m_collision" file="collision/plate_Collider49_m.obj"/>
+    <mesh name="plate_Collider50_m_collision" file="collision/plate_Collider50_m.obj"/>
+    <mesh name="plate_Collider51_m_collision" file="collision/plate_Collider51_m.obj"/>
+    <mesh name="plate_Collider52_m_collision" file="collision/plate_Collider52_m.obj"/>
+    <mesh name="plate_Collider53_m_collision" file="collision/plate_Collider53_m.obj"/>
+    <mesh name="plate_Collider54_m_collision" file="collision/plate_Collider54_m.obj"/>
+    <mesh name="plate_Collider55_m_collision" file="collision/plate_Collider55_m.obj"/>
+    <mesh name="plate_Collider56_m_collision" file="collision/plate_Collider56_m.obj"/>
+    <mesh name="plate_Collider57_m_collision" file="collision/plate_Collider57_m.obj"/>
+    <mesh name="plate_Collider58_m_collision" file="collision/plate_Collider58_m.obj"/>
+    <mesh name="plate_Collider59_m_collision" file="collision/plate_Collider59_m.obj"/>
+    <mesh name="plate_Collider60_m_collision" file="collision/plate_Collider60_m.obj"/>
+    <mesh name="plate_Collider61_m_collision" file="collision/plate_Collider61_m.obj"/>
+    <mesh name="plate_Collider62_m_collision" file="collision/plate_Collider62_m.obj"/>
+    <mesh name="plate_Collider63_m_collision" file="collision/plate_Collider63_m.obj"/>
+    <mesh name="plate_Collider64_m_collision" file="collision/plate_Collider64_m.obj"/>
+    <mesh name="plate_Collider65_m_collision" file="collision/plate_Collider65_m.obj"/>
+    <mesh name="plate_Collider66_m_collision" file="collision/plate_Collider66_m.obj"/>
+    <mesh name="plate_Collider67_m_collision" file="collision/plate_Collider67_m.obj"/>
+    <mesh name="plate_Collider68_m_collision" file="collision/plate_Collider68_m.obj"/>
+    <mesh name="plate_Collider69_m_collision" file="collision/plate_Collider69_m.obj"/>
+    <mesh name="plate_Collider70_m_collision" file="collision/plate_Collider70_m.obj"/>
+    <mesh name="plate_Collider71_m_collision" file="collision/plate_Collider71_m.obj"/>
+    <mesh name="plate_Collider72_m_collision" file="collision/plate_Collider72_m.obj"/>
+    <mesh name="plate_Collider73_m_collision" file="collision/plate_Collider73_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="plate_material" mesh="plate_vis"/>
+        <geom name="plate_Collider1_m" class="collision" type="mesh" mesh="plate_Collider1_m_collision"/>
+        <geom name="plate_Collider2_m" class="collision" type="mesh" mesh="plate_Collider2_m_collision"/>
+        <geom name="plate_Collider3_m" class="collision" type="mesh" mesh="plate_Collider3_m_collision"/>
+        <geom name="plate_Collider4_m" class="collision" type="mesh" mesh="plate_Collider4_m_collision"/>
+        <geom name="plate_Collider5_m" class="collision" type="mesh" mesh="plate_Collider5_m_collision"/>
+        <geom name="plate_Collider6_m" class="collision" type="mesh" mesh="plate_Collider6_m_collision"/>
+        <geom name="plate_Collider7_m" class="collision" type="mesh" mesh="plate_Collider7_m_collision"/>
+        <geom name="plate_Collider8_m" class="collision" type="mesh" mesh="plate_Collider8_m_collision"/>
+        <geom name="plate_Collider9_m" class="collision" type="mesh" mesh="plate_Collider9_m_collision"/>
+        <geom name="plate_Collider10_m" class="collision" type="mesh" mesh="plate_Collider10_m_collision"/>
+        <geom name="plate_Collider11_m" class="collision" type="mesh" mesh="plate_Collider11_m_collision"/>
+        <geom name="plate_Collider12_m" class="collision" type="mesh" mesh="plate_Collider12_m_collision"/>
+        <geom name="plate_Collider13_m" class="collision" type="mesh" mesh="plate_Collider13_m_collision"/>
+        <geom name="plate_Collider14_m" class="collision" type="mesh" mesh="plate_Collider14_m_collision"/>
+        <geom name="plate_Collider15_m" class="collision" type="mesh" mesh="plate_Collider15_m_collision"/>
+        <geom name="plate_Collider16_m" class="collision" type="mesh" mesh="plate_Collider16_m_collision"/>
+        <geom name="plate_Collider17_m" class="collision" type="mesh" mesh="plate_Collider17_m_collision"/>
+        <geom name="plate_Collider18_m" class="collision" type="mesh" mesh="plate_Collider18_m_collision"/>
+        <geom name="plate_Collider19_m" class="collision" type="mesh" mesh="plate_Collider19_m_collision"/>
+        <geom name="plate_Collider20_m" class="collision" type="mesh" mesh="plate_Collider20_m_collision"/>
+        <geom name="plate_Collider21_m" class="collision" type="mesh" mesh="plate_Collider21_m_collision"/>
+        <geom name="plate_Collider22_m" class="collision" type="mesh" mesh="plate_Collider22_m_collision"/>
+        <geom name="plate_Collider23_m" class="collision" type="mesh" mesh="plate_Collider23_m_collision"/>
+        <geom name="plate_Collider24_m" class="collision" type="mesh" mesh="plate_Collider24_m_collision"/>
+        <geom name="plate_Collider25_m" class="collision" type="mesh" mesh="plate_Collider25_m_collision"/>
+        <geom name="plate_Collider26_m" class="collision" type="mesh" mesh="plate_Collider26_m_collision"/>
+        <geom name="plate_Collider27_m" class="collision" type="mesh" mesh="plate_Collider27_m_collision"/>
+        <geom name="plate_Collider28_m" class="collision" type="mesh" mesh="plate_Collider28_m_collision"/>
+        <geom name="plate_Collider29_m" class="collision" type="mesh" mesh="plate_Collider29_m_collision"/>
+        <geom name="plate_Collider30_m" class="collision" type="mesh" mesh="plate_Collider30_m_collision"/>
+        <geom name="plate_Collider31_m" class="collision" type="mesh" mesh="plate_Collider31_m_collision"/>
+        <geom name="plate_Collider32_m" class="collision" type="mesh" mesh="plate_Collider32_m_collision"/>
+        <geom name="plate_Collider33_m" class="collision" type="mesh" mesh="plate_Collider33_m_collision"/>
+        <geom name="plate_Collider34_m" class="collision" type="mesh" mesh="plate_Collider34_m_collision"/>
+        <geom name="plate_Collider35_m" class="collision" type="mesh" mesh="plate_Collider35_m_collision"/>
+        <geom name="plate_Collider36_m" class="collision" type="mesh" mesh="plate_Collider36_m_collision"/>
+        <geom name="plate_Collider37_m" class="collision" type="mesh" mesh="plate_Collider37_m_collision"/>
+        <geom name="plate_Collider38_m" class="collision" type="mesh" mesh="plate_Collider38_m_collision"/>
+        <geom name="plate_Collider39_m" class="collision" type="mesh" mesh="plate_Collider39_m_collision"/>
+        <geom name="plate_Collider40_m" class="collision" type="mesh" mesh="plate_Collider40_m_collision"/>
+        <geom name="plate_Collider41_m" class="collision" type="mesh" mesh="plate_Collider41_m_collision"/>
+        <geom name="plate_Collider42_m" class="collision" type="mesh" mesh="plate_Collider42_m_collision"/>
+        <geom name="plate_Collider43_m" class="collision" type="mesh" mesh="plate_Collider43_m_collision"/>
+        <geom name="plate_Collider44_m" class="collision" type="mesh" mesh="plate_Collider44_m_collision"/>
+        <geom name="plate_Collider45_m" class="collision" type="mesh" mesh="plate_Collider45_m_collision"/>
+        <geom name="plate_Collider46_m" class="collision" type="mesh" mesh="plate_Collider46_m_collision"/>
+        <geom name="plate_Collider47_m" class="collision" type="mesh" mesh="plate_Collider47_m_collision"/>
+        <geom name="plate_Collider48_m" class="collision" type="mesh" mesh="plate_Collider48_m_collision"/>
+        <geom name="plate_Collider49_m" class="collision" type="mesh" mesh="plate_Collider49_m_collision"/>
+        <geom name="plate_Collider50_m" class="collision" type="mesh" mesh="plate_Collider50_m_collision"/>
+        <geom name="plate_Collider51_m" class="collision" type="mesh" mesh="plate_Collider51_m_collision"/>
+        <geom name="plate_Collider52_m" class="collision" type="mesh" mesh="plate_Collider52_m_collision"/>
+        <geom name="plate_Collider53_m" class="collision" type="mesh" mesh="plate_Collider53_m_collision"/>
+        <geom name="plate_Collider54_m" class="collision" type="mesh" mesh="plate_Collider54_m_collision"/>
+        <geom name="plate_Collider55_m" class="collision" type="mesh" mesh="plate_Collider55_m_collision"/>
+        <geom name="plate_Collider56_m" class="collision" type="mesh" mesh="plate_Collider56_m_collision"/>
+        <geom name="plate_Collider57_m" class="collision" type="mesh" mesh="plate_Collider57_m_collision"/>
+        <geom name="plate_Collider58_m" class="collision" type="mesh" mesh="plate_Collider58_m_collision"/>
+        <geom name="plate_Collider59_m" class="collision" type="mesh" mesh="plate_Collider59_m_collision"/>
+        <geom name="plate_Collider60_m" class="collision" type="mesh" mesh="plate_Collider60_m_collision"/>
+        <geom name="plate_Collider61_m" class="collision" type="mesh" mesh="plate_Collider61_m_collision"/>
+        <geom name="plate_Collider62_m" class="collision" type="mesh" mesh="plate_Collider62_m_collision"/>
+        <geom name="plate_Collider63_m" class="collision" type="mesh" mesh="plate_Collider63_m_collision"/>
+        <geom name="plate_Collider64_m" class="collision" type="mesh" mesh="plate_Collider64_m_collision"/>
+        <geom name="plate_Collider65_m" class="collision" type="mesh" mesh="plate_Collider65_m_collision"/>
+        <geom name="plate_Collider66_m" class="collision" type="mesh" mesh="plate_Collider66_m_collision"/>
+        <geom name="plate_Collider67_m" class="collision" type="mesh" mesh="plate_Collider67_m_collision"/>
+        <geom name="plate_Collider68_m" class="collision" type="mesh" mesh="plate_Collider68_m_collision"/>
+        <geom name="plate_Collider69_m" class="collision" type="mesh" mesh="plate_Collider69_m_collision"/>
+        <geom name="plate_Collider70_m" class="collision" type="mesh" mesh="plate_Collider70_m_collision"/>
+        <geom name="plate_Collider71_m" class="collision" type="mesh" mesh="plate_Collider71_m_collision"/>
+        <geom name="plate_Collider72_m" class="collision" type="mesh" mesh="plate_Collider72_m_collision"/>
+        <geom name="plate_Collider73_m" class="collision" type="mesh" mesh="plate_Collider73_m_collision"/>
+      <geom size="0.1295725 0.1298925 0.0123455" pos="-0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

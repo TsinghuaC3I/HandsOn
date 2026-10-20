@@ -1,0 +1,7 @@
+env_name: t10_lift_carton
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Support opposite lower carton sides with both hands, lift the entire carton clear of the table without either side exceeding 12 N, and keep it continuously airborne for 3 seconds."
+robot_type: dual_arm
+time_limit_seconds: 22
+skills: [bimanual_carry, force_limiting, synchronized_stabilization]
+objects: [carton]

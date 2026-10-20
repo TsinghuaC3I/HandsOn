@@ -1,0 +1,8 @@
+Wooden Cutting Board
+====================
+
+Source: https://polyhaven.com/a/wooden_cutting_board
+License: CC0 1.0 (https://polyhaven.com/license)
+
+The downloaded glTF, binary buffer, and texture maps are retained from Poly
+Haven. No geometry was authored in this task.

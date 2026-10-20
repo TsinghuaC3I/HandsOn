@@ -1,0 +1,10 @@
+{
+  "use_gradient_checkpointing": true,
+  "inference": {
+    "denoising_steps": 10,
+    "execute_horizon": 16,
+    "cfg_scale": 1.0,
+    "dit_cache": false,
+    "scheduler_shift": 5.0
+  }
+}

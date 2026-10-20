@@ -1,0 +1,190 @@
+{
+  "materials": [
+    {
+      "asset_id": "Wood049",
+      "source": "https://ambientcg.com/a/Wood049",
+      "download": "https://ambientcg.com/get?file=Wood049_2K-JPG.zip",
+      "archive_sha256": "a9dd578788a1e05434d126f5cb66b15520f98f5108ac535790145905fc176c54",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        80,
+        80
+      ],
+      "creation_method": "PBRProcedural",
+      "maps": {
+        "Color": {
+          "file": "Wood049/Color.jpg",
+          "sha256": "447ca1455fa88d37465319638f1c99107f02f50fcf491d3c15314658d21e4d5e"
+        },
+        "NormalGL": {
+          "file": "Wood049/NormalGL.jpg",
+          "sha256": "8f2d5697c79927c85a10e48e82701a7054df77166d4654a2931e650f7f4c77f6"
+        },
+        "Roughness": {
+          "file": "Wood049/Roughness.jpg",
+          "sha256": "bb20736bb4b18533cce8c1f36ea8fff7216653b3516ec60f1aedb83362151691"
+        }
+      }
+    },
+    {
+      "asset_id": "Wood051",
+      "source": "https://ambientcg.com/a/Wood051",
+      "download": "https://ambientcg.com/get?file=Wood051_2K-JPG.zip",
+      "archive_sha256": "ef50cd051a1d998bf2a03e243e991474415d948af6d4b76d291c937654c97d4b",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        80,
+        80
+      ],
+      "creation_method": "PBRProcedural",
+      "maps": {
+        "Color": {
+          "file": "Wood051/Color.jpg",
+          "sha256": "c6d61f6bfd2537f7dcb8e4c2264f77e3d8fdfbca14dcf5ff7bade7637d2125b5"
+        },
+        "NormalGL": {
+          "file": "Wood051/NormalGL.jpg",
+          "sha256": "3b175af16c417245ff8fa950de0f7dee6fc77804845825d7d5b988b30946e5e8"
+        },
+        "Roughness": {
+          "file": "Wood051/Roughness.jpg",
+          "sha256": "b4855f803bbbad6fbe8a78d514f453ba1c9989b2972775f46f835402de302b44"
+        }
+      }
+    },
+    {
+      "asset_id": "Wood095",
+      "source": "https://ambientcg.com/a/Wood095",
+      "download": "https://ambientcg.com/get?file=Wood095_2K-JPG.zip",
+      "archive_sha256": "89baf84c1c02dc5ca435896559ac2f53e6d6a2991f602aea43cafe83868dd1fc",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        0,
+        0
+      ],
+      "creation_method": "PBRApproximated",
+      "maps": {
+        "Color": {
+          "file": "Wood095/Color.jpg",
+          "sha256": "cfa114637073e16344c317fdbe8bef8977bb227ac4fec12f1b0932dd9f6ddef1"
+        },
+        "NormalGL": {
+          "file": "Wood095/NormalGL.jpg",
+          "sha256": "59832e482ce58d28028e2a966c8d6d29b6724b2618438dd269a030db45b049cf"
+        },
+        "Roughness": {
+          "file": "Wood095/Roughness.jpg",
+          "sha256": "9054077f21ab91597182c7beb52ba069e060b4ca4adbd55b092494c048513903"
+        }
+      }
+    },
+    {
+      "asset_id": "Plastic010",
+      "source": "https://ambientcg.com/a/Plastic010",
+      "download": "https://ambientcg.com/get?file=Plastic010_2K-JPG.zip",
+      "archive_sha256": "81aebd803039a36f0c7b9c25d15f1a39a50758214d540df281eac0e13e3cd1a7",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        0,
+        0
+      ],
+      "creation_method": "PBRProcedural",
+      "maps": {
+        "Color": {
+          "file": "Plastic010/Color.jpg",
+          "sha256": "9e966978debc85c05e1e4834e1ac8406d863f9267c396d1580ec2d94fdce9738"
+        },
+        "NormalGL": {
+          "file": "Plastic010/NormalGL.jpg",
+          "sha256": "70e36c645d2d6bc9ddc79b86d1275147c52947613fed8ed75dc6aec5d9282187"
+        },
+        "Roughness": {
+          "file": "Plastic010/Roughness.jpg",
+          "sha256": "44a1a3eb43252db6c242cd3e777a2e41819e872058e032e3cf8285cc578f35bb"
+        }
+      }
+    },
+    {
+      "asset_id": "Concrete048",
+      "source": "https://ambientcg.com/a/Concrete048",
+      "download": "https://ambientcg.com/get?file=Concrete048_2K-JPG.zip",
+      "archive_sha256": "c61a3e7f03c625889c7fd71351a928217a15e81ea26e6f7dda16865b2882e483",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        0,
+        0
+      ],
+      "creation_method": "PBRPhotogrammetry",
+      "maps": {
+        "Color": {
+          "file": "Concrete048/Color.jpg",
+          "sha256": "46e5f6a7670eb797ecbd6f6a45497d3cb4d9f44fac25792d9253a948bde28c9a"
+        },
+        "NormalGL": {
+          "file": "Concrete048/NormalGL.jpg",
+          "sha256": "b36f38f3ae9e706918616f777e5772cd00acf19cfb02de5e5431d8c42a7fbd3e"
+        },
+        "Roughness": {
+          "file": "Concrete048/Roughness.jpg",
+          "sha256": "875f1872565c8f80fed3a220e0183737b28cf9e2e79d18e26a37309f19689577"
+        }
+      }
+    },
+    {
+      "asset_id": "Plaster004",
+      "source": "https://ambientcg.com/a/Plaster004",
+      "download": "https://ambientcg.com/get?file=Plaster004_2K-JPG.zip",
+      "archive_sha256": "b92e4cbddfe65219415366ff90b50b13b80bf7827195bd98f0808bf384483e37",
+      "license": "CC0-1.0",
+      "license_source": "https://docs.ambientcg.com/license/",
+      "source_dimension_cm": [
+        0,
+        0
+      ],
+      "creation_method": "PBRProcedural",
+      "maps": {
+        "Color": {
+          "file": "Plaster004/Color.jpg",
+          "sha256": "2a1f298f1ee6469c8cc09fe5375741c51e1eecabbfd422c9a1369c57b171dc5b"
+        },
+        "NormalGL": {
+          "file": "Plaster004/NormalGL.jpg",
+          "sha256": "6d980fc5343ddcfce2b5c80ffe7b2b3181d05d13325ca0b33aed33575a5577be"
+        },
+        "Roughness": {
+          "file": "Plaster004/Roughness.jpg",
+          "sha256": "69b3a2d34b525314e4155cbbb737591f457193c64e4025f656e854912e2353aa"
+        }
+      }
+    },
+    {
+      "asset_id": "Plaster004WhitePaint",
+      "license": "CC0-1.0",
+      "derived_from": "Plaster004",
+      "derivation": "White paint albedo 237/237/236 sRGB; source luminance microvariation std 2.5, clipped +/-6. Normal and roughness unchanged.",
+      "source_color_sha256": "2a1f298f1ee6469c8cc09fe5375741c51e1eecabbfd422c9a1369c57b171dc5b",
+      "maps": {
+        "Color": {
+          "file": "Plaster004WhitePaint/Color.jpg",
+          "sha256": "51aba277a73543f6a39e9011625c0275b42cfba59c4151e579e877aba82f5d4b"
+        },
+        "NormalGL": {
+          "file": "Plaster004WhitePaint/NormalGL.jpg",
+          "sha256": "6d980fc5343ddcfce2b5c80ffe7b2b3181d05d13325ca0b33aed33575a5577be"
+        },
+        "Roughness": {
+          "file": "Plaster004WhitePaint/Roughness.jpg",
+          "sha256": "69b3a2d34b525314e4155cbbb737591f457193c64e4025f656e854912e2353aa"
+        }
+      }
+    }
+  ],
+  "resolution": "2K",
+  "normal_convention": "OpenGL; OmniPBR flip_tangent_v=false",
+  "displacement": "Not used; collision and source mesh geometry unchanged"
+}

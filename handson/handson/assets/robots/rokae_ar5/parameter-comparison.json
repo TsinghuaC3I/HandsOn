@@ -1,0 +1,1298 @@
+{
+  "left": [
+    {
+      "joint": 1,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "113",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "3.05432619"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "108",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 2,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "113",
+          "lower": "-2.0944",
+          "upper": "2.0944",
+          "velocity": "3.05432619"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "108",
+          "lower": "-2.0944",
+          "upper": "2.0944",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 3,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "70",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.71238898"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "66",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.71238898038469"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 4,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "70",
+          "lower": "-1.0472",
+          "upper": "2.5307",
+          "velocity": "5.23598776"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "66",
+          "lower": "-1.0472",
+          "upper": "2.5307",
+          "velocity": "5.235987755982989"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 5,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.18879020"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 6,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-1.0472",
+          "upper": "1.0472",
+          "velocity": "4.18879020"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-0.8727",
+          "upper": "0.8727",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 7,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-1.0472",
+          "upper": "1.0472",
+          "velocity": "4.18879020"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-0.8727",
+          "upper": "0.8727",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      }
+    },
+    {
+      "link": "link1",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.166000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00332249",
+              "ixy": "0.00000032",
+              "ixz": "-0.00000048",
+              "iyy": "0.00260904",
+              "iyz": "-0.00001486",
+              "izz": "0.00317691"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.000184 0.0015680000000000002 0.172804"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.683"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00493673",
+              "ixy": "0.00000160",
+              "ixz": "-0.00000198",
+              "iyy": "0.00452344",
+              "iyz": "0.00000020",
+              "izz": "0.00432910"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-1e-06 0.000621 0.167909"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link2",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.903000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00779803",
+              "ixy": "0.00000248",
+              "ixz": "-0.00000226",
+              "iyy": "0.00674819",
+              "iyz": "-0.00049283",
+              "izz": "0.00305507"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-1.7e-05 0.001795 0.10668899999999999"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.3"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.01151906",
+              "ixy": "0.00000246",
+              "ixz": "0.00000055",
+              "iyy": "0.00993335",
+              "iyz": "-0.00082477",
+              "izz": "0.00435237"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "2e-05 0.003081 0.10298600000000001"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link3",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.845000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00641285",
+              "ixy": "0.00000909",
+              "ixz": "0.00034765",
+              "iyy": "0.00591595",
+              "iyz": "-0.00002314",
+              "izz": "0.00276583"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.008227 -0.0012729999999999998 -0.020611"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.862"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00519617",
+              "ixy": "-0.00001270",
+              "ixz": "0.00035675",
+              "iyy": "0.00470378",
+              "iyz": "-0.00003329",
+              "izz": "0.00266768"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.007089000000000001 0.000655 -0.016514"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link4",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.037000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00294639",
+              "ixy": "-0.00002418",
+              "ixz": "-0.00012203",
+              "iyy": "0.00244447",
+              "iyz": "0.00022029",
+              "izz": "0.00140961"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.009242 -0.0021720000000000003 0.084042"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.234"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00389593",
+              "ixy": "0.00004675",
+              "ixz": "-0.00016955",
+              "iyy": "0.00308688",
+              "iyz": "-0.00046659",
+              "izz": "0.00188378"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.007832 0.004208999999999999 0.073402"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link5",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.279000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00241349",
+              "ixy": "-0.00003807",
+              "ixz": "-0.00004536",
+              "iyy": "0.00200246",
+              "iyz": "0.00006623",
+              "izz": "0.00158693"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.000756 0.000723 -0.086764"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.328"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00284294",
+              "ixy": "-0.00001276",
+              "ixz": "0.00001949",
+              "iyy": "0.00221035",
+              "iyz": "-0.00002134",
+              "izz": "0.00185120"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.000268 -0.0014750000000000002 -0.084143"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link6",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.906000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00061429",
+              "ixy": "-0.00000088",
+              "ixz": "0.00000104",
+              "iyy": "0.00074781",
+              "iyz": "-0.00000047",
+              "izz": "0.00075897"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.005104 0.000251 5.6e-05"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.93"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00072274",
+              "ixy": "0.00000186",
+              "ixz": "-0.00000123",
+              "iyy": "0.00087867",
+              "iyz": "0.00000057",
+              "izz": "0.00092938"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.0051719999999999995 -0.000614 5.5e-05"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link7",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.330000"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00046062",
+              "ixy": "0.00000269",
+              "ixz": "0.00003859",
+              "iyy": "0.00068652",
+              "iyz": "-0.00000095",
+              "izz": "0.00043943"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.001562 -0.000366 0.05392"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.332"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00052121",
+              "ixy": "0.00000020",
+              "ixz": "0.00003808",
+              "iyy": "0.00079394",
+              "iyz": "0.00000098",
+              "izz": "0.00045990"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.002716 3.1e-05 0.054983"
+            },
+            "children": []
+          }
+        ]
+      }
+    }
+  ],
+  "right": [
+    {
+      "joint": 1,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "113",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "108",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 2,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "113",
+          "lower": "-2.0944",
+          "upper": "2.0944",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "108",
+          "lower": "-2.0944",
+          "upper": "2.0944",
+          "velocity": "3.0543261909900763"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 3,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "70",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.71238898038469"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "66",
+          "lower": "-3.1067",
+          "upper": "3.1067",
+          "velocity": "4.71238898038469"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 4,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "70",
+          "lower": "-1.0472",
+          "upper": "2.5307",
+          "velocity": "5.235987755982989"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "66",
+          "lower": "-1.0472",
+          "upper": "2.5307",
+          "velocity": "5.235987755982989"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 6,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-1.0472",
+          "upper": "1.0472",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-0.8727",
+          "upper": "0.8727",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      }
+    },
+    {
+      "joint": 7,
+      "field": "limit",
+      "benchmark": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-1.0472",
+          "upper": "1.0472",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      },
+      "public": {
+        "tag": "limit",
+        "attrib": {
+          "effort": "19",
+          "lower": "-0.8727",
+          "upper": "0.8727",
+          "velocity": "4.1887902047863905"
+        },
+        "children": []
+      }
+    },
+    {
+      "link": "link1",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.166"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00329374",
+              "ixy": "0.00000029",
+              "ixz": "0.00000048",
+              "iyy": "0.00258807",
+              "iyz": "0.00001496",
+              "izz": "0.00314817"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.000186 -0.0015429999999999999 0.172784"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.683"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00493673",
+              "ixy": "0.00000160",
+              "ixz": "-0.00000198",
+              "iyy": "0.00452344",
+              "iyz": "0.00000020",
+              "izz": "0.00432910"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-1e-06 0.000621 0.167909"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link2",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.903"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00779827",
+              "ixy": "0.00000248",
+              "ixz": "0.00000226",
+              "iyy": "0.00674843",
+              "iyz": "0.00049284",
+              "izz": "0.00305518"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "1.7e-05 -0.001795 0.10669100000000001"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "2.3"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.01151906",
+              "ixy": "0.00000246",
+              "ixz": "0.00000055",
+              "iyy": "0.00993335",
+              "iyz": "-0.00082477",
+              "izz": "0.00435237"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "2e-05 0.003081 0.10298600000000001"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link3",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.845"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00635592",
+              "ixy": "0.00001599",
+              "ixz": "0.00029945",
+              "iyy": "0.00581609",
+              "iyz": "0.00004683",
+              "izz": "0.00269115"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.009022 0.0009 -0.019936"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.862"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00519617",
+              "ixy": "-0.00001270",
+              "ixz": "0.00035675",
+              "iyy": "0.00470378",
+              "iyz": "-0.00003329",
+              "izz": "0.00266768"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.007089000000000001 0.000655 -0.016514"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link4",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.037"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00294610",
+              "ixy": "0.00002481",
+              "ixz": "-0.00011850",
+              "iyy": "0.00244455",
+              "iyz": "-0.00022011",
+              "izz": "0.00140934"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.009272 0.002169 0.084042"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.234"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00389593",
+              "ixy": "0.00004675",
+              "ixz": "-0.00016955",
+              "iyy": "0.00308688",
+              "iyz": "-0.00046659",
+              "izz": "0.00188378"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.007832 0.004208999999999999 0.073402"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link5",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.279"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00240951",
+              "ixy": "0.00004151",
+              "ixz": "-0.00004311",
+              "iyy": "0.00200115",
+              "iyz": "-0.00006491",
+              "izz": "0.00158266"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.000776 -0.000804 -0.08673399999999999"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "1.328"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00284294",
+              "ixy": "-0.00001276",
+              "ixz": "0.00001949",
+              "iyy": "0.00221035",
+              "iyz": "-0.00002134",
+              "izz": "0.00185120"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.000268 -0.0014750000000000002 -0.084143"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link6",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.906"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00061487",
+              "ixy": "0.00000092",
+              "ixz": "-0.00000097",
+              "iyy": "0.00074943",
+              "iyz": "-0.00000047",
+              "izz": "0.00076056"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.005059 -0.00025 -5.5e-05"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.93"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00072274",
+              "ixy": "0.00000186",
+              "ixz": "-0.00000123",
+              "iyy": "0.00087867",
+              "iyz": "0.00000057",
+              "izz": "0.00092938"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "0.0051719999999999995 -0.000614 5.5e-05"
+            },
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "link": "link7",
+      "field": "inertial",
+      "benchmark": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.33"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00046020",
+              "ixy": "-0.00000266",
+              "ixz": "0.00004064",
+              "iyy": "0.00068698",
+              "iyz": "0.00000424",
+              "izz": "0.00043963"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.00122 0.0006730000000000001 0.053984000000000004"
+            },
+            "children": []
+          }
+        ]
+      },
+      "public": {
+        "tag": "inertial",
+        "attrib": {},
+        "children": [
+          {
+            "tag": "mass",
+            "attrib": {
+              "value": "0.332"
+            },
+            "children": []
+          },
+          {
+            "tag": "inertia",
+            "attrib": {
+              "ixx": "0.00052121",
+              "ixy": "0.00000020",
+              "ixz": "0.00003808",
+              "iyy": "0.00079394",
+              "iyz": "0.00000098",
+              "izz": "0.00045990"
+            },
+            "children": []
+          },
+          {
+            "tag": "origin",
+            "attrib": {
+              "rpy": "0 0 0",
+              "xyz": "-0.002716 3.1e-05 0.054983"
+            },
+            "children": []
+          }
+        ]
+      }
+    }
+  ]
+}

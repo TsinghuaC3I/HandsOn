@@ -1,0 +1,135 @@
+schema_version: 1
+task:
+  id: t16_open_laptop
+  title: "B320-FU015 FixedBaseLaptopOpen"
+  description: "The laptop position is randomized by up to 8 cm fore-aft and 6 cm laterally with 15 degrees of yaw variation, its base is then fixed, and the right hand opens the initially closed display to a seeded 30, 60, 90, or 120 degree target."
+  taxonomy:
+    family: articulation
+    interactions: [fixed_base, hinge_actuation, right_hand_contact]
+    horizon: short
+    handedness: right
+source:
+  origin: handson
+  attribution: "B320 representative benchmark source row 229; DexVerse native laptop asset."
+  reference: "configs/task_development/source_rows/furniture_storage.json#B320-FU015"
+  license: project
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.45, -0.45, 0.89]
+    max: [0.45, 0.45, 1.35]
+  targets:
+    - id: left_base_front_edge
+      arm: left
+      frame: world
+      position_m: [-0.10, 0.11, 0.93]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: right_display_top_edge
+      arm: right
+      frame: world
+      position_m: [0.00, -0.11, 1.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: dv_laptop
+    path: taskdev/tasks/t16_open_laptop/assets/dv_laptop/model_computer_9.usd
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: convex_decomposition
+reset:
+  seedable: true
+  max_settle_steps: 300
+  randomization:
+    laptop_root_xy_m: {distribution: uniform, half_range: 0.03}
+    laptop_root_yaw_deg: {distribution: uniform, half_range: 5.0}
+    hinge_fraction_of_safe_travel: {distribution: uniform, min: 0.10, max: 0.30}
+    friction: {distribution: uniform, min: 0.45, max: 0.85}
+    mass_scale: {distribution: uniform, min: 0.80, max: 1.20}
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - hinge_initially_closed
+    - task_not_initially_successful
+contact:
+  monitored_pairs:
+    - id: right_hand_laptop_display
+      bodies: ["robot/right_hand/*", "assets/dv_laptop/display"]
+      max_penetration_m: 0.005
+  forbidden_pairs: []
+success:
+  logic: all
+  predicates:
+    - id: screen_angle
+      type: revolute_joint_angle
+      parameters:
+        joint: assets/dv_laptop/RevoluteJoint_computer_9_up
+        target_deg: 105.0
+        tolerance_deg: 7.0
+    - id: base_translation_stable
+      type: baseline_displacement
+      parameters: {object: assets/dv_laptop/base, strict_max_m: 0.015}
+    - id: base_on_table
+      type: support_height
+      parameters: {object: assets/dv_laptop/base, max_lift_m: 0.01}
+    - id: right_hand_display_contact
+      type: required_contact
+      parameters:
+        right: laptop_display_top_edge
+  hold_steps: 15
+  timeout_steps: 660
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  views:
+    - {id: ego, prim_path: /World/RecordCameras/head_camera, resolution: [640, 480]}
+    - {id: wrist_left, prim_path: /World/RecordCameras/wrist_left_camera, resolution: [848, 480]}
+    - {id: wrist_right, prim_path: /World/RecordCameras/wrist_right_camera, resolution: [848, 480]}
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 300
+  max_linear_velocity_mps: 5.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  scripted_policy: fu015_scripted_bimanual_hinge_arc_v1
+  recorder: scripts/record_demos_zarr.py
+  fresh_replay: scripts/certify_physx_replay.py
+  required_streams: [action, proprioception, rgb_head, contacts, success, hinge_angle, bimanual_role_contacts]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/t16_open_laptop/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

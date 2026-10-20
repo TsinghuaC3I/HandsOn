@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="YCB08_Spatula_Flip_Sponge_Objects">
+  <compiler angle="radian"/>
+  <default>
+    <default class="ycb08_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="ycb08_skillet_collision">
+      <geom type="mesh" group="3" contype="1" conaffinity="3" condim="6"
+            mass="0" friction="0.72 0.025 0.002" solref="0.003 1"
+            solimp="0.97 0.995 0.001" rgba="0 0 0 0"/>
+    </default>
+    <default class="ycb08_spatula_collision">
+      <geom type="mesh" group="3" contype="1" conaffinity="3" condim="6"
+            mass="0" friction="0.68 0.020 0.002" solref="0.003 1"
+            solimp="0.97 0.995 0.001" rgba="0 0 0 0"/>
+    </default>
+    <default class="ycb08_sponge_collision">
+      <geom type="mesh" group="3" contype="1" conaffinity="3" condim="6"
+            mass="0" friction="0.82 0.030 0.003" solref="0.004 1"
+            solimp="0.96 0.995 0.001" rgba="0 0 0 0"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="ycb08_skillet_texture"
+             file="lightwheel_ycb/skillet/visuals/T_skillet_BC001.png"/>
+    <material name="ycb08_skillet_material" texture="ycb08_skillet_texture"
+              specular="0.45" shininess="0.12"/>
+    <mesh name="ycb08_skillet_visual"
+          file="lightwheel_ycb/skillet/visuals/skillet.obj"/>
+    <mesh name="ycb08_skillet_collision_01" file="lightwheel_ycb/skillet/collision/skillet_Collider1_m.obj"/>
+    <mesh name="ycb08_skillet_collision_02" file="lightwheel_ycb/skillet/collision/skillet_Collider2_m.obj"/>
+    <mesh name="ycb08_skillet_collision_03" file="lightwheel_ycb/skillet/collision/skillet_Collider3_m.obj"/>
+    <mesh name="ycb08_skillet_collision_04" file="lightwheel_ycb/skillet/collision/skillet_Collider4_m.obj"/>
+    <mesh name="ycb08_skillet_collision_05" file="lightwheel_ycb/skillet/collision/skillet_Collider5_m.obj"/>
+    <mesh name="ycb08_skillet_collision_06" file="lightwheel_ycb/skillet/collision/skillet_Collider6_m.obj"/>
+    <mesh name="ycb08_skillet_collision_07" file="lightwheel_ycb/skillet/collision/skillet_Collider7_m.obj"/>
+    <mesh name="ycb08_skillet_collision_08" file="lightwheel_ycb/skillet/collision/skillet_Collider8_m.obj"/>
+    <mesh name="ycb08_skillet_collision_09" file="lightwheel_ycb/skillet/collision/skillet_Collider9_m.obj"/>
+    <mesh name="ycb08_skillet_collision_10" file="lightwheel_ycb/skillet/collision/skillet_Collider10_m.obj"/>
+    <mesh name="ycb08_skillet_collision_11" file="lightwheel_ycb/skillet/collision/skillet_Collider11_m.obj"/>
+    <mesh name="ycb08_skillet_collision_12" file="lightwheel_ycb/skillet/collision/skillet_Collider12_m.obj"/>
+    <mesh name="ycb08_skillet_collision_13" file="lightwheel_ycb/skillet/collision/skillet_Collider13_m.obj"/>
+    <mesh name="ycb08_skillet_collision_14" file="lightwheel_ycb/skillet/collision/skillet_Collider14_m.obj"/>
+    <mesh name="ycb08_skillet_collision_15" file="lightwheel_ycb/skillet/collision/skillet_Collider15_m.obj"/>
+    <mesh name="ycb08_skillet_collision_16" file="lightwheel_ycb/skillet/collision/skillet_Collider16_m.obj"/>
+    <mesh name="ycb08_skillet_collision_17" file="lightwheel_ycb/skillet/collision/skillet_Collider17_m.obj"/>
+    <mesh name="ycb08_skillet_collision_18" file="lightwheel_ycb/skillet/collision/skillet_Collider18_m.obj"/>
+    <mesh name="ycb08_skillet_collision_19" file="lightwheel_ycb/skillet/collision/skillet_Collider19_m.obj"/>
+    <mesh name="ycb08_skillet_collision_20" file="lightwheel_ycb/skillet/collision/skillet_Collider20_m.obj"/>
+    <mesh name="ycb08_skillet_collision_21" file="lightwheel_ycb/skillet/collision/skillet_Collider21_m.obj"/>
+    <mesh name="ycb08_skillet_collision_22" file="lightwheel_ycb/skillet/collision/skillet_Collider22_m.obj"/>
+
+    <texture type="2d" name="ycb08_spatula_texture"
+             file="lightwheel_ycb/spatula/visuals/T_spatula_BC001.png"/>
+    <material name="ycb08_spatula_material" texture="ycb08_spatula_texture"
+              specular="0.35" shininess="0.08"/>
+    <mesh name="ycb08_spatula_visual"
+          file="lightwheel_ycb/spatula/visuals/spatula.obj"/>
+    <mesh name="ycb08_spatula_collision_01" file="lightwheel_ycb/spatula/collision/spatula_Collider1_m.obj"/>
+    <mesh name="ycb08_spatula_collision_02" file="lightwheel_ycb/spatula/collision/spatula_Collider2_m.obj"/>
+    <mesh name="ycb08_spatula_collision_03" file="lightwheel_ycb/spatula/collision/spatula_Collider3_m.obj"/>
+    <mesh name="ycb08_spatula_collision_04" file="lightwheel_ycb/spatula/collision/spatula_Collider4_m.obj"/>
+    <mesh name="ycb08_spatula_collision_05" file="lightwheel_ycb/spatula/collision/spatula_Collider5_m.obj"/>
+    <mesh name="ycb08_spatula_collision_06" file="lightwheel_ycb/spatula/collision/spatula_Collider6_m.obj"/>
+    <mesh name="ycb08_spatula_collision_07" file="lightwheel_ycb/spatula/collision/spatula_Collider7_m.obj"/>
+    <mesh name="ycb08_spatula_collision_08" file="lightwheel_ycb/spatula/collision/spatula_Collider8_m.obj"/>
+    <mesh name="ycb08_spatula_collision_09" file="lightwheel_ycb/spatula/collision/spatula_Collider9_m.obj"/>
+    <mesh name="ycb08_spatula_collision_10" file="lightwheel_ycb/spatula/collision/spatula_Collider10_m.obj"/>
+    <mesh name="ycb08_spatula_collision_11" file="lightwheel_ycb/spatula/collision/spatula_Collider11_m.obj"/>
+    <mesh name="ycb08_spatula_collision_12" file="lightwheel_ycb/spatula/collision/spatula_Collider12_m.obj"/>
+    <mesh name="ycb08_spatula_collision_13" file="lightwheel_ycb/spatula/collision/spatula_Collider13_m.obj"/>
+    <mesh name="ycb08_spatula_collision_14" file="lightwheel_ycb/spatula/collision/spatula_Collider14_m.obj"/>
+    <mesh name="ycb08_spatula_collision_15" file="lightwheel_ycb/spatula/collision/spatula_Collider15_m.obj"/>
+    <mesh name="ycb08_spatula_collision_16" file="lightwheel_ycb/spatula/collision/spatula_Collider16_m.obj"/>
+    <mesh name="ycb08_spatula_collision_17" file="lightwheel_ycb/spatula/collision/spatula_Collider17_m.obj"/>
+    <mesh name="ycb08_spatula_collision_18" file="lightwheel_ycb/spatula/collision/spatula_Collider18_m.obj"/>
+    <mesh name="ycb08_spatula_collision_19" file="lightwheel_ycb/spatula/collision/spatula_Collider19_m.obj"/>
+    <mesh name="ycb08_spatula_collision_20" file="lightwheel_ycb/spatula/collision/spatula_Collider20_m.obj"/>
+    <mesh name="ycb08_spatula_collision_21" file="lightwheel_ycb/spatula/collision/spatula_Collider21_m.obj"/>
+    <mesh name="ycb08_spatula_collision_22" file="lightwheel_ycb/spatula/collision/spatula_Collider22_m.obj"/>
+    <mesh name="ycb08_spatula_collision_23" file="lightwheel_ycb/spatula/collision/spatula_Collider23_m.obj"/>
+    <mesh name="ycb08_spatula_collision_24" file="lightwheel_ycb/spatula/collision/spatula_Collider24_m.obj"/>
+    <mesh name="ycb08_spatula_collision_25" file="lightwheel_ycb/spatula/collision/spatula_Collider25_m.obj"/>
+    <mesh name="ycb08_spatula_collision_26" file="lightwheel_ycb/spatula/collision/spatula_Collider26_m.obj"/>
+    <mesh name="ycb08_spatula_collision_27" file="lightwheel_ycb/spatula/collision/spatula_Collider27_m.obj"/>
+    <mesh name="ycb08_spatula_collision_28" file="lightwheel_ycb/spatula/collision/spatula_Collider28_m.obj"/>
+    <mesh name="ycb08_spatula_collision_29" file="lightwheel_ycb/spatula/collision/spatula_Collider29_m.obj"/>
+    <mesh name="ycb08_spatula_collision_30" file="lightwheel_ycb/spatula/collision/spatula_Collider30_m.obj"/>
+    <mesh name="ycb08_spatula_collision_31" file="lightwheel_ycb/spatula/collision/spatula_Collider31_m.obj"/>
+    <mesh name="ycb08_spatula_collision_32" file="lightwheel_ycb/spatula/collision/spatula_Collider32_m.obj"/>
+    <mesh name="ycb08_spatula_collision_33" file="lightwheel_ycb/spatula/collision/spatula_Collider33_m.obj"/>
+    <mesh name="ycb08_spatula_collision_34" file="lightwheel_ycb/spatula/collision/spatula_Collider34_m.obj"/>
+    <mesh name="ycb08_spatula_collision_35" file="lightwheel_ycb/spatula/collision/spatula_Collider35_m.obj"/>
+    <mesh name="ycb08_spatula_collision_36" file="lightwheel_ycb/spatula/collision/spatula_Collider36_m.obj"/>
+    <mesh name="ycb08_spatula_collision_37" file="lightwheel_ycb/spatula/collision/spatula_Collider37_m.obj"/>
+    <mesh name="ycb08_spatula_collision_38" file="lightwheel_ycb/spatula/collision/spatula_Collider38_m.obj"/>
+    <mesh name="ycb08_spatula_collision_39" file="lightwheel_ycb/spatula/collision/spatula_Collider39_m.obj"/>
+
+    <texture type="2d" name="ycb08_sponge_texture"
+             file="lightwheel_ycb/sponge/visuals/T_sponge_BC001.png"/>
+    <material name="ycb08_sponge_material" texture="ycb08_sponge_texture"
+              specular="0.15" shininess="0"/>
+    <mesh name="ycb08_sponge_visual"
+          file="lightwheel_ycb/sponge/visuals/sponge.obj"/>
+    <mesh name="ycb08_sponge_collision_01" file="lightwheel_ycb/sponge/collision/sponge_Collider1_m.obj"/>
+    <mesh name="ycb08_sponge_collision_02" file="lightwheel_ycb/sponge/collision/sponge_Collider2_m.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="ycb08_skillet" pos="-0.2789395 0.1272140 0.9360615"
+          quat="0 0 0 1">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.950"
+                diaginertia="0.01628 0.00636 0.02149"/>
+      <freejoint name="ycb08_skillet_root_joint"/>
+      <geom name="ycb08_skillet_visual_geom" class="ycb08_visual"
+            mesh="ycb08_skillet_visual" material="ycb08_skillet_material"/>
+      <geom name="ycb08_skillet_collision_01_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_01"/>
+      <geom name="ycb08_skillet_collision_02_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_02"/>
+      <geom name="ycb08_skillet_collision_03_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_03"/>
+      <geom name="ycb08_skillet_collision_04_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_04"/>
+      <geom name="ycb08_skillet_collision_05_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_05"/>
+      <geom name="ycb08_skillet_collision_06_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_06"/>
+      <geom name="ycb08_skillet_collision_07_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_07"/>
+      <geom name="ycb08_skillet_collision_08_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_08"/>
+      <geom name="ycb08_skillet_collision_09_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_09"/>
+      <geom name="ycb08_skillet_collision_10_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_10"/>
+      <geom name="ycb08_skillet_collision_11_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_11"/>
+      <geom name="ycb08_skillet_collision_12_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_12"/>
+      <geom name="ycb08_skillet_collision_13_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_13"/>
+      <geom name="ycb08_skillet_collision_14_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_14"/>
+      <geom name="ycb08_skillet_collision_15_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_15"/>
+      <geom name="ycb08_skillet_collision_16_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_16"/>
+      <geom name="ycb08_skillet_collision_17_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_17"/>
+      <geom name="ycb08_skillet_collision_18_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_18"/>
+      <geom name="ycb08_skillet_collision_19_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_19"/>
+      <geom name="ycb08_skillet_collision_20_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_20"/>
+      <geom name="ycb08_skillet_collision_21_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_21"/>
+      <geom name="ycb08_skillet_collision_22_geom" class="ycb08_skillet_collision" mesh="ycb08_skillet_collision_22"/>
+    </body>
+
+    <body name="ycb08_spatula" pos="-0.2800000 -0.3100000 0.9084495"
+          quat="1 0 0 0">
+      <inertial pos="-0.00150178 -0.02658348 0.00209358" quat="1 0 0 0"
+                mass="0.100"
+                diaginertia="0.00103107 0.00006757 0.00107767"/>
+      <freejoint name="ycb08_spatula_root_joint"/>
+      <geom name="ycb08_spatula_visual_geom" class="ycb08_visual"
+            mesh="ycb08_spatula_visual" material="ycb08_spatula_material"/>
+      <geom name="ycb08_spatula_collision_01_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_01"/>
+      <geom name="ycb08_spatula_collision_02_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_02"/>
+      <geom name="ycb08_spatula_collision_03_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_03"/>
+      <geom name="ycb08_spatula_collision_04_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_04"/>
+      <geom name="ycb08_spatula_collision_05_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_05"/>
+      <geom name="ycb08_spatula_collision_06_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_06"/>
+      <geom name="ycb08_spatula_collision_07_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_07"/>
+      <geom name="ycb08_spatula_collision_08_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_08"/>
+      <geom name="ycb08_spatula_collision_09_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_09"/>
+      <geom name="ycb08_spatula_collision_10_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_10"/>
+      <geom name="ycb08_spatula_collision_11_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_11"/>
+      <geom name="ycb08_spatula_collision_12_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_12"/>
+      <geom name="ycb08_spatula_collision_13_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_13"/>
+      <geom name="ycb08_spatula_collision_14_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_14"/>
+      <geom name="ycb08_spatula_collision_15_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_15"/>
+      <geom name="ycb08_spatula_collision_16_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_16"/>
+      <geom name="ycb08_spatula_collision_17_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_17"/>
+      <geom name="ycb08_spatula_collision_18_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_18"/>
+      <geom name="ycb08_spatula_collision_19_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_19"/>
+      <geom name="ycb08_spatula_collision_20_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_20"/>
+      <geom name="ycb08_spatula_collision_21_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_21"/>
+      <geom name="ycb08_spatula_collision_22_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_22"/>
+      <geom name="ycb08_spatula_collision_23_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_23"/>
+      <geom name="ycb08_spatula_collision_24_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_24"/>
+      <geom name="ycb08_spatula_collision_25_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_25"/>
+      <geom name="ycb08_spatula_collision_26_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_26"/>
+      <geom name="ycb08_spatula_collision_27_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_27"/>
+      <geom name="ycb08_spatula_collision_28_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_28"/>
+      <geom name="ycb08_spatula_collision_29_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_29"/>
+      <geom name="ycb08_spatula_collision_30_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_30"/>
+      <geom name="ycb08_spatula_collision_31_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_31"/>
+      <geom name="ycb08_spatula_collision_32_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_32"/>
+      <geom name="ycb08_spatula_collision_33_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_33"/>
+      <geom name="ycb08_spatula_collision_34_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_34"/>
+      <geom name="ycb08_spatula_collision_35_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_35"/>
+      <geom name="ycb08_spatula_collision_36_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_36"/>
+      <geom name="ycb08_spatula_collision_37_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_37"/>
+      <geom name="ycb08_spatula_collision_38_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_38"/>
+      <geom name="ycb08_spatula_collision_39_geom" class="ycb08_spatula_collision" mesh="ycb08_spatula_collision_39"/>
+    </body>
+
+    <body name="ycb08_sponge" pos="-0.2800000 0.0400000 0.9050530"
+          quat="0 0 0 1">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.0100"
+                diaginertia="0.00001099 0.000004483 0.00001515"/>
+      <freejoint name="ycb08_sponge_root_joint"/>
+      <geom name="ycb08_sponge_visual_geom" class="ycb08_visual"
+            mesh="ycb08_sponge_visual" material="ycb08_sponge_material"/>
+      <geom name="ycb08_sponge_collision_01_geom" class="ycb08_sponge_collision" mesh="ycb08_sponge_collision_01"/>
+      <geom name="ycb08_sponge_collision_02_geom" class="ycb08_sponge_collision" mesh="ycb08_sponge_collision_02"/>
+    </body>
+  </worldbody>
+</mujoco>

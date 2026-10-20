@@ -1,0 +1,7 @@
+env_name: t24_place_ball_in_bowl
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Pick the specified ball and place it into the bowl."
+robot_type: single_arm

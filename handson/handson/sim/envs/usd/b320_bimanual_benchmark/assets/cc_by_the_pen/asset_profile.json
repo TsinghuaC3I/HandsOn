@@ -1,0 +1,26 @@
+{
+  "title": "The Pen",
+  "license": "CC-BY-4.0",
+  "source_bbox_min": [
+    -0.07138960808515549,
+    -0.004789832979440535,
+    -0.004789833445101811
+  ],
+  "source_bbox_max": [
+    0.0720081627368927,
+    0.004789833445101816,
+    0.0047898329794405356
+  ],
+  "source_longest_axis": 0,
+  "normalization_scale": 1.11577745653072,
+  "length_m": 0.16,
+  "collision_radius_m": 0.005344387918794299,
+  "collision_height_m": 0.1493112241624114,
+  "collision_center_xyz_m": [
+    0.0,
+    0.0,
+    0.004344387918794299
+  ],
+  "collision_hull_vertices": 153,
+  "collision_hull_faces": 302
+}

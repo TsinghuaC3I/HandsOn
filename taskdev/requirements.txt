@@ -1,0 +1,2 @@
+# The pipeline otherwise uses only the Python standard library.
+PyYAML>=6.0,<7

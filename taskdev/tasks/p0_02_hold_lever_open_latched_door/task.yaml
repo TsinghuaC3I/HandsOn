@@ -1,0 +1,190 @@
+schema_version: 1
+task:
+  id: t17_open_latched_door
+  title: "P0-02 Hold Lever and Open Latched Door"
+  description: "The left hand braces and pushes the door panel while the right hand depresses the long Helindu near-side Handle002 to release the causal latch and holds it until the door escapes, then the left hand opens the door to at least 45 degrees and holds it stable."
+  taxonomy:
+    family: articulation
+    interactions: [lever_actuation, latch_release, hinge_actuation, sequential_bimanual_roles]
+    horizon: medium
+    handedness: bimanual
+  physical_latch:
+    implementation: physical_joint_readback_state_machine
+    unlock: {front_handle_min_deg: 25.0, dwell_control_steps: 5, right_contact_required: true, contact_pair_id: right_hand_near_side_handle002}
+    relock: {front_handle_max_deg: 15.0, door_below_deg: 12.0}
+    door_lock_drive: {stiffness: 1000.0, damping: 30.0, max_force: 100.0, target_deg: 0.0}
+    unlocked_door_drive: {stiffness: 0.0, damping: 0.35, max_force: 0.0}
+source:
+  origin: original
+  attribution: "Task design created for this benchmark around the project-owned Door042 asset. The replacement front lever is Door Handle by Helindu, used under CC BY 4.0."
+  reference: "ZRYZ_LW_Assets_20260820/Door042"
+  license: project
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  front_table_present: false
+  compatibility_table_prim_retained: true
+  compatibility_table_visible: false
+  compatibility_table_collisions_enabled: false
+  bounds_m:
+    min: [-0.45, -0.45, 0.89]
+    max: [0.75, 0.55, 1.50]
+  door_root_nominal_m: [0.01, 0.15, 1.05]
+  targets:
+    - id: left_door_push_region
+      arm: left
+      frame: world
+      position_m: [-0.01, 0.06, 1.20]
+      orientation_xyzw: [0.0, 0.7071067812, 0.0, 0.7071067812]
+      clearance_m: 0.06
+    - id: right_near_side_handle002
+      arm: right
+      frame: world
+      position_m: [-0.02, -0.02, 1.06]
+      orientation_xyzw: [0.0, 0.7071067812, 0.0, 0.7071067812]
+      clearance_m: 0.04
+assets:
+  - id: zryz_door042
+    path: taskdev/tasks/t17_open_latched_door/assets/zryz_door042_source/Door042_stage1.usd
+    kind: usd
+    required: true
+    scale_m: [0.60, 0.60, 0.60]
+    sha256: 4367b6b8bcf60b934dfa9763502676f2d1d765688e81e261cfdc0d81745975ff
+    source_sha256: f27f7148ec917642d9733f3a54161634a005e03fe1168069eb4f4b0ffc4ff651
+    collision:
+      enabled: true
+      approximation: authored_convex_hulls
+    operator_adaptations:
+      near_side_handle002:
+        body: Door042_Handle002
+        replaced: true
+        purpose: right_hand_operator_contact
+        source_asset: helindu_door_handle
+        outer_dimensions_m: [0.15, 0.04148298257902923, 0.04849960621353222]
+        grasp_x_range_m: [0.055, 0.105]
+        minimum_grasp_clearance_m: 0.03002410272964051
+        old_visual_and_collision_disabled: true
+        existing_body_joint_and_contact_path_preserved: true
+        evidence: taskdev/tasks/t17_open_latched_door/evidence/helindu_handle_build.json
+  - id: helindu_door_handle
+    path: taskdev/tasks/t17_open_latched_door/assets/helindu_door_handle/source/door_handle.zip
+    kind: other
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: false
+      approximation: runtime_parts_defined_below
+    sha256: 330c5bf51744ae54468c55896280d10d6c5ef0d7b63783112fe8052ecf36affd
+    source: https://sketchfab.com/3d-models/door-handle-b17802a127954b868a1250f55597142d
+    author: Helindu
+    license: CC-BY-4.0
+    runtime_parts:
+      fixed_rosette: handson/handson/sim/isaaclab/usd/t17_open_latched_door/helindu_door_handle/helindu_rosette.usda
+      moving_lever: handson/handson/sim/isaaclab/usd/t17_open_latched_door/helindu_door_handle/helindu_lever.usda
+      moving_lever_convex_hulls: 4
+reset:
+  seedable: true
+  max_settle_steps: 1500
+  randomization:
+    door_root_xy_m: {distribution: uniform, half_range: 0.02}
+    door_root_yaw_deg: {distribution: uniform, half_range: 3.0}
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - complete_robot_envelope_clear_of_all_door_bodies
+    - targets_inside_workspace
+    - no_initial_interpenetration_above_0_005_m
+    - both_role_targets_inside_workspace
+    - all_three_joints_start_at_zero
+    - task_not_initially_successful
+contact:
+  monitored_pairs:
+    - id: left_hand_door_panel
+      bodies: ["robot/left_hand/*", "assets/zryz_door042/Door042_Door"]
+      # Manifest v1 requires this numeric field on every monitored role pair;
+      # the effect below makes panel penetration diagnostic-only and non-gating.
+      max_penetration_m: 0.005
+      effect: required_causal_role_contact_with_force_and_penetration_diagnostic_only
+    - id: right_hand_near_side_handle002
+      bodies: ["robot/right_hand/*", "assets/zryz_door042/Handle002"]
+      max_penetration_m: 0.005
+      effect: required_causal_role_contact_with_hard_failure_penetration_limit
+  forbidden_pairs:
+    - id: robot_far_side_handle
+      bodies: ["robot/*", "assets/zryz_door042/Handle001"]
+      effect: episode_ending_hard_failure
+  diagnostic_pairs:
+    - id: robot_door_frame
+      bodies: ["robot/*", "assets/zryz_door042/Door042"]
+      effect: record_force_and_penetration_only_no_progress_success_hold_or_terminal_effect
+success:
+  logic: all
+  predicates:
+    - {id: right_lever_contact_seen, type: causal_role_contact, parameters: {pair_id: right_hand_near_side_handle002}}
+    - {id: latch_unlocked_seen, type: latch_state_transition, parameters: {state: task.physical_latch.unlocked_seen}}
+    - {id: left_panel_contact_after_unlock_seen, type: causal_role_contact, parameters: {pair_id: left_hand_door_panel, required_after: latch_unlocked_seen}}
+    - {id: door_escape_seen, type: revolute_joint_threshold, parameters: {min_deg: 12.0}}
+    - {id: door_target, type: revolute_joint_threshold, parameters: {min_deg: 45.0}}
+    - {id: door_stable, type: joint_speed, parameters: {max_abs_rad_s: 0.5}}
+    - {id: forbidden_contacts_clear, type: contact_force, parameters: {strict_max_n: 0.02, pair_ids: [robot_far_side_handle]}}
+  hold_steps: 15
+  timeout_steps: 720
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  views:
+    - {id: ego, prim_path: /World/RecordCameras/head_camera, resolution: [640, 480]}
+    - {id: wrist_left, prim_path: /World/RecordCameras/wrist_left_camera, resolution: [848, 480]}
+    - {id: wrist_right, prim_path: /World/RecordCameras/wrist_right_camera, resolution: [848, 480]}
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 1200
+  stable_origin_steps: 180
+  stable_origin_seconds: 0.5
+  max_linear_velocity_mps: 3.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  role_contract_version: 4
+  role_contact_layout: [right_front_handle, left_door, legacy_table_zero, diagnostic_frame, rear_handle]
+  output_env_var: HANDSON_OUTPUT_DIR
+  scripted_policy: p002_scripted_latch_then_push_v1
+  recorder: scripts/record_demos_zarr.py
+  fresh_replay: scripts/certify_physx_replay.py
+  required_streams: [action, proprioception, rgb_head, contacts, success, latch_state, joint_state, bimanual_role_contacts]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/t17_open_latched_door/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact:
+      # This threshold applies to hard_failure_penetration_pair_ids only.
+      max_penetration_m: 0.005
+      max_forbidden_events: 0
+      hard_failure_penetration_pair_ids: [right_hand_near_side_handle002, robot_far_side_handle]
+      diagnostic_only_pair_ids: [left_hand_door_panel, robot_door_frame]
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

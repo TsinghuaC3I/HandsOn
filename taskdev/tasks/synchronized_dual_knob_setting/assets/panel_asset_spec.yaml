@@ -1,0 +1,25 @@
+schema_version: 1
+asset_id: dual_knob_calibration_panel
+title: Self-authored dual-knob calibration panel
+source_module: handson/handson/sim/isaaclab/dual_knob_panel.py
+exported_usda: taskdev/tasks/synchronized_dual_knob_setting/assets/dual_knob_calibration_panel.usda
+license: project
+units: meters_degrees_kilograms
+root_path: /World/Task/SynchronizedDualKnobPanel
+fixed_base: true
+rigid_bodies: [base, left_knob, right_knob]
+colliders: [base/housing, left_knob/grip, right_knob/grip]
+joints:
+  - {name: left_knob_joint, type: revolute, axis: Z, limits_deg: [-100.0, 100.0]}
+  - {name: right_knob_joint, type: revolute, axis: Z, limits_deg: [-100.0, 100.0]}
+dynamics:
+  knob_mass_kg: 0.085
+  drive_target_deg: 0.0
+  drive_stiffness: 0.030
+  drive_damping: 0.004
+  drive_max_force: 0.22
+  joint_friction: 0.010
+authorship:
+  geometry: original analytic primitives
+  textures: none
+  third_party_assets: []

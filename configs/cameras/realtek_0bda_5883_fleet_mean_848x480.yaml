@@ -1,0 +1,49 @@
+%YAML:1.0
+---
+model: fisheye
+image_width: 848
+image_height: 480
+calibration_image_width: 1920
+calibration_image_height: 1080
+output_model: pinhole
+horizontal_fov_deg: 100.0
+interpolation: cv2.INTER_LINEAR
+border_mode: cv2.BORDER_CONSTANT
+camera:
+  name: "Realtek fleet mean"
+  vendor_id: "0bda"
+  product_id: "5883"
+  device: "Realtek 0bda:5883"
+raw_calibration_K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [613.8387, 0.0, 960.4092,
+         0.0, 613.4801, 547.4983,
+         0.0, 0.0, 1.0]
+K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [271.112092500, 0.0, 423.901563333,
+         0.0, 272.657822222, 243.054800000,
+         0.0, 0.0, 1.0]
+D: !!opencv-matrix
+  rows: 4
+  cols: 1
+  dt: d
+  data: [-0.185015, 0.014974, -0.000507, 0.0]
+R: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [1.0, 0.0, 0.0,
+         0.0, 1.0, 0.0,
+         0.0, 0.0, 1.0]
+new_K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [355.778243619, 0.0, 423.5,
+         0.0, 355.778243619, 239.5,
+         0.0, 0.0, 1.0]

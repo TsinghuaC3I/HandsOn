@@ -1,0 +1,135 @@
+schema_version: 1
+task_id: bench320_fu001_synchronized_double_cabinet_open
+manifest_sha256: 73f14910d87ca301ad0d68603433bd949ff919fb2c4fe68fdb4f8fb1bf7df2c0
+generated_at: "2026-08-27T15:15:00Z"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab_contract: "2.3.2"
+  isaaclab_runtime_detected: "0.54.2"
+  isaaclab_compatibility: pending
+scope: selected_asset_integration
+task_complete: false
+core_scene:
+  status: pass
+  summary: "Canonical FU001 selected-asset CPU smoke passed all nine core checks in Isaac Sim 5.1: source-derived cabinet topology, two door joints, dual ROKAE/Wuji inventory, robot-vs-cabinet AABB clearance, live head RGB, lighting, scale/table pose, and 3-second zero-action stability. A separate live-log campaign extends the zero-action check to 10 seconds at 120 Hz."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/cpu_contract.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/scene_manifest.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke_head.png
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_live_log_audit.json
+  metrics:
+    selected_asset_cpu_checks_pass: 7
+    selected_asset_live_core_checks_pass: 9
+    selected_asset_live_core_checks_total: 9
+    canonical_zero_action_seconds_attempted: 3.0
+    live_log_zero_action_seconds: 10.0
+    live_log_zero_action_steps: 1200
+    live_log_zero_action_pass: true
+    canonical_head_camera_live_verified: true
+    canonical_head_camera_prim_path: /World/RecordCameras/head_camera
+    canonical_head_camera_black_fraction: 0.0060546875
+    canonical_head_camera_mean_rgb: 176.747705078125
+    canonical_head_camera_std_rgb: 45.36465976177833
+    selected_core_scene_pass: true
+historical_core_scene:
+  status: pass
+  asset: dv_double_cabinet_44781
+  summary: "Historical 44781 core-scene smoke passed on hp-13 physical GPU6; this evidence is not a validation of the selected Poly Haven cabinet."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/core_scene_summary.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/previews/fu001_head_preview.png
+  metrics:
+    live_check_count: 9
+    live_check_pass_count: 9
+    zero_action_seconds: 3.0
+    maximum_dof_position_drift_rad: 0.0013746321201324463
+    maximum_dof_speed_rad_s: 0.000026127756427740678
+    maximum_initial_aabb_overlap_m: 0.0
+checks:
+  schema:
+    status: pass
+    summary: "Manifest validator returned zero errors."
+    evidence: [taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/cpu_contract.json]
+    metrics: {error_count: 0}
+  assets:
+    status: pass
+    summary: "Selected Poly Haven cabinet archive, source closure, runtime components, textures, robot, camera profile, and authority snapshot pass pinned SHA-256 checks; the historical 44781 bundle is tracked separately."
+    evidence: [taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/cpu_contract.json]
+    metrics: {missing: 0, hash_mismatch: 0}
+reachability:
+  status: pending
+  summary: "A diagnostic FU001 reach/contact probe completed all six staged approach phases without an exception and with finite readback, but probe_run_pass is diagnostic-only. It did not reach either handle: final handle position errors were 0.223859 m (left) and 0.190562 m (right), and final minimum joint-limit margins were negative (-0.00009155 rad left, -0.00020361 rad right). contact_observed=false and status=pending_no_contact; this is not a reach acceptance."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_reach_probe.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_reach_probe.py
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_reach_probe.stdout
+  evidence_sha256:
+    result: 7395d0681bde36900f506d4b32bcaa0fadddf51fdc044208e04ef33c608653e6
+    script: b76cf7141cf98e2eb194bb052075bb216a49c9ea5ccfd2b4f39272d9635e4967
+    stdout: 6de4f03dab5d3d3bf27eb49784379ec12f525febfbc8241883c4da0a322ec89d
+    isaaclab_log: ebf4eb6fcbea82ca000f8bf046db31fe5cd2df4b8b39c08dd0ef8288d010878b
+    kit_log: 920fc0f26abc9da41f281301cade0e615ab141cc225019a4be2ea2df5d4bc0aa
+  metrics:
+    reset_frame_visual_only: true
+    probe_run_pass: true
+    probe_diagnostic_only: true
+    probe_status: pending_no_contact
+    probe_frames_completed: 49
+    probe_all_phases_completed: true
+    contact_observed: false
+    contact_observed_left: false
+    contact_observed_right: false
+    formal_success_observed: false
+    task_success_claimed: false
+    final_handle_error_left_m: 0.22385915939086876
+    final_handle_error_right_m: 0.19056235984730116
+    final_joint_limit_margin_left_rad: "-0.000091552734375"
+    final_joint_limit_margin_right_rad: "-0.00020360946655273438"
+contact:
+  status: pending
+  summary: "Selected-asset robot-vs-cabinet AABB clearance is 0 m in the live smoke. The exact PhysX overlap query now passes at the earliest cooked authored phase, after the canonical constructor reset, and after 120 additional 120-Hz steps (5 cabinet / 60 robot / 1 table shapes; zero pairs and zero query errors in every phase; zero contact rows and 0 m maximum penetration). The separate reach/contact probe completed diagnostically (probe_run_pass=true) but observed no hand contact (contact_observed=false, peak force 0 N) and reports status=pending_no_contact. Intended hand-door contact execution, wrong-hand negatives, and operator trials remain pending. The only authored filter is the source cabinet shell/leaf self-overlap filter; hand/door and table contacts remain enabled."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_pre_post_shape_audit.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_live_log_audit.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_reach_probe.json
+  evidence_sha256:
+    reach_probe: 7395d0681bde36900f506d4b32bcaa0fadddf51fdc044208e04ef33c608653e6
+    reach_probe_stdout: 6de4f03dab5d3d3bf27eb49784379ec12f525febfbc8241883c4da0a322ec89d
+  metrics: {maximum_initial_aabb_overlap_m: 0.0, exact_shape_audit: pass, exact_shape_pair_count_each_phase: 0, exact_shape_query_errors: 0, post_settle_contact_rows: 0, maximum_penetration_depth_m: 0.0, forbidden_contact_trials: 0, probe_run_pass: true, probe_contact_observed: false, probe_status: pending_no_contact, probe_peak_contact_force_n: 0.0}
+reset:
+  status: pending
+  summary: "The canonical constructor reset is live-verified at seed 0 and uses the reduced-coordinate articulation reset plus collision-clear spread-home staging. The source-requested furniture-root XY jitter remains an explicit fixed-articulation exemption; the 20-seed campaign is not accepted."
+  evidence: [taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke.json]
+  metrics: {selected_reset_trials: 1, seeded_position_randomization: false, fixed_root_exemption: true, second_reset_avoided: true}
+success:
+  status: pending
+  summary: "Success action intentionally not executed; the reach/contact probe reports formal_success_observed=false and task_success_claimed=false with status=pending_no_contact. probe_run_pass=true only records diagnostic completion and must not be interpreted as a success or reach pass; task_complete remains false."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_reach_probe.json
+  evidence_sha256:
+    reach_probe: 7395d0681bde36900f506d4b32bcaa0fadddf51fdc044208e04ef33c608653e6
+  metrics: {success_motion_executed: false, probe_run_pass: true, probe_status: pending_no_contact, probe_formal_success_observed: false, probe_task_success_claimed: false}
+camera:
+  status: pending
+  summary: "The selected-asset head camera is live-verified at /World/RecordCameras/head_camera. The 10-second live campaign captured 30/30 non-flat 640x480 RGB frames (minimum non-black fraction 0.9917415; maximum dark-pixel fraction 0.00825846). The campaign itself is complete, but the current task YAML max_black_fraction=0.0 threshold is not met and remains an explicit contract decision."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/selected_asset_cpu_smoke_head.png
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_long_stability_camera.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_live_log_audit.json
+  metrics: {selected_live_frames: 1, campaign_frames: 30, campaign_successful_frames: 30, width: 640, height: 480, live_verified: true, required_frames: 30, min_nonblack_fraction: 0.9917415364583333, max_black_fraction: 0.008258463541666667, contract_max_black_fraction: 0.0, threshold_met: false}
+stability:
+  status: pass
+  summary: "Selected-asset initial stability is live-log verified for 10 seconds (1,200 raw PhysX steps at 120 Hz) after the canonical constructor reset: door and robot state stayed finite, door drift was 0 rad, maximum door speed was 4.72e-10 rad/s, maximum robot joint speed was 0.1852 rad/s, maximum link velocity was 0.2980 m/s/rad/s, and no step exceptions or fatal log markers were found. This is a zero-action initial-stability campaign; action/contact-phase stability remains pending."
+  evidence:
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_long_stability_camera.json
+    - taskdev/tasks/bench320_fu001_synchronized_double_cabinet_open/evidence/live_run/fu001_live_log_audit.json
+  metrics: {selected_core_seconds: 3.0, live_log_seconds: 10.0, live_log_steps: 1200, live_verified: true, zero_action_pass: true, contact_phase_tested: false, max_dof_drift_rad: 0.0, max_dof_speed_rad_s: 0.0000000004716865786846824, max_robot_joint_speed_rad_s: 0.1852208971977234, max_robot_link_velocity_abs: 0.29803648591041565, step_exceptions: 0, fatal_log_marker_matches: 0}
+collection:
+  status: pending
+  summary: "Dataset collection has not been run for the selected-asset integration."
+  evidence: []
+  metrics: {}

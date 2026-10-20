@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="GEN1SourceSoapDispenser">
+  <asset>
+  <texture name="gen1_legacy_mustard_albedo" type="2d" file="../../lightwheel_ycb/mustard_bottle/visuals/T_mustard_bottle_BC001.png" />
+  <material name="gen1_legacy_mustard_material" texture="gen1_legacy_mustard_albedo" specular="0.2" />
+    <material name="gen1_mat_Object_11" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_11" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_13" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_13" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_15" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_15" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_17" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_17" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_19" rgba="1 1 1 1" shininess="0.861364" specular="0.0" />
+    <mesh name="gen1_visual_Object_19" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_21" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_21" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_23" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_23" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_6" rgba="1 1 1 1" shininess="0.855263" specular="0.131579" />
+    <mesh name="gen1_visual_Object_6" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_7" rgba="1 1 1 1" shininess="0.861364" specular="0.0" />
+    <mesh name="gen1_visual_Object_7" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <material name="gen1_mat_Object_9" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_9" file="../../lightwheel_ycb/mustard_bottle/visuals/mustard_bottle.obj" />
+    <mesh name="gen1_collision_Object_11" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_Object_13" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_Object_15" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_00" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_01" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider5_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_02" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider6_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_03" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_04" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_05" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_06" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_07" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider5_m.obj" />
+    <mesh name="gen1_collision_Object_17_part_08" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider6_m.obj" />
+    <mesh name="gen1_collision_Object_19" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_00" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_01" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_02" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_03" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider5_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_04" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider6_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_05" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_06" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_07" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_08" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_09" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider5_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_10" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider6_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_11" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_12" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_13" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_14" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+    <mesh name="gen1_collision_Object_21_part_15" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider5_m.obj" />
+    <mesh name="gen1_collision_Object_23" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider6_m.obj" />
+    <mesh name="gen1_collision_Object_9" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider1_m.obj" />
+    <mesh name="gen1_collision_body_part_00" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider2_m.obj" />
+    <mesh name="gen1_collision_body_part_01" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider3_m.obj" />
+    <mesh name="gen1_collision_body_part_02" file="../../lightwheel_ycb/mustard_bottle/collision/mustard_bottle_Collider4_m.obj" />
+  </asset>
+  <worldbody>
+    <body name="gen1_soap_bottle" pos="-0.3 -0.06 0.923009445891" quat="1 0 0 0">
+      <freejoint name="gen1_soap_bottle_joint" />
+      <inertial mass="0.1" pos="4.11005967928e-05 -7.67344819189e-06 -0.0264088061083" quat="-0.492853060554 -0.505469494038 -0.494420385083 0.507094600755" diaginertia="4.99267432299e-05 0.000167519976497 0.000167705021506" />
+      <geom name="gen1_visual_Object_11" type="mesh" mesh="gen1_visual_Object_11" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_13" type="mesh" mesh="gen1_visual_Object_13" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_15" type="mesh" mesh="gen1_visual_Object_15" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_17" type="mesh" mesh="gen1_visual_Object_17" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_19" type="mesh" mesh="gen1_visual_Object_19" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_21" type="mesh" mesh="gen1_visual_Object_21" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_23" type="mesh" mesh="gen1_visual_Object_23" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_6" type="mesh" mesh="gen1_visual_Object_6" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_7" type="mesh" mesh="gen1_visual_Object_7" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_9" type="mesh" mesh="gen1_visual_Object_9" material="gen1_legacy_mustard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_collision_Object_11" type="mesh" mesh="gen1_collision_Object_11" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_13" type="mesh" mesh="gen1_collision_Object_13" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_15" type="mesh" mesh="gen1_collision_Object_15" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_00" type="mesh" mesh="gen1_collision_Object_17_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_01" type="mesh" mesh="gen1_collision_Object_17_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_02" type="mesh" mesh="gen1_collision_Object_17_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_03" type="mesh" mesh="gen1_collision_Object_17_part_03" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_04" type="mesh" mesh="gen1_collision_Object_17_part_04" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_05" type="mesh" mesh="gen1_collision_Object_17_part_05" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_06" type="mesh" mesh="gen1_collision_Object_17_part_06" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_07" type="mesh" mesh="gen1_collision_Object_17_part_07" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_08" type="mesh" mesh="gen1_collision_Object_17_part_08" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_19" type="mesh" mesh="gen1_collision_Object_19" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_00" type="mesh" mesh="gen1_collision_Object_21_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_01" type="mesh" mesh="gen1_collision_Object_21_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_02" type="mesh" mesh="gen1_collision_Object_21_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_03" type="mesh" mesh="gen1_collision_Object_21_part_03" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_04" type="mesh" mesh="gen1_collision_Object_21_part_04" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_05" type="mesh" mesh="gen1_collision_Object_21_part_05" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_06" type="mesh" mesh="gen1_collision_Object_21_part_06" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_07" type="mesh" mesh="gen1_collision_Object_21_part_07" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_08" type="mesh" mesh="gen1_collision_Object_21_part_08" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_09" type="mesh" mesh="gen1_collision_Object_21_part_09" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_10" type="mesh" mesh="gen1_collision_Object_21_part_10" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_11" type="mesh" mesh="gen1_collision_Object_21_part_11" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_12" type="mesh" mesh="gen1_collision_Object_21_part_12" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_13" type="mesh" mesh="gen1_collision_Object_21_part_13" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_14" type="mesh" mesh="gen1_collision_Object_21_part_14" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_15" type="mesh" mesh="gen1_collision_Object_21_part_15" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_23" type="mesh" mesh="gen1_collision_Object_23" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_9" type="mesh" mesh="gen1_collision_Object_9" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_00" type="mesh" mesh="gen1_collision_body_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_01" type="mesh" mesh="gen1_collision_body_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_02" type="mesh" mesh="gen1_collision_body_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+    </body>
+  </worldbody>
+</mujoco>

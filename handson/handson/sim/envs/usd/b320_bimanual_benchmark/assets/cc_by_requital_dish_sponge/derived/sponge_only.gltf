@@ -1,0 +1,479 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        2.635512351989746,
+        1.1042242050170898,
+        -0.17767533659934998
+      ],
+      "min": [
+        -2.635512351989746,
+        -1.864497184753418,
+        -1.0925616025924683
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.9999900460243225,
+        0.9999814033508301,
+        1.0
+      ],
+      "min": [
+        -0.9999894499778748,
+        -0.9999814033508301,
+        -1.0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.9999917149543762,
+        1.0,
+        0.9980211853981018,
+        1.0
+      ],
+      "min": [
+        -0.999997079372406,
+        -1.0,
+        -0.9999942183494568,
+        1.0
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 12,
+      "componentType": 5126,
+      "count": 1905,
+      "max": [
+        0.994070291519165,
+        0.9861322045326233
+      ],
+      "min": [
+        0.00390625,
+        0.05476071685552597
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 13,
+      "componentType": 5125,
+      "count": 9540,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "Requital (Azamkhon) (https://sketchfab.com/requital_0111)",
+      "dexjoco": {
+        "derivation": "five connected sponge shells; holder faces removed",
+        "source_sha256": "875ad3a55f1327dfac573f50366d33baf035b85c460526bc00ba8a27fd988ea9"
+      },
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/sponge-for-washing-dishes-7ec3822721dd416aacc6308a7ed46c2c",
+      "title": "Sponge For Washing Dishes"
+    },
+    "generator": "Sketchfab-16.8.0",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 22860,
+      "byteOffset": 0,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 22860,
+      "byteOffset": 22860,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 30480,
+      "byteOffset": 45720,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 76200,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 91440,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 106680,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 121920,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 137160,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 152400,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 167640,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 182880,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 198120,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 15240,
+      "byteOffset": 213360,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 38160,
+      "byteOffset": 228600,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 266760,
+      "uri": "sponge_only.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "../source/textures/DefaultMaterial_baseColor.png"
+    },
+    {
+      "uri": "../source/textures/DefaultMaterial_metallicRoughness.png"
+    },
+    {
+      "uri": "../source/textures/DefaultMaterial_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "DefaultMaterial",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "DishSpongeOnly",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5,
+            "TEXCOORD_3": 6,
+            "TEXCOORD_4": 7,
+            "TEXCOORD_5": 8,
+            "TEXCOORD_6": 9,
+            "TEXCOORD_7": 10,
+            "TEXCOORD_8": 11,
+            "TEXCOORD_9": 12
+          },
+          "indices": 13,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        0.009999999776,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.009999999776,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.009999999776,
+        0.0,
+        0.0,
+        -0.061665719498,
+        1.712808030205,
+        1.0
+      ],
+      "name": "5f853494a23f415c9478e793385b72d9.fbx"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4
+      ],
+      "matrix": [
+        39.999996185302734,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -5.326321657586519e-06,
+        -39.99999618530238,
+        0.0,
+        0.0,
+        39.99999618530238,
+        -5.326321657586519e-06,
+        0.0,
+        0.0,
+        49.8690299987793,
+        -186.48626708984375,
+        1.0
+      ],
+      "name": "Cube"
+    },
+    {
+      "mesh": 0,
+      "name": "DishSpongeOnly"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}

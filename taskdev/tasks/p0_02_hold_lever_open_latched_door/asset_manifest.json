@@ -1,0 +1,37 @@
+{
+  "schema": "handson.p002.asset_manifest.v2",
+  "source": "project-supplied ZRYZ_LW_Assets_20260820/Door042",
+  "sources": [
+    {
+      "id": "zryz_door042",
+      "license": "project-supplied",
+      "role": "door_frame_panel_joints_and_rear_handle"
+    },
+    {
+      "id": "helindu_door_handle",
+      "title": "Door Handle",
+      "author": "Helindu",
+      "license": "CC-BY-4.0",
+      "source_url": "https://sketchfab.com/3d-models/door-handle-b17802a127954b868a1250f55597142d",
+      "role": "near_side_handle002_replacement"
+    }
+  ],
+  "runtime_scale": 0.6,
+  "files": [
+    {"path": "assets/zryz_door042_source/Door042.usd", "bytes": 677298, "sha256": "f27f7148ec917642d9733f3a54161634a005e03fe1168069eb4f4b0ffc4ff651", "role": "immutable_source"},
+    {"path": "assets/zryz_door042_source/Door042_stage1.usd", "bytes": 628835, "sha256": "4367b6b8bcf60b934dfa9763502676f2d1d765688e81e261cfdc0d81745975ff", "role": "runtime_normalized"},
+    {"path": "assets/zryz_door042_source/Door042_stage1.usda", "bytes": 2179529, "sha256": "e21236995af3f4d1aa5dd94a39871d955e138c405fcd1ce5b20883195b3c6360", "role": "auditable_text_normalization"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_BC001.png", "bytes": 8133345, "sha256": "70a70951dcfe829b7bfcdb910298a9c1bbb8aabb19b7824c3af1d730e92ff574", "role": "source_texture"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_BC002.png", "bytes": 8133345, "sha256": "70a70951dcfe829b7bfcdb910298a9c1bbb8aabb19b7824c3af1d730e92ff574", "role": "source_texture"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_N001.png", "bytes": 30742, "sha256": "be56a8f33955d54678386d2c248c98cc2420ec7433555684b5d97e618ef542b5", "role": "source_texture"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_N002.png", "bytes": 30742, "sha256": "be56a8f33955d54678386d2c248c98cc2420ec7433555684b5d97e618ef542b5", "role": "source_texture"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_ORM001.png", "bytes": 1433239, "sha256": "cf86aa7c8cc2bb482377ff857aea0ac3c4bf2e56299cdcacab300a3e752e053d", "role": "source_texture"},
+    {"path": "assets/zryz_door042_source/texture/T_Door042_ORM002.png", "bytes": 1433239, "sha256": "cf86aa7c8cc2bb482377ff857aea0ac3c4bf2e56299cdcacab300a3e752e053d", "role": "source_texture"},
+    {"path": "assets/helindu_door_handle/source/door_handle.zip", "bytes": 66573, "sha256": "330c5bf51744ae54468c55896280d10d6c5ef0d7b63783112fe8052ecf36affd", "role": "helindu_immutable_source_archive"},
+    {"path": "assets/helindu_door_handle/source/license.txt", "bytes": 660, "sha256": "ac5e8340aa21851be6955f52b8c6381e356f811ac7e26e9fcadea875c6758ab7", "role": "helindu_license"},
+    {"path": "assets/helindu_door_handle/source/scene.gltf", "bytes": 3576, "sha256": "5180ebe384edbd8f7b6dc17b5394499dbf84653e959a00e42fe1b9f83745f1c0", "role": "helindu_source_scene"},
+    {"path": "assets/helindu_door_handle/source/scene.bin", "bytes": 107184, "sha256": "862b82880b862f2212c908aecb5bb39b1388e0718e17b265c442e6b06409102f", "role": "helindu_source_payload"},
+    {"repository_path": "handson/handson/sim/isaaclab/usd/t17_open_latched_door/helindu_door_handle/helindu_rosette.usda", "bytes": 175178, "sha256": "31bbcf68fb22601d3b7006bd62be4ad0d487a2f343c5620f493ff2e8c256af9c", "role": "helindu_runtime_rosette"},
+    {"repository_path": "handson/handson/sim/isaaclab/usd/t17_open_latched_door/helindu_door_handle/helindu_lever.usda", "bytes": 124625, "sha256": "53c666d6f38ffc0654c892827e837b4e426041aa25f207e59d204107e8e98037", "role": "helindu_runtime_lever"}
+  ]
+}

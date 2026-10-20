@@ -1,0 +1,10 @@
+Model Information:
+* title: Utility Knife
+* source: https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92
+* author: ahtusik (https://sketchfab.com/ahtusik)
+
+Model License:
+* license type: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
+* requirements: Author must be credited. Commercial use is allowed.
+
+This work is based on "Utility Knife" (https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92) by ahtusik (https://sketchfab.com/ahtusik) licensed under CC-BY-4.0.

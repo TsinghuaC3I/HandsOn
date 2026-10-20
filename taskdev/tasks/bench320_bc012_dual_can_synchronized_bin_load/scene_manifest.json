@@ -1,0 +1,214 @@
+{
+  "schema": "handson.bc012.collection_vertical_slice.v1",
+  "task_id": "B320-BC012",
+  "runtime_task_name": "t13_load_cans",
+  "scope": "full_collection_vertical_slice",
+  "isaac_sim_version": "5.1",
+  "physics_backend": "physx",
+  "template_layout_translation_xy_m": [0.0, 0.0],
+  "components": {
+    "robot": {
+      "asset": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "sides": ["left", "right"],
+      "arm_dof_per_side": 7,
+      "hand_dof_per_side": 20
+    },
+    "left_can": {
+      "asset": "assets/tomato_soup_can/textured.usd",
+      "reset_xy_m": [-0.43, 0.28],
+      "xy_jitter_m": 0.035,
+      "yaw_jitter_degrees": 12.0,
+      "scale_xyz": [1.0, 1.0, 1.0]
+    },
+    "right_can": {
+      "asset": "assets/tomato_soup_can/textured.usd",
+      "reset_xy_m": [-0.43, -0.28],
+      "xy_jitter_m": 0.035,
+      "yaw_jitter_degrees": 12.0,
+      "scale_xyz": [1.0, 1.0, 1.0]
+    },
+    "open_bin": {
+      "asset": "assets/open_bin/dexverse_authored_open_bin.glb",
+      "reset_xy_m": [-0.40, 0.0],
+      "xy_jitter_m": 0.025,
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "source_y_up_to_world_z_up_degrees_x": 90.0,
+      "authored_panels": 5,
+      "task_partition_dividers": 1,
+      "generated_prim_identifier_policy": "letter_prefixed_sanitized"
+    },
+    "table": {"table_top_z_m": 0.89},
+    "cameras": {
+      "ego": [480, 640, 3],
+      "wrist_left": [480, 640, 3],
+      "wrist_right": [480, 640, 3]
+    }
+  },
+  "interfaces": {
+    "action_shape": [54],
+    "action_dtype": "float32",
+    "task_state_shapes": {
+      "left_can_pose": [7],
+      "right_can_pose": [7],
+      "open_bin_pose": [7],
+      "partition_centers": [2, 3],
+      "bin_load_metrics": [12],
+      "bc012_task_state": [14]
+    },
+    "automatic_trajectory": "raw_actions_only",
+    "automatic_trajectory_action_count": 702,
+    "automatic_start_pose_source": "live_physx_palm_link",
+    "automatic_waypoint_frame": "live_task_asset_frames",
+    "physical_replay_input": "recorded_articulation_drive_targets_per_physx_substep",
+    "physical_replay_ik_recomputed": false,
+    "trajectory_state_writes_after_action_zero": "forbidden"
+  },
+  "semantics": {
+    "left_partition_sign_y": "positive",
+    "right_partition_sign_y": "negative",
+    "maximum_linear_speed_mps": 0.04,
+    "maximum_angular_speed_radps": 0.5,
+    "maximum_release_delta_seconds": 0.8,
+    "success_stability_control_frames": 15
+  },
+  "recording": {
+    "schema": "handson.bc012.physx_episode.v1",
+    "format": "zarr",
+    "fresh_process_replay_required": true,
+    "source_task_id": "B320-BC012"
+  },
+  "collection_acceptance": {
+    "schema": "handson.bc012.collection_acceptance.v1",
+    "maximum_stdout_bytes": 8388608,
+    "maximum_disjointed_body_transform_warnings": 0,
+    "joint_frame_write_must_precede_owner_event": true,
+    "dual_owner_release_required": true,
+    "success_stability_control_frames": 15,
+    "retain_zarr_only_on_success": true
+  },
+  "live_attempts": [
+    {
+      "run_id": "bench320-bc012-core-scene-brief-20260817T104301Z-ff1c3866",
+      "status": "failed_before_physics",
+      "failure": "generated GLB visual mesh prim identifiers began with digits",
+      "static_fix_present": true
+    },
+    {
+      "run_id": "B320-BC012-collect-vertical-slice-20260817T165956Z-76f0950e",
+      "status": "failed_before_first_physx",
+      "failure": "robot-dependent palm ownership resolved before robot USD spawn",
+      "old_glb_failure_passed": true,
+      "cpu_fix_present": true,
+      "episode_created": false,
+      "preview_created": false
+    },
+    {
+      "run_id": "B320-BC012-collect-vertical-slice-v2-20260817T171833Z-5866540b",
+      "status": "automatic_trajectory_completed_without_success",
+      "host": "hp-4",
+      "physical_gpu": 4,
+      "glb_robot_first_physx_passed": true,
+      "same_seed_reset_max_pose_error_m": 0.0,
+      "zero_action_passed": true,
+      "three_live_cameras_passed": true,
+      "automatic_action_count": 266,
+      "trajectory_state_write_count": 0,
+      "zarr_created": true,
+      "preview_created": true,
+      "semantic_success": false,
+      "grasp_event_count": 0,
+      "cpu_fix_present": true
+    },
+    {
+      "run_id": "B320-BC012-collect-vertical-slice-v3-20260817T174242Z-c2b53579",
+      "status": "automatic_trajectory_completed_without_success",
+      "host": "hp-4",
+      "physical_gpu": 3,
+      "glb_robot_first_physx_passed": true,
+      "same_seed_reset_max_pose_error_m": 0.0,
+      "zero_action_passed": true,
+      "three_live_cameras_passed": true,
+      "automatic_action_count": 266,
+      "trajectory_state_write_count": 0,
+      "zarr_created": true,
+      "preview_created": true,
+      "semantic_success": false,
+      "grasp_event_count": 0,
+      "grasp_attempt_count": {"left": 0, "right": 0},
+      "legacy_missing_body1_warning_present": false,
+      "minimum_physx_palm_to_can_center_m": {
+        "left": 0.24665198158931698,
+        "right": 0.19840155002026616
+      },
+      "task_local_reach_fix_present": true
+    },
+    {
+      "run_id": "B320-BC012-collect-vertical-slice-v4-20260817T180039Z-9decff84",
+      "status": "owner_enable_binding_failed_after_live_reach",
+      "host": "hp-4",
+      "physical_gpu": 7,
+      "run_local_cache": true,
+      "glb_robot_first_physx_passed": true,
+      "same_seed_reset_max_pose_error_m": 0.0,
+      "zero_action_passed": true,
+      "three_live_cameras_passed": true,
+      "automatic_start_source_physx_palm_link": true,
+      "automatic_action_count": 266,
+      "trajectory_state_write_count": 0,
+      "zarr_created": true,
+      "preview_created": true,
+      "semantic_success": false,
+      "minimum_physx_palm_to_can_center_m": {
+        "left": 0.11151680549303963,
+        "right": 0.11043329677322276
+      },
+      "grasp_attempt_count": {"left": 39, "right": 36},
+      "grasp_event_count": 0,
+      "failure": "pxr Gf.Vec3f rejected NumPy scalar arguments while enabling the complete preauthored joint",
+      "cpu_fix_present": true
+    },
+    {
+      "run_id": "B320-BC012-collect-vertical-slice-v5-20260817T182608Z-ae2ab7be",
+      "status": "dual_owner_grasp_release_completed_without_bin_support",
+      "host": "hp-2",
+      "physical_gpu": 3,
+      "run_local_cache": true,
+      "glb_robot_first_physx_passed": true,
+      "same_seed_reset_max_pose_error_m": 0.0,
+      "zero_action_passed": true,
+      "three_live_cameras_passed": true,
+      "automatic_start_source_physx_palm_link": true,
+      "automatic_action_count": 266,
+      "trajectory_state_write_count": 0,
+      "zarr_created": true,
+      "preview_created": true,
+      "semantic_success": false,
+      "minimum_physx_palm_to_can_center_m": {
+        "left": 0.1140124118232253,
+        "right": 0.1130414266652542
+      },
+      "grasp_attempt_count": {"left": 1, "right": 1},
+      "grasp_event_count": 2,
+      "release_event_count": 2,
+      "release_delta_frames": 0,
+      "left_supported": false,
+      "right_supported": false,
+      "disjointed_body_transform_warning_count": 6,
+      "cpu_fix_present": true
+    }
+  ],
+  "live_blockers": {
+    "task_fix_awaits_rerun": true,
+    "hp14_gpu1_vulkan_mapping_failed": true,
+    "hp4_gpu4_vulkan_mapping_passed": true,
+    "hp4_gpu3_vulkan_mapping_passed": true,
+    "hp4_gpu7_vulkan_mapping_passed": true,
+    "hp2_gpu3_vulkan_mapping_passed": true
+  },
+  "claims": {
+    "cpu_contract_ready": true,
+    "live_collection_validated": false,
+    "fresh_process_replay_validated": false,
+    "task_complete": false
+  }
+}

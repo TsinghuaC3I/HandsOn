@@ -1,0 +1,61 @@
+{
+  "profile": "cc0_sketchfab_pillow1",
+  "revision": "sewn-pillow-v2",
+  "source_title": "CC0 - Pillow",
+  "source_author": "plaggy (https://sketchfab.com/plaggy)",
+  "source_url": "https://sketchfab.com/3d-models/cc0-pillow-9045c15fe7a146b693814e620b9c4c1d",
+  "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+  "source_gltf_sha256": "8a2b5b7c20a310a7e1badfe47d1bb8fcabeed9499b5a449a0815941c64093db8",
+  "selected_mesh": "Pillow1",
+  "source_archive": "cc0_-_pillow.zip",
+  "normalization": {
+    "target_bounds_m": [
+      [
+        -0.3,
+        -0.211,
+        -0.11
+      ],
+      [
+        0.3,
+        0.211,
+        0.11
+      ]
+    ],
+    "uniform_source_units": "Sketchfab glTF node transform (inch export)",
+    "note": "bounded axis fit; visual and TetMaker volume use this same normalized surface"
+  },
+  "visual_vertex_count": 2790,
+  "visual_face_count": 930,
+  "simulation_node_count": 538,
+  "simulation_tet_count": 2028,
+  "simulation_surface_face_count": 698,
+  "node_count": 538,
+  "tet_count": 2028,
+  "surface_face_count": 698,
+  "collision_node_count": 1329,
+  "collision_tet_count": 4229,
+  "collision_surface_face_count": 2314,
+  "volume_m3": 0.030031792016218833,
+  "mass_kg_at_density_55": 1.651748560892036,
+  "parameters": {
+    "youngs_modulus": 400000.0,
+    "poissons_ratio": 0.33,
+    "density_kg_m3": 55.0,
+    "mass": 1.651748560892036,
+    "damping": 0.18,
+    "solver_position_iterations": 64,
+    "max_depenetration_velocity_mps": 1.0,
+    "settling_damping_per_second": 116.0,
+    "settling_threshold_mps": 0.02,
+    "contact_offset_m": 0.012,
+    "rest_offset_m": 0.002
+  },
+  "mesher": "PhysX 5.1 voxel simulation; source-conforming TetGen q4.0/a5e-5 collision",
+  "simulation_center_bias_m": [
+    -0.02862780634259275,
+    0.0014099361841205063,
+    0.0003385268837973059
+  ],
+  "simulation_resolution": 12,
+  "simulation_min_tet_volume_m3": 2.4177052936213815e-05
+}

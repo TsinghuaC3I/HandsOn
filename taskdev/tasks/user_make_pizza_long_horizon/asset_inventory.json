@@ -1,0 +1,47 @@
+{
+  "schema": "user_make_pizza_long_horizon_asset_inventory_v1",
+  "source": {
+    "pack": "Kenney Food Kit 2.0",
+    "url": "https://kenney.nl/assets/food-kit",
+    "license": "CC0-1.0",
+    "archive_sha256": "cdad90853682499b94c9fda2f87678b24bfd8f3264e0ed323f6b6a27fd7c6f6f"
+  },
+  "external_dough_source": {
+    "title": "Pizza Dough",
+    "url": "https://sketchfab.com/3d-models/pizza-dough-608fa60edb4a41dcb24e4f1580d576d4",
+    "author": "michael.diaz029",
+    "author_url": "https://sketchfab.com/michael.diaz029",
+    "license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "source_mesh_stats": {"vertices": 550, "triangles": 840},
+    "runtime_material_override": "solid_white",
+    "source_files": ["source_file.osgjs", "source_model_file.bin", "source_model_file_wireframe.bin"]
+  },
+  "realistic_tableware_sources": {
+    "kneading_bowl": {"title": "Wooden Bowl 01", "url": "https://polyhaven.com/a/wooden_bowl_01", "license": "CC0-1.0"},
+    "cutting_board": {"title": "Wooden Cutting Board", "url": "https://polyhaven.com/a/wooden_cutting_board", "license": "CC0-1.0"},
+    "frying_pan": {"title": "Brass Pan 01", "url": "https://polyhaven.com/a/brass_pan_01", "license": "CC0-1.0"},
+    "serving_plate": {"title": "Carved Wooden Plate", "url": "https://polyhaven.com/a/carved_wooden_plate", "license": "CC0-1.0"},
+    "license_url": "https://polyhaven.com/license"
+  },
+  "assets": {
+    "shared_colormap": {"path": "assets/kenney_food_kit/colormap.png", "sha256": "75baf74d9483a0fc56ac21ceba346fbe16fc24a2a1bf0524c53e6bbe802e1153"},
+    "raw_dough": {"path": "assets/sketchfab_pizza_dough/pizza_dough.glb", "sha256": "29a63835122ee0c1d9ce1b4aa87c8c9a21485b74d8bc059bb26be09fdc838e7b", "license_file": "assets/sketchfab_pizza_dough/license.txt", "source_manifest": "assets/sketchfab_pizza_dough/source_manifest.json"},
+    "raw_dough_source_file": {"path": "assets/sketchfab_pizza_dough/source_file.osgjs", "sha256": "6a37e49de995ab4aee1f4fc8d4b0f480d8b19f176d64403a108baa499873775a"},
+    "raw_dough_source_bin": {"path": "assets/sketchfab_pizza_dough/source_model_file.bin", "sha256": "646862205755222aaa705f12554669a29d9527309984ea7d4a2c0472417bd291"},
+    "raw_dough_source_wireframe": {"path": "assets/sketchfab_pizza_dough/source_model_file_wireframe.bin", "sha256": "ef340dc3833ddce2c656114100b44ade7255a7603db5970a7ed4626364b98608"},
+    "kneading_bowl": {"path": "assets/polyhaven_wooden_bowl_01/wooden_bowl_01.gltf", "sha256": "9b2aadbd2aed3144cdbc30834052a8dd3536b3756a554cce99e9702c8adeb440", "license_file": "assets/polyhaven_wooden_bowl_01/LICENSE.txt"},
+    "rolling_pin": {"path": "assets/kenney_food_kit/rollingPin.glb", "sha256": "5be3027c6764a3d09f18113ab5e4714d875f77dfc832a22ab7b42df90643ceed"},
+    "cutting_board": {"path": "assets/polyhaven_wooden_cutting_board/wooden_cutting_board.gltf", "sha256": "89fa89f6987c5087c0c7a8ac8ccbe451cfa8976ae46377d83a423e658cff9de4", "license_file": "assets/polyhaven_wooden_cutting_board/LICENSE.txt"},
+    "ketchup_sauce": {"path": "assets/kenney_food_kit/bottle-ketchup.glb", "sha256": "26b0cd52d36be6c432ba7862cc817f39e5ce74482013a3ac3ba6a6d4730489be"},
+    "cheese_topping": {"path": "assets/kenney_food_kit/cheese.glb", "sha256": "092c9326a27fc51edfaa0353c411875993ac109ee5e8923b681cc39fbb6312d1"},
+    "tomato_topping": {"path": "assets/kenney_food_kit/tomato-slice.glb", "sha256": "fd9329c4fb881710e2d3029b703db9ad77151faafad5f2029913252275055ab1"},
+    "pepper_topping": {"path": "assets/kenney_food_kit/pepper.glb", "sha256": "1c603e1ba2317992c16cdcf011074d6db3dc304089f7c6d2390daf2d6d49257f"},
+    "frying_pan": {"path": "assets/polyhaven_brass_pan_01/brass_pan_01.gltf", "sha256": "9860e0d10e9ef94c2b02e120f38f28a177af473759e4da05c74a564cfb0da5e1", "license_file": "assets/polyhaven_brass_pan_01/LICENSE.txt"},
+    "assembled_pizza_slices": {"path": "assets/kenney_food_kit/pizza.glb", "sha256": "e98eda0a63421bc4e86f063ebd096a21e50254b169ddbba945d2473b59390951", "nodes": ["slice1", "slice2", "slice3", "slice4", "slice5", "slice6", "slice7", "slice8"]},
+    "pizza_cutter": {"path": "assets/kenney_food_kit/pizza-cutter.glb", "sha256": "eb8501836d67ac68e51b89ecfa2df61f80e1e13bba16d619176d8d3be829f495"},
+    "serving_plate": {"path": "assets/polyhaven_carved_wooden_plate/carved_wooden_plate.gltf", "sha256": "f456a068bef31ee6510b5ee3077a5380d34c04a8fcc1f9f3f2776f4f64400206", "license_file": "assets/polyhaven_carved_wooden_plate/LICENSE.txt"}
+  },
+  "geometry_authored_in_repository": false,
+  "runtime_evidence": "Isaac Sim preview passed after 600 CPU PhysX steps; head-camera frame written to demos/collection_logs/live_mujoco.png"
+}

@@ -1,0 +1,18 @@
+# Linux inference environment; keep separate from Isaac Sim.
+numpy==1.26.4
+Pillow
+scipy
+PyYAML
+safetensors
+einops
+packaging
+huggingface-hub
+sentencepiece
+accelerate
+tqdm
+ftfy
+omegaconf
+hydra-core
+opencv-python-headless<4.12
+av
+requests

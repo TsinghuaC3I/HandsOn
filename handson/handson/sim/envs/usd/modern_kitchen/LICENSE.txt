@@ -1,0 +1,11 @@
+Model Information:
+* title: Modern Kitchen
+* source: https://sketchfab.com/3d-models/modern-kitchen-82c35500aec347d2938ff7943900486f
+* author: Visthétique (https://sketchfab.com/visthetique)
+
+Model License:
+* license type: CC-BY-4.0 (https://creativecommons.org/licenses/by/4.0/)
+* requirements: Author must be credited. Commercial use is allowed.
+
+Attribution:
+This work is based on "Modern Kitchen" (https://sketchfab.com/3d-models/modern-kitchen-82c35500aec347d2938ff7943900486f) by Visthétique (https://sketchfab.com/visthetique), licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Modified for DexJoCo.

@@ -1,0 +1,260 @@
+schema_version: 1
+task:
+  id: p003_bimanual_folding_ruler_shape_configuration
+  title: "P0-03 Bimanual Folding-Ruler Shape Configuration"
+  description: "Right-S0/left-S2 tabletop manipulation of the self-authored Ruler035 into one of four target shapes, followed by centered three-segment support, dual release, and a 30-frame low-velocity hold."
+  taxonomy:
+    family: articulation
+    interactions: [role_specific_dual_grasp, tabletop_hinge_configuration, centered_table_support, dual_release]
+    horizon: long
+    handedness: bimanual
+source:
+  origin: original
+  attribution: "Task designed for this benchmark using the benchmark owner's self-authored ZRYZ_LW_Assets_20260820/Ruler035 bundle."
+  reference: "ZRYZ_LW_Assets_20260820/Ruler035"
+  license: project
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.45, -0.45, 0.89]
+    max: [0.45, 0.45, 1.35]
+  targets:
+    - id: right_s0_grasp_band
+      arm: right
+      frame: world
+      position_m: [-0.22, 0.01, 0.90]
+      orientation_xyzw: [1.0, 0.0, 0.0, 0.0]
+      clearance_m: 0.03
+    - id: left_s2_grasp_band
+      arm: left
+      frame: world
+      position_m: [-0.18, 0.12, 0.89]
+      orientation_xyzw: [0.9238795325, -0.3826834324, 0.0, 0.0]
+      clearance_m: 0.03
+    - id: tabletop_configuration_center
+      arm: either
+      frame: world
+      position_m: [-0.19, 0.01, 0.90]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.01
+assets:
+  - id: ruler035
+    path: taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/assets/Ruler035/Ruler035.usd
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: runtime_analytic_boxes_plus_hinge_cylinders
+      runtime_policy_version: p003_tabletop_physics_v1
+      source_colliders:
+        immutable: true
+        enabled_at_runtime: false
+        disable_requires_exact_topology_mapping: true
+      analytic_proxies:
+        box_count: 3
+        hinge_cylinder_count: 2
+        visible: false
+    immutable_bundle_sha256: 55f3823f9ae46ba34f5bfcc12332aaa512cf99eb344e2db8bfa92a8825ca0369
+    rigid_bodies: [S0, S1, S2]
+    revolute_joint_limits_deg: [[-180.0, 0.0], [0.0, 180.0]]
+    articulation_contract:
+      hinge_actuation: passive
+      passive_drive:
+        drive_stiffness: 0.0
+        drive_target_velocity: 0.0
+        drive_damping: 0.05
+        drive_max_force_nm: 0.15
+        joint_friction_nm: 0.03
+        position_target_or_automatic_assist_allowed: false
+      vertical_tether_allowed: false
+      direct_object_pose_or_velocity_writes_after_action0_allowed: false
+reset:
+  seedable: true
+  max_settle_steps: 300
+  randomization:
+    root_x_m: {distribution: uniform, min: -0.19, max: -0.17}
+    root_y_m: {distribution: uniform, min: -0.09, max: -0.07}
+    root_yaw_deg: {distribution: uniform, min: 82.0, max: 98.0}
+    joint_1_deg: {distribution: uniform, min: -45.0, max: -25.0}
+    joint_2_deg: {distribution: uniform, min: 25.0, max: 45.0}
+    target_key: {distribution: discrete_uniform, values: [extended, square_u, zigzag_left, zigzag_right]}
+    friction: {distribution: uniform, min: 0.65, max: 0.75}
+    mass_scale: {distribution: uniform, min: 0.95, max: 1.05}
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - target_exactly_one_of_extended_square_u_zigzag_left_zigzag_right
+    - initial_joint_state_outside_target_tolerance
+    - task_not_initially_successful
+contact:
+  role_force_semantics:
+    ownership: "Each right-S0/left-S2 role must be established and maintained by real PhysX hand-segment collision at or above 0.10 N; no compliant owner or tether is synthesized."
+    persistence: "Only right-S0 and left-S2 contact establishes valid roles. Hand-table or wrong-role hand-ruler contact is recoverable and non-terminal; wrong-role contact invalidates the current role frame and resets the consecutive shape hold until correct contact is restored."
+    release: "Final release requires all raw hand-ruler collision forces from both hands at or below 0.02 N."
+    raw_telemetry_key: p003_raw_collision_forces_n
+    compliant_support_enabled: false
+    joint_target_assist_enabled: false
+    vertical_support_enabled: false
+    legacy_disabled_telemetry_keys: [p003_compliant_grasp_owners, p003_compliant_grasp_forces_n, p003_compliant_grasp_errors_m]
+    object_state_writes_after_action0_allowed: false
+  monitored_pairs:
+    - id: right_hand_s0
+      bodies: ["robot/right_hand/*", "assets/ruler035/S0"]
+      max_penetration_m: 0.005
+    - id: left_hand_s2
+      bodies: ["robot/left_hand/*", "assets/ruler035/S2"]
+      max_penetration_m: 0.005
+    - id: ruler_table
+      bodies: ["assets/ruler035/*", "environment/table"]
+      max_penetration_m: 0.005
+  forbidden_pairs: []
+  recoverable_guard_pairs:
+    - id: left_hand_s0_role_substitution
+      bodies: ["robot/left_hand/*", "assets/ruler035/S0"]
+      effect: invalidate_current_role_frame_and_reset_shape_hold
+      terminal_on_violation: false
+    - id: right_hand_s2_role_substitution
+      bodies: ["robot/right_hand/*", "assets/ruler035/S2"]
+      effect: invalidate_current_role_frame_and_reset_shape_hold
+      terminal_on_violation: false
+    - id: hand_table
+      bodies: ["robot/*hand*", "environment/table"]
+      effect: diagnostic_only_until_final_success_frame
+      terminal_on_violation: false
+success:
+  logic: all
+  predicates:
+    - id: ordered_stage_history
+      type: recoverable_physical_stage_machine
+      parameters:
+        stages: [seek_dual_grasp, tabletop_manipulation, shape_held, released_stable, success]
+        recoverable_regression:
+          from: shape_held
+          to: tabletop_manipulation
+          when_any: [target_shape_lost, tabletop_support_lost, wrong_role_touch, correct_role_lost_before_dual_release]
+          effect: reset_consecutive_shape_hold
+        airborne_shaping_allowed: false
+        vertical_tether_allowed: false
+        direct_object_state_writes_after_action0_allowed: false
+    - id: target_joint_angles
+      type: two_revolute_joint_angles
+      parameters:
+        joints: [assets/ruler035/Prop001_joint, assets/ruler035/Prop002_joint]
+        target_source: reset.target_key
+        targets_deg:
+          extended: [-170.0, 170.0]
+          square_u: [-90.0, 90.0]
+          zigzag_left: [-60.0, 120.0]
+          zigzag_right: [-120.0, 60.0]
+        tolerance_deg: 5.0
+    - id: target_segment_directions
+      type: three_segment_direction_match
+      parameters:
+        segments: [S0, S1, S2]
+        frame: task_root_xy
+        tolerance_deg: 8.0
+    - id: forced_bimanual_roles
+      type: correct_endpoint_role_contact_history_then_release
+      parameters:
+        left: S2_grasp_band
+        right: S0_grasp_band
+        same_hand_substitution_allowed: false
+        wrong_role_contact_terminal: false
+        wrong_role_contact_counts_toward_role: false
+        required_contact_force_n: 0.10
+        released_contact_force_n: 0.02
+    - id: tabletop_support_during_manipulation
+      type: minimum_segment_table_support
+      parameters:
+        segments: [S0, S1, S2]
+        min_supported_segments: 2
+        max_supported_bottom_height_above_table_m: 0.020
+        max_bottom_penetration_m: 0.001
+        required_stages: [tabletop_manipulation, shape_held]
+        airborne_shaping_allowed: false
+    - id: final_centered_table_support
+      type: all_segment_support_and_relative_xy
+      parameters:
+        segments: [S0, S1, S2]
+        max_abs_bottom_height_from_table_m: 0.010
+        max_bottom_penetration_m: 0.001
+        max_reset_xy_displacement_m: 0.05
+        phase: final_hold
+    - id: final_motion_stable
+      type: rigid_body_velocity_bounds
+      parameters:
+        max_linear_velocity_mps: 0.05
+        max_angular_velocity_radps: 0.50
+        continuous_control_frames: 30
+    - id: final_hands_clear_of_table
+      type: current_contact_force_upper_bound
+      parameters:
+        hand_selectors: ["robot/left_hand/*", "robot/right_hand/*"]
+        table_selector: "environment/table"
+        max_force_n: 0.02
+        phase: final_success_frame
+        current_frame_only: true
+        included_in_hold: false
+        terminal_on_violation: false
+  hold_steps: 30
+  timeout_steps: 900
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  target_cue_requirements: [shape_name, target_joint_angles, left_or_right_direction_arrow]
+stability:
+  physics_hz: 240
+  control_hz: 30
+  settle_steps: 300
+  zero_action_joint_drift:
+    window_control_frames: 90
+    max_abs_joint_drift_deg: 1.0
+  max_linear_velocity_mps: 5.0
+  max_angular_velocity_radps: 20.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  scripted_policy: p003_scripted_bimanual_ruler_tabletop_v2
+  recorder: scripts/record_demos_zarr.py
+  fresh_replay: scripts/certify_physx_replay.py
+  required_streams: [action, proprioception, rgb_head, contacts, success, target_key, target_prompt, ruler_joint_angles, ruler_segment_directions, p003_stage, p003_hand_table_state]
+  min_successful_episodes: 4
+validation:
+  current_physics_gates:
+    - handson/tests/test_p003_physics_overlay.py
+    - taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/runtime_reset_smoke.py
+  source_only_historical_non_runtime_evidence:
+    - taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/asset_physx_canary.py
+    - taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/asset_physx_matrix.py
+    - taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/evidence/ruler035_physx_matrix.json
+  report: taskdev/tasks/p003_bimanual_folding_ruler_shape_configuration/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 40, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 12, min_negative_trials: 12, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 4, max_schema_errors: 0}

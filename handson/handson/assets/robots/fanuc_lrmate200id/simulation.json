@@ -1,0 +1,197 @@
+{
+  "schema": 1,
+  "robot_id": "fanuc_lrmate200id",
+  "source_sha256": "c9103aa8a329b5a8eaafe8d04acca793ea9b4cfbb2e4b6d190d5ddab8c5b914a",
+  "status": "estimated simulation profile; not manufacturer-identified dynamics",
+  "drive_type": "force",
+  "gravity_m_s2": 9.81,
+  "fixed_base": true,
+  "physics_dt": 0.004166666666666667,
+  "control_dt": 0.016666666666666666,
+  "inertial_overrides": {
+    "base_link": {
+      "mass_kg": 7,
+      "com_xyz_m": [
+        -0.0040000006556510925,
+        0.0,
+        0.08449993487708696
+      ],
+      "box_dimensions_m": [
+        0.1979999989271164,
+        0.1899999976158142,
+        0.16900012976898893
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.037718941724300965,
+        0.03952960867162603,
+        0.04392733255700271
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_1": {
+      "mass_kg": 5,
+      "com_xyz_m": [
+        0.014499999582767487,
+        0.0,
+        -0.04792723059654236
+      ],
+      "box_dimensions_m": [
+        0.19900000095367432,
+        0.23499999940395355,
+        0.2240000069141388
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.04391708450724684,
+        0.03740708478212359,
+        0.03951083337475857
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_2": {
+      "mass_kg": 5,
+      "com_xyz_m": [
+        -0.0030777491629123688,
+        0.0001605004072189331,
+        0.16007380560040474
+      ],
+      "box_dimensions_m": [
+        0.13785869628190994,
+        0.23511500656604767,
+        0.4522884115576744
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.10826828064246538,
+        0.0931540947374634,
+        0.03095170268879189
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_3": {
+      "mass_kg": 4,
+      "com_xyz_m": [
+        0.006829157471656799,
+        -0.0024996958673000336,
+        0.016803111881017685
+      ],
+      "box_dimensions_m": [
+        0.16334168612957,
+        0.13900060206651688,
+        0.13839378207921982
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.012824668764348252,
+        0.015277781781947181,
+        0.015333891267501712
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_4": {
+      "mass_kg": 2,
+      "com_xyz_m": [
+        0.23192238435149193,
+        1.862645149230957e-09,
+        0.006950000301003456
+      ],
+      "box_dimensions_m": [
+        0.2877500131726265,
+        0.1047273688018322,
+        0.11390000209212303
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.003990172042123434,
+        0.015962213426238724,
+        0.01562798197616695
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_5": {
+      "mass_kg": 1.5,
+      "com_xyz_m": [
+        0.015650436282157898,
+        0.0,
+        -0.00013157352805137634
+      ],
+      "box_dimensions_m": [
+        0.11669912934303284,
+        0.073947012424469,
+        0.08518705517053604
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.0015906243768915654,
+        0.0026094401447562324,
+        0.00238585592949081
+      ],
+      "provenance": "HandsOn simulation estimate"
+    },
+    "link_6": {
+      "mass_kg": 0.5,
+      "com_xyz_m": [
+        -0.0030000004544853964,
+        -1.283455640077591e-05,
+        0.0
+      ],
+      "box_dimensions_m": [
+        0.005999997332692186,
+        0.03997432999312878,
+        0.03999999910593033
+      ],
+      "diagonal_inertia_kg_m2": [
+        0.00013324779111974924,
+        6.816666235278084e-05,
+        6.808112609966116e-05
+      ],
+      "provenance": "HandsOn simulation estimate"
+    }
+  },
+  "joint_drives": {
+    "joint_1": {
+      "effort_limit_nm": 100,
+      "stiffness_nm_rad": 2000,
+      "damping_nm_s_rad": 100,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    },
+    "joint_2": {
+      "effort_limit_nm": 100,
+      "stiffness_nm_rad": 2000,
+      "damping_nm_s_rad": 100,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    },
+    "joint_3": {
+      "effort_limit_nm": 60,
+      "stiffness_nm_rad": 1500,
+      "damping_nm_s_rad": 80,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    },
+    "joint_4": {
+      "effort_limit_nm": 20,
+      "stiffness_nm_rad": 600,
+      "damping_nm_s_rad": 40,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    },
+    "joint_5": {
+      "effort_limit_nm": 20,
+      "stiffness_nm_rad": 400,
+      "damping_nm_s_rad": 30,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    },
+    "joint_6": {
+      "effort_limit_nm": 12,
+      "stiffness_nm_rad": 300,
+      "damping_nm_s_rad": 20,
+      "home_rad": 0.0,
+      "test_amplitude_rad": 0.12,
+      "provenance": "HandsOn standalone-simulation tuning; upstream effort was zero"
+    }
+  },
+  "estimation_method": "For links lacking inertials: authored per-link mass allocation, collision-mesh axis-aligned bounds in link coordinates, center at box midpoint, Ixx=m*(dy^2+dz^2)/12 and cyclic permutations. Existing upstream inertia is retained. Zero effort limits receive explicit simulation estimates."
+}

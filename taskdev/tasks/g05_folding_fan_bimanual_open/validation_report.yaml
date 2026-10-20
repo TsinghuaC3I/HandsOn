@@ -1,0 +1,192 @@
+schema_version: 1
+task_id: g05_folding_fan_bimanual_open
+benchmark_id: G05
+manifest_sha256: e6213a1136cbda961126a2778dd74a103f14beaccf13667da1d65cdd36337cd7
+generated_at: "2026-08-23T04:49:08+08:00"
+status: shared_arm_home_restored_static_pass_live_rerun_required
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+current_arm_home_adjustment:
+  updated_at: "2026-09-01T23:07:01+08:00"
+  policy: shared_mirrored_bimanual_home
+  tcp_home_xyz_m: {right: [-0.10, -0.16, 1.07], left: [-0.10, 0.16, 1.07]}
+  task_local_spread_override_removed: true
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_first_physx_and_operator_validation: pending
+static_validation:
+  status: pass
+  task_manifest_schema: {status: pass, error_count: 0}
+  yaml_parse: pass
+  python_compile: pass
+  git_diff_check: pass
+  shared_contract_pytest: {status: pass, passed: 35, suite: handson/tests/test_lw_native_articulation_contract.py}
+  collection_registration_pytest: {status: pass, passed: 15, suite: collection_ui/tests/test_lw_native_asset_collection.py}
+  focused_static_integration_pytest: {status: pass, passed: 244, skipped: 3, scope: "LW contracts/runtime/static registration, task layout, recording-origin, and collection UI; environment-marked skips remained skipped"}
+  post_fix_contract_and_runtime_review_pytest: {status: pass, passed: 74, suite: "handson/tests/test_lw_native_articulation_contract.py + handson/tests/test_lw_native_articulation_runtime_review.py", command: "PYTHONPATH=handson python3 -m pytest -q handson/tests/test_lw_native_articulation_contract.py handson/tests/test_lw_native_articulation_runtime_review.py"}
+  asset_archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  asset_manifest_sha256: 911543839cae9c74030046d7cc6156935fba631647e369a386a1ab20a838e37a
+  selected_usd_sha256: f0f3bbdabfc3131a7278b69f6a6216f658effb6f5e5a45e129c5d1eb6a4974f8
+  scope: "This subsection reports static checks only; live results are recorded separately below."
+live_validation:
+  status: historical_pre_shared_home_restore_current_rerun_required
+  evidence:
+    first_attempt:
+      path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability.json
+      sha256: d59cf4261c1b1096db3832f88282c5f29ee5a3e090ee23019b23c588914f4bc5
+      status: fail
+      summary: "The upright first integration was correctly rejected: gravity opened the moving ribs from the seeded +/-2.5 degree reset to the +/-8 degree limits, producing 0.096152878 rad maximum reset drift and an invalid stable origin."
+    corrected_rerun:
+      path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json
+      sha256: 5f5af72ac8fc92c325b280c67ef1a7e9cf402664be2eb97677dc23c1ac58ee06
+      status: pass
+      summary: "The gravity-neutral tabletop integration passed first-PhysX construction, exact topology, initial geometry, stable recording origin, exact 240-frame zero-action auditing, deterministic and varied seeded resets, and a same-process hard scene rebuild."
+    collision_visibility_and_proxy_geometry_fix:
+      status: pass_for_live_static_composition_pending_rendered_operator_retest
+      user_observation: "The operator saw unexpected convex polyhedra and apparent intersection around the fan grips."
+      root_cause: "The 21 source /Collisions prims inherited visibility and the two 36 x 12 x 55 mm grip sleeves carried visible PreviewSurface geometry; the old same-rigid-body overlap was not observable through PhysX contact checks."
+      correction: "All source collision prims and grip proxies now resolve to computed visibility invisible. Each grip proxy is collision-only and was reduced to 30 x 4 x 50 mm, embeds approximately 0.85 mm into only its assigned outer rib, protrudes no more than 3.2 mm outward, and remains more than 1.1 mm clear of the neighboring rib."
+      persistent_live_static_evidence:
+        path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_collision_visibility_fix.json
+        sha256: 9fef0cbabe011eade4905d9608cfe0de726763ee02b240c2bde19d78283be303
+        status: pass
+        source_collision_only_prim_count: 21
+        grip_proxy_count: 2
+        final_composed_renderable_collision_only_path_count: 0
+        final_composed_nonrendering_prim_audit_count: 29
+        body_count: 20
+        collider_count: 23
+        dof_count: 19
+        scope: persistent_live_static_evidence_not_operator_render_or_hand_sweep_evidence
+  first_physx_scene_construction: pass
+  exact_body_collider_dof_inventory:
+    status: pass
+    body_count: 20
+    collider_count: 23
+    dof_count: 19
+    fixed_base: true
+    assigned_contact_views: [left, right]
+  nonpenetrating_initial_state:
+    status: pass
+    fixture_reset_overlap_count: 0
+    initialization_contact_samples_per_trial: 181
+    maximum_penetration_depth_m: 0.0
+    scope: "Inter-body initialization contacts only; the intentional approximately 0.85 mm same-rigid-body grip-proxy embedding is covered by the separate composed-geometry envelope audit."
+  zero_action_240_physics_step_stability:
+    status: pass
+    physics_hz: 120
+    control_hz: 30
+    control_steps: 60
+    physics_steps: 240
+    exact_substep_sample_count: 240
+    unreadable_substep_count: 0
+    max_q_drift_rad: 2.9993626045077496e-11
+    max_abs_qd_rad_s: 1.6602090227024746e-6
+    max_root_translation_drift_m: 0.0
+    max_root_rotation_drift_deg: 0.0
+  stable_recording_origin:
+    status: pass
+    accepted_trials: 4
+    rejected_trials: 0
+    task_readiness_ready_trials: 4
+    initial_settle_steps_per_trial: 120
+    recording_origin_physics_steps_per_trial: 180
+  seeded_reset_and_same_process_hard_reset:
+    status: pass
+    trial_seeds: [20260823, 20260823, 20260824, 20360826]
+    same_seed_repeat_passed: true
+    different_seed_passed: true
+    same_process_hard_reset_passed: true
+    hard_reset_scene_rebuilt: true
+    hard_reset_process_restarted: false
+    hard_reset_simulation_app_reused: true
+  formal_twenty_reset_trial_threshold: pending
+  operator_manual_r_reset: pending
+  operator_start_reset_stop: pending
+  operator_assigned_grip_reachability: pending
+  operator_post_fix_visual_and_hand_sweep: pending
+  physical_success_and_negative_trials: pending
+  canonical_camera: pending
+  zarr_recording: pending
+  fresh_process_replay: pending
+claims:
+  task_complete: false
+  live_physx_validated: true
+  exact_live_topology_validated: true
+  initial_nonpenetration_validated: true
+  final_composed_collision_only_visibility_validated: true
+  grip_proxy_static_geometry_envelope_validated: true
+  post_fix_human_viewport_and_canonical_camera_validated: false
+  post_fix_operator_hand_sweep_validated: false
+  stable_initial_state_validated: true
+  stable_recording_origin_validated: true
+  same_seed_different_seed_and_in_process_hard_reset_validated: true
+  formal_reset_trial_threshold_validated: false
+  operator_accepted: false
+  operator_reachability_validated: false
+  physical_success_validated: false
+  camera_validated: false
+  collection_validated: false
+  fresh_replay_validated: false
+  formal_collection_certified: false
+release_gate:
+  asset_provenance: user_provided
+  asset_author_and_upstream_source_resolved: false
+  asset_license_resolved: false
+  redistribution_allowed: false
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+checks:
+  schema:
+    status: pass
+    summary: "The G05 task manifest schema and YAML parsing passed."
+    evidence: []
+    metrics: {error_count: 0}
+  assets:
+    status: pending
+    summary: "Archive/USD bytes are hash-bound. The post-fix live composed stage has 20 bodies, 23 colliders, 19 DOFs, zero renderable collision-only paths, explicitly invisible source colliders/proxies, and the reduced grip-proxy envelope; rendered operator/canonical-camera confirmation and asset rights remain pending."
+    evidence: [taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json]
+    metrics: {live_body_count: 20, live_collider_count: 23, live_dof_count: 19, renderable_collision_only_path_count: 0, grip_proxy_dimensions_m: [0.030, 0.004, 0.180], assigned_rib_embedding_m: 0.00085, maximum_outward_protrusion_m: 0.0032, minimum_neighbor_rib_clearance_exclusive_m: 0.0011, license_resolved: false}
+  reachability:
+    status: pending
+    summary: "Updated tabletop grip targets are authored, but an operator has not yet demonstrated collision-free physical reach with both Wuji hands."
+    evidence: []
+    metrics: {}
+  contact:
+    status: pending
+    summary: "Both assigned PhysX contact views initialized and remained readable. The previously visible oversized grip sleeves were replaced by smaller invisible collision-only proxies with an audited static envelope, but an operator hand sweep, actual left-Prop001/right-Prop019 manipulation, and forbidden-contact negatives remain untested."
+    evidence: [taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json]
+    metrics: {assigned_contact_views: 2, reset_truth_readable: true}
+  reset:
+    status: pending
+    summary: "Four corrected live reset trials passed, including a same-seed repeat, a different seed, and a same-process hard scene rebuild; the formal 20-trial threshold and operator manual-R reset remain pending."
+    evidence:
+      - taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability.json
+      - taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json
+    metrics: {trials: 4, failures_after_fix: 0, same_seed_repeat: true, different_seed: true, same_process_hard_reset: true, formal_trial_threshold_met: false, operator_manual_r_validated: false}
+  success:
+    status: pending
+    summary: "Fail-closed signed motion, synchronization, target, release, and stability semantics pass CPU tests; live positive trials and required negative trials are pending."
+    evidence: []
+    metrics: {}
+  camera:
+    status: pending
+    summary: "The final composed stage reports zero renderable collision-only paths, but post-fix human-viewport and canonical head/wrist rendered evidence has not been collected; the user's visual regression therefore still requires an operator-facing render check."
+    evidence: []
+    metrics: {}
+  stability:
+    status: pass
+    summary: "After the rejected upright attempt was corrected, the accepted origin remained stable for exactly 240 consecutive 120 Hz physics frames with complete readable truth."
+    evidence:
+      - taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability.json
+      - taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json
+    metrics: {physics_frames: 240, unreadable_frames: 0, max_q_drift_rad: 2.9993626045077496e-11, max_abs_qd_rad_s: 1.6602090227024746e-6}
+  collection:
+    status: pending
+    summary: "Operator test collection is enabled for start/reset/stop and trial capture, but a successful reviewed Zarr episode and fresh-process physical replay remain pending; collection is not yet validated or certified."
+    evidence: []
+    metrics: {}

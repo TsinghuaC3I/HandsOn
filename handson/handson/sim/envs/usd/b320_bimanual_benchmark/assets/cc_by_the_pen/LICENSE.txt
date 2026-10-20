@@ -1,0 +1,11 @@
+Model Information:
+* title:	The Pen
+* source:	https://sketchfab.com/3d-models/the-pen-0501227aa9d64cca9b5df390a489ab38
+* author:	Artieee (https://sketchfab.com/Artieee)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "The Pen" (https://sketchfab.com/3d-models/the-pen-0501227aa9d64cca9b5df390a489ab38) by Artieee (https://sketchfab.com/Artieee) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

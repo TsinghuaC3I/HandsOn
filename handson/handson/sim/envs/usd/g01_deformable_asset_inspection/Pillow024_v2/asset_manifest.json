@@ -1,0 +1,251 @@
+{
+  "dependencies": [
+    {
+      "authored_path": "../Pillow024/texture/T_Pillow024_BC001.png",
+      "copied_into_v2": false,
+      "resolved_repository_path": "handson/handson/sim/envs/usd/g01_deformable_asset_inspection/Pillow024/texture/T_Pillow024_BC001.png",
+      "sha256": "027587a43d19b53f00450757c5e5b9fd548570dd54baffa916c700448f3c3894",
+      "shader_attribute": "inputs:diffuse_texture",
+      "size_bytes": 14951299
+    },
+    {
+      "authored_path": "../Pillow024/texture/T_Pillow024_N001.png",
+      "copied_into_v2": false,
+      "resolved_repository_path": "handson/handson/sim/envs/usd/g01_deformable_asset_inspection/Pillow024/texture/T_Pillow024_N001.png",
+      "sha256": "9e6deb699524675b1dd455d72ea124b407f1515765808c09a4deebd35ad8edf6",
+      "shader_attribute": "inputs:normalmap_texture",
+      "size_bytes": 21086495
+    },
+    {
+      "authored_path": "../Pillow024/texture/T_Pillow024_ORM001.png",
+      "copied_into_v2": false,
+      "resolved_repository_path": "handson/handson/sim/envs/usd/g01_deformable_asset_inspection/Pillow024/texture/T_Pillow024_ORM001.png",
+      "sha256": "b2ddc49cdd2c8dc1836194ca5389ad97e1911a50214d1e7c08dcaa5a75b59258",
+      "shader_attribute": "inputs:ORM_texture",
+      "size_bytes": 649290
+    }
+  ],
+  "files": [
+    {
+      "path": "Pillow024.usd",
+      "role": "normalized_runtime_usd",
+      "sha256": "c48c0ccba2bbcfa19439d52a7d476459b8d7ba3f8820bac02ea0545369b2cf6c",
+      "size_bytes": 20174302
+    },
+    {
+      "path": "README.md",
+      "role": "asset_readme",
+      "sha256": "5646325998b51be05507753c802e2f38f420a37abaa476e57391b22fcd0fdc23",
+      "size_bytes": 2383
+    }
+  ],
+  "known_risks": [
+    {
+      "count": 39,
+      "detail": "The supplier tetrahedral boundary has 39 surface edges with incidence four; detected and retained without remeshing.",
+      "id": "simulation_boundary_nonmanifold_edges",
+      "remeshed": false
+    },
+    {
+      "detail": "Initial supplier normals are preserved byte-for-byte and verified against a smooth bind-surface reference, but live runtime normal updates still require an Isaac Sim 5.1 smoke test.",
+      "id": "live_deformation_normal_update_not_certified"
+    }
+  ],
+  "normalization": {
+    "material_parameters_changed": false,
+    "operations": [
+      "visual_points_from_deformable_bind_points",
+      "visual_extent_recomputed",
+      "source_face_varying_bind_normals_reauthored_byte_exact",
+      "simulation_points_from_rest_shape_points",
+      "simulation_velocities_zeroed",
+      "simulation_extent_recomputed",
+      "visual_child_physics_mass_api_removed",
+      "visual_child_physics_material_binding_removed",
+      "simulation_tetmesh_explicitly_hidden",
+      "render_editor_prims_removed",
+      "unused_face_varying_color_primvar_removed",
+      "textures_retargeted_to_shared_pillow024_directory"
+    ],
+    "root_mass_changed": false,
+    "tet_topology_changed": false
+  },
+  "output": {
+    "deterministic_double_build_byte_identical": true,
+    "path": "Pillow024.usd",
+    "sha256": "c48c0ccba2bbcfa19439d52a7d476459b8d7ba3f8820bac02ea0545369b2cf6c",
+    "size_bytes": 20174302,
+    "source_texture_files_copied": false
+  },
+  "provenance_and_license": {
+    "boundary": "The inherited provenance record identifies source lineage; it does not create a new license grant or authorization.",
+    "independent_license_metadata_in_download": false,
+    "inherited_supplier_archive_record": {
+      "filename": "ZRYZ_LW_Assets_20260807.zip",
+      "relationship": "Inherited from the repository's existing Pillow024 supplier provenance record.",
+      "sha256": "90798bdad84d8b1de38eb625984f7fefa4ae3b56c7297fb4769bd35151189306"
+    },
+    "license_name": null,
+    "new_license_grant_or_authorization": false
+  },
+  "repository_integration": {
+    "authored_by_this_asset_builder": false,
+    "formal_physical_replay_claimed": false,
+    "g01_2_environment_wired": true,
+    "g01_2_scene_wired": true,
+    "g01_2_task_registration_wired": true
+  },
+  "runtime": {
+    "collection_runtime_family": "isaac_sim_5_1",
+    "isaaclab": "2.3.2",
+    "isaaclab_distribution": "0.54.2",
+    "isaaclab_module": "/home/user/下载/handson-local-state/runtime/.handson_isaacsim/toolchain/IsaacLab-v2.3.2/source/isaaclab/isaaclab/__init__.py",
+    "isaacsim": "5.1.0.0",
+    "pxr_usd_version": "0.24.5"
+  },
+  "schema": "handson.g01.pillow024-v2.asset-manifest",
+  "schema_version": 1,
+  "source": {
+    "copied_into_repository": false,
+    "immutable": true,
+    "path": "/home/user/下载/Pillow024/Pillow024.usd",
+    "sha256": "8b08e24ba0e8bc359f8802fce393fddb6234b31ca60a8e51a85404638cc80305",
+    "size_bytes": 19832135
+  },
+  "validation": {
+    "editor_cleanup": {
+      "render_prim_removed": true
+    },
+    "material": {
+      "shader_path": "/root/Looks/M_Pillow024_001/Shader",
+      "texture_paths": {
+        "inputs:ORM_texture": "../Pillow024/texture/T_Pillow024_ORM001.png",
+        "inputs:diffuse_texture": "../Pillow024/texture/T_Pillow024_BC001.png",
+        "inputs:normalmap_texture": "../Pillow024/texture/T_Pillow024_N001.png"
+      }
+    },
+    "physics": {
+      "material_parameters": {
+        "omniphysics:density": 0.0,
+        "omniphysics:dynamicFriction": 3.0,
+        "omniphysics:poissonsRatio": 0.47999998927116394,
+        "omniphysics:staticFriction": 3.0,
+        "omniphysics:youngsModulus": 1000000.0,
+        "physxDeformableMaterial:elasticityDamping": 0.0
+      },
+      "physics_material_bindings": {
+        "root": "/root/Physics/PhysicsMaterial",
+        "simulation": "/root/Physics/PhysicsMaterial"
+      },
+      "root_apis": [
+        "MaterialBindingAPI",
+        "OmniPhysicsDeformableBodyAPI",
+        "PhysxAutoDeformableBodyAPI",
+        "PhysxAutoDeformableMeshSimplificationAPI",
+        "PhysxBaseDeformableBodyAPI"
+      ],
+      "root_mass_kg": 0.800000011920929,
+      "root_parameters": {
+        "physxDeformableBody:enableSpeculativeCCD": true,
+        "physxDeformableBody:linearDamping": 0.10000000149011612,
+        "physxDeformableBody:selfCollision": true,
+        "physxDeformableBody:solverPositionIterationCount": 32
+      },
+      "simulation_apis": [
+        "MaterialBindingAPI",
+        "OmniPhysicsDeformablePoseAPI:default",
+        "OmniPhysicsVolumeDeformableSimAPI",
+        "PhysicsCollisionAPI",
+        "PhysxCollisionAPI"
+      ]
+    },
+    "simulation": {
+      "explicit_visibility": "invisible",
+      "extent_m": [
+        [
+          -0.3981507420539856,
+          -0.2097940742969513,
+          -0.0932554379105568
+        ],
+        [
+          0.40012142062187195,
+          0.20852193236351013,
+          0.0932488739490509
+        ]
+      ],
+      "maximum_signed_tet_volume_m3": 2.3104471590318836e-05,
+      "minimum_signed_tet_volume_m3": 5.173676439898894e-09,
+      "nonmanifold_surface_edge_count": 39,
+      "parameters": {
+        "physxCollision:contactOffset": 0.00800000037997961,
+        "physxCollision:restOffset": 0.004000000189989805
+      },
+      "point_count": 11643,
+      "points_equal_rest_shape_points": true,
+      "rest_tets_all_positive": true,
+      "surface_edge_incidence": {
+        "2": 31155,
+        "4": 39
+      },
+      "surface_face_count": 20822,
+      "surface_faces_match_derived_boundary": true,
+      "tet_count": 36327,
+      "tet_face_incidence": {
+        "1": 20822,
+        "2": 62243
+      },
+      "topology_remeshed": false,
+      "total_tet_volume_m3": 0.033343014689763,
+      "velocities_all_zero": true
+    },
+    "stage": {
+      "default_prim": "/root",
+      "meters_per_unit": 1.0,
+      "up_axis": "Z"
+    },
+    "visual": {
+      "bind_smooth_reference_alignment": {
+        "maximum_corner_dot": 0.9999999999999596,
+        "mean_corner_dot": 0.9999999906250681,
+        "minimum_corner_dot": 0.999999331468358
+      },
+      "child_mass_api_removed": true,
+      "child_physics_material_binding_removed": true,
+      "closed_two_manifold": true,
+      "corner_count": 31256,
+      "edge_incidence": {
+        "2": 15628
+      },
+      "extent_m": [
+        [
+          -0.3999999761581421,
+          -0.21105898916721344,
+          -0.09249552339315414
+        ],
+        [
+          0.3999999761581421,
+          0.21105900406837463,
+          0.09249553084373474
+        ]
+      ],
+      "face_count": 10418,
+      "face_vertex_count_distribution": {
+        "3": 10416,
+        "4": 2
+      },
+      "normal_interpolation": "faceVarying",
+      "normal_preservation": {
+        "changed_vector_count": 0,
+        "maximum_absolute_component_delta": 0.0,
+        "maximum_angular_delta_degrees": 1.7075472925031877e-06,
+        "mean_angular_delta_degrees": 2.639074929366208e-07,
+        "normalized_array_sha256": "9ba5cbd99a85e20d293a06b9e08b2c6a01b04dbf35254db43dbce587892e692a",
+        "preserved_byte_exact": true,
+        "source_array_sha256": "9ba5cbd99a85e20d293a06b9e08b2c6a01b04dbf35254db43dbce587892e692a"
+      },
+      "point_count": 5212,
+      "points_equal_bind_points": true,
+      "unused_color_primvar_removed": true
+    }
+  }
+}

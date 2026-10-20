@@ -1,0 +1,115 @@
+{
+  "schema": "handson.ka021.blenderkit-kitchen-faucet-asset",
+  "schema_version": 1,
+  "task_id": "B320-KA021",
+  "task_name": "t05_fill_cup",
+  "asset_bundle": "blenderkit_kitchen_faucet",
+  "provenance": {
+    "platform": "BlenderKit",
+    "title": "Kitchen Faucet",
+    "creator": "Cody Flynn",
+    "asset_uuid": "0390e86f-2ffd-4745-b25c-d48397c67a51",
+    "version_id": "876c68b4-1341-46ad-8491-3b9762dccd87",
+    "source_url": "https://www.blendkit.com/asset-gallery-detail/b372d45e-2fbe-41cf-bf10-d0fd70dd2574/",
+    "license": "BlenderKit Royalty Free",
+    "license_url": "https://www.blendkit.com/docs/licenses/",
+    "source_sha256": "17faafad74eb833f5cecee9c84b13964bff92492fb1fbe3d795cea6e189183bf",
+    "source_filename": "kitchen_faucet.blend",
+    "source_file_present_in_repo": false
+  },
+  "conversion": {
+    "tool": "Blender 3.6 USD exporter",
+    "modifiers_enabled": false,
+    "materials_exported": true,
+    "textures_exported": false,
+    "split_method": "authored_object_boundary",
+    "static_objects": [
+      "FaucetBase",
+      "FaucetMain",
+      "FaucetHead",
+      "Buttons",
+      "BrassTip",
+      "SprayNozzle",
+      "HandleBase"
+    ],
+    "moving_objects": [
+      "Handle"
+    ],
+    "moving_parent_pivot": "Empty",
+    "pivot_native_m": [
+      0.0,
+      0.09024405479431152,
+      0.06231890618801117
+    ],
+    "physics_authored_by": "handson/handson/sim/isaaclab/b320_bimanual_scene.py"
+  },
+  "runtime_components": [
+    {
+      "path": "faucet_static.usd",
+      "sha256": "7319c3b385f80cc47624b6bbbc7d72607633d9d0311f6c5af668d1cc4a3822ec",
+      "size_bytes": 808756,
+      "mesh_count": 7,
+      "objects": [
+        "FaucetBase",
+        "FaucetMain",
+        "FaucetHead",
+        "Buttons",
+        "BrassTip",
+        "SprayNozzle",
+        "HandleBase"
+      ]
+    },
+    {
+      "path": "faucet_handle.usd",
+      "sha256": "7ac9a7f647c015eb8444253d5d1c47bcb81aa96efd018a876cc252160c9468e7",
+      "size_bytes": 123545,
+      "mesh_count": 1,
+      "objects": [
+        "Handle"
+      ]
+    }
+  ],
+  "coordinate_contract": {
+    "source_up_axis": "Z",
+    "runtime_up_axis": "Z",
+    "pivot_native_m": [
+      0.0,
+      0.09024405479431152,
+      0.06231890618801117
+    ],
+    "static_root_prim": "/World",
+    "handle_root_prim": "/World"
+  },
+  "physics": {
+    "visual_components_have_physics_api": false,
+    "joint_type": "revolute",
+    "joint_name": "RevoluteJoint_faucet_3_right",
+    "joint_axis_runtime": "Y",
+    "joint_frame": "yawed_source_y_axis_with_sign_flip",
+    "joint_frame_orientation_wxyz": [
+      -0.9373072655054008,
+      0.0,
+      0.0,
+      0.34850407462580424
+    ],
+    "joint_axis_world_w": [
+      0.6533108024100059,
+      0.7570898199384233,
+      0.0
+    ],
+    "joint_limits_deg": [
+      -45.0,
+      0.0
+    ],
+    "open_direction_world": [
+      -1.0,
+      0.0,
+      0.0
+    ],
+    "initial_open_direction_world_w": [
+      -0.7570898199384233,
+      0.6533108024100059,
+      0.0
+    ]
+  }
+}

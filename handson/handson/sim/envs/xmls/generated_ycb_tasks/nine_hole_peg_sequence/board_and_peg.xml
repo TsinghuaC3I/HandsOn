@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="nine_hole_peg_sequence_primitives">
+  <default>
+    <default class="nhps_board_collision">
+      <geom type="box" group="0" friction="1.05 0.01 0.0002" solref="0.004 1" solimp="0.95 0.99 0.001" rgba="0.18 0.20 0.22 1" />
+    </default>
+    <default class="nhps_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="nhps_peg_collision">
+      <geom group="0" friction="1.15 0.015 0.0002" solref="0.003 1" solimp="0.96 0.995 0.001" density="850" rgba="0.86 0.12 0.10 1" />
+    </default>
+  </default>
+  <asset>
+    <material name="nhps_board_mat" rgba="0.18 0.21 0.24 1" specular="0.25" shininess="0.25" />
+    <material name="nhps_board_edge_mat" rgba="0.08 0.10 0.12 1" specular="0.2" shininess="0.15" />
+    <material name="nhps_hole_marker_mat" rgba="0.14 0.28 0.95 0.22" specular="0" shininess="0" />
+    <material name="nhps_peg_mat" rgba="0.86 0.12 0.10 1" specular="0.35" shininess="0.35" />
+    <material name="nhps_peg_tip_mat" rgba="0.95 0.68 0.16 1" specular="0.3" shininess="0.2" />
+  </asset>
+  <worldbody>
+    <body name="nine_hole_board" pos="0.10 0.22 0.929">
+      <geom name="nhps_board_visual" class="nhps_visual" type="box" size="0.096 0.096 0.006" pos="0 0 0" material="nhps_board_mat" rgba="0.18 0.21 0.24 0.72" />
+      <geom name="nhps_board_band_y0" class="nhps_board_collision" size="0.096 0.0125 0.006" pos="0 -0.0835 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_y1" class="nhps_board_collision" size="0.096 0.0115 0.006" pos="0 -0.0275 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_y2" class="nhps_board_collision" size="0.096 0.0115 0.006" pos="0 0.0275 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_y3" class="nhps_board_collision" size="0.096 0.0125 0.006" pos="0 0.0835 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_x0" class="nhps_board_collision" size="0.0125 0.096 0.006" pos="-0.0835 0 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_x1" class="nhps_board_collision" size="0.0115 0.096 0.006" pos="-0.0275 0 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_x2" class="nhps_board_collision" size="0.0115 0.096 0.006" pos="0.0275 0 0" material="nhps_board_mat" />
+      <geom name="nhps_board_band_x3" class="nhps_board_collision" size="0.0125 0.096 0.006" pos="0.0835 0 0" material="nhps_board_mat" />
+      <geom name="nhps_board_edge_front" class="nhps_visual" type="box" size="0.096 0.003 0.008" pos="0 -0.099 0" material="nhps_board_edge_mat" />
+      <geom name="nhps_board_edge_back" class="nhps_visual" type="box" size="0.096 0.003 0.008" pos="0 0.099 0" material="nhps_board_edge_mat" />
+      <geom name="nhps_board_edge_left" class="nhps_visual" type="box" size="0.003 0.096 0.008" pos="-0.099 0 0" material="nhps_board_edge_mat" />
+      <geom name="nhps_board_edge_right" class="nhps_visual" type="box" size="0.003 0.096 0.008" pos="0.099 0 0" material="nhps_board_edge_mat" />
+      <site name="nhps_board_top" pos="0 0 0.006" size="0.004" rgba="0 0 0 0" />
+      <site name="nhps_board_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+      <geom name="nhps_hole_0_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="-0.055 0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_0_center" pos="-0.055 0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_1_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0 0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_1_center" pos="0 0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_2_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0.055 0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_2_center" pos="0.055 0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_3_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="-0.055 0 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_3_center" pos="-0.055 0 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_4_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0 0 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_4_center" pos="0 0 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_5_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0.055 0 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_5_center" pos="0.055 0 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_6_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="-0.055 -0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_6_center" pos="-0.055 -0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_7_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0 -0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_7_center" pos="0 -0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+      <geom name="nhps_hole_8_marker" class="nhps_visual" type="cylinder" size="0.014 0.0006" pos="0.055 -0.055 0.007" material="nhps_hole_marker_mat" />
+      <site name="nhps_hole_8_center" pos="0.055 -0.055 0.006" size="0.004" rgba="0.2 0.4 1 0.4" />
+    </body>
+    <body name="peg_root_body" pos="-0.23 0.06 0.956" quat="1 0 0 0">
+      <freejoint name="peg_root" />
+      <body name="nhps_peg_object">
+        <geom name="nhps_peg_collision" class="nhps_peg_collision" type="cylinder" size="0.0095 0.0325" pos="0 0 0" material="nhps_peg_mat" />
+        <geom name="nhps_peg_top_visual" class="nhps_visual" type="sphere" size="0.0102" pos="0 0 0.034" material="nhps_peg_tip_mat" />
+        <site name="nhps_peg_tip" pos="0 0 -0.0325" size="0.003" rgba="0.95 0.68 0.16 0.65" />
+        <site name="nhps_peg_top" pos="0 0 0.0325" size="0.003" rgba="0.86 0.12 0.10 0.65" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

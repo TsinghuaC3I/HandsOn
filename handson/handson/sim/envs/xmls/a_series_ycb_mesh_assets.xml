@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="a_series_ycb_mesh_assets">
+  <default>
+    <default class="a_series_ycb_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" mass="0" friction="0.95 0.30 0.10" solref="0.001 1" solimp="0.998 0.998 0.001" />
+    </default>
+    <default class="a_series_ycb_collision">
+      <geom type="mesh" condim="4" group="3" friction="1.2 0.04 0.004" solref="0.003 1" solimp="0.95 0.99 0.001" rgba="0 0 0 0" />
+    </default>
+  </default>
+
+  <asset>
+    <!-- lightwheel_ycb/banana -->
+    <texture type="2d" name="banana_material" file="lightwheel_ycb/banana/visuals/T_banana_BC001.png" />
+    <material name="banana_material" texture="banana_material" specular="0.3103" shininess="0" />
+    <mesh name="banana_vis" file="lightwheel_ycb/banana/visuals/banana.obj" />
+    <mesh name="banana_Collider1_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider1_m.obj" />
+    <mesh name="banana_Collider2_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider2_m.obj" />
+    <mesh name="banana_Collider3_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider3_m.obj" />
+    <mesh name="banana_Collider4_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider4_m.obj" />
+    <mesh name="banana_Collider5_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider5_m.obj" />
+    <mesh name="banana_Collider6_m_collision" file="lightwheel_ycb/banana/collision/banana_Collider6_m.obj" />
+    <!-- lightwheel_ycb/apple -->
+    <texture type="2d" name="apple_material" file="lightwheel_ycb/apple/visuals/T_apple_BC001.png" />
+    <material name="apple_material" texture="apple_material" specular="0.310345" shininess="0" />
+    <mesh name="apple_vis" file="lightwheel_ycb/apple/visuals/apple.obj" />
+    <mesh name="apple_Collider1_m_collision" file="lightwheel_ycb/apple/collision/apple_Collider1_m.obj" />
+    <mesh name="apple_Collider2_m_collision" file="lightwheel_ycb/apple/collision/apple_Collider2_m.obj" />
+    <mesh name="apple_Collider3_m_collision" file="lightwheel_ycb/apple/collision/apple_Collider3_m.obj" />
+    <mesh name="apple_Collider4_m_collision" file="lightwheel_ycb/apple/collision/apple_Collider4_m.obj" />
+    <mesh name="apple_Collider5_m_collision" file="lightwheel_ycb/apple/collision/apple_Collider5_m.obj" />
+    <!-- lightwheel_ycb/orange -->
+    <texture type="2d" name="orange_material" file="lightwheel_ycb/orange/visuals/T_orange_BC001.png" />
+    <material name="orange_material" texture="orange_material" specular="0.3103" />
+    <mesh name="orange_vis" file="lightwheel_ycb/orange/visuals/orange.obj" />
+    <mesh name="orange_Collider1_m_collision" file="lightwheel_ycb/orange/collision/orange_Collider1_m.obj" />
+    <!-- lightwheel_ycb/pear -->
+    <texture type="2d" name="pear_material" file="lightwheel_ycb/pear/visuals/T_pear_BC001.png" />
+    <material name="pear_material" texture="pear_material" specular="0.3103" />
+    <mesh name="pear_vis" file="lightwheel_ycb/pear/visuals/pear.obj" />
+    <mesh name="pear_Collider1_m_collision" file="lightwheel_ycb/pear/collision/pear_Collider1_m.obj" />
+    <mesh name="pear_Collider2_m_collision" file="lightwheel_ycb/pear/collision/pear_Collider2_m.obj" />
+    <!-- lightwheel_ycb/cracker_box -->
+    <texture type="2d" name="cracker_box_material" file="lightwheel_ycb/cracker_box/visuals/T_cracker_box_BC001.png" />
+    <material name="cracker_box_material" texture="cracker_box_material" specular="0.310345" shininess="0" />
+    <mesh name="cracker_box_vis" file="lightwheel_ycb/cracker_box/visuals/cracker_box.obj" />
+    <mesh name="cracker_box_Collider1_m_collision" file="lightwheel_ycb/cracker_box/collision/cracker_box_Collider1_m.obj" />
+    <!-- lightwheel_ycb/sugar_box -->
+    <texture type="2d" name="sugar_box_material" file="lightwheel_ycb/sugar_box/visuals/T_sugar_box_BC001.png" />
+    <material name="sugar_box_material" texture="sugar_box_material" specular="0.3103" shininess="0" />
+    <mesh name="sugar_box_vis" file="lightwheel_ycb/sugar_box/visuals/sugar_box.obj" />
+    <mesh name="sugar_box_Collider1_m_collision" file="lightwheel_ycb/sugar_box/collision/sugar_box_Collider1_m.obj" />
+    <!-- lightwheel_ycb/pudding_box -->
+    <texture type="2d" name="pudding_box_material" file="lightwheel_ycb/pudding_box/visuals/T_pudding_box_BC001.png" />
+    <material name="pudding_box_material" texture="pudding_box_material" specular="1" shininess="0" />
+    <mesh name="pudding_box_vis" file="lightwheel_ycb/pudding_box/visuals/pudding_box.obj" />
+    <mesh name="pudding_box_Collider1_m_collision" file="lightwheel_ycb/pudding_box/collision/pudding_box_Collider1_m.obj" />
+    <!-- lightwheel_ycb/mug -->
+    <texture type="2d" name="mug_material" file="lightwheel_ycb/mug/visuals/T_mug_BC001.png" />
+    <material name="mug_material" texture="mug_material" specular="0.3333" shininess="0" />
+    <mesh name="mug_vis" file="lightwheel_ycb/mug/visuals/mug.obj" />
+    <mesh name="mug_Collider1_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider1_m.obj" />
+    <mesh name="mug_Collider2_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider2_m.obj" />
+    <mesh name="mug_Collider3_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider3_m.obj" />
+    <mesh name="mug_Collider4_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider4_m.obj" />
+    <mesh name="mug_Collider5_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider5_m.obj" />
+    <mesh name="mug_Collider6_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider6_m.obj" />
+    <mesh name="mug_Collider7_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider7_m.obj" />
+    <mesh name="mug_Collider8_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider8_m.obj" />
+    <mesh name="mug_Collider9_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider9_m.obj" />
+    <mesh name="mug_Collider10_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider10_m.obj" />
+    <mesh name="mug_Collider11_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider11_m.obj" />
+    <mesh name="mug_Collider12_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider12_m.obj" />
+    <mesh name="mug_Collider13_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider13_m.obj" />
+    <mesh name="mug_Collider14_m_collision" file="lightwheel_ycb/mug/collision/mug_Collider14_m.obj" />
+    <!-- lightwheel_ycb/a_cups -->
+    <texture type="2d" name="a_cups_material" file="lightwheel_ycb/a_cups/visuals/T_a_cups_BC001.png" />
+    <material name="a_cups_material" texture="a_cups_material" specular="0.3103" />
+    <mesh name="a_cups_vis" file="lightwheel_ycb/a_cups/visuals/a_cups.obj" />
+    <mesh name="a_cups_Collider1_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider1_m.obj" />
+    <mesh name="a_cups_Collider2_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider2_m.obj" />
+    <mesh name="a_cups_Collider3_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider3_m.obj" />
+    <mesh name="a_cups_Collider4_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider4_m.obj" />
+    <mesh name="a_cups_Collider5_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider5_m.obj" />
+    <mesh name="a_cups_Collider6_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider6_m.obj" />
+    <mesh name="a_cups_Collider7_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider7_m.obj" />
+    <mesh name="a_cups_Collider8_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider8_m.obj" />
+    <mesh name="a_cups_Collider9_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider9_m.obj" />
+    <mesh name="a_cups_Collider10_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider10_m.obj" />
+    <mesh name="a_cups_Collider11_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider11_m.obj" />
+    <mesh name="a_cups_Collider12_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider12_m.obj" />
+    <mesh name="a_cups_Collider13_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider13_m.obj" />
+    <mesh name="a_cups_Collider14_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider14_m.obj" />
+    <mesh name="a_cups_Collider15_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider15_m.obj" />
+    <mesh name="a_cups_Collider16_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider16_m.obj" />
+    <mesh name="a_cups_Collider17_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider17_m.obj" />
+    <mesh name="a_cups_Collider18_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider18_m.obj" />
+    <mesh name="a_cups_Collider19_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider19_m.obj" />
+    <mesh name="a_cups_Collider20_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider20_m.obj" />
+    <mesh name="a_cups_Collider21_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider21_m.obj" />
+    <mesh name="a_cups_Collider22_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider22_m.obj" />
+    <mesh name="a_cups_Collider23_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider23_m.obj" />
+    <mesh name="a_cups_Collider24_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider24_m.obj" />
+    <mesh name="a_cups_Collider25_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider25_m.obj" />
+    <mesh name="a_cups_Collider26_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider26_m.obj" />
+    <mesh name="a_cups_Collider27_m_collision" file="lightwheel_ycb/a_cups/collision/a_cups_Collider27_m.obj" />
+    <!-- lightwheel_ycb/c_cups -->
+    <texture type="2d" name="c_cups_material" file="lightwheel_ycb/c_cups/visuals/T_c_cups_BC001.png" />
+    <material name="c_cups_material" texture="c_cups_material" specular="0.6103" />
+    <mesh name="c_cups_vis" file="lightwheel_ycb/c_cups/visuals/c_cups.obj" />
+    <mesh name="c_cups_Collider1_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider1_m.obj" />
+    <mesh name="c_cups_Collider2_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider2_m.obj" />
+    <mesh name="c_cups_Collider3_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider3_m.obj" />
+    <mesh name="c_cups_Collider4_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider4_m.obj" />
+    <mesh name="c_cups_Collider5_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider5_m.obj" />
+    <mesh name="c_cups_Collider6_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider6_m.obj" />
+    <mesh name="c_cups_Collider7_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider7_m.obj" />
+    <mesh name="c_cups_Collider8_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider8_m.obj" />
+    <mesh name="c_cups_Collider9_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider9_m.obj" />
+    <mesh name="c_cups_Collider10_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider10_m.obj" />
+    <mesh name="c_cups_Collider11_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider11_m.obj" />
+    <mesh name="c_cups_Collider12_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider12_m.obj" />
+    <mesh name="c_cups_Collider13_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider13_m.obj" />
+    <mesh name="c_cups_Collider14_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider14_m.obj" />
+    <mesh name="c_cups_Collider15_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider15_m.obj" />
+    <mesh name="c_cups_Collider16_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider16_m.obj" />
+    <mesh name="c_cups_Collider17_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider17_m.obj" />
+    <mesh name="c_cups_Collider18_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider18_m.obj" />
+    <mesh name="c_cups_Collider19_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider19_m.obj" />
+    <mesh name="c_cups_Collider20_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider20_m.obj" />
+    <mesh name="c_cups_Collider21_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider21_m.obj" />
+    <mesh name="c_cups_Collider22_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider22_m.obj" />
+    <mesh name="c_cups_Collider23_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider23_m.obj" />
+    <mesh name="c_cups_Collider24_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider24_m.obj" />
+    <mesh name="c_cups_Collider25_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider25_m.obj" />
+    <mesh name="c_cups_Collider26_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider26_m.obj" />
+    <mesh name="c_cups_Collider27_m_collision" file="lightwheel_ycb/c_cups/collision/c_cups_Collider27_m.obj" />
+    <!-- lightwheel_ycb/tennis_ball -->
+    <texture type="2d" name="tennis_ball_material" file="lightwheel_ycb/tennis_ball/visuals/T_tennis_ball_BC001.png" />
+    <material name="tennis_ball_material" texture="tennis_ball_material" specular="0.310345" shininess="0.2828" />
+    <mesh name="tennis_ball_vis" file="lightwheel_ycb/tennis_ball/visuals/tennis_ball.obj" />
+    <mesh name="tennis_ball_Collider1_m_collision" file="lightwheel_ycb/tennis_ball/collision/tennis_ball_Collider1_m.obj" />
+    <!-- lightwheel_ycb/golf_ball -->
+    <texture type="2d" name="golf_ball_material" file="lightwheel_ycb/golf_ball/visuals/T_golf_ball_BC001.png" />
+    <material name="golf_ball_material" texture="golf_ball_material" specular="0.3" shininess="0" />
+    <mesh name="golf_ball_vis" file="lightwheel_ycb/golf_ball/visuals/golf_ball.obj" />
+    <mesh name="golf_ball_Collider1_m_collision" file="lightwheel_ycb/golf_ball/collision/golf_ball_Collider1_m.obj" />
+    <!-- lightwheel_ycb/mini_soccer_ball -->
+    <texture type="2d" name="mini_soccer_ball_material" file="lightwheel_ycb/mini_soccer_ball/visuals/T_mini_soccer_ball_BC001.png" />
+    <material name="mini_soccer_ball_material" texture="mini_soccer_ball_material" specular="0.5103" />
+    <mesh name="mini_soccer_ball_vis" file="lightwheel_ycb/mini_soccer_ball/visuals/mini_soccer_ball.obj" scale="0.52 0.52 0.52" />
+    <mesh name="mini_soccer_ball_Collider1_m_collision" file="lightwheel_ycb/mini_soccer_ball/collision/mini_soccer_ball_Collider1_m.obj" scale="0.52 0.52 0.52" />
+    <!-- lightwheel_ycb/bowl -->
+    <texture type="2d" name="bowl_material" file="lightwheel_ycb/bowl/visuals/T_bowl_BC001.png" />
+    <material name="bowl_material" texture="bowl_material" specular="1" />
+    <mesh name="bowl_vis" file="lightwheel_ycb/bowl/visuals/bowl.obj" />
+    <mesh name="bowl_Collider1_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider1_m.obj" />
+    <mesh name="bowl_Collider2_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider2_m.obj" />
+    <mesh name="bowl_Collider3_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider3_m.obj" />
+    <mesh name="bowl_Collider4_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider4_m.obj" />
+    <mesh name="bowl_Collider5_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider5_m.obj" />
+    <mesh name="bowl_Collider6_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider6_m.obj" />
+    <mesh name="bowl_Collider7_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider7_m.obj" />
+    <mesh name="bowl_Collider8_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider8_m.obj" />
+    <mesh name="bowl_Collider9_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider9_m.obj" />
+    <mesh name="bowl_Collider10_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider10_m.obj" />
+    <mesh name="bowl_Collider11_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider11_m.obj" />
+    <mesh name="bowl_Collider12_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider12_m.obj" />
+    <mesh name="bowl_Collider13_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider13_m.obj" />
+    <mesh name="bowl_Collider14_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider14_m.obj" />
+    <mesh name="bowl_Collider15_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider15_m.obj" />
+    <mesh name="bowl_Collider16_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider16_m.obj" />
+    <mesh name="bowl_Collider17_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider17_m.obj" />
+    <mesh name="bowl_Collider18_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider18_m.obj" />
+    <mesh name="bowl_Collider19_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider19_m.obj" />
+    <mesh name="bowl_Collider20_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider20_m.obj" />
+    <mesh name="bowl_Collider21_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider21_m.obj" />
+    <mesh name="bowl_Collider22_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider22_m.obj" />
+    <mesh name="bowl_Collider23_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider23_m.obj" />
+    <mesh name="bowl_Collider24_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider24_m.obj" />
+    <mesh name="bowl_Collider25_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider25_m.obj" />
+    <mesh name="bowl_Collider26_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider26_m.obj" />
+    <mesh name="bowl_Collider27_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider27_m.obj" />
+    <mesh name="bowl_Collider28_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider28_m.obj" />
+    <mesh name="bowl_Collider29_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider29_m.obj" />
+    <mesh name="bowl_Collider30_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider30_m.obj" />
+    <mesh name="bowl_Collider31_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider31_m.obj" />
+    <mesh name="bowl_Collider32_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider32_m.obj" />
+    <mesh name="bowl_Collider33_m_collision" file="lightwheel_ycb/bowl/collision/bowl_Collider33_m.obj" />
+    <!-- lightwheel_ycb/spoon -->
+    <texture type="2d" name="spoon_material" file="lightwheel_ycb/spoon/visuals/T_spoon_BC001.png" />
+    <material name="spoon_material" texture="spoon_material" specular="0.333333" shininess="0.6" />
+    <mesh name="spoon_vis" file="lightwheel_ycb/spoon/visuals/spoon.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider1_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider1_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider2_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider2_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider3_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider3_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider4_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider4_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider5_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider5_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider6_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider6_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider7_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider7_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider8_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider8_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider9_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider9_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider10_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider10_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider11_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider11_m.obj" scale="1.2 1 1" />
+    <mesh name="spoon_Collider12_m_collision" file="lightwheel_ycb/spoon/collision/spoon_Collider12_m.obj" scale="1.2 1 1" />
+    <!-- lightwheel_ycb/a_marbles -->
+    <texture type="2d" name="a_marbles_material" file="lightwheel_ycb/a_marbles/visuals/T_a_marbles_BC001.png" />
+    <material name="a_marbles_material" texture="a_marbles_material" specular="1" />
+    <mesh name="a_marbles_vis" file="lightwheel_ycb/a_marbles/visuals/a_marbles.obj" />
+    <mesh name="a_marbles_Collider1_m_collision" file="lightwheel_ycb/a_marbles/collision/a_marbles_Collider1_m.obj" />
+    <mesh name="a_marbles_Collider2_m_collision" file="lightwheel_ycb/a_marbles/collision/a_marbles_Collider2_m.obj" />
+    <mesh name="a_marbles_Collider3_m_collision" file="lightwheel_ycb/a_marbles/collision/a_marbles_Collider3_m.obj" />
+    <mesh name="a_marbles_Collider4_m_collision" file="lightwheel_ycb/a_marbles/collision/a_marbles_Collider4_m.obj" />
+    <mesh name="a_marbles_Collider5_m_collision" file="lightwheel_ycb/a_marbles/collision/a_marbles_Collider5_m.obj" />
+    <!-- C02 uses the three YCB marble scans as randomized visual variants over
+         one simple rolling collision sphere. -->
+    <mesh name="c02_a_marbles_vis" file="lightwheel_ycb/a_marbles/visuals/a_marbles.obj" scale="0.222 0.222 0.222" />
+    <texture type="2d" name="b_marbles_material_tex" file="lightwheel_ycb/b_marbles/visuals/T_b_marbles_BC001.png" />
+    <material name="b_marbles_material" texture="b_marbles_material_tex" specular="0.5" />
+    <mesh name="c02_b_marbles_vis" file="lightwheel_ycb/b_marbles/visuals/b_marbles.obj" scale="0.67 0.67 0.67" />
+    <texture type="2d" name="c_marbles_berkeley_rgbd_material_tex" file="lightwheel_ycb/c_marbles_berkeley_rgbd/visuals/T_c_marbles_berkeley_rgbd_BC001.png" />
+    <material name="c_marbles_berkeley_rgbd_material" texture="c_marbles_berkeley_rgbd_material_tex" specular="0.31" shininess="0" />
+    <mesh name="c02_c_marbles_vis" file="lightwheel_ycb/c_marbles_berkeley_rgbd/visuals/c_marbles_berkeley_rgbd.obj" scale="0.79 0.79 0.79" />
+    <!-- lightwheel_ycb/rubiks_cube -->
+    <texture type="2d" name="rubiks_cube_material" file="lightwheel_ycb/rubiks_cube/visuals/T_rubiks_cube_BC001.png" />
+    <material name="rubiks_cube_material" texture="rubiks_cube_material" specular="0.6" />
+    <mesh name="rubiks_cube_vis" file="lightwheel_ycb/rubiks_cube/visuals/rubiks_cube.obj" />
+    <mesh name="rubiks_cube_Collider1_m_collision" file="lightwheel_ycb/rubiks_cube/collision/rubiks_cube_Collider1_m.obj" />
+    <!-- DexYCB 036_wood_block / lightwheel_ycb wood_block -->
+    <texture type="2d" name="wood_block_material" file="lightwheel_ycb/wood_block/visuals/T_wood_block_BC001.png" />
+    <material name="wood_block_material" texture="wood_block_material" specular="0.3103" />
+    <mesh name="wood_block_vis" file="lightwheel_ycb/wood_block/visuals/wood_block.obj" />
+    <mesh name="wood_block_Collider1_m_collision" file="lightwheel_ycb/wood_block/collision/wood_block_Collider1_m.obj" />
+    <!-- lightwheel_ycb/BuildingBlock017 -->
+    <texture type="2d" name="BuildingBlock017_material" file="lightwheel_ycb/BuildingBlock017/visuals/T_BuildingBlock017_BC001.png" />
+    <material name="BuildingBlock017_material" texture="BuildingBlock017_material" specular="0.1" />
+    <mesh name="BuildingBlock017_vis" file="lightwheel_ycb/BuildingBlock017/visuals/BuildingBlock017.obj" />
+    <mesh name="BuildingBlock017_Collider1_m_collision" file="lightwheel_ycb/BuildingBlock017/collision/BuildingBlock017_Collider1_m.obj" />
+    <!-- lightwheel_ycb/BuildingBlock018 -->
+    <texture type="2d" name="BuildingBlock018_material" file="lightwheel_ycb/BuildingBlock018/visuals/T_BuildingBlock018_BC001.png" />
+    <material name="BuildingBlock018_material" texture="BuildingBlock018_material" specular="0.1" shininess="0.1" />
+    <mesh name="BuildingBlock018_vis" file="lightwheel_ycb/BuildingBlock018/visuals/BuildingBlock018.obj" />
+    <mesh name="BuildingBlock018_Collider1_m_collision" file="lightwheel_ycb/BuildingBlock018/collision/BuildingBlock018_Collider1_m.obj" />
+    <!-- lightwheel_ycb/BuildingBlock019 -->
+    <texture type="2d" name="BuildingBlock019_material" file="lightwheel_ycb/BuildingBlock019/visuals/T_BuildingBlock019_BC001.png" />
+    <material name="BuildingBlock019_material" texture="BuildingBlock019_material" specular="0.3103" />
+    <mesh name="BuildingBlock019_vis" file="lightwheel_ycb/BuildingBlock019/visuals/BuildingBlock019.obj" />
+    <mesh name="BuildingBlock019_Collider1_m_collision" file="lightwheel_ycb/BuildingBlock019/collision/BuildingBlock019_Collider1_m.obj" />
+    <!-- lightwheel_ycb/pitcher_base, registered as 019_pitcher_base for B01 -->
+    <texture type="2d" name="pitcher_base_material" file="lightwheel_ycb/pitcher_base/visuals/T_pitcher_base_BC001.png" />
+    <material name="pitcher_base_material" texture="pitcher_base_material" specular="0.5" />
+    <mesh name="pitcher_base_vis" file="lightwheel_ycb/pitcher_base/visuals/pitcher_base.obj" />
+    <mesh name="pitcher_base_Collider1_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider1_m.obj" />
+    <mesh name="pitcher_base_Collider2_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider2_m.obj" />
+    <mesh name="pitcher_base_Collider3_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider3_m.obj" />
+    <mesh name="pitcher_base_Collider4_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider4_m.obj" />
+    <mesh name="pitcher_base_Collider5_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider5_m.obj" />
+    <mesh name="pitcher_base_Collider6_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider6_m.obj" />
+    <mesh name="pitcher_base_Collider7_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider7_m.obj" />
+    <mesh name="pitcher_base_Collider8_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider8_m.obj" />
+    <mesh name="pitcher_base_Collider9_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider9_m.obj" />
+    <mesh name="pitcher_base_Collider10_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider10_m.obj" />
+    <mesh name="pitcher_base_Collider11_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider11_m.obj" />
+    <mesh name="pitcher_base_Collider12_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider12_m.obj" />
+    <mesh name="pitcher_base_Collider13_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider13_m.obj" />
+    <mesh name="pitcher_base_Collider14_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider14_m.obj" />
+    <mesh name="pitcher_base_Collider15_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider15_m.obj" />
+    <mesh name="pitcher_base_Collider16_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider16_m.obj" />
+    <mesh name="pitcher_base_Collider17_m_collision" file="lightwheel_ycb/pitcher_base/collision/pitcher_base_Collider17_m.obj" />
+    <!-- lightwheel_ycb/pitcher_lid -->
+    <texture type="2d" name="pitcher_lid_material" file="lightwheel_ycb/pitcher_lid/visuals/T_pitcher_lid_BC001.png" />
+    <material name="pitcher_lid_material" texture="pitcher_lid_material" specular="0.5" />
+    <mesh name="pitcher_lid_vis" file="lightwheel_ycb/pitcher_lid/visuals/pitcher_lid.obj" />
+    <mesh name="pitcher_lid_Collider1_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider1_m.obj" />
+    <mesh name="pitcher_lid_Collider2_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider2_m.obj" />
+    <mesh name="pitcher_lid_Collider3_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider3_m.obj" />
+    <mesh name="pitcher_lid_Collider4_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider4_m.obj" />
+    <mesh name="pitcher_lid_Collider5_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider5_m.obj" />
+    <mesh name="pitcher_lid_Collider6_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider6_m.obj" />
+    <mesh name="pitcher_lid_Collider7_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider7_m.obj" />
+    <mesh name="pitcher_lid_Collider8_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider8_m.obj" />
+    <mesh name="pitcher_lid_Collider9_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider9_m.obj" />
+    <mesh name="pitcher_lid_Collider10_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider10_m.obj" />
+    <mesh name="pitcher_lid_Collider11_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider11_m.obj" />
+    <mesh name="pitcher_lid_Collider12_m_collision" file="lightwheel_ycb/pitcher_lid/collision/pitcher_lid_Collider12_m.obj" />
+    <!-- lightwheel_ycb/Clear_Box -->
+    <texture type="2d" name="Clear_Box_material" file="lightwheel_ycb/Clear_Box/visuals/T_Clear_Box_BC001.png" />
+    <material name="Clear_Box_material" texture="Clear_Box_material" specular="0.3333" rgba="1 1 1 0.7455" />
+    <mesh name="Clear_Box_vis" file="lightwheel_ycb/Clear_Box/visuals/Clear_Box.obj" />
+    <mesh name="Clear_Box_Collider1_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider1_m.obj" />
+    <mesh name="Clear_Box_Collider2_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider2_m.obj" />
+    <mesh name="Clear_Box_Collider3_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider3_m.obj" />
+    <mesh name="Clear_Box_Collider4_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider4_m.obj" />
+    <mesh name="Clear_Box_Collider5_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider5_m.obj" />
+    <mesh name="Clear_Box_Collider6_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider6_m.obj" />
+    <mesh name="Clear_Box_Collider7_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider7_m.obj" />
+    <mesh name="Clear_Box_Collider8_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider8_m.obj" />
+    <mesh name="Clear_Box_Collider9_m_collision" file="lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider9_m.obj" />
+    <!-- lightwheel_ycb/Box_lid -->
+    <texture type="2d" name="Box_lid_material" file="lightwheel_ycb/Box_lid/visuals/T_Box_lid_BC001.png" />
+    <material name="Box_lid_material" texture="Box_lid_material" specular="0" rgba="1 1 1 1" />
+    <mesh name="Box_lid_vis" file="lightwheel_ycb/Box_lid/visuals/Box_lid.obj" />
+    <mesh name="Box_lid_Collider1_m_collision" file="lightwheel_ycb/Box_lid/collision/Box_lid_Collider1_m.obj" />
+  </asset>
+</mujoco>

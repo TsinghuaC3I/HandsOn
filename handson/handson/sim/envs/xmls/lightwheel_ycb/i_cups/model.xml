@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="311.093" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="i_cups_material" file="visuals/T_i_cups_BC001.png"/>
+    <material name="i_cups_material" texture="i_cups_material" specular="0.3103" shininess="0.2828"/>
+    <mesh name="i_cups_vis" file="visuals/optimized_visuals/i_cups.obj"/>
+    <mesh name="i_cups_Collider1_m_collision" file="collision/i_cups_Collider1_m.obj"/>
+    <mesh name="i_cups_Collider2_m_collision" file="collision/i_cups_Collider2_m.obj"/>
+    <mesh name="i_cups_Collider3_m_collision" file="collision/i_cups_Collider3_m.obj"/>
+    <mesh name="i_cups_Collider4_m_collision" file="collision/i_cups_Collider4_m.obj"/>
+    <mesh name="i_cups_Collider5_m_collision" file="collision/i_cups_Collider5_m.obj"/>
+    <mesh name="i_cups_Collider6_m_collision" file="collision/i_cups_Collider6_m.obj"/>
+    <mesh name="i_cups_Collider7_m_collision" file="collision/i_cups_Collider7_m.obj"/>
+    <mesh name="i_cups_Collider8_m_collision" file="collision/i_cups_Collider8_m.obj"/>
+    <mesh name="i_cups_Collider9_m_collision" file="collision/i_cups_Collider9_m.obj"/>
+    <mesh name="i_cups_Collider10_m_collision" file="collision/i_cups_Collider10_m.obj"/>
+    <mesh name="i_cups_Collider11_m_collision" file="collision/i_cups_Collider11_m.obj"/>
+    <mesh name="i_cups_Collider12_m_collision" file="collision/i_cups_Collider12_m.obj"/>
+    <mesh name="i_cups_Collider13_m_collision" file="collision/i_cups_Collider13_m.obj"/>
+    <mesh name="i_cups_Collider14_m_collision" file="collision/i_cups_Collider14_m.obj"/>
+    <mesh name="i_cups_Collider15_m_collision" file="collision/i_cups_Collider15_m.obj"/>
+    <mesh name="i_cups_Collider16_m_collision" file="collision/i_cups_Collider16_m.obj"/>
+    <mesh name="i_cups_Collider17_m_collision" file="collision/i_cups_Collider17_m.obj"/>
+    <mesh name="i_cups_Collider18_m_collision" file="collision/i_cups_Collider18_m.obj"/>
+    <mesh name="i_cups_Collider19_m_collision" file="collision/i_cups_Collider19_m.obj"/>
+    <mesh name="i_cups_Collider20_m_collision" file="collision/i_cups_Collider20_m.obj"/>
+    <mesh name="i_cups_Collider21_m_collision" file="collision/i_cups_Collider21_m.obj"/>
+    <mesh name="i_cups_Collider22_m_collision" file="collision/i_cups_Collider22_m.obj"/>
+    <mesh name="i_cups_Collider23_m_collision" file="collision/i_cups_Collider23_m.obj"/>
+    <mesh name="i_cups_Collider24_m_collision" file="collision/i_cups_Collider24_m.obj"/>
+    <mesh name="i_cups_Collider25_m_collision" file="collision/i_cups_Collider25_m.obj"/>
+    <mesh name="i_cups_Collider26_m_collision" file="collision/i_cups_Collider26_m.obj"/>
+    <mesh name="i_cups_Collider27_m_collision" file="collision/i_cups_Collider27_m.obj"/>
+    <mesh name="i_cups_Collider28_m_collision" file="collision/i_cups_Collider28_m.obj"/>
+    <mesh name="i_cups_Collider29_m_collision" file="collision/i_cups_Collider29_m.obj"/>
+    <mesh name="i_cups_Collider30_m_collision" file="collision/i_cups_Collider30_m.obj"/>
+    <mesh name="i_cups_Collider31_m_collision" file="collision/i_cups_Collider31_m.obj"/>
+    <mesh name="i_cups_Collider32_m_collision" file="collision/i_cups_Collider32_m.obj"/>
+    <mesh name="i_cups_Collider33_m_collision" file="collision/i_cups_Collider33_m.obj"/>
+    <mesh name="i_cups_Collider34_m_collision" file="collision/i_cups_Collider34_m.obj"/>
+    <mesh name="i_cups_Collider35_m_collision" file="collision/i_cups_Collider35_m.obj"/>
+    <mesh name="i_cups_Collider36_m_collision" file="collision/i_cups_Collider36_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="i_cups_material" mesh="i_cups_vis"/>
+        <geom name="i_cups_Collider1_m" class="collision" type="mesh" mesh="i_cups_Collider1_m_collision"/>
+        <geom name="i_cups_Collider2_m" class="collision" type="mesh" mesh="i_cups_Collider2_m_collision"/>
+        <geom name="i_cups_Collider3_m" class="collision" type="mesh" mesh="i_cups_Collider3_m_collision"/>
+        <geom name="i_cups_Collider4_m" class="collision" type="mesh" mesh="i_cups_Collider4_m_collision"/>
+        <geom name="i_cups_Collider5_m" class="collision" type="mesh" mesh="i_cups_Collider5_m_collision"/>
+        <geom name="i_cups_Collider6_m" class="collision" type="mesh" mesh="i_cups_Collider6_m_collision"/>
+        <geom name="i_cups_Collider7_m" class="collision" type="mesh" mesh="i_cups_Collider7_m_collision"/>
+        <geom name="i_cups_Collider8_m" class="collision" type="mesh" mesh="i_cups_Collider8_m_collision"/>
+        <geom name="i_cups_Collider9_m" class="collision" type="mesh" mesh="i_cups_Collider9_m_collision"/>
+        <geom name="i_cups_Collider10_m" class="collision" type="mesh" mesh="i_cups_Collider10_m_collision"/>
+        <geom name="i_cups_Collider11_m" class="collision" type="mesh" mesh="i_cups_Collider11_m_collision"/>
+        <geom name="i_cups_Collider12_m" class="collision" type="mesh" mesh="i_cups_Collider12_m_collision"/>
+        <geom name="i_cups_Collider13_m" class="collision" type="mesh" mesh="i_cups_Collider13_m_collision"/>
+        <geom name="i_cups_Collider14_m" class="collision" type="mesh" mesh="i_cups_Collider14_m_collision"/>
+        <geom name="i_cups_Collider15_m" class="collision" type="mesh" mesh="i_cups_Collider15_m_collision"/>
+        <geom name="i_cups_Collider16_m" class="collision" type="mesh" mesh="i_cups_Collider16_m_collision"/>
+        <geom name="i_cups_Collider17_m" class="collision" type="mesh" mesh="i_cups_Collider17_m_collision"/>
+        <geom name="i_cups_Collider18_m" class="collision" type="mesh" mesh="i_cups_Collider18_m_collision"/>
+        <geom name="i_cups_Collider19_m" class="collision" type="mesh" mesh="i_cups_Collider19_m_collision"/>
+        <geom name="i_cups_Collider20_m" class="collision" type="mesh" mesh="i_cups_Collider20_m_collision"/>
+        <geom name="i_cups_Collider21_m" class="collision" type="mesh" mesh="i_cups_Collider21_m_collision"/>
+        <geom name="i_cups_Collider22_m" class="collision" type="mesh" mesh="i_cups_Collider22_m_collision"/>
+        <geom name="i_cups_Collider23_m" class="collision" type="mesh" mesh="i_cups_Collider23_m_collision"/>
+        <geom name="i_cups_Collider24_m" class="collision" type="mesh" mesh="i_cups_Collider24_m_collision"/>
+        <geom name="i_cups_Collider25_m" class="collision" type="mesh" mesh="i_cups_Collider25_m_collision"/>
+        <geom name="i_cups_Collider26_m" class="collision" type="mesh" mesh="i_cups_Collider26_m_collision"/>
+        <geom name="i_cups_Collider27_m" class="collision" type="mesh" mesh="i_cups_Collider27_m_collision"/>
+        <geom name="i_cups_Collider28_m" class="collision" type="mesh" mesh="i_cups_Collider28_m_collision"/>
+        <geom name="i_cups_Collider29_m" class="collision" type="mesh" mesh="i_cups_Collider29_m_collision"/>
+        <geom name="i_cups_Collider30_m" class="collision" type="mesh" mesh="i_cups_Collider30_m_collision"/>
+        <geom name="i_cups_Collider31_m" class="collision" type="mesh" mesh="i_cups_Collider31_m_collision"/>
+        <geom name="i_cups_Collider32_m" class="collision" type="mesh" mesh="i_cups_Collider32_m_collision"/>
+        <geom name="i_cups_Collider33_m" class="collision" type="mesh" mesh="i_cups_Collider33_m_collision"/>
+        <geom name="i_cups_Collider34_m" class="collision" type="mesh" mesh="i_cups_Collider34_m_collision"/>
+        <geom name="i_cups_Collider35_m" class="collision" type="mesh" mesh="i_cups_Collider35_m_collision"/>
+        <geom name="i_cups_Collider36_m" class="collision" type="mesh" mesh="i_cups_Collider36_m_collision"/>
+      <geom size="0.0477485 0.0479365 0.038089" pos="-0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

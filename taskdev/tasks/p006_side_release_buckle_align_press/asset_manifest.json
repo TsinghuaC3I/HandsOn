@@ -1,0 +1,33 @@
+{
+  "schema": "handson.p006.asset_manifest.v1",
+  "source": "3DP6 Side Release Buckle - 25mm",
+  "source_url": "https://www.3dp6.com/library/side-release-buckle-25mm",
+  "license": "CC0-1.0",
+  "normalization_scale": 2.0,
+  "files": [
+    {
+      "path": "assets/side_release_buckle_cc0/model.stl",
+      "bytes": 10284,
+      "sha256": "f68abfbfac56f746fef1f411ec68d511d4cb567cfb0f10472cb8e26168d57b23",
+      "role": "immutable_source"
+    },
+    {
+      "path": "assets/side_release_buckle_cc0/female_buckle.usda",
+      "bytes": 12089,
+      "sha256": "ac104be962dc5c83bf43173893e6db4f36be8a5b514e7159030c7958415b56ed",
+      "role": "runtime_normalized_female"
+    },
+    {
+      "path": "assets/side_release_buckle_cc0/male_buckle.usda",
+      "bytes": 19340,
+      "sha256": "04d0e655310a9ba23ca25edc75b1a1d9963eebe779bc286be7c1bf192b2dc065",
+      "role": "runtime_normalized_male"
+    },
+    {
+      "path": "assets/side_release_buckle_cc0/build_buckle_assets.py",
+      "bytes": 19225,
+      "sha256": "322c4a92d7cbff651b88f8578e715ae6d8360dfe2366268493825f390150e5d8",
+      "role": "deterministic_converter"
+    }
+  ]
+}

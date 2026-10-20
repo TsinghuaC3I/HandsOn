@@ -1,0 +1,13 @@
+Asset license: CC0 1.0 Universal (public-domain dedication)
+SPDX identifier: CC0-1.0
+
+Source page:
+https://www.3dp6.com/library/side-release-buckle-25mm
+
+License deed and legal code:
+https://creativecommons.org/publicdomain/zero/1.0/
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+The source page identifies the downloadable model as CC0-1.0. Attribution is
+not required by CC0; the source and exact hashes are nevertheless retained for
+auditability.

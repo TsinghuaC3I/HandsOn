@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1513.06" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="small_marker_berkeley_meshes_material" file="visuals/T_small_marker_berkeley_meshes_BC001.png"/>
+    <texture type="2d" name="small_marker_berkeley_meshes_Lid_material" file="visuals/T_small_marker_berkeley_meshes_BC001.png"/>
+    <material name="small_marker_berkeley_meshes_material" texture="small_marker_berkeley_meshes_material" specular="0.310345"/>
+    <material name="small_marker_berkeley_meshes_Lid_material" texture="small_marker_berkeley_meshes_Lid_material" specular="0.310345"/>
+    <mesh name="small_marker_berkeley_meshes_vis" file="visuals/optimized_visuals/small_marker_berkeley_meshes.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_vis" file="visuals/small_marker_berkeley_meshes_Lid.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Collider03_m_collision" file="collision/small_marker_berkeley_meshes_Collider03_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Collider01_m_collision" file="collision/small_marker_berkeley_meshes_Collider01_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Collider02_m_collision" file="collision/small_marker_berkeley_meshes_Collider02_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Collider04_m_collision" file="collision/small_marker_berkeley_meshes_Collider04_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider01_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider01_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider02_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider02_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider03_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider03_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider04_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider04_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider05_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider05_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider06_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider06_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider07_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider07_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider08_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider08_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider09_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider09_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider10_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider10_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider11_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider11_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider12_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider12_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider13_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider13_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider14_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider14_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider15_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider15_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider16_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider16_m.obj"/>
+    <mesh name="small_marker_berkeley_meshes_Lid_Collider17_m_collision" file="collision/small_marker_berkeley_meshes_Lid_Collider17_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="small_marker_berkeley_meshes_material" mesh="small_marker_berkeley_meshes_vis"/>
+        <geom name="small_marker_berkeley_meshes_Collider03_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Collider03_m_collision"/>
+        <geom name="small_marker_berkeley_meshes_Collider01_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Collider01_m_collision"/>
+        <geom name="small_marker_berkeley_meshes_Collider02_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Collider02_m_collision"/>
+        <geom name="small_marker_berkeley_meshes_Collider04_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Collider04_m_collision"/>
+      <geom size="0.0041835 0.0675255 0.004183" pos="-0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+    <body name="small_marker_berkeley_meshes_Lid">
+      <joint name="small_marker_berkeley_meshes_Lid_joint" type="free" limited="false" actuatorfrclimited="false"/>
+      <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="small_marker_berkeley_meshes_Lid_material" mesh="small_marker_berkeley_meshes_Lid_vis"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider01_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider01_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider02_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider02_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider03_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider03_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider04_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider04_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider05_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider05_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider06_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider06_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider07_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider07_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider08_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider08_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider09_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider09_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider10_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider10_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider11_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider11_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider12_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider12_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider13_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider13_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider14_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider14_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider15_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider15_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider16_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider16_m_collision"/>
+      <geom name="small_marker_berkeley_meshes_Lid_Collider17_m" class="collision" type="mesh" mesh="small_marker_berkeley_meshes_Lid_Collider17_m_collision"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,5901 @@
+{
+  "collision_generation": {
+    "both_source_drawers_preserved": true,
+    "collider_count": 15,
+    "exact_mesh_decomposition_collider_count": 7,
+    "exact_mesh_sdf_collider_count": 2,
+    "fixed_decorative_drawer_fronts_omitted": false,
+    "generation": "exact_source_decomposition_for_fixture_plus_welded_drawer_body_sdf_and_three_source_handle_hulls",
+    "gpu_convex_hull_vertex_limit": 64,
+    "hand_authored_or_placeholder": false,
+    "low_poly_convex_hull_collider_count": 0,
+    "maximum_authored_triangles_per_collider": 124,
+    "maximum_authored_vertices_per_collider": 64,
+    "primitive_or_generic_proxy_fallback": false,
+    "source_derived": true,
+    "source_handle_compound_convex_hull_collider_count": 6,
+    "task_visible_source_meshes_preserved": true
+  },
+  "collision_geometry": "separate hidden exact-topology convex-decomposition meshes for the fixed desk, trays, and four fixed drawers; each moving drawer uses one exact-coordinate-welded closed body-component SDF plus three source-vertex convex hulls for the two U-pull legs and crossbar, preserving the handle aperture",
+  "derivation": {
+    "asset_root_placement_m": [
+      0.07816160241130132,
+      3.995284429125778e-05,
+      0.891
+    ],
+    "authored_closed_collision_audit": {
+      "asset_root_orientation_wxyz": [
+        0.0,
+        0.0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "asset_root_placement_m": [
+        0.07816160241130132,
+        3.995284429125778e-05,
+        0.891
+      ],
+      "closed_reset_max_penetration_m": 0.0,
+      "collider_bounds": {
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.33232381939888,
+            0.3828125596046448,
+            -0.35800328850746155
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.2108091413974762,
+            0.26986783742904663,
+            -0.64490807056427
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.3302983045578003,
+            0.267667293548584,
+            -0.35720348358154297
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.21283464133739471,
+            0.15472257137298584,
+            -0.644108235836029
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.33029866218566895,
+            0.38097044825553894,
+            0.6440564393997192
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.21283431351184845,
+            0.2680257260799408,
+            0.35715168714523315
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.33029863238334656,
+            0.267667293548584,
+            0.6441091299057007
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.21283431351184845,
+            0.15472257137298584,
+            0.357204407453537
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.31246069073677063,
+            0.5492812395095825,
+            0.6975005865097046
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.3272043466567993,
+            0.0,
+            -0.697499692440033
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.3062092363834381,
+            0.5234299898147583,
+            0.6449041366577148
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.07874304056167603,
+            0.5075544118881226,
+            0.35652029514312744
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.30445364117622375,
+            0.5234299898147583,
+            -0.3565407991409302
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.08049866557121277,
+            0.5075544118881226,
+            -0.644924521446228
+          ]
+        },
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf": {
+          "body": "bc017_left_drawer_link",
+          "maximum_m": [
+            0.3035052418708801,
+            0.49574363231658936,
+            0.6441091299057007
+          ],
+          "mesh_collision_approximation": "sdf",
+          "minimum_m": [
+            -0.2103150337934494,
+            0.3827989101409912,
+            0.357204407453537
+          ]
+        },
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex": {
+          "body": "bc017_left_drawer_link",
+          "maximum_m": [
+            0.33281803131103516,
+            0.43634602427482605,
+            0.5277281999588013
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.3229278326034546,
+            0.4288036823272705,
+            0.4731007218360901
+          ]
+        },
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex": {
+          "body": "bc017_left_drawer_link",
+          "maximum_m": [
+            0.3304951786994934,
+            0.4363461136817932,
+            0.4806061089038849
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.30350518226623535,
+            0.42880353331565857,
+            0.46051448583602905
+          ]
+        },
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex": {
+          "body": "bc017_left_drawer_link",
+          "maximum_m": [
+            0.3304958641529083,
+            0.4363461136817932,
+            0.5407991409301758
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.30350518226623535,
+            0.42880353331565857,
+            0.5207070708274841
+          ]
+        },
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf": {
+          "body": "bc017_right_drawer_link",
+          "maximum_m": [
+            0.3035052418708801,
+            0.49574360251426697,
+            -0.35728439688682556
+          ],
+          "mesh_collision_approximation": "sdf",
+          "minimum_m": [
+            -0.2103150337934494,
+            0.3827989101409912,
+            -0.6441891193389893
+          ]
+        },
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex": {
+          "body": "bc017_right_drawer_link",
+          "maximum_m": [
+            0.33281803131103516,
+            0.43634602427482605,
+            -0.47366538643836975
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.3229278326034546,
+            0.4288036823272705,
+            -0.5282928347587585
+          ]
+        },
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex": {
+          "body": "bc017_right_drawer_link",
+          "maximum_m": [
+            0.3304951786994934,
+            0.4363461136817932,
+            -0.5207874178886414
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.30350518226623535,
+            0.42880353331565857,
+            -0.5408790707588196
+          ]
+        },
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex": {
+          "body": "bc017_right_drawer_link",
+          "maximum_m": [
+            0.3304958641529083,
+            0.4363461136817932,
+            -0.46059438586235046
+          ],
+          "mesh_collision_approximation": "convexHull",
+          "minimum_m": [
+            0.30350521206855774,
+            0.42880353331565857,
+            -0.4806865155696869
+          ]
+        }
+      },
+      "cross_body_pairs": [
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            1.3649463653564453e-05,
+            -0.7152076959609985
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.7152076959609985
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.009395986795425415,
+            -0.04599112272262573,
+            -0.8311040103435516
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04599112272262573,
+            0.8311040103435516
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026989996433258057,
+            -0.045990973711013794,
+            -0.8185177743434906
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.045990973711013794,
+            0.8185177743434906
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026990681886672974,
+            -0.045990973711013794,
+            -0.8787103593349457
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.045990973711013794,
+            0.8787103593349457
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            1.3649463653564453e-05,
+            0.2861858308315277
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.009395986795425415,
+            -0.04599112272262573,
+            0.054627448320388794
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04599112272262573,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026989996433258057,
+            -0.045990973711013794,
+            0.020091652870178223
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.045990973711013794,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026990652084350586,
+            -0.045990973711013794,
+            0.020092129707336426
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.045990973711013794,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.11513161659240723,
+            -0.71440789103508
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.11513161659240723,
+            0.71440789103508
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007370471954345703,
+            -0.16113638877868652,
+            -0.8303042054176331
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113638877868652,
+            0.8303042054176331
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.02679312229156494,
+            -0.16113623976707458,
+            -0.817717969417572
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.817717969417572
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.02679312229156494,
+            -0.16113623976707458,
+            -0.8779105544090271
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.8779105544090271
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.11513161659240723,
+            0.2868238389492035
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.11513161659240723,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007370471954345703,
+            -0.16113638877868652,
+            0.054627448320388794
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113638877868652,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.02679312229156494,
+            -0.16113623976707458,
+            0.020091652870178223
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793092489242554,
+            -0.16113623976707458,
+            0.020092129707336426
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.0018284618854522705,
+            0.28685203194618225
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0018284618854522705,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0073708295822143555,
+            -0.04783323407173157,
+            0.05462747812271118
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783323407173157,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793479919433594,
+            -0.04783308506011963,
+            0.020091623067855835
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783308506011963,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793479919433594,
+            -0.04783308506011963,
+            0.02009207010269165
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783308506011963,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.0018284618854522705,
+            -0.7144360840320587
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0018284618854522705,
+            0.7144360840320587
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0073708295822143555,
+            -0.04783323407173157,
+            -0.8308170735836029
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783323407173157,
+            0.8308170735836029
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793479919433594,
+            -0.04783308506011963,
+            -0.8779391050338745
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783308506011963,
+            0.8779391050338745
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793450117111206,
+            -0.04783308506011963,
+            -0.8177460730075836
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.04783308506011963,
+            0.8177460730075836
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.11513161659240723,
+            0.2869047224521637
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.11513161659240723,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007370799779891968,
+            -0.16113638877868652,
+            0.05462747812271118
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113638877868652,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793450117111206,
+            -0.16113623976707458,
+            0.020091623067855835
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793450117111206,
+            -0.16113623976707458,
+            0.02009207010269165
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            -0.11513161659240723,
+            -0.7144888043403625
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.11513161659240723,
+            0.7144888043403625
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007370799779891968,
+            -0.16113638877868652,
+            -0.8308697938919067
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113638877868652,
+            0.8308697938919067
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026793450117111206,
+            -0.16113623976707458,
+            -0.8779918253421783
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.8779918253421783
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.02679342031478882,
+            -0.16113623976707458,
+            -0.8177987933158875
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.16113623976707458,
+            0.8177987933158875
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            0.11294472217559814,
+            0.2869047224521637
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.01046714186668396,
+            0.007542341947555542,
+            0.05462747812271118
+          ],
+          "axis_separation_m": [
+            0.01046714186668396,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.008955508470535278,
+            0.0075425803661346436,
+            0.020091623067855835
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.008955508470535278,
+            0.0075425803661346436,
+            0.02009207010269165
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            0.11294469237327576,
+            0.2869047224521637
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.01046714186668396,
+            0.007542341947555542,
+            0.054627448320388794
+          ],
+          "axis_separation_m": [
+            0.01046714186668396,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.008955508470535278,
+            0.0075425803661346436,
+            0.020091652870178223
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.00895547866821289,
+            0.0075425803661346436,
+            0.020092129707336426
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.38224828243255615,
+            -0.011810779571533203,
+            0.2869047224521637
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.011810779571533203,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.01671859622001648,
+            -0.07120838761329651,
+            0.05462747812271118
+          ],
+          "axis_separation_m": [
+            0.01671859622001648,
+            0.07120838761329651,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.002704054117202759,
+            -0.07120829820632935,
+            0.020091623067855835
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.002704054117202759,
+            -0.07120829820632935,
+            0.02009207010269165
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.38224828243255615,
+            -0.01181080937385559,
+            -0.713804692029953
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.01181080937385559,
+            0.713804692029953
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.01671859622001648,
+            -0.07120838761329651,
+            -0.8301856815814972
+          ],
+          "axis_separation_m": [
+            0.01671859622001648,
+            0.07120838761329651,
+            0.8301856815814972
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.002704054117202759,
+            -0.07120829820632935,
+            -0.8773077130317688
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.8773077130317688
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.002704024314880371,
+            -0.07120829820632935,
+            -0.8171146810054779
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.8171146810054779
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3840039074420929,
+            -0.011810779571533203,
+            -0.7137452065944672
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.011810779571533203,
+            0.7137452065944672
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.018474191427230835,
+            -0.07120838761329651,
+            -0.8296415209770203
+          ],
+          "axis_separation_m": [
+            0.018474191427230835,
+            0.07120838761329651,
+            0.8296415209770203
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0009484589099884033,
+            -0.07120829820632935,
+            -0.8170552849769592
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.8170552849769592
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0009484589099884033,
+            -0.07120829820632935,
+            -0.8772478699684143
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.8772478699684143
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3840039074420929,
+            -0.01181080937385559,
+            0.2869047224521637
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.01181080937385559,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.018474191427230835,
+            -0.07120838761329651,
+            0.054627448320388794
+          ],
+          "axis_separation_m": [
+            0.018474191427230835,
+            0.07120838761329651,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0009484589099884033,
+            -0.07120829820632935,
+            0.020091652870178223
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.0009484291076660156,
+            -0.07120829820632935,
+            0.020092129707336426
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07120829820632935,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.5138202756643295,
+            0.11294469237327576,
+            -0.7144888043403625
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.7144888043403625
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.019422590732574463,
+            0.007542341947555542,
+            -0.8308697938919067
+          ],
+          "axis_separation_m": [
+            0.019422590732574463,
+            0.0,
+            0.8308697938919067
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            5.960464477539063e-08,
+            0.0075425803661346436,
+            -0.8779918253421783
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.8779918253421783
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            2.9802322387695312e-08,
+            0.0075425803661346436,
+            -0.8177987933158875
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.8177987933158875
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            -0.019422590732574463,
+            0.007542341947555542,
+            -0.8303851187229156
+          ],
+          "axis_separation_m": [
+            0.019422590732574463,
+            0.0,
+            0.8303851187229156
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.009890198707580566,
+            0.007542341947555542,
+            -0.9467661082744598
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9467661082744598
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007567346096038818,
+            0.007542341947555542,
+            -0.9938881397247314
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9938881397247314
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007568031549453735,
+            0.007542341947555542,
+            -0.9336951076984406
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9336951076984406
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            5.960464477539063e-08,
+            0.0075425803661346436,
+            -0.8177988827228546
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.8177988827228546
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007567346096038818,
+            0.007542341947555542,
+            -0.9341798722743988
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9341798722743988
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026989996433258057,
+            0.0075425803661346436,
+            -0.9813019037246704
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9813019037246704
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.02698996663093567,
+            0.0075425803661346436,
+            -0.9211088716983795
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9211088716983795
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            5.960464477539063e-08,
+            0.0075425803661346436,
+            -0.8779914677143097
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.8779914677143097
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.007568031549453735,
+            0.007542341947555542,
+            -0.9943724572658539
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9943724572658539
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026989996433258057,
+            0.0075425803661346436,
+            -1.0414944887161255
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            1.0414944887161255
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.026990652084350586,
+            0.0075425803661346436,
+            -0.9813014566898346
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.9813014566898346
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        }
+      ],
+      "formal": false,
+      "inconclusive_concave_aabb_pair_count": 7,
+      "method": "transformed USD world-aligned bounds of every declared source-derived collider; positive cross-body AABB separation is conclusive, while concave-decomposition overlap is deferred to the live PhysX closed-pose and full-travel smoke",
+      "physx_live_validated": false,
+      "same_body_pairs_excluded": true,
+      "scope": "authored_closed_pose_before_PhysX",
+      "support_gap_m": 0.0010000000000000009,
+      "table_top_z_m": 0.89
+    },
+    "base_source_nodes": [
+      "metal_office_desk",
+      "metal_office_desk_drawer_02",
+      "metal_office_desk_drawer_03",
+      "metal_office_desk_drawer_05",
+      "metal_office_desk_drawer_06",
+      "metal_office_desk_tray_01",
+      "metal_office_desk_tray_02"
+    ],
+    "baseline_uniform_scale": 0.45,
+    "collider_derivations": [
+      {
+        "authored_face_count": 4186,
+        "authored_face_counts_sha256": "e66d5ff7464595299cb32e126c8188cc0440b8820ad96a64289cca681df00744",
+        "authored_face_indices_sha256": "b88f35706514676085b983bb21b5d7bcee8b627d6577c714d76760c236b75b3c",
+        "authored_points_sha256": "8ae68ce92782631616566ff48eb44eecba9a1ec8b6709a49dc6ae9bdee77bb90",
+        "authored_vertex_count": 3134,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 4186,
+        "source_face_counts_sha256": "e66d5ff7464595299cb32e126c8188cc0440b8820ad96a64289cca681df00744",
+        "source_face_indices_sha256": "b88f35706514676085b983bb21b5d7bcee8b627d6577c714d76760c236b75b3c",
+        "source_local_points_sha256": "bc0f11b5307d39b3e5b71a75c084c02eacfbbd55388273cba32570f725872992",
+        "source_node": "metal_office_desk",
+        "source_topology_preserved": true,
+        "source_vertex_count": 3134,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk/Plane_006",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk/Plane_006",
+        "transformed_source_points_sha256": "b5c5030963a63fd475000de80df8c76fdda3787334b78616d8da8fa510f033b2"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "6194efa7492d58a7c9776f51bff35502045d3e2cfe5cc8378b880e0845941ec3",
+        "authored_points_sha256": "987b4c4ad517102539ddfdd7e80913e72efd4507d3a4e71ae5d7141c6675359a",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "6194efa7492d58a7c9776f51bff35502045d3e2cfe5cc8378b880e0845941ec3",
+        "source_local_points_sha256": "535d4cb7037600ee8c580b2eab2fdea77facac93276768c51aa30a1fa3259b30",
+        "source_node": "metal_office_desk_drawer_02",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_02/Cube_008",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_02/Cube_008",
+        "transformed_source_points_sha256": "2ea1bbad9eb5ab93acd372632bc48e09370fed83e3f9243c47731f6017d3173f"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "authored_points_sha256": "e5b01c604d96817c2fb3f02a75fe478ec8446f88d05527f49b6e067dcc29e933",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "source_local_points_sha256": "8d7c54af021348e7e4c4c5a97d70f46ae4198177e0a0660443474a5d743991a2",
+        "source_node": "metal_office_desk_drawer_03",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_03/Cube_004",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_03/Cube_004",
+        "transformed_source_points_sha256": "144f35d5027c2a215a6ca61047658be6ea9c9934f3b834ddd1b2129854bb85be"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "authored_points_sha256": "b6b21393460d508d2957eb2d2b3d836865fde5b8a98c5aba9979fac0cb01d612",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "source_local_points_sha256": "b2456f0b4bb5d188b24560b6a4c9df59d1ff514903520bab324649fe58806b44",
+        "source_node": "metal_office_desk_drawer_05",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_05/Cube_006",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_05/Cube_006",
+        "transformed_source_points_sha256": "80fee20dca1eb34f08ce8e2e76957c1668f5865a8e59af5c99035e8874b5af99"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "d1131a597b6503f9144c87b6f37f6e549a8e6e25a183b8e1f6f46db8fe8f0b05",
+        "authored_points_sha256": "ccf3b0bcddb015351bb8e717b8a2ecb19d13ef372d2577558981bbdddf572d6e",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "d1131a597b6503f9144c87b6f37f6e549a8e6e25a183b8e1f6f46db8fe8f0b05",
+        "source_local_points_sha256": "760d86ecd846072e80dc1a1a9f7c2b6cb0756f2e05e17a0c70e0304a0dfb1c80",
+        "source_node": "metal_office_desk_drawer_06",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_06/Cube_009",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_06/Cube_009",
+        "transformed_source_points_sha256": "ba7a23ec03ae17102f2a9e5fd970b9d2922a5c7d4f0ec74527be63d4146e23fb"
+      },
+      {
+        "authored_face_count": 252,
+        "authored_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "authored_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "authored_points_sha256": "34b42aa3b2c64c7c8257dea7893ee9baae084aebe727488942b8e7ee399959d5",
+        "authored_vertex_count": 232,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 252,
+        "source_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "source_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "source_local_points_sha256": "bfb7d12ad6aae1fe5c2550d4c2c504fa02c671ed3cd9c8dd745dc205fb70b2cb",
+        "source_node": "metal_office_desk_tray_01",
+        "source_topology_preserved": true,
+        "source_vertex_count": 232,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_tray_01/Cube_011",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_tray_01/Cube_011",
+        "transformed_source_points_sha256": "07570ce805302e525e289fa9a6c9430713792da29b4bbe17c4cb278267dc2c67"
+      },
+      {
+        "authored_face_count": 252,
+        "authored_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "authored_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "authored_points_sha256": "ab92c386e2c2639d6d498914347b655a760f61086678acffcb9d852d58ce1ae0",
+        "authored_vertex_count": 232,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 252,
+        "source_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "source_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "source_local_points_sha256": "6f2690f1b674dde8cff4b73aee96881e8d07b9a42cc8d94b2d0fa38d47db434e",
+        "source_node": "metal_office_desk_tray_02",
+        "source_topology_preserved": true,
+        "source_vertex_count": 232,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_tray_02/Cube_014",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_tray_02/Cube_014",
+        "transformed_source_points_sha256": "6520a4eb3e857c2749c5a4552d298293b98491387b43f1f34d8a2697cc1ea377"
+      },
+      {
+        "authored_face_count": 92,
+        "authored_faces_sha256": "49830de3b1fb952d6a27fd9cb9f031ecc00dc46d235fe45ab5364846c46ae202",
+        "authored_points_sha256": "140fac27ffd42367b4af322e394f5517bcbcfe389abc2baf1f2f6a1542a223c7",
+        "authored_vertex_count": 48,
+        "collider_prim": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_coordinate_weld_then_closed_drawer_body_component_sdf",
+        "hand_authored_or_placeholder": false,
+        "handle_role": "left",
+        "handle_segment": null,
+        "mesh_collision_approximation": "sdf",
+        "method": "exact_coordinate_weld_then_closed_drawer_body_component_sdf",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "sdf_cell_size_max_m": 0.0020071104518137872,
+        "sdf_remeshing_enabled": true,
+        "sdf_resolution": 256,
+        "sdf_triangle_count_reduction_factor": 1.0,
+        "semantic_role": "drawer_body_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "source_face_ordinals_sha256": "d90aa2c60b42c2735dc14f9e8fad39edd3adb998541c7723e72c974fbcd0991c",
+        "source_node": "metal_office_desk_drawer_04",
+        "source_vertex_indices": [
+          0,
+          1,
+          4,
+          5,
+          8,
+          11,
+          13,
+          15,
+          18,
+          19,
+          20,
+          22,
+          24,
+          26,
+          29,
+          31,
+          34,
+          37,
+          40,
+          43,
+          46,
+          49,
+          52,
+          55,
+          58,
+          61,
+          62,
+          64,
+          67,
+          70,
+          73,
+          76,
+          78,
+          80,
+          82,
+          83,
+          85,
+          86,
+          88,
+          91,
+          93,
+          95,
+          98,
+          100,
+          103,
+          106,
+          109,
+          111
+        ],
+        "source_vertex_indices_sha256": "b0a1a925eedeb87639e3539e55b5b04e246d10366ad1bb320b315511af61454d",
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_visible_prim": "bc017_left_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 68,
+        "authored_faces_sha256": "47cd8107752f9b7b4d25f8cb8e689c273039966d8f3effb661044759f27681fc",
+        "authored_points_sha256": "35e858057a97f97071b9b23d330d5875b6bdc7896ae5dc3b781f5dc759402951",
+        "authored_vertex_count": 36,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            2.9288713954341415e-05,
+            -0.9999999995696729,
+            1.6808931713725924e-06,
+            0.4287932260321231
+          ],
+          [
+            -0.16972381122086272,
+            0.00013363055373942617,
+            0.9854916590451388,
+            -0.4175977114827729
+          ],
+          [
+            -1.3339516812581886e-06,
+            0.9999999999691137,
+            7.745514586273867e-06,
+            -0.43634931092231555
+          ],
+          [
+            -0.5302652124273501,
+            -0.0016175136587024412,
+            0.847830282626742,
+            -0.2379570659486256
+          ],
+          [
+            -0.169849200535939,
+            7.489808698679029e-06,
+            0.985470065005125,
+            -0.41749180307001155
+          ],
+          [
+            -0.00048339768278323977,
+            -0.9999994370577127,
+            0.0009445691810670481,
+            0.42850686324168985
+          ],
+          [
+            -0.3737086620721314,
+            1.64793615697196e-05,
+            0.9275461366534218,
+            -0.3238583259108851
+          ],
+          [
+            -0.37429210122344525,
+            -0.0017056395229934262,
+            0.9273092869995186,
+            -0.3228178200388133
+          ],
+          [
+            3.735465277623153e-06,
+            -0.999999999931862,
+            1.1059944622656141e-05,
+            0.4287971637837159
+          ],
+          [
+            -4.775479295783854e-06,
+            -0.99999999994506,
+            9.331386409735587e-06,
+            0.428800742457663
+          ],
+          [
+            0.9036521903221673,
+            -0.029346085597420055,
+            -0.4272604898490599,
+            -0.08235551015521508
+          ],
+          [
+            0.00021356129455923746,
+            -0.9999999720978083,
+            -0.00010097502590421247,
+            0.4287811816215431
+          ],
+          [
+            -3.511925344443215e-06,
+            0.9999999999702947,
+            6.861258488319011e-06,
+            -0.43634818330623826
+          ],
+          [
+            -1.0208346235965132e-05,
+            0.9999999997490118,
+            1.994407494283445e-05,
+            -0.4363522904844198
+          ],
+          [
+            -3.944634250564094e-06,
+            0.9999999999882724,
+            2.8098243393448183e-06,
+            -0.43634614038342767
+          ],
+          [
+            -0.0005300608574960479,
+            -0.9999998446588682,
+            0.00017238830270917556,
+            0.42888539493382355
+          ],
+          [
+            -0.5051469702960355,
+            -0.863033302390322,
+            0.00023951198554402327,
+            0.5235229408490263
+          ],
+          [
+            -0.5090749592655154,
+            -0.8607221885421648,
+            0.0,
+            0.5238363081814521
+          ],
+          [
+            -0.505314308381998,
+            0.862935333536361,
+            -0.0002447016806291069,
+            -0.22281090649393037
+          ],
+          [
+            -0.5256492336824196,
+            0.0010452213311365605,
+            -0.8507007644533147,
+            0.5511057379674404
+          ],
+          [
+            -0.5367499697516167,
+            -0.0,
+            -0.8437413525314724,
+            0.5517235734577786
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0,
+            -0.4363461124151668
+          ],
+          [
+            0.8479532445505774,
+            -0.02990002318503145,
+            -0.5292270624880057,
+            -0.016035936273475077
+          ],
+          [
+            0.8383741279567078,
+            -0.03609087914279433,
+            -0.5438991358841543,
+            -0.003361025973419196
+          ],
+          [
+            0.9180347657661346,
+            -0.017010831368062213,
+            -0.39613482611465206,
+            -0.10705128176456102
+          ],
+          [
+            0.0002595039460441166,
+            0.999999963273132,
+            -7.817567727722022e-05,
+            -0.4363943180355458
+          ],
+          [
+            0.00010819011324214229,
+            0.9999999938589634,
+            -2.4020252233824668e-05,
+            -0.4363702367746362
+          ],
+          [
+            0.00013000303095974893,
+            0.9999999910695868,
+            -3.098448552151932e-05,
+            -0.43637410441170865
+          ],
+          [
+            0.9762266942978929,
+            0.0022063554497159326,
+            -0.2167407975805157,
+            -0.21941736645149484
+          ],
+          [
+            0.947544988472615,
+            -0.01653396990977448,
+            -0.3191944903338002,
+            -0.15324399094194283
+          ],
+          [
+            0.9574854758682569,
+            -0.0047165950458521394,
+            -0.2884429184995027,
+            -0.17617097229163867
+          ],
+          [
+            0.47116821794964925,
+            -0.013490780550612192,
+            -0.8819401959511126,
+            0.2625224753987975
+          ],
+          [
+            1.962539301463839e-06,
+            0.9999999997020025,
+            -2.4333995588072286e-05,
+            -0.4363354332957128
+          ],
+          [
+            -0.5472224614297798,
+            0.0,
+            0.8369872028333127,
+            -0.22839408375957662
+          ],
+          [
+            -0.5093319766673274,
+            0.8605701235484259,
+            0.0,
+            -0.22067292119314652
+          ],
+          [
+            0.00021691302700910817,
+            -0.9999999753043777,
+            -4.837336681264207e-05,
+            0.4287552630776832
+          ],
+          [
+            0.00039840442899980263,
+            -0.999999915454795,
+            -0.00010180527295770083,
+            0.42872089117122625
+          ],
+          [
+            0.9760228210093872,
+            0.001770533972302776,
+            -0.21766101644146194,
+            -0.21872084263515185
+          ],
+          [
+            0.9727518058590644,
+            0.0017399430937523638,
+            -0.2318423964592322,
+            -0.2108615386325282
+          ],
+          [
+            0.9688581441592903,
+            -0.0045443316217467795,
+            -0.2475747271963105,
+            -0.1993751796864147
+          ],
+          [
+            0.49859135452876063,
+            -0.024713986849421735,
+            -0.8664847835035433,
+            0.25142578237457824
+          ],
+          [
+            0.6966013943741265,
+            -0.025360160723357457,
+            -0.7170100136010014,
+            0.11868057605995433
+          ],
+          [
+            0.022236111355431274,
+            0.001143663259065425,
+            -0.9997520929641202,
+            0.4531502826455574
+          ],
+          [
+            -0.0003002973028032275,
+            0.9999999321309145,
+            -0.0002134471737775438,
+            -0.4361540022819705
+          ],
+          [
+            -1.1793867841982207e-05,
+            0.9999999999192751,
+            -4.728035953755168e-06,
+            -0.43634017253259866
+          ],
+          [
+            -5.960011373505676e-06,
+            0.9999999999793848,
+            -2.3893050554981006e-06,
+            -0.4363430695847236
+          ],
+          [
+            8.661377307424995e-07,
+            0.9999999997611939,
+            -2.1837169453880094e-05,
+            -0.43633623894907203
+          ],
+          [
+            1.9298028165066244e-05,
+            0.9999999974199335,
+            -6.919334583114753e-05,
+            -0.43632024234944145
+          ],
+          [
+            3.999312517105922e-06,
+            0.9999999995111497,
+            -3.101138591135341e-05,
+            -0.4363329969942623
+          ],
+          [
+            0.12790334800045738,
+            -0.0015150433081746748,
+            -0.9917854799370921,
+            0.4174437139709237
+          ],
+          [
+            0.7159443261041761,
+            -0.03512134505543402,
+            -0.6972734134044797,
+            0.10749286433917787
+          ],
+          [
+            0.7793347230590734,
+            -0.036278794608911515,
+            -0.6255567428268691,
+            0.05409466505435245
+          ],
+          [
+            0.7772636435062388,
+            -0.03510582302258201,
+            -0.6281948819222534,
+            0.05548975902038536
+          ],
+          [
+            -5.850208000775392e-06,
+            -0.9999999999718621,
+            4.695847565292358e-06,
+            0.4288032582407341
+          ],
+          [
+            -8.075333268675579e-06,
+            -0.9999999999667489,
+            -1.1362057471206012e-06,
+            0.42880669191631215
+          ],
+          [
+            1.6019439426451996e-05,
+            -0.9999999981097957,
+            -5.936148443602575e-05,
+            0.42882597063885297
+          ],
+          [
+            1.9786342198736126e-06,
+            -0.9999999989523678,
+            -4.573127205530651e-05,
+            0.428824164623856
+          ],
+          [
+            9.281274738908642e-07,
+            -0.9999999992112901,
+            -3.9705898860546657e-05,
+            0.4288217165019577
+          ],
+          [
+            1.094792516468894e-06,
+            -0.9999999991932051,
+            -4.0154588823997646e-05,
+            0.428821871222658
+          ],
+          [
+            0.023368669196803162,
+            -4.408501534519623e-05,
+            -0.9997269143903658,
+            0.45330370828892097
+          ],
+          [
+            0.03963229917922666,
+            -4.4062411918053194e-05,
+            -0.9992143308221076,
+            0.4479949389245258
+          ],
+          [
+            0.043226067819649064,
+            -0.001331728781421163,
+            -0.9990644291332285,
+            0.4473571419678271
+          ],
+          [
+            1.4062937798355819e-05,
+            -0.9999999947786008,
+            -0.00010121774585315713,
+            0.42884593036803054
+          ],
+          [
+            0.13761382944574804,
+            -0.005046733523388779,
+            -0.9904731013137209,
+            0.41529862800334144
+          ],
+          [
+            0.2875113731151427,
+            -0.012588898535458226,
+            -0.9576944867561414,
+            0.35586188461538326
+          ],
+          [
+            0.2686431808464295,
+            -0.00554102896950323,
+            -0.9632238256930068,
+            0.3613755697020142
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.3035051706432429
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.3035051706432429
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "left",
+        "handle_seam_overlaps_m": [
+          0.007505397498607624,
+          0.007021140754222888
+        ],
+        "handle_segment": "negative_leg",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          247,
+          249,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351
+        ],
+        "source_face_ordinals_sha256": "4b8adcb091c9b79f0c9287290a151c601d33366d461e917770b46e567bb1b1c7",
+        "source_node": "metal_office_desk_drawer_04",
+        "source_vertex_indices": [
+          265,
+          271,
+          275,
+          283,
+          289,
+          291,
+          293,
+          295,
+          297,
+          309,
+          311,
+          313,
+          315,
+          317,
+          319,
+          331,
+          333,
+          335,
+          337,
+          339,
+          353,
+          355,
+          357,
+          359,
+          361,
+          365,
+          367,
+          370,
+          372,
+          374,
+          378,
+          382,
+          385,
+          388,
+          391,
+          394
+        ],
+        "source_vertex_indices_sha256": "38bb1e50795fc0b97898c6efa5f6796b4d0af41f33842a06a81a17d9362697d7",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_visible_prim": "bc017_left_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 72,
+        "authored_faces_sha256": "c4fff60a7db0f679b7d4f1f12ca79726881d8279e1ae37ebf1ab3396d7362257",
+        "authored_points_sha256": "9ef618ed1db8bf09a3fde578b28b62774480d31cde4f1ea01a1367082cbb17c8",
+        "authored_vertex_count": 38,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            0.2104484187838501,
+            -0.00028485026141281523,
+            -0.9776049211679051,
+            0.394628582132102
+          ],
+          [
+            0.21710757562953129,
+            -0.005763220921856531,
+            -0.9761306704990235,
+            0.3941285116345373
+          ],
+          [
+            -0.0003400057069955237,
+            -0.9999999421668337,
+            7.902430812752295e-06,
+            0.4289094013583213
+          ],
+          [
+            -0.9997300127404769,
+            1.5126327146692988e-05,
+            0.023235778384206943,
+            0.3108229235364771
+          ],
+          [
+            -0.9999994113238301,
+            2.203045513863388e-05,
+            0.0010848348503511628,
+            0.32236313252575316
+          ],
+          [
+            0.16234622370910248,
+            -0.0002972858852405221,
+            0.9867338117590257,
+            -0.5730644046676321
+          ],
+          [
+            -0.999730123300033,
+            2.178647356826923e-05,
+            0.023231015730064464,
+            0.31082256652537005
+          ],
+          [
+            -0.9999994113146494,
+            2.2036556234411995e-05,
+            0.001084843189063408,
+            0.3223631255939455
+          ],
+          [
+            0.1694155657398562,
+            -0.00600658040626139,
+            0.9855264010044924,
+            -0.5722637173820407
+          ],
+          [
+            -6.5951788280551815e-06,
+            -0.9999999999746282,
+            2.6920956881262236e-06,
+            0.42880442456548984
+          ],
+          [
+            -0.9999999995003452,
+            2.2048781865205866e-05,
+            -2.2653049655795055e-05,
+            0.322929980830609
+          ],
+          [
+            -0.9999993084155845,
+            4.4077349675985146e-05,
+            -0.0011752555211602153,
+            0.3234845117321732
+          ],
+          [
+            -0.9998504300205346,
+            4.380422424264277e-05,
+            -0.017294960796193286,
+            0.33124053191776914
+          ],
+          [
+            -0.9998501145824219,
+            1.7082622443836565e-05,
+            -0.017313234177993984,
+            0.33126073500640013
+          ],
+          [
+            0.9886715561229642,
+            -0.00040144202101518765,
+            -0.15009461335337904,
+            -0.2547084228298617
+          ],
+          [
+            0.9688581441592903,
+            -0.0045443316217467795,
+            -0.2475747271963105,
+            -0.1993751796864147
+          ],
+          [
+            0.9886812194822024,
+            -0.0004030653895186739,
+            0.15003094274674417,
+            -0.40497026781251483
+          ],
+          [
+            0.9889861422517577,
+            -0.0018209180189873158,
+            0.1479969414939176,
+            -0.4034130421324018
+          ],
+          [
+            -0.9999999995003542,
+            2.204815753326745e-05,
+            -2.265326347475478e-05,
+            0.32292998120773203
+          ],
+          [
+            -0.9999993440962892,
+            2.203576867678422e-05,
+            -0.00114512943212086,
+            0.32347938991900427
+          ],
+          [
+            0.9778922868057767,
+            -0.00042715347865408105,
+            -0.20910880647565816,
+            -0.22250655991083507
+          ],
+          [
+            0.9727518058590644,
+            0.0017399430937523634,
+            -0.2318423964592322,
+            -0.2108615386325282
+          ],
+          [
+            0.9760228210093872,
+            0.0017705339723027758,
+            -0.21766101644146194,
+            -0.2187208426351518
+          ],
+          [
+            0.9958370126282587,
+            -0.0017167913376593684,
+            -0.09113559626802278,
+            -0.28540953616225906
+          ],
+          [
+            0.9889817661945064,
+            -0.001843532268476715,
+            -0.14802590152932665,
+            -0.25519606101139836
+          ],
+          [
+            0.9958213571872093,
+            -0.001834637449238849,
+            -0.09130420951552222,
+            -0.2852702796130414
+          ],
+          [
+            0.00012598816876890963,
+            -0.9999999917005863,
+            -2.6940835874036327e-05,
+            0.42877501973121357
+          ],
+          [
+            9.972038864419398e-05,
+            -0.9999999947806475,
+            -2.223845660676835e-05,
+            0.42878144243467314
+          ],
+          [
+            7.999126712463307e-06,
+            -0.9999999999588864,
+            -4.270921519764911e-06,
+            0.4288031081143514
+          ],
+          [
+            4.9768345102163645e-05,
+            -0.9999999986806893,
+            -1.2717428795906616e-05,
+            0.42879337166790665
+          ],
+          [
+            0.9996859843169462,
+            -0.000837576381831752,
+            0.02504458476523538,
+            -0.3448867787243485
+          ],
+          [
+            0.9996844313704492,
+            -0.0008375750807118718,
+            -0.0251064960423781,
+            -0.3197777898583499
+          ],
+          [
+            0.999651901614102,
+            -0.001704692189649436,
+            -0.02632811470364263,
+            -0.31878352905601787
+          ],
+          [
+            0.0002407020774286741,
+            -0.9999999709316644,
+            -1.4113127503632717e-05,
+            0.42873061716695426
+          ],
+          [
+            0.968637050643449,
+            -0.005780836330778484,
+            0.24841265276164418,
+            -0.44711202916167886
+          ],
+          [
+            0.9769410760606515,
+            0.0022098263489680964,
+            -0.21349765940863047,
+            -0.22121362654313384
+          ],
+          [
+            0.9762266942978929,
+            0.0022063554497159282,
+            -0.2167407975805157,
+            -0.2194173664514948
+          ],
+          [
+            0.9996526816873654,
+            -0.001726580528451437,
+            0.026297051449496203,
+            -0.34512154276291995
+          ],
+          [
+            0.9958340993059499,
+            -0.0017382495501846256,
+            0.0911670178738393,
+            -0.37667071707872646
+          ],
+          [
+            0.9958242776662606,
+            -0.0018121815010569487,
+            0.09127279993884978,
+            -0.3766892736337953
+          ],
+          [
+            0.00012520396956740187,
+            -0.9999999921007401,
+            1.1067329696254897e-05,
+            0.4287564586028904
+          ],
+          [
+            0.00013939883054603003,
+            -0.9999999902023612,
+            1.2776673412657549e-05,
+            0.42875087063401435
+          ],
+          [
+            0.973593601706667,
+            0.0017312262224596126,
+            0.2282816277574843,
+            -0.4414170234854375
+          ],
+          [
+            0.9778991378269724,
+            -0.0004294423971185252,
+            0.20907676058446073,
+            -0.43187520487779635
+          ],
+          [
+            0.976044468861014,
+            0.0017540085181562079,
+            0.21756405553293776,
+            -0.43661791049549964
+          ],
+          [
+            0.9769476148063759,
+            0.0022086694047158107,
+            0.21346774862632856,
+            -0.4349783808895812
+          ],
+          [
+            0.9762554847883824,
+            0.0022052886425437974,
+            0.2166110918734391,
+            -0.43638494607050393
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.428803672268959
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.43634602926668736
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "left",
+        "handle_seam_overlaps_m": [
+          0.007505397498607624,
+          0.007021140754222888
+        ],
+        "handle_segment": "crossbar",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          173,
+          175,
+          177,
+          178,
+          179,
+          180,
+          181,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          254,
+          256,
+          258,
+          259,
+          260,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357
+        ],
+        "source_face_ordinals_sha256": "d64912849f18868ca6d02becc58251093a1866def7a4217187eb7ba5b9b11884",
+        "source_node": "metal_office_desk_drawer_04",
+        "source_vertex_indices": [
+          193,
+          197,
+          201,
+          205,
+          211,
+          213,
+          215,
+          217,
+          219,
+          223,
+          225,
+          227,
+          229,
+          231,
+          239,
+          241,
+          243,
+          245,
+          247,
+          251,
+          253,
+          257,
+          259,
+          261,
+          263,
+          265,
+          267,
+          269,
+          271,
+          273,
+          277,
+          287,
+          289,
+          291,
+          293,
+          295,
+          299,
+          397
+        ],
+        "source_vertex_indices_sha256": "cb44bdc2e1d53fac419de9d5826068c88c2733bb375c757e5317d63fd8308795",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_visible_prim": "bc017_left_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 66,
+        "authored_faces_sha256": "893f88c8b8eb6c552a1bfd7745ae35b44074c616a6de6eabd8e09f52ab0a5776",
+        "authored_points_sha256": "7b9b54c73b500590945e353e7ecd17e55f2b82b930ec8d0d7b8825b40addccde",
+        "authored_vertex_count": 35,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            -5.409016890729625e-06,
+            -0.9999999999210982,
+            -1.1337813649528136e-05,
+            0.42881136357218774
+          ],
+          [
+            -5.730942040857183e-06,
+            0.9999999999817437,
+            1.9154096939161655e-06,
+            -0.4363452813676642
+          ],
+          [
+            -9.858824238419646e-06,
+            -0.9999999996518901,
+            -2.447495346193983e-05,
+            0.42881967470084054
+          ],
+          [
+            -3.849325444570841e-06,
+            0.9999999999880939,
+            -2.999176022696836e-06,
+            -0.43634325584897077
+          ],
+          [
+            4.956597894442037e-05,
+            -0.999999998735193,
+            8.533926271035626e-06,
+            0.42878284670060446
+          ],
+          [
+            -0.5299195491590868,
+            0.0019029973149965644,
+            -0.8480457829741561,
+            0.6094721967803551
+          ],
+          [
+            -0.5051468353743248,
+            0.8630333813613639,
+            -0.00023951466620047656,
+            -0.22289030003222499
+          ],
+          [
+            -0.0005300099996431994,
+            0.9999998446854923,
+            -0.00017239023063353042,
+            -0.43609157186605957
+          ],
+          [
+            -0.1697223679240966,
+            0.00013906552093627712,
+            -0.9854919068602331,
+            0.5691854829131583
+          ],
+          [
+            -0.16985684641504106,
+            3.7450935721330447e-06,
+            -0.9854687472020162,
+            0.5692758939957978
+          ],
+          [
+            -0.0004833545155885587,
+            0.9999994372686182,
+            -0.0009443679682039839,
+            -0.43569666091796844
+          ],
+          [
+            -0.37363878468847117,
+            8.238185509562628e-06,
+            -0.9275742873261713,
+            0.6049013811470684
+          ],
+          [
+            -0.3743194460604761,
+            0.0020175033759875357,
+            -0.927297623193927,
+            0.6041001725602451
+          ],
+          [
+            -1.1301815853059547e-06,
+            0.9999999999778288,
+            -6.5623925663092005e-06,
+            -0.43634223864567834
+          ],
+          [
+            -3.1263947428039897e-06,
+            0.9999999999764573,
+            -6.108284821691045e-06,
+            -0.43634183065258725
+          ],
+          [
+            -0.5090749592655153,
+            0.8607221885421648,
+            -0.0,
+            -0.22081722575870777
+          ],
+          [
+            -0.5370567394620622,
+            -0.0,
+            0.8435461212040387,
+            -0.2929273130930613
+          ],
+          [
+            -0.5498125650913754,
+            0.0,
+            -0.8352880600533219,
+            0.6095779865543075
+          ],
+          [
+            -0.5093319766673275,
+            -0.8605701235484259,
+            0.0,
+            0.5238490749328133
+          ],
+          [
+            -0.5053141509362356,
+            -0.8629354257439857,
+            0.0002446622921838609,
+            0.5235123402603123
+          ],
+          [
+            -0.5252079183127396,
+            -0.0011158580446925868,
+            0.8509732060426008,
+            -0.30005893808819845
+          ],
+          [
+            2.33863615991272e-05,
+            0.9999999968112966,
+            7.635761303717011e-05,
+            -0.4363946917492087
+          ],
+          [
+            0.9219754828821581,
+            -0.017367227034856495,
+            0.38685861550355954,
+            -0.49988039244177596
+          ],
+          [
+            0.0001568026745332149,
+            0.9999999864993193,
+            4.9135347581398826e-05,
+            -0.4364235099638389
+          ],
+          [
+            4.910908823325302e-05,
+            0.999999998738704,
+            1.053040569330236e-05,
+            -0.4363677414845127
+          ],
+          [
+            0.9762554847883824,
+            0.002205288642543798,
+            0.2166110918734391,
+            -0.43638494607050393
+          ],
+          [
+            5.444067996772304e-05,
+            0.9999999984451517,
+            1.2079271577866872e-05,
+            -0.4363703098414377
+          ],
+          [
+            6.239561721634901e-05,
+            0.9999999979463735,
+            1.4630101346303381e-05,
+            -0.4363742694694264
+          ],
+          [
+            0.00010272386124310991,
+            -0.9999999944617554,
+            2.28975426479633e-05,
+            0.42875779717228285
+          ],
+          [
+            0.976044468861014,
+            0.0017540085181562226,
+            0.21756405553293776,
+            -0.43661791049549964
+          ],
+          [
+            0.973593601706667,
+            0.0017312262224596128,
+            0.2282816277574843,
+            -0.4414170234854375
+          ],
+          [
+            0.9445445377157454,
+            -0.017065195041088877,
+            0.32793962156097933,
+            -0.4762330675698811
+          ],
+          [
+            0.9542295574744891,
+            -0.005982772709705348,
+            0.2990153141107401,
+            -0.46893747354359455
+          ],
+          [
+            0.00017970783299498175,
+            -0.9999999827905356,
+            4.6087127770587785e-05,
+            0.42872025387245194
+          ],
+          [
+            0.968637050643449,
+            -0.0057808363307784855,
+            0.24841265276164418,
+            -0.4471120291616789
+          ],
+          [
+            0.00024808292926592674,
+            -0.9999999628413512,
+            0.00011301396478771929,
+            0.4286623838117075
+          ],
+          [
+            0.9096574936189147,
+            -0.02830398854759826,
+            0.414393687856429,
+            -0.5057213957789284
+          ],
+          [
+            0.8562248513191514,
+            -0.03523351055954987,
+            0.51540043045883,
+            -0.5389801858453132
+          ],
+          [
+            0.8655995825188965,
+            -0.02872804694839939,
+            0.4999120543272012,
+            -0.5366006025069907
+          ],
+          [
+            0.6650959959978652,
+            -0.025873885691274915,
+            0.7463094921993441,
+            -0.6046033849961996
+          ],
+          [
+            0.022236083965567567,
+            -0.0012263510641454714,
+            0.9997519955633716,
+            -0.5468895551996721
+          ],
+          [
+            -0.0003002980669990267,
+            -0.9999999321380182,
+            0.00021341281560285848,
+            0.42878193192304076
+          ],
+          [
+            -8.068555183721924e-06,
+            -0.9999999999653835,
+            2.032608870664244e-06,
+            0.42880508997302735
+          ],
+          [
+            3.567222527795016e-06,
+            -0.9999999996387441,
+            2.6641819396999672e-05,
+            0.4287881500850914
+          ],
+          [
+            6.634780513904292e-07,
+            -0.9999999997949387,
+            2.0240614205798766e-05,
+            0.4287925228817899
+          ],
+          [
+            9.041101847057181e-07,
+            -0.9999999997813933,
+            2.0890095876495167e-05,
+            0.4287920967040785
+          ],
+          [
+            0.6823939926288712,
+            -0.034278127453914495,
+            0.7301804220891446,
+            -0.597895253882315
+          ],
+          [
+            0.7883709172376848,
+            -0.03410935192023971,
+            0.6142538961743693,
+            -0.5701617797159517
+          ],
+          [
+            0.7909099832927607,
+            -0.03558946354580347,
+            0.6108967084641781,
+            -0.5685501072986234
+          ],
+          [
+            0.47198895122774787,
+            -0.015204313451396823,
+            0.8814733454684844,
+            -0.6197603245874761
+          ],
+          [
+            0.4966608890362291,
+            -0.025395967078171464,
+            0.8675730552281503,
+            -0.6157841488584266
+          ],
+          [
+            0.043238855254903334,
+            -0.0013262428648192469,
+            0.9990638830806112,
+            -0.5530254654281989
+          ],
+          [
+            0.13554576898694604,
+            -0.0015256756293875677,
+            0.990769911141639,
+            -0.5774950030562103
+          ],
+          [
+            3.036933517817128e-06,
+            0.9999999996401889,
+            2.6653312584946666e-05,
+            -0.4363613908313712
+          ],
+          [
+            4.106613415723295e-06,
+            0.9999999995410508,
+            3.001723358389059e-05,
+            -0.43636354553049467
+          ],
+          [
+            4.254590802332585e-06,
+            -0.9999999995803255,
+            2.865742044523963e-05,
+            0.42878684439914444
+          ],
+          [
+            2.460232184701443e-05,
+            -0.999999996940903,
+            7.424903945794745e-05,
+            0.4287557639304225
+          ],
+          [
+            0.14685187453253049,
+            -0.005652756906794568,
+            0.9891423422772047,
+            -0.578402275016316
+          ],
+          [
+            0.2928411809973559,
+            -0.00623599049846369,
+            0.9561407611510855,
+            -0.606642071809153
+          ],
+          [
+            0.31449882006612095,
+            -0.014466581930938003,
+            0.9491476229671827,
+            -0.6062064925878161
+          ],
+          [
+            0.02337392380197533,
+            -3.306357521868342e-05,
+            0.9997267919751373,
+            -0.5477425071733879
+          ],
+          [
+            0.03962986036380004,
+            -3.304663000349084e-05,
+            0.9992144279760306,
+            -0.5525357368048026
+          ],
+          [
+            -5.153307625537325e-06,
+            0.9999999999765561,
+            4.509002006107734e-06,
+            -0.4363468595750313
+          ],
+          [
+            8.595633808499763e-07,
+            0.9999999997647764,
+            2.1672751910317214e-05,
+            -0.4363580138613527
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.30350519143036275
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.30350519143036275
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "left",
+        "handle_seam_overlaps_m": [
+          0.007505397498607624,
+          0.007021140754222888
+        ],
+        "handle_segment": "positive_leg",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          180,
+          182,
+          183,
+          184,
+          186,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367
+        ],
+        "source_face_ordinals_sha256": "19e734a6975592241ffe220891d8cfd9a35ab487c9f703bb3e6123dab1f61eaa",
+        "source_node": "metal_office_desk_drawer_04",
+        "source_vertex_indices": [
+          112,
+          115,
+          119,
+          122,
+          125,
+          131,
+          133,
+          135,
+          137,
+          139,
+          141,
+          143,
+          155,
+          161,
+          167,
+          169,
+          171,
+          173,
+          175,
+          177,
+          189,
+          191,
+          193,
+          195,
+          197,
+          209,
+          211,
+          213,
+          215,
+          217,
+          221,
+          399,
+          403,
+          406,
+          409
+        ],
+        "source_vertex_indices_sha256": "87142ade7013103e0c8a29ebebd7d0657a5e347b340611c61be5418a85c98a39",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_visible_prim": "bc017_left_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 92,
+        "authored_faces_sha256": "49830de3b1fb952d6a27fd9cb9f031ecc00dc46d235fe45ab5364846c46ae202",
+        "authored_points_sha256": "2d6b61e1f2bdd1cea017d701aef1e7668de8396fe2180aa9f1e07d91bd3ac3e7",
+        "authored_vertex_count": 48,
+        "collider_prim": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_coordinate_weld_then_closed_drawer_body_component_sdf",
+        "hand_authored_or_placeholder": false,
+        "handle_role": "right",
+        "handle_segment": null,
+        "mesh_collision_approximation": "sdf",
+        "method": "exact_coordinate_weld_then_closed_drawer_body_component_sdf",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "sdf_cell_size_max_m": 0.0020071104518137872,
+        "sdf_remeshing_enabled": true,
+        "sdf_resolution": 256,
+        "sdf_triangle_count_reduction_factor": 1.0,
+        "semantic_role": "drawer_body_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70,
+          71,
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84,
+          85,
+          86,
+          87,
+          88,
+          89,
+          90,
+          91
+        ],
+        "source_face_ordinals_sha256": "d90aa2c60b42c2735dc14f9e8fad39edd3adb998541c7723e72c974fbcd0991c",
+        "source_node": "metal_office_desk_drawer_01",
+        "source_vertex_indices": [
+          0,
+          1,
+          4,
+          5,
+          8,
+          11,
+          13,
+          15,
+          18,
+          19,
+          20,
+          22,
+          24,
+          26,
+          29,
+          31,
+          34,
+          37,
+          40,
+          43,
+          46,
+          49,
+          52,
+          55,
+          58,
+          61,
+          62,
+          64,
+          67,
+          70,
+          73,
+          76,
+          78,
+          80,
+          82,
+          83,
+          85,
+          86,
+          88,
+          91,
+          93,
+          95,
+          98,
+          100,
+          103,
+          106,
+          109,
+          111
+        ],
+        "source_vertex_indices_sha256": "b0a1a925eedeb87639e3539e55b5b04e246d10366ad1bb320b315511af61454d",
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_visible_prim": "bc017_right_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 68,
+        "authored_faces_sha256": "47cd8107752f9b7b4d25f8cb8e689c273039966d8f3effb661044759f27681fc",
+        "authored_points_sha256": "9eb01f19864fe86c8e0b7771fbbeb605d21bcfc835e9a1616785b2344579793c",
+        "authored_vertex_count": 36,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            2.928847442162758e-05,
+            -0.9999999995696798,
+            1.6810265999957058e-06,
+            0.42879490941642595
+          ],
+          [
+            -0.16972381122086272,
+            0.00013363055374067628,
+            0.9854916590451388,
+            0.5692672865504242
+          ],
+          [
+            -1.3339512372921305e-06,
+            0.9999999999691137,
+            7.745512008410195e-06,
+            -0.4363415546154563
+          ],
+          [
+            -0.5302652124274175,
+            -0.0016175136586984854,
+            0.8478302826266998,
+            0.6110547276879045
+          ],
+          [
+            -0.16984920053594024,
+            7.489808698679137e-06,
+            0.9854700650051247,
+            0.5693515708306428
+          ],
+          [
+            -0.0004833977511821346,
+            -0.9999994370587488,
+            0.0009445680492078973,
+            0.42945274816563717
+          ],
+          [
+            -0.3737090113802048,
+            1.647937697309306e-05,
+            0.9275459959170005,
+            0.6049804387226522
+          ],
+          [
+            -0.37429245094796204,
+            -0.00170563938892197,
+            0.9273091458395318,
+            0.6057837647398354
+          ],
+          [
+            3.735464209645481e-06,
+            -0.9999999999318618,
+            1.1059950819094218e-05,
+            0.4288082391446393
+          ],
+          [
+            -4.775481290598587e-06,
+            -0.9999999999450601,
+            9.331377805665363e-06,
+            0.42881008684410155
+          ],
+          [
+            0.9036521903221753,
+            -0.029346085597419715,
+            -0.4272604898490428,
+            -0.5102114307167648
+          ],
+          [
+            0.00021356129441661682,
+            -0.9999999720978084,
+            -0.00010097502583677433,
+            0.42868006587686397
+          ],
+          [
+            -3.511926159108373e-06,
+            0.9999999999702948,
+            6.861250887178736e-06,
+            -0.43634131248995417
+          ],
+          [
+            -1.0208347747988201e-05,
+            0.9999999997490122,
+            1.9944051175693214e-05,
+            -0.43633231862824273
+          ],
+          [
+            -3.944634253197587e-06,
+            0.9999999999882724,
+            2.80982434122071e-06,
+            -0.436343326643409
+          ],
+          [
+            -0.0005300608574960399,
+            -0.9999998446588682,
+            0.00017238830270917204,
+            0.42905802348056554
+          ],
+          [
+            -0.5051469702960344,
+            -0.8630333023903227,
+            0.00023951198554149572,
+            0.5237627971089048
+          ],
+          [
+            -0.5090749592654724,
+            -0.8607221885421902,
+            0.0,
+            0.5238363187637882
+          ],
+          [
+            -0.5053143083818844,
+            0.8629353335364276,
+            -0.0002447016806334236,
+            -0.22305593867634305
+          ],
+          [
+            -0.5256492336824462,
+            0.0010452213311365455,
+            -0.8507007644532983,
+            -0.30078051572663633
+          ],
+          [
+            -0.5367499697516416,
+            -0.0,
+            -0.8437413525314567,
+            -0.2931935697451743
+          ],
+          [
+            0.0,
+            1.0,
+            -0.0,
+            -0.4363461124152222
+          ],
+          [
+            0.8479532445505832,
+            -0.029900023185031203,
+            -0.5292270624879961,
+            -0.5460005245666752
+          ],
+          [
+            0.8383741279567041,
+            -0.03609087914280052,
+            -0.54389913588416,
+            -0.5480181338370326
+          ],
+          [
+            0.9180347657661312,
+            -0.01701083136807193,
+            -0.3961348261146599,
+            -0.503738163498165
+          ],
+          [
+            0.0002595039462173093,
+            0.9999999632731319,
+            -7.817567732938908e-05,
+            -0.4364726026606344
+          ],
+          [
+            0.00010818330606213677,
+            0.9999999938597521,
+            -2.40180788912481e-05,
+            -0.4363942871193883
+          ],
+          [
+            0.00013000303104656488,
+            0.9999999910695867,
+            -3.0984485542212685e-05,
+            -0.4364051320786799
+          ],
+          [
+            0.9762279582924681,
+            0.0022063615664381286,
+            -0.21673510425576512,
+            -0.4364576600841459
+          ],
+          [
+            0.9475449884726128,
+            -0.016533969909783838,
+            -0.31919449033380615,
+            -0.4728833167499349
+          ],
+          [
+            0.9574854758682627,
+            -0.004716595045852098,
+            -0.2884429184994841,
+            -0.4650158723979025
+          ],
+          [
+            0.4711682179496331,
+            -0.013490780550615701,
+            -0.8819401959511213,
+            -0.6206467644486314
+          ],
+          [
+            1.9625393147108736e-06,
+            0.9999999997020025,
+            -2.4333995631501617e-05,
+            -0.43635980120223916
+          ],
+          [
+            -0.547222461429803,
+            0.0,
+            0.8369872028332979,
+            0.6097595199842046
+          ],
+          [
+            -0.5093319766672846,
+            0.8605701235484513,
+            0.0,
+            -0.22067291060558503
+          ],
+          [
+            0.0002168943911890259,
+            -0.9999999753086852,
+            -4.8367880330915864e-05,
+            0.4287068313180595
+          ],
+          [
+            0.000398404429265828,
+            -0.9999999154547949,
+            -0.00010180527302568484,
+            0.4286189440184486
+          ],
+          [
+            0.9760240929594363,
+            0.0017705461807208595,
+            -0.21765531265956173,
+            -0.43668263730179524
+          ],
+          [
+            0.9727518058590611,
+            0.0017399430937523465,
+            -0.23184239645924595,
+            -0.44302704095138395
+          ],
+          [
+            0.9688581441592868,
+            -0.004544331621746862,
+            -0.24757472719632392,
+            -0.4472949365640376
+          ],
+          [
+            0.49859135452876,
+            -0.024713986849431772,
+            -0.8664847835035433,
+            -0.6162665075941764
+          ],
+          [
+            0.6966013943741372,
+            -0.02536016072336784,
+            -0.7170100136009908,
+            -0.5993286464818939
+          ],
+          [
+            0.022236111355438445,
+            0.0011436632590654306,
+            -0.9997520929641199,
+            -0.5479950224990561
+          ],
+          [
+            -0.00030029730280311704,
+            0.9999999321309148,
+            -0.00021344717378254195,
+            -0.4363677469004077
+          ],
+          [
+            -1.1793867826234677e-05,
+            0.9999999999192751,
+            -4.7280359474420906e-06,
+            -0.4363449071571526
+          ],
+          [
+            -5.960011377484687e-06,
+            0.9999999999793848,
+            -2.3893050570932128e-06,
+            -0.43634546221934345
+          ],
+          [
+            8.661377313202517e-07,
+            0.9999999997611939,
+            -2.183716946845778e-05,
+            -0.4363581065499518
+          ],
+          [
+            1.9298028165070273e-05,
+            0.9999999974199335,
+            -6.919334583115812e-05,
+            -0.4363895321206137
+          ],
+          [
+            3.999312517105943e-06,
+            0.9999999995111497,
+            -3.1011385911353565e-05,
+            -0.436364051596452
+          ],
+          [
+            0.1279033480004574,
+            -0.0015150433081746863,
+            -0.9917854799370922,
+            -0.5757238784123244
+          ],
+          [
+            0.7159443261041559,
+            -0.0351213450554287,
+            -0.6972734134045004,
+            -0.5907522543271213
+          ],
+          [
+            0.7793347230590835,
+            -0.03627879460891723,
+            -0.6255567428268562,
+            -0.5723338430700473
+          ],
+          [
+            0.7772636435062287,
+            -0.03510582302257632,
+            -0.628194881922266,
+            -0.5735805645540657
+          ],
+          [
+            -5.850208000775426e-06,
+            -0.9999999999718621,
+            4.6958475652922286e-06,
+            0.4288079606324086
+          ],
+          [
+            -8.075333268675579e-06,
+            -0.9999999999667489,
+            -1.136205747120595e-06,
+            0.4288055541274206
+          ],
+          [
+            1.6019439333118767e-05,
+            -0.9999999981097959,
+            -5.936148431591419e-05,
+            0.4287665264306106
+          ],
+          [
+            1.9786342198734914e-06,
+            -0.9999999989523678,
+            -4.573127205530371e-05,
+            0.42877836962267196
+          ],
+          [
+            9.281274738908713e-07,
+            -0.9999999992112901,
+            -3.9705898860546684e-05,
+            0.42878195527069235
+          ],
+          [
+            1.0947925164693901e-06,
+            -0.9999999991932051,
+            -4.0154588823998995e-05,
+            0.42878166067615064
+          ],
+          [
+            0.023368669196803325,
+            -4.4085015337838606e-05,
+            -0.9997269143903658,
+            -0.5478163832176994
+          ],
+          [
+            0.039632299179206125,
+            -4.406241191069937e-05,
+            -0.9992143308221083,
+            -0.5526118550373896
+          ],
+          [
+            0.043226067819649064,
+            -0.001331728781421173,
+            -0.9990644291332285,
+            -0.5530995414833403
+          ],
+          [
+            1.4062937798358938e-05,
+            -0.9999999947786008,
+            -0.00010121774585316652,
+            0.42874457156922285
+          ],
+          [
+            0.13761382944576547,
+            -0.0050467335233951634,
+            -0.9904731013137185,
+            -0.5765547570837235
+          ],
+          [
+            0.28751137311514835,
+            -0.012588898535460458,
+            -0.9576944867561396,
+            -0.6031672101560401
+          ],
+          [
+            0.26864318084644334,
+            -0.00554102896950843,
+            -0.9632238256930028,
+            -0.6031905690640929
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.3035051914305363
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.3035051914305363
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "right",
+        "handle_seam_overlaps_m": [
+          0.00750539749860768,
+          0.007021140754222888
+        ],
+        "handle_segment": "negative_leg",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          247,
+          249,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292,
+          293,
+          294,
+          295,
+          296,
+          297,
+          298,
+          299,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          309,
+          310,
+          311,
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          344,
+          345,
+          346,
+          347,
+          348,
+          349,
+          350,
+          351
+        ],
+        "source_face_ordinals_sha256": "4b8adcb091c9b79f0c9287290a151c601d33366d461e917770b46e567bb1b1c7",
+        "source_node": "metal_office_desk_drawer_01",
+        "source_vertex_indices": [
+          265,
+          271,
+          275,
+          283,
+          289,
+          291,
+          293,
+          295,
+          297,
+          309,
+          311,
+          313,
+          315,
+          317,
+          319,
+          331,
+          333,
+          335,
+          337,
+          339,
+          353,
+          355,
+          357,
+          359,
+          361,
+          365,
+          367,
+          370,
+          372,
+          374,
+          378,
+          382,
+          385,
+          388,
+          391,
+          394
+        ],
+        "source_vertex_indices_sha256": "38bb1e50795fc0b97898c6efa5f6796b4d0af41f33842a06a81a17d9362697d7",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_visible_prim": "bc017_right_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 72,
+        "authored_faces_sha256": "c4fff60a7db0f679b7d4f1f12ca79726881d8279e1ae37ebf1ab3396d7362257",
+        "authored_points_sha256": "434a15ee7bf1b4209a5042fbc168d3544ed358388da656380d9c9cfdaa52a797",
+        "authored_vertex_count": 38,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            0.21044841878385204,
+            -0.0002848502614128014,
+            -0.9776049211679047,
+            -0.5843386917782045
+          ],
+          [
+            0.21710757562953326,
+            -0.00576322092185658,
+            -0.9761306704990231,
+            -0.5833624572926923
+          ],
+          [
+            -0.0003399754438522308,
+            -0.9999999421771231,
+            7.902397982293017e-06,
+            0.4289173050172013
+          ],
+          [
+            -0.9997299669344356,
+            1.5125739534874518e-05,
+            0.023237749126888033,
+            0.33409202201384064
+          ],
+          [
+            -0.9999994113238301,
+            2.2030455138642057e-05,
+            0.0010848348503511736,
+            0.32344947915568445
+          ],
+          [
+            0.16234622370910104,
+            -0.00029728588524779705,
+            0.9867338117590261,
+            0.415044473715535
+          ],
+          [
+            -0.999730077512754,
+            2.1786450837016253e-05,
+            0.02323298606923715,
+            0.3340868952800148
+          ],
+          [
+            -0.9999994113146494,
+            2.2036556234404176e-05,
+            0.0010848431890633971,
+            0.3234494805742095
+          ],
+          [
+            0.16941556573985617,
+            -0.0060065804062699344,
+            0.9855264010044923,
+            0.4146360675037014
+          ],
+          [
+            -6.595177364349888e-06,
+            -0.9999999999746281,
+            2.6921042028092856e-06,
+            0.4288071204165198
+          ],
+          [
+            -0.9999999995003452,
+            2.204878186520587e-05,
+            -2.265304965579523e-05,
+            0.32290729621280645
+          ],
+          [
+            -0.9999993084155845,
+            4.4077349675976656e-05,
+            -0.0011752555211702626,
+            0.32230761842539873
+          ],
+          [
+            -0.9998503974224745,
+            4.3804191643280044e-05,
+            -0.017296845241615802,
+            0.3139204843306965
+          ],
+          [
+            -0.9998500819439192,
+            1.708208148764468e-05,
+            -0.017315118969861234,
+            0.31392238859824484
+          ],
+          [
+            0.9886715561229638,
+            -0.00040144202102136315,
+            -0.1500946133533806,
+            -0.40501220161116347
+          ],
+          [
+            0.9688581441592868,
+            -0.004544331621746862,
+            -0.24757472719632392,
+            -0.4472949365640376
+          ],
+          [
+            0.9886812194822021,
+            -0.0004030653895259542,
+            0.15003094274674575,
+            -0.2547302483668167
+          ],
+          [
+            0.9889861422517576,
+            -0.0018209180189946049,
+            0.1479969414939192,
+            -0.25520985843660243
+          ],
+          [
+            -0.9999999995003542,
+            2.204815753326778e-05,
+            -2.2653263474754843e-05,
+            0.3229072963758126
+          ],
+          [
+            -0.9999993440962892,
+            2.2035768676792697e-05,
+            -0.001145129432130931,
+            0.32233266468369715
+          ],
+          [
+            0.9778922868057762,
+            -0.0004271534786597402,
+            -0.20910880647566077,
+            -0.43190677146760525
+          ],
+          [
+            0.9727518058590611,
+            0.0017399430937523465,
+            -0.23184239645924595,
+            -0.4430270409513839
+          ],
+          [
+            0.9760240929594363,
+            0.0017705461807208593,
+            -0.21765531265956173,
+            -0.4366826373017953
+          ],
+          [
+            0.9958370126282589,
+            -0.0017167913376593808,
+            -0.09113559626802181,
+            -0.37667213509598
+          ],
+          [
+            0.9889817661945063,
+            -0.0018435322684840073,
+            -0.14802590152932663,
+            -0.40342824510040826
+          ],
+          [
+            0.9958213571872084,
+            -0.001834637449246194,
+            -0.09130420951553174,
+            -0.3767017267664671
+          ],
+          [
+            0.0001259881687689043,
+            -0.9999999917005863,
+            -2.6940835874035528e-05,
+            0.4287480413517994
+          ],
+          [
+            9.973429649239629e-05,
+            -0.9999999947792051,
+            -2.224094634806941e-05,
+            0.4287591670938392
+          ],
+          [
+            7.999124240966723e-06,
+            -0.9999999999588867,
+            -4.270910407742972e-06,
+            0.42879883124761636
+          ],
+          [
+            4.97671066888813e-05,
+            -0.9999999986807551,
+            -1.2717112341086416e-05,
+            0.4287806370899273
+          ],
+          [
+            0.9996859843169462,
+            -0.0008375763818391159,
+            0.025044584765235904,
+            -0.3198072928980905
+          ],
+          [
+            0.999684431370449,
+            -0.0008375750807192355,
+            -0.025106496042378353,
+            -0.34491927323899646
+          ],
+          [
+            0.9996519016141022,
+            -0.0017046921896494455,
+            -0.026328114703632527,
+            -0.34514833349339685
+          ],
+          [
+            0.00024070207742860126,
+            -0.9999999709316644,
+            -1.4113127503628446e-05,
+            0.42871648437205573
+          ],
+          [
+            0.9686370506434426,
+            -0.0057808363307875876,
+            0.2484126527616684,
+            -0.19835321929679414
+          ],
+          [
+            0.9769410760606515,
+            0.002209826348960922,
+            -0.21349765940863044,
+            -0.43500880715043905
+          ],
+          [
+            0.9762279582924681,
+            0.0022063615664381186,
+            -0.21673510425576512,
+            -0.4364576600841459
+          ],
+          [
+            0.9996526816873658,
+            -0.0017265805284510597,
+            0.026297051449485832,
+            -0.3187878448684558
+          ],
+          [
+            0.9958340993059499,
+            -0.0017382495501832957,
+            0.09116701787383832,
+            -0.28537665275173046
+          ],
+          [
+            0.9958242776662597,
+            -0.0018121815010642992,
+            0.09127279993886124,
+            -0.2852892798284212
+          ],
+          [
+            0.00012520396956737973,
+            -0.9999999921007401,
+            1.1067329696253013e-05,
+            0.42876754135559897
+          ],
+          [
+            0.00013939883054605562,
+            -0.9999999902023613,
+            1.2776673412661511e-05,
+            0.4287636651125075
+          ],
+          [
+            0.973593601706668,
+            0.001731226222461315,
+            0.22828162775747976,
+            -0.2128172924624217
+          ],
+          [
+            0.9778991378269728,
+            -0.00042944239712571966,
+            0.20907676058445818,
+            -0.22250708387034202
+          ],
+          [
+            0.9760457403012179,
+            0.0017540205722217056,
+            0.2175583513719475,
+            -0.2187538342964727
+          ],
+          [
+            0.976947614806374,
+            0.002208669404715817,
+            0.21346774862633794,
+            -0.22121315274729472
+          ],
+          [
+            0.9762567481782775,
+            0.002205294789651486,
+            0.21660539769651654,
+            -0.2194751515476105
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            -1.0,
+            0.0,
+            0.4288036722690144
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.4363460292667427
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "right",
+        "handle_seam_overlaps_m": [
+          0.00750539749860768,
+          0.007021140754222888
+        ],
+        "handle_segment": "crossbar",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          173,
+          175,
+          177,
+          178,
+          179,
+          180,
+          181,
+          183,
+          184,
+          185,
+          186,
+          187,
+          188,
+          189,
+          190,
+          191,
+          192,
+          193,
+          194,
+          195,
+          196,
+          197,
+          198,
+          199,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          209,
+          210,
+          211,
+          212,
+          213,
+          214,
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          254,
+          256,
+          258,
+          259,
+          260,
+          352,
+          353,
+          354,
+          355,
+          356,
+          357
+        ],
+        "source_face_ordinals_sha256": "d64912849f18868ca6d02becc58251093a1866def7a4217187eb7ba5b9b11884",
+        "source_node": "metal_office_desk_drawer_01",
+        "source_vertex_indices": [
+          193,
+          197,
+          201,
+          205,
+          211,
+          213,
+          215,
+          217,
+          219,
+          223,
+          225,
+          227,
+          229,
+          231,
+          239,
+          241,
+          243,
+          245,
+          247,
+          251,
+          253,
+          257,
+          259,
+          261,
+          263,
+          265,
+          267,
+          269,
+          271,
+          273,
+          277,
+          287,
+          289,
+          291,
+          293,
+          295,
+          299,
+          397
+        ],
+        "source_vertex_indices_sha256": "cb44bdc2e1d53fac419de9d5826068c88c2733bb375c757e5317d63fd8308795",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_visible_prim": "bc017_right_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      },
+      {
+        "authored_face_count": 66,
+        "authored_faces_sha256": "893f88c8b8eb6c552a1bfd7745ae35b44074c616a6de6eabd8e09f52ab0a5776",
+        "authored_points_sha256": "a6b6b74a01a207058c102eca387357bdcab0851fee475942fd32a8e095b65bc0",
+        "authored_vertex_count": 35,
+        "closed_manifold_verified": true,
+        "collider_prim": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "convex_halfspaces_local": [
+          [
+            -5.409018460362698e-06,
+            -0.9999999999210984,
+            -1.1337805758437484e-05,
+            0.4288000099630139
+          ],
+          [
+            -5.73094204208425e-06,
+            0.9999999999817436,
+            1.915409688406604e-06,
+            -0.4363433632886757
+          ],
+          [
+            -9.858816226727154e-06,
+            -0.9999999996518915,
+            -2.4474906980018517e-05,
+            0.4287951656598825
+          ],
+          [
+            -3.849325447140723e-06,
+            0.9999999999880939,
+            -2.999176024699063e-06,
+            -0.4363462592044922
+          ],
+          [
+            4.95655086486995e-05,
+            -0.9999999987352183,
+            8.533678764772117e-06,
+            0.4287913925559139
+          ],
+          [
+            -0.5299195491590187,
+            0.0019029973149989722,
+            -0.8480457829741985,
+            -0.23975537547732156
+          ],
+          [
+            -0.5051468353743236,
+            0.8630333813613648,
+            -0.00023951466619795018,
+            -0.22313013797522274
+          ],
+          [
+            -0.0005300099996278411,
+            0.9999998446854923,
+            -0.000172390230633525,
+            -0.43626420232138124
+          ],
+          [
+            -0.1697223679240966,
+            0.00013906552093627815,
+            -0.9854919068602331,
+            -0.41767976328041945
+          ],
+          [
+            -0.16985684641504106,
+            3.7450935721330726e-06,
+            -0.9854687472020164,
+            -0.4175661602652547
+          ],
+          [
+            -0.0004833545839720257,
+            0.9999994372696539,
+            -0.000944366836457543,
+            -0.4366423443527788
+          ],
+          [
+            -0.3736391339801296,
+            8.238193210929884e-06,
+            -0.927574146626948,
+            -0.3239653536822332
+          ],
+          [
+            -0.37431979582082536,
+            0.0020175031944038597,
+            -0.9272974820075359,
+            -0.3244895121219256
+          ],
+          [
+            -1.130181266732971e-06,
+            0.9999999999778291,
+            -6.56239071651709e-06,
+            -0.43634881018258553
+          ],
+          [
+            -3.126396053465879e-06,
+            0.9999999999764573,
+            -6.108279197980658e-06,
+            -0.43634794744658895
+          ],
+          [
+            -0.5090749592654723,
+            0.8607221885421902,
+            -0.0,
+            -0.22081721517648906
+          ],
+          [
+            -0.5370567394620187,
+            -0.0,
+            0.8435461212040665,
+            0.5517943490379885
+          ],
+          [
+            -0.5498125650913318,
+            0.0,
+            -0.8352880600533508,
+            -0.2268740837524824
+          ],
+          [
+            -0.5093319766672846,
+            -0.8605701235484513,
+            0.0,
+            0.523849085520492
+          ],
+          [
+            -0.5053141509362639,
+            -0.8629354257439693,
+            0.0002446622921795476,
+            0.5237573540075537
+          ],
+          [
+            -0.5252079183126293,
+            -0.001115858044698913,
+            0.8509732060426689,
+            0.5521001587025939
+          ],
+          [
+            2.338636159912336e-05,
+            0.9999999968112965,
+            7.635761303716294e-05,
+            -0.4363182277280122
+          ],
+          [
+            0.9219754828821612,
+            -0.017367227034853615,
+            0.38685861550355227,
+            -0.11248268649810125
+          ],
+          [
+            0.0001568026745332667,
+            0.9999999864993193,
+            4.913534758141947e-05,
+            -0.43637430614665534
+          ],
+          [
+            4.910876869725686e-05,
+            0.9999999987387217,
+            1.0530221127197822e-05,
+            -0.4363571963872779
+          ],
+          [
+            0.9762567481782775,
+            0.002205294789651485,
+            0.21660539769651654,
+            -0.2194751515476105
+          ],
+          [
+            5.4437307381834986e-05,
+            0.9999999984453485,
+            1.207819012465009e-05,
+            -0.43635821314211565
+          ],
+          [
+            6.239561721634145e-05,
+            0.9999999979463735,
+            1.46301013463013e-05,
+            -0.43635961898154957
+          ],
+          [
+            0.00010271581626525451,
+            -0.9999999944626373,
+            2.289511927954956e-05,
+            0.42878072811835083
+          ],
+          [
+            0.9760457403012179,
+            0.0017540205722217056,
+            0.2175583513719475,
+            -0.2187538342964727
+          ],
+          [
+            0.973593601706668,
+            0.0017312262224613156,
+            0.2282816277574798,
+            -0.21281729246242168
+          ],
+          [
+            0.9445445377157478,
+            -0.01706519504108644,
+            0.32793962156097267,
+            -0.14783646302562445
+          ],
+          [
+            0.9542295574744813,
+            -0.00598277270971471,
+            0.29901531411076454,
+            -0.16950548432751894
+          ],
+          [
+            0.00017970783323499674,
+            -0.9999999827905356,
+            4.608712783214583e-05,
+            0.4287664052215408
+          ],
+          [
+            0.9686370506434426,
+            -0.005780836330787585,
+            0.2484126527616684,
+            -0.19835321929679411
+          ],
+          [
+            0.00024808292910038035,
+            -0.9999999628413514,
+            0.00011301396471230732,
+            0.42877555526283573
+          ],
+          [
+            0.9096574936189111,
+            -0.028303988547601355,
+            0.41439368785643677,
+            -0.09075024552823499
+          ],
+          [
+            0.8562248513191658,
+            -0.03523351055954591,
+            0.5154004304588062,
+            -0.02286153320903958
+          ],
+          [
+            0.8655995825189,
+            -0.02872804694840305,
+            0.4999120543271952,
+            -0.03599191013513994
+          ],
+          [
+            0.6650959959978655,
+            -0.025873885691279803,
+            0.7463094921993434,
+            0.1427461183370897
+          ],
+          [
+            0.022236083965560715,
+            -0.0012263510641528238,
+            0.9997519955633717,
+            0.45425565148400604
+          ],
+          [
+            -0.00030029806699211905,
+            -0.9999999321380182,
+            0.00021341281559785925,
+            0.42899564214790076
+          ],
+          [
+            -8.068555183721917e-06,
+            -0.9999999999653835,
+            2.0326088706641878e-06,
+            0.42880712541467786
+          ],
+          [
+            3.5672225161929103e-06,
+            -0.9999999996387441,
+            2.6641819384584303e-05,
+            0.4288148290313666
+          ],
+          [
+            6.634780313256413e-07,
+            -0.9999999997949387,
+            2.0240614163959743e-05,
+            0.42881279170247777
+          ],
+          [
+            9.041101853093064e-07,
+            -0.9999999997813933,
+            2.0890095890441402e-05,
+            0.42881301591154114
+          ],
+          [
+            0.682393992628882,
+            -0.03427812745392466,
+            0.7301804220891339,
+            0.13330270219955648
+          ],
+          [
+            0.7883709172376924,
+            -0.03410935192024972,
+            0.6142538961743591,
+            0.04494809800436814
+          ],
+          [
+            0.7909099832927434,
+            -0.03558946354579901,
+            0.6108967084642006,
+            0.043197904225667355
+          ],
+          [
+            0.47198895122774787,
+            -0.015204313451396938,
+            0.8814733454684845,
+            0.2629413945887964
+          ],
+          [
+            0.49666088903623745,
+            -0.025395967078175163,
+            0.8675730552281453,
+            0.25299790871522615
+          ],
+          [
+            0.04323885525490333,
+            -0.0013262428648119033,
+            0.9990638830806112,
+            0.44743066941202103
+          ],
+          [
+            0.13554576898694326,
+            -0.0015256756293802807,
+            0.9907699111416394,
+            0.41465559980199107
+          ],
+          [
+            3.0369335331618206e-06,
+            0.9999999996401889,
+            2.6653312633203224e-05,
+            -0.4363347003759719
+          ],
+          [
+            4.106613415723333e-06,
+            0.9999999995410508,
+            3.001723358389149e-05,
+            -0.4363334864663198
+          ],
+          [
+            4.2545908080143415e-06,
+            -0.9999999995803255,
+            2.8657420483506504e-05,
+            0.42881554175532677
+          ],
+          [
+            2.4602321879859534e-05,
+            -0.999999996940903,
+            7.424903955707783e-05,
+            0.4288301164397425
+          ],
+          [
+            0.14685187453254767,
+            -0.005652756906794685,
+            0.989142342277202,
+            0.4121184906321286
+          ],
+          [
+            0.29284118099733714,
+            -0.006235990498463669,
+            0.9561407611510911,
+            0.350831120087776
+          ],
+          [
+            0.31449882006610236,
+            -0.014466581930937994,
+            0.9491476229671889,
+            0.3442638153370039
+          ],
+          [
+            0.023373923801982513,
+            -3.306357521132575e-05,
+            0.9997267919751371,
+            0.4533774607757508
+          ],
+          [
+            0.03962986036380004,
+            -3.3046629996136945e-05,
+            0.9992144279760306,
+            0.44807115279877935
+          ],
+          [
+            -5.153307617692146e-06,
+            0.9999999999765561,
+            4.509002041332771e-06,
+            -0.4363423442894075
+          ],
+          [
+            8.595633814238462e-07,
+            0.9999999997647764,
+            2.1672751924786587e-05,
+            -0.4363363109072899
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.30350521221765614
+          ],
+          [
+            -1.0,
+            -0.0,
+            -0.0,
+            0.30350521221765614
+          ]
+        ],
+        "convex_verified": true,
+        "generation": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "hand_authored_or_placeholder": false,
+        "handle_partition_axis": 2,
+        "handle_partition_fractions": [
+          0.2,
+          0.8
+        ],
+        "handle_role": "right",
+        "handle_seam_overlaps_m": [
+          0.00750539749860768,
+          0.007021140754222888
+        ],
+        "handle_segment": "positive_leg",
+        "handle_source_triangle_coverage_verified": true,
+        "mesh_collision_approximation": "convexHull",
+        "method": "welded_source_handle_component_20_60_20_partition_plus_one_face_ring_then_convex_hull",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "integrated_u_pull_compound_collider",
+        "source_component_closed_manifold_verified": true,
+        "source_component_count": 2,
+        "source_derived": true,
+        "source_face_ordinals": [
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113,
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          121,
+          122,
+          123,
+          124,
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157,
+          158,
+          159,
+          160,
+          161,
+          162,
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177,
+          178,
+          180,
+          182,
+          183,
+          184,
+          186,
+          358,
+          359,
+          360,
+          361,
+          362,
+          363,
+          364,
+          365,
+          366,
+          367
+        ],
+        "source_face_ordinals_sha256": "19e734a6975592241ffe220891d8cfd9a35ab487c9f703bb3e6123dab1f61eaa",
+        "source_node": "metal_office_desk_drawer_01",
+        "source_vertex_indices": [
+          112,
+          115,
+          119,
+          122,
+          125,
+          131,
+          133,
+          135,
+          137,
+          139,
+          141,
+          143,
+          155,
+          161,
+          167,
+          169,
+          171,
+          173,
+          175,
+          177,
+          189,
+          191,
+          193,
+          195,
+          197,
+          209,
+          211,
+          213,
+          215,
+          217,
+          221,
+          399,
+          403,
+          406,
+          409
+        ],
+        "source_vertex_indices_sha256": "87142ade7013103e0c8a29ebebd7d0657a5e347b340611c61be5418a85c98a39",
+        "source_vertex_subset_verified": true,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_visible_prim": "bc017_right_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_weld_tolerance_m": 1e-09,
+        "source_welded_vertex_count": 188
+      }
+    ],
+    "collider_prims": {
+      "bc017_fixture_base_link": [
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition"
+      ],
+      "bc017_left_drawer_link": [
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex"
+      ],
+      "bc017_right_drawer_link": [
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex"
+      ]
+    },
+    "drawer_closed_alignment_x_m": {
+      "left": 0.0006590764223662734,
+      "right": -0.0006590764223662347
+    },
+    "drawer_closed_alignment_y_m": {
+      "left": 0.001057420000406199,
+      "right": -0.0010574200004062765
+    },
+    "drawer_source_nodes": [
+      "metal_office_desk_drawer_01",
+      "metal_office_desk_drawer_04"
+    ],
+    "left_target_bounds_max_m": [
+      -0.5121210217475891,
+      0.7092275619506836,
+      0.4762135446071625
+    ],
+    "left_target_bounds_min_m": [
+      -0.9234539866447449,
+      0.5472996234893799,
+      -0.3024718463420868
+    ],
+    "left_target_source_node": "metal_office_desk_drawer_04",
+    "local_handle_centers_m": {
+      "left": [
+        0.31816159721457754,
+        0.4325748299808637,
+        0.5006568257511975
+      ],
+      "pair_center": [
+        0.3181616024113013,
+        0.4325748299808637,
+        -3.995284429125778e-05
+      ],
+      "right": [
+        0.31816160760802503,
+        0.4325748299808637,
+        -0.50073673143978
+      ]
+    },
+    "local_support_min_y_m": 0.0,
+    "omitted_fixed_decorative_source_nodes": [],
+    "right_target_bounds_max_m": [
+      0.9235686659812927,
+      0.7122595310211182,
+      0.478103369474411
+    ],
+    "right_target_bounds_min_m": [
+      0.512235701084137,
+      0.5503316521644592,
+      -0.30058202147483826
+    ],
+    "right_target_source_node": "metal_office_desk_drawer_01",
+    "runtime_handle_grip_bounds_m": {
+      "left": [
+        [
+          0.3035051706434063,
+          0.42880354754630623,
+          0.4605144859851975
+        ],
+        [
+          0.33281802378574876,
+          0.4363461124154212,
+          0.5407991655171975
+        ]
+      ],
+      "right": [
+        [
+          0.30350519143030125,
+          0.42880354754630623,
+          -0.54087907120578
+        ],
+        [
+          0.33281802378574876,
+          0.43634611241542126,
+          -0.46059439167378
+        ]
+      ]
+    },
+    "source_bounds_max_m": [
+      0.9999995231628418,
+      0.7875000238418579,
+      0.478103369474411
+    ],
+    "source_bounds_min_m": [
+      -1.0000008344650269,
+      0.0,
+      -0.4691101610660553
+    ],
+    "source_closed_front_z_m": 0.4351328909395,
+    "source_to_runtime_orientation_wxyz": [
+      0.7071067811865476,
+      0.0,
+      0.7071067811865476,
+      0.0
+    ],
+    "task_scale_multiplier": 1.55,
+    "uniform_scale": 0.6975,
+    "visual_collision_bound_audit": {
+      "bc017_fixture_base_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.33232381939888,
+          0.5492812395095825,
+          0.6975005865097046
+        ],
+        "collision_minimum_m": [
+          -0.3272043466567993,
+          0.0,
+          -0.697499692440033
+        ],
+        "maximum_absolute_bound_error_m": 2.7120113377243626e-08,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.33232383079826844,
+          0.5492812666296959,
+          0.6975005820393562
+        ],
+        "visual_minimum_m": [
+          -0.3272043373435734,
+          0.0,
+          -0.697499667406082
+        ]
+      },
+      "bc017_left_drawer_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.33281803131103516,
+          0.49574363231658936,
+          0.6441091299057007
+        ],
+        "collision_minimum_m": [
+          -0.2103150337934494,
+          0.3827989101409912,
+          0.357204407453537
+        ],
+        "maximum_absolute_bound_error_m": 2.5779008927528935e-08,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.332818023785862,
+          0.495743644461008,
+          0.6441091556847096
+        ],
+        "visual_minimum_m": [
+          -0.21031503640123936,
+          0.38279890738424865,
+          0.3572044126689435
+        ]
+      },
+      "bc017_right_drawer_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.33281803131103516,
+          0.49574360251426697,
+          -0.35728439688682556
+        ],
+        "collision_minimum_m": [
+          -0.2103150337934494,
+          0.3827989101409912,
+          -0.6441891193389893
+        ],
+        "maximum_absolute_bound_error_m": 2.51829622710531e-08,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.3328180237860356,
+          0.4957436028868237,
+          -0.35728440150618557
+        ],
+        "visual_minimum_m": [
+          -0.21031503640106577,
+          0.38279890738430405,
+          -0.6441891445219515
+        ]
+      }
+    }
+  },
+  "formal": false,
+  "physx_live_validated": false,
+  "procedural_collision_geometry": false,
+  "procedural_visible_geometry": false,
+  "runtime_usd_sha256": "06b503a2c5f4d0e153dd8bbd2a189a69b34138513d2da29ad59a2c45ee2f336c",
+  "schema": "handson.bc017.source-lineage",
+  "selected_asset": {
+    "creator": "Ulan Cabanilla",
+    "license": "CC0 1.0",
+    "title": "Metal Office Desk",
+    "url": "https://polyhaven.com/a/metal_office_desk"
+  },
+  "source_archive_sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+  "visible_geometry": "selected converted source meshes only"
+}

@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="AR5-5_08R-W4C1C9-ZY2">
+  <!-- Constants for robot dimensions -->
+  <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="Beige">
+    <color rgba="1.0 0.784 0.5765 1.0"/>
+  </material>
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_base"/>
+  </joint>
+  <!--base-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_base">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_1" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_base"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link1"/>
+    <limit effort="113" lower="-3.1067" upper="3.1067" velocity="3.0543261909900763"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <!--link 1-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.166"/>
+      <inertia ixx="0.00329374" ixy="0.00000029" ixz="0.00000048" iyy="0.00258807" iyz="0.00001496" izz="0.00314817"/>
+      <origin rpy="0 0 0" xyz="0.000186 -0.0015429999999999999 0.172784"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_2" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link1"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link2"/>
+    <limit effort="113" lower="-2.0944" upper="2.0944" velocity="3.0543261909900763"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.1745"/>
+  </joint>
+  <!--link 2-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.903"/>
+      <inertia ixx="0.00779827" ixy="0.00000248" ixz="0.00000226" iyy="0.00674843" iyz="0.00049284" izz="0.00305518"/>
+      <origin rpy="0 0 0" xyz="1.7e-05 -0.001795 0.10669100000000001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_3" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link2"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link3"/>
+    <limit effort="70" lower="-3.1067" upper="3.1067" velocity="4.71238898038469"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.332"/>
+  </joint>
+  <!--link 3-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.845"/>
+      <inertia ixx="0.00635592" ixy="0.00001599" ixz="0.00029945" iyy="0.00581609" iyz="0.00004683" izz="0.00269115"/>
+      <origin rpy="0 0 0" xyz="0.009022 0.0009 -0.019936"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_4" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link3"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link4"/>
+    <limit effort="70" lower="-1.0472" upper="2.5307" velocity="5.235987755982989"/>
+    <!--     lower="-1.0472" upper="1.0472" -->
+    <axis xyz="0 1 0"/>
+    <!--     <origin rpy="0 0 0" xyz=0.0105 0.0 0.0/> -->
+    <origin rpy="0 0 0" xyz="0.0105 0.0 0.0"/>
+  </joint>
+  <!--link 4-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link4.stl" scale=".001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.037"/>
+      <inertia ixx="0.00294610" ixy="0.00002481" ixz="-0.00011850" iyy="0.00244455" iyz="-0.00022011" izz="0.00140934"/>
+      <origin rpy="0 0 0" xyz="-0.009272 0.002169 0.084042"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_5" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link4"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link5"/>
+    <limit effort="19" lower="-3.1067" upper="3.1067" velocity="4.1887902047863905"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="-0.0105 0.0 0.278"/>
+  </joint>
+  <!--link 5-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link5">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.279"/>
+      <inertia ixx="0.00240951" ixy="0.00004151" ixz="-0.00004311" iyy="0.00200115" iyz="-0.00006491" izz="0.00158266"/>
+      <origin rpy="0 0 0" xyz="-0.000776 -0.000804 -0.08673399999999999"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_6" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link5"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link6"/>
+    <limit effort="19" lower="-1.0472" upper="1.0472" velocity="4.1887902047863905"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <!--link 6-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link6">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="0.906"/>
+      <inertia ixx="0.00061487" ixy="0.00000092" ixz="-0.00000097" iyy="0.00074943" iyz="-0.00000047" izz="0.00076056"/>
+      <origin rpy="0 0 0" xyz="-0.005059 -0.00025 -5.5e-05"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_joint_7" type="revolute">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link6"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_link7"/>
+    <limit effort="19" lower="-1.0472" upper="1.0472" velocity="4.1887902047863905"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <!--link 7-->
+  <link name="AR5-5_08R-W4C1C9-ZY2_link7">
+    <visual>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="0.33"/>
+      <inertia ixx="0.00046020" ixy="-0.00000266" ixz="0.00004064" iyy="0.00068698" iyz="0.00000424" izz="0.00043963"/>
+      <origin rpy="0 0 0" xyz="-0.00122 0.0006730000000000001 0.053984000000000004"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://AR5-5_08R-W4C1C9-ZY2_description/meshes/AR5-5_08R-W4C1C9-ZY2_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="AR5-5_08R-W4C1C9-ZY2_flan_link">
+    <visual>
+      <geometry>
+        <mesh filename="../meshes/right/wrist_fisheye_flange_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 -0.7853981634" xyz="0 0 0"/>
+      <material name="grey"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="../meshes/right/wrist_fisheye_flange_assembly.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 -0.7853981634" xyz="0 0 0"/>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_flan_joint" type="fixed">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_link7"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_flan_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.09"/>
+  </joint>
+  <link name="AR5-5_08R-W4C1C9-ZY2_wrist_fisheye_frame">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0"/>
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+    </inertial>
+  </link>
+  <joint name="AR5-5_08R-W4C1C9-ZY2_wrist_fisheye_joint" type="fixed">
+    <parent link="AR5-5_08R-W4C1C9-ZY2_flan_link"/>
+    <child link="AR5-5_08R-W4C1C9-ZY2_wrist_fisheye_frame"/>
+    <origin rpy="0.1654200552 0 -0.7853981634" xyz="-0.04184658 -0.04184658 0.00988"/>
+  </joint>
+</robot>

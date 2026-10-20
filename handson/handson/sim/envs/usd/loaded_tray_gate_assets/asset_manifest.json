@@ -1,0 +1,1051 @@
+{
+  "assets": {
+    "two_handle_tray": {
+      "baked_transform": {
+        "axis_mapping": "raw glTF (x=end handles, y=tray width, z=height) -> task USD (X=raw y, Y=raw x, Z=raw z)",
+        "handle_center_y_target_m": 0.185,
+        "policy": "one uniform scale from the selected source handle-center spacing",
+        "source_bbox_center_xyz": [
+          0.0,
+          4.5e-08,
+          0.059475929
+        ],
+        "source_handle_mid_x_m": 0.0,
+        "uniform_scale": 0.431227098,
+        "x_scale_from_source_y": 0.431227098,
+        "y_scale_from_source_x": 0.431227098,
+        "z_scale_from_source_z": 0.431227098
+      },
+      "collision_api_count": 17,
+      "collision_inventory": {
+        "box_count": 5,
+        "boxes": [
+          {
+            "center_xyz_m": [
+              -6e-09,
+              0.0,
+              -0.023728013
+            ],
+            "fit_source": "source inner-floor bounds from the horizontal deck-top vertex level",
+            "half_extents_xyz_m": [
+              0.09937157,
+              0.181324831,
+              0.001919625
+            ],
+            "path": "/WoodenTray/Collision/deck",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Body",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              -0.102963529,
+              0.0,
+              -0.011419748
+            ],
+            "fit_source": "source outer-to-inner -raw-Y rim bounds",
+            "half_extents_xyz_m": [
+              0.003591952,
+              0.188675259,
+              0.01422789
+            ],
+            "path": "/WoodenTray/Collision/rim_x_negative",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Body",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              0.102963523,
+              0.0,
+              -0.011419748
+            ],
+            "fit_source": "source inner-to-outer +raw-Y rim bounds",
+            "half_extents_xyz_m": [
+              0.003591959,
+              0.188675259,
+              0.01422789
+            ],
+            "path": "/WoodenTray/Collision/rim_x_positive",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Body",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              -6e-09,
+              -0.185000045,
+              -0.011419748
+            ],
+            "fit_source": "source outer-to-inner -raw-X end-rim bounds",
+            "half_extents_xyz_m": [
+              0.09937157,
+              0.003675215,
+              0.01422789
+            ],
+            "path": "/WoodenTray/Collision/rim_y_negative",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Body",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              -6e-09,
+              0.185000045,
+              -0.011419748
+            ],
+            "fit_source": "source inner-to-outer +raw-X end-rim bounds",
+            "half_extents_xyz_m": [
+              0.09937157,
+              0.003675215,
+              0.01422789
+            ],
+            "path": "/WoodenTray/Collision/rim_y_positive",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Body",
+            "shape": "box"
+          }
+        ],
+        "handle_convex_prism_count": 12,
+        "handle_prisms": [
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.051912906,
+                -0.185000002,
+                0.010041742
+              ],
+              "max_xyz_m": [
+                -0.042847615,
+                -0.181324795,
+                0.016395733
+              ],
+              "min_xyz_m": [
+                -0.060978197,
+                -0.18867521,
+                0.003687751
+              ],
+              "size_xyz_m": [
+                0.018130582,
+                0.007350415,
+                0.012707982
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_support_00",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.141406178,
+              -0.099362016
+            ],
+            "segment_role": "support",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.03234723,
+                -0.185000002,
+                0.014422136
+              ],
+              "max_xyz_m": [
+                -0.021846846,
+                -0.181324795,
+                0.023468567
+              ],
+              "min_xyz_m": [
+                -0.042847615,
+                -0.18867521,
+                0.005375705
+              ],
+              "size_xyz_m": [
+                0.021000769,
+                0.007350415,
+                0.018092862
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_top_bar_01",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.099362016,
+              -0.050662
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.010923433,
+                -0.185000002,
+                0.021259931
+              ],
+              "max_xyz_m": [
+                -1.9e-08,
+                -0.181324795,
+                0.025647638
+              ],
+              "min_xyz_m": [
+                -0.021846846,
+                -0.18867521,
+                0.016872223
+              ],
+              "size_xyz_m": [
+                0.021846826,
+                0.007350415,
+                0.008775415
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_top_bar_02",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.050662,
+              0.0
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.010923395,
+                -0.185000002,
+                0.021259931
+              ],
+              "max_xyz_m": [
+                0.021846808,
+                -0.181324795,
+                0.025647638
+              ],
+              "min_xyz_m": [
+                -1.9e-08,
+                -0.18867521,
+                0.016872223
+              ],
+              "size_xyz_m": [
+                0.021846828,
+                0.007350415,
+                0.008775415
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_top_bar_03",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.0,
+              0.050662
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.032347191,
+                -0.185000002,
+                0.014422136
+              ],
+              "max_xyz_m": [
+                0.042847574,
+                -0.181324795,
+                0.023468567
+              ],
+              "min_xyz_m": [
+                0.021846808,
+                -0.18867521,
+                0.005375705
+              ],
+              "size_xyz_m": [
+                0.021000765,
+                0.007350415,
+                0.018092862
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_top_bar_04",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.050662,
+              0.099362016
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.051912865,
+                -0.185000002,
+                0.010041742
+              ],
+              "max_xyz_m": [
+                0.060978156,
+                -0.181324795,
+                0.016395733
+              ],
+              "min_xyz_m": [
+                0.042847574,
+                -0.18867521,
+                0.003687751
+              ],
+              "size_xyz_m": [
+                0.018130582,
+                0.007350415,
+                0.012707982
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_negative_y_support_05",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.099362016,
+              0.141406178
+            ],
+            "segment_role": "support",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.051912906,
+                0.185000002,
+                0.010041742
+              ],
+              "max_xyz_m": [
+                -0.042847615,
+                0.18867521,
+                0.016395733
+              ],
+              "min_xyz_m": [
+                -0.060978197,
+                0.181324795,
+                0.003687751
+              ],
+              "size_xyz_m": [
+                0.018130582,
+                0.007350415,
+                0.012707982
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_support_00",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.141406178,
+              -0.099362016
+            ],
+            "segment_role": "support",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.03234723,
+                0.185000002,
+                0.014422136
+              ],
+              "max_xyz_m": [
+                -0.021846846,
+                0.18867521,
+                0.023468567
+              ],
+              "min_xyz_m": [
+                -0.042847615,
+                0.181324795,
+                0.005375705
+              ],
+              "size_xyz_m": [
+                0.021000769,
+                0.007350415,
+                0.018092862
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_top_bar_01",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.099362016,
+              -0.050662
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                -0.010923433,
+                0.185000002,
+                0.021259931
+              ],
+              "max_xyz_m": [
+                -1.9e-08,
+                0.18867521,
+                0.025647638
+              ],
+              "min_xyz_m": [
+                -0.021846846,
+                0.181324795,
+                0.016872223
+              ],
+              "size_xyz_m": [
+                0.021846826,
+                0.007350415,
+                0.008775415
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_top_bar_02",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              -0.050662,
+              0.0
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.010923395,
+                0.185000002,
+                0.021259931
+              ],
+              "max_xyz_m": [
+                0.021846808,
+                0.18867521,
+                0.025647638
+              ],
+              "min_xyz_m": [
+                -1.9e-08,
+                0.181324795,
+                0.016872223
+              ],
+              "size_xyz_m": [
+                0.021846828,
+                0.007350415,
+                0.008775415
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_top_bar_03",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.0,
+              0.050662
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.032347191,
+                0.185000002,
+                0.014422136
+              ],
+              "max_xyz_m": [
+                0.042847574,
+                0.18867521,
+                0.023468567
+              ],
+              "min_xyz_m": [
+                0.021846808,
+                0.181324795,
+                0.005375705
+              ],
+              "size_xyz_m": [
+                0.021000765,
+                0.007350415,
+                0.018092862
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_top_bar_04",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.050662,
+              0.099362016
+            ],
+            "segment_role": "top_bar",
+            "shape": "source_profile_convex_prism"
+          },
+          {
+            "approximation": "convexHull",
+            "bbox_m": {
+              "center_xyz_m": [
+                0.051912865,
+                0.185000002,
+                0.010041742
+              ],
+              "max_xyz_m": [
+                0.060978156,
+                0.18867521,
+                0.016395733
+              ],
+              "min_xyz_m": [
+                0.042847574,
+                0.181324795,
+                0.003687751
+              ],
+              "size_xyz_m": [
+                0.018130582,
+                0.007350415,
+                0.012707982
+              ]
+            },
+            "path": "/WoodenTray/Collision/handle_positive_y_support_05",
+            "physics_material": "/WoodenTray/PhysicsMaterials/Handle",
+            "raw_y_range": [
+              0.099362016,
+              0.141406178
+            ],
+            "segment_role": "support",
+            "shape": "source_profile_convex_prism"
+          }
+        ],
+        "policy": "compound source-fit colliders preserve the open deck cavity and both handle finger holes; no whole-object convex hull"
+      },
+      "deck_top_local_z_m": -0.021808388,
+      "default_prim": "/WoodenTray",
+      "file": "bc005_selected_wooden_tray.usd",
+      "handle_center_y_m": [
+        -0.185,
+        0.185
+      ],
+      "handle_top_bar": {
+        "central_arch_x_range_m": [
+          -0.042847594,
+          0.042847594
+        ],
+        "finite_outer_x_range_m": [
+          -0.060978176,
+          0.060978176
+        ],
+        "local_z_range_m": [
+          0.003687751,
+          0.025647638
+        ],
+        "note": "outer range includes the two source-derived arch shoulders; central range excludes them",
+        "rear_grip_reference": {
+          "center_local_z_m": 0.006103646,
+          "local_x_m": -0.0579292669928546,
+          "note": "source-profile value at the task's preferred rear grasp; the handle is arched, so one fixed Z is not exact over its full X range",
+          "surface_local_z_range_m": [
+            0.003971604,
+            0.008235689
+          ]
+        }
+      },
+      "mass_properties": {
+        "assumption": "uniform-density wood across all 17 source-derived collision solids; total mass fixed at 0.30 kg",
+        "center_of_mass_local_xyz_m": [
+          2.3852169e-08,
+          -0.0,
+          -0.017203753841848
+        ],
+        "collision_solid_count": 17,
+        "derivation": "exact analytic integration of the five authored boxes plus signed-tetrahedral integration of the twelve authored 8-vertex handle prisms, followed by a compound parallel-axis sum",
+        "diagonal_inertia_about_com_kg_m2": [
+          0.004672670357746,
+          0.00164232244842,
+          0.006257482400569
+        ],
+        "equivalent_uniform_density_kg_per_m3": 568.7938294822155,
+        "inertia_frame": "tray-local XYZ; the audited off-diagonal terms are below 1e-9 kg m^2, so MJCF may use an identity inertial frame",
+        "inertia_tensor_about_com_kg_m2": [
+          [
+            0.004672670357746,
+            -0.0,
+            -4.8855e-11
+          ],
+          [
+            -0.0,
+            0.00164232244842,
+            0.0
+          ],
+          [
+            -4.8855e-11,
+            0.0,
+            0.006257482400569
+          ]
+        ],
+        "maximum_abs_off_diagonal_kg_m2": 4.8855e-11,
+        "total_collision_volume_m3": 0.000527431882081,
+        "total_mass_kg": 0.3,
+        "volume_by_shape_m3": {
+          "boxes": 0.000514128572535,
+          "source_profile_convex_prisms": 1.3303309546e-05
+        }
+      },
+      "mesh_collision_api_count": 12,
+      "physics_materials": {
+        "binding_purpose": "physics",
+        "binding_relationship": "material:binding:physics",
+        "material_api_count": 2,
+        "materials_by_path": {
+          "/WoodenTray/PhysicsMaterials/Body": {
+            "collider_paths": [
+              "/WoodenTray/Collision/deck",
+              "/WoodenTray/Collision/rim_x_negative",
+              "/WoodenTray/Collision/rim_x_positive",
+              "/WoodenTray/Collision/rim_y_negative",
+              "/WoodenTray/Collision/rim_y_positive"
+            ],
+            "dynamic_friction": 1.0,
+            "restitution": 0.0,
+            "role": "deck_and_rims",
+            "static_friction": 1.1
+          },
+          "/WoodenTray/PhysicsMaterials/Handle": {
+            "collider_paths": [
+              "/WoodenTray/Collision/handle_negative_y_support_00",
+              "/WoodenTray/Collision/handle_negative_y_top_bar_01",
+              "/WoodenTray/Collision/handle_negative_y_top_bar_02",
+              "/WoodenTray/Collision/handle_negative_y_top_bar_03",
+              "/WoodenTray/Collision/handle_negative_y_top_bar_04",
+              "/WoodenTray/Collision/handle_negative_y_support_05",
+              "/WoodenTray/Collision/handle_positive_y_support_00",
+              "/WoodenTray/Collision/handle_positive_y_top_bar_01",
+              "/WoodenTray/Collision/handle_positive_y_top_bar_02",
+              "/WoodenTray/Collision/handle_positive_y_top_bar_03",
+              "/WoodenTray/Collision/handle_positive_y_top_bar_04",
+              "/WoodenTray/Collision/handle_positive_y_support_05"
+            ],
+            "dynamic_friction": 1.2,
+            "restitution": 0.0,
+            "role": "graspable_handles",
+            "static_friction": 1.35
+          }
+        },
+        "policy": "deck/rim friction matches the task's former tray-body contact contract; higher handle friction is limited to grasp surfaces",
+        "resolved_binding_count": 17,
+        "resolved_bindings": [
+          {
+            "collider_path": "/WoodenTray/Collision/deck",
+            "material_path": "/WoodenTray/PhysicsMaterials/Body",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_support_00",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_support_05",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_top_bar_01",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_top_bar_02",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_top_bar_03",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_negative_y_top_bar_04",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_support_00",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_support_05",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_top_bar_01",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_top_bar_02",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_top_bar_03",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/handle_positive_y_top_bar_04",
+            "material_path": "/WoodenTray/PhysicsMaterials/Handle",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/rim_x_negative",
+            "material_path": "/WoodenTray/PhysicsMaterials/Body",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/rim_x_positive",
+            "material_path": "/WoodenTray/PhysicsMaterials/Body",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/rim_y_negative",
+            "material_path": "/WoodenTray/PhysicsMaterials/Body",
+            "relationship": "material:binding:physics"
+          },
+          {
+            "collider_path": "/WoodenTray/Collision/rim_y_positive",
+            "material_path": "/WoodenTray/PhysicsMaterials/Body",
+            "relationship": "material:binding:physics"
+          }
+        ]
+      },
+      "role": "visual_and_source_derived_compound_collision_without_rigid_owner",
+      "root_applied_schemas": [],
+      "root_has_articulation_api": false,
+      "root_has_mass_api": false,
+      "root_has_rigid_body_api": false,
+      "sha256": "4e189172060feb2d6d35687a604726962cf9155e8efc3e714f0d3b290d151b3f",
+      "source_geometry": {
+        "bbox": {
+          "center_xyz_m": [
+            0.0,
+            4.5e-08,
+            0.059475929
+          ],
+          "max_xyz_m": [
+            0.437531084,
+            0.247098342,
+            0.118951872
+          ],
+          "min_xyz_m": [
+            -0.437531084,
+            -0.247098252,
+            -1.3e-08
+          ],
+          "size_xyz_m": [
+            0.875062168,
+            0.494196594,
+            0.118951885
+          ]
+        },
+        "deck_top_source_z": 0.008903068,
+        "handle_arch_outer_source_y_range": [
+          -0.141406178,
+          0.141406178
+        ],
+        "position_count": 1606,
+        "rim_top_source_z": 0.065987907,
+        "triangle_count": 1396
+      },
+      "spawn_height_contract": {
+        "bottom_world_z_m": 0.891,
+        "deck_top_world_z_m": 0.89483925,
+        "note": "asset root is the exact visual-bbox center in Z",
+        "root_world_z_for_bottom_0_891_m": 0.916647638
+      },
+      "texture": {
+        "modification": "CC-BY-4.0 source texture resized to 1024x1024 with Pillow LANCZOS; no color or content edits",
+        "output_file": "textures/wooden_tray_baseColor_1k.png",
+        "output_sha256": "529f759e8be32ceeb3bbf0d978752cafa3a7ccdc2cfc5cdc4607974932b792cb",
+        "output_size_px": [
+          1024,
+          1024
+        ],
+        "source_member": "textures/Scene_-_Root_baseColor.png",
+        "source_sha256": "c206828ec7924252d02d2cd2035ece49a42a3838fa1f8120da217e3d003bebe6",
+        "source_size_px": [
+          2048,
+          2048
+        ]
+      },
+      "texture_coordinates": {
+        "conversion": "st=(u, 1-v)",
+        "opacity": "opaque source material; fixed 1.0",
+        "runtime": "USD st with lower-left image origin",
+        "source": "glTF TEXCOORD_0 with upper-left image origin"
+      },
+      "usable_deck_bounds_xy_m": {
+        "half_extents": [
+          0.09937157,
+          0.18132483
+        ],
+        "max": [
+          0.099371564,
+          0.18132483
+        ],
+        "min": [
+          -0.099371577,
+          -0.18132483
+        ],
+        "source_basis": "horizontal source inner-floor top vertex level"
+      },
+      "visual_mesh_count": 1,
+      "visual_triangle_count": 1396,
+      "world_bbox_m": {
+        "center_xyz_m": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "max_xyz_m": [
+          0.106555481,
+          0.18867526,
+          0.025647638
+        ],
+        "min_xyz_m": [
+          -0.106555481,
+          -0.18867526,
+          -0.025647638
+        ],
+        "size_xyz_m": [
+          0.213110963,
+          0.377350519,
+          0.051295276
+        ]
+      }
+    },
+    "wood_frame": {
+      "baked_transform": {
+        "axis_mapping": "raw glTF (x=width, y=depth, z=height) -> USD (X=depth, Y=width, Z=height)",
+        "policy": "uniform scale from source clear width; vertical translation embeds the unused lower opening below the support plane",
+        "uniform_scale": 0.340840377,
+        "vertical_offset_m": -0.089436679
+      },
+      "collision_fit_recommendation": {
+        "boxes": [
+          {
+            "center_xyz_m": [
+              0.000784183,
+              -0.249698951,
+              0.24
+            ],
+            "fit_source": "source-derived post AABB clipped at the support plane; inner face preserves the selected tray-length opening",
+            "half_extents_xyz_m": [
+              0.032969545,
+              0.061023691,
+              0.24
+            ],
+            "name": "left_post",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              0.001141285,
+              0.248042187,
+              0.24
+            ],
+            "fit_source": "source-derived post AABB clipped at the support plane; inner face preserves the selected tray-length opening",
+            "half_extents_xyz_m": [
+              0.034835653,
+              0.059366927,
+              0.24
+            ],
+            "name": "right_post",
+            "shape": "box"
+          },
+          {
+            "center_xyz_m": [
+              0.0,
+              -0.001094293,
+              0.536812932
+            ],
+            "fit_source": "AABB of source-derived lintel visual mesh",
+            "half_extents_xyz_m": [
+              0.054189438,
+              0.340238271,
+              0.056812933
+            ],
+            "name": "lintel",
+            "shape": "box"
+          }
+        ],
+        "method": "three static boxes fitted to source-derived visual segment AABBs",
+        "status": "recommendation_only_not_authored_in_visual_usdc"
+      },
+      "collision_partition_triangle_counts": {
+        "left_post": 2191,
+        "lintel": 5323,
+        "right_post": 2766
+      },
+      "default_prim": "/WoodFrameVisual",
+      "file": "bc005_selected_wooden_frame.usd",
+      "final_opening_m": {
+        "clear_height_above_support": 0.48,
+        "clear_width": 0.37735052,
+        "depth": 0.10837888,
+        "scaled_source_clear_height": 0.569436679
+      },
+      "mesh_count": 1,
+      "physics_api_counts": {
+        "collision": 0,
+        "mass": 0,
+        "mesh_collision": 0,
+        "rigid_body": 0
+      },
+      "role": "static_visual_only",
+      "segment_world_bboxes_m": {
+        "left_post": {
+          "center_xyz_m": [
+            0.000784184,
+            -0.24969895,
+            0.195504747
+          ],
+          "max_xyz_m": [
+            0.033753728,
+            -0.18867526,
+            0.48
+          ],
+          "min_xyz_m": [
+            -0.032185361,
+            -0.310722641,
+            -0.088990507
+          ],
+          "size_xyz_m": [
+            0.065939089,
+            0.122047381,
+            0.568990507
+          ]
+        },
+        "lintel": {
+          "center_xyz_m": [
+            0.0,
+            -0.001094293,
+            0.536812933
+          ],
+          "max_xyz_m": [
+            0.054189438,
+            0.339143978,
+            0.593625865
+          ],
+          "min_xyz_m": [
+            -0.054189438,
+            -0.341332565,
+            0.48
+          ],
+          "size_xyz_m": [
+            0.108378876,
+            0.680476543,
+            0.113625865
+          ]
+        },
+        "right_post": {
+          "center_xyz_m": [
+            0.001141285,
+            0.22651259,
+            0.19528166
+          ],
+          "max_xyz_m": [
+            0.035976938,
+            0.307409114,
+            0.48
+          ],
+          "min_xyz_m": [
+            -0.033694368,
+            0.145616066,
+            -0.089436679
+          ],
+          "size_xyz_m": [
+            0.069671306,
+            0.161793048,
+            0.569436679
+          ]
+        }
+      },
+      "sha256": "7f0cdc168fd40f4134bebf2cf905ac0a1679847bde9f4dc8a7c563a912c6f7a6",
+      "source_derived_split": {
+        "left_inner_source_x": -0.548961222,
+        "lintel_bottom_source_z": 0.667275786,
+        "opening_measurement_local_z_m": 0.479430563,
+        "opening_measurement_note": "usable post-to-post width measured 0.1% of clear height below the lintel join; clipped decorative join slivers are excluded",
+        "opening_measurement_source_z": 0.665605102,
+        "purpose": "collision fitting only; the visible asset remains one untouched-topology source mesh",
+        "right_inner_source_x": 0.558156788,
+        "source_base_z": -1.003408551
+      },
+      "source_position_count": 10133,
+      "source_triangle_count": 9997,
+      "texture": {
+        "file": "textures/Material_0.002_baseColor.jpeg",
+        "sha256": "62e61b9f80f5181368273da43e8d8e4e46c50d6270a6c1bbaaebed350ba4e0a6"
+      },
+      "texture_coordinates": {
+        "conversion": "st=(u, 1-v)",
+        "opacity": "opaque source material; fixed 1.0",
+        "runtime": "USD st with lower-left image origin",
+        "source": "glTF TEXCOORD_0 with upper-left image origin"
+      },
+      "visual_triangle_count": 9997,
+      "world_bbox_m": {
+        "center_xyz_m": [
+          0.0,
+          -0.001094282,
+          0.252094582
+        ],
+        "max_xyz_m": [
+          0.05418944,
+          0.339143991,
+          0.593625844
+        ],
+        "min_xyz_m": [
+          -0.05418944,
+          -0.341332555,
+          -0.08943668
+        ],
+        "size_xyz_m": [
+          0.10837888,
+          0.680476546,
+          0.683062524
+        ]
+      }
+    }
+  },
+  "coordinate_system": "USD Z-up, metres; asset-local origins",
+  "generation": {
+    "script_repo_relative": "taskdev/tasks/bench320_bc005_loaded_tray_through_narrow_gate/prepare_selected_assets.py",
+    "tray_archive_was_copied": false,
+    "tray_bin_was_copied": false,
+    "tray_gltf_was_copied": false,
+    "tray_source_2k_texture_was_copied": false,
+    "wood_archive_was_copied": false
+  },
+  "schema": "handson_bc005_selected_assets_v6",
+  "sources": {
+    "tray": {
+      "archive_basename": "wooden_tray.zip",
+      "archive_sha256": "876a5d645d248cbd19cff23ca1154c147a9f9b8b1c8247b92d549b012ffb7570",
+      "author": "demidrew",
+      "author_url": "https://sketchfab.com/demidrew",
+      "license": "CC-BY-4.0",
+      "production_policy": "derive visual/collision and 1K texture; do not copy archive, glTF, bin, or 2K source texture",
+      "source_page": "https://sketchfab.com/3d-models/wooden-tray-cfc8d2947628410694cc99d815c22dab"
+    },
+    "wood_frame": {
+      "archive_author": "kasdo.roblox",
+      "archive_basename": "wooden_doorway_-_detailed_3d_model__arch.zip",
+      "archive_sha256": "ea93fefa4005af4d74c062ee35e2f15f0dedf7699b3dfb3f1cf747116d4cba48",
+      "attribution_conflict": "archive/license credits kasdo.roblox; user-selected page checkpoint presented adhamasalah",
+      "license": "CC-BY-4.0",
+      "selected_page_author": "adhamasalah",
+      "source_page": "https://sketchfab.com/3d-models/wooden-doorway-detailed-3d-model-arch-689e3660cd494163a160bf1736fb0a5c"
+    }
+  },
+  "support_files": {
+    "LICENSE.txt": {
+      "sha256": "0b9c488f36cacbc22f910e9e77c71e0ed192701c8d4709c972baa483b6b40c90",
+      "status": "verbatim license.txt from hash-pinned wooden-frame archive"
+    },
+    "SOURCE.md": {
+      "sha256": "3d32bc486e49b2495b4c85c113d9aad2c2a1c1d9e7e97ae68158c0e447f3ca55"
+    },
+    "TRAY_LICENSE.txt": {
+      "sha256": "87c29721f560c7333eadd9c33132d42931d81e48b5e6f99a255b6fd0dadcc1e5",
+      "status": "verbatim license.txt from hash-pinned wooden-tray archive"
+    }
+  },
+  "task_id": "B320-BC005"
+}

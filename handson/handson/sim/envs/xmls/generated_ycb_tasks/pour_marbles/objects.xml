@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="pour_marbles_primitives">
+  <default>
+    <default class="pour_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0"/>
+    </default>
+    <default class="pour_collision">
+      <geom group="3" friction="1.0 0.02 0.001" solref="0.006 1" solimp="0.95 0.98 0.001"/>
+    </default>
+    <default class="marble_collision">
+      <geom group="3" density="1800" friction="0.45 0.004 0.0001" solref="0.004 1" solimp="0.96 0.995 0.001"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="source_cup_mat" rgba="0.92 0.54 0.20 0.42" specular="0.30"/>
+    <material name="source_cup_rim_mat" rgba="1.00 0.78 0.34 0.86" specular="0.35"/>
+    <material name="marble_red_mat" rgba="0.86 0.12 0.10 1.00" specular="0.55" shininess="0.70"/>
+    <material name="marble_blue_mat" rgba="0.10 0.32 0.88 1.00" specular="0.55" shininess="0.70"/>
+    <material name="marble_green_mat" rgba="0.12 0.62 0.24 1.00" specular="0.55" shininess="0.70"/>
+    <material name="marble_yellow_mat" rgba="0.95 0.74 0.12 1.00" specular="0.55" shininess="0.70"/>
+    <material name="marble_white_mat" rgba="0.92 0.92 0.86 1.00" specular="0.55" shininess="0.70"/>
+    <material name="target_bowl_mat" rgba="0.18 0.48 0.92 0.34" specular="0.25"/>
+    <material name="target_bowl_rim_mat" rgba="0.38 0.70 1.00 0.78" specular="0.35"/>
+  </asset>
+
+  <worldbody>
+    <!-- Simplified YCB 19/65 source container: freejoint cup with primitive collision walls. -->
+    <body name="source_container_root_body" pos="-0.18 0.08 0.979">
+      <freejoint name="source_container_root"/>
+      <site name="source_container_center" pos="0 0 0" size="0.004" rgba="1.0 0.55 0.12 0.90"/>
+      <site name="source_container_rim_center" pos="0 0 0.055" size="0.004" rgba="1.0 0.78 0.34 0.90"/>
+      <geom name="source_container_visual" class="pour_visual" type="cylinder"
+            size="0.047 0.055" pos="0 0 0" material="source_cup_mat"/>
+      <geom name="source_container_rim_visual" class="pour_visual" type="cylinder"
+            size="0.050 0.002" pos="0 0 0.055" material="source_cup_rim_mat"/>
+      <geom name="source_container_bottom" class="pour_collision" type="cylinder"
+            size="0.040 0.003" pos="0 0 -0.052" density="620"/>
+      <geom name="source_container_wall_000" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0.044 0 0" quat="1 0 0 0" density="520"/>
+      <geom name="source_container_wall_030" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0.038105 0.022000 0" quat="0.965926 0 0 0.258819" density="520"/>
+      <geom name="source_container_wall_060" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0.022000 0.038105 0" quat="0.866025 0 0 0.500000" density="520"/>
+      <geom name="source_container_wall_090" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0 0.044 0" quat="0.707107 0 0 0.707107" density="520"/>
+      <geom name="source_container_wall_120" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="-0.022000 0.038105 0" quat="0.500000 0 0 0.866025" density="520"/>
+      <geom name="source_container_wall_150" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="-0.038105 0.022000 0" quat="0.258819 0 0 0.965926" density="520"/>
+      <geom name="source_container_wall_180" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="-0.044 0 0" quat="0 0 0 1" density="520"/>
+      <geom name="source_container_wall_210" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="-0.038105 -0.022000 0" quat="-0.258819 0 0 0.965926" density="520"/>
+      <geom name="source_container_wall_240" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="-0.022000 -0.038105 0" quat="-0.500000 0 0 0.866025" density="520"/>
+      <geom name="source_container_wall_270" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0 -0.044 0" quat="-0.707107 0 0 0.707107" density="520"/>
+      <geom name="source_container_wall_300" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0.022000 -0.038105 0" quat="-0.866025 0 0 0.500000" density="520"/>
+      <geom name="source_container_wall_330" class="pour_collision" type="box"
+            size="0.003 0.014 0.052" pos="0.038105 -0.022000 0" quat="-0.965926 0 0 0.258819" density="520"/>
+    </body>
+
+    <!-- Fixed primitive YCB 24 bowl target. -->
+    <body name="target_bowl_root_body" pos="0.13 0.18 0.923">
+      <site name="target_bowl_center" pos="0 0 0.014" size="0.004" rgba="0.28 0.66 1.0 0.80"/>
+      <geom name="target_bowl_visual" class="pour_visual" type="cylinder"
+            size="0.088 0.034" pos="0 0 0.034" material="target_bowl_mat"/>
+      <geom name="target_bowl_rim_visual" class="pour_visual" type="cylinder"
+            size="0.091 0.002" pos="0 0 0.068" material="target_bowl_rim_mat"/>
+      <geom name="target_bowl_bottom" class="pour_collision" type="cylinder"
+            size="0.076 0.003" pos="0 0 0.003" density="700"/>
+      <geom name="target_bowl_wall_000" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0.084 0 0.034" quat="1 0 0 0" density="560"/>
+      <geom name="target_bowl_wall_030" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0.072746 0.042000 0.034" quat="0.965926 0 0 0.258819" density="560"/>
+      <geom name="target_bowl_wall_060" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0.042000 0.072746 0.034" quat="0.866025 0 0 0.500000" density="560"/>
+      <geom name="target_bowl_wall_090" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0 0.084 0.034" quat="0.707107 0 0 0.707107" density="560"/>
+      <geom name="target_bowl_wall_120" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="-0.042000 0.072746 0.034" quat="0.500000 0 0 0.866025" density="560"/>
+      <geom name="target_bowl_wall_150" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="-0.072746 0.042000 0.034" quat="0.258819 0 0 0.965926" density="560"/>
+      <geom name="target_bowl_wall_180" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="-0.084 0 0.034" quat="0 0 0 1" density="560"/>
+      <geom name="target_bowl_wall_210" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="-0.072746 -0.042000 0.034" quat="-0.258819 0 0 0.965926" density="560"/>
+      <geom name="target_bowl_wall_240" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="-0.042000 -0.072746 0.034" quat="-0.500000 0 0 0.866025" density="560"/>
+      <geom name="target_bowl_wall_270" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0 -0.084 0.034" quat="-0.707107 0 0 0.707107" density="560"/>
+      <geom name="target_bowl_wall_300" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0.042000 -0.072746 0.034" quat="-0.866025 0 0 0.500000" density="560"/>
+      <geom name="target_bowl_wall_330" class="pour_collision" type="box"
+            size="0.003 0.021 0.034" pos="0.072746 -0.042000 0.034" quat="-0.965926 0 0 0.258819" density="560"/>
+    </body>
+
+    <body name="marble_0_root_body" pos="-0.18 0.08 0.939">
+      <freejoint name="marble_0_root"/>
+      <geom name="marble_0" class="marble_collision" type="sphere" size="0.008" material="marble_red_mat"/>
+    </body>
+    <body name="marble_1_root_body" pos="-0.164 0.08 0.939">
+      <freejoint name="marble_1_root"/>
+      <geom name="marble_1" class="marble_collision" type="sphere" size="0.008" material="marble_blue_mat"/>
+    </body>
+    <body name="marble_2_root_body" pos="-0.196 0.08 0.939">
+      <freejoint name="marble_2_root"/>
+      <geom name="marble_2" class="marble_collision" type="sphere" size="0.008" material="marble_green_mat"/>
+    </body>
+    <body name="marble_3_root_body" pos="-0.18 0.096 0.939">
+      <freejoint name="marble_3_root"/>
+      <geom name="marble_3" class="marble_collision" type="sphere" size="0.008" material="marble_yellow_mat"/>
+    </body>
+    <body name="marble_4_root_body" pos="-0.18 0.064 0.939">
+      <freejoint name="marble_4_root"/>
+      <geom name="marble_4" class="marble_collision" type="sphere" size="0.008" material="marble_white_mat"/>
+    </body>
+  </worldbody>
+</mujoco>

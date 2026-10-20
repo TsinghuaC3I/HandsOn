@@ -1,0 +1,169 @@
+{
+  "schema": 1,
+  "date": "2026-10-15",
+  "scope": "External robot asset distribution, local import, CPU checks and relocated packaging. No new GPU rollout or learned-policy score.",
+  "distribution": {
+    "catalog_models": 11,
+    "bundled_models": 9,
+    "external_models": {
+      "tianji_m6_ccs": {
+        "paths_excluded": 15,
+        "source_url": "https://github.com/fiveages-sim/robot-descriptions-tianji/tree/b9e73d4b50a071457fe08e5c710f0bcda7731b29",
+        "download_url": "https://github.com/fiveages-sim/robot-descriptions-tianji/archive/b9e73d4b50a071457fe08e5c710f0bcda7731b29.zip",
+        "download_status": "Pinned source archive available; upstream terms remain applicable."
+      },
+      "rokae_ar5": {
+        "paths_excluded": 74,
+        "source_url": "https://github.com/RokaeRobot/rokae_ros2",
+        "download_url": null,
+        "download_status": "No verified public download for the exact AR5-08 benchmark asset set. The inspected official repository contains AR5-07."
+      }
+    },
+    "total_excluded_paths": 89,
+    "external_payloads_absent_from_release_worktree": true,
+    "git_history_rewritten": false,
+    "manifest": "../../handson/handson/assets/robots/external.json",
+    "manifest_sha256": "434c4bdfbcbf34b54d9143c0485b538593ad6e343d93c457fb047641035e7905",
+    "retained_legacy_rokae_ar5_07": {
+      "matched_official_git_blobs": 16,
+      "license": "Apache-2.0",
+      "source_revision": "d6a508c38513d4c39b2f10f14275d0e26df7fb43",
+      "used_as_ar5_08_substitute": false
+    }
+  },
+  "source_review": {
+    "tianji": {
+      "revision": "b9e73d4b50a071457fe08e5c710f0bcda7731b29",
+      "public_source_zip_http_status": 200,
+      "license_gap": "package.xml declares BSD; the exact variant and full license text are absent."
+    },
+    "rokae": {
+      "repository": "https://github.com/RokaeRobot/rokae_ros2",
+      "revision": "d6a508c38513d4c39b2f10f14275d0e26df7fb43",
+      "inspected_branches": [
+        "main"
+      ],
+      "release_count": 0,
+      "tag_count": 0,
+      "exact_complete_public_ar5_08_bundle_verified": false,
+      "documentation": "https://docs.rokae.com/docs/ROS2",
+      "note": "The manual mentions newer AR5-08 packages; the inspected repository contains AR5-07. Neither establishes availability or licensing for the exact benchmark files."
+    }
+  },
+  "clean_cpu_validation": {
+    "platform": "Linux x86_64",
+    "python": "3.11.16",
+    "full_suite": {
+      "passed": 1865,
+      "skipped": 18,
+      "subtests_passed": 9,
+      "failures": 0,
+      "errors": 0
+    },
+    "skip_reasons": {
+      "torch_not_installed": 10,
+      "external_rokae_bundle_absent": 8
+    },
+    "final_external_asset_regression": {
+      "passed": 7,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    "sequence_note": "The full suite preceded the last packaging-glob regression test and narrowed exclusions. The final seven-test regression suite and real wheel/sdist checks passed after those corrections.",
+    "cpu_factories": {
+      "passed": 66,
+      "total": 66,
+      "scope": "Construction only; no reset, rendering or policy execution."
+    },
+    "pip_check": "No broken requirements found.",
+    "bundled_robot_file_hashes": 451,
+    "bundled_render_file_hashes": 80
+  },
+  "installed_validation": {
+    "available_models": 11,
+    "complete_robot_check_passed": true,
+    "focused_suite": {
+      "passed": 49,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    },
+    "tianji_source_only_import": {
+      "passed": true,
+      "xacro": "2.1.1",
+      "generated_urdfs": 2,
+      "byte_identical_to_original": true
+    },
+    "rokae_prepared_bundle_import": {
+      "passed": true,
+      "source": "Existing complete author installation; not a newly verified public download."
+    },
+    "complete_original_render_manifest_passed": true,
+    "complete_original_render_manifest_sha256": "7e1fff0a856e670be5955e30b20aba09cac9eb648852bb5146721eed03e79c5f"
+  },
+  "packaging": {
+    "artifacts": [
+      {
+        "artifact": "handson-0.0.1-py3-none-any.whl",
+        "sha256": "c89643eb239f1cf3bfed9b2603f092d7741d597b7f949996aaa31c4f7010db29",
+        "files": 6655,
+        "external_files_present": 0,
+        "legacy_arm_license_retained": true
+      },
+      {
+        "artifact": "handson-0.0.1.tar.gz",
+        "sha256": "9a737b4e90cd859b17c6313e357047b676990a3fc518bdb1212b54c37c442e63",
+        "files": 6740,
+        "external_files_present": 0,
+        "legacy_arm_license_retained": true
+      }
+    ],
+    "bundled_robot_files_hashed": 451,
+    "bundled_render_files_hashed": 80,
+    "all_external_files_present_in_build_checkout": 89,
+    "relocated_clean_and_imported_checks_passed": true,
+    "python": "3.11.16",
+    "build_input": "Isolated source tree with all 89 external paths locally installed.",
+    "relocated_wheel": {
+      "clean_bundled_models": 9,
+      "clean_missing_external_models": 2,
+      "models_available_after_import": 11,
+      "prepared_external_left_right_urdfs": 4,
+      "complete_original_render_hashes_passed_after_import": true
+    }
+  },
+  "retained_diagnostic_history": [
+    "The first clean-suite attempt lacked Git on PATH. Reusing the existing Git tools resolved that environment failure; the subsequent complete suite passed.",
+    "An overbroad packaging exclusion also removed an authored wrist flange. Exclusions were narrowed to vendor STL/URDF files; the final regression and archive/relocation checks passed.",
+    "One build exhausted system temporary storage. Only its verified task-owned temporary wheel was moved; the final build used a dedicated data-volume temporary directory."
+  ],
+  "limitations": [
+    "A clean public checkout cannot run native evaluation until the exact complete AR5-08 bundle is supplied. Downloading the inspected official repository alone is insufficient.",
+    "The native renderer also requires the exact converted arm visual layers. A raw vendor URDF/mesh archive alone is not the prepared benchmark bundle.",
+    "Links and local import tooling do not establish missing redistribution permissions.",
+    "The native evaluator remains ROKAE AR5-08 with Wuji Hand 1 and PhysX. Additional models are not newly qualified for the 66 tasks.",
+    "Task/controller integration and the original render-manifest hashes are retained. No new GPU run or all-task success claim is made for this distribution change.",
+    "Earlier complete-installation evidence is preserved in robot-assets.json and does not certify out-of-box availability in the current public package."
+  ],
+  "private_validation_evidence_sha256": {
+    "clean-final.log": "a324f703fa6b41bce917da7f5ba097a527e835cc329f6d2d206bcedcc555c88c",
+    "clean-final.xml": "59edd66f27d9848a5e056e03924eaa75751619f83271b62a60ec1e554226bad0",
+    "factories.json": "466d3cf469f954621035e77ef20c6f8c474785a88591f897adda126a749e7710",
+    "bundled-robots.json": "71d09067d1da34370c8e43d152e0aeeaaeec7b7ca50a563e1d0716cd826a79ce",
+    "bundled-rendering.json": "9494d06be4d153be81cc100c6f56692b905515da0f2180a78b4bb00e0035cfc4",
+    "pip-check.txt": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "rokae-import.json": "5389d4b7620c305a835fd92a22a3f3d443961f4f4e93e5c091bad0d1c52bfdac",
+    "tianji-import.json": "57f868cda4b023e45d3cf23c0208d0f3e4f553fcfcaf503a9a7959106354e7d0",
+    "installed-robots.json": "997bec4442147ba68af327ec39fb5f895452c74d315fa1b4a56476b7e9c36a75",
+    "installed-rendering.json": "b0e49dc88a1ea63c5a83086f81df694a0a053a9e8ea135dc2319a59bfe6d3813",
+    "installed-focused.log": "b34d61c6a764ce33942d521579540231c54721d0ad3522207333e7e5da590e63",
+    "installed-focused.xml": "f5942495c4378a69a72985c8ba3d5326254c06e2bca0560469e532e22caf6d8e",
+    "final-external.log": "b27529fddd743243454607d1ea8dcede7144263c7dd6fbbb7409b690ed51f920",
+    "final-external.xml": "987562eb8e5ed8b639b12a1a457ade90571350184d9c81bb51d4774d1528497c",
+    "clean-build-check.json": "6af1798486fc0ddfc1bef943b8cd2c4bbe4a5e98d8d41e4d445eba44886ede6c",
+    "relocated-final-check.log": "abda57c6b60cc7acef61f0bcbee61d46fe5241ad77fc9d72052a6370a79fb4c9",
+    "tianji-import-check.json": "57f868cda4b023e45d3cf23c0208d0f3e4f553fcfcaf503a9a7959106354e7d0",
+    "worktree-payload-check.json": "358951780ddb39122becc79b1c8ade06b9524c222768339162dc38cac75ae70d"
+  }
+}

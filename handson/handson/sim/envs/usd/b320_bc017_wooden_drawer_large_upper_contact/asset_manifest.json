@@ -1,0 +1,186 @@
+{
+  "articulation": {
+    "base_link_prim": "bc017_fixture_base_link",
+    "drawer_links": [
+      {
+        "axis": "+X",
+        "closed_limit_m": 0.0,
+        "joint_name": "bc017_left_drawer_prismatic_joint",
+        "joint_prim": "bc017_left_drawer_prismatic_joint",
+        "joint_type": "prismatic",
+        "link_prim": "bc017_left_drawer_link",
+        "open_limit_m": 0.24800000000000003,
+        "reset_position_m": 0.0,
+        "role": "left_drawer"
+      },
+      {
+        "axis": "+X",
+        "closed_limit_m": 0.0,
+        "joint_name": "bc017_right_drawer_prismatic_joint",
+        "joint_prim": "bc017_right_drawer_prismatic_joint",
+        "joint_type": "prismatic",
+        "link_prim": "bc017_right_drawer_link",
+        "open_limit_m": 0.24800000000000003,
+        "reset_position_m": 0.0,
+        "role": "right_drawer"
+      }
+    ],
+    "fixed_base": true,
+    "independent_dofs": true,
+    "mimic_or_coupled_joints": [],
+    "world_fixed_joint_prim": "bc017_world_fixed_joint"
+  },
+  "clean_room": true,
+  "closure": {
+    "collision_evidence": {
+      "closed_reset_penetration_free": true,
+      "collider_prims": {
+        "bc017_fixture_base_link": [
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition"
+        ],
+        "bc017_left_drawer_link": [
+          "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_drawer_body_welded_sdf",
+          "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_negative_leg_source_convex",
+          "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_crossbar_source_convex",
+          "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_handle_positive_leg_source_convex"
+        ],
+        "bc017_right_drawer_link": [
+          "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_drawer_body_welded_sdf",
+          "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_negative_leg_source_convex",
+          "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_crossbar_source_convex",
+          "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_handle_positive_leg_source_convex"
+        ]
+      },
+      "derived_from_selected_visible_asset": true,
+      "procedural_colliders": false,
+      "report_path": "evidence/collision_audit.json"
+    },
+    "declared_files_complete": true,
+    "external_absolute_references": [],
+    "material_evidence": {
+      "dependency_paths": [
+        "source/textures/metal_office_desk_diff_1k.jpg",
+        "source/textures/metal_office_desk_nor_gl_1k.jpg",
+        "source/textures/metal_office_desk_arm_1k.jpg"
+      ],
+      "report_path": "evidence/material_closure.json"
+    },
+    "unresolved_references": []
+  },
+  "derived_asset": {
+    "clean_room_conversion": true,
+    "conversion_tool": "omni.kit.asset_converter + pxr USD composition",
+    "conversion_version": "Isaac Sim 5.1 asset_converter 5.0.17; bc017-builder-v8-polyhaven-1p55x-physical-handle-compound",
+    "meters_per_unit": 1.0,
+    "no_procedural_geometry": true,
+    "runtime_usd": {
+      "path": "runtime/bc017_wooden_drawer.usda",
+      "sha256": "06b503a2c5f4d0e153dd8bbd2a189a69b34138513d2da29ad59a2c45ee2f336c",
+      "size_bytes": 372753
+    },
+    "source_archive_sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+    "up_axis": "Z"
+  },
+  "files": [
+    {
+      "path": "source/original.zip",
+      "role": "source_archive",
+      "sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+      "size_bytes": 1447267
+    },
+    {
+      "path": "source/license.txt",
+      "role": "license",
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+      "size_bytes": 7048
+    },
+    {
+      "path": "source/converted_scene.usd",
+      "role": "collision_mesh",
+      "sha256": "cc7ce3e2a71ea104f6057aff5916d850061a8096c57d15821dc031011c6c4043",
+      "size_bytes": 484334
+    },
+    {
+      "path": "source/textures/metal_office_desk_diff_1k.jpg",
+      "role": "texture",
+      "sha256": "1f02e3e77e8f82a3600664c991bd45c1c187452d61e9ede4336c6f90f7fa3139",
+      "size_bytes": 470831
+    },
+    {
+      "path": "source/textures/metal_office_desk_nor_gl_1k.jpg",
+      "role": "texture",
+      "sha256": "f57eb004937e46392151b803e0cb1d88983958d01ad11d93df78a82cfcc6c407",
+      "size_bytes": 170875
+    },
+    {
+      "path": "source/textures/metal_office_desk_arm_1k.jpg",
+      "role": "texture",
+      "sha256": "752916dd9bf8a163dc7e0d3673900791ee6d558bbe23894263ac92b42387f51b",
+      "size_bytes": 721614
+    },
+    {
+      "path": "runtime/bc017_wooden_drawer.usda",
+      "role": "runtime_usd",
+      "sha256": "06b503a2c5f4d0e153dd8bbd2a189a69b34138513d2da29ad59a2c45ee2f336c",
+      "size_bytes": 372753
+    },
+    {
+      "path": "evidence/material_closure.json",
+      "role": "material_audit",
+      "sha256": "db343da17e0adf474946b9a420196c35b1878ac0b39b2ed21bc70455c2292191",
+      "size_bytes": 398
+    },
+    {
+      "path": "evidence/collision_audit.json",
+      "role": "collision_audit",
+      "sha256": "17f71af042e6516b760a19238a5d81a0c7c19e83d393b9154331e90dc65799d5",
+      "size_bytes": 2450
+    },
+    {
+      "path": "evidence/source_lineage.json",
+      "role": "lineage_audit",
+      "sha256": "0dca4f09ca7b9c02f3a52e7bf27f29a94aad48f1ce1546cd545819f77367a791",
+      "size_bytes": 178807
+    }
+  ],
+  "placement": {
+    "orientation_wxyz": [
+      0.0,
+      0.0,
+      0.7071067811865476,
+      0.7071067811865476
+    ],
+    "translation_m": [
+      0.07816160241130132,
+      3.995284429125778e-05,
+      0.891
+    ]
+  },
+  "provenance": {
+    "creator": "Ulan Cabanilla",
+    "license": "CC0 1.0",
+    "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "model_uuid": "metal_office_desk",
+    "original_archive": {
+      "path": "source/original.zip",
+      "sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+      "size_bytes": 1447267
+    },
+    "platform": "Poly Haven",
+    "source_url": "https://polyhaven.com/a/metal_office_desk",
+    "title": "Metal Office Desk"
+  },
+  "schema": "handson.bc017.asset-manifest",
+  "schema_version": 1,
+  "task": {
+    "id": "B320-BC017",
+    "name": "t15_open_drawers",
+    "requirement": "Use the assigned hand on each drawer, pull both beyond 60 percent travel, and cross the threshold within 1.2 seconds."
+  }
+}

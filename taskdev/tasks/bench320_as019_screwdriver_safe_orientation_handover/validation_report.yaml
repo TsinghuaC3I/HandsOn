@@ -1,0 +1,247 @@
+schema_version: 1
+task_id: bench320_as019_screwdriver_safe_orientation_handover
+workflow_state: bug_iteration
+validation_status: pending_live_revalidation_after_home_and_semantics_change
+validation_status_scope: current_shared_home_and_ordered_contact_zone_landing_contract_prior_live_evidence_historical
+task_complete: false
+manifest_sha256: 534cfe357ae5379e9ee673b08c37368df8d5f41f24cdb91043d87980a30ef9cd
+generated_at: "2026-08-29T02:46:06+08:00"
+status_updated_at: "2026-09-01T22:56:22+08:00"
+simulator:
+  name: isaac_sim
+  version: "5.1.0.0"
+current_operator_adjustment:
+  source_asset_unchanged: true
+  visible_asset_authored_by_codex: false
+  task_scale_xyz: [1.75, 1.75, 1.75]
+  overall_length_m: 0.455
+  approximate_handle_length_m: 0.190
+  approximate_handle_diameter_m: 0.052
+  canonical_reset_position_m: [-0.145, -0.025, 0.9463459075162339]
+  tool_zone_size_m: [0.52, 0.14, 0.0015]
+  giver_tail_local_x_range_m: [-0.210, -0.14583333333333334]
+  receiver_middle_local_x_range_m: [-0.1225, -0.04083333333333333]
+  arm_table_contact_policy: diagnostic_nonterminal
+  tool_and_hand_penetration_policy: fail_closed
+  shared_bimanual_arm_home_restored: true
+  ordered_success: right_contact_first_then_left_airborne_contact_then_zone_landing
+  final_left_release_required: false
+  progress_drop_rollback_debounce_control_steps: 0
+  static_cpu_tests: pass_current_bug_iteration
+  static_cpu_tests_passed: 131
+  static_cpu_tests_skipped: 1
+  task_registration_audit: pass
+  python_compile_and_diff_check: pass
+  live_core_revalidation: pending_nvidia_driver_access
+  prior_1_5_live_evidence: historical_only
+current_checkpoint:
+  status: pending_exclusive_raw_contact_diagnostic
+  ik_backend: haorui_new
+  dls_fallback_allowed: false
+  applied_control_trace_required: true
+  validation_fingerprint: e1d8da495bb3d25a46e7ff1af366dfd4d95c18a1350ccb75f307b1158a9dae2c
+  live_run_started: false
+  live_evidence_bound: false
+  heavy_slot_allocated: false
+  note: "This fingerprint adds rejected-contact-point diagnostics and current repair metadata to the already live-exercised production path. The next exclusive run is a short stage-0 contact diagnostic; full-task acceptance is still pending."
+resize_and_rate_repair:
+  evidence_scale_status: historical_superseded_1_5
+  visible_asset_authored_by_codex: false
+  source_asset_unchanged: true
+  source_provider: Poly Haven
+  task_scale_xyz: [1.5, 1.5, 1.5]
+  overall_length_before_m: 0.260
+  overall_length_after_m: 0.390
+  approximate_handle_length_after_m: 0.163
+  approximate_handle_diameter_after_m: 0.045
+  giver_tail_local_x_range_m: [-0.180, -0.125]
+  receiver_middle_local_x_range_m: [-0.105, -0.035]
+  performance_implementation:
+    grouped_detailed_contact_views_per_substep: 3
+    persistent_per_finger_views_removed: 10
+    duplicate_control_boundary_metrics_query_removed: true
+    exact_filter_path_attribution_preserved: true
+  live_core:
+    pass: true
+    simulator_version: "5.1.0.0"
+    physics_hz: 120
+    control_hz: 30
+    zero_action_seconds: 4.0
+    position_drift_m: 0.0
+    orientation_drift_rad: 0.0
+    evidence: [evidence/core_scene_summary.json, evidence/zero_action.json, previews/reset_head.png]
+  live_camera_stability:
+    checkpoint: 2a09700c2d1348e1fb61b85544b5e6e5f0a01ed8768620a11c8b68670ec4903d
+    validation_pass_before_close_timeout: true
+    cameras: 3
+    frames_per_camera: 30
+    stability_steps: 300
+    stability_seconds: 10.0
+    observed_idle_control_hz_range: [29.9, 30.1]
+    note: "Known Kit env.close timeout occurred only after the result JSON was persisted."
+  live_stage0_exclusive:
+    checkpoint: 176a531c5dd49abb9e3b3891028a236c1360b2ca4a72ec983bb2f63c2e0c744a
+    seed: 103
+    steps: 268
+    observed_moving_control_hz_range: [28.7, 30.1]
+    telemetry_samples: 268
+    telemetry_failures: 0
+    table_safety_pass: true
+    unsafe_arm_or_hand_table_events: 0
+    tool_supported_steps: 43
+    physx_or_cuda_failure: false
+    stable_thumb_contact_observed: true
+    opposed_tail_contact_observed: false
+    terminal_reason: automatic_right_acquire_arrival_timeout
+    final_position_error_m: 0.0123
+    position_gate_m: 0.010
+selected_asset:
+  title: Flathead Screwdriver
+  author: Dylan Detwiller
+  provider: Poly Haven
+  license: CC0-1.0
+  source_archive: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip
+  source_archive_sha256: 0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb
+  runtime: taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/runtime/flathead_screwdriver.usd
+  runtime_contract:
+    visible_pbr_mesh_count: 1
+    invisible_source_derived_convex_hull_count: 5
+    collider_roles: [tail_main, handle_neck, ferrule, stem, flat_blade]
+    rigid_owner_count: 1
+    normalized_length_m: 0.390
+    task_scale_xyz: [1.5, 1.5, 1.5]
+    tip_axis_local: [1.0, 0.0, 0.0]
+    tail_axis_local: [-1.0, 0.0, 0.0]
+    nominal_mass_kg: 0.18
+historical_evidence:
+  status: superseded_for_current_asset
+  source_asset: SceneSmith screwdriver
+  source_sha256: b73daa7642be1ebaf06399d4ec10727aaf0005105dee2b8d21dd922e3e07c890
+  note: "The prior vertical/horizontal core-scene and v2-v8 trajectory evidence remains diagnostic history only and is not evidence for the selected Poly Haven asset."
+polyhaven_live_baseline:
+  status: pre_hardening_unbound_baseline
+  checkpoint: unknown
+  current_checkpoint_pass: false
+  camera_stability_evidence: evidence/polyhaven_camera_stability_20260828/as019_acceptance_validation.json
+  outcomes_evidence: evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json
+  note: "Both JSON files predate the current reset, table-safety, wrench-lineage, and validation-provenance hardening. They preserve observed baseline facts, including the 0/10 automatic NON_PASS, but cannot pass any current-checkpoint live gate."
+giver_calibration_candidate:
+  name: Candidate C scaled-handle compensation
+  status: live_thumb_contact_opposed_contact_pending
+  live_validated: true
+  robust: false
+  tool_local_palm_targets_m:
+    pick: [-0.177808511, 0.130100038, 0.111348245]
+    acquire: [-0.147738511, 0.130100038, 0.051698245]
+    reseat: [-0.147738511, 0.130100038, 0.051698245]
+  wrist_roll_offset_rad: -1.574236454637
+  composed_tool_local_palm_roll_deg: 89.802895
+  right_hand_target: [1.41641399, 0.045268495, 1.41739004, 0.553414384, 0.037472055, 0.245187309, 0.151820915, 0.264527498, 1.204081680, -0.312368777, 1.034289708, -0.365826094, 1, 0, 1, 1, 0.769586480, 0.040202724, 0.938132077, 0.372722983]
+  approach:
+    phases: [raise, high_alignment, descend_to_pick]
+    raised_world_z_m: 1.09
+    post_contact_preload_m: 0.0
+    reseat_max_correction_m_per_control_frame: 0.001
+  nominal_dual_model_audit:
+    accepted_collider_roles: [TailMain]
+    pick_tool_contact_count_per_model: 0
+    palm_or_non_tail_main_contact_count: 0
+    detailed_source_stl:
+      contact_depth_mm: 2.433
+      table_gap_mm: 16.727
+      radial_opposition_cosine: -0.458465
+      opposing_span_mm: 28.356
+    calibrated_production_primitive:
+      contact_depth_mm: 3.741
+      table_gap_mm: 13.517
+      radial_opposition_cosine: -0.545760
+      opposing_span_mm: 27.870
+    minimum_hand_physical_limit_margin_rad: 0.057631
+  perturbation_audit:
+    envelope: "+/-2 mm and +/-2 degrees full factorial"
+    detailed_source_stl_passed: 42
+    calibrated_production_primitive_passed: 37
+    intersection_passed: 34
+    samples_per_model: 81
+    minimum_role_x_margin_mm: 0.0468
+  haorui_command_path_audit:
+    solved_samples: 236
+    total_samples: 236
+    minimum_arm_operational_margin_rad: 0.063329
+    maximum_proposed_joint_delta_rad: 0.024265
+    joint_step_cap_rad: 0.03
+    pose_or_joint_cap_count: 0
+    approximate_max_position_error_m: 0.00003
+    approximate_max_rotation_error_rad: 0.000085
+  authority_note: "The scaled compensation is physically exercised through stable thumb contact, but is not an opposed grasp or batch-acceptance pass. The exclusive 268-step run is authoritative for collision stability and telemetry; same-GPU concurrent CUDA-700 runs are excluded."
+  next_live_action: "One exclusive camera-off, applied-control-traced Haorui stage-0 seed bound to validation fingerprint e1d8da495bb3d25a46e7ff1af366dfd4d95c18a1350ccb75f307b1158a9dae2c, recording rejected contact points before changing the calibration."
+automatic_arrival_gate:
+  scope: automatic_wrapper_only
+  raw_manual_gate_required: false
+  measured_position_tolerance_m: 0.010
+  measured_rotation_tolerance_deg: 10.0
+  required_consecutive_distinct_control_steps: 4
+  pick_command_frozen_until_arrival: true
+  hand_open_until_pick_arrival: true
+  close_steps_after_pick_arrival: 35
+  fixed_pick_to_acquire_steps: 64
+  pick_timeout_steps: 30
+  acquire_timeout_steps: 30
+  blocks_before_open: [right_semantic_owner, right_assist_wrench, stage_0_event, stage_0_transition, no_owner_reseat]
+  failure_reasons: [automatic_right_pick_arrival_timeout, automatic_right_acquire_arrival_timeout]
+  live_validated: true
+checks:
+  schema:
+    status: pass
+    evidence_scope: current_static_only
+    summary: "Asset/runtime/scene artifacts are hash-bound and the full focused AS019 repair suite passes. This is static evidence plus separately recorded live repair evidence, not full-task acceptance."
+    evidence: [scene_manifest.json, assets/polyhaven_flathead_screwdriver/asset_manifest.json]
+    metrics: {runtime_tests_passed: 92, acceptance_tests_passed: 56, core_scene_tests_passed: 15, focused_total_passed: 163}
+  assets:
+    status: pass
+    baseline_status: pass
+    evidence_scope: resized_current_live_core
+    summary: "The selected Poly Haven archive/runtime/manifest chain is unchanged. Fresh Isaac 5.1 evidence observed the declared 1.5x task scale, one visible PBR mesh, five hidden source-derived convex hulls, one rigid owner, 0.18 kg mass, and exact manifest path parity."
+    evidence: [evidence/core_scene_summary.json, previews/reset_head.png]
+    metrics: {scale_xyz: [1.5, 1.5, 1.5], overall_length_m: 0.390, visible_mesh_count: 1, hidden_collider_count: 5, rigid_body_count: 1, mass_kg: 0.18}
+  reachability:
+    status: non_pass
+    evidence_scope: resized_live_stage0_plus_historical_baseline
+    summary: "The resized exclusive stage-0 run reached stable right-thumb tail contact with finite Haorui control but did not establish opposed-finger ownership; it ended with 12.3 mm acquire error against the unchanged 10 mm gate. Receiver-middle and later reach stages remain unexercised."
+    evidence: [evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json]
+    metrics: {positive_trials: 10, first_right_tail_events: 0, false_negatives: 10, horizon_steps_per_trial: 900}
+  contact:
+    status: partial_pass
+    baseline_status: partial_pass
+    evidence_scope: resized_live_idle_and_stage0
+    summary: "Three grouped exact-owner views produced path-attributed per-finger records without the ten persistent per-finger views. The 300-step idle run and 268-step exclusive contact run had complete valid table/contact telemetry, no unsafe arm/hand penetration, and stable admitted thumb contact. Opposed tail ownership, receiver contact, active-wrench coverage, and forbidden-tip sweeps remain required."
+    evidence: [evidence/polyhaven_camera_stability_20260828/as019_acceptance_validation.json, evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json]
+    metrics: {idle_samples: 300, stage0_samples: 268, telemetry_failures: 0, right_wrench_gate_failures: 0, stable_thumb_contact: true, opposed_tail_contact: false, active_right_wrench_coverage_proven: false}
+  reset:
+    status: pending
+    baseline_status: pass
+    evidence_scope: pre_hardening_unbound_live_baseline
+    summary: "The pre-hardening baseline observed canonical and 20/20 randomized resets with authored table-clearance, finite state, zero penetration, and zero initial hand force, but its checkpoint is unknown. The current reset gate requires exact +0.199947 mm authored clearance rather than a sleeping-rigid contact row; current-fingerprint reset evidence and physical support at success stages 3 and 4 remain pending."
+    evidence: [evidence/core_scene_summary.json, evidence/zero_action.json, evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json]
+    metrics: {authored_table_clearance_mm: 0.199947, physical_support_row_required_at_reset: false, physical_support_required_at_success_stages: [3, 4], canonical_position_drift_m: 0.0, canonical_orientation_drift_rad: 0.0, randomized_trials_completed: 20, randomized_trials_passed: 20}
+  success:
+    status: non_pass
+    evidence_scope: pre_hardening_unbound_live_baseline
+    summary: "All ten pre-Haorui/pre-arrival Poly Haven-asset positive trials ran 900 steps without reaching the first right-tail event; a later baseline seed-103 diagnostic also remained at stage 0. Negative trials produced zero false positives, but the current Candidate-C/arrival-gate checkpoint has not run live and no ordered handoff or success has occurred."
+    evidence: [evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json]
+    metrics: {positive_trials: 10, positive_passed: 0, false_negatives: 10, negative_trials: 10, false_positives: 0, event_steps: [-1, -1, -1, -1, -1]}
+  camera:
+    status: pass
+    baseline_status: pass
+    evidence_scope: current_preview_hash_plus_pre_hardening_unbound_live_baseline
+    summary: "The current preview shows the resized horizontal Poly Haven tool and marker. A fresh resized run produced 30 finite non-black frames from each of the three production cameras."
+    evidence: [previews/reset_head.png, evidence/core_scene_summary.json, evidence/polyhaven_camera_stability_20260828/as019_acceptance_validation.json]
+    metrics: {head_shape: [480, 640, 3], head_black_fraction: 0.0009016927083333333, frames_per_production_camera: 30}
+  stability:
+    status: pass
+    baseline_status: pass
+    evidence_scope: pre_hardening_unbound_live_baseline
+    summary: "Fresh resized evidence passed four seconds of core zero action with zero drift and 300 steps/ten seconds of full-environment no-contact stability. The exclusive 268-step moving/contact run completed without PhysX or CUDA failure; full dual-contact handover stability remains pending."
+    evidence: [evidence/zero_action.json, evidence/polyhaven_camera_stability_20260828/as019_acceptance_validation.json]
+    metrics: {core_seconds: 4.0, collection_seconds: 10.0, max_linear_speed_mps: 0.0, max_angular_speed_radps: 0.0}
+  collection: {status: pending, summary: "No Poly Haven-asset Zarr episode or fresh-process physical replay has been generated", evidence: [], metrics: {}}

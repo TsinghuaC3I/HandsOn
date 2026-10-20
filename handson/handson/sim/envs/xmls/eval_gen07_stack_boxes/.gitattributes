@@ -1,0 +1,3 @@
+# Preserve exported geometry bytes and recorded provenance hashes.
+collision/*.obj -whitespace
+visuals/*.obj -whitespace

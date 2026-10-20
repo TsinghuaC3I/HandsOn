@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="GEN7_Spray_Shoe_Care_Objects">
+  <compiler angle="radian" autolimits="true" />
+  <asset>
+    <!-- Downloaded Yanez spray bottle visual.  The task keeps its authored
+         trigger collider/semantics while this source mesh supplies the
+         visible bottle envelope. -->
+    <mesh name="gen7_downloaded_spray" file="../usd/eval_gen06_spray_shoe/meshes/gen7_downloaded_spray.obj" />
+    <material name="gen7_downloaded_spray_material" rgba="0.78 0.82 0.86 1" specular="0.2" shininess="0.25" />
+    <mesh name="gen7_bottle_0" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_0.obj" />
+    <texture name="gen7_bottle_0_texture" type="2d" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_0.png" />
+    <material name="gen7_bottle_0_material" rgba="1 1 1 1" specular="0.15" shininess="0.1" texture="gen7_bottle_0_texture" />
+    <mesh name="gen7_bottle_1" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_1.obj" />
+    <texture name="gen7_bottle_1_texture" type="2d" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_1.png" />
+    <material name="gen7_bottle_1_material" rgba="1 1 1 1" specular="0.15" shininess="0.1" texture="gen7_bottle_1_texture" />
+    <mesh name="gen7_bottle_2" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_2.obj" />
+    <material name="gen7_bottle_2_material" rgba="0.8352941176 0.8352941176 0.8352941176 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_bottle_collision_0" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_0.obj" />
+    <mesh name="gen7_bottle_collision_1" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_1.obj" />
+    <mesh name="gen7_bottle_collision_2" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_2.obj" />
+    <mesh name="gen7_bottle_collision_3" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_3.obj" />
+    <mesh name="gen7_bottle_collision_4" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_4.obj" />
+    <mesh name="gen7_bottle_collision_5" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_5.obj" />
+    <mesh name="gen7_bottle_collision_6" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_6.obj" />
+    <mesh name="gen7_bottle_collision_7" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_7.obj" />
+    <mesh name="gen7_bottle_collision_8" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_8.obj" />
+    <mesh name="gen7_bottle_collision_9" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_9.obj" />
+    <mesh name="gen7_bottle_collision_10" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_10.obj" />
+    <mesh name="gen7_bottle_collision_11" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_11.obj" />
+    <mesh name="gen7_bottle_collision_12" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_12.obj" />
+    <mesh name="gen7_bottle_collision_13" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_13.obj" />
+    <mesh name="gen7_bottle_collision_14" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_14.obj" />
+    <mesh name="gen7_bottle_collision_15" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_15.obj" />
+    <mesh name="gen7_bottle_collision_16" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_16.obj" />
+    <mesh name="gen7_bottle_collision_17" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_17.obj" />
+    <mesh name="gen7_bottle_collision_18" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_18.obj" />
+    <mesh name="gen7_bottle_collision_19" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_19.obj" />
+    <mesh name="gen7_bottle_collision_20" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_20.obj" />
+    <mesh name="gen7_bottle_collision_21" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_21.obj" />
+    <mesh name="gen7_bottle_collision_22" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_22.obj" />
+    <mesh name="gen7_bottle_collision_23" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_23.obj" />
+    <mesh name="gen7_bottle_collision_24" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_24.obj" />
+    <mesh name="gen7_bottle_collision_25" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_25.obj" />
+    <mesh name="gen7_bottle_collision_26" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_26.obj" />
+    <mesh name="gen7_bottle_collision_27" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_27.obj" />
+    <mesh name="gen7_bottle_collision_28" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_28.obj" />
+    <mesh name="gen7_bottle_collision_29" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_29.obj" />
+    <mesh name="gen7_bottle_collision_30" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_30.obj" />
+    <mesh name="gen7_bottle_collision_31" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_31.obj" />
+    <mesh name="gen7_bottle_collision_32" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_32.obj" />
+    <mesh name="gen7_bottle_collision_33" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_33.obj" />
+    <mesh name="gen7_bottle_collision_34" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_34.obj" />
+    <mesh name="gen7_bottle_collision_35" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_35.obj" />
+    <mesh name="gen7_bottle_collision_36" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_36.obj" />
+    <mesh name="gen7_bottle_collision_37" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_37.obj" />
+    <mesh name="gen7_bottle_collision_38" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_38.obj" />
+    <mesh name="gen7_bottle_collision_39" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_39.obj" />
+    <mesh name="gen7_bottle_collision_40" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_40.obj" />
+    <mesh name="gen7_bottle_collision_41" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_41.obj" />
+    <mesh name="gen7_bottle_collision_42" file="../usd/eval_gen06_spray_shoe/meshes/gen7_bottle_collision_42.obj" />
+    <mesh name="gen7_trigger" file="../usd/eval_gen06_spray_shoe/meshes/gen7_trigger.obj" />
+    <texture name="gen7_trigger_texture" type="2d" file="../usd/eval_gen06_spray_shoe/meshes/gen7_trigger.png" />
+    <material name="gen7_trigger_material" rgba="1 1 1 1" specular="0.15" shininess="0.1" texture="gen7_trigger_texture" />
+    <mesh name="gen7_trigger_collision_0" file="../usd/eval_gen06_spray_shoe/meshes/gen7_trigger_collision_0.obj" />
+    <mesh name="gen7_trigger_collision_1" file="../usd/eval_gen06_spray_shoe/meshes/gen7_trigger_collision_1.obj" />
+    <mesh name="gen7_trigger_collision_2" file="../usd/eval_gen06_spray_shoe/meshes/gen7_trigger_collision_2.obj" />
+    <mesh name="gen7_shoe_object_99" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_99.obj" />
+    <material name="gen7_shoe_object_99_material" rgba="1 1 1 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_97" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_97.obj" />
+    <material name="gen7_shoe_object_97_material" rgba="0.8 0.8 0.8 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_95" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_95.obj" />
+    <material name="gen7_shoe_object_95_material" rgba="0.003921568627 0 0.137254902 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_93" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_93.obj" />
+    <material name="gen7_shoe_object_93_material" rgba="0 0 0.03529411765 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_91" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_91.obj" />
+    <material name="gen7_shoe_object_91_material" rgba="0 0.003921568627 0.1019607843 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_89" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_89.obj" />
+    <material name="gen7_shoe_object_89_material" rgba="0.007843137255 0 0.05098039216 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_87" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_87.obj" />
+    <material name="gen7_shoe_object_87_material" rgba="0 0 0.05490196078 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_85" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_85.obj" />
+    <material name="gen7_shoe_object_85_material" rgba="0 0.003921568627 0.07450980392 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_83" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_83.obj" />
+    <material name="gen7_shoe_object_83_material" rgba="0 0.003921568627 0.1019607843 1" specular="0.15" shininess="0.1" />
+    <mesh name="gen7_shoe_object_81" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_81.obj" />
+    <texture name="gen7_shoe_object_81_texture" type="2d" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_object_81.png" />
+    <material name="gen7_shoe_object_81_material" rgba="1 1 1 1" specular="0.15" shininess="0.1" texture="gen7_shoe_object_81_texture" />
+    <mesh name="gen7_shoe_collision_0" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_collision_0.obj" />
+    <mesh name="gen7_shoe_collision_1" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_collision_1.obj" />
+    <mesh name="gen7_shoe_collision_2" file="../usd/eval_gen06_spray_shoe/meshes/gen7_shoe_collision_2.obj" />
+    <mesh name="gen7_spray_cone" file="cone/cone.obj" scale="0.025 0.025 0.1" />
+  </asset>
+  <worldbody>
+    <body name="link_2" pos="-0.085 -0.22 0.8905">
+      <freejoint name="spray_root" />
+      <inertial mass="0.142" pos="-4.951094768e-11 -0.003835148305 0.08811003661" diaginertia="0.0005251730062 0.0004807372012 7.619619107e-05" />
+      <geom name="gen7_downloaded_spray_visual" type="mesh" mesh="gen7_downloaded_spray" material="gen7_downloaded_spray_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_bottle_0_visual" type="mesh" mesh="gen7_bottle_0" material="gen7_bottle_0_material" rgba="1 1 1 0" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_bottle_1_visual" type="mesh" mesh="gen7_bottle_1" material="gen7_bottle_1_material" rgba="1 1 1 0" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_bottle_2_visual" type="mesh" mesh="gen7_bottle_2" material="gen7_bottle_2_material" rgba="1 1 1 0" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_bottle_collision_0" type="mesh" mesh="gen7_bottle_collision_0" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_1" type="mesh" mesh="gen7_bottle_collision_1" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_2" type="mesh" mesh="gen7_bottle_collision_2" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_3" type="mesh" mesh="gen7_bottle_collision_3" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_4" type="mesh" mesh="gen7_bottle_collision_4" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_5" type="mesh" mesh="gen7_bottle_collision_5" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_6" type="mesh" mesh="gen7_bottle_collision_6" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_7" type="mesh" mesh="gen7_bottle_collision_7" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_8" type="mesh" mesh="gen7_bottle_collision_8" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_9" type="mesh" mesh="gen7_bottle_collision_9" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_10" type="mesh" mesh="gen7_bottle_collision_10" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_11" type="mesh" mesh="gen7_bottle_collision_11" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_12" type="mesh" mesh="gen7_bottle_collision_12" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_13" type="mesh" mesh="gen7_bottle_collision_13" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_14" type="mesh" mesh="gen7_bottle_collision_14" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_15" type="mesh" mesh="gen7_bottle_collision_15" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_16" type="mesh" mesh="gen7_bottle_collision_16" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_17" type="mesh" mesh="gen7_bottle_collision_17" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_18" type="mesh" mesh="gen7_bottle_collision_18" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_19" type="mesh" mesh="gen7_bottle_collision_19" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_20" type="mesh" mesh="gen7_bottle_collision_20" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_21" type="mesh" mesh="gen7_bottle_collision_21" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_22" type="mesh" mesh="gen7_bottle_collision_22" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_23" type="mesh" mesh="gen7_bottle_collision_23" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_24" type="mesh" mesh="gen7_bottle_collision_24" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_25" type="mesh" mesh="gen7_bottle_collision_25" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_26" type="mesh" mesh="gen7_bottle_collision_26" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_27" type="mesh" mesh="gen7_bottle_collision_27" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_28" type="mesh" mesh="gen7_bottle_collision_28" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_29" type="mesh" mesh="gen7_bottle_collision_29" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_30" type="mesh" mesh="gen7_bottle_collision_30" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_31" type="mesh" mesh="gen7_bottle_collision_31" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_32" type="mesh" mesh="gen7_bottle_collision_32" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_33" type="mesh" mesh="gen7_bottle_collision_33" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_34" type="mesh" mesh="gen7_bottle_collision_34" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_35" type="mesh" mesh="gen7_bottle_collision_35" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_36" type="mesh" mesh="gen7_bottle_collision_36" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_37" type="mesh" mesh="gen7_bottle_collision_37" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_38" type="mesh" mesh="gen7_bottle_collision_38" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_39" type="mesh" mesh="gen7_bottle_collision_39" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_40" type="mesh" mesh="gen7_bottle_collision_40" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_41" type="mesh" mesh="gen7_bottle_collision_41" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_bottle_collision_42" type="mesh" mesh="gen7_bottle_collision_42" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <body name="link_0">
+        <joint name="joint_0" type="hinge" pos="-1.918682288e-05 0.03197803813 0.2002633942" axis="-1 0 0" range="0 0.45" stiffness="0.2" damping="0.1" frictionloss="0.015" />
+        <inertial mass="0.008" pos="-1.918143508e-05 0.03222166149 0.1878734956" diaginertia="9.402699469e-07 6.896769855e-07 5.072788345e-07" />
+        <geom name="gen7_trigger_visual" type="mesh" mesh="gen7_trigger" material="gen7_trigger_material" contype="0" conaffinity="0" group="2" density="0" />
+        <geom name="gen7_trigger_collision_0" type="mesh" mesh="gen7_trigger_collision_0" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+        <geom name="gen7_trigger_collision_1" type="mesh" mesh="gen7_trigger_collision_1" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+        <geom name="gen7_trigger_collision_2" type="mesh" mesh="gen7_trigger_collision_2" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      </body>
+      <geom name="gen7_cone_visual" pos="0 0.04787137825 0.2095761475" quat="0.7071067812 -0.7071067812 0 0" type="mesh" mesh="gen7_spray_cone" rgba="0.2 0.4 1 0.45" contype="0" conaffinity="0" group="2" density="0" />
+    </body>
+    <body name="gen7_shoe" pos="-0.26 0.12 0.89">
+      <geom name="gen7_shoe_object_99_visual" type="mesh" mesh="gen7_shoe_object_99" material="gen7_shoe_object_99_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_97_visual" type="mesh" mesh="gen7_shoe_object_97" material="gen7_shoe_object_97_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_95_visual" type="mesh" mesh="gen7_shoe_object_95" material="gen7_shoe_object_95_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_93_visual" type="mesh" mesh="gen7_shoe_object_93" material="gen7_shoe_object_93_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_91_visual" type="mesh" mesh="gen7_shoe_object_91" material="gen7_shoe_object_91_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_89_visual" type="mesh" mesh="gen7_shoe_object_89" material="gen7_shoe_object_89_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_87_visual" type="mesh" mesh="gen7_shoe_object_87" material="gen7_shoe_object_87_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_85_visual" type="mesh" mesh="gen7_shoe_object_85" material="gen7_shoe_object_85_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_83_visual" type="mesh" mesh="gen7_shoe_object_83" material="gen7_shoe_object_83_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_object_81_visual" type="mesh" mesh="gen7_shoe_object_81" material="gen7_shoe_object_81_material" contype="0" conaffinity="0" group="2" density="0" />
+      <geom name="gen7_shoe_collision_0" type="mesh" mesh="gen7_shoe_collision_0" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_shoe_collision_1" type="mesh" mesh="gen7_shoe_collision_1" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+      <geom name="gen7_shoe_collision_2" type="mesh" mesh="gen7_shoe_collision_2" group="3" rgba="0 0 0 0" density="0" friction="0.9 0.005 0.0001" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,32 @@
+{
+  "all_links_have_colliders": true,
+  "closed_reset_max_penetration_m": 0.0,
+  "collider_prims": {
+    "bc017_fixture_base_link": [
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+      "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition"
+    ],
+    "bc017_left_drawer_link": [
+      "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf"
+    ],
+    "bc017_right_drawer_link": [
+      "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf"
+    ]
+  },
+  "derived_from_visible_geometry": true,
+  "drawer_links": {
+    "left_drawer": "bc017_left_drawer_link",
+    "right_drawer": "bc017_right_drawer_link"
+  },
+  "fixed_base_verified": true,
+  "procedural_geometry": false,
+  "runtime_usd_sha256": "eccc1e78e3fd4e5feaadcdf0c190a47bd6e563f7b25983cc1fd056b59e5a6ed5",
+  "schema": "handson.bc017.collision-audit",
+  "source_archive_sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+  "support_gap_m": 0.0010000000000000009
+}

@@ -1,0 +1,21 @@
+env_name: eval_flex03_pack_pillow
+task_id: G01-5
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Use both hands to lift the foam pillow clear of the table, place it fully inside the open carton, release both hands, and keep it stable for one second."
+robot_type: dual_arm
+time_limit_seconds: 180
+runtime:
+  simulator: isaacsim-5.1
+  physics_engine: PhysX
+  isaaclab: 2.3.2
+skills:
+  - bimanual_deformable_pickup
+  - bimanual_transport
+  - container_placement
+  - synchronized_release
+objects:
+  - Original-foam-FEM-pillow
+  - BC004-derived-open-carton

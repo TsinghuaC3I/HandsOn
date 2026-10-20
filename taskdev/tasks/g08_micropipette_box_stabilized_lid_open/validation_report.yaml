@@ -1,0 +1,278 @@
+schema_version: 1
+task_id: t18_open_micropipette_box
+benchmark_id: G08
+manifest_sha256: a15e27f4a72ca559ccc0548eb1b10d1a37f3cc7b06ad6daa3589ad94752e7a39
+generated_at: "2026-09-01T01:24:05+08:00"
+status: shared_arm_home_restored_static_pass_live_rerun_required
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+current_arm_home_adjustment:
+  updated_at: "2026-09-01T23:07:01+08:00"
+  policy: shared_mirrored_bimanual_home
+  tcp_home_xyz_m: {right: [-0.10, -0.16, 1.07], left: [-0.10, 0.16, 1.07]}
+  task_local_spread_override_removed: true
+  prior_live_home_evidence: historical
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_first_physx_and_operator_validation: pending
+static_validation:
+  status: pass
+  task_manifest_schema: {status: pass, error_count: 0}
+  yaml_parse: pass
+  python_compile: pass
+  git_diff_check: pass
+  shared_contract_pytest: {status: pass, passed: 44, suite: handson/tests/test_lw_native_articulation_contract.py}
+  collection_registration_pytest: {status: pass, suite: collection_ui/tests/test_lw_native_asset_collection.py}
+  focused_static_integration_pytest: {status: pass, passed: 244, skipped: 3, scope: "LW contracts/runtime/static registration, task layout, recording-origin, and collection UI; environment-marked skips remained skipped"}
+  post_fix_four_file_focused_pytest: {status: pass, passed: 144, suite: "handson/tests/test_lw_native_articulation_contract.py + handson/tests/test_lw_native_articulation_runtime_review.py + handson/tests/test_lw_native_articulation_tasks.py + collection_ui/tests/test_lw_native_asset_collection.py"}
+  scaled_randomization_focused_pytest: {status: pass, passed: 147, suite: "handson/tests/test_lw_native_articulation_contract.py + handson/tests/test_lw_native_articulation_runtime_review.py + handson/tests/test_lw_native_articulation_tasks.py + collection_ui/tests/test_lw_native_asset_collection.py"}
+  current_operator_contract:
+    hand_reset: shared_tabletop_home_restored
+    hidden_g08_grip_colliders: removed
+    topology: {bodies: 2, colliders: 25, dofs: 1, fixed_base: true}
+    asset_scale: [0.40, 0.40, 0.40]
+    success: {lid_open_threshold_deg: 75.0, immediate: true, assigned_contact_required: false, release_required: false, hold_required: false}
+    randomization: {root_x_m: [-0.400, -0.160], root_y_m: [-0.120, 0.120], root_yaw_deg: [-30.0, 30.0]}
+  current_live_stability:
+    status: pass
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_scaled_randomized_v2_20260901.json, sha256: 4cf94ca326eca92d7109f5028f3e626da25665225b1a001a313e5957c468e778}
+    topology: {bodies: 2, colliders: 25, dofs: 1, fixed_base: true}
+    reset_seeds: [20260901, 20260901, 20260902, 20260903, 20260904, 20260905, 20260906, 20260907, 20260908, 20360904]
+    zero_action_physics_substeps: 1200
+    max_root_translation_drift_m: 0.0
+    max_root_rotation_drift_deg: 0.0
+    max_lid_drift_rad: 9.938938561049326e-12
+    scope: "Clean live Isaac Sim 5.1 spawn, 0.40 composed scale, mass/COM/inertia/damping/friction readback, deterministic repeat, nine distinct seeded XY/yaw poses, accepted recording origins, 10-second zero-action stability, bounded first tracker command, passive lid impulse response, and in-process hard reset. The nine live poses span 0.172623 m in X, 0.145574 m in Y, and 42.241 degrees in yaw. This did not exercise a real operator lid contact or the success threshold."
+  asset_archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  asset_manifest_sha256: 911543839cae9c74030046d7cc6156935fba631647e369a386a1ab20a838e37a
+  selected_usd_sha256: 6a8a143fe0a72e3b843c38e095057394ddb1b40e7dd1bf08c5185087bc031255
+  scope: "Static source, contract, task-registration, and manifest checks only."
+live_validation:
+  status: historical_pre_shared_home_restore_current_rerun_required
+  scaled_randomization_v2_iteration:
+    status: live_pass_operator_contact_retest_pending
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_scaled_randomized_v2_20260901.json, sha256: 4cf94ca326eca92d7109f5028f3e626da25665225b1a001a313e5957c468e778}
+    correction: "Reduce the composed box scale from 0.45 to 0.40 (20 percent smaller than the original 0.50 composition) while preserving source masses and scale-derived support Z, footprint, COM lever arm, and inertia. Double the X half-range to 0.12 m, increase the Y half-range to 0.12 m, and widen yaw to +/-30 degrees; roll/pitch and the closed lid angle remain fixed."
+    composed_readback: {asset_scale: [0.40, 0.40, 0.40], lid_mass_kg: 0.30000001192092896, effective_hinge_inertia_kg_m2: 0.0038127600718390114, angular_damping: 2.0, joint_friction: 0.10000000149011612, support_clearance_m: 0.00024997949600213953}
+    reset_randomization: {status: pass, distinct_seed_count: 9, declared_x_range_m: [-0.400, -0.160], declared_y_range_m: [-0.120, 0.120], declared_yaw_range_deg: [-30.0, 30.0], observed_x_range_m: [-0.3511115544, -0.1784887526], observed_y_range_m: [-0.0399862602, 0.1055881570], observed_yaw_range_deg: [-19.0798624037, 23.1615939005]}
+    ordinary_collection_seed_stride_static_audit: {status: pass, reset_count: 8, x_span_m: 0.1878695854, y_span_m: 0.2095005512, yaw_span_deg: 54.5156746168}
+    zero_action: {status: pass, physics_frames: 1200, sim_seconds: 10.0, max_q_drift_rad: 9.938938561049326e-12, max_abs_qd_rad_s: 3.9326344847268047e-08, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+    first_tracker_command: {status: pass, commanded_lift_m: 0.25, palm_displacement_m: 0.001204922309806826, lid_motion_rad: 1.1812772982011666e-13, lid_speed_rad_s: 1.44106122590415e-08}
+    passive_lid_impulse_probe: {status: pass, initial_open_deg: 5.0, initial_opening_speed_rad_s: 1.0, maximum_open_deg: 5.0, maximum_opening_speed_rad_s: 1.0, maximum_closing_speed_rad_s: 1.448644995689392, final_open_deg: 0.0}
+    scope_limit: "The clean scripted run validates the smaller composition, substantially broader position/orientation diversity, passive lid dynamics, and hard reset. The operator must still retest direct hand contact and reachability at the wider extreme poses in the collection UI."
+  scaled_randomization_iteration:
+    status: live_pass_operator_contact_retest_pending
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_scaled_randomized_20260831.json, sha256: ac223a32cb28fbca114a81dc747f6ce5b2d01c3f3caa8b7f5b0728299ec0864c}
+    correction: "Reduce the uniformly composed box scale from 0.50 to 0.45 while preserving its real source masses and deriving support Z, collider footprint, COM lever arm, and inertia from that scale. Widen seeded reset randomization to x=[-0.340,-0.220] m, y=[-0.050,0.050] m, yaw=[-18,18] degrees; roll/pitch and the closed lid angle remain fixed."
+    composed_readback: {asset_scale: [0.45, 0.45, 0.45], lid_mass_kg: 0.30000001192092896, effective_hinge_inertia_kg_m2: 0.004825524565965666, angular_damping: 2.0, joint_friction: 0.10000000149011612, support_clearance_m: 0.0002499735355376842}
+    reset_randomization: {status: pass, distinct_seed_count: 6, declared_x_range_m: [-0.340, -0.220], declared_y_range_m: [-0.050, 0.050], declared_yaw_range_deg: [-18.0, 18.0], observed_x_range_m: [-0.3205653873, -0.2607652385], observed_y_range_m: [-0.0258352240, 0.0435749944], observed_yaw_range_deg: [-9.3888559011, 14.6532602591]}
+    zero_action: {status: pass, physics_frames: 1200, sim_seconds: 10.0, max_q_drift_rad: 1.3435030865593944e-11, max_abs_qd_rad_s: 3.056348418795096e-08, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+    first_tracker_command: {status: pass, commanded_lift_m: 0.25, palm_displacement_m: 0.001204922309806826, lid_motion_rad: 6.5356609013633715e-12, lid_speed_rad_s: 1.9765714398545242e-08}
+    passive_lid_impulse_probe: {status: pass, initial_open_deg: 5.0, initial_opening_speed_rad_s: 1.0, maximum_open_deg: 5.0, maximum_opening_speed_rad_s: 1.0, maximum_closing_speed_rad_s: 3.2210488319396973, final_open_deg: 0.0}
+    scope_limit: "The clean scripted run validates scaled composition, reset diversity, passive lid dynamics, and hard reset. The operator must still retest direct hand contact and reachability at the wider extreme poses in the collection UI."
+  lid_dynamics_iteration:
+    status: live_pass_operator_contact_retest_pending
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_lid_dynamics_20260831.json, sha256: 21975086678dd2016d5c7833f1d32a3b41a5ee3f998b2132a740da911bbb2865}
+    diagnosis: "The source already assigned 0.7 kg to the base and 0.3 kg to the lid, but authored zero diagonal inertia and a non-finite lid COM. The old repair placed that COM at the hinge, removing the 120.6 mm gravity lever arm and leaving an unrealistically small opening inertia. The source joint also had a raw friction attribute without an applied PhysxJointAPI, and the lid had no angular damping."
+    correction: "Preserve the source masses; author the measured lid-local COM and composed centroid inertia, explicitly apply PhysxJointAPI with joint friction 0.1, and set passive lid angular damping to 2.0. No drive, spring, per-frame velocity clamp, or forced pose is used."
+    composed_readback: {lid_mass_kg: 0.30000001192092896, physical_hinge_to_com_m: 0.1213660767, effective_hinge_inertia_kg_m2: 0.005957437721387819, angular_damping: 2.0, joint_friction: 0.10000000149011612, physx_joint_api_applied: true}
+    zero_action: {status: pass, physics_frames: 1200, sim_seconds: 10.0, max_q_drift_rad: 8.784084570834239e-12, max_abs_qd_rad_s: 2.8588836484787217e-13}
+    first_tracker_command: {status: pass, commanded_lift_m: 0.25, palm_displacement_m: 0.001204922309806826, lid_motion_rad: 1.021405182655144e-14, lid_speed_rad_s: 2.8588836484787217e-13}
+    passive_lid_impulse_probe: {status: pass, initial_open_deg: 5.0, initial_opening_speed_rad_s: 1.0, maximum_open_deg: 5.002965, final_open_deg: 0.0, settled_control_step: 3}
+    scope_limit: "The scripted passive impulse proves the repaired lid no longer flies to the hard stop under a small opening impulse. The operator must still retest direct hand contact in the collection UI."
+  lid_collision_fix_iteration:
+    status: scripted_physical_contact_pass_operator_task_trial_pending
+    source_session: 20260829-155405_collector_001_18_open_micropipette_box
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_lid_collision_fix_20260829.json, sha256: 9a2217485dd549fccc0dfbaeb692cac70db10b6359517763189e3ac85c456113}
+    diagnosis: "Seven authored thin convexes fell back from the Isaac Sim 5.1 GPU cooker to CPU. Four were lid colliders, including the broad top panel and two long rims, leaving the visible cover outside the reliable GPU contact path."
+    correction: "Preserve the original visual USD and 2-body/25-collider/1-DOF articulation, but use tight boundingCube collision approximations for the seven rejected convexes on the composed GPU stage."
+    gpu_fallback_messages_after_fix: 0
+    zero_action: {status: pass, seeds: [20260829, 20260830, 20260831], same_seed_exact_repeat: true, physics_frames: 1200, sim_seconds: 10.0, max_q_drift_rad: 1.0680345496894006e-12, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+    scripted_right_hand_lid_contact: {status: pass, continuous_contact_s: 1.0, active_samples: 31, max_force_n: 16.034744262695312, maximum_penetration_m: 0.00005330238491296768, penetration_limit_m: 0.005, automatic_reset: false, task_failure: false}
+    scope_limit: "This is a physical scripted collision regression. The assigned bimanual operator success sequence, cameras, accepted Zarr episode, and fresh replay remain pending."
+  current_fixed_base_iteration:
+    status: task_semantics_pass_host_gpu_teardown_xid
+    reset_randomization: {root_x_half_range_m: 0.040, root_y_half_range_m: 0.030, root_yaw_half_range_deg: 8.0, lid_angle_deg: 0.0}
+    root_policy: native_world_fixed_joint_written_at_reset_before_action_zero
+    table_support_policy: diagnostic_only
+    evidence: {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_fixed_base_reset_smoke_20260829.json, sha256: aeceb404dd66c11f636f36a1b316101ee94d39e68c39da9af3d7994940d7ee27}
+    smoke_metrics: {fixed_base: true, bodies: 2, colliders: 25, dofs: 1, same_seed_exact_repeat: true, different_seed_pose_change: true, zero_action_physics_frames: 240, max_root_translation_drift_m: 0.0, max_root_rotation_drift_deg: 0.0}
+    host_caveat: "After the task checks passed, process teardown coincided with the host's recurring order-7 page-allocation failure and NVRM Xid 31. GPU Recovery Action remained None, but this is not a clean release-certification run."
+    note: "The retained floating-base live evidence below predates this semantic change and must not be used to certify the current runtime."
+  first_attempt:
+    status: fail
+    evidence: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability.json
+    evidence_sha256: f46044ec4ff22112091dbf46d450eb785dfa163eb725c40920f512b4a385b18b
+    finding: "The authored -2 degree lid reset was pulled back to the 0 degree hard stop by gravity (0.03490659 rad pre-action drift), while the original base collision did not carry the audited bottom plane and allowed -1.272335 mm geometric sink. The fail-closed stable-origin gate rejected the run."
+  corrected_rerun:
+    status: pass
+    evidence: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json
+    evidence_sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1
+    first_physx_scene_construction: pass
+    topology:
+      bodies: 2
+      colliders: 25
+      dofs: 1
+      stage_matches_manifest: true
+      physx_links_match_manifest: true
+      support_contact_view_present: true
+    zero_action_stability:
+      status: pass
+      control_steps: 60
+      physics_hz: 120
+      physics_frames_expected: 240
+      physics_frames_sampled: 240
+      truth_unreadable_frames: 0
+      max_q_drift_rad: 0.00000000001667510574066
+      max_abs_qd_rad_s: 0.00024102645693346858
+      max_root_translation_drift_m: 0.0000000596119202889698
+      max_root_rotation_drift_deg: 0.0000017075472925031877
+    table_support:
+      status: pass_within_signed_contact_tolerance
+      physics_frames_sampled: 240
+      unreadable_frames: 0
+      min_upward_force_n: 9.80262279510498
+      min_contact_points: 12
+      signed_clearance_range_m: [-0.000001498318531023557, -0.0000014387138862481663]
+      physx_separation_range_m: [-0.000001534237526357174, -0.0000014150282368063927]
+      allowed_signed_range_m: [-0.00025, 0.00050]
+      literal_zero_penetration_claimed: false
+      interpretation: "Both signed ranges show only about 1.4-1.6 micrometres of contact compression and remain far inside the audited tolerance."
+    stable_recording_origin:
+      status: pass
+      accepted_trials: 4
+      settle_physics_steps_per_trial: 180
+    reset_validation:
+      status: pass_for_same_seed_different_seed_and_same_process_hard_reset
+      same_seed_repeat: 20260823
+      different_seed: 20260824
+      hard_reset_seed: 20360826
+      hard_reset_scene_rebuilt: true
+      hard_reset_simulation_app_reused: true
+  touch_reset_bug_iteration:
+    status: fixed_in_contract_and_live_static_pending_operator_sustained_touch_retest
+    source_session: 20260823-042911_collector_001_18_open_micropipette_box
+    pre_fix_reproductions:
+      - event_ordinal: 3
+        event_sha256: 470938fd541f6f786f7e0a5758a4ffa3eb962f7bc717035797da150ce40b9540
+        first_cause: root_translation_drift
+        contact_context: "The right fingers/palm touched the box base; neither the assigned left-base contact nor the assigned right-lid contact was active."
+        control_step: 82
+        physics_substep: 3
+        root_translation_error_m: 0.0308439
+        root_rotation_error_deg: 7.6015
+        lid_q_approximately_deg: 0.0
+        maximum_penetration_m: 0.000282
+      - event_ordinal: 5
+        event_sha256: ed503d15f083911060462a30fe66511678ca3f0e1ce8d42e0973a58813602fa1
+        first_cause: root_translation_drift
+        contact_context: "The right hand touched the lid while the assigned left-base stabilizing contact was absent."
+        elapsed_contact_window_s_approximately: 0.19
+        control_frames_approximately: 5
+        root_translation_error_m: 0.0304021
+        root_rotation_error_deg: 0.494
+        lid_q_approximately_deg: 0.0
+    root_cause: "The 30 mm / 8 degree root-pose success envelope was incorrectly armed as a per-120-Hz-substep terminal failure from action 0, with no debounce or recovery, so ordinary contact caused an unsuccessful terminal transition and recorder hard reset."
+    correction:
+      contract_arming: after_recording_origin_accepted
+      recoverable_progress_guard: {translation_max_m: 0.030, rotation_max_deg: 8.0, effect: clear_current_attempt_progress_without_terminal_reset}
+      recoverable_release_and_stabilize_guards: {events: [stabilizer_contact_lost, target_lost], target_loss_includes_single_frame_speed_spike: true, effect: clear_current_attempt_progress_without_terminal_reset}
+      recoverable_wrong_direction_guard: {tolerance_deg: 3.0, effect: clear_current_attempt_progress_without_terminal_reset}
+      terminal_gross_escape: {translation_exclusive_max_m: 0.200, rotation_exclusive_max_deg: 60.0, consecutive_hold_s: 0.50}
+      success_truth_gate: "Live base-to-table support truth and valid support are required on every physics substep before progress or success can accumulate."
+      terminal_reporting: "The first true terminal reason is emitted as structured evidence before the reset transaction."
+    post_fix_contract_validation:
+      status: pass
+      passed: 126
+      scope: "Focused contract/runtime-review tests cover post-origin arming, recoverable soft root/support guards, recoverable stabilizer/target loss in WAIT_RELEASE/STABILIZE, recoverable 4 degree wrong-direction excursion and retry, sustained gross-escape terminal behavior, continuous support-success gating, and structured first-terminal reporting."
+    post_fix_persistent_live_static_evidence:
+      path: taskdev/tasks/t18_open_micropipette_box/evidence/live_soft_contact_guard_fix.json
+      sha256: fb4b967c6858e010bc085d514812cfd77ca87e9019bcd354e3dcc2cea5b75858
+      status: pass
+      body_count: 2
+      collider_count: 25
+      dof_count: 1
+      physics_steps: 240
+      truth_unreadable_frames: 0
+      min_support_force_n: 9.80262279510498
+      min_support_contact_points: 12
+      scope: "Live first-PhysX, stable-origin, zero-action, topology, and support-truth validation only; it did not exercise an operator touch."
+      scope_limit: persistent_live_static_evidence_not_operator_touch_evidence
+    operator_sustained_intended_touch_at_least_one_second: pending
+  operator_start_reset_stop: failed_before_fix_pending_post_fix_retest
+  operator_sustained_intended_touch_at_least_one_second: pending
+  live_assigned_hand_contact_and_reachability: pending
+  physical_success_and_negative_trials: pending
+  canonical_camera: pending
+  zarr_recording: pending
+  fresh_process_replay: pending
+claims:
+  task_complete: false
+  live_physx_validated: true
+  stable_initial_state_validated: true
+  bounded_initial_contact_validated: false
+  literal_zero_penetration_validated: false
+  stable_recording_origin_validated: true
+  recoverable_root_progress_guard_contract_validated: true
+  recording_origin_arming_contract_validated: true
+  recoverable_release_target_and_wrong_direction_contract_validated: false
+  sustained_gross_escape_terminal_contract_validated: true
+  continuous_support_success_gate_contract_validated: false
+  structured_first_terminal_reason_contract_validated: true
+  post_fix_live_static_validated: true
+  post_fix_operator_sustained_touch_validated: false
+  same_seed_different_seed_and_in_process_hard_reset_validated: true
+  formal_reset_trial_threshold_validated: false
+  operator_accepted: false
+  physical_success_validated: false
+  camera_validated: false
+  collection_validated: false
+  fresh_replay_validated: false
+  formal_collection_certified: false
+  fixed_base_topology_smoke_validated: true
+  seeded_fixed_base_reset_smoke_validated: true
+  zero_action_fixed_base_stability_smoke_validated: true
+  clean_host_gpu_run_validated: true
+release_gate:
+  asset_provenance: user_provided
+  asset_author_and_upstream_source_resolved: false
+  asset_license_resolved: false
+  redistribution_allowed: false
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+checks:
+  schema: {status: pending, summary: "Task manifest static schema validation passed with zero errors; immutable full-certification evidence remains pending.", evidence: [], metrics: {}}
+  assets:
+    status: pending
+    summary: "The live composed 2-body/25-collider/1-DOF topology matches the manifest, but asset author, upstream source, license, and redistribution rights remain unresolved."
+    evidence:
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json, sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1}
+    metrics: {missing_count: 0, all_scales_verified: true, all_collision_shapes_verified: false}
+  reachability: {status: pending, summary: "Assigned left-base and right-lid targets have not yet been exercised by an operator with live physical TCPs.", evidence: [], metrics: {}}
+  contact:
+    status: pending
+    summary: "Base-to-table support passed for all 240 sampled physics frames with at least 9.8026 N and 12 points. Two real pre-fix touches triggered root_translation_drift terminals at 30.8439 mm and 30.4021 mm; the soft guard is now recoverable in contract/tests, but an operator must still sustain intended contact for at least one second without reset."
+    evidence:
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability.json, sha256: f46044ec4ff22112091dbf46d450eb785dfa163eb725c40920f512b4a385b18b}
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json, sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1}
+    metrics: {max_penetration_m: 0.000001534237526357174, forbidden_events: 0, required_pairs_observed: false, min_support_force_n: 9.80262279510498, min_support_contact_points: 12}
+  reset:
+    status: pending
+    summary: "Same-seed repeat, different-seed reset, stable-origin acceptance, and a same-process rebuilt PhysX hard reset passed. The user's later automatic resets were traced to terminal semantics rather than unstable initialization; post-fix operator contact/reset workflow and the formal 20-trial threshold remain pending."
+    evidence:
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability.json, sha256: f46044ec4ff22112091dbf46d450eb785dfa163eb725c40920f512b4a385b18b}
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json, sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1}
+    metrics: {trials: 4, failure_fraction: 0.0, deterministic: true}
+  success: {status: pending_live_operator_trial, summary: "Success now latches on the first 120 Hz physics substep at which the physical lid joint reaches -75 degrees or farther open. Assigned hand contact, signed motion history, release, target hold, speed hold, and stable hold are not predicates. Focused static tests pass; a post-change live operator success trial remains pending.", evidence: [], metrics: {lid_open_threshold_deg: 75.0, immediate: true, assigned_contact_required: false, release_required: false, hold_required: false, gross_escape_translation_m: 0.200, gross_escape_rotation_deg: 60.0, gross_escape_hold_s: 0.50, post_fix_contract_tests_passed: 140}}
+  camera: {status: pending, summary: "Canonical head/wrist framing and non-black image evidence are pending.", evidence: [], metrics: {}}
+  stability:
+    status: pass
+    summary: "The corrected stable origin completed 240 consecutive 120 Hz post-accept physics frames with exact substep accounting, readable truth, bounded DOF/root drift, and continuous table support."
+    evidence:
+      - {path: taskdev/tasks/t18_open_micropipette_box/evidence/live_initial_stability_rerun.json, sha256: dde8a96239c5ce912e4778d0b246bbc99062148ef76d8d479043cf5eee6a87a1}
+    metrics: {sim_seconds: 2.0, nan_count: 0, exploding_body_count: 0, physics_frames_expected: 240, physics_frames_sampled: 240, unreadable_frames: 0}
+  collection: {status: pending, summary: "Operator test collection is enabled for start/reset/stop and trial capture, but successful reviewed Zarr episodes and fresh-process physical replay remain pending; collection is not yet validated or certified.", evidence: [], metrics: {}}

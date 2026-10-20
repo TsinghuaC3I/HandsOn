@@ -1,0 +1,11 @@
+Model Information:
+* title:	Appartement
+* source:	https://sketchfab.com/3d-models/appartement-6a7a5fe208344b2e8123a88923dbd5b3
+* author:	SrMonteiro (https://sketchfab.com/crispimrafael)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Appartement" (https://sketchfab.com/3d-models/appartement-6a7a5fe208344b2e8123a88923dbd5b3) by SrMonteiro (https://sketchfab.com/crispimrafael) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

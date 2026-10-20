@@ -1,0 +1,102 @@
+diff --git a/mujoco_warp/_src/forward.py b/mujoco_warp/_src/forward.py
+--- a/mujoco_warp/_src/forward.py
++++ b/mujoco_warp/_src/forward.py
+@@ -130,6 +130,17 @@ def _next_velocity(
+   qvel_out[worldid, dofid] = qvel_in[worldid, dofid] + qacc_scale_in * qacc_in[worldid, dofid] * timestep
+ 
+ 
++@wp.kernel
++def _project_dof_velocity(
++  qvel: wp.array2d[float],
++  velocity_limit: wp.array[float],
++):
++  """Project candidate generalized velocities before position integration."""
++  worldid, dofid = wp.tid()
++  limit = wp.abs(velocity_limit[dofid])
++  qvel[worldid, dofid] = wp.clamp(qvel[worldid, dofid], -limit, limit)
++
++
+ @wp.kernel
+ def _next_activation(
+   # Model:
+@@ -307,6 +318,19 @@ def _advance(m: Model, d: Data, qacc: wp.array, qvel: Optional[wp.array] = None):
+     outputs=[d.qvel],
+   )
+ 
++  # HANDSON_B03_NEWTON_QD_PROJECTION_V1: Newton's MuJoCo solver does not
++  # consume Model.joint_velocity_limit.  The adapter installs a template-DOF
++  # limit array on this MJWarp model, so project the candidate velocity before
++  # semi-implicit position integration.  This remains inside the integrator
++  # and therefore keeps MJWarp qvel, qpos, and Newton's state readback aligned.
++  dof_velocity_limit = getattr(m, "dof_velocity_limit", None)
++  if dof_velocity_limit is not None:
++    wp.launch(
++      _project_dof_velocity,
++      dim=(d.nworld, m.nv),
++      inputs=[d.qvel, dof_velocity_limit],
++    )
++
+   # advance positions with qvel if given, d.qvel otherwise (semi-implicit)
+   qvel_in = qvel or d.qvel
+ 
+diff --git a/newton/_src/solvers/mujoco/solver_mujoco.py b/newton/_src/solvers/mujoco/solver_mujoco.py
+--- a/newton/_src/solvers/mujoco/solver_mujoco.py
++++ b/newton/_src/solvers/mujoco/solver_mujoco.py
+@@ -5010,7 +5010,6 @@ class SolverMuJoCo(SolverBase):
+         joint_target_mode = model.joint_target_mode.numpy()
+         joint_target_ke = model.joint_target_ke.numpy()
+         joint_target_kd = model.joint_target_kd.numpy()
+-        # MoJoCo doesn't have velocity limit
+-        # joint_velocity_limit = model.joint_velocity_limit.numpy()
++        joint_velocity_limit = model.joint_velocity_limit.numpy()
+         joint_friction = model.joint_friction.numpy()
+         joint_world = model.joint_world.numpy()
+@@ -6532,6 +6531,36 @@ class SolverMuJoCo(SolverBase):
+             j_idx = selected_joints[j_template]
+             mj_q_start_np[j_template] = joint_mjc_qpos_start[j_idx]
+             mj_qd_start_np[j_template] = joint_mjc_dof_start[j_idx]
++        # HANDSON_B03_NEWTON_QD_PROJECTION_V1: map Newton's per-DOF velocity
++        # limits into the compiled template MuJoCo qvel layout.  MJWarp's
++        # integrator consumes this fixed device array before integrating qpos.
++        mj_dof_velocity_limit_np = np.full(
++            self.mj_model.nv,
++            np.inf,
++            dtype=np.float32,
++        )
++        for j_template in range(n_template_joints):
++            j_idx = selected_joints[j_template]
++            mj_qd_start = int(mj_qd_start_np[j_template])
++            if mj_qd_start < 0:
++                continue
++            newton_qd_start = int(joint_qd_start[j_idx])
++            linear_dofs, angular_dofs = joint_dof_dim[j_idx]
++            dof_count = int(linear_dofs + angular_dofs)
++            limits = np.asarray(
++                joint_velocity_limit[
++                    newton_qd_start : newton_qd_start + dof_count
++                ],
++                dtype=np.float32,
++            )
++            limits = np.where(
++                np.isfinite(limits) & (limits >= 0.0),
++                limits,
++                np.inf,
++            )
++            mj_dof_velocity_limit_np[
++                mj_qd_start : mj_qd_start + dof_count
++            ] = limits
+         # Validate that all non-loop joints got valid MuJoCo start indices
+         for j_template in range(n_template_joints):
+             j_idx = selected_joints[j_template]
+@@ -6564,6 +6593,11 @@ class SolverMuJoCo(SolverBase):
+             # create the MuJoCo Warp model
+             self.mjw_model = mujoco_warp.put_model(self.mj_model)
+             self.mjw_model.block_dim.linesearch_iterative = 32
++            self.mjw_model.dof_velocity_limit = wp.array(
++                mj_dof_velocity_limit_np,
++                dtype=wp.float32,
++                device=model.device,
++            )
+ 
+             # patch mjw_model with mesh_pos if it doesn't have it
+             if not hasattr(self.mjw_model, "mesh_pos"):

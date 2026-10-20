@@ -1,0 +1,39 @@
+env_name: t18_open_micropipette_box
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "The micropipette box is fixed after reset at a randomized tabletop pose and yaw. Open its real hinged lid from the closed position to at least 75 degrees. Success is immediate as soon as the physical lid joint reaches that opening; either hand may be used, and no assigned contact, release, or stable-hold condition is required."
+robot_type: dual_arm
+time_limit_seconds: 90
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx
+  control_hz: 30
+  physics_hz: 120
+  arm_type: rokae
+  hand_type: wuji1
+skills:
+  - articulated_lid_opening
+  - revolute_joint_manipulation
+objects:
+  - micropipette_box_base
+  - micropipette_box_lid
+workflow:
+  - inspect_randomized_box_xy_and_yaw
+  - open_physical_lid_to_at_least_75_degrees
+success_criteria:
+  - physical_lid_joint_opened_to_at_least_75_degrees
+# The lid and complete Wuji hands are thin, fast-moving collision bodies.
+# Keep this predictive shell task-scoped so it cannot alter other collection
+# tasks. Base-to-table contact remains diagnostic only for the fixed base.
+collision_safety:
+  thin_lid_swept_ccd: true
+  source_contact_offset_m: 0.002
+  hand_stage_ccd: true
+  hand_solver_position_iterations: 64
+  hand_solver_velocity_iterations: 8
+  hand_max_depenetration_velocity_mps: 0.40
+  # Speculative CCD remains disabled because the earlier all-hand path could
+  # raise CUDA 700 during Isaac Sim 5.1 articulation initialization.
+  hand_stage_speculative_ccd: false

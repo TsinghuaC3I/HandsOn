@@ -1,0 +1,90 @@
+{
+  "schema": "fu015_core_scene_handoff_v1",
+  "task_id": "B320-FU015",
+  "source_row_contract": {
+    "task_id": "B320-FU015",
+    "excel_row": 229,
+    "authoritative_bundle_sha256": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987",
+    "asset_key": "dv_laptop"
+  },
+  "scope": "core_scene_only",
+  "isaac_sim_version": "5.1",
+  "components": {
+    "robot": {
+      "asset": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+      "sides": ["left", "right"],
+      "arm_dof_per_side": 7,
+      "hand_dof_per_side": 20
+    },
+    "laptop": {
+      "asset": "assets/dv_laptop/model_computer_9.usd",
+      "sha256": "31ad6079c08b7f2f80a082ec1d5d67309eb98d4bffb3fc24688c583170847aac",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "placement_xy_m": [0.02, 0.0],
+      "placement_yaw_deg": -90.0,
+      "initial_hinge_deg": -22.0,
+      "hinge_axis": "X",
+      "hinge_limits_deg": [-110.0, 0.0],
+      "rigid_owners": [
+        "/World/FU015Core/Laptop/E_body_1",
+        "/World/FU015Core/Laptop/E_displayer_5"
+      ],
+      "collision_shape_count": 13,
+      "self_collisions_enabled": false
+    },
+    "table": {
+      "source": "native HandsOn t02_connect_charger_and_cable table",
+      "kinematic": true
+    },
+    "lighting": {
+      "dome_intensity": 300.0,
+      "distant_intensity": 2500.0,
+      "render_mode": "RayTracedLighting",
+      "aces_tonemap_op": 4,
+      "film_iso": 200
+    },
+    "head_camera": {
+      "prim_path": "/World/RecordCameras/head_camera",
+      "resolution_hwc": [480, 640, 3],
+      "production_preview_target": "previews/reset_head.png",
+      "design_preview": "previews/core_scene_design.png",
+      "design_preview_kind": "cpu_schematic_not_camera_evidence"
+    }
+  },
+  "source_asset_evidence": "evidence/source_asset_audit.json",
+  "live_laptop_physics_evidence": "evidence/laptop_physics_live.json",
+  "live_laptop_physics_marker": "evidence/LAPTOP_PHYSICS_PASS.json",
+  "scheduler_evidence": {
+    "run": "evidence/scheduler_run.json",
+    "gpu_namespace": "evidence/scheduler_gpu_namespace.json",
+    "run_id": "b320-fu015-laptop-physics-smoke-tablefix-20260817T112719Z-eb618460",
+    "host": "hp-13",
+    "physical_gpu": 4,
+    "logical_gpu": 0
+  },
+  "full_core_scene_blocker_evidence": "evidence/full_core_scene_blocker.json",
+  "live_core_scene_evidence": null,
+  "measured_laptop_zero_action": {
+    "scope": "laptop_table_standalone",
+    "steps": 30,
+    "simulated_seconds": 0.25,
+    "base_translation_drift_m": 0.0000638615508162927,
+    "base_rotation_drift_rad": 0.0007394072515901853,
+    "final_hinge_error_rad": 0.00047308131468326575,
+    "max_penetration_m": 0.0,
+    "self_contact_count": 0,
+    "unexpected_non_table_count": 0,
+    "pass": true
+  },
+  "claims": {
+    "core_scene_ready": false,
+    "zero_action_stable": true,
+    "zero_action_scope": "laptop_table_standalone_only",
+    "dual_arm_runtime_validated": false,
+    "head_camera_validated": false,
+    "motion_or_grasp_validated": false,
+    "path_or_action_tuned": false,
+    "task_complete": false
+  }
+}

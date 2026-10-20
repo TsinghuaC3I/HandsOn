@@ -1,0 +1,27 @@
+{
+  "asset_id": "Plaster004",
+  "source": "https://ambientcg.com/a/Plaster004",
+  "download": "https://ambientcg.com/get?file=Plaster004_2K-JPG.zip",
+  "archive_sha256": "b92e4cbddfe65219415366ff90b50b13b80bf7827195bd98f0808bf384483e37",
+  "license": "CC0-1.0",
+  "license_source": "https://docs.ambientcg.com/license/",
+  "source_dimension_cm": [
+    0,
+    0
+  ],
+  "creation_method": "PBRProcedural",
+  "maps": {
+    "Color": {
+      "file": "Plaster004/Color.jpg",
+      "sha256": "2a1f298f1ee6469c8cc09fe5375741c51e1eecabbfd422c9a1369c57b171dc5b"
+    },
+    "NormalGL": {
+      "file": "Plaster004/NormalGL.jpg",
+      "sha256": "6d980fc5343ddcfce2b5c80ffe7b2b3181d05d13325ca0b33aed33575a5577be"
+    },
+    "Roughness": {
+      "file": "Plaster004/Roughness.jpg",
+      "sha256": "69b3a2d34b525314e4155cbbb737591f457193c64e4025f656e854912e2353aa"
+    }
+  }
+}

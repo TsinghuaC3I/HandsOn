@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-17",
+  "scope": "Checksum repair after project renaming; asset geometry/physics are unchanged.",
+  "bundles": [
+    {
+      "name": "cc_by_anthony_yanez_salt_pepper_shakers",
+      "old_sha256": "a53b4aadc0d4d0ecd1ec6fecdcba3b24e8baee8f26b6da2a65db82fcd69cec46",
+      "new_sha256": "efba30ea08e24bbed9b5d638a62ad274c6cba33ef418c6d1a71f18a7c83a1412",
+      "changed_files": [
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_by_anthony_yanez_salt_pepper_shakers/conversion.json",
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_by_anthony_yanez_salt_pepper_shakers/pepper_jar.usda",
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_by_anthony_yanez_salt_pepper_shakers/salt_jar.usda"
+      ],
+      "rename_and_manifest_hashes_only_verified": true
+    },
+    {
+      "name": "polyhaven_pot_enamel_01",
+      "old_sha256": "57a88d4d1f9aa5b39bad2089f876fabd22a7d32ed59ef5cf57249a63ce757670",
+      "new_sha256": "947de82d7d9624f0e387c8b033c7f14188e641e1cdfbfb2052b9d93eb740988d",
+      "changed_files": [
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_pot_enamel_01/asset_manifest.json"
+      ],
+      "rename_and_manifest_hashes_only_verified": true
+    },
+    {
+      "name": "cc_ka021_hs005_kitchen_anilai_white_mug",
+      "old_sha256": "3f793fc5ea28ec75ffa1b87f60d737c3afbbe79b1863644adcdbaac315a0d86e",
+      "new_sha256": "5dc27d83107a8688f0a810013682fff74d1b24ff9557b59e7000c70e51dd6535",
+      "changed_files": [
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/asset_manifest.json"
+      ],
+      "rename_and_manifest_hashes_only_verified": true
+    },
+    {
+      "name": "cc_by_requital_dish_sponge",
+      "old_sha256": "4391241890f9e44b373bba139b4e0f40ba56127e52246342de5adc184cd272f9",
+      "new_sha256": "57630e7cc80c7ac314582ed75917b507f54434fae7a82c1d27badd3b2a512aa0",
+      "changed_files": [
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_by_requital_dish_sponge/conversion.json",
+        "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/cc_by_requital_dish_sponge/derived/sponge_only_manifest.json"
+      ],
+      "rename_and_manifest_hashes_only_verified": true
+    }
+  ],
+  "knife_usda": {
+    "path": "handson/handson/sim/isaaclab/usd/t40_slide_knife_blade/utility_knife_ahtusik/utility_knife_ahtusik.usda",
+    "old_sha256": "f97201d8a62f0ccc32fb396fb807abcd4849c3da8defffd0d20704190b954744",
+    "new_sha256": "332f1b717677caf73ccbff6fd48debd3c862fb729960b373909692d12f68dfa0",
+    "rename_only_verified": true
+  },
+  "knife_metadata": {
+    "path": "handson/handson/sim/isaaclab/usd/t40_slide_knife_blade/utility_knife_ahtusik/utility_knife_ahtusik_metadata.json",
+    "old_sha256": "f67a448283852e90a4349947a0e342245f04a65f3533eaa78621947218f725f6",
+    "new_sha256": "f67a448283852e90a4349947a0e342245f04a65f3533eaa78621947218f725f6",
+    "rename_only_verified": true
+  },
+  "bc017_schema": {
+    "old_sha256": "7fc3d166f1c9b754b98bfbfc53c28b95d9482b00df3b3b773a28ce134cecf2d6",
+    "new_sha256": "45bcdc6a0cb9ed2f0a89d839d1ef99e1be3ceecc8ec293a3549543ff36e6ab2c",
+    "schema_name_only_verified": true
+  }
+}

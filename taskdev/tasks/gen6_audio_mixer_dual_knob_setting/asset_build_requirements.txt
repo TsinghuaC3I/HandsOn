@@ -1,0 +1,9 @@
+# CPU asset conversion and geometric audits only; not the Isaac runtime.
+numpy==1.26.4
+scipy==1.14.1
+trimesh==5.1.0
+usd-core==26.8
+Pillow==12.3.0
+shapely==2.1.2
+rtree==1.4.1
+python-fcl==0.7.0.11

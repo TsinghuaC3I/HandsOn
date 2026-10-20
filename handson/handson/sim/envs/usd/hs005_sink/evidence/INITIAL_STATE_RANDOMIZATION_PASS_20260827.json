@@ -1,0 +1,87 @@
+{
+  "schema": "hs005_initial_state_randomization_pass_v1",
+  "task": "b320_hs005_sink_bottle_stabilized_scrub",
+  "benchmark_task_id": "B320-HS005",
+  "date_local": "2026-08-27",
+  "task_complete": false,
+  "scope": "authored/reset collision clearance, initial physical stability, canonical camera visibility, and seeded position randomization only",
+  "collision_query": {
+    "source_log": "/tmp/hs005_hand_overlap_probe_final.log",
+    "source_log_sha256": "bb582b96b61168473b1f0ab60e9b6862998aa64b344a8c876e909fc6448d5e0b",
+    "queried_hand_collision_shapes": 42,
+    "before_explicit_reset_external_overlaps": 0,
+    "after_first_reset_frame_external_overlaps": 0,
+    "after_stability_gate_external_overlaps": 0,
+    "query_error_count": 0,
+    "stability_passed": true
+  },
+  "collection_startup": {
+    "command_family": "scripts/record_demos_zarr.py --preview_only=True --max_steps=1 --randomize=True --arm_type=rokae --hand_type=wuji1",
+    "expected_line": "Stable physical frame 0: steps=0, linear=0.000000m/s, angular=0.000000rad/s, gate_joint=0.000000rad/s, target_error=0.000000000rad, robot_origin=legacy, attempt=1/3.",
+    "scenes": {
+      "hs005_modern_apartment_sink": {
+        "passed": true,
+        "log": "/tmp/hs005_context_clear_probe.log",
+        "log_sha256": "683ad87af02e89a74d050ddaebb6da1cc836b7a36ed0776595880aeb9921f7b3"
+      },
+      "hs005_modern_kitchen_sink": {
+        "passed": true,
+        "log": "/tmp/hs005_modern_kitchen_final_probe.log",
+        "log_sha256": "027f1eb25cece1165867889812c3b48b139fcb097da6d8f6522dc775a537cfb1"
+      },
+      "hs005_realistic_kitchen_scene_sink": {
+        "passed": true,
+        "log": "/tmp/hs005_realistic_kitchen_visible_final_probe.log",
+        "log_sha256": "1c8cac5ec998156d17e1c5d5d2e5e8010d0e5cf5e80a7eb677e1d92c3552a3df"
+      },
+      "hs005_appartement_kitchen_sink": {
+        "passed": true,
+        "log": "/tmp/hs005_appartement_final_probe.log",
+        "log_sha256": "b8c5b0b2291f41039045bf8ec19f0b1d9b01dd640de979d17cdbb1346cfbd196"
+      }
+    },
+    "traceback_oom_crash_or_origin_rejection_count": 0
+  },
+  "seeded_position_randomization": {
+    "seed_count": 32,
+    "seeds": "0..31",
+    "same_seed_repeat_exact": true,
+    "bottle": {
+      "declared_xy_offset_bounds_m": [[-0.02, 0.02], [-0.02, 0.02]],
+      "sampled_xy_offset_min_m": [-0.019585033844572, -0.019220990340495018],
+      "sampled_xy_offset_max_m": [0.01868119356054707, 0.01874162651283728],
+      "sampled_xy_span_m": [0.03826622740511907, 0.0379626168533323]
+    },
+    "brush": {
+      "declared_xy_offset_bounds_m": [[-0.015, 0.015], [-0.015, 0.015]],
+      "sampled_xy_offset_min_m": [-0.014758591544105462, -0.01456275112543741],
+      "sampled_xy_offset_max_m": [0.014606100092773886, 0.014339685359898078],
+      "sampled_xy_span_m": [0.029364691636879346, 0.028902436485335487]
+    },
+    "position_variation_hard_gate_passed": true
+  },
+  "foundation_previews": {
+    "hs005_modern_apartment_sink": {
+      "summary_sha256": "f2056e70b49f78f3f7b1eb19a6ab436989322247d2db5cf1136fcde0b74fb6d0",
+      "preview_sha256": "50bddc98583ff98f6eda7524a18bc4359c70e8d9d7473b65fbf4564bab8a9c0b"
+    },
+    "hs005_modern_kitchen_sink": {
+      "summary_sha256": "aaef98b69d967a60b1b416fed131cc8cfe3300aee68bd5b39c0fc70e9597b9cd",
+      "preview_sha256": "0f40737751b75c6bcab81a72506bd862fb9fafabc67659b9729a715c190b8fcc"
+    },
+    "hs005_realistic_kitchen_scene_sink": {
+      "summary_sha256": "c6a207e7ba2314746ac108b4a4602a7661d36926d50f657a410ec3a4b4bc1eae",
+      "preview_sha256": "429118805b6daa2d64448222de155c13639f7514df24c15c210965d8d6f94c77"
+    },
+    "hs005_appartement_kitchen_sink": {
+      "summary_sha256": "75c497c5bf75dfd5fc68298d52ee9a05d8abf4cd863875e42a1b8782cfad35b9",
+      "preview_sha256": "b733343ff07fa8f0e2a719869303a58ff914462d5a56115538f01cd84dd75634"
+    },
+    "all_four_foundation_pass": true
+  },
+  "remaining_scope": [
+    "operator grasp/contact behavior after the asset and reset revision",
+    "full successful scrub episode",
+    "fresh-process physical replay certification"
+  ]
+}

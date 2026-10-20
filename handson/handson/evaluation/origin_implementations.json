@@ -1,0 +1,172 @@
+{
+  "t26_place_fruit_in_bucket": {
+    "module": "handson.sim.isaaclab.origins.native_e9b53f5ee3e3",
+    "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+    "packaged_sha256": "696e58cea9dd139994a845e847d374a6e66bc0af8c36bbd73bbcd6e165ef0597"
+  },
+  "t24_place_ball_in_bowl": {
+    "module": "handson.sim.isaaclab.origins.native_e9b53f5ee3e3",
+    "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+    "packaged_sha256": "696e58cea9dd139994a845e847d374a6e66bc0af8c36bbd73bbcd6e165ef0597"
+  },
+  "t04_cover_pitcher": {
+    "module": "handson.sim.isaaclab.origins.native_4a733bfaef3d",
+    "source_sha256": "4a733bfaef3d33cb4d0ff1deab0a19ac6fb771bb72394f16c22aa521af323161",
+    "packaged_sha256": "689c9ac0c335bf2db5e972c14cad76d32c1f0520af81597edbff0f6c1ef90f05"
+  },
+  "t09_insert_peg": {
+    "module": "handson.sim.isaaclab.origins.native_fdecd563de57",
+    "source_sha256": "fdecd563de5716085ef358825c539b5ba002e0a2e1d3ccfe63c671c5746dbb44",
+    "packaged_sha256": "0d100d8a5136187e565c3e2df5d1054725992eac10ecbeeb6e975d496af1e938"
+  },
+  "t44_stack_blocks": {
+    "module": "handson.sim.isaaclab.origins.native_4a733bfaef3d",
+    "source_sha256": "4a733bfaef3d33cb4d0ff1deab0a19ac6fb771bb72394f16c22aa521af323161",
+    "packaged_sha256": "689c9ac0c335bf2db5e972c14cad76d32c1f0520af81597edbff0f6c1ef90f05"
+  },
+  "t03_cover_box": {
+    "module": "handson.sim.isaaclab.origins.native_e9b53f5ee3e3",
+    "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+    "packaged_sha256": "696e58cea9dd139994a845e847d374a6e66bc0af8c36bbd73bbcd6e165ef0597"
+  },
+  "t08_hammer_nail": {
+    "module": "handson.sim.isaaclab.origins.native_5f34575ab469",
+    "source_sha256": "5f34575ab46906d69a2bb54f007765f5a28d9b0868100a994f25663617e45b2b",
+    "packaged_sha256": "496ab73721f3635ec76efa13f89622033a690202edeccef3e85f998a0dc17ce2"
+  },
+  "t36_scoop_marbles": {
+    "module": "handson.sim.isaaclab.origins.native_5f34575ab469",
+    "source_sha256": "5f34575ab46906d69a2bb54f007765f5a28d9b0868100a994f25663617e45b2b",
+    "packaged_sha256": "496ab73721f3635ec76efa13f89622033a690202edeccef3e85f998a0dc17ce2"
+  },
+  "t50_water_plant": {
+    "module": "handson.sim.isaaclab.origins.native_4a733bfaef3d",
+    "source_sha256": "4a733bfaef3d33cb4d0ff1deab0a19ac6fb771bb72394f16c22aa521af323161",
+    "packaged_sha256": "689c9ac0c335bf2db5e972c14cad76d32c1f0520af81597edbff0f6c1ef90f05"
+  },
+  "t14_move_and_click_mouse": {
+    "module": "handson.sim.isaaclab.origins.native_e9b53f5ee3e3",
+    "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+    "packaged_sha256": "696e58cea9dd139994a845e847d374a6e66bc0af8c36bbd73bbcd6e165ef0597"
+  },
+  "t23_photograph_logo": {
+    "module": "handson.sim.isaaclab.origins.native_8933925eaaa2",
+    "source_sha256": "8933925eaaa2e7c7325ceefa1d5891d65d3b21764f3457892aa8d900f463d39c",
+    "packaged_sha256": "daf23587bd80a7ac020f4fe3abc7618b0dc473c7d7fe64b1b7975778a3cda944"
+  },
+  "t02_connect_charger_and_cable": {
+    "module": "handson.sim.isaaclab.origins.native_49a8111f235e",
+    "source_sha256": "49a8111f235e1d1872044d47e720e5186b1a794614ad1910ac4e97faa60a9464",
+    "packaged_sha256": "84de456817128c5918da93bf345fd7d89d4179411e46f1199c36ebfcbda5d96f"
+  },
+  "t11_line_up_blocks": {
+    "module": "handson.sim.isaaclab.origins.native_5343ebb5ac06",
+    "source_sha256": "5343ebb5ac06e122f32ee3303293dc98806325aeb4d4e55ef40130d25e773c93",
+    "packaged_sha256": "f718cf9b87547797a1f0501a8dcc220604aae8280f75756022c2cddcbba50b9e"
+  },
+  "t06_fit_device_cover": {
+    "module": "handson.sim.isaaclab.origins.native_47f9933e5213",
+    "source_sha256": "47f9933e52130dda41ecbd7ff273ed4d57976629b15f42ede88dee90a73fd62d",
+    "packaged_sha256": "e40c7859916ae82dfc81d4e5a5b151a9327311096d7832513d41ebe354fd3e7f"
+  },
+  "t18_open_micropipette_box": {
+    "module": "handson.sim.isaaclab.origins.native_47f9933e5213",
+    "source_sha256": "47f9933e52130dda41ecbd7ff273ed4d57976629b15f42ede88dee90a73fd62d",
+    "packaged_sha256": "e40c7859916ae82dfc81d4e5a5b151a9327311096d7832513d41ebe354fd3e7f"
+  },
+  "t49_unfold_ruler": {
+    "module": "handson.sim.isaaclab.origins.native_3867c4b3e98c",
+    "source_sha256": "3867c4b3e98c1a2cf60cdfd4bfb24ff1cf3a7d4799a888f31e772525b6a51c37",
+    "packaged_sha256": "2ecb0a4d604840644bfafaac66f5d2f921b7fcda2e95c53155262b9b56102a71"
+  },
+  "t48_unfold_fan": {
+    "module": "handson.sim.isaaclab.origins.native_1b733a0f70d8",
+    "source_sha256": "1b733a0f70d8269d6868150ff8ba6a771e4f4c420baad5f8eed0b93814dd36cd",
+    "packaged_sha256": "97a1dd7e94f7b1adf84c58b29717e8c3ec2436e1bf4e2e192c5d3c0a09a3209d"
+  },
+  "t34_roll_ball_through_gate": {
+    "module": "handson.sim.isaaclab.origins.native_3e41ab60098b",
+    "source_sha256": "3e41ab60098bb19dc63287dd67ae5d513bca16e263b1349e8ac3dd3b643790a9",
+    "packaged_sha256": "340043b1d7242e5413c538bb514bd18b6e4c211b63f2620e23d61da3301bdcf9"
+  },
+  "t27_place_largest_fitting_ball": {
+    "module": "handson.sim.isaaclab.origins.native_33af3710e9b9",
+    "source_sha256": "33af3710e9b977d258b089a341e1e3eed80ee1c03aa6f163b5848ea472e312be",
+    "packaged_sha256": "20be038c839380a10a349ba367d157ed030886ce4f9c8a2834e6029cafe4ffa3"
+  },
+  "t41_sort_nested_cups": {
+    "module": "handson.sim.isaaclab.origins.native_cff3cc0eae91",
+    "source_sha256": "cff3cc0eae919d7adc4eed851b740ccd8c92aa062b062f62c52815a50cd340a9",
+    "packaged_sha256": "b163853b8789b5168a56fb23d0d1b0ceaaa0b3b532c536217d970412daf5b213"
+  },
+  "t47_trigger_drill_on_block": {
+    "module": "handson.sim.isaaclab.origins.native_c16e1c2e8fd8",
+    "source_sha256": "c16e1c2e8fd8fa0405644fb5b7e93328f7edb6f50d1f31e27ece61c9ba3bea07",
+    "packaged_sha256": "1712b3e8027882f650f27a224b620cb6e1587245ecb3767425f95108222080dc"
+  },
+  "t28_place_tableware": {
+    "module": "handson.sim.isaaclab.origins.native_c4424d284726",
+    "source_sha256": "c4424d2847260e61aebd5301b16d1b51237700fe11e08972b084210bc0b8ef1b",
+    "packaged_sha256": "c1286527162db170462a8a8b141dc3d8511cb6d590545093162657ef05f947e7"
+  },
+  "t39_set_timer": {
+    "module": "handson.sim.isaaclab.origins.native_c4424d284726",
+    "source_sha256": "c4424d2847260e61aebd5301b16d1b51237700fe11e08972b084210bc0b8ef1b",
+    "packaged_sha256": "c1286527162db170462a8a8b141dc3d8511cb6d590545093162657ef05f947e7"
+  },
+  "t07_flip_sponge": {
+    "module": "handson.sim.isaaclab.origins.native_e5f4b1194e76",
+    "source_sha256": "e5f4b1194e76cf50b188059ada06cfe66bad41865bf9507501ba283354b510f6",
+    "packaged_sha256": "4bdc24d9159d82be5ccfdbb433f8ec76c6a36cbac3c3746bf8957f47550d41da"
+  },
+  "t29_place_wine_glass": {
+    "module": "handson.sim.isaaclab.origins.native_212a782a01aa",
+    "source_sha256": "212a782a01aad7a956f7b2430b71869eaead72ab03f76e82a8575abd0dccfc49",
+    "packaged_sha256": "e0f8f7d074e276f34350298e1666145bdb307837f9b3c27e199e8e4846423ccf"
+  },
+  "t33_reposition_marker_grasp": {
+    "module": "handson.sim.isaaclab.origins.native_c16e1c2e8fd8",
+    "source_sha256": "c16e1c2e8fd8fa0405644fb5b7e93328f7edb6f50d1f31e27ece61c9ba3bea07",
+    "packaged_sha256": "1712b3e8027882f650f27a224b620cb6e1587245ecb3767425f95108222080dc"
+  },
+  "t25_place_cup_on_plate": {
+    "module": "handson.sim.isaaclab.origins.native_e9b53f5ee3e3",
+    "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+    "packaged_sha256": "696e58cea9dd139994a845e847d374a6e66bc0af8c36bbd73bbcd6e165ef0597"
+  },
+  "t19_orient_cup_upright": {
+    "module": "handson.sim.isaaclab.origins.native_4a733bfaef3d",
+    "source_sha256": "4a733bfaef3d33cb4d0ff1deab0a19ac6fb771bb72394f16c22aa521af323161",
+    "packaged_sha256": "689c9ac0c335bf2db5e972c14cad76d32c1f0520af81597edbff0f6c1ef90f05"
+  },
+  "t40_slide_knife_blade": {
+    "module": "handson.sim.isaaclab.origins.native_47f9933e5213",
+    "source_sha256": "47f9933e52130dda41ecbd7ff273ed4d57976629b15f42ede88dee90a73fd62d",
+    "packaged_sha256": "e40c7859916ae82dfc81d4e5a5b151a9327311096d7832513d41ebe354fd3e7f"
+  },
+  "t22_pass_screwdriver": {
+    "module": "handson.sim.isaaclab.origins.native_689abb23556f",
+    "source_sha256": "689abb23556f403d3ef948262834e274c950eeb8911521b9977106fdbb2b0c3a",
+    "packaged_sha256": "64fc8b8ede17028b91c645a21250ac523ed6af08b544e41d24ca9f18441fd64e"
+  },
+  "t10_lift_carton": {
+    "module": "handson.sim.isaaclab.origins.native_28b99e41abbe",
+    "source_sha256": "28b99e41abbe040216ce29cca5435625c20eaff97d8f63a52849900fac62eafd",
+    "packaged_sha256": "01e77605362f94e0458be0fc5bcddebd7952e5eafc95fc7d2e629a567724b32f"
+  },
+  "t16_open_laptop": {
+    "module": "handson.sim.isaaclab.origins.native_b2639e845931",
+    "source_sha256": "b2639e84593159b947ed451e35365597766287d72a4dddf0f4da829b730c63c3",
+    "packaged_sha256": "e635a2eea1388b08c291d231d59e351767fa5c8336aa48a20bf18e670bd23ccd"
+  },
+  "t17_open_latched_door": {
+    "module": "handson.sim.isaaclab.origins.native_261a8510c4ed",
+    "source_sha256": "261a8510c4ed6676fe5a8cfdf245f5034fb8d0208e08efbd7b9652b33b0e6f0e",
+    "packaged_sha256": "feecd235e1724f43e2bb24769b25559e7de28125c703c27837a5d474bbc4366a"
+  },
+  "t35_rotate_propeller": {
+    "module": "handson.sim.isaaclab.origins.native_c4424d284726",
+    "source_sha256": "c4424d2847260e61aebd5301b16d1b51237700fe11e08972b084210bc0b8ef1b",
+    "packaged_sha256": "c1286527162db170462a8a8b141dc3d8511cb6d590545093162657ef05f947e7"
+  }
+}

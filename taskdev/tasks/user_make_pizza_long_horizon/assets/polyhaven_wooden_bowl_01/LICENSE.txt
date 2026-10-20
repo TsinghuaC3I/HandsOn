@@ -1,0 +1,8 @@
+Wooden Bowl 01
+==============
+
+Source: https://polyhaven.com/a/wooden_bowl_01
+License: CC0 1.0 (https://polyhaven.com/license)
+
+The downloaded glTF, binary buffer, and texture maps are retained from Poly
+Haven. No geometry was authored in this task.

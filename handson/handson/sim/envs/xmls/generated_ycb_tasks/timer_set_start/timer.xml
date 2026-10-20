@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="timer_set_start_timer">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="timer_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="timer_collision">
+      <geom group="0" solref="0.004 1" solimp="0.998 0.998" density="502.134" friction="0.95 0.3 0.1" rgba="0.5 0 0 0.5"/>
+    </default>
+    <default class="timer_region">
+      <geom contype="0" conaffinity="0" group="4" mass="0"/>
+      <site group="4"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="timer_material_tex" file="../../lightwheel_ycb/timer/visuals/T_timer_BC001.png"/>
+    <material name="timer_material" texture="timer_material_tex" specular="0.333333" shininess="0.6"/>
+    <material name="timer_button_material" texture="timer_material_tex" specular="0.333333" shininess="0.6"/>
+
+    <mesh name="timer_vis" file="../../lightwheel_ycb/timer/visuals/optimized_visuals/timer.obj"/>
+    <mesh name="timer_Button001_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button001.obj"/>
+    <mesh name="timer_Button002_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button002.obj"/>
+    <mesh name="timer_Button003_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button003.obj"/>
+    <mesh name="timer_Button004_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button004.obj"/>
+    <mesh name="timer_Button005_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button005.obj"/>
+    <mesh name="timer_Button006_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button006.obj"/>
+    <mesh name="timer_Button007_vis" file="../../lightwheel_ycb/timer/visuals/timer_Button007.obj"/>
+
+    <mesh name="timer_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Collider1_m.obj"/>
+    <mesh name="timer_collider_2" file="../../lightwheel_ycb/timer/collision/timer_Collider2_m.obj"/>
+    <mesh name="timer_Button001_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button001_Collider1_m.obj"/>
+    <mesh name="timer_Button002_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button002_Collider1_m.obj"/>
+    <mesh name="timer_Button003_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button003_Collider1_m.obj"/>
+    <mesh name="timer_Button004_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button004_Collider1_m.obj"/>
+    <mesh name="timer_Button005_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button005_Collider1_m.obj"/>
+    <mesh name="timer_Button006_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button006_Collider1_m.obj"/>
+    <mesh name="timer_Button007_collider_1" file="../../lightwheel_ycb/timer/collision/timer_Button007_Collider1_m.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="timer_root_body" pos="0.08 0.15 0.946" quat="1 0 0 0">
+      <freejoint name="timer_root"/>
+      <body name="timer_object">
+        <geom class="timer_visual" material="timer_material" mesh="timer_vis"/>
+        <geom name="timer_collider_1" class="timer_collision" type="mesh" mesh="timer_collider_1"/>
+        <geom name="timer_collider_2" class="timer_collision" type="mesh" mesh="timer_collider_2"/>
+        <geom name="timer_bbox" class="timer_region" type="box" size="0.040712 0.0430475 0.0202235" rgba="0.1 0.8 1 0.08"/>
+        <site name="timer_center" pos="0 0 0" size="0.006" rgba="0.1 0.8 1 0.55"/>
+
+        <body name="timer_Button001">
+          <joint name="timer_Button001_joint" pos="0.00016100 -0.02364350 0.00381650" axis="0 0.255447 -0.966823" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button001_vis"/>
+          <geom name="timer_Button001_collider_1" class="timer_collision" type="mesh" mesh="timer_Button001_collider_1"/>
+          <site name="timer_Button001_site" pos="0.000161 -0.0236435 0.0038165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button002">
+          <joint name="timer_Button002_joint" pos="-0.02393900 -0.00954350 0.00811650" axis="0 0.957484 0.288488" type="slide" stiffness="0.05" limited="true" range="0 0.007" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button002_vis"/>
+          <geom name="timer_Button002_collider_1" class="timer_collision" type="mesh" mesh="timer_Button002_collider_1"/>
+          <site name="timer_Button002_site" pos="-0.023939 -0.0095435 0.0081165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button003">
+          <joint name="timer_Button003_joint" pos="-0.01213900 -0.00414350 0.00961650" axis="0 0.264623 -0.964352" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button003_vis"/>
+          <geom name="timer_Button003_collider_1" class="timer_collision" type="mesh" mesh="timer_Button003_collider_1"/>
+          <site name="timer_Button003_site" pos="-0.012139 -0.0041435 0.0096165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button004">
+          <joint name="timer_Button004_joint" pos="-0.00633900 -0.01434350 0.00691650" axis="0 0.257797 -0.966199" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button004_vis"/>
+          <geom name="timer_Button004_collider_1" class="timer_collision" type="mesh" mesh="timer_Button004_collider_1"/>
+          <site name="timer_Button004_site" pos="-0.006339 -0.0143435 0.0069165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button005">
+          <joint name="timer_Button005_joint" pos="0.00746100 -0.00414350 0.00961650" axis="0 0.280543 -0.959841" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button005_vis"/>
+          <geom name="timer_Button005_collider_1" class="timer_collision" type="mesh" mesh="timer_Button005_collider_1"/>
+          <site name="timer_Button005_site" pos="0.007461 -0.0041435 0.0096165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button006">
+          <joint name="timer_Button006_joint" pos="0.02076100 -0.01434350 0.00691650" axis="0 0.26754 -0.963547" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button006_vis"/>
+          <geom name="timer_Button006_collider_1" class="timer_collision" type="mesh" mesh="timer_Button006_collider_1"/>
+          <site name="timer_Button006_site" pos="0.020761 -0.0143435 0.0069165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+
+        <body name="timer_Button007">
+          <joint name="timer_Button007_joint" pos="0.02646100 -0.00414350 0.00961650" axis="0 0.257414 -0.966301" type="slide" stiffness="0.5" limited="true" range="0 0.0015" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="timer_visual" material="timer_button_material" mesh="timer_Button007_vis"/>
+          <geom name="timer_Button007_collider_1" class="timer_collision" type="mesh" mesh="timer_Button007_collider_1"/>
+          <site name="timer_Button007_site" pos="0.026461 -0.0041435 0.0096165" size="0.004" rgba="1 0.25 0.25 0.65"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

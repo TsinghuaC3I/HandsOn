@@ -1,0 +1,77 @@
+schema_version: 1
+task_id: d20_microwave_hot_dog_plating
+canonical_task_id: D20
+generated_at: "2026-09-04T18:20:00+08:00"
+task_complete: false
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  isaaclab_version: "2.3.2"
+  physics_backend: physx
+checks:
+  identity_ui:
+    status: pass
+    summary: "Mapping, config, collection capability, YAML catalog, UI order/image/steps, Isaac-only routing, scene registry, recorder schema table, replay restorer, recording-origin tables, and the preview MJCF radian guard are wired and CPU-tested; static audit failures=0."
+    evidence:
+      - handson/tests/test_isaaclab_d20_microwave_hot_dog.py
+      - collection_ui/tests/test_d20_collection.py
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_audit_rebased.json
+    metrics: {audit_failures: 0, d20_tests_passed: 13, ui_tests_passed: 3, d_family_regression_passed: 128, recording_schema_tests_passed: 15}
+  schema:
+    status: pass
+    summary: "task.yaml written from the D-long contract; every path is repository-relative; assets are pre-existing repository files."
+    evidence: [taskdev/tasks/d20_microwave_hot_dog_plating/task.yaml]
+    metrics: {error_count: 0}
+  assets:
+    status: pass
+    summary: "All D20 assets already exist in the repository (RoboCasa microwave meshes, hot_dog_2 scan, C08 tongs geometry, Lightwheel-YCB plate/fork/mustard/mug). The D20 MJCF block parses, has no duplicate geom/mesh/material names, and the task filter keeps exactly the nine d20_* bodies. Live Isaac import composed 16 articulations / 85 rigid bodies / 115 render meshes. Layout re-authored on 2026-09-04 from real head-camera frames so every body is inside the head view."
+    evidence:
+      - handson/handson/sim/envs/xmls/d_long_horizon_objects.xml
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_preview_smoke_4.log
+    metrics: {missing_count: 0, d20_bodies: 9, d20_geoms: 81}
+  reachability:
+    status: pass
+    summary: "Thirteen declared affordances (hot dog grasp, tongs handle, button, cavity front, door handle, plate, fork/mustard/mug grasps and goals) keep at least 20 mm inside the shared arm-workspace sphere for the authored layout and for every seeded sample; asserted by CPU tests using the D-long reach model. Final layout minimum margin 36 mm (d20_mug_goal)."
+    evidence: [handson/tests/test_isaaclab_d20_microwave_hot_dog.py]
+    metrics: {min_target_fraction: 1.0, min_reach_margin_m: 0.036}
+  contact:
+    status: pass
+    summary: "Live hand/hot-dog contact views bind for both hands (probe 4/9). Authored-pose PhysX contact-pair query (scripts/d20_overlap_probe.py, ground-truth tensor capture, signature valid): 8 touching pairs, all approved resting supports (objects on table/tray, tongs on cradle, microwave on table), maximum penetration 0.003 mm, zero unapproved pairs. Operator contact-tolerance run still to be done on the collection station."
+    evidence:
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_overlap_7/overlap_report.json
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_9/probe_report.json
+    metrics: {contact_views_bound: 2, overlap_pairs: 8, unapproved_overlap_pairs: 0, max_approved_penetration_m: 0.0000034}
+  reset:
+    status: pass
+    summary: "Live seeds 2001-2003 on the final layout: every free body is seeded-randomized (nonzero cross-seed XY span for hot dog, tongs, plate, fork, mustard, mug), same-seed resets agree to 0.16 mm after settling, and 240 zero-action steps hold with millimetre-level drift and no termination."
+    evidence:
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_9/probe_report.json
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_4/probe_report.json
+    metrics: {live_seeds: 3, zero_action_steps_per_seed: 240, same_seed_max_pose_delta_m: 0.00017}
+  success:
+    status: pending
+    summary: "Ordered load->start->stop-in-window->remove->plate->set->off/closed->release semantics pass the CPU positive path and six negative paths (start without door/load, door interrupt, burn, hand in running cavity, heated-food hand contact, plate-before-cook). No live positive trajectory has been executed yet."
+    evidence: [handson/tests/test_isaaclab_d20_microwave_hot_dog.py]
+    metrics: {cpu_positive_cases: 1, cpu_negative_cases: 6, live_positive_trials: 0}
+  camera:
+    status: pass
+    summary: "Three RTX sensors (head 640x480, wrists 848x480) render real frames on the bare-metal RTX 5090 / driver 570.169 pod (evidence/bm_env): head std 47-49, wrists std 51-86 across three seeds, 18/18 non-placeholder frames; head view shows microwave, tongs on cradle, hot dog, tray with plate/fork/mustard/mug fully inside the frame. The earlier placeholder frames were an environment issue of the virtual-node dev pods (driver 570.153.02, no Vulkan ICD), documented in evidence/bm_env and the WORKLOG."
+    evidence:
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_9/probe_report.json
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_9/seed2001_reset_random_camera.png
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/bm_env/kit_log_stability_summary.txt
+    metrics: {camera_count_declared: 3, sensors_created: 3, non_placeholder_frames: 18, kit_shader_load_errors: 0}
+  stability:
+    status: pass
+    summary: "Headless preview PASSED 120 steps on both pods; collection-env probes held 240 zero-action steps on three seeds with no NaN, no termination, and no body below the table. Kit live log on the render-capable pod: 0 non-NGX errors, 0 PhysX warnings/errors, 0 shader-load errors. Collection UI headless preview session for D20 completed with returncode 0 (preview PASSED after 600 steps)."
+    evidence:
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/bm_env/preview_bm_1.log
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/bm_env/kit_log_stability_summary.txt
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/bm_env/ui_preview_session_20260904-180632.log
+      - taskdev/tasks/d20_microwave_hot_dog_plating/evidence/d20_probe_9/probe_report.json
+    metrics: {min_sim_seconds: 8.0, max_nan_count: 0, max_exploding_body_count: 0}
+  collection:
+    status: pending
+    summary: "No Zarr episode or fresh-process replay yet: record_demos_zarr.py only accepts scripted actions for KA005-2/FU015/P0-02/P0-03/AS013 and no D20 automatic policy exists, so the recorder needs an operator session. The render-capable pod, env_bm.sh and the collection UI on it are ready for that session."
+    evidence: []
+    metrics: {successful_episodes: 0}

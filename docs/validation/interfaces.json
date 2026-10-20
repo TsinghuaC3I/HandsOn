@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "scope": "Interface refactor verification; CPU only, no new learned-policy or GPU rendering rollouts.",
+  "public_task_factories": {
+    "tasks": 66,
+    "image_enabled_and_disabled": true,
+    "action_dim": 52,
+    "measured_state_dim": 52,
+    "native_factory_checks": 66
+  },
+  "model_contracts": {
+    "profiles": 9,
+    "accepted_mock_policy_task_model_pairs": 578,
+    "expected_dp_transfer_rejections": 16
+  },
+  "tests": {
+    "platform": "Linux Python 3.11",
+    "passed": 250,
+    "skipped": 1,
+    "failed": 7,
+    "profile_subtests_passed": 9,
+    "pre_refactor_failures_reproduced": 7,
+    "failure_reasons": {
+      "missing_git_executable": 6,
+      "historical_unregistered_e01_task_fixture": 1
+    }
+  },
+  "semantic_comparison": {
+    "native_factory_bodies_unchanged": 54,
+    "goal_variants_equal": 107,
+    "goal_seeds_per_variant": 3,
+    "model_metadata_equal": 9,
+    "protected_model_render_files_unchanged": 24,
+    "eef52_original_functions_unchanged": 13
+  },
+  "packaging": {
+    "wheel_inclusion_manifest_checked": true,
+    "included_files": 6452,
+    "missing_new_modules_or_assets": 0,
+    "obsolete_resource_paths_present": false,
+    "full_wheel_rebuilt": false
+  },
+  "source_checks": {
+    "python_files_parsed": 1351,
+    "retired_label_absent_in_changed_python": true,
+    "git_diff_check": true
+  },
+  "limits": [
+    "No fresh learned-checkpoint rollout or numerical checkpoint parity run.",
+    "Isaac Sim remains one episode per worker process.",
+    "DP remains Core-50 only; model-native text/cache limits remain in force."
+  ]
+}

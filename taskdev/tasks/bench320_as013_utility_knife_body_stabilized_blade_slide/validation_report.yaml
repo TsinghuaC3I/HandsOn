@@ -1,0 +1,296 @@
+schema_version: 1
+task_id: bench320_as013_utility_knife_body_stabilized_blade_slide
+generated_at: "2026-08-31T19:00:42+08:00"
+validated_commit: working-tree-fresh-asset-rebind
+task_complete: false
+status: pending_fresh_asset_recertification
+evidence_scope: fresh_static_asset_plus_fresh_low_pinning_reset_canary_plus_historical_full_episode
+selected_asset: as013-sketchfab-ahtusik
+historical_evidence_manifest: collection_checkpoint_manifest.json#historical_live_evidence
+current_operator_contract:
+  mode: bimanual_handheld_right_pickup_left_touch_bidirectional_endpoint
+  hardware_action_interface: dual_arm_54d_both_hands_active
+  left_hand_requirement: operate_slider_with_distal_fingertips
+  ordered_sequence:
+    - right_grip_contact_now_with_two_distinct_owners_and_grip_seen
+    - housing_root_or_body_z_delta_at_least_0_020_m
+    - housing_and_moving_component_table_contacts_false_for_4_consecutive_120hz_substeps
+    - pickup_seen_after_grip_seen
+    - left_fingertip_slider_contact_for_4_substeps_after_pickup_seen
+    - sampled_target_endpoint_reached_retracted_lte_0_05_or_extended_gte_0_95
+  prepickup_left_fingertip_button_contact: allowed_but_not_counted
+  prepickup_slider_progress: recoverable_but_not_counted
+  incidental_hand_contact: allowed_diagnostic_only_never_terminal
+  randomized_task: {targets: [retracted_bottom, extended_top], retract_start_progress: [0.55, 0.85], extend_start_progress: [0.15, 0.45], knife_xy_half_range_m: 0.05, knife_yaw_deg: [-180.0, 180.0]}
+  runtime_slider_resistance: {drive_damping: 25.0, joint_static_friction: 3.0, joint_dynamic_friction: 2.4, blade_contact_static_friction_default: 2.0, friction_combine_mode: max, manual_hand_feel_status: pending}
+  grip_contact_now_allows_motion: true
+  current_terminal_contact_required: false
+  held_stable_now_required_for_completion: false
+  relative_xy_displacement_over_0_060_m_terminal: false
+  hard_workspace_failure: absolute_articulation_root_or_body_escape_only
+  release_required: false
+  table_support_required_at_completion: false
+  live_status: pending_fresh_bimanual_handheld_episode_and_replay
+pending_gates:
+  - pending_fresh_asset_live_evidence
+  - fresh_manual_bimanual_handheld_interaction_evidence
+  - seeded_position_randomization_audit
+  - three_camera_visibility_audit
+  - fresh_standard_recorder_episode
+  - fresh_process_physx_replay
+  - bimanual_right_grip_left_slide_operator_acceptance
+asset_binding:
+  task_local_usd: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik.usda
+  runtime_usd: handson/handson/sim/isaaclab/usd/t40_slide_knife_blade/utility_knife_ahtusik/utility_knife_ahtusik.usda
+  integrated_usd_sha256: 2722183ee64303f8c85dac65f17acbea0977ed4d9604fd589ee5bf627b7a18d7
+  binary_usd_sha256: 9a2709c0fb0a6418a42224b30d7ebed96ef1f914a7080c3b07b0f3b20347c8d2
+  metadata_sha256: f67a448283852e90a4349947a0e342245f04a65f3533eaa78621947218f725f6
+  static_audit: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/static_asset_audit.json
+  archive_sha256: 85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b
+  source_conversion_scale_to_m: 0.008
+  axis_mapping: canonical=[-x,z,y]*0.008
+  ergonomic_scale_xyz: [1.3, 1.3, 2.35]
+  authored_size_xyz_mm: [60.9109, 204.0765, 10.3091]
+  button_size_xyz_mm: [23.0, 51.2034, 2.8129]
+  runtime_scale_xyz: [1.0, 1.0, 1.0]
+current_cpu_checkpoint:
+  status: pass
+  scene_contract: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/scene_contract.py
+  static_contract_errors: 0
+  task_local_static_tests_passed: 11
+  as013_collection_tests_passed: 129
+  source_hashes_bound: true
+  integrated_usd_schema_audit: pass
+  collection_registration_preserved: true
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  physics_backend: physx
+live_execution:
+  status: single_low_pinning_reset_canary_pass_manual_episode_pending
+  observed_local_gpu: "NVIDIA GeForce RTX 4090 (index 0)"
+  required_scheduler_host: local_memory_scheduler
+  required_physical_gpu: 0
+  required_logical_device: cuda:0
+  local_probe: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/noncertifying_local_probe.json
+  scheduler_audit: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/scheduler_audit.json
+  passed_canary_evidence: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+  low_pinning_physx_profile:
+    rigid_contact_capacity: 262144
+    rigid_patch_capacity: 16384
+    found_lost_pair_capacity: 65536
+    found_lost_aggregate_pair_capacity: 65536
+    total_aggregate_pair_capacity: 65536
+    collision_stack_bytes: 4194304
+    heap_bytes: 4194304
+    temporary_buffer_bytes: 1048576
+    soft_body_contact_capacity: 16384
+    particle_contact_capacity: 16384
+    gpu_partitions_preserved: 8
+    cpu_contract_status: pass
+    journal_serializes_eleven_key_readback: false
+    readback_evidence_scope: code_and_static_tests_plus_pre_reset_mismatch_fail_closed_control_flow
+  prior_failed_single_canary:
+    started_at: "2026-08-28T20:19:28+08:00"
+    pid: 1033934
+    concurrency: one_isaac_process_only
+    reached: first_shared_physx_reset
+    did_not_reach: [as013_task_runtime_init, nine_contact_views, stable_recording_origin]
+    outcome: host_pinned_page_allocation_failure
+    kernel_evidence: "order-5 page allocation failure in NVIDIA pin_user_pages with Normal free 623004 kB and no buddy block >=512 kB; eight 0x4000-page mapping failures matched eight PhysX allocator warnings"
+    residual_processes_after_cleanup: 0
+  latest_single_canary:
+    started_at: "2026-08-28T22:52:15+08:00"
+    finalized_at: "2026-08-28T22:53:23+08:00"
+    pid: 140941
+    watchdog_pid: 140937
+    session_id: t40_slide_knife_blade-20260828-225215-140941-e2318df8
+    concurrency: one_isaac_process_only
+    reset_accepted: true
+    reset_physics_steps: 180
+    contact_views_resolved: 9
+    stable_recording_origin_accepted: true
+    contact_report_valid: true
+    episode_semantics_cleared: true
+    physics_state_writes_at_task_acceptance: false
+    stability_metric: velocity_or_static_pose
+    task_velocity_gate_stable: false
+    task_static_pose_gate_stable: true
+    final_boundary_velocity_zero_source: existing_velocity_only_boundary_write
+    idle_control_loop_seconds_approx: 64.0
+    exit_code: 0
+    exit_reason: user_ctrl_c_after_canary_objective_passed
+    demos_saved: 0
+    peak_rss_gib_approx: 6.31
+    peak_vram_mib_approx: 3570
+    new_kernel_or_nvidia_allocator_errors: 0
+    optional_dlss_context_error: auto_disabled_nonblocking
+    residual_processes_after_cleanup: 0
+    outcome: passed_bounded_low_pinning_reset_views_origin_canary
+  note: "The scheduled replacement canary crossed the allocator/reset boundary, first reset, all nine exact AS013 contact-view bindings, stable recording origin, and approximately 64 seconds of the idle 30 Hz control loop. Stable origin qualified via static-pose fallback (not natural task-velocity convergence), and final zero velocities followed the existing velocity-only boundary write. The journal does not serialize the eleven configured capacity readbacks, so their exact values remain code/static-test evidence while the live run proves that this build crossed reset. An optional DLSS-context error auto-disabled DLSS without blocking the canary. It did not perform manual manipulation, camera validation, save an episode, or certify replay."
+checks:
+  schema:
+    status: pass
+    summary: "Canonical registration, handheld-bimanual UI/YAML contract, preserved 54D dual-arm action interface, and Isaac-only backend guards pass in the current working tree"
+    evidence:
+      - handson/tests/test_b320_as013_collection.py
+      - scripts/audit_task_registration.py
+    metrics:
+      as013_tests_passed: 121
+      recording_replay_regression_tests_passed: 690
+      unrelated_known_test_deselected: 1
+  assets:
+    status: pass
+    summary: "Fresh Sketchfab archive hashes, task-local USD, runtime mirror, metadata, rigid links, joint, source-derived colliders, bounds, winding, support geometry, and collision visibility pass the static integration audit; one fresh first-PhysX reset also passed, while manual surface contact and camera checks remain pending"
+    evidence:
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/scene_contract.py
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik_metadata.json
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/static_asset_audit.json
+    metrics:
+      verified_source_files: 7
+      archive_size_bytes: 7143425
+      uniform_scale: 1.0
+      source_conversion_scale_to_m: 0.008
+      required_joint: PrismaticJoint_utility_knife_3_middle
+      housing_collision_approximation: convexHull
+      housing_colliders: 1
+      moving_colliders: 8
+      slider_colliders: 6
+      total_colliders: 9
+      sampled_slider_surface_gap_max_m: 0.002965306
+      builder_certification_slider_surface_gap_max_m: 0.002964179
+      visual_faces_normal_alignment_fraction: 1.0
+      support_com_margin_m: 0.0180057115
+      mass_inertia_model: uniform_aabb_box
+      mass_randomization_scales_inertia: true
+      physx_solver_position_iteration_cap: 64
+      physx_solver_velocity_iteration_cap: 4
+      rigid_body_solver_position_iterations: 16
+      rigid_body_solver_velocity_iterations: 4
+  reachability:
+    status: historical_pass_not_current
+    summary: "Historical ten-seed trajectories exercised the prior tabletop two-hand approach and do not certify the current handheld right-grip/left-slide contract"
+    evidence:
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-multipose-seed32010X-84c42730-20260824T0230CST
+    metrics:
+      trials: 10
+      completed_successfully: 8
+      physical_failures: 0
+      success_fraction: 0.8
+      observed_body_x_range_m: [-0.14143361151218414, -0.09400224685668945]
+      observed_body_y_range_m: [-0.12499776482582092, -0.07415268570184708]
+      observed_yaw_range_deg: [-4.784842037331981, 4.190909915973709]
+  contact:
+    status: fresh_initial_contact_canary_pass_manual_contact_pending
+    summary: "The fresh canary sampled all 181 initialization physics frames with a valid contact report and 1.268 micrometers maximum penetration; that canary predates the current 25.0 damping, 3.0/2.4 joint friction, and 2.0 max-combined slider contact friction, which remain pending manual right-pickup, left-touch, bidirectional-slide, and vertical-hold validation"
+    evidence:
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-multipose-seed32010X-84c42730-20260824T0230CST
+    metrics:
+      contract_max_penetration_m: 0.005
+      current_initialization_contact_samples: 181
+      current_invalid_contact_samples: 0
+      current_maximum_initial_penetration_m: 0.0000012675300240516663
+      current_manual_contact_samples: 0
+      historical_maximum_action_penetration_m: 0.004496482666581869
+      historical_maximum_pair: right_finger4_link4_to_knife_body
+      historical_maximum_duration_physx_substeps: 1
+  reset:
+    status: single_fresh_canary_pass_seed_sweep_pending
+    summary: "The fresh replacement asset passed its first scheduled reset and AS013 stable-origin acceptance in 180 physics steps; the declared multi-seed reset range remains pending"
+    evidence:
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+    metrics:
+      trials: 1
+      failures: 0
+      seed: 43647044
+      reset_accepted: true
+      reset_physics_steps: 180
+      task_recording_origin_accepted: true
+      contact_views_ready: true
+      episode_semantics_cleared: true
+      physics_state_writes_at_task_acceptance: false
+      stability_metric: velocity_or_static_pose
+      task_velocity_gate_stable: false
+      task_static_pose_gate_stable: true
+      final_boundary_velocity_zero_source: existing_velocity_only_boundary_write
+      final_max_translation_drift_m: 0.0000004992444982454465
+      final_max_rotation_drift_rad: 0.000002609151086616346
+      strict_pose_translation_limit_m: 0.000001
+      strict_pose_rotation_limit_rad: 0.00001
+      full_frame_rate_hz: 120
+  success:
+    status: historical_pass_not_current
+    summary: "Historical prior-asset evidence covered tabletop two-hand contact, release, table support, and a 15-frame hold; it does not certify the current schema-v5 right-pickup, left-touch, randomized bidirectional endpoint completion"
+    evidence:
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-seed320102-a4
+      - handson/tests/test_b320_as013_collection.py
+    metrics:
+      recorded_success_steps: 1209
+      final_succeed: true
+      ordered_transition_outcomes_replayed: true
+      false_positive_regressions: 0
+      false_negative_regressions: 0
+      current_bimanual_handheld_success_status: pending_fresh_live_evidence
+  camera:
+    status: historical_pass_not_current
+    summary: "Every one of the 24 multipose success videos fully decodes and exactly matches its Zarr action count"
+    evidence:
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-multipose-seed32010X-84c42730-20260824T0230CST
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-platform-entry-smoke-84c42730-20260824T0415CST/live_preview.png
+    metrics:
+      successful_episodes_checked: 8
+      video_streams_checked: 24
+      main_resolution: [640, 480]
+      wrist_resolution: [848, 480]
+      fps: 30
+      decode_failures: 0
+      frame_count_mismatches: 0
+  stability:
+    status: fresh_origin_and_idle_control_canary_pass_manual_trajectory_pending
+    evidence_scope: fresh_single_reset_and_bounded_idle_control_only
+    summary: "The fresh canary accepted a task-write-free AS013 origin through the static-pose branch of the velocity_or_static_pose metric and sustained the idle 30 Hz control loop for approximately 64 seconds; the task velocity branch did not pass, final zero velocities followed the existing velocity-only boundary write, and manipulated-trajectory stability remains pending"
+    evidence:
+      - handson/handson/sim/isaaclab/as013_collection_env.py
+      - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+    metrics:
+      idle_control_loop_seconds_approx: 64.0
+      control_hz: 30
+      stable_origin_physics_steps: 180
+      final_max_task_translation_delta_m: 0.00000006018390663491007
+      final_max_task_rotation_delta_rad: 0.0000003051927036630678
+      task_acceptance_physics_state_writes: false
+      stability_metric: velocity_or_static_pose
+      task_velocity_gate_stable: false
+      task_static_pose_gate_stable: true
+      natural_task_velocity_gate_convergence_claimed: false
+      runtime_allocator_errors: 0
+  collection:
+    status: historical_pass_not_current
+    summary: "The standard Zarr episode, fresh-process replay, and ordinary platform smoke are historical evidence for utility_knife002 only; a fresh-asset recorder episode is pending"
+    evidence:
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-seed320102-a4
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-contract-replay-seed320102-a4
+      - /mnt/pfs/luotianwei/handson-taskdev-runs/B320-AS013-platform-entry-smoke-84c42730-20260824T0415CST
+    metrics:
+      required_successful_episodes: 1
+      published_successful_episodes: 1
+      fresh_process_replay_status: historical_pass_not_current
+      fresh_process_replay_reason: continuous_physx_replay_matched
+      replay_steps_expected: 1209
+      replay_steps_observed: 1209
+      trace_match: historical_only
+      transition_outcomes_match: historical_only
+      first_divergence: null
+      portable: true
+      ordinary_platform_scripted_policy: false
+      ordinary_platform_collection_steps: 120
+      ordinary_platform_traceback: false
+
+historical_note: >-
+  The metrics retained in checks.* were produced for the previously certified
+  project-license utility_knife002 asset at commit
+  84c42730edda68ef694f49069d304b6ac3cfb3dd. They are retained for audit
+  history only and do not certify the selected Sketchfab replacement. Fresh
+  asset evidence must overwrite the pending gates above before task_complete
+  can become true.

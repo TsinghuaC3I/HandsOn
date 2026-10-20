@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="ycb02_objects">
+  <include file="ycb02_ycb_assets.xml" />
+  <worldbody>
+    <body name="g_cups" pos="-0.17 0.00 0.9270385">
+      <freejoint name="g_cups_freejoint" />
+      <geom name="g_cups_visual" class="ycb02_visual" material="ycb02_g_cups_material" mesh="ycb02_g_cups_vis" />
+      <geom name="g_cups_collision_1" class="ycb02_collision" mesh="ycb02_g_cups_collision_1" density="164.495" />
+      <geom name="g_cups_collision_2" class="ycb02_collision" mesh="ycb02_g_cups_collision_2" density="164.495" />
+      <geom name="g_cups_collision_3" class="ycb02_collision" mesh="ycb02_g_cups_collision_3" density="164.495" />
+      <geom name="g_cups_collision_4" class="ycb02_collision" mesh="ycb02_g_cups_collision_4" density="164.495" />
+      <geom name="g_cups_collision_5" class="ycb02_collision" mesh="ycb02_g_cups_collision_5" density="164.495" />
+      <geom name="g_cups_collision_6" class="ycb02_collision" mesh="ycb02_g_cups_collision_6" density="164.495" />
+      <geom name="g_cups_collision_7" class="ycb02_collision" mesh="ycb02_g_cups_collision_7" density="164.495" />
+      <geom name="g_cups_collision_8" class="ycb02_collision" mesh="ycb02_g_cups_collision_8" density="164.495" />
+      <geom name="g_cups_collision_9" class="ycb02_collision" mesh="ycb02_g_cups_collision_9" density="164.495" />
+      <geom name="g_cups_collision_10" class="ycb02_collision" mesh="ycb02_g_cups_collision_10" density="164.495" />
+      <geom name="g_cups_collision_11" class="ycb02_collision" mesh="ycb02_g_cups_collision_11" density="164.495" />
+      <geom name="g_cups_collision_12" class="ycb02_collision" mesh="ycb02_g_cups_collision_12" density="164.495" />
+      <geom name="g_cups_collision_13" class="ycb02_collision" mesh="ycb02_g_cups_collision_13" density="164.495" />
+      <geom name="g_cups_collision_14" class="ycb02_collision" mesh="ycb02_g_cups_collision_14" density="164.495" />
+      <geom name="g_cups_collision_15" class="ycb02_collision" mesh="ycb02_g_cups_collision_15" density="164.495" />
+      <geom name="g_cups_collision_16" class="ycb02_collision" mesh="ycb02_g_cups_collision_16" density="164.495" />
+      <geom name="g_cups_collision_17" class="ycb02_collision" mesh="ycb02_g_cups_collision_17" density="164.495" />
+    </body>
+    <body name="c_cups" pos="-0.17 -0.36 0.922">
+      <freejoint name="c_cups_freejoint" />
+      <geom name="c_cups_visual" class="ycb02_visual" material="ycb02_c_cups_material" mesh="ycb02_c_cups_vis" />
+      <geom name="c_cups_collision_1" class="ycb02_collision" mesh="ycb02_c_cups_collision_1" density="442.245" />
+      <geom name="c_cups_collision_2" class="ycb02_collision" mesh="ycb02_c_cups_collision_2" density="442.245" />
+      <geom name="c_cups_collision_3" class="ycb02_collision" mesh="ycb02_c_cups_collision_3" density="442.245" />
+      <geom name="c_cups_collision_4" class="ycb02_collision" mesh="ycb02_c_cups_collision_4" density="442.245" />
+      <geom name="c_cups_collision_5" class="ycb02_collision" mesh="ycb02_c_cups_collision_5" density="442.245" />
+      <geom name="c_cups_collision_6" class="ycb02_collision" mesh="ycb02_c_cups_collision_6" density="442.245" />
+      <geom name="c_cups_collision_7" class="ycb02_collision" mesh="ycb02_c_cups_collision_7" density="442.245" />
+      <geom name="c_cups_collision_8" class="ycb02_collision" mesh="ycb02_c_cups_collision_8" density="442.245" />
+      <geom name="c_cups_collision_9" class="ycb02_collision" mesh="ycb02_c_cups_collision_9" density="442.245" />
+      <geom name="c_cups_collision_10" class="ycb02_collision" mesh="ycb02_c_cups_collision_10" density="442.245" />
+      <geom name="c_cups_collision_11" class="ycb02_collision" mesh="ycb02_c_cups_collision_11" density="442.245" />
+      <geom name="c_cups_collision_12" class="ycb02_collision" mesh="ycb02_c_cups_collision_12" density="442.245" />
+      <geom name="c_cups_collision_13" class="ycb02_collision" mesh="ycb02_c_cups_collision_13" density="442.245" />
+      <geom name="c_cups_collision_14" class="ycb02_collision" mesh="ycb02_c_cups_collision_14" density="442.245" />
+      <geom name="c_cups_collision_15" class="ycb02_collision" mesh="ycb02_c_cups_collision_15" density="442.245" />
+      <geom name="c_cups_collision_16" class="ycb02_collision" mesh="ycb02_c_cups_collision_16" density="442.245" />
+      <geom name="c_cups_collision_17" class="ycb02_collision" mesh="ycb02_c_cups_collision_17" density="442.245" />
+      <geom name="c_cups_collision_18" class="ycb02_collision" mesh="ycb02_c_cups_collision_18" density="442.245" />
+      <geom name="c_cups_collision_19" class="ycb02_collision" mesh="ycb02_c_cups_collision_19" density="442.245" />
+      <geom name="c_cups_collision_20" class="ycb02_collision" mesh="ycb02_c_cups_collision_20" density="442.245" />
+      <geom name="c_cups_collision_21" class="ycb02_collision" mesh="ycb02_c_cups_collision_21" density="442.245" />
+      <geom name="c_cups_collision_22" class="ycb02_collision" mesh="ycb02_c_cups_collision_22" density="442.245" />
+      <geom name="c_cups_collision_23" class="ycb02_collision" mesh="ycb02_c_cups_collision_23" density="442.245" />
+      <geom name="c_cups_collision_24" class="ycb02_collision" mesh="ycb02_c_cups_collision_24" density="442.245" />
+      <geom name="c_cups_collision_25" class="ycb02_collision" mesh="ycb02_c_cups_collision_25" density="442.245" />
+      <geom name="c_cups_collision_26" class="ycb02_collision" mesh="ycb02_c_cups_collision_26" density="442.245" />
+      <geom name="c_cups_collision_27" class="ycb02_collision" mesh="ycb02_c_cups_collision_27" density="442.245" />
+    </body>
+    <body name="j_cups" pos="-0.17 0.36 0.929145">
+      <freejoint name="j_cups_freejoint" />
+      <geom name="j_cups_visual" class="ycb02_visual" material="ycb02_j_cups_material" mesh="ycb02_j_cups_vis" />
+      <geom name="j_cups_collision_1" class="ycb02_collision" mesh="ycb02_j_cups_collision_1" density="235.156" />
+      <geom name="j_cups_collision_2" class="ycb02_collision" mesh="ycb02_j_cups_collision_2" density="235.156" />
+      <geom name="j_cups_collision_3" class="ycb02_collision" mesh="ycb02_j_cups_collision_3" density="235.156" />
+      <geom name="j_cups_collision_4" class="ycb02_collision" mesh="ycb02_j_cups_collision_4" density="235.156" />
+      <geom name="j_cups_collision_5" class="ycb02_collision" mesh="ycb02_j_cups_collision_5" density="235.156" />
+      <geom name="j_cups_collision_6" class="ycb02_collision" mesh="ycb02_j_cups_collision_6" density="235.156" />
+      <geom name="j_cups_collision_7" class="ycb02_collision" mesh="ycb02_j_cups_collision_7" density="235.156" />
+      <geom name="j_cups_collision_8" class="ycb02_collision" mesh="ycb02_j_cups_collision_8" density="235.156" />
+      <geom name="j_cups_collision_9" class="ycb02_collision" mesh="ycb02_j_cups_collision_9" density="235.156" />
+      <geom name="j_cups_collision_10" class="ycb02_collision" mesh="ycb02_j_cups_collision_10" density="235.156" />
+      <geom name="j_cups_collision_11" class="ycb02_collision" mesh="ycb02_j_cups_collision_11" density="235.156" />
+      <geom name="j_cups_collision_12" class="ycb02_collision" mesh="ycb02_j_cups_collision_12" density="235.156" />
+      <geom name="j_cups_collision_13" class="ycb02_collision" mesh="ycb02_j_cups_collision_13" density="235.156" />
+      <geom name="j_cups_collision_14" class="ycb02_collision" mesh="ycb02_j_cups_collision_14" density="235.156" />
+      <geom name="j_cups_collision_15" class="ycb02_collision" mesh="ycb02_j_cups_collision_15" density="235.156" />
+      <geom name="j_cups_collision_16" class="ycb02_collision" mesh="ycb02_j_cups_collision_16" density="235.156" />
+      <geom name="j_cups_collision_17" class="ycb02_collision" mesh="ycb02_j_cups_collision_17" density="235.156" />
+      <geom name="j_cups_collision_18" class="ycb02_collision" mesh="ycb02_j_cups_collision_18" density="235.156" />
+      <geom name="j_cups_collision_19" class="ycb02_collision" mesh="ycb02_j_cups_collision_19" density="235.156" />
+      <geom name="j_cups_collision_20" class="ycb02_collision" mesh="ycb02_j_cups_collision_20" density="235.156" />
+      <geom name="j_cups_collision_21" class="ycb02_collision" mesh="ycb02_j_cups_collision_21" density="235.156" />
+      <geom name="j_cups_collision_22" class="ycb02_collision" mesh="ycb02_j_cups_collision_22" density="235.156" />
+      <geom name="j_cups_collision_23" class="ycb02_collision" mesh="ycb02_j_cups_collision_23" density="235.156" />
+      <geom name="j_cups_collision_24" class="ycb02_collision" mesh="ycb02_j_cups_collision_24" density="235.156" />
+      <geom name="j_cups_collision_25" class="ycb02_collision" mesh="ycb02_j_cups_collision_25" density="235.156" />
+      <geom name="j_cups_collision_26" class="ycb02_collision" mesh="ycb02_j_cups_collision_26" density="235.156" />
+      <geom name="j_cups_collision_27" class="ycb02_collision" mesh="ycb02_j_cups_collision_27" density="235.156" />
+      <geom name="j_cups_collision_28" class="ycb02_collision" mesh="ycb02_j_cups_collision_28" density="235.156" />
+      <geom name="j_cups_collision_29" class="ycb02_collision" mesh="ycb02_j_cups_collision_29" density="235.156" />
+      <geom name="j_cups_collision_30" class="ycb02_collision" mesh="ycb02_j_cups_collision_30" density="235.156" />
+      <geom name="j_cups_collision_31" class="ycb02_collision" mesh="ycb02_j_cups_collision_31" density="235.156" />
+      <geom name="j_cups_collision_32" class="ycb02_collision" mesh="ycb02_j_cups_collision_32" density="235.156" />
+      <geom name="j_cups_collision_33" class="ycb02_collision" mesh="ycb02_j_cups_collision_33" density="235.156" />
+      <geom name="j_cups_collision_34" class="ycb02_collision" mesh="ycb02_j_cups_collision_34" density="235.156" />
+      <geom name="j_cups_collision_35" class="ycb02_collision" mesh="ycb02_j_cups_collision_35" density="235.156" />
+      <geom name="j_cups_collision_36" class="ycb02_collision" mesh="ycb02_j_cups_collision_36" density="235.156" />
+      <geom name="j_cups_collision_37" class="ycb02_collision" mesh="ycb02_j_cups_collision_37" density="235.156" />
+      <geom name="j_cups_collision_38" class="ycb02_collision" mesh="ycb02_j_cups_collision_38" density="235.156" />
+      <geom name="j_cups_collision_39" class="ycb02_collision" mesh="ycb02_j_cups_collision_39" density="235.156" />
+      <geom name="j_cups_collision_40" class="ycb02_collision" mesh="ycb02_j_cups_collision_40" density="235.156" />
+      <geom name="j_cups_collision_41" class="ycb02_collision" mesh="ycb02_j_cups_collision_41" density="235.156" />
+      <geom name="j_cups_collision_42" class="ycb02_collision" mesh="ycb02_j_cups_collision_42" density="235.156" />
+      <geom name="j_cups_collision_43" class="ycb02_collision" mesh="ycb02_j_cups_collision_43" density="235.156" />
+    </body>
+    <body name="d_marble" pos="-0.30 -0.30 0.900851">
+      <freejoint name="d_marble_freejoint" />
+      <geom name="d_marble_visual" class="ycb02_visual" material="ycb02_d_marble_material" mesh="ycb02_d_marble_vis" />
+      <geom name="d_marble_collision" class="ycb02_collision" type="sphere" size="0.010851" mass="0.013" />
+    </body>
+    <body name="golf_ball" pos="-0.30 -0.10 0.911659">
+      <freejoint name="golf_ball_freejoint" />
+      <geom name="golf_ball_visual" class="ycb02_visual" material="ycb02_golf_ball_material" mesh="ycb02_golf_ball_vis" />
+      <geom name="golf_ball_collision" class="ycb02_collision" type="sphere" size="0.021659" mass="0.046" />
+    </body>
+    <body name="tennis_ball" pos="-0.30 0.10 0.9230205">
+      <freejoint name="tennis_ball_freejoint" />
+      <geom name="tennis_ball_visual" class="ycb02_visual" material="ycb02_tennis_ball_material" mesh="ycb02_tennis_ball_vis" />
+      <geom name="tennis_ball_collision" class="ycb02_collision" type="sphere" size="0.0330205" mass="0.058" />
+    </body>
+    <body name="baseball" pos="-0.30 0.30 0.9285">
+      <freejoint name="baseball_freejoint" />
+      <geom name="baseball_visual" class="ycb02_visual" material="ycb02_baseball_material" mesh="ycb02_baseball_vis" />
+      <geom name="baseball_collision" class="ycb02_collision" type="sphere" size="0.0385" mass="0.138" />
+    </body>
+  </worldbody>
+</mujoco>

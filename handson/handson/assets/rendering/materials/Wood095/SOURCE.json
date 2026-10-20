@@ -1,0 +1,27 @@
+{
+  "asset_id": "Wood095",
+  "source": "https://ambientcg.com/a/Wood095",
+  "download": "https://ambientcg.com/get?file=Wood095_2K-JPG.zip",
+  "archive_sha256": "89baf84c1c02dc5ca435896559ac2f53e6d6a2991f602aea43cafe83868dd1fc",
+  "license": "CC0-1.0",
+  "license_source": "https://docs.ambientcg.com/license/",
+  "source_dimension_cm": [
+    0,
+    0
+  ],
+  "creation_method": "PBRApproximated",
+  "maps": {
+    "Color": {
+      "file": "Wood095/Color.jpg",
+      "sha256": "cfa114637073e16344c317fdbe8bef8977bb227ac4fec12f1b0932dd9f6ddef1"
+    },
+    "NormalGL": {
+      "file": "Wood095/NormalGL.jpg",
+      "sha256": "59832e482ce58d28028e2a966c8d6d29b6724b2618438dd269a030db45b049cf"
+    },
+    "Roughness": {
+      "file": "Wood095/Roughness.jpg",
+      "sha256": "9054077f21ab91597182c7beb52ba069e060b4ca4adbd55b092494c048513903"
+    }
+  }
+}

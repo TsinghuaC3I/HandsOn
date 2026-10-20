@@ -1,0 +1,11 @@
+Model Information:
+* title:	CC0 - Sponge 3
+* source:	https://sketchfab.com/3d-models/cc0-sponge-3-d3cd1801237e479daccedf1f93e46ae7
+* author:	plaggy (https://sketchfab.com/plaggy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "CC0 - Sponge 3" (https://sketchfab.com/3d-models/cc0-sponge-3-d3cd1801237e479daccedf1f93e46ae7) by plaggy (https://sketchfab.com/plaggy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -1,0 +1,88 @@
+{
+  "repository": "https://github.com/RokaeRobot/rokae_ros2",
+  "revision": "d6a508c38513d4c39b2f10f14275d0e26df7fb43",
+  "license": "Apache-2.0",
+  "scope": "Only the listed legacy AR5-07 meshes. This license is not assigned to AR5-08 or other files.",
+  "files": {
+    "meshes/right/AR5-5_07R-W4C4A2_link5.stl": {
+      "sha256": "2c0427c56fdec7b27c90c98cb0f5b02a7dc7e29ed929704f93d1f7ac5f2dd633",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link5.stl",
+      "upstream_git_blob": "6d04a799cfecf0ff9375eb15b6888f7f40b292ec"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link4.stl": {
+      "sha256": "4c479cc181e368685c1f0eaa3e11e1d67b980128d69f2f9730b01efff8614ab0",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link4.stl",
+      "upstream_git_blob": "4a118e1fa864ac6b528d923304b194b7e39e1a34"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link6.stl": {
+      "sha256": "2ce67a0978edac8e21dee70d9b1d32295ea9462bd5b2e948378474dda224d50d",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link6.stl",
+      "upstream_git_blob": "ac6eeea8a3e083584e00c4bafa83e00681ed2e27"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link7.stl": {
+      "sha256": "5d97ed78145fd542ab663aaa21bac701bb9441b20b1f461f97e5e1915825ded2",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link7.stl",
+      "upstream_git_blob": "eb116d2966c78c588018cb04f0fb19c7b303ca71"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link3.stl": {
+      "sha256": "c31992b84ba11b99673dff636ed7946db3ea641ae713fa8b258993a1e3bed47f",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link3.stl",
+      "upstream_git_blob": "1cdd6f89f6da29412c99c5f30d4eb9bd5a449600"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link2.stl": {
+      "sha256": "05e16b4cca0f3d646e3ec846980e5c186c12fff9ec7165950fdda5ee3e4bc5d2",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link2.stl",
+      "upstream_git_blob": "476f28212a94f0723c9347f36e7172af4c5bacb2"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_base.stl": {
+      "sha256": "fccb5e85cbed32430d4cca938a72e89ee7af4ab672791b2871dbc641bf014205",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_base.stl",
+      "upstream_git_blob": "3c01dd2b1defdc0ca33153e39956350c1c7bd11a"
+    },
+    "meshes/right/AR5-5_07R-W4C4A2_link1.stl": {
+      "sha256": "053c88c9b1c47ab3388aaa15941d72c9e55d1cefcd4373bde5e00bb142757d5e",
+      "upstream_path": "rokae_description/meshes/AR5-5_07R-W4C4A2/visual/AR5-5_07R-W4C4A2_link1.stl",
+      "upstream_git_blob": "17c679997f0e7280b196ef2c7d85660bc6490684"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_base.stl": {
+      "sha256": "8353ab853fb0855cdcf4b9718057a64a04d3d184320403d2881d9f979f25634a",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_base.stl",
+      "upstream_git_blob": "cfb6d337400549a80246852984abe83ad12f6cd7"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link7.stl": {
+      "sha256": "0ebde0ca7c8ab54490036e91a211583547807985691c28bd1c84fac98f9ae78c",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link7.stl",
+      "upstream_git_blob": "a60b61d68ee731a45be7a4cf8b3ab3ea5b4e0f60"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link6.stl": {
+      "sha256": "fe14c2aa45f77ad9cff50c5d163cddf4865e704971e7092d468040640e8088b9",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link6.stl",
+      "upstream_git_blob": "bdb3a30a0fef32f92d254df320beda87ab234388"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link4.stl": {
+      "sha256": "105717aaa4f7e59cb349c3b1bc491305955820b80360de133ffc938423e30981",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link4.stl",
+      "upstream_git_blob": "038d7701677b2fde91b407a6d3bfe7720bc3c531"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link5.stl": {
+      "sha256": "08356726ace5be1dc8e97e55380212745dac1ea027edc948f36dc6423b7298c0",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link5.stl",
+      "upstream_git_blob": "3caaaf65c3ef88d421e0d43cdd7dc5f264e7c400"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link1.stl": {
+      "sha256": "4f9558775d32684ae66199a4217426922485b04365a89e5c3c11988f444be945",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link1.stl",
+      "upstream_git_blob": "8cdd6a22d85edf562694ff8ab496fd071af3f0a4"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link2.stl": {
+      "sha256": "7ad609b658a84b964d487640d6fddde836d8d7cddec5682344fa1ff5ee6128bf",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link2.stl",
+      "upstream_git_blob": "04e9f71306486fe6ba0afeabf67f4bb772977952"
+    },
+    "meshes/left/AR5-5_07L-W4C4A2_link3.stl": {
+      "sha256": "691610ba9b02d74496da7702821e6cf4ae5d2975f935f17df899ed84c904fd33",
+      "upstream_path": "rokae_description/meshes/AR5-5_07L-W4C4A2/visual/AR5-5_07L-W4C4A2_link3.stl",
+      "upstream_git_blob": "5d117d2b3b7ab09fbb38e8c4a0bee5765bed3751"
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="rope_thread_rings_primitives">
+  <default>
+    <default class="rtr_rope_collision">
+      <geom type="capsule" size="0.006" group="0" density="780" friction="1.2 0.02 0.0002" solref="0.006 1" solimp="0.94 0.995 0.001" rgba="0.08 0.09 0.10 1" />
+    </default>
+    <default class="rtr_ring_collision">
+      <geom type="capsule" size="0.0075" group="0" friction="1.1 0.01 0.0002" solref="0.004 1" solimp="0.95 0.995 0.001" />
+    </default>
+    <default class="rtr_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+  </default>
+  <asset>
+    <material name="rtr_rope_mat" rgba="0.07 0.075 0.08 1" specular="0.15" shininess="0.2" />
+    <material name="rtr_rope_tip_mat" rgba="0.92 0.12 0.16 1" specular="0.35" shininess="0.35" />
+    <material name="rtr_ring_1_mat" rgba="0.12 0.34 0.95 1" specular="0.35" shininess="0.35" />
+    <material name="rtr_ring_2_mat" rgba="0.95 0.48 0.10 1" specular="0.35" shininess="0.35" />
+    <material name="rtr_ring_stand_mat" rgba="0.18 0.19 0.20 1" specular="0.2" shininess="0.2" />
+    <material name="rtr_goal_mat" rgba="0.12 0.65 0.28 0.34" specular="0.15" shininess="0.1" />
+  </asset>
+  <worldbody>
+    <body name="rtr_ring_1" pos="0.04 -0.08 1.02">
+      <geom name="rtr_ring_1_top" class="rtr_ring_collision" fromto="0 -0.046 0.046 0 0.046 0.046" material="rtr_ring_1_mat" />
+      <geom name="rtr_ring_1_bottom" class="rtr_ring_collision" fromto="0 -0.046 -0.046 0 0.046 -0.046" material="rtr_ring_1_mat" />
+      <geom name="rtr_ring_1_left" class="rtr_ring_collision" fromto="0 -0.046 -0.046 0 -0.046 0.046" material="rtr_ring_1_mat" />
+      <geom name="rtr_ring_1_right" class="rtr_ring_collision" fromto="0 0.046 -0.046 0 0.046 0.046" material="rtr_ring_1_mat" />
+      <geom name="rtr_ring_1_stand" class="rtr_visual" type="capsule" size="0.006" fromto="0 0 -0.10 0 0 -0.052" material="rtr_ring_stand_mat" />
+      <geom name="rtr_ring_1_base" class="rtr_visual" type="box" size="0.035 0.035 0.004" pos="0 0 -0.104" material="rtr_ring_stand_mat" />
+      <site name="rtr_ring_1_center" pos="0 0 0" size="0.004" rgba="0.12 0.34 0.95 0.45" />
+    </body>
+    <body name="rtr_ring_2" pos="0.18 0.08 1.02">
+      <geom name="rtr_ring_2_top" class="rtr_ring_collision" fromto="0 -0.046 0.046 0 0.046 0.046" material="rtr_ring_2_mat" />
+      <geom name="rtr_ring_2_bottom" class="rtr_ring_collision" fromto="0 -0.046 -0.046 0 0.046 -0.046" material="rtr_ring_2_mat" />
+      <geom name="rtr_ring_2_left" class="rtr_ring_collision" fromto="0 -0.046 -0.046 0 -0.046 0.046" material="rtr_ring_2_mat" />
+      <geom name="rtr_ring_2_right" class="rtr_ring_collision" fromto="0 0.046 -0.046 0 0.046 0.046" material="rtr_ring_2_mat" />
+      <geom name="rtr_ring_2_stand" class="rtr_visual" type="capsule" size="0.006" fromto="0 0 -0.10 0 0 -0.052" material="rtr_ring_stand_mat" />
+      <geom name="rtr_ring_2_base" class="rtr_visual" type="box" size="0.035 0.035 0.004" pos="0 0 -0.104" material="rtr_ring_stand_mat" />
+      <site name="rtr_ring_2_center" pos="0 0 0" size="0.004" rgba="0.95 0.48 0.10 0.45" />
+    </body>
+    <body name="rtr_goal_slot_body" pos="0.26 0.08 0.955">
+      <geom name="rtr_goal_slot_floor" class="rtr_visual" type="box" size="0.040 0.050 0.003" pos="0 0 0.006" material="rtr_goal_mat" />
+      <geom name="rtr_goal_slot_left" class="rtr_visual" type="box" size="0.040 0.004 0.024" pos="0 -0.050 0.030" material="rtr_goal_mat" />
+      <geom name="rtr_goal_slot_right" class="rtr_visual" type="box" size="0.040 0.004 0.024" pos="0 0.050 0.030" material="rtr_goal_mat" />
+      <site name="rtr_goal_slot" pos="0 0 0.065" size="0.006" rgba="0.12 0.65 0.28 0.35" />
+    </body>
+    <body name="rope_root_body" pos="-0.32 -0.14 1.02" quat="1 0 0 0">
+      <freejoint name="rope_root" />
+      <geom name="rtr_rope_segment_0" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+      <geom name="rtr_rope_tail_visual" class="rtr_visual" type="sphere" size="0.007" pos="0 0 0" material="rtr_rope_mat" />
+      <site name="rtr_rope_tail" pos="0 0 0" size="0.004" rgba="0.07 0.075 0.08 0.65" />
+      <body name="rope_link_1" pos="0.035 0 0">
+        <joint name="rope_joint_1" type="ball" damping="0.015" armature="0.0005" />
+        <geom name="rtr_rope_segment_1" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+        <body name="rope_link_2" pos="0.035 0 0">
+          <joint name="rope_joint_2" type="ball" damping="0.015" armature="0.0005" />
+          <geom name="rtr_rope_segment_2" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+          <body name="rope_link_3" pos="0.035 0 0">
+            <joint name="rope_joint_3" type="ball" damping="0.015" armature="0.0005" />
+            <geom name="rtr_rope_segment_3" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+            <body name="rope_link_4" pos="0.035 0 0">
+              <joint name="rope_joint_4" type="ball" damping="0.015" armature="0.0005" />
+              <geom name="rtr_rope_segment_4" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+              <body name="rope_link_5" pos="0.035 0 0">
+                <joint name="rope_joint_5" type="ball" damping="0.015" armature="0.0005" />
+                <geom name="rtr_rope_segment_5" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+                <body name="rope_link_6" pos="0.035 0 0">
+                  <joint name="rope_joint_6" type="ball" damping="0.015" armature="0.0005" />
+                  <geom name="rtr_rope_segment_6" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+                  <body name="rope_link_7" pos="0.035 0 0">
+                    <joint name="rope_joint_7" type="ball" damping="0.015" armature="0.0005" />
+                    <geom name="rtr_rope_segment_7" class="rtr_rope_collision" fromto="0 0 0 0.035 0 0" material="rtr_rope_mat" />
+                    <geom name="rtr_rope_tip_visual" class="rtr_visual" type="sphere" size="0.010" pos="0.035 0 0" material="rtr_rope_tip_mat" />
+                    <site name="rtr_rope_tip" pos="0.035 0 0" size="0.0045" rgba="0.92 0.12 0.16 0.75" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

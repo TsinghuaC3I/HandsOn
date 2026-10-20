@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="duplo_align_base">
+  <default>
+    <default class="duplo_base_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="duplo_base_collision">
+      <geom group="0" friction="1.1 0.01 0.0001" solref="0.004 1" solimp="0.95 0.99 0.001" rgba="0.2 0.2 0.8 0.35"/>
+    </default>
+    <default class="duplo_base_marker">
+      <geom contype="0" conaffinity="0" group="4" rgba="0.2 0.45 1.0 0.35" mass="0"/>
+      <site group="4" rgba="0.2 0.45 1.0 0.6"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="duplo_base_tex" file="../../lightwheel_ycb/a_lego_duplo/visuals/T_a_lego_duplo_BC001.png"/>
+    <material name="duplo_base_mat" texture="duplo_base_tex" specular="0.1" shininess="0.45"/>
+    <mesh name="duplo_base_vis" file="../../lightwheel_ycb/a_lego_duplo/visuals/a_lego_duplo.obj"/>
+  </asset>
+  <worldbody>
+    <body name="duplo_base_root_body" pos="0.10 -0.12 0.94" quat="1 0 0 0">
+      <freejoint name="duplo_base_root"/>
+      <body name="duplo_base_object">
+        <geom class="duplo_base_visual" material="duplo_base_mat" mesh="duplo_base_vis"/>
+        <geom name="duplo_base_body_collision" class="duplo_base_collision" type="box" size="0.0322385 0.0159545 0.014979" mass="0.032"/>
+        <geom name="duplo_base_stud_0" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="-0.0160 -0.0080 0.0175"/>
+        <geom name="duplo_base_stud_1" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="0.0000 -0.0080 0.0175"/>
+        <geom name="duplo_base_stud_2" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="0.0160 -0.0080 0.0175"/>
+        <geom name="duplo_base_stud_3" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="-0.0160 0.0080 0.0175"/>
+        <geom name="duplo_base_stud_4" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="0.0000 0.0080 0.0175"/>
+        <geom name="duplo_base_stud_5" class="duplo_base_marker" type="cylinder" size="0.0044 0.0025" pos="0.0160 0.0080 0.0175"/>
+        <site name="duplo_base_center" pos="0 0 0" size="0.004" rgba="0.2 0.45 1.0 0.7"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

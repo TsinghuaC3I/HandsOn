@@ -1,0 +1,16 @@
+env_name: t35_rotate_propeller
+sim_backend: isaacsim
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Rotate the YCB airplane propeller through 1080 degrees of accumulated absolute angular travel. Each 360 degrees counts as one turn, in either direction; passive coasting also counts. Three turns complete the task."
+robot_type: dual_arm
+time_limit_seconds: 120
+skills:
+  - bimanual_coordination
+  - articulated_object
+  - repeated_manipulation
+  - contact_control
+objects:
+  - a_toy_airplane

@@ -1,0 +1,19 @@
+ROKAE AR5-08 robot description and geometry
+
+Source: rokae_description 0.0.5, publicly mirrored in Airomantic/ar3_ws
+Revision: 49a02dbf4af2412612d2b2d6af9704d47efb4322
+Upstream maintainer in package.xml: wang <wangyifan@rokae.com>
+The package declares Apache License 2.0. The unmodified declaration is
+retained in upstream/package.xml; LICENSE supplies the full license text.
+The mirror has no separate root license/NOTICE; we do not represent it as
+an official manufacturer-hosted release or a new manufacturer endorsement.
+
+All 16 arm STL meshes match the pinned public source byte-for-byte. See
+SOURCE.json for names and hashes. HandsOn retains its benchmark parameters,
+names, resource locations, flange/camera additions and converted USD layers.
+These adaptations differ from the public reference; SOURCE.json and
+parameter-comparison.json describe the changes. The public reference URDFs
+are included for attribution/comparison, not used as runtime replacements.
+
+HandsOn-authored integration and additions remain under the repository MIT
+license; third-party geometry and derived descriptions retain Apache-2.0.

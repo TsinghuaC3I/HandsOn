@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji1_YCB10_Marker_Finger_Gait">
+  <include file="rokae_wuji1_right.xml" />
+  <include file="t33_reposition_marker_grasp_objects.xml" />
+  <include file="ycb10_collection_scene.xml" />
+  <option timestep="0.002" noslip_iterations="0" noslip_tolerance="0" />
+</mujoco>

@@ -1,0 +1,2374 @@
+{
+  "baseline_commit": "282390f0fec08daca53e2d6b03f6ad8772b609f4",
+  "hash_scope": "local hydrated source bytes, not Git LFS pointer bytes",
+  "files": [
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/CLUTTER_LICENSE.md",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 1122,
+      "sha256": "83651e63c0473b9c2a55f9f821175e346b1e87e84d07e7663aa31813fa72dd1a"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/GLUE_LICENSE.md",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 693,
+      "sha256": "0241555ee4af16168649643b3b0164da6fb59332ce9211830c661ba15d7e39f4"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/TRAY_LICENSE.txt",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 664,
+      "sha256": "87c29721f560c7333eadd9c33132d42931d81e48b5e6f99a255b6fd0dadcc1e5"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/asset_geometry.json",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 200546,
+      "sha256": "b141c3c95972873c14a97b3d3a64d1c73f0d940946c4336aae4f81a79ce4ecfc"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/clutter_collisions.usd",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 154956,
+      "sha256": "63fbedf6c16586a72ec3c59ef42103e813b187616ce9ef053cde8422222bbc1a"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/glue_stick.usd",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 682990,
+      "sha256": "c602eefe2b4f34f03d395ce984dc5836d5de508ff23047e030250afb3a23e13c"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/source/customisable_glue_stick.glb",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 18653256,
+      "sha256": "8b2748ff611675f83f96d51f795fb61052bb23388e8395134d276a53fb05a969"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/BaseColor_0.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 4154907,
+      "sha256": "f0264aa4c7f1edba6156b5b22b0546417a2044a12766ecdaf423ff944c08bad5"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/BaseColor_1.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 510571,
+      "sha256": "72aab2fced906a7f2d4595e8e2b236d2290815e5af9a8db0fc9d6b6baa9d08b7"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/MetallicRoughness_0.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 2380638,
+      "sha256": "3e0156f2716930010addc4362658fe1102d1d3062d3d1cd0e41395c37197df23"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/MetallicRoughness_1.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 2063728,
+      "sha256": "4bfccf987a1ea5cbe7e0a9eb1c30d736652935e69b3de6c3ac08c1bf28d9f0db"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/Normal_0.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 8477736,
+      "sha256": "41f52d6b69008134b1fd82cb199de2aa7838c124aea49de50411583ccece4bf1"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/Normal_1.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 3475164,
+      "sha256": "851ea8a53162f2bbe92b79923bddcecca6613ef957903b55a099a492fb0b6969"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/Occlusion_0.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 2380638,
+      "sha256": "3e0156f2716930010addc4362658fe1102d1d3062d3d1cd0e41395c37197df23"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/eval_gen04_pass_glue_stick/textures/Occlusion_1.png",
+      "categories": [
+        "GEN4 integrated asset"
+      ],
+      "bytes": 2063728,
+      "sha256": "4bfccf987a1ea5cbe7e0a9eb1c30d736652935e69b3de6c3ac08c1bf28d9f0db"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/loaded_tray_gate_assets/TRAY_LICENSE.txt",
+      "categories": [
+        "reused tray"
+      ],
+      "bytes": 664,
+      "sha256": "87c29721f560c7333eadd9c33132d42931d81e48b5e6f99a255b6fd0dadcc1e5"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/loaded_tray_gate_assets/bc005_selected_wooden_tray.usd",
+      "categories": [
+        "reused tray"
+      ],
+      "bytes": 60965,
+      "sha256": "4e189172060feb2d6d35687a604726962cf9155e8efc3e714f0d3b290d151b3f"
+    },
+    {
+      "path": "handson/handson/sim/envs/usd/loaded_tray_gate_assets/textures/wooden_tray_baseColor_1k.png",
+      "categories": [
+        "reused tray"
+      ],
+      "bytes": 1137421,
+      "sha256": "529f759e8be32ceeb3bbf0d978752cafa3a7ccdc2cfc5cdc4607974932b792cb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/BuildingBlock017/collision/BuildingBlock017_Collider1_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 676,
+      "sha256": "f31c9224617a91308e1408c4b81c370ed73a01e82223bb5f44b32a53f53ea575"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/BuildingBlock017/model.xml",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 1590,
+      "sha256": "bf42aca16d8c186149b0e64d2b8d4a9dec861db6fdc0eea03ddba941e9f17290"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/BuildingBlock017/visuals/BuildingBlock017.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 231580,
+      "sha256": "cf89f158c1a80754f909aaed59fc245b9a456cd7c133fe597c284458db18c498"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/BuildingBlock017/visuals/T_BuildingBlock017_BC001.png",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 4038989,
+      "sha256": "8ff2c777f9d6faab6ce98f0591fe61488b8aef23d1bc2b070630dfbd0daa7449"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider1_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 663,
+      "sha256": "1e45a18ca7bd1d44e097f80bcc0204cbfc655c63cedec81a88151f24f5f05312"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider2_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 673,
+      "sha256": "7d3896da23d8a21b896a5c22c200791d499264a79c3fa495a36003ecc79a5156"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider3_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 669,
+      "sha256": "ded6e68829fd23cbab6837ab4b09016265329936e835642f3bb98b5ceeca0dc6"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider4_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 663,
+      "sha256": "8ebc14c35c7d3f7aeff14e800e3f92091a63cf27979e194da140674f2d90a6dd"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider5_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 669,
+      "sha256": "ac3000411785b71f45ef545c2772568f739ab0a4251e8c0543ac583ca18fa77f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider6_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 661,
+      "sha256": "0fd5bb320fb6637144d94b0bcacbfb50ce8c6bd96526a2cb94651518cad7abe0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider7_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 661,
+      "sha256": "5543cf0f6e18595f5f07e8fc106b5cc6a3554e1fddaa08117c350d1add1ebc2f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider8_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 669,
+      "sha256": "33611011a6807338d85d55361709bede1782b23410179272f37da0a46eeb54ea"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider9_m.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 669,
+      "sha256": "9e901d45ef55b6237b37151266f08978c27b11e959e9b79c16e789a66e762474"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/model.xml",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 3166,
+      "sha256": "90e09bc67ec70a72ac518e02331916c8ee809052b0babac5636724b3fe6e496f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/visuals/Clear_Box.obj",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 900361,
+      "sha256": "e6971151841a62c06dd153cedbd99146ddea77b560e72b1331c04b053f3fc5b0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/Clear_Box/visuals/T_Clear_Box_BC001.png",
+      "categories": [
+        "D03 inherited import dependency"
+      ],
+      "bytes": 3393,
+      "sha256": "d41e8a2e6b9ca9e1d8bb8999a037ab59daaef18556d9e0379e6bfe5f72c655d0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_Nails/collision/a_Nails_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 13293,
+      "sha256": "eb98a0241619afc6ee8f031204c4dec5968f357357e11729ef2d2f18dfb62b6e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_Nails/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1473,
+      "sha256": "64a5cb6f1cdb1160c4699396546ef1f230aa0fa0a243684aee1316e15b6a9302"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_Nails/visuals/T_a_Nails_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 12107,
+      "sha256": "e78b452d2301d0e10c1679690e1c626fc4a0309997f7c365e1ce6965efa65654"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_Nails/visuals/a_Nails.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1936762,
+      "sha256": "edcaa3edd823e6bea424890f6196b0666fd04faf17b43dd2014f63d44ddfbf41"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider10_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 708,
+      "sha256": "d59c032fadccf3f94a3e9017349258ed3504e0fa057405740f4beae428540af8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider11_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 712,
+      "sha256": "7c33f3d8195c78d1c28ce5b34f4c7ec7c251a0498bdbe9dcbbd8a4e30f9c7567"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider12_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 712,
+      "sha256": "1875555b562cbe5d00655f7cb4dc6780918528f18b4aad90e1f404e666947c01"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider13_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 708,
+      "sha256": "8cd38b7cfabcd1338999874847a26d7055fb7036c3de2ba5c393609947e4c73c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider14_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 793,
+      "sha256": "8b2de0c09a9eb4ed659b99c1794a8042ef2369963dd143ddb499d19c47a589c5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider15_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "e055e8ead1d58943f9fa5e00263cd46b8108daa0c9a9c8ae39df3a5fe8d5cdd4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider16_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 713,
+      "sha256": "64d8067c13e200e079c648906276712ffc982ec3ee5bcd4e8f1cb87532a46346"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider17_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 718,
+      "sha256": "e0540a4c15a73b26ee0d80955fe3d31ce320e84e0880527ac930bed3c6a2e3d5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider18_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 714,
+      "sha256": "7df6cc3692dd1d9651536ee3f643512c87db1fee5e6bb9667a22a4bc0a2bb4bc"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider19_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "71587b84326301a5e3664006fc337b344eaf90b5991cbb13baffe6256d7edea1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 4209,
+      "sha256": "1609f17fc810870f4d3a30a2597f9a8fa5149f313d4bf80b6f01b0e1113ea7f3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider20_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 714,
+      "sha256": "676e7dd89ad7d660b18cb8652d76603e9cefbc339aeb7343babad5265f775561"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider21_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "bc023623bbe242215f9329a552ed623e831429802cf4bf4a77a8fa8790724e22"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider22_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "a58cfbbe2a6cd9a401ae3a3eb231f9df9dd859f40676c994271c58780da24829"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider23_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "279f1378e41ba627767bb4d3ea38a701b102869e7acc5c311cdc9274014792c8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider24_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 721,
+      "sha256": "f0f7463c24eb0e65b99fc34d8c6f3b5664827df0106d210b5ac7061da1d695ec"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider25_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 720,
+      "sha256": "147e56d5e65222349c78bc6a0a98d5354a0690d5b136bceec0cc3e31d3bd963f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider26_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "c5602647c4ea91c0906e59df0da53bf55708cd69e02d66f5b008bb8cd7e80291"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider27_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 722,
+      "sha256": "9f6ea13b4c0a01d0f716b570379ccc810d08a360d1b50f9dd35118b20caad3fa"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider28_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 719,
+      "sha256": "139f3a508dbd474978545424783f1d696a69b9e3ec81973489594d4a35197497"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider29_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "ef86eebe960618a02a8adca16a9a27e7ae17a2a1de197735e8a8f4ab57a55611"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1780,
+      "sha256": "6f8e01ac48350a626d49e94eebbf66b47ff6c0401c09ff110d3e2019cf9d2580"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider30_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 714,
+      "sha256": "2144e9b5a424d1968f32ff2f71ec1d647d2d26f74cee7e8d4e18c1b66cd4bbb8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider31_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "bcbc67d20302f70952271116216692f39100eebd1cb1b999685bf32d91ef7597"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider32_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 720,
+      "sha256": "d4a8e13f8ecaa8e1bda9b7f6a54c7da85978191db30de2e6d83d04f3a9e2c768"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider33_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "8a8a9aa38ba9126a27879996963dd0e3de64da99669d3ed45454709b31a20840"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider34_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "0395c03e9f030eb54b7f06aa92e4e276ddd64c1f1962522d3e74076a2e2aea71"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider35_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "5db766225f9a3bad44e1e8706e4fd5d28081e4ef4b3a9818dfcc3fc7c85cfe50"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider36_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 723,
+      "sha256": "070faeb73d12dec1adf0e3192bcdfc51836618ce132ee86760aed9c25b8df4bb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider37_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 722,
+      "sha256": "717ec68b3cc54da37cb13a98821ad8c08f13fd159364c5239a5afc9e75f64953"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider38_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "65da2bd1cc7c0e64b7c5b6a677257c5369dd0022ef32f00e5167d6531beefb56"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider39_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 719,
+      "sha256": "4cf1ba4a5871d20cd4faa55165ce2d99b3681e66d4fb482497808c1c2483bbd4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 4428,
+      "sha256": "09e7e53cff6a5f9d61f938a3ba32a8816257b11c6db986a13525c54f8476e6f8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider40_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "df51ac1edc5df60677bd615e11d743697cc1a6b84ce438daa9f6350274b2fcbb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider41_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "33e989970244d216f60cb26d56462208f2fcb56389c7a320c0cf587dfff8595f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider42_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 716,
+      "sha256": "b908ea8dbc6ce14ca7a81637708cb8c41dfd838131903f6c46b617499a0e65fa"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider43_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 720,
+      "sha256": "e5a58263d1a57222d319a48735df53a9bb67edc84040fcc113286ce5b8266f8e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider44_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 10905,
+      "sha256": "fc202666c1c6af63d6d1ea7f4e2ddc61974e1fe836391698d2fb71f3f5fe30eb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider45_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11252,
+      "sha256": "76071a90003d0c562227186bd29d306f1293934a8db3de02a878fbae268bc1b5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider46_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11252,
+      "sha256": "c4a3eeea18fe8472da441bd49d86cdf5a00e7ea210802a9c127a9bebc678749f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider47_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11252,
+      "sha256": "0f85f0ec58f4447e298adbcde2830babf6edc11f837591cbe3e05d4ade0ac688"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider48_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11350,
+      "sha256": "67e730af03432c5eb68d867bf1330308ea94e0fc5400150d89259da52e4136b9"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider49_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11236,
+      "sha256": "46d414a61b6d53fe98a23000b76ca4e433428c9d8e46a09a059a3d2f9e7657f7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 4418,
+      "sha256": "e814c0f9aa471ff5a5fe4098dce7fb646fbc2c722c01050660f4d335df87b090"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider50_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11252,
+      "sha256": "38563ccc3e0da9c2aae39daf174c214d1fbd382718ff79b3266088a586fc8785"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider51_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11829,
+      "sha256": "6bf77183c0eb43c1e9e7ba2e0d8ecc04c8a8d2c05111b1b81e2f2ca56e176fe0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider52_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11170,
+      "sha256": "7b195013bf545c7865d48a4840c95dde32cdbb80341a2ddded9e29581fb1ed11"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider53_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11154,
+      "sha256": "94821d957f3699fa7b349e7677b106722364a91d0bb7f15f7fc12ded2c72da30"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider54_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11154,
+      "sha256": "0f95a3baf6a657bf744860a504303a218620aa7b4786884e22651cb09e688e57"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider55_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11350,
+      "sha256": "48d3646e99c2550fd0d2fc0b838fa5b5dd0e5107ff2b5ac0de4669177ca126d7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider56_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11794,
+      "sha256": "2caa1338c514630ac33b8d80179417ed6e3697e0dfc0c55bdc38f8d45a256191"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider57_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11252,
+      "sha256": "65d42035ad185f4f3c11638980dbff74249c5587484a01dcea00f5ea34e54a9b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider58_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11247,
+      "sha256": "588a3f611a95a42361898d6502bee04ea49b97ce0e176d44f8440c398d543300"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider59_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11844,
+      "sha256": "c1cade6313914cb9e9b7fd7815c11e1c141df7d716a41cce1f073708d4b5b130"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 16069,
+      "sha256": "f2642ed242c2310c993346477dfd7a4954943a705f62a71603cd447c1c4a6dce"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider60_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11179,
+      "sha256": "b0df7478672a7ed917e96ff093404283bf19067bca1be6d4d105eaaac72e0ff1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider61_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 12374,
+      "sha256": "dfed5f35d268cbadf340383bc700ec10d7e0d99edab1259b61d2b5eb332deba1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider62_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11277,
+      "sha256": "a5e6462bfeaf56b623da2556ad91d5874be373112c141bac7f9a538f366f605a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider63_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11293,
+      "sha256": "37eaa8dcf7a855ffa4a3ada552229f6e829db90d08bfd7758c05dacd60432ac1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider64_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11350,
+      "sha256": "772ba33e9a77a3a6cd52d31619078ab707c6ecd4e8baa1cc3b601cea044fc897"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 713,
+      "sha256": "4208c4b35e3a1d407ba8f99114aba59c5f776bb182c6ae770a75cd1e4369a902"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 710,
+      "sha256": "9cded4e3a90f739e7d0feeb06b0d4d1550961d5e6d8c333f70d9688f7bbc5c28"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider8_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 705,
+      "sha256": "64e59d70c7faa4854a14cf83f69ec6b07f4eced4378615c34c4b68059b3d173a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/collision/a_marbles_Collider9_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "a3bee2b11d600eae920307de722baf83b853608080c33eca41e6c27d74591e99"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2334,
+      "sha256": "91fb2be08a20e65acb96d9c7160a2e7c0459e680985dc785d8e0feb37b3dd7c3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/visuals/T_a_marbles_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1037446,
+      "sha256": "b029ce7a57d5449073676bba3afbcdf1638d539671743ec82e68673ae04e482a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/a_marbles/visuals/a_marbles.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3341044,
+      "sha256": "47e1fad095081a316da71fb2da30dd27f2fe7e3b63b7bfef4a6402d64dd623e0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/b_marbles/collision/b_marbles_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 9862,
+      "sha256": "21195d06ec89fa9c5a9410479cd07ad555ce17a9c7c018d1f87a0b0c8475e485"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/b_marbles/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1502,
+      "sha256": "d49a0e5e3637addbbe4dde2166eb2ac2b09e41b168933c530d16aeb5a4044993"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/b_marbles/visuals/T_b_marbles_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 385181,
+      "sha256": "c879c5db52cf40b98ac537d8aa09c3c826b3508f946d397591099eb43e68628d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/b_marbles/visuals/b_marbles.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2660977,
+      "sha256": "f4315c7d0f4215b9dc96ef5911b6bd60fe50a16b2b834358fc08bf67d61f4879"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider10_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "7933beaad5277d9477f41d92530dfbb2115ed23920d2ac072246271537ea19f7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider11_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "f6e104cca4677279a98598aa5054b5d9908083ff23afbd099b853cb4ebdaf474"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider12_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "060422ec2e1c28d0664a82342ae9dcbb6a663af6f1e93ef501b1116bb8484375"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider13_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "e8259f42c0622f8f88b02e33567799759a86edb1e98a457cd8513a645a83ca9b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider14_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 703,
+      "sha256": "07c0c8723d5c51c4aca2db72a7b069cb892aac3e1e9c7e7834e0e4225280025e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider15_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 699,
+      "sha256": "06f066c22c7c1029dae333ff9dfb74752d969508d285cb46364b24339eb14bfc"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider16_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 715,
+      "sha256": "e706d7f9cdf76460eaf733dd5f05cbf806e77fa2ad2d672a118563b7575216ad"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider17_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 719,
+      "sha256": "2361bca0ee98775208420bfa3715546c2664c46a0dcae0be14a9b393fc85e322"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider18_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 718,
+      "sha256": "5f8258725e328aa2d43e74269521728ee9f569bc93023f6b7970d5f6e189c54f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider19_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 715,
+      "sha256": "135faaf377afff8c58dab78e4d96ae497050cea847fa27ba79259b3e01c889d7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6061,
+      "sha256": "589234edfc70a6c07c37128335cf020cc3e04d600aa377133660e16213130b89"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider20_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 699,
+      "sha256": "2f38aec599d415e666aff2358e754b84c03912771355519a5a62ffbda196f889"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider21_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 704,
+      "sha256": "1bd277fbc344dd2f40e6665e8bf501d08b8e6d98c8822c3b2caac20bb3bdf4e0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider22_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "ae3f1722078d5c0eafee6e3c8e6b08f2f7fa9b445946d04696d13e2f5dd6334e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider23_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "1ef9ed3ba829328c043f24ab35af7c7ff40835bd7778eb8a6b96aef58c34cf8f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider24_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "5ac7da397cf4055a484634ced62ab74b02f00398d9169b149989feafcfb244e5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider25_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "61d91285a04e965373082085921ff90f31f2f00e277eb23b745c5866c12cb65c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider26_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "a99c35113dd3bc988ba75ad59effdb3e2837492aee182e9a2ab8e61bb8920e23"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider27_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 708,
+      "sha256": "d7a2738435c415f75ab164be668c1017eeb10a8b20aa1dab1675a65389677c3b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider28_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 708,
+      "sha256": "56d015b88ba58a74d01a983a358041c0057ebfc3d7cf6bcedc055db6399a5417"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider29_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 713,
+      "sha256": "d4bdf265e87b5c96e1c5f549688436478a2601eca6faa0c3a7fb04fc96e1f307"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 710,
+      "sha256": "a2dfc2d5824909839a29561522f4c8dffde310afec1bde19591ea2294f030321"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider30_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 719,
+      "sha256": "db070b44ae71c90a0ec7b5d844c1d6c365b671ff2cd0db948a0a0260341e2824"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider31_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 715,
+      "sha256": "8d590a901287056169f1d6a9d4f6f6d59a8a34c70ac8bc3c3dea05a7a009d344"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider32_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 699,
+      "sha256": "c426689e73cf38688c290eb6c28e2a964ed73e8becf29e666f3a83464e9d52b7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider33_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 703,
+      "sha256": "005ad1899e04adf7cf53d96b9851c0ec168cb73d1dcac25ff2233751759c2d35"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 706,
+      "sha256": "806f2ce32c1949206fea3ee2b4d61f4ee090f23628be065ba96951f2b2313985"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 714,
+      "sha256": "6dce99e52dfaf9a4ea8ee531cfa02a7621691ab996044fb5d67edc8ad41581e6"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 718,
+      "sha256": "71f3df8790822c616712fb7e406fbca832233d3a01435380e0097b369e78226a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 715,
+      "sha256": "395efd690d5c3d10bdfe031d3a1b12234c51f60b5039d376f19f83c7fe7b5ea0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 710,
+      "sha256": "a3d73c731afffdd295330615664d34766122cf94756630d94721fb2cae40c83a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider8_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 702,
+      "sha256": "436feff65084a8ce698729409d88f1a29b009a5e4ed0435863d246ff03953198"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/collision/bowl_Collider9_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 706,
+      "sha256": "6b0f048981d5949f8323d8d101e0194de47bf786c6bd6f9e8e0c2bc5a194a4b1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 7527,
+      "sha256": "822ec36e935b01170c61eb5503e53ff35b69c43fa66f420ac9a027bf29a36186"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/visuals/T_bowl_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 196255,
+      "sha256": "5746e67e57a794baedc5cb178812ec1725af40bb20d7de7e09b0c1898892f7f5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/bowl/visuals/bowl.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 126690,
+      "sha256": "7fd921859e7ae65fde9b5a9198cde72e74f3cc48af54aac6d1e01436eaa396e4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6074,
+      "sha256": "ff54fb70709610214c695979960c1fb9ea8898c3fe01f66525e38f52bc782ba5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6019,
+      "sha256": "68afd32cdb1aa3a0c1742e277ca4ec31e8c3aeb33b5ce3a2db0a9a4bd04c3a2c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6083,
+      "sha256": "7d4c0d470c49ce869b6e29a0609c29ee9b218b47c85a60a5d5dcee934a9a8691"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6083,
+      "sha256": "5bb663ab7e464bb5a1e90763b63d63329589ee3f98481c36ad18b3d1789564da"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6051,
+      "sha256": "3a817d6b0057f4ac2bb2d107b45c678040780e91124210f3898adf277b578482"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6083,
+      "sha256": "02d7e22cee0528b66eb11df57cd732c47e1ba9522039d5c012c6358a976af2a2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/collision/flat_screwdriver_Collider1_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 728,
+      "sha256": "03bbc3f216e0bff53187474ec3b1efd4def9a201259f14a4ca0aae7a9802b1fc"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3287,
+      "sha256": "d137cfd89703335fda4192a112287d20546c5819121d32f7f2722e2238f39722"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/visuals/T_flat_screwdriver_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 10116813,
+      "sha256": "8dbae3bd5b59a02fca26440510c68ba189b350e05d16348f99bfdb6722029018"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/flat_screwdriver/visuals/flat_screwdriver.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 684945,
+      "sha256": "708f91e333375701545b223c6351b9049e45b9b4e0485c4f37720a04edbde3ed"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider10_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 758,
+      "sha256": "b45712fec51b827df154d9d9b8c6abc621ee26ef3d30c5a23d1bda3402565e06"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider11_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 810,
+      "sha256": "92239cd28e267d2fa71b8ffa4d349ffd843ec20de1cdf449b02e2205f8d1b171"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider12_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 821,
+      "sha256": "2eab3fd5d7a787ccf1daaa884daea15eee536d1ad7df664ac69b3f6a4dd2506c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2176,
+      "sha256": "e0bbb658d7588e55d51adc54a934e8422869aea1f3da6df3189ccedc399ac453"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2364,
+      "sha256": "f36519b6e025a4d1982af11ba5ac8cab49df540f80df4a690b34764a1a87fbe7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2148,
+      "sha256": "7d1b33246a1625ce96c5ff411c5f8851bf24a50a71c0626c3688d2fd692db6ae"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2139,
+      "sha256": "a688dd75d7b734935963d54b5ebba137179465e5b87ea1ed2d362b1664b94d3e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 710,
+      "sha256": "975210063261698d2925be25e05026990beaffdf051648329bfc994d9155f178"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 708,
+      "sha256": "5c0ba89e338ae0df5cf6b9d2dcc6a52bd8cd7d3a0bd1761ac671e4c4b2ba12ac"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2126,
+      "sha256": "3b704a0acf7e693175bf0a69daec3b1b9f47eddcb4519db330581c752d3d5747"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider8_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3808,
+      "sha256": "57b8ad7590dc8e80eca8b3d7381b67c9d0c5be224f7e9882988a404215175d52"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/collision/hammer_Collider9_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 735,
+      "sha256": "afcee5eb1f90b0d810c90e21edd71e7a3aff8d77718de01938a47bcf406f35c3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3636,
+      "sha256": "a036ee2fb7f8a583c75955255f300b3eff5c6d324f9dc44b1fd9bdbcc1dc98d1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/visuals/T_hammer_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2433833,
+      "sha256": "73d111d6abf91dfd14c26a330a18baf5b17c9a9ae8c148fc0fe118c279836f56"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/hammer/visuals/hammer.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 1685995,
+      "sha256": "bc9dbfce1247af8cdd2ea6201a583d6759f69500778ab34f9cac2457437baba7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6105,
+      "sha256": "eb15358512b770b3d8f8273a8450dedf37a865e3cd4d52fd36169d7934a9caa4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6061,
+      "sha256": "c21d6429216f4b25bad58d4b3bfaa7cdaa4be86112cd9bcb9713dff9d263660f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6009,
+      "sha256": "927b78c2107e1416a100b8fa4677b420c793ed92eabc6882dd031d582afa53ee"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6069,
+      "sha256": "3921903a1e11eee48a66c53a3042b39b278794580cb8c230f6f9a0b30fde08ea"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6077,
+      "sha256": "682cca3274ac0fce58a636ba5b8566c018ea7c4808b77a8ad4aef2ac95a476fe"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6088,
+      "sha256": "4dd2a50a61f6e27ec4e9d0efafd5ec59d61c639ce17ac969919f3d7eb83ac899"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6073,
+      "sha256": "52d34a94a11c931c986a007ce477a271c3f91b9761ca13406107394600f008f7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/collision/phillips_screwdriver_Collider8_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 6073,
+      "sha256": "3f485d5040d688182b13b5aad6802d7b7572c03a7121195dbdfa28e405368732"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3994,
+      "sha256": "d6d0961ea02aa75104ba2811361ba479551ee70f83b180e159372163b9d6a4c3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/visuals/T_phillips_screwdriver_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 622948,
+      "sha256": "6ffd31e487f67eed913464fccbb8916c936217a26ef21ac4b0f8cab09b9ca558"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/visuals/phillips_screwdriver.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 73810,
+      "sha256": "5652b3512e06147817be34ecc36607fa7b475570473c6a93b3754f0b19baefde"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/phillips_screwdriver/visuals/phillips_screwdriver_prop.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 11927,
+      "sha256": "edb9c95a0fc072faad63565b2f05579102f8f429987cab03c26a35bb83818b28"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/collision/plastic_bolt_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 4684,
+      "sha256": "c8ba7390cec401f0269bf353fce05f13ee5f1854ef00a60a67f7d0e25c3c24b5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/collision/plastic_bolt_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 724,
+      "sha256": "42d2171901e3db415f926892c31446afa99300438badd0e77395567145295e4d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/collision/plastic_bolt_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 722,
+      "sha256": "53dcde1a2bd93ef6834f2cd1189bcb8fd098332d57f16ac92ca46d02c5f8be04"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/collision/plastic_bolt_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 722,
+      "sha256": "3718f060256392736b53ac28cad2ded6d69bb1aa04666dc8b1539e6cf0f62c51"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 2193,
+      "sha256": "6d6a7add93506bfb8bc8bffd7916087ee4ecbd9ee8c0a556435629addd20d4ae"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/visuals/T_plastic_bolt_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 5356,
+      "sha256": "5c28b560945acffc57522a718f746887d5868c6a826fd8ab6b39bf4716aa4ec7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/plastic_bolt/visuals/plastic_bolt.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 647946,
+      "sha256": "8515a22a96c095a49dfe4e975c48e83247249c6c22f77e2b37d097fba0c13d95"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider10_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 868,
+      "sha256": "fd6459f60a6278a20607b84036c2534758bd55b0f1b30bd58a67e157b6ac0db7"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider11_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 751,
+      "sha256": "c010967bbed4e079f35e0165177ac2efb3ff20c2e5776650aba056bdf98a0d7d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider12_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 747,
+      "sha256": "957f401ec80f5d4fdb2e9b8312426dab8be3dbe9e9d045f6c9e22cd7e7aa17da"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider1_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "23760bb056418d2c55bc0e27144fe993760ebed9deb594543a9bdc641efb8c33"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider2_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 706,
+      "sha256": "747f80c6694643f8a1bba968fcabd1581bc6bcd49cdad4ce1569fc4087a1134f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider3_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3918,
+      "sha256": "bff474d37d095604a7d3a92f4b8e954707e25470d51aecc8f91209309c65e3bd"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider4_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "2701a045517757e24ff547ddbb4549f72e750b0f0f048d404823a61b572a88d4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider5_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 707,
+      "sha256": "74b26ec9ae79bea18aeb51066ff9a70318fcfb85fd469e9e9e1b10841b9769e3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider6_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 711,
+      "sha256": "3dff5e8fbac521cf3b764e95c6879998497288b751a18113db4c1b857f7a1ab4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider7_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 788,
+      "sha256": "d6de6cc61e2e21d594838446579a0fe42289c31415e869ebf0ef3412e1ea388c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider8_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 758,
+      "sha256": "a184cc9d82d86615b31e6810997a6639a722ec249fdb183bc1c023d827b2ccb3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/collision/spoon_Collider9_m.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 756,
+      "sha256": "207869dccff11ede8020908415a8b500a32610991bc2febe3df01807e5fe42cb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/model.xml",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 3601,
+      "sha256": "43a7bec47956b14039bf23025e577c6e788e73dea58bcf6948782322cca5bcb4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/visuals/T_spoon_BC001.png",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 542124,
+      "sha256": "01ae6b4e7a91511155ebf2ecbd9ddfb0c0865d902b5f6d6a5021b02c587583fb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/lightwheel_ycb/spoon/visuals/spoon.obj",
+      "categories": [
+        "D03 distractor source"
+      ],
+      "bytes": 427170,
+      "sha256": "461d5f0357dec464aa08bfb006a4f33f9a945b8d1d037f12c4f155d0c6bd0ba4"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/center/body.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 9884,
+      "sha256": "9f3a4f4ddf34f92fe53cc72892c54076bc36a84483d4c69150c9a71bc5121af9"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/center/head_fixed.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 77884,
+      "sha256": "0c68e6ba96505fe8dd379cb12dfbde26b1a52467c453e4f6c56fbd763ac1dd34"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_base.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1159484,
+      "sha256": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link1.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 668284,
+      "sha256": "fdb3ee7308f8e5e0db4013408a7203b0158da17b946ce9401f0369a507d20ffb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link2.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 2376784,
+      "sha256": "183d4e17efd76881812f53c255cfb98e9e40205a36a9ba5642b3b0d1eb3309cd"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link3.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1866484,
+      "sha256": "85ceba87b6e18580d6b69be2d0ce37f44314ca32ca56386e28c2026c9a838f9d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link4.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1806284,
+      "sha256": "68e13a43dccbfb70d030c3426b8c87bd9d2aaac0ebdde0c6c92375950fe5c776"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link5.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 4238484,
+      "sha256": "0125e5bf7c7738bdbc2a62e55400aea27ce786839078ddc3d622a60cf4182b1c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link6.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 683284,
+      "sha256": "e6120969880a60e984e9ac1e1ad57b09ff27c76f159393554f7eb939b1a90b98"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link7.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 2714284,
+      "sha256": "ff61bfc769d0256477c7d04edca37ce843b7664af5aef68d776ff38a73fe3adb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_base.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1159484,
+      "sha256": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link1.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 668284,
+      "sha256": "87def8c59f505c3c54535aef2f1c7955e8b1166de335a3435b987bc0b94d70b6"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link2.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 2376784,
+      "sha256": "4418b25a88f15494f081a3ccd87b14ad2094e32852cf22c4db8679f75dbe9a66"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link3.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1866484,
+      "sha256": "63c99f8a08819e17986aed7d1a518d48b3f82abfa85f074959d07513e0883bc9"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link4.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1807784,
+      "sha256": "1246afa1fe4e081e30e549c7aeafecc1aa7ef819f5ea5c867b9bc93859705db1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link5.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 4293884,
+      "sha256": "abb885d5bb977d62443aa6a4501d5223debb42d5ec9fdec4e5aab88f2c604f70"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link6.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 714284,
+      "sha256": "80a70e99f5a5c40a671af3d57d93503da2b6974fb2d1bae481f82fdd44f7249c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link7.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 2722834,
+      "sha256": "430c3461cd039ca4e83b5bc5dfdce6426473e6f1916f9f1c6db6416e6d77e01f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "categories": [
+        "robot definition"
+      ],
+      "bytes": 3034,
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_left.xml",
+      "categories": [
+        "robot definition"
+      ],
+      "bytes": 43600,
+      "sha256": "3ea14fea96cf1e80f9018418e32754cd409394a1beefe7eb2e8d46e4d3a86bae"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_right.xml",
+      "categories": [
+        "robot definition"
+      ],
+      "bytes": 44727,
+      "sha256": "df86bf6bd1871a66fc806ade5661ae85abbab0f0cdee002e90e9444eb6e30301"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/blue-wood.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 201294,
+      "sha256": "9b1eab21395a05d7463751f9075b16bc4fba8fd4be42938bda25ea634a345884"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/brass-ambra.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 1720843,
+      "sha256": "246007818045b92276631294bb61d797806f2381d7044e98b6e3c4465f8e085c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/ceramic.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 1442030,
+      "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/clay.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 634465,
+      "sha256": "0ea2ced7f0f07996292314e3f3f5df68c4d8c5b2cbf2180c899ed269906fdcd2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/dark-wood.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 239227,
+      "sha256": "5da8dbf7af06ecd251840aceec25fedcfa98267041cea289b2829c982e008dc3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/gray-felt.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 1037473,
+      "sha256": "04c1b483f04be0bd3d26a42ca530c05244cf4b52c0ccb027dbb8fc2bee41ca05"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/gray-woodgrain.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 267843,
+      "sha256": "b9e65c147f2683dbcfe6279b359db649aef0cb40ef8b1e3ed5ba6f29fab6b3d0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/green-wood.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 83480,
+      "sha256": "e4fd42ec6dea58f46aa96fc1d78d57c52450a6497dcad887ae8e2ff8c4af3797"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-gray-floor-tile.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 73373,
+      "sha256": "a2aae4ba3b38c3ab9851eca9ad6e76cef9357ef75b3e9a4b280f694ca30acbc5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-gray-plaster.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 516639,
+      "sha256": "d0bdaf13b44ab6ef3122451f6b3853e40bdf20bb9be7662649683ba525dfe191"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-wood.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 801173,
+      "sha256": "967be64bdb170d36283bc43c2ae5d525ec88f78bc837dc7d0efc9a28d68caad1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/red-wood.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 1797019,
+      "sha256": "d42411e594d6be26c4876ada623b163af6621402462b244d86eaf6e72aca6494"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/steel-brushed.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 275192,
+      "sha256": "43f30e7a2d0e8085aa15f58623b1753a003f93e5fe336eeaf65c146f955a81d5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/steel-scratched.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 391216,
+      "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/white-plaster.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 624094,
+      "sha256": "a35c03edcef74c940400dd39e2384d05169d1d15ac247166b3b7a930acd70f03"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/wood-tiles.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 1460776,
+      "sha256": "18d87069529422d832559ce969858576dd46f83efc3dfd9e5ffbf26d740be123"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/wood-varnished-panels.png",
+      "categories": [
+        "bundled scene texture"
+      ],
+      "bytes": 466710,
+      "sha256": "67b48dc99b89004d98cb0811f170d39993e7e205cc8d5bd3d01a4be137e33a85"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wrist_fisheye/meshes/wrist_fisheye_flange_assembly.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 1002484,
+      "sha256": "81007ca10b773904635bc1c2eccb35926330765517a73ee4161c3f8258d84a5d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_attachment/direct_adapter/meshes/Direct-Adapter-Mount-binary.stl",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 187884,
+      "sha256": "7b2fbf1c998d424bb9023ed711e50a49e47c2da1d27043bfa69a198eb2b928c8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 389384,
+      "sha256": "71f3bd91df6067111ddc798b9f5c0102712b5f4a2a34f69bb34ba447c583f067"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 91484,
+      "sha256": "ecdc1b1a4ca270b877c7b90a05c8108efbb8b3f8fa3163dc08d97772aa6e7b81"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 99384,
+      "sha256": "7b94ff3af239009e6a3a1b57a16b9a7df5c886d0d23887b9f665ce69d5b44560"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 64584,
+      "sha256": "d3c08be539c3df633031c671b463534bc01e368f2d591699a929e2fe6750e613"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 96384,
+      "sha256": "68b6d3e45b27dd726f2dfab091960502b31e72ee6ce09b58023a5cfd80e06861"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 67584,
+      "sha256": "f69537b263ba1341b628a7773536465dc3fee1aaaa473f7a81275d0d27a872a0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 55484,
+      "sha256": "deaa715c050523f31d6a56319c7c8eb82d37bcfb510021b5a85c771dd39d3de2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 133184,
+      "sha256": "4d41d5f4b5886b05a70ef83b21c9a0e4c3ef91952274bcc51adc75e1f04ce462"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "45f39cc7afe3d8a486eb993bf9fb6382476b186d654c4c618330452357c05ec8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "444f21c1f33dc62101463cf2dfabdd6869a0500e72243cc08ec15cbf53480671"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 67584,
+      "sha256": "958c98295aa56b586a710442d82279c89c8cd44c2de2e7e9793b6df770ace3d1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 55484,
+      "sha256": "62da611f79b2db7185a24549f6d6478916fad44c3fc248ef5c75fd1a60f66500"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 133184,
+      "sha256": "0879ef856c78f9d6046080d7c917086f8a493b00e983455299c04a240a52cc53"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "16d7079e439fe3b263f8477e5b2c8b5e73ebb3078efb4e75478c8f04b03e2c88"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "56cd77fddaa7eb902037efe5eb87b7b839a3155c3e27e7857b018d66b8013c5e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 67584,
+      "sha256": "5d94d100a6a5cbc4a5ea8b5ae5ff4299bcd30b5486de7472fb74697fefc4569b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 55484,
+      "sha256": "a8673481e8c690507eea8a60d64d51cb44dcef813127eafaf09c023abf5f4498"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 133184,
+      "sha256": "54b3d014dfad129439d853be4f933b59fe4d81652ebba3a97d44ecd75961140a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "c7e9629db69ab4b7bb8acb72687f1ff67fb1c760b8b2c05d3e93059d3a53aeb0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "0c4a000431a05bcd3599a55d2c27987ca27cb61d9de85b4a57f1c2bfba3b0292"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 67584,
+      "sha256": "550a218785599fb609229ba897acdf2eacd3f6a9424879886af658257d0aade5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 55484,
+      "sha256": "1baa1b69a20abac1f34233ae5f2f75ebae825f7a83d9ef0725a6be54d86e043f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 133184,
+      "sha256": "056f0b85d4e4577488cfad3ae9deaa041d1dfa28c959795b0d560de2114ab793"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "c8cfde6c45b252a758c1c5088327a424bea05ef4b4fce1fc68ec63f981b95a0b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "8af31892809e9b8125fdda8c1c3e52769dcdd9c92e9f44e3d626acd6323275a8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_palm_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 470084,
+      "sha256": "23ce67ed4cdbbb6c8bfa7830f4ea9ce2906772b10a71a81e9eb439c90df7560d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 366584,
+      "sha256": "bf75dfb099a56ab2b657cffe587ceaba96521d6f3128b692c30208a5d6aef326"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 81884,
+      "sha256": "9d029f972a39492aeb9fe91fd49156816548402061d61bcb6a4681210a34e063"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 89184,
+      "sha256": "da791bd67141cdf1209bfb636e5ce47e746d2261b154eb3af0e35f6f4ee46b45"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 65984,
+      "sha256": "cdfa7e01e9c352f5a477dc203507b2d448ba9e5071a565a54744f94156c3d5f2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 96084,
+      "sha256": "e1e38aa11dc3df0f1c1848111fd0a95e88991f965dc4a9c5c4c989a0df3de716"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 56184,
+      "sha256": "36e0471a0373a7634fc10911b33f3b30a5fe829f6526e656a911406cebf19731"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 51984,
+      "sha256": "890d04d52e3f5b94f926dfbee28ef21fe26be95dfe665cd0656e7a25f4a29424"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 91284,
+      "sha256": "3e9658abdea6acedd342c1866dc45ad61132538ce8de2c7f0dea3e49620d4810"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "0e09c2fed7107c1530b726d8bd6f2282e6d02c4abe9fb52a7528a19c6f567709"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "08da856de7216b963733c1b16cf87e20ba5ca8b0b649994a14d7c9b7eb5d5637"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 56184,
+      "sha256": "558fac18be219c0e6bb6224b82c711b3efe762b547818ea074eda93dc38bad07"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 51984,
+      "sha256": "e415003612b0630834832c59feb6c6ec73a7ccf291de133b28df22653130139f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 91284,
+      "sha256": "802facc87a170fc5976de6306cf0f6e2deb3d9493d56e4824b51bdccb21f1292"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "266dfba22df8d9e35dee4947a212668e0b11cb6a5802fe47c3d791092ffe4dde"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "7a99f65a6a473899913d4273e61319e3724fbf81ac8532969ed5c2ff1c1bde54"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 56184,
+      "sha256": "508321fefaeae1ae0567f89acd2492fac27cc468a2f562d895afcff192b0d00c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 51984,
+      "sha256": "26ebd4e9cd59a386b80b8a7ce04b8635d4b4a32a397e6aa3c54c3b1271809daa"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 91284,
+      "sha256": "4070aedb2114726b1f548a49425cd26cd3d4d423dcb4801601be9a3643df9327"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "05be89250fc099f835470adb43a4bdf05c65d464c0e5920194ec5be5e7908ee0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 113484,
+      "sha256": "885b8d7c77aae7c3144271e81925bbd790a928a2da37383de2ec54c40ae83e69"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link1.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 56184,
+      "sha256": "85ce22b8285a7d85e4c866151c972cde0736d4f618f35015b0b96fe39e367e49"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link2.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 51984,
+      "sha256": "95eb71cc2f4c41852a6711973147d3caf10cf7f2bf6203471cef20ff63fef50c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link3.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 91284,
+      "sha256": "4e0826e1ef004024e13fb594ab7a16765dcd3c5972bb2693e0f9a35c5c8325c8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link4.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 54884,
+      "sha256": "291ac27b50d62223883fda5ff744be19d39ad7f83762c8bd5482ae244c2e1966"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_tip_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 112784,
+      "sha256": "d927bbf9ab91cf101e3c6b0e380a78034626cda4df8766fea88b9b5683681012"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_palm_link.STL",
+      "categories": [
+        "robot mesh or material"
+      ],
+      "bytes": 456184,
+      "sha256": "1ba4495e3b7adc707d50150a8625a0ed3731fa42ab6d40e62ae7437da103ce5e"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+# =============================================================================
+# Hy-VLA training root config (hydra @main)
+# =============================================================================
+# Override fields on the CLI, e.g.:
+#   accelerate launch hy_vla/train.py \
+#       model.pretrain_source=vla \
+#       model.vla_model_path=tencent/Hy-VLA-UMI \
+#       training.batch_size=2 training.optimizer_lr=5e-5 \
+#       dataset.act_type=relative_chunk_ee_RT_with_absolute \
+#       dataset.use_video_encoder=True
+# =============================================================================
+
+debug: False
+
+wandb_project: "hy_vla"
+wandb_entity: ""
+
+exp_id: "hy_vla_default"
+exp_name: "${exp_id}_bs${training.batch_size}_${training.max_training_steps}"
+ckpt_save_dir: "./ckpt/${exp_name}"
+save_training_state: False  # set True to also persist optimizer / scheduler / RNG state via accelerator.save_state
+checkpoints_total_limit: 5
+
+resume_ckpt: null
+
+# DeepSpeed ZeRO-2 config; relative paths resolve against the ``hy_vla/`` dir.
+deepspeed: "./config/zero2.json"
+seed: 42
+
+# -----------------------------------------------------------------------------
+# Training hyper-parameters
+# -----------------------------------------------------------------------------
+training:
+  mixed_precision: 'bf16'                # choices: ["no", "fp16", "bf16"]
+  batch_size: 8                          # per-GPU batch size; global = batch_size * world_size
+  max_training_steps: 200_000
+  max_evaluation_steps: 100
+
+  optimizer_lr: 5.0e-5
+  optimizer_betas: [0.9, 0.95]
+  optimizer_eps: 1.0e-8
+  optimizer_weight_decay: 1.0e-10
+
+  scheduler_warmup_steps: 1_000
+  scheduler_decay_steps: 150_000
+  scheduler_decay_lr: 5.0e-6
+
+  grad_accumulation_steps: 1
+  max_grad_norm: 1.0
+
+  train_frequency: 50                    # log loss every N optimizer steps
+  ckpt_frequency: 10_000                 # save checkpoint every N optimizer steps
+  eval_frequency: 5_000                  # run validation every N optimizer steps
+
+# -----------------------------------------------------------------------------
+# Model
+# -----------------------------------------------------------------------------
+model:
+  # Source of the loaded weights (only consumed when not resuming):
+  #   "vla"     : load a full VLA pretrain via HyVLA.from_pretrained;
+  #               reads ``vla_model_path``.
+  #   "vlm"     : load only the upstream Hy-Embodied VLM backbone;
+  #               action expert randomly initialized; reads ``vlm_model_path``.
+  #   "scratch" : both VLM backbone and action expert randomly initialized.
+  pretrain_source: "vla"
+
+  # Visual-segment attention mask scope (HyVLAConfig.visual_segment_isolation):
+  #   * False -- patch-only: clear cross-image visibility between
+  #     image-patch tokens; split rows stay on the causal pathway.
+  #   * True  -- full-segment isolation: image patches + split rows
+  #     attend bidirectionally within the same visual segment and not
+  #     outside. 
+  visual_segment_isolation: False
+
+  # HuggingFace repo id (e.g. ``tencent/HY-Embodied-0.5``) or local directory
+  # of the upstream Hy-Embodied VLM. Used by ``pretrain_source`` in
+  # {``vlm``, ``scratch``} to source the VLM weights / config / tokenizer,
+  # and by self-contained VLA ckpts as the fallback VLM repo at inference
+  # time. Defaults to the public HF repo id; set to a local directory to
+  # disable network access.
+  vlm_model_path: "tencent/HY-Embodied-0.5"
+
+  # Local directory or HF repo id of a pretrained Hy-VLA ckpt. Required
+  # when ``pretrain_source=vla``; ignored otherwise. Defaults to the public
+  # Hy-VLA UMI pretrain on HF; override with a local path to avoid network
+  # access:
+  #   model.vla_model_path=/path/to/checkpoints/xxxxx/model
+  vla_model_path: "tencent/Hy-VLA-UMI"
+
+# -----------------------------------------------------------------------------
+# Dataloader
+# -----------------------------------------------------------------------------
+dataloader:
+  _target_: torch.utils.data.DataLoader
+  batch_size: ${training.batch_size}
+  shuffle: True
+  num_workers: 16
+  prefetch_factor: 4
+  pin_memory: True
+  persistent_workers: True
+
+defaults:
+  - _self_
+  - dataset: robotwin_hdf5

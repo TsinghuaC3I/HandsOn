@@ -1,0 +1,166 @@
+# Historical evidence for the superseded pre-2026-08-27 P0-01 contract.
+# It does not certify the current table-diagnostic-only / 30%-bilateral policy.
+schema_version: 1
+task_id: P0-01
+manifest_sha256: 2936860f4f42cf04b21bf5ff4629acf1356ddc91df73cc613470bd575fdbacef
+generated_at: "2026-08-25T05:01:54Z"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+checks:
+  schema:
+    status: passed
+    summary: "The final P0-01, PhysX ground-truth, recording-origin, and strict-certifier suite passes 529/529 tests, including registration, asset hashes, targets, holds, action ordering, fail-closed semantics, contact capture, initial target construction, and strict replay comparison behavior."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-contract-tests-v34/pytest.txt
+    metrics:
+      tests_passed: 529
+      tests_failed: 0
+      negative_semantic_cases: 20
+  assets:
+    status: passed
+    summary: "Owner-supplied Foldingfan001 USD and all three referenced textures load in Isaac and match frozen SHA-256 values; no generated or substitute fan geometry is used."
+    evidence:
+      - taskdev/tasks/t48_unfold_fan/source_asset_audit.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-contract-tests-v5/pytest.txt
+    metrics:
+      files_expected: 4
+      files_present: 4
+      hash_mismatches: 0
+  reachability:
+    status: passed
+    summary: "Thirty consecutive full physical trajectories were rerun against the frozen final environment source (10 per target over seeds 101-110) and pass; all satisfy angle, hold, bilateral ownership/causality, balance, stability, and no-post-reset-write gates."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-reset-layout-sweep-v1/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-reach-current-v1/summary.json
+    metrics:
+      randomized_resets_passed: 30
+      randomized_resets_required: 30
+      full_trajectories_passed: 30
+      full_trajectories_required: 30
+      target_pass_counts:
+        "60": 10
+        "90": 10
+        "120": 10
+      maximum_target_error_deg: 6.136936037382526
+      minimum_bilateral_expansion_fraction: 0.941448322981176
+      maximum_balance_error_deg: 7.195785370662712
+      maximum_root_displacement_m: 0.000023019031588944084
+      maximum_root_lift_m: 0.0006203179359436373
+      maximum_planarity_error_m: 0.00012649162124591791
+      object_state_writes_after_reset: 0
+  contact:
+    status: passed
+    summary: "All 30 final-source positive trajectories have exact endpoint ownership and no forbidden contact, the current-source 12-case live negative matrix fails closed with zero false positives, and 15 rerun instrumented positives remain below the 5 mm penetration limit on every sampled control frame."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-reach-current-v1/summary.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-live-negative-current-v1/summary.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-penetration-current-v1/summary.json
+    metrics:
+      positive_contact_trials_passed: 30
+      forbidden_contact_events: 0
+      forbidden_ownership_negative_trials: 3
+      penetration_instrumented_positive_trials: 15
+      active_contact_samples: 59379
+      sampled_control_steps: 6438
+      penetration_sample_errors: 0
+      maximum_penetration_m: 0.00015723053365945816
+      maximum_penetration_threshold_m: 0.005
+  reset:
+    status: passed
+    summary: "Thirty unique randomized layouts (10 per target) pass reset plus a zero-action step with finite observations, no terminal/failure, and zero post-reset object writes."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-reset-layout-sweep-v1/result.json
+    metrics:
+      trials_passed: 30
+      trials_failed: 0
+      unique_layouts: 30
+      layouts_per_target: 10
+  success:
+    status: passed
+    summary: "Thirty final-source physical positives, 20 named fail-closed semantic negatives covering all frozen negative categories, and 12 current-source live Isaac negative trajectories pass with zero false positives or false negatives."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-contract-tests-v32/pytest.txt
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-reach-current-v1/summary.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-live-negative-current-v1/summary.json
+    metrics:
+      positive_trials_passed: 30
+      positive_trials_required: 15
+      semantic_negative_trials_passed: 20
+      live_negative_trials_passed: 12
+      live_negative_trials_required: 12
+      live_timeout_like_trials: 8
+      live_failure_latched_trials: 4
+      live_wrong_end_rejections: 3
+      negative_categories_covered: 11
+      object_state_writes_after_reset: 0
+      false_positive_count: 0
+      false_negative_count: 0
+  camera:
+    status: passed
+    summary: "Independent IsaacRTX head and two wrist sensors each produce 30 correctly sized, finite, non-black frames with no aliases or fallback warnings."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-camera-sweep-v3/output/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-camera-sweep-v3/images
+    metrics:
+      head_frames: 30
+      wrist_left_frames: 30
+      wrist_right_frames: 30
+      total_png_files: 90
+      black_frames: 0
+      fallback_warnings: 0
+      head_min_mean_rgb: 201.27535481770835
+      wrist_left_min_mean_rgb: 177.91917829533543
+      wrist_right_min_mean_rgb: 175.88197965801888
+  stability:
+    status: passed
+    summary: "Five distinct seeds remain finite and nonterminal for 300 zero-action frames each (50 simulated seconds total) with no failures or post-reset object writes."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-zero-target60-seed101-v1/output/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-zero-target90-seed102-v1/output/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-zero-target120-seed104-v1/output/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-zero-target60-seed107-v1/output/result.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-zero-target120-seed113-v1/output/result.json
+    metrics:
+      seeds_passed: 5
+      simulated_seconds: 50.0
+      nan_count: 0
+      failure_count: 0
+      object_state_writes_after_reset: 0
+  collection:
+    status: passed
+    summary: "Three schema-valid successful Zarr episodes cover 60, 90, and 120 degrees. Each episode has valid contact reports/signatures, three fully decodable videos, and a passing fresh-process continuous-PhysX strict replay certificate. The action-0 divergence was resolved by constructing the certification scene with the exact recorded target angle before the first seeded reset; no tolerance was broadened."
+    evidence:
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-recording-three-targets-v1/summary.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-recording-target60-v1/physical_replay_certification.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-recording-target90-v1/physical_replay_certification.json
+      - /mnt/pfs/wuhongjin/taskdev-runs/p001-final-recording-target120-v1/physical_replay_certification.json
+    metrics:
+      successful_zarr_episodes: 3
+      required_zarr_episodes: 3
+      recorded_targets_deg:
+        - 60
+        - 90
+        - 120
+      structural_audits_passed: 3
+      structural_audits_required: 3
+      recorded_arrays_per_episode: 186
+      contact_reports_all_valid: true
+      contact_signatures_all_valid: true
+      decoded_video_streams: 9
+      fresh_replay_attempts: 3
+      fresh_replay_task_successes: 3
+      fresh_replay_transition_outcomes_match: true
+      fresh_replay_strict_trace_passes: 3
+      replay_source_identity: dirty_content_match
+      replay_divergence_count: 0
+  manual_operability:
+    status: pending
+    summary: "The required nine randomized human collection trials have not yet been run. Final acceptance requires at least 7/9 overall, at least two successes per target, and median completion time no greater than 25 seconds."
+    evidence: []
+    metrics:
+      trials_completed: 0
+      trials_required: 9
+      successes_required: 7
+      minimum_successes_per_target: 2
+      maximum_median_completion_time_s: 25

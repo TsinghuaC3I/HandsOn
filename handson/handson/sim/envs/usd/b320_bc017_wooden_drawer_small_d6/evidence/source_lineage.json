@@ -1,0 +1,942 @@
+{
+  "collision_generation": {
+    "both_source_drawers_preserved": true,
+    "collider_count": 9,
+    "exact_mesh_decomposition_collider_count": 7,
+    "exact_mesh_sdf_collider_count": 2,
+    "fixed_decorative_drawer_fronts_omitted": false,
+    "fixed_direction_count": 64,
+    "generation": "exact_source_mesh_decomposition_for_fixed_geometry_and_remeshed_sdf_for_moving_drawers",
+    "hand_authored_or_placeholder": false,
+    "low_poly_convex_hull_collider_count": 0,
+    "maximum_authored_triangles_per_collider": 124,
+    "maximum_authored_vertices_per_collider": 64,
+    "primitive_or_generic_proxy_fallback": false,
+    "source_derived": true,
+    "task_visible_source_meshes_preserved": true
+  },
+  "collision_geometry": "separate hidden exact-topology convex-decomposition meshes for the fixed desk, trays, and four fixed drawers, plus one exact-topology remeshed SDF per moving drawer including its integrated source handle",
+  "derivation": {
+    "asset_root_placement_m": [
+      -0.034734450057224975,
+      2.5776028575008603e-05,
+      0.891
+    ],
+    "authored_closed_collision_audit": {
+      "asset_root_orientation_wxyz": [
+        0.0,
+        0.0,
+        0.7071067811865476,
+        0.7071067811865476
+      ],
+      "asset_root_placement_m": [
+        -0.034734450057224975,
+        2.5776028575008603e-05,
+        0.891
+      ],
+      "closed_reset_max_penetration_m": 0.0,
+      "collider_bounds": {
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.2144024670124054,
+            0.2469758540391922,
+            -0.2309698760509491
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.13600589334964752,
+            0.17410828173160553,
+            -0.41606971621513367
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.21309567987918854,
+            0.1726885885000229,
+            -0.23045386373996735
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.13731266558170319,
+            0.09982100874185562,
+            -0.4155536890029907
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.21309591829776764,
+            0.2457873821258545,
+            0.4155202805995941
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.13731245696544647,
+            0.17291982471942902,
+            0.23042045533657074
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.21309590339660645,
+            0.1726885885000229,
+            0.4155542850494385
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.13731245696544647,
+            0.09982100874185562,
+            0.2304544597864151
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.20158754289150238,
+            0.3543750047683716,
+            0.4500003755092621
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.2110995650291443,
+            0.0,
+            -0.44999977946281433
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.197554349899292,
+            0.33769676089286804,
+            0.4160671830177307
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.05080196261405945,
+            0.32745444774627686,
+            0.23001310229301453
+          ]
+        },
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition": {
+          "body": "bc017_fixture_base_link",
+          "maximum_m": [
+            0.19642171263694763,
+            0.33769676089286804,
+            -0.23002631962299347
+          ],
+          "mesh_collision_approximation": "convexDecomposition",
+          "minimum_m": [
+            -0.0519346222281456,
+            0.32745444774627686,
+            -0.4160803556442261
+          ]
+        },
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf": {
+          "body": "bc017_left_drawer_link",
+          "maximum_m": [
+            0.21472130715847015,
+            0.3198346197605133,
+            0.4155542850494385
+          ],
+          "mesh_collision_approximation": "sdf",
+          "minimum_m": [
+            -0.13568712770938873,
+            0.24696703255176544,
+            0.2304544597864151
+          ]
+        },
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf": {
+          "body": "bc017_right_drawer_link",
+          "maximum_m": [
+            0.21472130715847015,
+            0.3198345899581909,
+            -0.2305060625076294
+          ],
+          "mesh_collision_approximation": "sdf",
+          "minimum_m": [
+            -0.13568711280822754,
+            0.24696703255176544,
+            -0.41560590267181396
+          ]
+        }
+      },
+      "cross_body_pairs": [
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.35008959472179413,
+            8.821487426757812e-06,
+            -0.4614243358373642
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.4614243358373642
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.35008957982063293,
+            8.821487426757812e-06,
+            0.18463602662086487
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.34878280758857727,
+            -0.07427844405174255,
+            -0.46090832352638245
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07427844405174255,
+            0.46090832352638245
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3487827926874161,
+            -0.07427844405174255,
+            0.18504762649536133
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07427844405174255,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.34878304600715637,
+            -0.0011796504259109497,
+            0.18506582081317902
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0011796504259109497,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3487830311059952,
+            -0.0011796504259109497,
+            -0.46092651784420013
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0011796504259109497,
+            0.46092651784420013
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3487830311059952,
+            -0.07427844405174255,
+            0.18509982526302338
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07427844405174255,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.348783016204834,
+            -0.07427844405174255,
+            -0.4609605222940445
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.07427844405174255,
+            0.4609605222940445
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.3372746706008911,
+            0.07286758720874786,
+            0.18509982526302338
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "inconclusive_concave_broad_phase_overlap",
+          "axis_overlap_m": [
+            0.3372746556997299,
+            0.07286755740642548,
+            0.18509984016418457
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": false
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.24835631251335144,
+            -0.00761982798576355,
+            0.18509982526302338
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.00761982798576355,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.24835631251335144,
+            -0.0076198577880859375,
+            -0.4605191648006439
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0076198577880859375,
+            0.4605191648006439
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.24835633486509323,
+            -0.00761982798576355,
+            -0.46048077940940857
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.00761982798576355,
+            0.46048077940940857
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "right_body": "bc017_left_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.24835633486509323,
+            -0.0076198577880859375,
+            0.18509984016418457
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0076198577880859375,
+            0.0
+          ],
+          "left": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+          "left_body": "bc017_fixture_base_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        },
+        {
+          "aabb_result": "conclusive_separation",
+          "axis_overlap_m": [
+            0.3504084199666977,
+            0.07286755740642548,
+            -0.4609605222940445
+          ],
+          "axis_separation_m": [
+            0.0,
+            0.0,
+            0.4609605222940445
+          ],
+          "left": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+          "left_body": "bc017_left_drawer_link",
+          "right": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+          "right_body": "bc017_right_drawer_link",
+          "separated": true
+        }
+      ],
+      "formal": false,
+      "inconclusive_concave_aabb_pair_count": 3,
+      "method": "transformed USD world-aligned bounds of every declared source-derived collider; positive cross-body AABB separation is conclusive, while concave-decomposition overlap is deferred to the live PhysX closed-pose and full-travel smoke",
+      "physx_live_validated": false,
+      "same_body_pairs_excluded": true,
+      "scope": "authored_closed_pose_before_PhysX",
+      "support_gap_m": 0.0010000000000000009,
+      "table_top_z_m": 0.89
+    },
+    "base_source_nodes": [
+      "metal_office_desk",
+      "metal_office_desk_drawer_02",
+      "metal_office_desk_drawer_03",
+      "metal_office_desk_drawer_05",
+      "metal_office_desk_drawer_06",
+      "metal_office_desk_tray_01",
+      "metal_office_desk_tray_02"
+    ],
+    "collider_derivations": [
+      {
+        "authored_face_count": 4186,
+        "authored_face_counts_sha256": "e66d5ff7464595299cb32e126c8188cc0440b8820ad96a64289cca681df00744",
+        "authored_face_indices_sha256": "b88f35706514676085b983bb21b5d7bcee8b627d6577c714d76760c236b75b3c",
+        "authored_points_sha256": "1e1bf3b391ef9e633128cfd674a9eb5f3c3390f0740569205d3a69a77c32709e",
+        "authored_vertex_count": 3134,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 4186,
+        "source_face_counts_sha256": "e66d5ff7464595299cb32e126c8188cc0440b8820ad96a64289cca681df00744",
+        "source_face_indices_sha256": "b88f35706514676085b983bb21b5d7bcee8b627d6577c714d76760c236b75b3c",
+        "source_local_points_sha256": "bc0f11b5307d39b3e5b71a75c084c02eacfbbd55388273cba32570f725872992",
+        "source_node": "metal_office_desk",
+        "source_topology_preserved": true,
+        "source_vertex_count": 3134,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk/Plane_006",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk/Plane_006",
+        "transformed_source_points_sha256": "ad74305b0e02df58b4fadfbb1e75d29e4d5451109c3f19227605e03544836452"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "6194efa7492d58a7c9776f51bff35502045d3e2cfe5cc8378b880e0845941ec3",
+        "authored_points_sha256": "d28e27a799abe46316bc53bf4869763eee53df632f73ca5e8243d4dd1915bbe8",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "6194efa7492d58a7c9776f51bff35502045d3e2cfe5cc8378b880e0845941ec3",
+        "source_local_points_sha256": "535d4cb7037600ee8c580b2eab2fdea77facac93276768c51aa30a1fa3259b30",
+        "source_node": "metal_office_desk_drawer_02",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_02/Cube_008",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_02/Cube_008",
+        "transformed_source_points_sha256": "ec52c45b6cba389835f8b98b9d61fef2905ab7042714d37f7ddc6862f71895ce"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "authored_points_sha256": "30b373a129ea071f7c742c2901fc94257f338c881e3340b386748e3a10ef9bc3",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "source_local_points_sha256": "8d7c54af021348e7e4c4c5a97d70f46ae4198177e0a0660443474a5d743991a2",
+        "source_node": "metal_office_desk_drawer_03",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_03/Cube_004",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_03/Cube_004",
+        "transformed_source_points_sha256": "989bcb321f98cc3b02822689aeed40c5fe5158728d7836a0c98bfa12092609b6"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "authored_points_sha256": "5f7898bfcd2f698dd6fe26b220ae980e551dac7cd855f518e6e8c92044a17c87",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "f7015c51de7a7b99bb4b69a065a5549d28bbde5ca9fa0193498647df3e7db73d",
+        "source_local_points_sha256": "b2456f0b4bb5d188b24560b6a4c9df59d1ff514903520bab324649fe58806b44",
+        "source_node": "metal_office_desk_drawer_05",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_05/Cube_006",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_05/Cube_006",
+        "transformed_source_points_sha256": "61fb65b0c69ad36f5c4821a52253f4837287ca58199125a358f2325b09eb02e0"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "d1131a597b6503f9144c87b6f37f6e549a8e6e25a183b8e1f6f46db8fe8f0b05",
+        "authored_points_sha256": "a6ae7d6dc16f32514014da0fa83b2c1919c2350e6ecc2b8a4e7231aae59b3043",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "d1131a597b6503f9144c87b6f37f6e549a8e6e25a183b8e1f6f46db8fe8f0b05",
+        "source_local_points_sha256": "760d86ecd846072e80dc1a1a9f7c2b6cb0756f2e05e17a0c70e0304a0dfb1c80",
+        "source_node": "metal_office_desk_drawer_06",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_06/Cube_009",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_drawer_06/Cube_009",
+        "transformed_source_points_sha256": "552576dd0969066eda36f9f81981560ba994f00b0e648c34432c3d910aad111f"
+      },
+      {
+        "authored_face_count": 252,
+        "authored_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "authored_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "authored_points_sha256": "080b14c683f0f1c4dc939bacaab94d1a52d12d3b22d8895275f2387267b849e4",
+        "authored_vertex_count": 232,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 252,
+        "source_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "source_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "source_local_points_sha256": "bfb7d12ad6aae1fe5c2550d4c2c504fa02c671ed3cd9c8dd745dc205fb70b2cb",
+        "source_node": "metal_office_desk_tray_01",
+        "source_topology_preserved": true,
+        "source_vertex_count": 232,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_tray_01/Cube_011",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_tray_01/Cube_011",
+        "transformed_source_points_sha256": "ac28642996a060833ac5efb873083d3f3bd87209983c2b3629ab01d399c28579"
+      },
+      {
+        "authored_face_count": 252,
+        "authored_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "authored_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "authored_points_sha256": "19edd560c92b2ad1e3cd5c7b07197fd5cac2fde320d1f03ff2fe15bc74ceb0e1",
+        "authored_vertex_count": 232,
+        "collider_prim": "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_convex_decomposition",
+        "hand_authored_or_placeholder": false,
+        "handle_role": null,
+        "mesh_collision_approximation": "convexDecomposition",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a concavity-preserving convex decomposition",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "semantic_role": "fixture_structure_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 252,
+        "source_face_counts_sha256": "1411c95873358064562b99aad7db6bf41c116405a18df2607cfa9631f9045021",
+        "source_face_indices_sha256": "58f56cbe6850222d057f87c89d2f6489df2f87ad43fec8fcab567fc161c408a1",
+        "source_local_points_sha256": "6f2690f1b674dde8cff4b73aee96881e8d07b9a42cc8d94b2d0fa38d47db434e",
+        "source_node": "metal_office_desk_tray_02",
+        "source_topology_preserved": true,
+        "source_vertex_count": 232,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_tray_02/Cube_014",
+        "source_visible_prim": "bc017_fixture_base_link/source_geometry/converted_source/metal_office_desk_tray_02/Cube_014",
+        "transformed_source_points_sha256": "7d51a4fcaf90cda823d91d74e849b1b3db95e0ca846bdf4aa0c698c33cc1d067"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "4d88d323c3e3bd1ae7641bafdf4d0c44122ab6c48ab89997fea117e7279edff7",
+        "authored_points_sha256": "acd139235de7c68b1f5803cc920f33f879b013ef1b93c11335a9dc22e10faf1f",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_remeshed_sdf",
+        "hand_authored_or_placeholder": false,
+        "handle_role": "left",
+        "mesh_collision_approximation": "sdf",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a remeshed signed-distance field",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "sdf_cell_size_max_m": 0.0013687829487025738,
+        "sdf_remeshing_enabled": true,
+        "sdf_resolution": 256,
+        "sdf_triangle_count_reduction_factor": 1.0,
+        "semantic_role": "drawer_and_integrated_u_pull_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "4d88d323c3e3bd1ae7641bafdf4d0c44122ab6c48ab89997fea117e7279edff7",
+        "source_local_points_sha256": "28b7c3b94877b175da05bbcfffd85be031d49045639ac3af8f52af787e6222ec",
+        "source_node": "metal_office_desk_drawer_04",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "source_visible_prim": "bc017_left_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_04/Cube_002",
+        "transformed_source_points_sha256": "d12534fd798f577c7115873c3f2d4d54934a66d949dfc9db13d9516e81d6d6b9"
+      },
+      {
+        "authored_face_count": 368,
+        "authored_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "authored_face_indices_sha256": "4d88d323c3e3bd1ae7641bafdf4d0c44122ab6c48ab89997fea117e7279edff7",
+        "authored_points_sha256": "b04a992165eda5a0e53168008b173346fd5832713914c32606b93e22f6dea432",
+        "authored_vertex_count": 412,
+        "collider_prim": "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf",
+        "computed_visibility": "invisible",
+        "contact_offset_m": 0.0015,
+        "generation": "exact_source_mesh_remeshed_sdf",
+        "hand_authored_or_placeholder": false,
+        "handle_role": "right",
+        "mesh_collision_approximation": "sdf",
+        "method": "copy exact transformed visible-source points and face topology; PhysX cooks a remeshed signed-distance field",
+        "primitive_or_generic_proxy_fallback": false,
+        "rest_offset_m": 0.0,
+        "sdf_cell_size_max_m": 0.0013687828904949129,
+        "sdf_remeshing_enabled": true,
+        "sdf_resolution": 256,
+        "sdf_triangle_count_reduction_factor": 1.0,
+        "semantic_role": "drawer_and_integrated_u_pull_collider",
+        "source_aabb_preserved": true,
+        "source_derived": true,
+        "source_face_count": 368,
+        "source_face_counts_sha256": "5dfabd157941847b20bce8ff663d38589aa64e3226793e48319aee90f5f003e6",
+        "source_face_indices_sha256": "4d88d323c3e3bd1ae7641bafdf4d0c44122ab6c48ab89997fea117e7279edff7",
+        "source_local_points_sha256": "5d60cf09e870145dbf394f2294a1b8e3a01904382c66c6b2aeeb48d30a4f2c88",
+        "source_node": "metal_office_desk_drawer_01",
+        "source_topology_preserved": true,
+        "source_vertex_count": 412,
+        "source_visible_owner_relative_prim": "/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "source_visible_prim": "bc017_right_drawer_link/source_geometry/converted_source/metal_office_desk_drawer_01/Cube_012",
+        "transformed_source_points_sha256": "13998426e7b5c27a7c6529ba00fe3860c687bea28e58f90a157ce9c055913563"
+      }
+    ],
+    "collider_prims": {
+      "bc017_fixture_base_link": [
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_02_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_03_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_05_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_drawer_06_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_01_exact_mesh_decomposition",
+        "bc017_fixture_base_link/source_exact_mesh_colliders/metal_office_desk_tray_02_exact_mesh_decomposition"
+      ],
+      "bc017_left_drawer_link": [
+        "bc017_left_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_04_exact_mesh_sdf"
+      ],
+      "bc017_right_drawer_link": [
+        "bc017_right_drawer_link/source_exact_mesh_colliders/metal_office_desk_drawer_01_exact_mesh_sdf"
+      ]
+    },
+    "drawer_closed_alignment_x_m": {
+      "left": 0.0004252105950750151,
+      "right": -0.0004252105950749902
+    },
+    "drawer_closed_alignment_y_m": {
+      "left": 0.0006822064518749671,
+      "right": -0.0006822064518750171
+    },
+    "drawer_source_nodes": [
+      "metal_office_desk_drawer_01",
+      "metal_office_desk_drawer_04"
+    ],
+    "left_target_bounds_max_m": [
+      -0.5121210217475891,
+      0.7092275619506836,
+      0.4762135446071625
+    ],
+    "left_target_bounds_min_m": [
+      -0.9234539866447449,
+      0.5472996234893799,
+      -0.3024718463420868
+    ],
+    "left_target_source_node": "metal_office_desk_drawer_04",
+    "local_handle_centers_m": {
+      "left": [
+        0.20526554659005003,
+        0.27908053547152495,
+        0.32300440371045
+      ],
+      "pair_center": [
+        0.20526554994277502,
+        0.279080535471525,
+        -2.5776028575008603e-05
+      ],
+      "right": [
+        0.2052655532955,
+        0.279080535471525,
+        -0.32305595576760004
+      ]
+    },
+    "local_support_min_y_m": 0.0,
+    "omitted_fixed_decorative_source_nodes": [],
+    "right_target_bounds_max_m": [
+      0.9235686659812927,
+      0.7122595310211182,
+      0.478103369474411
+    ],
+    "right_target_bounds_min_m": [
+      0.512235701084137,
+      0.5503316521644592,
+      -0.30058202147483826
+    ],
+    "right_target_source_node": "metal_office_desk_drawer_01",
+    "runtime_handle_grip_bounds_m": {
+      "left": [
+        [
+          0.19580978751187503,
+          0.27664745002987495,
+          0.29710611999045
+        ],
+        [
+          0.21472130566822503,
+          0.28151362091317494,
+          0.34890268743045005
+        ]
+      ],
+      "right": [
+        [
+          0.195809800922775,
+          0.276647450029875,
+          -0.3489542394876
+        ],
+        [
+          0.214721305668225,
+          0.281513620913175,
+          -0.2971576720476
+        ]
+      ]
+    },
+    "source_bounds_max_m": [
+      0.9999995231628418,
+      0.7875000238418579,
+      0.478103369474411
+    ],
+    "source_bounds_min_m": [
+      -1.0000008344650269,
+      0.0,
+      -0.4691101610660553
+    ],
+    "source_closed_front_z_m": 0.4351328909395,
+    "source_to_runtime_orientation_wxyz": [
+      0.7071067811865476,
+      0.0,
+      0.7071067811865476,
+      0.0
+    ],
+    "uniform_scale": 0.45,
+    "visual_collision_bound_audit": {
+      "bc017_fixture_base_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.2144024670124054,
+          0.3543750047683716,
+          0.4500003755092621
+        ],
+        "collision_minimum_m": [
+          -0.2110995650291443,
+          0.0,
+          -0.44999977946281433
+        ],
+        "maximum_absolute_bound_error_m": 7.450580513657101e-09,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.21440247148275385,
+          0.3543750107288361,
+          0.45000037550926203
+        ],
+        "visual_minimum_m": [
+          -0.2110995724797248,
+          0.0,
+          -0.4499997854232788
+        ]
+      },
+      "bc017_left_drawer_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.21472130715847015,
+          0.3198346197605133,
+          0.4155542850494385
+        ],
+        "collision_minimum_m": [
+          -0.13568712770938873,
+          0.24696703255176544,
+          0.2304544597864151
+        ],
+        "maximum_absolute_bound_error_m": 1.0430830754692977e-08,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.21472130566829806,
+          0.31983460932968255,
+          0.41555429399013516
+        ],
+        "visual_minimum_m": [
+          -0.1356871202588641,
+          0.24696703702209594,
+          0.23045445978641516
+        ]
+      },
+      "bc017_right_drawer_link": {
+        "aligned_within_tolerance": true,
+        "collision_maximum_m": [
+          0.21472130715847015,
+          0.3198345899581909,
+          -0.2305060625076294
+        ],
+        "collision_minimum_m": [
+          -0.13568711280822754,
+          0.24696703255176544,
+          -0.41560590267181396
+        ],
+        "maximum_absolute_bound_error_m": 7.450562722333132e-09,
+        "tolerance_m": 1e-06,
+        "visual_maximum_m": [
+          0.21472130566841005,
+          0.3198345825076282,
+          -0.23050606548786168
+        ],
+        "visual_minimum_m": [
+          -0.13568712025875213,
+          0.24696703702213163,
+          -0.4156058996915817
+        ]
+      }
+    }
+  },
+  "formal": false,
+  "physx_live_validated": false,
+  "procedural_collision_geometry": false,
+  "procedural_visible_geometry": false,
+  "runtime_usd_sha256": "eccc1e78e3fd4e5feaadcdf0c190a47bd6e563f7b25983cc1fd056b59e5a6ed5",
+  "schema": "handson.bc017.source-lineage",
+  "selected_asset": {
+    "creator": "Ulan Cabanilla",
+    "license": "CC0 1.0",
+    "title": "Metal Office Desk",
+    "url": "https://polyhaven.com/a/metal_office_desk"
+  },
+  "source_archive_sha256": "63f1ef6d9ec9737a762e6e3433a2b843b9407568ae1506bfd97f2026910b021c",
+  "visible_geometry": "selected converted source meshes only"
+}

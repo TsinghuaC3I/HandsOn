@@ -1,0 +1,15 @@
+{
+  "source_vertices": 4706,
+  "retained_vertices": 3966,
+  "removed_spare_vertices": 740,
+  "source_faces": 9408,
+  "retained_faces": 7928,
+  "retained_components": 2,
+  "retained_ring_vertices": 3226,
+  "ring_geometry_changed": false,
+  "excluded_collision_mesh": "p005_key_collider03",
+  "source": "handson/handson/sim/envs/xmls/assets/p005_ycb_key_ring/visuals/key_berkeley_meshes_single_ring.obj",
+  "output": "handson/handson/sim/envs/xmls/assets/p005_ycb_key_ring/visuals/key_berkeley_meshes_single_operable_key.obj",
+  "source_sha256": "a622ccc5dc6a9673247a65321b2ab8603d77bb4ec8896b2531df7c89011e105d",
+  "output_sha256": "a79c53904762dec0c7c220a2868a9175e1aa913e891f366e8148eb2159ec731e"
+}

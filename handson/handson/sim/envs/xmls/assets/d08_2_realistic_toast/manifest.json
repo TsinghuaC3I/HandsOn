@@ -1,0 +1,29 @@
+{
+  "source": "Blender model authored for this user in the current Codex session",
+  "source_blend": "写实交互烤面包机.blend",
+  "metres_per_unit": 1,
+  "toaster_uniform_scale": 0.72,
+  "toaster_rotation_z_degrees": 180,
+  "bread_origin_native_z": 0.061,
+  "lever_origin": [
+    -0.11807999759912491,
+    0.023760000243782997,
+    0.12240000069141388
+  ],
+  "files": [
+    "board.usdc",
+    "board_0.png",
+    "board_normal.png",
+    "bread.usdc",
+    "bread_0.png",
+    "bread_1.png",
+    "bread_2.png",
+    "bread_3.png",
+    "bread_4.png",
+    "bread_normal.png",
+    "lever_racks.usdc",
+    "plate.usdc",
+    "textures",
+    "toaster.usdc"
+  ]
+}

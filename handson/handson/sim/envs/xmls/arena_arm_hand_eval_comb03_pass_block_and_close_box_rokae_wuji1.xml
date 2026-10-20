@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="XY1_Bimanual_Handoff_And_Close_Box">
+  <include file="arena_arm_hand_d03_bimanual_handoff_rokae_wuji1.xml" />
+  <worldbody>
+    <body name="Clear_Box" pos="-0.04 0.06 0.995">
+      <freejoint name="Clear_Box_joint" />
+      <geom name="Clear_Box_visual" class="a_series_ycb_visual" material="Clear_Box_material" mesh="Clear_Box_vis" />
+      <geom name="Clear_Box_collision_1" class="a_series_ycb_collision" mesh="Clear_Box_Collider1_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_2" class="a_series_ycb_collision" type="box" size="0.100795 0.152651 0.001593" pos="0 0.000016 -0.072907" mass="0.01" />
+      <geom name="Clear_Box_collision_3" class="a_series_ycb_collision" mesh="Clear_Box_Collider3_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_4" class="a_series_ycb_collision" mesh="Clear_Box_Collider4_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_5" class="a_series_ycb_collision" mesh="Clear_Box_Collider5_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_6" class="a_series_ycb_collision" mesh="Clear_Box_Collider6_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_7" class="a_series_ycb_collision" mesh="Clear_Box_Collider7_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_8" class="a_series_ycb_collision" mesh="Clear_Box_Collider8_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_9" class="a_series_ycb_collision" mesh="Clear_Box_Collider9_m_collision" mass="0.01" />
+      <site name="box_lid_closed_goal" pos="0 0 0.0845" size="0.008" rgba="0.1 0.8 0.25 0" />
+    </body>
+    <body name="Box_lid" pos="-0.31 -0.18 0.930">
+      <freejoint name="Box_lid_joint" />
+      <geom name="Box_lid_visual" class="a_series_ycb_visual" material="Box_lid_material" mesh="Box_lid_vis" />
+      <geom name="Box_lid_collision_1" class="a_series_ycb_collision" mesh="Box_lid_vis" mass="0.04" />
+    </body>
+  </worldbody>
+</mujoco>

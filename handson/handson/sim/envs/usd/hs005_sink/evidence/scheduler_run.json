@@ -1,0 +1,208 @@
+{
+  "actual_pid": 113611,
+  "audit": {
+    "gpus": [
+      {
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-d6295c1c-e3ff-9f8a-bc5a-a819b20f8a98",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 86835,
+            "used_memory_mib": 500
+          }
+        ],
+        "index": 0,
+        "memory_used_mib": 511,
+        "reasons": [
+          "1 compute process(es) present",
+          "memory.used=511 MiB exceeds idle allowance 256 MiB"
+        ],
+        "state": "busy",
+        "utilization_percent": 0,
+        "uuid": "GPU-d6295c1c-e3ff-9f8a-bc5a-a819b20f8a98"
+      },
+      {
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-b07264a0-77bf-3bea-fcdb-de782bd872c5",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 107783,
+            "used_memory_mib": 502
+          }
+        ],
+        "index": 1,
+        "memory_used_mib": 512,
+        "reasons": [
+          "1 compute process(es) present",
+          "memory.used=512 MiB exceeds idle allowance 256 MiB"
+        ],
+        "state": "busy",
+        "utilization_percent": 0,
+        "uuid": "GPU-b07264a0-77bf-3bea-fcdb-de782bd872c5"
+      },
+      {
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-8ff74f00-1300-3c54-b82d-574d8efc8f02",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 109799,
+            "used_memory_mib": 2490
+          },
+          {
+            "gpu_uuid": "GPU-8ff74f00-1300-3c54-b82d-574d8efc8f02",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 109799,
+            "used_memory_mib": 2490
+          }
+        ],
+        "index": 2,
+        "memory_used_mib": 2536,
+        "reasons": [
+          "2 compute process(es) present",
+          "memory.used=2536 MiB exceeds idle allowance 256 MiB"
+        ],
+        "state": "busy",
+        "utilization_percent": 1,
+        "uuid": "GPU-8ff74f00-1300-3c54-b82d-574d8efc8f02"
+      },
+      {
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-6d0ead26-e709-8258-c1cd-8017ce14319d",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 109891,
+            "used_memory_mib": 5254
+          },
+          {
+            "gpu_uuid": "GPU-6d0ead26-e709-8258-c1cd-8017ce14319d",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 109891,
+            "used_memory_mib": 5254
+          }
+        ],
+        "index": 3,
+        "memory_used_mib": 5299,
+        "reasons": [
+          "2 compute process(es) present",
+          "memory.used=5299 MiB exceeds idle allowance 256 MiB",
+          "utilization=71% exceeds idle allowance 5%"
+        ],
+        "state": "busy",
+        "utilization_percent": 71,
+        "uuid": "GPU-6d0ead26-e709-8258-c1cd-8017ce14319d"
+      },
+      {
+        "compute_processes": [
+          {
+            "gpu_uuid": "GPU-17532716-b831-0963-a6ed-a6864e0c3645",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 104767,
+            "used_memory_mib": 3945
+          },
+          {
+            "gpu_uuid": "GPU-17532716-b831-0963-a6ed-a6864e0c3645",
+            "name": "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+            "pid": 104767,
+            "used_memory_mib": 3945
+          }
+        ],
+        "index": 4,
+        "memory_used_mib": 3989,
+        "reasons": [
+          "2 compute process(es) present",
+          "memory.used=3989 MiB exceeds idle allowance 256 MiB",
+          "utilization=27% exceeds idle allowance 5%"
+        ],
+        "state": "busy",
+        "utilization_percent": 27,
+        "uuid": "GPU-17532716-b831-0963-a6ed-a6864e0c3645"
+      },
+      {
+        "compute_processes": [],
+        "index": 5,
+        "memory_used_mib": 1,
+        "reasons": [
+          "driver-only reservation 1 MiB"
+        ],
+        "state": "idle",
+        "utilization_percent": 0,
+        "uuid": "GPU-fc8cf482-5e3f-536f-4533-43a890b1c254"
+      },
+      {
+        "compute_processes": [],
+        "index": 6,
+        "memory_used_mib": 1,
+        "reasons": [
+          "driver-only reservation 1 MiB"
+        ],
+        "state": "idle",
+        "utilization_percent": 0,
+        "uuid": "GPU-be1de89c-6938-eef2-60e5-f18c16c32f85"
+      },
+      {
+        "compute_processes": [],
+        "index": 7,
+        "memory_used_mib": 1,
+        "reasons": [
+          "driver-only reservation 1 MiB"
+        ],
+        "state": "idle",
+        "utilization_percent": 0,
+        "uuid": "GPU-d67d8492-05f0-0dcd-bac3-0bc8e1860255"
+      }
+    ],
+    "host": "hp-13",
+    "host_memory_ok": true,
+    "mem_available_gib": 845.7171783447266,
+    "min_mem_available_gib": 64.0,
+    "observed_at": "2026-08-17T10:11:38.836323+00:00",
+    "observed_hostname": "aibox-r28e5d209492-5865b8d66d-kr6sn"
+  },
+  "base_ref": "065d3f1ed8ad6c49e95a4d6517a643e934da3b68",
+  "branch": "taskdev/run/b320-hs005-core-scene-r6/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02",
+  "command": [
+    "/usr/bin/env",
+    "OMNI_KIT_ACCEPT_EULA=YES",
+    "ACCEPT_EULA=Y",
+    "LD_LIBRARY_PATH=/mnt/pfs/luotianwei/envs/dexjoco-openpi-jax062/lib:/mnt/pfs/luotianwei/dexjoco-taskdev-runtime-libs/glvnd-jammy-1.4.0/usr/lib/x86_64-linux-gnu",
+    "__NV_PRIME_RENDER_OFFLOAD=1",
+    "__GLX_VENDOR_LIBRARY_NAME=nvidia",
+    "__VK_LAYER_NV_optimus=NVIDIA_only",
+    "VK_ICD_FILENAMES=/etc/vulkan/icd.d/nvidia_icd.json",
+    "VK_DRIVER_FILES=/etc/vulkan/icd.d/nvidia_icd.json",
+    "DEXJOCO_ISAACLAB_XML_DIR=/mnt/pfs/luotianwei/dexjoco-taskdev-runtime-assets/isaac51-xml-overlay-v1",
+    "TASKDEV_HOST=hp-13",
+    "TASKDEV_PHYSICAL_GPU=5",
+    "TASKDEV_PIPELINE_STAGE=foundation",
+    "TASKDEV_CPU_CHECKPOINT_COMMIT=065d3f1ed8ad6c49e95a4d6517a643e934da3b68",
+    "PYTHONPATH=/mnt/pfs/luotianwei/dexjoco-taskdev-worktrees/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02:/mnt/pfs/luotianwei/dexjoco-taskdev-worktrees/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02/dexjoco",
+    "/mnt/pfs/luotianwei/envs/isaacsim-5.1-dexjoco/bin/python",
+    "-m",
+    "taskdev.tasks.bench320_hs005_sink_bottle_stabilized_scrub.foundation_runner",
+    "--output-dir",
+    "/mnt/pfs/luotianwei/dexjoco-taskdev-runs/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02/evidence"
+  ],
+  "commit": "065d3f1ed8ad6c49e95a4d6517a643e934da3b68",
+  "created_at": "2026-08-17T10:11:58.624703+00:00",
+  "descendants_cleaned_at": "2026-08-17T10:12:48.987259+00:00",
+  "exit_code": 0,
+  "gpu_isolation": "private-mount-namespace",
+  "heartbeat_at": "2026-08-17T10:12:48.954491+00:00",
+  "host": "hp-13",
+  "lease_dir": "/mnt/pfs/luotianwei/.dexjoco-taskdev-cluster/leases/hp-13/gpu-5",
+  "lease_token": "ae0c91e6451258bf409274dfc332f9d3013f9dd8cc4d11eaddb4613b3b2f733c",
+  "logical_gpu": 0,
+  "max_runtime_seconds": 240.0,
+  "observed_hostname": "aibox-r28e5d209492-5865b8d66d-kr6sn",
+  "physical_gpu": 5,
+  "repo": "/mnt/pfs/luotianwei/dexjoco",
+  "run_dir": "/mnt/pfs/luotianwei/dexjoco-taskdev-runs/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02",
+  "run_id": "b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02",
+  "schema_version": 1,
+  "status": "succeeded",
+  "task_id": "b320-hs005-core-scene-r6",
+  "worker_pgid": 113608,
+  "worker_pid": 113608,
+  "worker_start_ticks": 398058512,
+  "worktree": "/mnt/pfs/luotianwei/dexjoco-taskdev-worktrees/b320-hs005-core-scene-r6-20260817T101137Z-0e1aad02"
+}

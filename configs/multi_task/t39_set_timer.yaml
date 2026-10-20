@@ -1,0 +1,16 @@
+env_name: t39_set_timer
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Stabilize the YCB timer with the left hand, program the prompted minutes and seconds with a right fingertip, press START/STOP last, withdraw both hands, and wait for one countdown tick."
+robot_type: dual_arm
+time_limit_seconds: 90
+skills:
+  - bimanual_coordination
+  - object_stabilization
+  - fingertip_button_press
+  - symbolic_programming
+  - ordered_event_execution
+objects:
+  - timer

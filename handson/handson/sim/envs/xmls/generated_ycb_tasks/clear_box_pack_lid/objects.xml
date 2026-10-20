@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="clear_box_pack_lid_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="clear_box_pack_lid_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="clear_box_pack_lid_collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" friction="0.95 0.3 0.1"/>
+    </default>
+    <default class="clear_box_pack_lid_region">
+      <geom type="box" contype="0" conaffinity="0" group="4" mass="0"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="clear_box_material_tex" file="../../lightwheel_ycb/Clear_Box/visuals/T_Clear_Box_BC001.png"/>
+    <material name="clear_box_material" texture="clear_box_material_tex" specular="0.35" rgba="1 1 1 0.58"/>
+    <mesh name="clear_box_vis" file="../../lightwheel_ycb/Clear_Box/visuals/optimized_visuals/Clear_Box.obj"/>
+    <mesh name="clear_box_collider_1" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider1_m.obj"/>
+    <mesh name="clear_box_collider_2" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider2_m.obj"/>
+    <mesh name="clear_box_collider_3" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider3_m.obj"/>
+    <mesh name="clear_box_collider_4" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider4_m.obj"/>
+    <mesh name="clear_box_collider_5" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider5_m.obj"/>
+    <mesh name="clear_box_collider_6" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider6_m.obj"/>
+    <mesh name="clear_box_collider_7" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider7_m.obj"/>
+    <mesh name="clear_box_collider_8" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider8_m.obj"/>
+    <mesh name="clear_box_collider_9" file="../../lightwheel_ycb/Clear_Box/collision/Clear_Box_Collider9_m.obj"/>
+
+    <texture type="2d" name="box_lid_material_tex" file="../../lightwheel_ycb/Box_lid/visuals/T_Box_lid_BC001.png"/>
+    <material name="box_lid_material" texture="box_lid_material_tex" specular="0.05" rgba="1 1 1 0.82"/>
+    <mesh name="box_lid_vis" file="../../lightwheel_ycb/Box_lid/visuals/Box_lid.obj"/>
+    <mesh name="box_lid_collider_1" file="../../lightwheel_ycb/Box_lid/collision/Box_lid_Collider1_m.obj"/>
+
+    <texture type="2d" name="cracker_box_material_tex" file="../../lightwheel_ycb/cracker_box/visuals/T_cracker_box_BC001.png"/>
+    <material name="cracker_box_material" texture="cracker_box_material_tex" specular="0.31" shininess="0"/>
+    <mesh name="cracker_box_vis" file="../../lightwheel_ycb/cracker_box/visuals/cracker_box.obj"/>
+    <mesh name="cracker_box_collider_1" file="../../lightwheel_ycb/cracker_box/collision/cracker_box_Collider1_m.obj"/>
+
+    <texture type="2d" name="gelatin_box_material_tex" file="../../lightwheel_ycb/gelatin_box/visuals/T_gelatin_box_BC001.png"/>
+    <material name="gelatin_box_material" texture="gelatin_box_material_tex" specular="0.31" shininess="0"/>
+    <mesh name="gelatin_box_vis" file="../../lightwheel_ycb/gelatin_box/visuals/optimized_visuals/gelatin_box.obj"/>
+    <mesh name="gelatin_box_collider_1" file="../../lightwheel_ycb/gelatin_box/collision/gelatin_box_Collider1_m.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="clear_box_root_body" pos="0.06 0.16 0.995" quat="1 0 0 0">
+      <freejoint name="clear_box_root"/>
+      <body name="clear_box_object">
+        <geom class="clear_box_pack_lid_visual" material="clear_box_material" mesh="clear_box_vis"/>
+        <geom name="clear_box_collider_1" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_1" density="95.4295"/>
+        <geom name="clear_box_collider_2" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_2" density="95.4295"/>
+        <geom name="clear_box_collider_3" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_3" density="95.4295"/>
+        <geom name="clear_box_collider_4" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_4" density="95.4295"/>
+        <geom name="clear_box_collider_5" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_5" density="95.4295"/>
+        <geom name="clear_box_collider_6" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_6" density="95.4295"/>
+        <geom name="clear_box_collider_7" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_7" density="95.4295"/>
+        <geom name="clear_box_collider_8" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_8" density="95.4295"/>
+        <geom name="clear_box_collider_9" class="clear_box_pack_lid_collision" type="mesh" mesh="clear_box_collider_9" density="95.4295"/>
+        <geom name="clear_box_bbox" class="clear_box_pack_lid_region" size="0.146 0.2145 0.0745" rgba="0.1 0.8 1 0.06"/>
+        <geom name="clear_box_pack_region" class="clear_box_pack_lid_region" pos="0 0 -0.012" size="0.125 0.190 0.055" rgba="0.1 0.8 0.25 0.14"/>
+        <site name="clear_box_center" pos="0 0 0" size="0.006" rgba="0.1 0.8 1 0.5"/>
+        <site name="box_lid_closed_goal" pos="0 0 0.0845" size="0.008" rgba="0.1 0.8 0.25 0.65"/>
+      </body>
+    </body>
+
+    <body name="box_lid_root_body" pos="0.12 -0.23 0.932" quat="1 0 0 0">
+      <freejoint name="box_lid_root"/>
+      <body name="box_lid_object">
+        <geom class="clear_box_pack_lid_visual" material="box_lid_material" mesh="box_lid_vis"/>
+        <geom name="box_lid_collider_1" class="clear_box_pack_lid_collision" type="mesh" mesh="box_lid_collider_1" density="63.6017"/>
+        <geom name="box_lid_bbox" class="clear_box_pack_lid_region" size="0.146 0.2145 0.01" rgba="0.8 0.8 1 0.10"/>
+        <site name="box_lid_center" pos="0 0 0" size="0.006" rgba="0.2 0.2 1 0.55"/>
+      </body>
+    </body>
+
+    <body name="cracker_box_root_body" pos="-0.18 -0.18 0.954" quat="0.70710678 0.70710678 0 0">
+      <freejoint name="cracker_box_root"/>
+      <body name="cracker_box_object">
+        <geom class="clear_box_pack_lid_visual" material="cracker_box_material" mesh="cracker_box_vis"/>
+        <geom name="cracker_box_collider_1" class="clear_box_pack_lid_collision" type="mesh" mesh="cracker_box_collider_1" density="203.129"/>
+        <geom name="cracker_box_bbox" class="clear_box_pack_lid_region" size="0.079906 0.0299465 0.1063595" rgba="1 0.75 0.15 0.12"/>
+        <site name="cracker_box_center" pos="0 0 0" size="0.006" rgba="1 0.75 0.15 0.55"/>
+      </body>
+    </body>
+
+    <body name="gelatin_box_root_body" pos="-0.20 0.32 0.961" quat="1 0 0 0">
+      <freejoint name="gelatin_box_root"/>
+      <body name="gelatin_box_object">
+        <geom class="clear_box_pack_lid_visual" material="gelatin_box_material" mesh="gelatin_box_vis"/>
+        <geom name="gelatin_box_collider_1" class="clear_box_pack_lid_collision" type="mesh" mesh="gelatin_box_collider_1" density="557.205"/>
+        <geom name="gelatin_box_bbox" class="clear_box_pack_lid_region" size="0.042478 0.014 0.036591" rgba="0.9 0.1 0.5 0.12"/>
+        <site name="gelatin_box_center" pos="0 0 0" size="0.006" rgba="0.9 0.1 0.5 0.55"/>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

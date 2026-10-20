@@ -1,0 +1,8 @@
+{
+  "foundation_pass": true,
+  "runner_rc": 0,
+  "schema": "hs005_core_scene_foundation_marker_v1",
+  "summary_path": "evidence/foundation_summary.json",
+  "summary_sha256": "ec732efda18b0500a8a5d0e0284e5f74dfe82e88e941ec90326a1fd3d17b4ef3",
+  "task_complete": false
+}

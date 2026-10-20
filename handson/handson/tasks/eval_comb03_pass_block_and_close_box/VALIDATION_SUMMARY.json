@@ -1,0 +1,928 @@
+{
+  "task_id": "XY1",
+  "runtime": "Isaac Sim 5.1 / IsaacLab 2.3.2 / GPU PhysX",
+  "reset_mode": "existing collection-platform scene rebuild",
+  "scenes": 23,
+  "unique_seeds": 20,
+  "colliders_per_scene": 84,
+  "all_meshes_physx_cooked": true,
+  "frames_audited": 115,
+  "unapproved_contacts": [],
+  "max_task_table_penetration_m": 7.021479765715764e-06,
+  "max_settled_task_linear_speed_m_s": 0.0018607352654723456,
+  "repeatability": [
+    {
+      "seed": 0,
+      "sampled_exact": true,
+      "settled_max_abs_pose_delta": 0.0014791786670684814
+    },
+    {
+      "seed": 9,
+      "sampled_exact": true,
+      "settled_max_abs_pose_delta": 0.0
+    },
+    {
+      "seed": 17,
+      "sampled_exact": true,
+      "settled_max_abs_pose_delta": 0.0
+    }
+  ],
+  "sampled_translation_span_xy": {
+    "d03_target_root": [
+      0.10160035249099666,
+      0.08005779224426246
+    ],
+    "Clear_Box": [
+      0.02339785367629027,
+      0.0219049184393601
+    ],
+    "Box_lid": [
+      0.022166459508027037,
+      0.02353191706019782
+    ],
+    "d03_flat_screwdriver": [
+      0.007751543610578948,
+      0.00657677689580316
+    ],
+    "d03_phillips_screwdriver": [
+      0.0067244485961154565,
+      0.007586527678147714
+    ],
+    "d03_spoon": [
+      0.006625723441114062,
+      0.0076294465969843905
+    ],
+    "d03_plastic_bolt": [
+      0.006087237180204985,
+      0.007268965944694089
+    ],
+    "d03_a_marbles": [
+      0.007186520294836435,
+      0.006678069280373289
+    ],
+    "d03_b_marble_1": [
+      0.0075442990852406105,
+      0.007435365303601393
+    ],
+    "d03_b_marble_2": [
+      0.007467338562163861,
+      0.006267206578477624
+    ],
+    "d03_hammer": [
+      0.006906857088474744,
+      0.007926719693043704
+    ],
+    "d03_nails": [
+      0.0072588416905077086,
+      0.007057979020916871
+    ],
+    "d03_bowl": [
+      0.006870098454814608,
+      0.007863379194810755
+    ]
+  },
+  "contact_allowlist": [
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/attachment_left/collisions/left_wrist_fisheye_flange_assembly/left_wrist_fisheye_flange_assembly",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.04801406265742106,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/attachment_left",
+      "contact_position": [
+        -0.7650610109795598,
+        0.9408672501348223,
+        1.3165344922979663
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/attachment_left/collisions/left_wrist_fisheye_flange_assembly/left_wrist_fisheye_flange_assembly",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left/collisions/rokae_link7_left_AR5_5_08L_W4C6C11_link7/rokae_link7_left_AR5_5_08L_W4C6C11_link7",
+      "penetration_m": 8.348529410180014e-10,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link7_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/attachment_left",
+      "contact_position": [
+        -0.3715000521306846,
+        0.2505972653548569,
+        1.0259095025124423
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link2/collisions/left_finger1_link2_col2/left_finger1_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link3/collisions/left_finger1_link3_col2/left_finger1_link3_col2",
+      "penetration_m": 0.011832946798429665,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link3",
+      "contact_position": [
+        -0.329879753734457,
+        0.18873502164185932,
+        0.9828864511603687
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link2/collisions/left_finger1_link2_col2/left_finger1_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.014615000750010715,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "contact_position": [
+        -0.340976494388196,
+        0.22080758537634587,
+        0.9868888247563324
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link3/collisions/left_finger1_link3_col2/left_finger1_link3_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link4/collisions/left_finger1_link4_col2/left_finger1_link4_col2",
+      "penetration_m": 0.012299981741376653,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link3",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger1_link4",
+      "contact_position": [
+        -0.6659212255769357,
+        0.9909359551897456,
+        1.327839952390366
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link2/collisions/left_finger2_link2_col2/left_finger2_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link3/collisions/left_finger2_link3_col2/left_finger2_link3_col2",
+      "penetration_m": 0.002773199893800154,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link3",
+      "contact_position": [
+        -0.7172981335621179,
+        1.0572050022313284,
+        1.347321104734724
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link2/collisions/left_finger2_link2_col2/left_finger2_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.005642149598658922,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "contact_position": [
+        -0.2923144186029486,
+        0.21632117256916872,
+        1.0006418994178914
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link3/collisions/left_finger2_link3_col2/left_finger2_link3_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link4/collisions/left_finger2_link4_col2/left_finger2_link4_col2",
+      "penetration_m": 0.01229999928169688,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link3",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger2_link4",
+      "contact_position": [
+        -0.7117181773096256,
+        1.0952570203051293,
+        1.351186253843283
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link2/collisions/left_finger3_link2_col2/left_finger3_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link3/collisions/left_finger3_link3_col2/left_finger3_link3_col2",
+      "penetration_m": 0.00277326535135816,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link3",
+      "contact_position": [
+        -0.2560469452430346,
+        0.23203877097840814,
+        1.0105135447176514
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link2/collisions/left_finger3_link2_col2/left_finger3_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.020214756070676222,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "contact_position": [
+        -0.742537220639645,
+        1.0193926559148907,
+        1.3471353550150849
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link3/collisions/left_finger3_link3_col2/left_finger3_link3_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link4/collisions/left_finger3_link4_col2/left_finger3_link4_col2",
+      "penetration_m": 0.01230000376354894,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link3",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger3_link4",
+      "contact_position": [
+        -0.2193007027500098,
+        0.23169009828320775,
+        1.0160014043340055
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link2/collisions/left_finger4_link2_col2/left_finger4_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link3/collisions/left_finger4_link3_col2/left_finger4_link3_col2",
+      "penetration_m": 0.0027732436747480004,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link3",
+      "contact_position": [
+        -0.7661741258057226,
+        1.0497418644735446,
+        1.3499969262104954
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link2/collisions/left_finger4_link2_col2/left_finger4_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.020614082553959467,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "contact_position": [
+        -0.765692959857654,
+        1.011210525986539,
+        1.344452469004188
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link3/collisions/left_finger4_link3_col2/left_finger4_link3_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link4/collisions/left_finger4_link4_col2/left_finger4_link4_col2",
+      "penetration_m": 0.012299996505261639,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link3",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger4_link4",
+      "contact_position": [
+        -0.7694206147641331,
+        1.086389582575581,
+        1.355186701493687
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link2/collisions/left_finger5_link2_col2/left_finger5_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link3/collisions/left_finger5_link3_col2/left_finger5_link3_col2",
+      "penetration_m": 0.0027732981123421586,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link3",
+      "contact_position": [
+        -0.2718020473546106,
+        0.278834860119168,
+        1.0015988790707218
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link2/collisions/left_finger5_link2_col2/left_finger5_link2_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "penetration_m": 0.0019839779686105802,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link2",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "contact_position": [
+        -0.7750080114622766,
+        1.0012792835725612,
+        1.3393315115609215
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link3/collisions/left_finger5_link3_col2/left_finger5_link3_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link4/collisions/left_finger5_link4_col2/left_finger5_link4_col2",
+      "penetration_m": 0.012300005081231998,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link3",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/left_finger5_link4",
+      "contact_position": [
+        -0.796884647617022,
+        1.0752995671871513,
+        1.3485927752613214
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link/collisions/left_palm_link_col2/left_palm_link_col2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left/collisions/rokae_link7_left_AR5_5_08L_W4C6C11_link7/rokae_link7_left_AR5_5_08L_W4C6C11_link7",
+      "penetration_m": 0.020000000475971526,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/left_palm_link",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left",
+      "contact_position": [
+        -0.3815000477694803,
+        0.25813232584690954,
+        0.9734253520757965
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link1_left/collisions/rokae_link1_left_AR5_5_08L_W4C6C11_link1/rokae_link1_left_AR5_5_08L_W4C6C11_link1",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link2_left/collisions/rokae_link2_left_AR5_5_08L_W4C6C11_link2/rokae_link2_left_AR5_5_08L_W4C6C11_link2",
+      "penetration_m": 0.10349457859892401,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link1_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link2_left",
+      "contact_position": [
+        -0.774668117682793,
+        0.23492902263344156,
+        1.327185035828947
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link2_left/collisions/rokae_link2_left_AR5_5_08L_W4C6C11_link2/rokae_link2_left_AR5_5_08L_W4C6C11_link2",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link3_left/collisions/rokae_link3_left_AR5_5_08L_W4C6C11_link3/rokae_link3_left_AR5_5_08L_W4C6C11_link3",
+      "penetration_m": 0.011000025414768029,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link2_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link3_left",
+      "contact_position": [
+        -0.7684981427639157,
+        0.4170000043367872,
+        1.3771493016230083
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link3_left/collisions/rokae_link3_left_AR5_5_08L_W4C6C11_link3/rokae_link3_left_AR5_5_08L_W4C6C11_link3",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link4_left/collisions/rokae_link4_left_AR5_5_08L_W4C6C11_link4/rokae_link4_left_AR5_5_08L_W4C6C11_link4",
+      "penetration_m": 0.09718866077678535,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link3_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link4_left",
+      "contact_position": [
+        -0.7413033760567316,
+        0.19451878999957387,
+        0.9994120465919101
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link4_left/collisions/rokae_link4_left_AR5_5_08L_W4C6C11_link4/rokae_link4_left_AR5_5_08L_W4C6C11_link4",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link5_left/collisions/rokae_link5_left_AR5_5_08L_W4C6C11_link5/rokae_link5_left_AR5_5_08L_W4C6C11_link5",
+      "penetration_m": 0.0023891531687609134,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link4_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link5_left",
+      "contact_position": [
+        -0.6006874252936272,
+        0.26200554885687777,
+        0.9976759142101925
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link5_left/collisions/rokae_link5_left_AR5_5_08L_W4C6C11_link5/rokae_link5_left_AR5_5_08L_W4C6C11_link5",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link6_left/collisions/rokae_link6_left_AR5_5_08L_W4C6C11_link6/rokae_link6_left_AR5_5_08L_W4C6C11_link6",
+      "penetration_m": 0.0527531933589881,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link5_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link6_left",
+      "contact_position": [
+        -0.47412398690931146,
+        0.23782821939831197,
+        0.9980009174637636
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link5_left/collisions/rokae_link5_left_AR5_5_08L_W4C6C11_link5/rokae_link5_left_AR5_5_08L_W4C6C11_link5",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left/collisions/rokae_link7_left_AR5_5_08L_W4C6C11_link7/rokae_link7_left_AR5_5_08L_W4C6C11_link7",
+      "penetration_m": 0.04884654367469039,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link5_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left",
+      "contact_position": [
+        -0.4721139400916179,
+        0.23770385719289627,
+        0.9925140098970917
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/LeftRobot/base_left/link6_left/collisions/rokae_link6_left_AR5_5_08L_W4C6C11_link6/rokae_link6_left_AR5_5_08L_W4C6C11_link6",
+      "shape_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left/collisions/rokae_link7_left_AR5_5_08L_W4C6C11_link7/rokae_link7_left_AR5_5_08L_W4C6C11_link7",
+      "penetration_m": 0.07265798035315482,
+      "body_a": "/World/HandsOnRobots/LeftRobot/base_left/link6_left",
+      "body_b": "/World/HandsOnRobots/LeftRobot/base_left/link7_left",
+      "contact_position": [
+        -0.4597266227161372,
+        0.260761247838172,
+        0.9960535812374411
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/attachment_right/collisions/right_wrist_fisheye_flange_assembly/right_wrist_fisheye_flange_assembly",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right/collisions/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7",
+      "penetration_m": 2.5336168086974385e-09,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link7_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/attachment_right",
+      "contact_position": [
+        -0.37150018999235956,
+        -0.20900001745684565,
+        0.9974999519470997
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/attachment_right/collisions/right_wrist_fisheye_flange_assembly/right_wrist_fisheye_flange_assembly",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.0483131395198404,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/attachment_right",
+      "contact_position": [
+        -0.36941790619716386,
+        -0.25590952283510277,
+        0.9697246764874625
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link1_right/collisions/rokae_link1_right_AR5_5_08R_W4C1C9_ZY2_link1/rokae_link1_right_AR5_5_08R_W4C1C9_ZY2_link1",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link2_right/collisions/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2",
+      "penetration_m": 0.10596815468417725,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link1_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link2_right",
+      "contact_position": [
+        -0.7829616432736564,
+        -0.23415564211226922,
+        1.3401654436533423
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link2_right/collisions/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2/rokae_link2_right_AR5_5_08R_W4C1C9_ZY2_link2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link3_right/collisions/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3",
+      "penetration_m": 0.011000026369912506,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link2_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link3_right",
+      "contact_position": [
+        -0.7788895617558493,
+        -0.41700000360743444,
+        1.36979336738086
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link3_right/collisions/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3/rokae_link3_right_AR5_5_08R_W4C1C9_ZY2_link3",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link4_right/collisions/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4",
+      "penetration_m": 0.09646210246424235,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link3_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link4_right",
+      "contact_position": [
+        -0.7337582696177811,
+        -0.5712331132965762,
+        1.2938142720313135
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link4_right/collisions/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4/rokae_link4_right_AR5_5_08R_W4C1C9_ZY2_link4",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link5_right/collisions/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5",
+      "penetration_m": 0.002376075895871689,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link4_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link5_right",
+      "contact_position": [
+        -0.6006839786991587,
+        -0.2620895169274922,
+        0.9975814194493671
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link5_right/collisions/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link6_right/collisions/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6",
+      "penetration_m": 0.052792586869609005,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link5_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link6_right",
+      "contact_position": [
+        -0.47410416563711244,
+        -0.23817458975023637,
+        0.9979751140004564
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link5_right/collisions/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5/rokae_link5_right_AR5_5_08R_W4C1C9_ZY2_link5",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right/collisions/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7",
+      "penetration_m": 0.04888489538509858,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link5_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right",
+      "contact_position": [
+        -0.47209926230574617,
+        -0.23799863841997623,
+        0.9925189531858687
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link6_right/collisions/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6/rokae_link6_right_AR5_5_08R_W4C1C9_ZY2_link6",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right/collisions/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7",
+      "penetration_m": 0.07252683098561198,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/link6_right",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right",
+      "contact_position": [
+        -0.45969653489161155,
+        -0.25961708860674926,
+        0.9963627437826077
+      ],
+      "classification": "unchanged D03 arm convex joint envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/link7_right/collisions/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7/rokae_link7_right_AR5_5_08R_W4C1C9_ZY2_link7",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.020000002716323507,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/link7_right",
+      "contact_position": [
+        -0.38150018917016787,
+        -0.21350003243601928,
+        1.0083639417404746
+      ],
+      "classification": "unchanged D03 wrist mounting envelopes"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link2/collisions/right_finger1_link2_col2/right_finger1_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link3/collisions/right_finger1_link3_col2/right_finger1_link3_col2",
+      "penetration_m": 0.011833060912027904,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link3",
+      "contact_position": [
+        -0.6982881503269226,
+        -0.9797955767721866,
+        1.3280930355857405
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link2/collisions/right_finger1_link2_col2/right_finger1_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.014615026712942394,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "contact_position": [
+        -0.3409765969705725,
+        -0.2208075421704468,
+        0.9868888617246167
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link3/collisions/right_finger1_link3_col2/right_finger1_link3_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link4/collisions/right_finger1_link4_col2/right_finger1_link4_col2",
+      "penetration_m": 0.012299998249178698,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link3",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger1_link4",
+      "contact_position": [
+        -0.3173746931673759,
+        -0.15702008986302893,
+        0.979799901502165
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link2/collisions/right_finger2_link2_col2/right_finger2_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link3/collisions/right_finger2_link3_col2/right_finger2_link3_col2",
+      "penetration_m": 0.002773153383348147,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link3",
+      "contact_position": [
+        -0.7172981155622675,
+        -1.0572049406718746,
+        1.3473212463277386
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link2/collisions/right_finger2_link2_col2/right_finger2_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.005642136585285959,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "contact_position": [
+        -0.2923145368508244,
+        -0.21632110648572997,
+        1.0006420197225419
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link3/collisions/right_finger2_link3_col2/right_finger2_link3_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link4/collisions/right_finger2_link4_col2/right_finger2_link4_col2",
+      "penetration_m": 0.01230001615596364,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link3",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger2_link4",
+      "contact_position": [
+        -0.21715313280821735,
+        -0.20208088070746955,
+        1.0087749654761267
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link2/collisions/right_finger3_link2_col2/right_finger3_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link3/collisions/right_finger3_link3_col2/right_finger3_link3_col2",
+      "penetration_m": 0.002773299541010051,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link3",
+      "contact_position": [
+        -0.2560471078194006,
+        -0.23203871102658716,
+        1.0105134831959897
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link2/collisions/right_finger3_link2_col2/right_finger3_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.02021476729097308,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "contact_position": [
+        -0.7425372204240834,
+        -1.0193926503047468,
+        1.3471354832697844
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link3/collisions/right_finger3_link3_col2/right_finger3_link3_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link4/collisions/right_finger3_link4_col2/right_finger3_link4_col2",
+      "penetration_m": 0.012300000624452696,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link3",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger3_link4",
+      "contact_position": [
+        -0.7428899838450431,
+        -1.0931936822044204,
+        1.3586319791478614
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link2/collisions/right_finger4_link2_col2/right_finger4_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link3/collisions/right_finger4_link3_col2/right_finger4_link3_col2",
+      "penetration_m": 0.0027732393415646085,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link3",
+      "contact_position": [
+        -0.2612584986621573,
+        -0.25567420860381473,
+        1.0074969301008108
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link2/collisions/right_finger4_link2_col2/right_finger4_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.020614046096081973,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "contact_position": [
+        -0.7656929780865965,
+        -1.0112105202389166,
+        1.3444524979282104
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link3/collisions/right_finger4_link3_col2/right_finger4_link3_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link4/collisions/right_finger4_link4_col2/right_finger4_link4_col2",
+      "penetration_m": 0.012300002550188559,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link3",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger4_link4",
+      "contact_position": [
+        -0.770257833941122,
+        -1.0878152459813366,
+        1.3552667715026134
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link2/collisions/right_finger5_link2_col2/right_finger5_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link3/collisions/right_finger5_link3_col2/right_finger5_link3_col2",
+      "penetration_m": 0.002773266414734155,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link3",
+      "contact_position": [
+        -0.7893347046174217,
+        -1.0391979438869043,
+        1.344099003914186
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link2/collisions/right_finger5_link2_col2/right_finger5_link2_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link/collisions/right_palm_link_col2/right_palm_link_col2",
+      "penetration_m": 0.001983955452273282,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link2",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_palm_link",
+      "contact_position": [
+        -0.7750080227204459,
+        -1.0012792786166433,
+        1.3393315160827173
+      ],
+      "classification": "unchanged D03 finger-root envelope inside palm"
+    },
+    {
+      "shape_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link3/collisions/right_finger5_link3_col2/right_finger5_link3_col2",
+      "shape_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link4/collisions/right_finger5_link4_col2/right_finger5_link4_col2",
+      "penetration_m": 0.012299999850484345,
+      "body_a": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link3",
+      "body_b": "/World/HandsOnRobots/RightRobot/base_right/right_finger5_link4",
+      "contact_position": [
+        -0.23436790717315162,
+        -0.28736610599920026,
+        1.0060621153539866
+      ],
+      "classification": "adjacent capsules form continuous D03 finger envelope"
+    },
+    {
+      "shape_a": "/World/Task/Box_lid/Box_lid/collisions/Box_lid_vis/Box_lid_vis",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 2.8677974892588054e-06,
+      "body_a": "/World/Task/table/table",
+      "body_b": "/World/Task/Box_lid/Box_lid",
+      "contact_position": [
+        -0.05364991295343187,
+        -0.04074497777964432,
+        0.8899985797356553
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/Clear_Box/Clear_Box/collisions/Clear_Box_collision_2/Clear_Box_collision_2",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 1.6406474375224292e-07,
+      "body_a": "/World/Task/table/table",
+      "body_b": "/World/Task/Clear_Box/Clear_Box",
+      "contact_position": [
+        -0.4272681296731102,
+        -0.6155602589499923,
+        0.8899999316020281
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_a_marbles/d03_a_marbles/collisions/_geom_84/_geom_84",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 3.1329817869736857e-06,
+      "body_a": "/World/Task/d03_a_marbles/d03_a_marbles",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        0.12930713827187884,
+        0.7742537742789342,
+        0.8899984471435065
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_b_marble_1/d03_b_marble_1/collisions/_geom_86/_geom_86",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 4.470331523356852e-08,
+      "body_a": "/World/Task/d03_b_marble_1/d03_b_marble_1",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        0.07978880405426025,
+        0.297490656375885,
+        0.8899999912827423
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_b_marble_2/d03_b_marble_2/collisions/_geom_88/_geom_88",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 4.470331523356852e-08,
+      "body_a": "/World/Task/d03_b_marble_2/d03_b_marble_2",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.2022676020860672,
+        0.3770817518234253,
+        0.8899999912827423
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_bowl/d03_bowl/collisions/_geom_95/_geom_95",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 3.5555302105982244e-06,
+      "body_a": "/World/Task/d03_bowl/d03_bowl",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        0.14451914334770746,
+        0.16221879160500796,
+        0.8899982358692946
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_flat_screwdriver/d03_flat_screwdriver/collisions/_geom_75/_geom_75",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 2.4049555453498617e-06,
+      "body_a": "/World/Task/d03_flat_screwdriver/d03_flat_screwdriver",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.40816666069473684,
+        0.6116873761070534,
+        0.8899988111566273
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_hammer/d03_hammer/collisions/_geom_90/_geom_90",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 6.203598517553859e-07,
+      "body_a": "/World/Task/d03_hammer/d03_hammer",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.08537055723443876,
+        0.7120858491248712,
+        0.8899997034544741
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_hammer/d03_hammer/collisions/_geom_91/_geom_91",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 3.9303536937392354e-06,
+      "body_a": "/World/Task/d03_hammer/d03_hammer",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.05702345156227791,
+        0.5835787530504107,
+        0.889998048457553
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_nails/d03_nails/collisions/_geom_93/_geom_93",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 7.021479765715764e-06,
+      "body_a": "/World/Task/d03_nails/d03_nails",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.08536885348052872,
+        0.34235800595330634,
+        0.889996502894517
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_phillips_screwdriver/d03_phillips_screwdriver/collisions/_geom_78/_geom_78",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 6.059725808402013e-06,
+      "body_a": "/World/Task/d03_phillips_screwdriver/d03_phillips_screwdriver",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        0.0918624011290714,
+        0.40363988597268347,
+        0.8899969837714957
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_plastic_bolt/d03_plastic_bolt/collisions/_geom_82/_geom_82",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 6.068265895144709e-06,
+      "body_a": "/World/Task/d03_plastic_bolt/d03_plastic_bolt",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.45259612310109104,
+        0.17516427865652712,
+        0.8899969795014524
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_spoon/d03_spoon/collisions/_geom_80/_geom_80",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 1.8037540113288872e-06,
+      "body_a": "/World/Task/d03_spoon/d03_spoon",
+      "body_b": "/World/Task/table/table",
+      "contact_position": [
+        -0.3972887951473023,
+        0.22150921103723978,
+        0.8899991117573943
+      ],
+      "classification": "original task collider supported by table"
+    },
+    {
+      "shape_a": "/World/Task/d03_target_root/d03_target_root/collisions/BuildingBlock017_Collider1_m_collision/BuildingBlock017_Collider1_m_collision",
+      "shape_b": "/World/Task/table/table/collisions/table_collision/table_collision",
+      "penetration_m": 1.9136933443464343e-06,
+      "body_a": "/World/Task/table/table",
+      "body_b": "/World/Task/d03_target_root/d03_target_root",
+      "contact_position": [
+        -0.2577612662120078,
+        0.23662361256209968,
+        0.889999056787712
+      ],
+      "classification": "original task collider supported by table"
+    }
+  ],
+  "excluded_claims": [
+    "complete scripted trajectory",
+    "human teleoperation success rate",
+    "successful recorded episode",
+    "three-camera postrender",
+    "formal complete physical replay"
+  ],
+  "repeatability_note": "All sampled reset poses repeat exactly. Seed 0 hammer settling differs by 0.202 mm and 0.181 degrees; seed 9/17 settled task poses repeat exactly. This is not a bitwise full-dynamics reproducibility claim.",
+  "recording_origin": "Uses unchanged D03 1e-6 m / 1e-5 rad per-physics-frame static-pose proof alongside original drift/contact/robot checks.",
+  "scripted_trajectory_scope": "Stopped by user instruction; no completed XY1 trajectory claimed."
+}

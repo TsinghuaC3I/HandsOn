@@ -1,0 +1,17 @@
+env_name: t02_connect_charger_and_cable
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Insert the charger plug into the power strip first, then insert the charging cable connector into the charger head."
+robot_type: dual_arm
+time_limit_seconds: 110
+skills:
+  - precision_insertion
+  - pose_alignment
+  - contact_control
+  - ordered_stages
+objects:
+  - charger_plug
+  - power_strip
+  - charging_cable

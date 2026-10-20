@@ -1,0 +1,92 @@
+{
+  "schema": "bc014_yanez_salt_pepper_v1",
+  "source": {
+    "archive_filename": "salt_and_pepper_shakers.zip",
+    "archive_sha256": "a60fe7e5289422527695254baf4c6d98463fd71a3c5c5cd0c6e88696dcb9594d",
+    "title": "Salt And Pepper Shakers",
+    "author": "Anthony Yanez",
+    "source_url": "https://sketchfab.com/3d-models/salt-and-pepper-shakers-5f2adebdda754e40915d1330a61fa70c",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "files": {
+      "source/license.txt": "47df7057f07e4685ec2b9419e8ec6a127b13f974d77cf3055eca88a25d0c8d2e",
+      "source/scene.bin": "765fd9485dd7ab859b3f6d098ead29d78e54e4d503958d714b79e913ea170806",
+      "source/scene.gltf": "769ce0c35612ed8e4741e42a914c27cf775ce302c5b962dd7c072a3328b145cb",
+      "source/textures/03_-_Default_baseColor.jpeg": "eb0bb3b3b98105f5de12fc48d0009251651cfedac121c328634ad975c787e62b",
+      "source/textures/03_-_Default_normal.png": "ed888d76c469e4b0fff34b8a6a14c0de5ed5117746c12ee218abaaafae09ce28",
+      "source/textures/07_-_Default_baseColor.jpeg": "a1ad9cd7e255c08d996f838aaf27be70ef0641addb40a4ca4d7e6d081a4ed04a",
+      "source/textures/07_-_Default_normal.png": "7160b7f1a037f39fc4c2f805e581ca2576ca46168f2bdb128620f4e68cacf6df"
+    }
+  },
+  "converter": {
+    "runtime": "Isaac Sim 5.1.0.0",
+    "extension": "omni.kit.asset_converter 5.0.17",
+    "context": {
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "export_preview_surface": true,
+      "use_meter_as_world_unit": true,
+      "create_world_as_default_root_prim": true,
+      "embed_textures": true,
+      "single_mesh": false,
+      "merge_all_meshes": false,
+      "disabling_instancing": true,
+      "convert_stage_up_z": true
+    },
+    "output": {
+      "filename": "source/converted_scene.usd",
+      "sha256": "ada91be7e86d273be57548fcd867095daac8639631b8a4643ce9501f0946bd8d",
+      "bytes": 240648,
+      "external_texture_count": 4,
+      "external_texture_bytes": 2970401
+    }
+  },
+  "normalization": {
+    "mapping": "(x,y,z)_gltf -> (x,-z,y)_usd",
+    "uniform_scale": 0.0006978960571727079,
+    "target_height_m": 0.096,
+    "support_z_m": 0.0
+  },
+  "outputs": {
+    "pepper_jar.usda": {
+      "sha256": "32cd00cbcc2ac7e006c9c658b783c08ff712fce7e246f821e92cb719455a9ff2",
+      "bounds_min_m": [
+        -0.0283781095,
+        -0.0283781096,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.0283781095,
+        0.0283781127,
+        0.096000001
+      ],
+      "active_mesh_count": 3,
+      "collider_count": 2,
+      "selected_source_node": "Peeper"
+    },
+    "salt_jar.usda": {
+      "sha256": "a93ab0001bf333895c61321266e7242bd896e04b2f603bb976264480031ba24f",
+      "bounds_min_m": [
+        -0.0279469841,
+        -0.0279469857,
+        0.0
+      ],
+      "bounds_max_m": [
+        0.0279469841,
+        0.0279469857,
+        0.0960000009
+      ],
+      "active_mesh_count": 3,
+      "collider_count": 2,
+      "selected_source_node": "Salt"
+    }
+  },
+  "collision": {
+    "approximation": "convexHull",
+    "colliders_per_jar": 2,
+    "content_mesh_collision_enabled": false,
+    "old_placeholder_collision_reused": false
+  }
+}

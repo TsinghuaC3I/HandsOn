@@ -1,0 +1,21 @@
+env_name: t48_unfold_fan
+task_id: P0-01
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Use both hands to grasp the two outermost fan ribs and unfold the fan symmetrically to the episode target angle (60, 90, or 120 degrees), then hold it steadily on the table."
+robot_type: dual_arm
+sim_backend: isaacsim
+physics_backend: physx
+time_limit_seconds: 60
+skills:
+  - bimanual_endpoint_grasp
+  - symmetric_articulation
+  - target_angle_control
+  - compliant_contact_control
+objects:
+  - folding_fan
+roles:
+  left: left_outermost_fan_rib
+  right: right_outermost_fan_rib

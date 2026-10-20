@@ -1,0 +1,7 @@
+env_name: t01_align_blocks_in_midair
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Lift both assigned blocks with their assigned hands, then mate their marked faces in midair and hold the physical contact stable for 0.4 seconds."
+robot_type: dual_arm
+time_limit_seconds: 60
+skills: [midair_alignment, bimanual_stabilization, face_mating]
+objects: [block_a, block_b]

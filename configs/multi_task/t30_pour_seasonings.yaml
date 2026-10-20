@@ -1,0 +1,7 @@
+env_name: t30_pour_seasonings
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "The salt jar and cyan target are randomized within the left-hand comfort zone; the pepper jar and orange target are randomized within the right-hand comfort zone. Use the assigned hands, tilt both caps downward, and sprinkle their blue water-flow proxies into the matching targets with a synchronized overlap. Complete before either jar accumulates more than 4 seconds of pouring or the scene resets."
+robot_type: dual_arm
+time_limit_seconds: 16
+skills: [assigned_hand_roles, target_directed_sprinkling, synchronized_flow]
+objects: [salt_jar, pepper_jar, salt_goal, pepper_goal]

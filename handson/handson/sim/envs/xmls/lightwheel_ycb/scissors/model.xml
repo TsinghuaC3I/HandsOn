@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1847.9" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="scissors_material" file="visuals/T_scissors_BC001.png"/>
+    <texture type="2d" name="scissors_Prop001_material" file="visuals/T_scissors_BC001.png"/>
+    <texture type="2d" name="scissors_Prop002_material" file="visuals/T_scissors_BC001.png"/>
+    <texture type="2d" name="scissors_Prop003_material" file="visuals/T_scissors_BC001.png"/>
+    <material name="scissors_material" texture="scissors_material" specular="0.310345" shininess="0"/>
+    <material name="scissors_Prop001_material" texture="scissors_Prop001_material" specular="0.310345" shininess="0"/>
+    <material name="scissors_Prop002_material" texture="scissors_Prop002_material" specular="0.310345" shininess="0"/>
+    <material name="scissors_Prop003_material" texture="scissors_Prop003_material" specular="0.310345" shininess="0"/>
+    <mesh name="scissors_vis" file="visuals/scissors.obj"/>
+    <mesh name="scissors_Prop001_vis" file="visuals/scissors_Prop001.obj"/>
+    <mesh name="scissors_Prop002_vis" file="visuals/scissors_Prop002.obj"/>
+    <mesh name="scissors_Prop003_vis" file="visuals/scissors_Prop003.obj"/>
+    <mesh name="scissors_Collider1_m_collision" file="collision/scissors_Collider1_m.obj"/>
+    <mesh name="scissors_Collider2_m_collision" file="collision/scissors_Collider2_m.obj"/>
+    <mesh name="scissors_Collider3_m_collision" file="collision/scissors_Collider3_m.obj"/>
+    <mesh name="scissors_Collider4_m_collision" file="collision/scissors_Collider4_m.obj"/>
+    <mesh name="scissors_Collider5_m_collision" file="collision/scissors_Collider5_m.obj"/>
+    <mesh name="scissors_Collider6_m_collision" file="collision/scissors_Collider6_m.obj"/>
+    <mesh name="scissors_Collider7_m_collision" file="collision/scissors_Collider7_m.obj"/>
+    <mesh name="scissors_Collider8_m_collision" file="collision/scissors_Collider8_m.obj"/>
+    <mesh name="scissors_Collider9_m_collision" file="collision/scissors_Collider9_m.obj"/>
+    <mesh name="scissors_Collider10_m_collision" file="collision/scissors_Collider10_m.obj"/>
+    <mesh name="scissors_Collider11_m_collision" file="collision/scissors_Collider11_m.obj"/>
+    <mesh name="scissors_Collider12_m_collision" file="collision/scissors_Collider12_m.obj"/>
+    <mesh name="scissors_Collider13_m_collision" file="collision/scissors_Collider13_m.obj"/>
+    <mesh name="scissors_Prop001_Collider1_m_collision" file="collision/scissors_Prop001_Collider1_m.obj"/>
+    <mesh name="scissors_Prop001_Collider2_m_collision" file="collision/scissors_Prop001_Collider2_m.obj"/>
+    <mesh name="scissors_Prop001_Collider3_m_collision" file="collision/scissors_Prop001_Collider3_m.obj"/>
+    <mesh name="scissors_Prop001_Collider4_m_collision" file="collision/scissors_Prop001_Collider4_m.obj"/>
+    <mesh name="scissors_Prop001_Collider5_m_collision" file="collision/scissors_Prop001_Collider5_m.obj"/>
+    <mesh name="scissors_Prop001_Collider6_m_collision" file="collision/scissors_Prop001_Collider6_m.obj"/>
+    <mesh name="scissors_Prop001_Collider7_m_collision" file="collision/scissors_Prop001_Collider7_m.obj"/>
+    <mesh name="scissors_Prop001_Collider8_m_collision" file="collision/scissors_Prop001_Collider8_m.obj"/>
+    <mesh name="scissors_Prop001_Collider9_m_collision" file="collision/scissors_Prop001_Collider9_m.obj"/>
+    <mesh name="scissors_Prop001_Collider10_m_collision" file="collision/scissors_Prop001_Collider10_m.obj"/>
+    <mesh name="scissors_Prop001_Collider11_m_collision" file="collision/scissors_Prop001_Collider11_m.obj"/>
+    <mesh name="scissors_Prop001_Collider12_m_collision" file="collision/scissors_Prop001_Collider12_m.obj"/>
+    <mesh name="scissors_Prop001_Collider13_m_collision" file="collision/scissors_Prop001_Collider13_m.obj"/>
+    <mesh name="scissors_Prop001_Collider14_m_collision" file="collision/scissors_Prop001_Collider14_m.obj"/>
+    <mesh name="scissors_Prop001_Collider15_m_collision" file="collision/scissors_Prop001_Collider15_m.obj"/>
+    <mesh name="scissors_Prop001_Collider16_m_collision" file="collision/scissors_Prop001_Collider16_m.obj"/>
+    <mesh name="scissors_Prop002_Collider1_m_collision" file="collision/scissors_Prop002_Collider1_m.obj"/>
+    <mesh name="scissors_Prop003_Collider1_m_collision" file="collision/scissors_Prop003_Collider1_m.obj"/>
+    <mesh name="scissors_Prop001_Collider17_m_collision" file="collision/scissors_Prop001_Collider17_m.obj"/>
+    <mesh name="scissors_Prop001_Collider18_m_collision" file="collision/scissors_Prop001_Collider18_m.obj"/>
+    <mesh name="scissors_Prop001_Collider19_m_collision" file="collision/scissors_Prop001_Collider19_m.obj"/>
+    <mesh name="scissors_Collider15_m_collision" file="collision/scissors_Collider15_m.obj"/>
+    <mesh name="scissors_Collider14_m_collision" file="collision/scissors_Collider14_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="scissors_material" mesh="scissors_vis"/>
+        <geom name="scissors_Collider1_m" class="collision" type="mesh" mesh="scissors_Collider1_m_collision"/>
+        <geom name="scissors_Collider2_m" class="collision" type="mesh" mesh="scissors_Collider2_m_collision"/>
+        <geom name="scissors_Collider3_m" class="collision" type="mesh" mesh="scissors_Collider3_m_collision"/>
+        <geom name="scissors_Collider4_m" class="collision" type="mesh" mesh="scissors_Collider4_m_collision"/>
+        <geom name="scissors_Collider5_m" class="collision" type="mesh" mesh="scissors_Collider5_m_collision"/>
+        <geom name="scissors_Collider6_m" class="collision" type="mesh" mesh="scissors_Collider6_m_collision"/>
+        <geom name="scissors_Collider7_m" class="collision" type="mesh" mesh="scissors_Collider7_m_collision"/>
+        <geom name="scissors_Collider8_m" class="collision" type="mesh" mesh="scissors_Collider8_m_collision"/>
+        <geom name="scissors_Collider9_m" class="collision" type="mesh" mesh="scissors_Collider9_m_collision"/>
+        <geom name="scissors_Collider10_m" class="collision" type="mesh" mesh="scissors_Collider10_m_collision"/>
+        <geom name="scissors_Collider11_m" class="collision" type="mesh" mesh="scissors_Collider11_m_collision"/>
+        <geom name="scissors_Collider12_m" class="collision" type="mesh" mesh="scissors_Collider12_m_collision"/>
+        <geom name="scissors_Collider13_m" class="collision" type="mesh" mesh="scissors_Collider13_m_collision"/>
+        <geom name="scissors_Collider15_m" class="collision" type="mesh" mesh="scissors_Collider15_m_collision"/>
+        <geom name="scissors_Collider14_m" class="collision" type="mesh" mesh="scissors_Collider14_m_collision"/>
+        <body name="scissors_Prop001">
+          <joint name="scissors_Prop001_joint" pos="-0.00384350 0.00488200 -0.00021000" axis="0 0 1" stiffness="0.05" limited="true" range="0 0.872665" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="scissors_Prop001_material" mesh="scissors_Prop001_vis"/>
+          <geom name="scissors_Prop001_Collider1_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider1_m_collision"/>
+          <geom name="scissors_Prop001_Collider2_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider2_m_collision"/>
+          <geom name="scissors_Prop001_Collider3_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider3_m_collision"/>
+          <geom name="scissors_Prop001_Collider4_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider4_m_collision"/>
+          <geom name="scissors_Prop001_Collider5_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider5_m_collision"/>
+          <geom name="scissors_Prop001_Collider6_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider6_m_collision"/>
+          <geom name="scissors_Prop001_Collider7_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider7_m_collision"/>
+          <geom name="scissors_Prop001_Collider8_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider8_m_collision"/>
+          <geom name="scissors_Prop001_Collider9_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider9_m_collision"/>
+          <geom name="scissors_Prop001_Collider10_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider10_m_collision"/>
+          <geom name="scissors_Prop001_Collider11_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider11_m_collision"/>
+          <geom name="scissors_Prop001_Collider12_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider12_m_collision"/>
+          <geom name="scissors_Prop001_Collider13_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider13_m_collision"/>
+          <geom name="scissors_Prop001_Collider14_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider14_m_collision"/>
+          <geom name="scissors_Prop001_Collider15_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider15_m_collision"/>
+          <geom name="scissors_Prop001_Collider16_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider16_m_collision"/>
+          <geom name="scissors_Prop001_Collider17_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider17_m_collision"/>
+          <geom name="scissors_Prop001_Collider18_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider18_m_collision"/>
+          <geom name="scissors_Prop001_Collider19_m" class="collision" type="mesh" mesh="scissors_Prop001_Collider19_m_collision"/>
+          <body name="scissors_Prop002">
+            <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="scissors_Prop002_material" mesh="scissors_Prop002_vis"/>
+            <geom name="scissors_Prop002_Collider1_m" class="collision" type="mesh" mesh="scissors_Prop002_Collider1_m_collision"/>
+          </body>
+        </body>
+        <body name="scissors_Prop003">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="scissors_Prop003_material" mesh="scissors_Prop003_vis"/>
+          <geom name="scissors_Prop003_Collider1_m" class="collision" type="mesh" mesh="scissors_Prop003_Collider1_m_collision"/>
+        </body>
+      <geom size="0.0441835 0.099351 0.005714" pos="0.0 0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="scissors_Prop001_joint_actuator" joint="scissors_Prop001_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

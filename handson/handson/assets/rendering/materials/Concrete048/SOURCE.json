@@ -1,0 +1,27 @@
+{
+  "asset_id": "Concrete048",
+  "source": "https://ambientcg.com/a/Concrete048",
+  "download": "https://ambientcg.com/get?file=Concrete048_2K-JPG.zip",
+  "archive_sha256": "c61a3e7f03c625889c7fd71351a928217a15e81ea26e6f7dda16865b2882e483",
+  "license": "CC0-1.0",
+  "license_source": "https://docs.ambientcg.com/license/",
+  "source_dimension_cm": [
+    0,
+    0
+  ],
+  "creation_method": "PBRPhotogrammetry",
+  "maps": {
+    "Color": {
+      "file": "Concrete048/Color.jpg",
+      "sha256": "46e5f6a7670eb797ecbd6f6a45497d3cb4d9f44fac25792d9253a948bde28c9a"
+    },
+    "NormalGL": {
+      "file": "Concrete048/NormalGL.jpg",
+      "sha256": "b36f38f3ae9e706918616f777e5772cd00acf19cfb02de5e5431d8c42a7fbd3e"
+    },
+    "Roughness": {
+      "file": "Concrete048/Roughness.jpg",
+      "sha256": "875f1872565c8f80fed3a220e0183737b28cf9e2e79d18e26a37309f19689577"
+    }
+  }
+}

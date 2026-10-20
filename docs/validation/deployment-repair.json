@@ -1,0 +1,195 @@
+{
+  "schema": 1,
+  "date": "2026-10-15",
+  "scope": "Deployment report verification and repair; CPU regression and one baseline GPU diagnostic, not learned-policy evaluation.",
+  "report_commit": "6ee754d149c054cdbcdd26f6d4fb6d13fcdf5f7c",
+  "repair_baseline_commit": "fea6d4e5b5076b6474baee6a259bb0b8faab0b3c",
+  "cpu": {
+    "platform": "Linux x86_64, glibc 2.35",
+    "python": "3.11.16",
+    "command": "python -m pytest handson/tests --continue-on-collection-errors -q --tb=short --junitxml=final-linux.xml",
+    "passed": 1842,
+    "skipped": 10,
+    "failures": 0,
+    "collection_errors": 0,
+    "subtests_passed": 9,
+    "junit_cases_including_subtests": 1861,
+    "duration_seconds": 235.065,
+    "skip_details": [
+      {
+        "test": "tests.test_b03_newton_hand_target_slew::test_hand_goal_stays_raw_while_applied_target_slews_each_substep",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_b03_newton_hand_target_slew::test_hand_slew_runs_for_native_abc_robot_views_without_scene",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_b03_newton_hand_target_slew::test_exact_recorded_substep_callback_bypasses_live_slew",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_b03_newton_hand_target_slew::test_live_substep_callback_still_uses_slew_after_installing_new_goal",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_b03_newton_hand_target_slew::test_robot_reset_synchronizes_raw_goal_and_applied_slew_state",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_evaluation_camera_contract::test_evaluation_can_apply_sampled_head_pose_without_changing_preview_mount",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_isaaclab_abc_control_reuse::test_position_multistart_targets_use_existing_joint_step_limit",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_isaaclab_abc_control_reuse::test_haorui_tool_transform_uses_measured_arm_configuration",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_isaaclab_abc_control_reuse::test_rigid_grasp_writer_prefers_articulation_root_and_keeps_motion",
+        "reason": "could not import 'torch': No module named 'torch'"
+      },
+      {
+        "test": "tests.test_isaaclab_abc_control_reuse::test_successful_abc_state_writers_increment_action_phase_audit",
+        "reason": "could not import 'torch': No module named 'torch'"
+      }
+    ],
+    "pip_check": "No broken requirements found.",
+    "lock": "requirements/cpu-test-lock.txt",
+    "lock_sha256": "79e07fa3be3d6e4e78c0648069ad92c3f936a6af0e48b90259f3532f35b130a4",
+    "kit_boundaries": "Explicit CPU test doubles; Isaac Sim/Lab and Torch are not installed in this environment.",
+    "temporary_storage": "Dedicated data-volume TMPDIR; an earlier system-disk exhaustion attempt is retained separately and is not this result."
+  },
+  "factories": {
+    "passed": 66,
+    "total": 66,
+    "scope": "CPU construction only; no reset, rendering or checkpoint execution."
+  },
+  "render_assets": {
+    "verified": true,
+    "files": 98,
+    "manifest_sha256": "7e1fff0a856e670be5955e30b20aba09cac9eb648852bb5146721eed03e79c5f"
+  },
+  "configuration_cleanup": {
+    "removed_unregistered": 87,
+    "remaining": {
+      "multi_task": 66,
+      "rand_obj": 8,
+      "rand_full": 8
+    }
+  },
+  "test_migration": {
+    "ledger": "test-migration.json",
+    "ledger_sha256": "6523fa3d852df0c999c184247c917783c58ea092d559fa10c04274f24c39945d",
+    "retired_or_replaced_functions": 383,
+    "new_or_renamed_functions": 31,
+    "deleted_files": 16,
+    "counting_scope": "Top-level test functions; renames and rewritten tests appear in both lists. Parameterized case counts differ."
+  },
+  "runtime_fixes": [
+    {
+      "file": "handson/handson/data/physical_replay_certification.py",
+      "description": "Recorder and replay validator agree that the two contact signature pair-metric arrays are diagnostic; discrete signatures and physical state remain required."
+    },
+    {
+      "file": "handson/handson/evaluation/cli.py",
+      "description": "Invalid YAML receives an argparse error; signal termination uses conventional shell exit codes."
+    },
+    {
+      "file": "handson/handson/sim/isaaclab/xy4_env.py",
+      "description": "Unavailable nonfinite contact metrics are null in exported info; internal success-checker values are unchanged."
+    }
+  ],
+  "source_binding": {
+    "method": "SHA256 file manifest; remote scratch Git identity is a test fixture, not the release commit.",
+    "synchronized_files": 7427,
+    "source_manifest_sha256": "994eef7caebd514891f1b7ed6c769a4091cb90645f992d9e2b3a9b4a2fb14dd8",
+    "final_code_config_requirement_files_rechecked": 2052,
+    "mismatches": 0,
+    "changed_runtime_sha256": {
+      "handson/handson/data/physical_replay_certification.py": "b9cce191650cf626ef32b01e954e58608a9a97c70d37c629fd70af8c96d155f4",
+      "handson/handson/evaluation/cli.py": "9c5891ccb52913b3487a9bcb7a3abbed3793b78f5c603596e3a6d962f18a7fe9",
+      "handson/handson/sim/isaaclab/xy4_env.py": "b49e25d2820734798433ac2ab9e5d6c89be03ed517f3cdbef3ca7f99f9f1d66f"
+    },
+    "native_runtime_task_policy_files_reviewed": 6287,
+    "changed_in_that_scope": [
+      "handson/handson/sim/isaaclab/xy4_env.py"
+    ],
+    "physics_controller_render_reset_success_changes": false
+  },
+  "gpu_comparison": {
+    "task": "t03_cover_box",
+    "seed": 1,
+    "actions": 90,
+    "source": "Unmodified release baseline before this repair.",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "driver": "570.153.02",
+    "numpy": "1.26.4",
+    "completed": true,
+    "clean_exit": true,
+    "diagnostic_only": true,
+    "counts_as_formal_trial": false,
+    "success": null,
+    "videos": {
+      "main": {
+        "frames": 4,
+        "shape": [
+          480,
+          854,
+          3
+        ],
+        "unique_frames": 4,
+        "mean": 117.87221327738746,
+        "std": 58.63015538743855
+      },
+      "wrist_left": {
+        "frames": 4,
+        "shape": [
+          480,
+          848,
+          3
+        ],
+        "unique_frames": 4,
+        "mean": 147.05528203616353,
+        "std": 62.0933589851604
+      },
+      "wrist_right": {
+        "frames": 4,
+        "shape": [
+          480,
+          848,
+          3
+        ],
+        "unique_frames": 4,
+        "mean": 165.41407068920336,
+        "std": 73.43617713379548
+      }
+    },
+    "limitation": "Does not reproduce or repair the RTX 4090 failure, or validate the new simulator dependency pins."
+  },
+  "report_disposition": {
+    "cover_box_cuda_700": "Unresolved on RTX 4090 / driver 580.178.04; author GPU comparison passed, further failing-host investigation not performed.",
+    "test_suite": "Repaired and migrated to released scope; full CPU run passes with explicitly reported Torch skips.",
+    "handson_dependency_conflicts": "NumPy, Gymnasium, typing-extensions and Tyro pins aligned with NVIDIA package metadata; CPU dependency resolution verified.",
+    "python_requirement": "Simulator package and documentation require Python 3.11; model servers use separate environments.",
+    "unregistered_task_configs": "87 removed; all 82 remaining evaluation configurations reference the 66 released tasks.",
+    "checkpoint_reproduction": "Not performed; trained checkpoints and their companion assets remain external inputs."
+  },
+  "limitations": [
+    "Full NVIDIA installation remains uncertified; kernel FastAPI 0.115.7 and Lab Starlette 0.49.1 declarations conflict upstream.",
+    "No new all-task GPU run or wheel build for this repair; historical receipts retain their original scope.",
+    "A passing CPU factory or held-action GPU diagnostic does not certify task success paths or paper policy scores."
+  ],
+  "raw_evidence_sha256": {
+    "final-linux.log": "2a4e155769d571e64769d11a6099d1cc02fdb343a994984f24b79b39838d0a8e",
+    "final-linux.xml": "eff9455e12453305012b474ab56bbb541ee19d4ddddfb4522e992d00a287cd4c",
+    "final-pip-check.txt": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "final-factories.json": "466d3cf469f954621035e77ef20c6f8c474785a88591f897adda126a749e7710",
+    "final-assets.json": "73729dca043dc03efc3f99350e0009af888cc1210c89510474589c42f58fa565",
+    "box-baseline/episode/RESULT.json": "5e3d809dc9c56a35ae4b89f85a5b5e20e6d482f2d4786fde3ded2862e960dc2b",
+    "box-baseline/video-verification.json": "1eefe8fc498f4b4b0bcbf3eb11649cce96d6c3231cb9dbcc49cf7590fbbe1e89"
+  }
+}

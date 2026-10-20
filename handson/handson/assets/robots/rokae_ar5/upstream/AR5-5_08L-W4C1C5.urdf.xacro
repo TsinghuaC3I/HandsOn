@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="AR5-5_08L-W4C1C5">
+  <!-- Constants for robot dimensions -->
+  <!-- <material name="black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="blue">
+    <color rgba="0.0 0.0 0.8 1.0"/>
+  </material>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="red">
+    <color rgba="0.8 0.0 0.0 1.0"/>
+  </material>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+  <material name="Beige">
+    <color rgba="1.0 0.784 0.5765 1.0"/>
+  </material> -->
+
+
+
+<xacro:include filename="$(find rokae_description)/urdf/materials.xacro" />
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="AR5-5_08L-W4C1C5_base"/>
+  </joint>
+  <!--base-->
+  <link name="AR5-5_08L-W4C1C5_base">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_base.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint1" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_base"/>
+    <child link="AR5-5_08L-W4C1C5_link1"/>
+    <limit effort="108" lower="-3.1067" upper="3.1067" velocity="3.0543261909900763"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 1-->
+  <link name="AR5-5_08L-W4C1C5_link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.683"/>
+      <inertia ixx="0.00493673" ixy="0.00000160" ixz="-0.00000198" iyy="0.00452344" iyz="0.00000020" izz="0.00432910"/>
+      <origin rpy="0 0 0" xyz="-1e-06 0.000621 0.167909"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link1.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="joint2" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link1"/>
+    <child link="AR5-5_08L-W4C1C5_link2"/>
+    <limit effort="108" lower="-2.0944" upper="2.0944" velocity="3.0543261909900763"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.1745"/>
+  </joint>
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 2-->
+  <link name="AR5-5_08L-W4C1C5_link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="2.3"/>
+      <inertia ixx="0.01151906" ixy="0.00000246" ixz="0.00000055" iyy="0.00993335" iyz="-0.00082477" izz="0.00435237"/>
+      <origin rpy="0 0 0" xyz="2e-05 0.003081 0.10298600000000001"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint3" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link2"/>
+    <child link="AR5-5_08L-W4C1C5_link3"/>
+    <limit effort="66" lower="-3.1067" upper="3.1067" velocity="4.71238898038469"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.332"/>
+  </joint>
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 3-->
+  <link name="AR5-5_08L-W4C1C5_link3">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.862"/>
+      <inertia ixx="0.00519617" ixy="-0.00001270" ixz="0.00035675" iyy="0.00470378" iyz="-0.00003329" izz="0.00266768"/>
+      <origin rpy="0 0 0" xyz="0.007089000000000001 0.000655 -0.016514"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="joint4" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link3"/>
+    <child link="AR5-5_08L-W4C1C5_link4"/>
+    <limit effort="66" lower="-1.0472" upper="2.5307" velocity="5.235987755982989"/>
+    <!--     lower="-0.8727" upper="0.8727" -->
+    <axis xyz="0 1 0"/>
+    <!--     <origin rpy="0 0 0" xyz=0.01 0.0 0.0/> -->
+    <origin rpy="0 0 0" xyz="0.0105 0.0 0.0"/>
+  </joint>
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 4-->
+  <link name="AR5-5_08L-W4C1C5_link4">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link4.stl" scale=".001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.234"/>
+      <inertia ixx="0.00389593" ixy="0.00004675" ixz="-0.00016955" iyy="0.00308688" iyz="-0.00046659" izz="0.00188378"/>
+      <origin rpy="0 0 0" xyz="-0.007832 0.004208999999999999 0.073402"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <joint name="joint5" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link4"/>
+    <child link="AR5-5_08L-W4C1C5_link5"/>
+    <limit effort="19" lower="-3.1067" upper="3.1067" velocity="4.1887902047863905"/>
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="-0.0105 0.0 0.278"/>
+  </joint>
+  <transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 5-->
+  <link name="AR5-5_08L-W4C1C5_link5">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="1.328"/>
+      <inertia ixx="0.00284294" ixy="-0.00001276" ixz="0.00001949" iyy="0.00221035" iyz="-0.00002134" izz="0.00185120"/>
+      <origin rpy="0 0 0" xyz="0.000268 -0.0014750000000000002 -0.084143"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="joint6" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link5"/>
+    <child link="AR5-5_08L-W4C1C5_link6"/>
+    <limit effort="19" lower="-0.8727" upper="0.8727" velocity="4.1887902047863905"/>
+    <axis xyz="0 1 0"/>
+    <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <transmission name="tran6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 6-->
+  <link name="AR5-5_08L-W4C1C5_link6">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="0.93"/>
+      <inertia ixx="0.00072274" ixy="0.00000186" ixz="-0.00000123" iyy="0.00087867" iyz="0.00000057" izz="0.00092938"/>
+      <origin rpy="0 0 0" xyz="0.0051719999999999995 -0.000614 5.5e-05"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link6.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="joint7" type="revolute">
+    <parent link="AR5-5_08L-W4C1C5_link6"/>
+    <child link="AR5-5_08L-W4C1C5_link7"/>
+    <limit effort="19" lower="-0.8727" upper="0.8727" velocity="4.1887902047863905"/>
+    <axis xyz="1 0 0"/>
+    <origin rpy="0.0 0.0 0" xyz="0.0 0.0 0.0"/>
+  </joint>
+  <transmission name="tran7">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor7">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--link 7-->
+  <link name="AR5-5_08L-W4C1C5_link7">
+    <visual>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+      <material name="white"/>
+    </visual>
+    <inertial>
+      <mass value="0.332"/>
+      <inertia ixx="0.00052121" ixy="0.00000020" ixz="0.00003808" iyy="0.00079394" iyz="0.00000098" izz="0.00045990"/>
+      <origin rpy="0 0 0" xyz="-0.002716 3.1e-05 0.054983"/>
+    </inertial>
+    <collision>
+      <geometry>
+        <mesh filename="package://rokae_description/meshes/AR5-5_08L-W4C1C5/visual/AR5-5_08L-W4C1C5_link7.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    </collision>
+  </link>
+  <link name="AR5-5_08L-W4C1C5_tcp">
+    <inertial>
+      <mass value="0.0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+  </link>
+  <joint name="AR5-5_08L-W4C1C5_tcp_joint" type="fixed">
+    <parent link="AR5-5_08L-W4C1C5_link7"/>
+    <child link="AR5-5_08L-W4C1C5_tcp"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.09"/>
+  </joint>
+</robot>

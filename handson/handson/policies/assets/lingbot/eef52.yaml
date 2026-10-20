@@ -1,0 +1,16 @@
+states:
+  - observation.state.eef52:
+      origin_keys:
+        - observation.state: {start: 0, end: 52}
+actions:
+  - action.eef52:
+      origin_keys:
+        - action: {start: 0, end: 52}
+      subtract_state: false
+images:
+  - observation.images.camera_top:
+      origin_keys: observation.images.front
+  - observation.images.camera_wrist_left:
+      origin_keys: observation.images.wrist_left
+  - observation.images.camera_wrist_right:
+      origin_keys: observation.images.wrist_right

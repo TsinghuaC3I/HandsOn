@@ -1,0 +1,20 @@
+{
+  "name": "HandsOn",
+  "approved_design": "concept-03",
+  "palette": {
+    "navy": "#183449",
+    "teal": "#4198AC",
+    "dark_ink": "#E9EFF3",
+    "dark_accent": "#7BC0CD"
+  },
+  "roles": {
+    "hand": "navy",
+    "object": "teal",
+    "Hands": "teal",
+    "On": "navy"
+  },
+  "typeface": "Avenir Next Bold (outlined)",
+  "primary": "handson-lockup.svg",
+  "wordmark": "handson-wordmark.svg",
+  "icon": "handson-mark.svg"
+}

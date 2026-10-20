@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="5931.29" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="a_marbles_material" file="visuals/T_a_marbles_BC001.png"/>
+    <material name="a_marbles_material" texture="a_marbles_material" specular="1"/>
+    <mesh name="a_marbles_vis" file="visuals/optimized_visuals/a_marbles.obj"/>
+    <mesh name="a_marbles_Collider1_m_collision" file="collision/a_marbles_Collider1_m.obj"/>
+    <mesh name="a_marbles_Collider2_m_collision" file="collision/a_marbles_Collider2_m.obj"/>
+    <mesh name="a_marbles_Collider3_m_collision" file="collision/a_marbles_Collider3_m.obj"/>
+    <mesh name="a_marbles_Collider4_m_collision" file="collision/a_marbles_Collider4_m.obj"/>
+    <mesh name="a_marbles_Collider5_m_collision" file="collision/a_marbles_Collider5_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="a_marbles_material" mesh="a_marbles_vis"/>
+        <geom name="a_marbles_Collider1_m" class="collision" type="mesh" mesh="a_marbles_Collider1_m_collision"/>
+        <geom name="a_marbles_Collider2_m" class="collision" type="mesh" mesh="a_marbles_Collider2_m_collision"/>
+        <geom name="a_marbles_Collider3_m" class="collision" type="mesh" mesh="a_marbles_Collider3_m_collision"/>
+        <geom name="a_marbles_Collider4_m" class="collision" type="mesh" mesh="a_marbles_Collider4_m_collision"/>
+        <geom name="a_marbles_Collider5_m" class="collision" type="mesh" mesh="a_marbles_Collider5_m_collision"/>
+      <geom size="0.0541515 0.053487 0.039241" pos="-0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

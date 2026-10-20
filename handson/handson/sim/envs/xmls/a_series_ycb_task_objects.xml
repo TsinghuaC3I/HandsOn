@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="a_series_ycb_task_objects">
+  <include file="a_series_ycb_mesh_assets.xml" />
+  <worldbody>
+    <body name="011_banana" pos="-0.30 0.22 0.95">
+      <freejoint name="011_banana_joint" />
+      <geom name="011_banana_visual" class="a_series_ycb_visual" material="banana_material" mesh="banana_vis" />
+      <geom name="011_banana_collision_1" class="a_series_ycb_collision" mesh="banana_Collider1_m_collision" mass="0.011666667" />
+      <geom name="011_banana_collision_2" class="a_series_ycb_collision" mesh="banana_Collider2_m_collision" mass="0.011666667" />
+      <geom name="011_banana_collision_3" class="a_series_ycb_collision" mesh="banana_Collider3_m_collision" mass="0.011666667" />
+      <geom name="011_banana_collision_4" class="a_series_ycb_collision" mesh="banana_Collider4_m_collision" mass="0.011666667" />
+      <geom name="011_banana_collision_5" class="a_series_ycb_collision" mesh="banana_Collider5_m_collision" mass="0.011666667" />
+      <geom name="011_banana_collision_6" class="a_series_ycb_collision" mesh="banana_Collider6_m_collision" mass="0.011666667" />
+    </body>
+    <body name="apple" pos="-0.17 0.24 0.96">
+      <freejoint name="apple_joint" />
+      <geom name="apple_visual" class="a_series_ycb_visual" material="apple_material" mesh="apple_vis" />
+      <geom name="apple_collision_1" class="a_series_ycb_collision" mesh="apple_Collider1_m_collision" mass="0.02" />
+      <geom name="apple_collision_2" class="a_series_ycb_collision" mesh="apple_Collider2_m_collision" mass="0.02" />
+      <geom name="apple_collision_3" class="a_series_ycb_collision" mesh="apple_Collider3_m_collision" mass="0.02" />
+      <geom name="apple_collision_4" class="a_series_ycb_collision" mesh="apple_Collider4_m_collision" mass="0.02" />
+      <geom name="apple_collision_5" class="a_series_ycb_collision" mesh="apple_Collider5_m_collision" mass="0.02" />
+    </body>
+    <body name="orange" pos="-0.03 0.22 0.96">
+      <freejoint name="orange_joint" />
+      <geom name="orange_visual" class="a_series_ycb_visual" material="orange_material" mesh="orange_vis" />
+      <geom name="orange_collision_1" class="a_series_ycb_collision" mesh="orange_Collider1_m_collision" mass="0.11" />
+    </body>
+    <body name="pear" pos="0.11 0.24 0.97">
+      <freejoint name="pear_joint" />
+      <geom name="pear_visual" class="a_series_ycb_visual" material="pear_material" mesh="pear_vis" />
+      <geom name="pear_collision_1" class="a_series_ycb_collision" mesh="pear_Collider1_m_collision" mass="0.055" />
+      <geom name="pear_collision_2" class="a_series_ycb_collision" mesh="pear_Collider2_m_collision" mass="0.055" />
+    </body>
+
+    <body name="003_cracker_box" pos="-0.34 0.24 1.03">
+      <freejoint name="003_cracker_box_joint" />
+      <geom name="003_cracker_box_visual" class="a_series_ycb_visual" material="cracker_box_material" mesh="cracker_box_vis" />
+      <geom name="003_cracker_box_collision_1" class="a_series_ycb_collision" mesh="cracker_box_Collider1_m_collision" mass="0.12" />
+    </body>
+    <body name="004_sugar_box" pos="-0.21 0.25 1.01">
+      <freejoint name="004_sugar_box_joint" />
+      <geom name="004_sugar_box_visual" class="a_series_ycb_visual" material="sugar_box_material" mesh="sugar_box_vis" />
+      <geom name="004_sugar_box_collision_1" class="a_series_ycb_collision" mesh="sugar_box_Collider1_m_collision" mass="0.1" />
+    </body>
+    <body name="008_pudding_box" pos="-0.08 0.24 0.965">
+      <freejoint name="008_pudding_box_joint" />
+      <geom name="008_pudding_box_visual" class="a_series_ycb_visual" material="pudding_box_material" mesh="pudding_box_vis" />
+      <geom name="008_pudding_box_collision_1" class="a_series_ycb_collision" mesh="pudding_box_Collider1_m_collision" mass="0.07" />
+    </body>
+    <body name="025_mug" pos="0.05 0.25 0.965">
+      <freejoint name="025_mug_joint" />
+      <geom name="025_mug_visual" class="a_series_ycb_visual" material="mug_material" mesh="mug_vis" />
+      <geom name="025_mug_collision_1" class="a_series_ycb_collision" mesh="mug_Collider1_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_2" class="a_series_ycb_collision" mesh="mug_Collider2_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_3" class="a_series_ycb_collision" mesh="mug_Collider3_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_4" class="a_series_ycb_collision" mesh="mug_Collider4_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_5" class="a_series_ycb_collision" mesh="mug_Collider5_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_6" class="a_series_ycb_collision" mesh="mug_Collider6_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_7" class="a_series_ycb_collision" mesh="mug_Collider7_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_8" class="a_series_ycb_collision" mesh="mug_Collider8_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_9" class="a_series_ycb_collision" mesh="mug_Collider9_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_10" class="a_series_ycb_collision" mesh="mug_Collider10_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_11" class="a_series_ycb_collision" mesh="mug_Collider11_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_12" class="a_series_ycb_collision" mesh="mug_Collider12_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_13" class="a_series_ycb_collision" mesh="mug_Collider13_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_14" class="a_series_ycb_collision" mesh="mug_Collider14_m_collision" mass="0.0085714286" />
+    </body>
+    <body name="a_cup" pos="0.18 0.23 0.955">
+      <freejoint name="a_cup_joint" />
+      <geom name="a_cup_visual" class="a_series_ycb_visual" material="a_cups_material" mesh="a_cups_vis" />
+      <geom name="a_cup_collision_1" class="a_series_ycb_collision" mesh="a_cups_Collider1_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_2" class="a_series_ycb_collision" mesh="a_cups_Collider2_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_3" class="a_series_ycb_collision" mesh="a_cups_Collider3_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_4" class="a_series_ycb_collision" mesh="a_cups_Collider4_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_5" class="a_series_ycb_collision" mesh="a_cups_Collider5_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_6" class="a_series_ycb_collision" mesh="a_cups_Collider6_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_7" class="a_series_ycb_collision" mesh="a_cups_Collider7_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_8" class="a_series_ycb_collision" mesh="a_cups_Collider8_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_9" class="a_series_ycb_collision" mesh="a_cups_Collider9_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_10" class="a_series_ycb_collision" mesh="a_cups_Collider10_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_11" class="a_series_ycb_collision" mesh="a_cups_Collider11_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_12" class="a_series_ycb_collision" mesh="a_cups_Collider12_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_13" class="a_series_ycb_collision" mesh="a_cups_Collider13_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_14" class="a_series_ycb_collision" mesh="a_cups_Collider14_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_15" class="a_series_ycb_collision" mesh="a_cups_Collider15_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_16" class="a_series_ycb_collision" mesh="a_cups_Collider16_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_17" class="a_series_ycb_collision" mesh="a_cups_Collider17_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_18" class="a_series_ycb_collision" mesh="a_cups_Collider18_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_19" class="a_series_ycb_collision" mesh="a_cups_Collider19_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_20" class="a_series_ycb_collision" mesh="a_cups_Collider20_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_21" class="a_series_ycb_collision" mesh="a_cups_Collider21_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_22" class="a_series_ycb_collision" mesh="a_cups_Collider22_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_23" class="a_series_ycb_collision" mesh="a_cups_Collider23_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_24" class="a_series_ycb_collision" mesh="a_cups_Collider24_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_25" class="a_series_ycb_collision" mesh="a_cups_Collider25_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_26" class="a_series_ycb_collision" mesh="a_cups_Collider26_m_collision" mass="0.0022222222" />
+      <geom name="a_cup_collision_27" class="a_series_ycb_collision" mesh="a_cups_Collider27_m_collision" mass="0.0022222222" />
+    </body>
+
+    <body name="tray" pos="-0.12 -0.25 0.94" childclass="ycb_proxy">
+      <freejoint name="tray_joint" />
+      <geom name="tray_bottom" type="box" size="0.125 0.090 0.008" pos="0 0 0" material="handson_tray" mass="0.05" />
+      <geom name="tray_wall_pos_x" type="box" size="0.008 0.090 0.018" pos="0.125 0 0.018" material="handson_tray" mass="0.01" />
+      <geom name="tray_wall_neg_x" type="box" size="0.008 0.090 0.018" pos="-0.125 0 0.018" material="handson_tray" mass="0.01" />
+      <geom name="tray_wall_pos_y" type="box" size="0.125 0.008 0.018" pos="0 0.090 0.018" material="handson_tray" mass="0.01" />
+      <geom name="tray_wall_neg_y" type="box" size="0.125 0.008 0.018" pos="0 -0.090 0.018" material="handson_tray" mass="0.01" />
+      <site name="tray_center" pos="0 0 0.025" size="0.008" rgba="0 0 1 0" />
+    </body>
+
+    <body name="tennis_ball" pos="-0.27 0.23 0.953">
+      <freejoint name="tennis_ball_joint" />
+      <geom name="tennis_ball_visual" class="a_series_ycb_visual" material="tennis_ball_material" mesh="tennis_ball_vis" />
+      <geom name="tennis_ball_collision_1" class="a_series_ycb_collision" mesh="tennis_ball_Collider1_m_collision" mass="0.058" />
+    </body>
+    <body name="golf_ball" pos="-0.12 0.27 0.942">
+      <freejoint name="golf_ball_joint" />
+      <geom name="golf_ball_visual" class="a_series_ycb_visual" material="golf_ball_material" mesh="golf_ball_vis" />
+      <!-- The shipped collision hull has exact symmetric bounds +/-21.659 mm.
+           Use the equivalent analytic sphere so table contact cannot hop
+           between mesh facets during C02/A03 recording-origin stabilization. -->
+      <geom name="golf_ball_collision_1" class="a_series_ycb_collision" type="sphere" size="0.021659" mass="0.046" />
+    </body>
+    <body name="mini_soccer_ball" pos="0.04 0.23 0.960">
+      <freejoint name="mini_soccer_ball_joint" />
+      <geom name="mini_soccer_ball_visual" class="a_series_ycb_visual" material="mini_soccer_ball_material" mesh="mini_soccer_ball_vis" />
+      <geom name="mini_soccer_ball_collision_1" class="a_series_ycb_collision" mesh="mini_soccer_ball_Collider1_m_collision" mass="0.07" />
+    </body>
+    <body name="024_bowl" pos="-0.12 -0.24 0.921">
+      <freejoint name="024_bowl_joint" />
+      <geom name="024_bowl_visual" class="a_series_ycb_visual" material="bowl_material" mesh="bowl_vis" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_1" class="a_series_ycb_collision" mesh="bowl_Collider1_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_2" class="a_series_ycb_collision" mesh="bowl_Collider2_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_3" class="a_series_ycb_collision" mesh="bowl_Collider3_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_4" class="a_series_ycb_collision" mesh="bowl_Collider4_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_5" class="a_series_ycb_collision" mesh="bowl_Collider5_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_6" class="a_series_ycb_collision" mesh="bowl_Collider6_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_7" class="a_series_ycb_collision" mesh="bowl_Collider7_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_8" class="a_series_ycb_collision" mesh="bowl_Collider8_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_9" class="a_series_ycb_collision" mesh="bowl_Collider9_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_10" class="a_series_ycb_collision" mesh="bowl_Collider10_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_11" class="a_series_ycb_collision" mesh="bowl_Collider11_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_12" class="a_series_ycb_collision" mesh="bowl_Collider12_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_13" class="a_series_ycb_collision" mesh="bowl_Collider13_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_14" class="a_series_ycb_collision" mesh="bowl_Collider14_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_15" class="a_series_ycb_collision" mesh="bowl_Collider15_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_16" class="a_series_ycb_collision" mesh="bowl_Collider16_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_17" class="a_series_ycb_collision" mesh="bowl_Collider17_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_18" class="a_series_ycb_collision" mesh="bowl_Collider18_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_19" class="a_series_ycb_collision" mesh="bowl_Collider19_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_20" class="a_series_ycb_collision" mesh="bowl_Collider20_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_21" class="a_series_ycb_collision" mesh="bowl_Collider21_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_22" class="a_series_ycb_collision" mesh="bowl_Collider22_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_23" class="a_series_ycb_collision" mesh="bowl_Collider23_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_24" class="a_series_ycb_collision" mesh="bowl_Collider24_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_25" class="a_series_ycb_collision" mesh="bowl_Collider25_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_26" class="a_series_ycb_collision" mesh="bowl_Collider26_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_27" class="a_series_ycb_collision" mesh="bowl_Collider27_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_28" class="a_series_ycb_collision" mesh="bowl_Collider28_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_29" class="a_series_ycb_collision" mesh="bowl_Collider29_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_30" class="a_series_ycb_collision" mesh="bowl_Collider30_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_31" class="a_series_ycb_collision" mesh="bowl_Collider31_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_32" class="a_series_ycb_collision" mesh="bowl_Collider32_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_33" class="a_series_ycb_collision" mesh="bowl_Collider33_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <site name="024_bowl_center" pos="0 0 0.045" size="0.008" rgba="0 0 1 0" />
+    </body>
+
+    <body name="spoon" pos="-0.28 -0.26 0.931">
+      <freejoint name="spoon_joint" />
+      <geom name="spoon_visual" class="a_series_ycb_visual" material="spoon_material" mesh="spoon_vis" />
+      <!-- The scanned bowl hulls form a high vertical lip that pushes a marble
+           instead of sliding beneath it. Hull 2 overlaps the proxy at the neck
+           and can squeeze a marble during pouring; hull 3 retains the handle;
+           the thin proxy bowl below provides the interaction surface. -->
+      <!-- The rendered spoon is widened 1.2x in X.  Apply the same scale to
+           the authored collision hulls or the hand/marble can visibly enter
+           the bowl wall before PhysX sees contact. -->
+      <geom name="spoon_collision_1" class="a_series_ycb_collision" mesh="spoon_Collider1_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_2" class="a_series_ycb_collision" mesh="spoon_Collider2_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_3" class="a_series_ycb_collision" mesh="spoon_Collider3_m_collision" mass="0.0029166667" />
+      <geom name="spoon_collision_4" class="a_series_ycb_collision" mesh="spoon_Collider4_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <!-- Re-enable the YCB front-lip hulls.  These three convex pieces follow
+           the scanned rounded leading edge; the invisible proxy remains only
+           the bowl floor/side retention surface. -->
+      <geom name="spoon_collision_5" class="a_series_ycb_collision" mesh="spoon_Collider5_m_collision" mass="0.0029166667" contype="8" conaffinity="4" />
+      <geom name="spoon_collision_6" class="a_series_ycb_collision" mesh="spoon_Collider6_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_7" class="a_series_ycb_collision" mesh="spoon_Collider7_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_8" class="a_series_ycb_collision" mesh="spoon_Collider8_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_9" class="a_series_ycb_collision" mesh="spoon_Collider9_m_collision" mass="0.0029166667" contype="8" conaffinity="4" />
+      <geom name="spoon_collision_10" class="a_series_ycb_collision" mesh="spoon_Collider10_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_11" class="a_series_ycb_collision" mesh="spoon_Collider11_m_collision" mass="0.0029166667" contype="0" conaffinity="0" />
+      <geom name="spoon_collision_12" class="a_series_ycb_collision" mesh="spoon_Collider12_m_collision" mass="0.0029166667" contype="8" conaffinity="4" />
+      <!-- Keep every marble-only helper inside the visible spoon footprint.
+           This is a deliberately concave approximation of the YCB spoon bowl:
+           the leading ramp stays low for scooping, while the raised side and
+           trailing walls retain the marble during transport.  The front stays
+           open so the operator can still pour the marble out over the bowl. -->
+      <geom name="spoon_bowl_proxy_table_skid" type="box" size="0.021 0.028 0.00035" pos="0 0.066 -0.01050" rgba="0 0 0 0" contype="1" conaffinity="1" condim="6" priority="3" friction="1.4 0.05 0.003" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0001" />
+      <geom name="spoon_bowl_proxy_bottom" type="box" size="0.025 0.029 0.00135" pos="0 0.066 -0.00920" rgba="0 0 0 0" contype="8" conaffinity="4" condim="6" priority="3" friction="2.4 0.09 0.006" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0004" />
+      <geom name="spoon_bowl_proxy_entry_ramp" type="box" size="0.025 0.015 0.00045" pos="0 0.083 -0.007674" quat="0.99452190 -0.10452846 0 0" rgba="0 0 0 0" contype="8" conaffinity="4" condim="6" priority="3" friction="1.2 0.03 0.002" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0001" />
+      <geom name="spoon_bowl_proxy_left_rim" type="box" size="0.0025 0.030 0.018" pos="0.025 0.066 0.006" rgba="0 0 0 0" contype="8" conaffinity="4" condim="6" priority="3" friction="1.4 0.05 0.003" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0002" />
+      <geom name="spoon_bowl_proxy_right_rim" type="box" size="0.0025 0.030 0.018" pos="-0.025 0.066 0.006" rgba="0 0 0 0" contype="8" conaffinity="4" condim="6" priority="3" friction="1.4 0.05 0.003" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0002" />
+      <geom name="spoon_bowl_proxy_trailing_rim" type="box" size="0.024 0.0025 0.018" pos="0 0.036 0.006" rgba="0 0 0 0" contype="8" conaffinity="4" condim="6" priority="3" friction="1.4 0.05 0.003" solref="0.002 1" solimp="0.97 0.995 0.001" mass="0.0002" />
+    </body>
+
+    <body name="a_marbles" pos="-0.30 -0.31 0.934">
+      <freejoint name="a_marbles_joint" />
+      <geom name="a_marbles_visual_a" class="a_series_ycb_visual" type="mesh" mesh="c02_a_marbles_vis" material="a_marbles_material" rgba="1 1 1 1" />
+      <geom name="a_marbles_visual_b" class="a_series_ycb_visual" type="mesh" mesh="c02_b_marbles_vis" material="b_marbles_material" rgba="1 1 1 0" />
+      <geom name="a_marbles_visual_c" class="a_series_ycb_visual" type="mesh" mesh="c02_c_marbles_vis" material="c_marbles_berkeley_rgbd_material" rgba="1 1 1 0" />
+      <geom name="a_marbles_collision" class="a_series_ycb_collision" type="sphere" size="0.0120" pos="0 0 0" mass="0.0035" contype="4" conaffinity="1" condim="6" friction="0.55 0.005 0.0002" solref="0.002 1" solimp="0.97 0.995 0.001" />
+    </body>
+
+    <body name="rubiks_cube" pos="-0.12 0.04 0.95">
+      <freejoint name="rubiks_cube_joint" />
+      <geom name="rubiks_cube_visual" class="a_series_ycb_visual" material="rubiks_cube_material" mesh="rubiks_cube_vis" />
+      <geom name="rubiks_cube_collision_1" class="a_series_ycb_collision" mesh="rubiks_cube_Collider1_m_collision" mass="0.08" />
+    </body>
+
+    <body name="036_wood_block" pos="-0.36 -0.18 0.963">
+      <freejoint name="036_wood_block_joint" />
+      <geom name="036_wood_block_visual" class="a_series_ycb_visual" material="wood_block_material" mesh="wood_block_vis" />
+      <geom name="036_wood_block_collision_1" class="a_series_ycb_visual" mesh="wood_block_Collider1_m_collision" rgba="0 0 0 0" />
+      <geom name="036_wood_block_stable_collision" class="a_series_ycb_collision"
+            type="box" size="0.0433705 0.100369 0.042689" mass="0.12"
+            condim="6" priority="3" friction="1.4 0.04 0.003"
+            solref="0.004 1" solimp="0.97 0.995 0.001" rgba="0 0 0 0" />
+    </body>
+    <body name="BuildingBlock017" pos="-0.21 -0.18 0.935">
+      <freejoint name="BuildingBlock017_joint" />
+      <geom name="BuildingBlock017_visual" class="a_series_ycb_visual" material="BuildingBlock017_material" mesh="BuildingBlock017_vis" />
+      <geom name="BuildingBlock017_collision_1" class="a_series_ycb_collision" mesh="BuildingBlock017_Collider1_m_collision" mass="0.02" />
+    </body>
+    <body name="BuildingBlock018" pos="-0.06 -0.18 0.935">
+      <freejoint name="BuildingBlock018_joint" />
+      <geom name="BuildingBlock018_visual" class="a_series_ycb_visual" material="BuildingBlock018_material" mesh="BuildingBlock018_vis" />
+      <geom name="BuildingBlock018_collision_1" class="a_series_ycb_collision" mesh="BuildingBlock018_Collider1_m_collision" mass="0.02" />
+    </body>
+    <body name="BuildingBlock019" pos="0.09 -0.18 0.935">
+      <freejoint name="BuildingBlock019_joint" />
+      <geom name="BuildingBlock019_visual" class="a_series_ycb_visual" material="BuildingBlock019_material" mesh="BuildingBlock019_vis" />
+      <geom name="BuildingBlock019_collision_1" class="a_series_ycb_collision" mesh="BuildingBlock019_Collider1_m_collision" mass="0.02" />
+    </body>
+
+    <body name="019_pitcher_base" pos="-0.04 0.06 1.038">
+      <freejoint name="019_pitcher_base_joint" />
+      <geom name="019_pitcher_base_visual" class="a_series_ycb_visual" material="pitcher_base_material" mesh="pitcher_base_vis" />
+      <geom name="019_pitcher_base_collision_1" class="a_series_ycb_collision" mesh="pitcher_base_Collider1_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_2" class="a_series_ycb_collision" mesh="pitcher_base_Collider2_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_3" class="a_series_ycb_collision" mesh="pitcher_base_Collider3_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_4" class="a_series_ycb_collision" mesh="pitcher_base_Collider4_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_5" class="a_series_ycb_collision" mesh="pitcher_base_Collider5_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_6" class="a_series_ycb_collision" mesh="pitcher_base_Collider6_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_7" class="a_series_ycb_collision" mesh="pitcher_base_Collider7_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_8" class="a_series_ycb_collision" mesh="pitcher_base_Collider8_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_9" class="a_series_ycb_collision" mesh="pitcher_base_Collider9_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_10" class="a_series_ycb_collision" mesh="pitcher_base_Collider10_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_11" class="a_series_ycb_collision" mesh="pitcher_base_Collider11_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_12" class="a_series_ycb_collision" mesh="pitcher_base_Collider12_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_13" class="a_series_ycb_collision" mesh="pitcher_base_Collider13_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_14" class="a_series_ycb_collision" mesh="pitcher_base_Collider14_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_15" class="a_series_ycb_collision" mesh="pitcher_base_Collider15_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_16" class="a_series_ycb_collision" mesh="pitcher_base_Collider16_m_collision" mass="0.0105882353" />
+      <geom name="019_pitcher_base_collision_17" class="a_series_ycb_collision" mesh="pitcher_base_Collider17_m_collision" mass="0.0105882353" />
+      <!-- The scanned meshes leave an open numerical seam at the rim. This thin
+           physical seat prevents a correctly placed lid from falling through. -->
+      <geom name="pitcher_base_lid_seat" type="cylinder" size="0.052 0.0005"
+            pos="0 0 0.1176775" rgba="0 0 0 0" group="3" mass="0"
+            condim="6" priority="4" friction="1.2 0.02 0.001"
+            solref="0.0015 1" solimp="0.995 0.999 0.0001" />
+      <site name="pitcher_lid_closed_goal" pos="0 0 0.142182" size="0.008" rgba="0.1 0.8 0.25 0" />
+    </body>
+
+    <body name="pitcher_lid" pos="-0.31 -0.18 0.944">
+      <freejoint name="pitcher_lid_joint" />
+      <geom name="pitcher_lid_visual" class="a_series_ycb_visual" material="pitcher_lid_material" mesh="pitcher_lid_vis" />
+      <geom name="pitcher_lid_collision_1" class="a_series_ycb_collision" mesh="pitcher_lid_Collider1_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_2" class="a_series_ycb_collision" mesh="pitcher_lid_Collider2_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_3" class="a_series_ycb_collision" mesh="pitcher_lid_Collider3_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_4" class="a_series_ycb_collision" mesh="pitcher_lid_Collider4_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_5" class="a_series_ycb_collision" mesh="pitcher_lid_Collider5_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_6" class="a_series_ycb_collision" mesh="pitcher_lid_Collider6_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_7" class="a_series_ycb_collision" mesh="pitcher_lid_Collider7_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_8" class="a_series_ycb_collision" mesh="pitcher_lid_Collider8_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_9" class="a_series_ycb_collision" mesh="pitcher_lid_Collider9_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_10" class="a_series_ycb_collision" mesh="pitcher_lid_Collider10_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_11" class="a_series_ycb_collision" mesh="pitcher_lid_Collider11_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_collision_12" class="a_series_ycb_collision" mesh="pitcher_lid_Collider12_m_collision" mass="0.005" />
+      <geom name="pitcher_lid_bottom_seat" type="cylinder" size="0.052 0.0005"
+            pos="0 0 -0.0235045" rgba="0 0 0 0" group="3" mass="0"
+            condim="6" priority="4" friction="1.2 0.02 0.001"
+            solref="0.0015 1" solimp="0.995 0.999 0.0001" />
+    </body>
+
+    <body name="Clear_Box" pos="-0.04 0.06 0.995">
+      <freejoint name="Clear_Box_joint" />
+      <geom name="Clear_Box_visual" class="a_series_ycb_visual" material="Clear_Box_material" mesh="Clear_Box_vis" />
+      <geom name="Clear_Box_collision_1" class="a_series_ycb_collision" mesh="Clear_Box_Collider1_m_collision" mass="0.01" />
+      <!-- Collider2 is the only bottom plate. Its source mesh is already an
+           axis-aligned rectangular prism; author the exact same bounds as an
+           analytic box so GPU PhysX creates one planar table manifold. -->
+      <geom name="Clear_Box_collision_2" class="a_series_ycb_collision"
+            type="box" size="0.100795 0.152651 0.001593"
+            pos="0 0.000016 -0.072907" mass="0.01" />
+      <geom name="Clear_Box_collision_3" class="a_series_ycb_collision" mesh="Clear_Box_Collider3_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_4" class="a_series_ycb_collision" mesh="Clear_Box_Collider4_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_5" class="a_series_ycb_collision" mesh="Clear_Box_Collider5_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_6" class="a_series_ycb_collision" mesh="Clear_Box_Collider6_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_7" class="a_series_ycb_collision" mesh="Clear_Box_Collider7_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_8" class="a_series_ycb_collision" mesh="Clear_Box_Collider8_m_collision" mass="0.01" />
+      <geom name="Clear_Box_collision_9" class="a_series_ycb_collision" mesh="Clear_Box_Collider9_m_collision" mass="0.01" />
+      <site name="box_lid_closed_goal" pos="0 0 0.0845" size="0.008" rgba="0.1 0.8 0.25 0" />
+    </body>
+
+    <body name="Box_lid" pos="-0.31 -0.18 0.930">
+      <freejoint name="Box_lid_joint" />
+      <geom name="Box_lid_visual" class="a_series_ycb_visual" material="Box_lid_material" mesh="Box_lid_vis" />
+      <!-- Use the visible lid mesh as one convex-hull collider.  Its flat
+           bottom keeps one support manifold while its rounded XY outline
+           removes the invisible corners created by the old bounding box. -->
+      <geom name="Box_lid_collision_1" class="a_series_ycb_collision"
+            mesh="Box_lid_vis" mass="0.04" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,3033 @@
+{
+  "schema": "handson.blender_visual_bundle.v1",
+  "hardware": "rokae_ar5_5_08_wuji1",
+  "profile": "real_v1_glove_cushion_v6_edited",
+  "meters_per_unit": 1,
+  "up_axis": "Z",
+  "visual_only": true,
+  "links": [
+    {
+      "link_name": "link0_right",
+      "asset": "links/link0_right.usdc",
+      "prim": "/Visual",
+      "sha256": "00647ce3d77b55a66f44663f629ffb6907778ca572e8f0c740706d044a00a422",
+      "bounds_local_m": [
+        [
+          -0.052499622106552124,
+          -0.05648447200655937,
+          -3.5852722700402406e-13
+        ],
+        [
+          0.05650000274181366,
+          0.056498125195503235,
+          0.10320000350475311
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link1_right",
+      "asset": "links/link1_right.usdc",
+      "prim": "/Visual",
+      "sha256": "7e332e8326d4537fc959c2f9b25e22184a3149f483c67a70d77b96daf0a3b0af",
+      "bounds_local_m": [
+        [
+          -0.051998913288116455,
+          -0.055000003427267075,
+          0.10100000351667404
+        ],
+        [
+          0.05199820548295975,
+          0.06229691579937935,
+          0.226500004529953
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link2_right",
+      "asset": "links/link2_right.usdc",
+      "prim": "/Visual",
+      "sha256": "9ad21ffe5014838a2aefcf6bb073900446de9196ffc018bf9cc6f84202d826fa",
+      "bounds_local_m": [
+        [
+          -0.05658119171857834,
+          -0.07084302604198456,
+          -0.05665496736764908
+        ],
+        [
+          0.05658099055290222,
+          0.07084302604198456,
+          0.18300001323223114
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link3_right",
+      "asset": "links/link3_right.usdc",
+      "prim": "/Visual",
+      "sha256": "ea10ea655519847d7774c776067d6cae77d698c62a9a43e2ce533a9daa35c964",
+      "bounds_local_m": [
+        [
+          -0.04837018996477127,
+          -0.05925219878554344,
+          -0.1600000113248825
+        ],
+        [
+          0.061812158674001694,
+          0.05235219746828079,
+          0.051322609186172485
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link4_right",
+      "asset": "links/link4_right.usdc",
+      "prim": "/Visual",
+      "sha256": "e4f27684095baa4ee26dd826329434e5e65e136516c3d17c329e9d71ca9c52bc",
+      "bounds_local_m": [
+        [
+          -0.05625145882368088,
+          -0.06676089018583298,
+          -0.049574583768844604
+        ],
+        [
+          0.049574438482522964,
+          0.06676270067691803,
+          0.14000000059604645
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link5_right",
+      "asset": "links/link5_right.usdc",
+      "prim": "/Visual",
+      "sha256": "1051cc6b1b634e266f78a8cadec0850d4aa0cd9da6172caab79506fbd14620ed",
+      "bounds_local_m": [
+        [
+          -0.044600650668144226,
+          -0.05335042625665665,
+          -0.14100000262260437
+        ],
+        [
+          0.044600650668144226,
+          0.05335042625665665,
+          0.014145043678581715
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link6_right",
+      "asset": "links/link6_right.usda",
+      "prim": "/Visual",
+      "sha256": "cdc4ce5c0bc47d6ac34f32e8e3ddddcfe7498bc3e12eb79aeae6b88b7fd203ae",
+      "bounds_local_m": [
+        [
+          -0.04090000316500664,
+          -0.044899988919496536,
+          -0.03899925574660301
+        ],
+        [
+          0.0568000003695488,
+          0.03800000250339508,
+          0.03899925947189331
+        ]
+      ],
+      "objects": 2,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link7_right",
+      "asset": "links/link7_right.usdc",
+      "prim": "/Visual",
+      "sha256": "b15aee6a511805e1c037529b53a9852c803563f7ac0309b1788dd8f4e8a0e0a4",
+      "bounds_local_m": [
+        [
+          -0.05486179143190384,
+          -0.0357029065489769,
+          -0.03571459650993347
+        ],
+        [
+          0.0548580028116703,
+          0.03570322319865227,
+          0.09000000357627869
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "attachment_right",
+      "asset": "links/attachment_right.usdc",
+      "prim": "/Visual",
+      "sha256": "3c08a8d117a42126569eed0a24aa9706e33b419ab1c11f445e7b99305baca91a",
+      "bounds_local_m": [
+        [
+          -0.06948196887969971,
+          -0.06948196887969971,
+          0.0
+        ],
+        [
+          0.0314844585955143,
+          0.0314844585955143,
+          0.03856455162167549
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "right_palm_link",
+      "asset": "links/right_palm_link.usdc",
+      "prim": "/Visual",
+      "sha256": "b523613c5e6cb1e4cb65361ff713989f344e3ec49f215a4621e6a386a2977d74",
+      "bounds_local_m": [
+        [
+          -0.03576376661658287,
+          -0.1401291936635971,
+          -0.055555861443281174
+        ],
+        [
+          0.032675180584192276,
+          0.03908705338835716,
+          0.09686684608459473
+        ]
+      ],
+      "objects": 13,
+      "raised_grip_blocks": 406,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger1_link1",
+      "asset": "links/right_finger1_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "6d454301389cf127f5907afd617e448b1155fe23d385cdd01ac60c5cee0616e4",
+      "bounds_local_m": [
+        [
+          -0.015591052360832691,
+          -0.013504814356565475,
+          -0.004890779498964548
+        ],
+        [
+          0.009267405606806278,
+          0.011299649253487587,
+          0.02209979109466076
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 61,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger1_link2",
+      "asset": "links/right_finger1_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "2889ba5382e5cfba7e752e4f0cbbe9b64fa1186c29879a71cadd0d08853e0d2e",
+      "bounds_local_m": [
+        [
+          -0.012427500449120998,
+          -0.011430729180574417,
+          -0.006444654427468777
+        ],
+        [
+          0.01043020375072956,
+          0.011432690545916557,
+          0.03966198489069939
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 120,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger1_link3",
+      "asset": "links/right_finger1_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "267bc2575baba6f9a03324d7eff7c62eb27cf139908951dd89f7f63f8c9b2fc8",
+      "bounds_local_m": [
+        [
+          -0.012456752359867096,
+          -0.011461630463600159,
+          -0.006442326586693525
+        ],
+        [
+          0.010425299406051636,
+          0.0114269545301795,
+          0.03420792147517204
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 105,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger1_link4",
+      "asset": "links/right_finger1_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "aea7b1e68cf2e22ac044f35d512ebddc7fcf697d1e41f370daa607f14676383f",
+      "bounds_local_m": [
+        [
+          -0.012499288655817509,
+          -0.011652648448944092,
+          -0.006450802553445101
+        ],
+        [
+          0.010438119061291218,
+          0.011252554133534431,
+          0.03432869166135788
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 107,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger2_link1",
+      "asset": "links/right_finger2_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "efa872d0376ce4495621eeb7191124c7144d9a72b1b7e204b21b45cdc58c6d8b",
+      "bounds_local_m": [
+        [
+          -0.0141170434653759,
+          -0.010773347690701485,
+          -0.0068941558711230755
+        ],
+        [
+          0.0060498700477182865,
+          0.010892353020608425,
+          0.008392415009438992
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger2_link2",
+      "asset": "links/right_finger2_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "defba3ff49c9efdcf33ebac4b79f69ba45b36199f61223ebff26848b08a6aa52",
+      "bounds_local_m": [
+        [
+          -0.011446245014667511,
+          -0.005667596589773893,
+          -0.006484597455710173
+        ],
+        [
+          0.011470424942672253,
+          0.0171331949532032,
+          0.049972135573625565
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger2_link3",
+      "asset": "links/right_finger2_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "37f9252c4d0060a42da679e0165e09244332135a8df2e25a9e752e61d518e9dc",
+      "bounds_local_m": [
+        [
+          -0.012500366196036339,
+          -0.011308861896395683,
+          -0.004657327197492123
+        ],
+        [
+          0.010426774621009827,
+          0.011449101381003857,
+          0.03583797439932823
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger2_link4",
+      "asset": "links/right_finger2_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "858c094f6197f04ba987016f67605ac623149a5b269425b3065771da675b53c2",
+      "bounds_local_m": [
+        [
+          -0.012472019530832767,
+          -0.011224091053009033,
+          -0.004661919549107552
+        ],
+        [
+          0.010391559451818466,
+          0.011656110174953938,
+          0.030433250591158867
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger3_link1",
+      "asset": "links/right_finger3_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "75978dd34ecfcc41833cfd0dc416e933c99edd11c8850388b98b372254591a1c",
+      "bounds_local_m": [
+        [
+          -0.014117040671408176,
+          -0.010773343965411186,
+          -0.0068941558711230755
+        ],
+        [
+          0.006049866322427988,
+          0.010892348363995552,
+          0.008392413146793842
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger3_link2",
+      "asset": "links/right_finger3_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "ea0a1a53afe00db2913966669a5bd59c3b1c3bb79caf222ef155762a5e7c37d4",
+      "bounds_local_m": [
+        [
+          -0.011446334421634674,
+          -0.005668593570590019,
+          -0.006484557408839464
+        ],
+        [
+          0.01146928034722805,
+          0.01714540272951126,
+          0.049972180277109146
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger3_link3",
+      "asset": "links/right_finger3_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "97e7f28c6a8586b3210e0ef60dc8b1a3302b099f614ac9c50af703ed2bbc2cf3",
+      "bounds_local_m": [
+        [
+          -0.012500366196036339,
+          -0.011308861896395683,
+          -0.004657327197492123
+        ],
+        [
+          0.010426774621009827,
+          0.011449101381003857,
+          0.03583797439932823
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger3_link4",
+      "asset": "links/right_finger3_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "aa477775b40a46000ed06a093e4b1d7985d37d77dacde672a13d5d4dad2070b6",
+      "bounds_local_m": [
+        [
+          -0.012473161332309246,
+          -0.011225560680031776,
+          -0.004661922808736563
+        ],
+        [
+          0.010400556959211826,
+          0.011654931120574474,
+          0.030433300882577896
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger4_link1",
+      "asset": "links/right_finger4_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "1ddecb2fca5a4717200f0af69fea30f2a46cb3d2ea56f0021ee515c3c5b23896",
+      "bounds_local_m": [
+        [
+          -0.014114867895841599,
+          -0.010771793313324451,
+          -0.006916988641023636
+        ],
+        [
+          0.006044548470526934,
+          0.010891016572713852,
+          0.008392413146793842
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger4_link2",
+      "asset": "links/right_finger4_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "babb4018a0bd33ddc17c15ff262699aa46dcb5d1f3f96918d3c8b462de13398c",
+      "bounds_local_m": [
+        [
+          -0.011446832679212093,
+          -0.005667775869369507,
+          -0.006484557408839464
+        ],
+        [
+          0.011468743905425072,
+          0.017138507217168808,
+          0.049972180277109146
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger4_link3",
+      "asset": "links/right_finger4_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "b16f79b45b718c51c5a77b58233457b5c7de38ed8504e4ef5d2dd1699b26db26",
+      "bounds_local_m": [
+        [
+          -0.012500366196036339,
+          -0.011308861896395683,
+          -0.004657327197492123
+        ],
+        [
+          0.010426774621009827,
+          0.011449101381003857,
+          0.03583797439932823
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger4_link4",
+      "asset": "links/right_finger4_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "584c9679a40c004b67b891ec8e5e6eb60b4a3d541fde6980c79095fb9e94168c",
+      "bounds_local_m": [
+        [
+          -0.012479632161557674,
+          -0.011242124252021313,
+          -0.004662052728235722
+        ],
+        [
+          0.01039061974734068,
+          0.01162748597562313,
+          0.030432673171162605
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 88,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger5_link1",
+      "asset": "links/right_finger5_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "5ddd75d97eb2b93b82376997249654b25efa983bd7856739f3492b877c70442c",
+      "bounds_local_m": [
+        [
+          -0.0141170434653759,
+          -0.010773347690701485,
+          -0.0068941558711230755
+        ],
+        [
+          0.006049866788089275,
+          0.010892355814576149,
+          0.008392413146793842
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger5_link2",
+      "asset": "links/right_finger5_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "0a08fa4c4f2ed01c08db2e0575381f11611bb84bd088ee70498a94b47b12c882",
+      "bounds_local_m": [
+        [
+          -0.011447224766016006,
+          -0.005667778197675943,
+          -0.006484557408839464
+        ],
+        [
+          0.011469113640487194,
+          0.017133040353655815,
+          0.049972180277109146
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger5_link3",
+      "asset": "links/right_finger5_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "f4865c68403e4f591bc21ee606533de3f5f5c2fe715b8421aa14dcf2d1fa5c70",
+      "bounds_local_m": [
+        [
+          -0.012500366196036339,
+          -0.011308861896395683,
+          -0.004657327197492123
+        ],
+        [
+          0.010426774621009827,
+          0.011449101381003857,
+          0.03583797439932823
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "right_finger5_link4",
+      "asset": "links/right_finger5_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "7e800847188bc7c57e3778eed61808e2e37338e29be5bade429dc92a5a7afb8e",
+      "bounds_local_m": [
+        [
+          -0.012469636276364326,
+          -0.01121532917022705,
+          -0.004661911632865667
+        ],
+        [
+          0.010395148769021034,
+          0.011664221063256264,
+          0.03043009527027607
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "link0_left",
+      "asset": "links/link0_left.usdc",
+      "prim": "/Visual",
+      "sha256": "488aef91252183206fd154bfc693ced33dcbcdb03c097f9c6079778e342c19e5",
+      "bounds_local_m": [
+        [
+          -0.052499622106552124,
+          -0.05648447200655937,
+          -3.5852722700402406e-13
+        ],
+        [
+          0.05650000274181366,
+          0.056498125195503235,
+          0.10320000350475311
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link1_left",
+      "asset": "links/link1_left.usdc",
+      "prim": "/Visual",
+      "sha256": "ab2170f7f0f3716c19a07d6e20d59d8c6690e8aab9733429f3cd157f5096d438",
+      "bounds_local_m": [
+        [
+          -0.05199819430708885,
+          -0.06229691579937935,
+          0.10100000351667404
+        ],
+        [
+          0.05199892446398735,
+          0.055000003427267075,
+          0.226500004529953
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link2_left",
+      "asset": "links/link2_left.usdc",
+      "prim": "/Visual",
+      "sha256": "38ef0ff3794cc85687ff105445228e6907c2969f414ea02d86bc4ed707df7a83",
+      "bounds_local_m": [
+        [
+          -0.05658099055290222,
+          -0.07084302604198456,
+          -0.05665496736764908
+        ],
+        [
+          0.05658119171857834,
+          0.07084302604198456,
+          0.18300001323223114
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link3_left",
+      "asset": "links/link3_left.usdc",
+      "prim": "/Visual",
+      "sha256": "d80b8dd9335f36f61419d8711567971f591a7a665741433f06e48da3e491fdb5",
+      "bounds_local_m": [
+        [
+          -0.04837018996477127,
+          -0.05235219746828079,
+          -0.1600000113248825
+        ],
+        [
+          0.061812158674001694,
+          0.05925219878554344,
+          0.051322609186172485
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link4_left",
+      "asset": "links/link4_left.usdc",
+      "prim": "/Visual",
+      "sha256": "05b3ffcef4411337f2e2ad26f4119d1ee894eb7f843da9ad16255974fbef07b3",
+      "bounds_local_m": [
+        [
+          -0.05625145882368088,
+          -0.06676270067691803,
+          -0.049574583768844604
+        ],
+        [
+          0.049574438482522964,
+          0.06676089018583298,
+          0.14000000059604645
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link5_left",
+      "asset": "links/link5_left.usdc",
+      "prim": "/Visual",
+      "sha256": "31f017d95aa1372528d11fffea5e4d1620ba15bdd6234ca24d57b925983934fd",
+      "bounds_local_m": [
+        [
+          -0.044600650668144226,
+          -0.05335042625665665,
+          -0.14100000262260437
+        ],
+        [
+          0.044600650668144226,
+          0.05335042625665665,
+          0.014145043678581715
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link6_left",
+      "asset": "links/link6_left.usda",
+      "prim": "/Visual",
+      "sha256": "e45413eca89d6ad0b2564210f5248f915b2d83d93e18332cb9fef1c20b69b352",
+      "bounds_local_m": [
+        [
+          -0.04090000316500664,
+          -0.03800000250339508,
+          -0.03899925574660301
+        ],
+        [
+          0.0568000003695488,
+          0.044899988919496536,
+          0.03899925947189331
+        ]
+      ],
+      "objects": 2,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "link7_left",
+      "asset": "links/link7_left.usdc",
+      "prim": "/Visual",
+      "sha256": "8d0b2bed21996cd44fa466b6031697f5fd0d18afdb0dc955829228f23d767c43",
+      "bounds_local_m": [
+        [
+          -0.05486179143190384,
+          -0.03569779917597771,
+          -0.03571459650993347
+        ],
+        [
+          0.0548580028116703,
+          0.035689134150743484,
+          0.09000000357627869
+        ]
+      ],
+      "objects": 1,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "attachment_left",
+      "asset": "links/attachment_left.usdc",
+      "prim": "/Visual",
+      "sha256": "d8ea1adb3057ccc3ee88a9a3d6134d19d091ac02ed9e36f336262d2b720b1e8a",
+      "bounds_local_m": [
+        [
+          -0.0694819986820221,
+          -0.04424002766609192,
+          0.0
+        ],
+        [
+          0.03148446977138519,
+          0.0694819986820221,
+          0.03856455162167549
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 0,
+      "normal_map_transfer": []
+    },
+    {
+      "link_name": "left_palm_link",
+      "asset": "links/left_palm_link.usdc",
+      "prim": "/Visual",
+      "sha256": "65c2e17b58be6f0843b7a5108552887f244382898b016ae927c726b84de0dcd0",
+      "bounds_local_m": [
+        [
+          -0.029431147500872612,
+          -0.03907990828156471,
+          -0.035045795142650604
+        ],
+        [
+          0.0414624884724617,
+          0.05774599313735962,
+          0.09686879813671112
+        ]
+      ],
+      "objects": 13,
+      "raised_grip_blocks": 404,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger1_link1",
+      "asset": "links/left_finger1_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "ffc9835bc77e35fca52e0a48a14cb683e7befc1899ea4ce5d1f9c606f3275e3f",
+      "bounds_local_m": [
+        [
+          -0.015533982776105404,
+          -0.011272874660789967,
+          -0.0048708380199968815
+        ],
+        [
+          0.009259113110601902,
+          0.0133777791634202,
+          0.022095611318945885
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 61,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger1_link2",
+      "asset": "links/left_finger1_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "8831d0c21aed2274bfcfca8e88b1b25ffdd888756a834b9e8e54bddc336ebdab",
+      "bounds_local_m": [
+        [
+          -0.010416190139949322,
+          -0.011479739099740982,
+          -0.006455436814576387
+        ],
+        [
+          0.01244666799902916,
+          0.011467943899333477,
+          0.03965158760547638
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 119,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger1_link3",
+      "asset": "links/left_finger1_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "01f175c548f699a042049003a0619a739f3b434cd7f0d6009606964ea7fd7f7b",
+      "bounds_local_m": [
+        [
+          -0.01245130691677332,
+          -0.011412424966692924,
+          -0.006451492663472891
+        ],
+        [
+          0.010421842336654663,
+          0.011448681354522705,
+          0.034208010882139206
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 105,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger1_link4",
+      "asset": "links/left_finger1_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "1a8a01c9c06d51734383fbd703bf9f0c609a24e5be30947f06cd15a557bd594c",
+      "bounds_local_m": [
+        [
+          -0.012484620325267315,
+          -0.011219976469874382,
+          -0.006450802553445101
+        ],
+        [
+          0.010431915521621704,
+          0.011691154912114143,
+          0.034315407276153564
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 108,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger2_link1",
+      "asset": "links/left_finger2_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "5e4e15471bf880d85096148d88cae4a1e2cfe89fe0224f8bf746ee38305bab82",
+      "bounds_local_m": [
+        [
+          -0.0141140790656209,
+          -0.010777851566672325,
+          -0.006894376128911972
+        ],
+        [
+          0.006050943396985531,
+          0.010900911875069141,
+          0.008390696719288826
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger2_link2",
+      "asset": "links/left_finger2_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "596bf5d5458a8e6d5e58b473787a798be6e4792ea316caa942cf2f7da8f07847",
+      "bounds_local_m": [
+        [
+          -0.011444994248449802,
+          -0.005667413119226694,
+          -0.0064817676320672035
+        ],
+        [
+          0.011467261239886284,
+          0.017125235870480537,
+          0.0500020757317543
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger2_link3",
+      "asset": "links/left_finger2_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "e8ece775e7f46f3b85b0f993acf56b743e4b3eba5055f21b417dbb6651cf898d",
+      "bounds_local_m": [
+        [
+          -0.012502862140536308,
+          -0.01140986941754818,
+          -0.00466425996273756
+        ],
+        [
+          0.010424084030091763,
+          0.011342793703079224,
+          0.03583911061286926
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger2_link4",
+      "asset": "links/left_finger2_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "e99a452814aa4e00199bd2db0cf9810ec555fa7ecb1ac20f1881b50b25bb457b",
+      "bounds_local_m": [
+        [
+          -0.012476461939513683,
+          -0.011216326616704464,
+          -0.004661915358155966
+        ],
+        [
+          0.010396120138466358,
+          0.011663764715194702,
+          0.030430423095822334
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger3_link1",
+      "asset": "links/left_finger3_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "802e3c3de32341381c2806510f2761e45450371826cc7b2294b19be4ac244d7b",
+      "bounds_local_m": [
+        [
+          -0.014116981998085976,
+          -0.010773241519927979,
+          -0.006894377991557121
+        ],
+        [
+          0.006049656309187412,
+          0.010892554186284542,
+          0.008392407558858395
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger3_link2",
+      "asset": "links/left_finger3_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "13b6f09cbaf52b26193a51f66ed2513e598288ac2b6e46f55ddc6f167f35d8ee",
+      "bounds_local_m": [
+        [
+          -0.011444995179772377,
+          -0.005667421035468578,
+          -0.0064817676320672035
+        ],
+        [
+          0.011467251926660538,
+          0.01712523214519024,
+          0.0500020757317543
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger3_link3",
+      "asset": "links/left_finger3_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "04d896d1c122b20f2e33da92d9837a7be21695a39c075b95dcfe32ed86955de4",
+      "bounds_local_m": [
+        [
+          -0.012502862140536308,
+          -0.01140986941754818,
+          -0.00466425996273756
+        ],
+        [
+          0.010424084030091763,
+          0.011342793703079224,
+          0.03583911061286926
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger3_link4",
+      "asset": "links/left_finger3_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "e86fc4862b2e78c278e68c08f15e8ae1fe82ce42b2bdb5f143745e5ce40a3a70",
+      "bounds_local_m": [
+        [
+          -0.012475939467549324,
+          -0.01122360024601221,
+          -0.00466191815212369
+        ],
+        [
+          0.010388332419097424,
+          0.011656737886369228,
+          0.03043314628303051
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger4_link1",
+      "asset": "links/left_finger4_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "a36574741026abb1d6fc8f199462e59f4be2f453eae7fc6db6b2677924964231",
+      "bounds_local_m": [
+        [
+          -0.014113135635852814,
+          -0.010770926252007484,
+          -0.006928371265530586
+        ],
+        [
+          0.006041740067303181,
+          0.01089056208729744,
+          0.008392407558858395
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger4_link2",
+      "asset": "links/left_finger4_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "26ebeeee9b7ffc672c3c146b4acf7a3234687ed159214b8702a00028cc48a989",
+      "bounds_local_m": [
+        [
+          -0.011444991454482079,
+          -0.005667413584887981,
+          -0.0064817676320672035
+        ],
+        [
+          0.011467262171208858,
+          0.017125235870480537,
+          0.0500020757317543
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger4_link3",
+      "asset": "links/left_finger4_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "1e010678e30cc7a4368019fe45f3035bba201f3ea7142ea095f5a93f6b9929c9",
+      "bounds_local_m": [
+        [
+          -0.012502862140536308,
+          -0.01140986941754818,
+          -0.00466425996273756
+        ],
+        [
+          0.010424084030091763,
+          0.011342793703079224,
+          0.03583911061286926
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger4_link4",
+      "asset": "links/left_finger4_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "bae257668019e9c0af5b649732be475b6954c17319dca948614ec78a7fd09645",
+      "bounds_local_m": [
+        [
+          -0.012472755275666714,
+          -0.011229430325329304,
+          -0.004661913029849529
+        ],
+        [
+          0.010396894998848438,
+          0.011647069826722145,
+          0.030433038249611855
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger5_link1",
+      "asset": "links/left_finger5_link1.usdc",
+      "prim": "/Visual",
+      "sha256": "934f457382a62c0fe9321a1a7ef3b26c6717b7b59bc32c137e3cb445f9dbdea1",
+      "bounds_local_m": [
+        [
+          -0.014116981998085976,
+          -0.010773246176540852,
+          -0.006894377525895834
+        ],
+        [
+          0.006049660034477711,
+          0.010892546735703945,
+          0.008392405696213245
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 32,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger5_link2",
+      "asset": "links/left_finger5_link2.usdc",
+      "prim": "/Visual",
+      "sha256": "c6356a818ff28b3eb64d07e06a251feb661089207528194f42fd9be38a8bd3ad",
+      "bounds_local_m": [
+        [
+          -0.01144569180905819,
+          -0.005667420104146004,
+          -0.0064817676320672035
+        ],
+        [
+          0.011467240750789642,
+          0.0171253252774477,
+          0.0500020757317543
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 143,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger5_link3",
+      "asset": "links/left_finger5_link3.usdc",
+      "prim": "/Visual",
+      "sha256": "971192165c890708beb186daafdc6dfd816b5b29887edaa4f49763a1ec3fe1d6",
+      "bounds_local_m": [
+        [
+          -0.012502862140536308,
+          -0.011409868486225605,
+          -0.004664259031414986
+        ],
+        [
+          0.010424087755382061,
+          0.011342788115143776,
+          0.03583909943699837
+        ]
+      ],
+      "objects": 3,
+      "raised_grip_blocks": 106,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "link_name": "left_finger5_link4",
+      "asset": "links/left_finger5_link4.usdc",
+      "prim": "/Visual",
+      "sha256": "493fda98f33d7a4eb2753fbae732a3c275958bc03a4ee75c5a1a46784666b084",
+      "bounds_local_m": [
+        [
+          -0.012474985793232918,
+          -0.011225600726902485,
+          -0.004661921877413988
+        ],
+        [
+          0.010398883372545242,
+          0.011656447313725948,
+          0.030433224514126778
+        ]
+      ],
+      "objects": 4,
+      "raised_grip_blocks": 89,
+      "normal_map_transfer": [
+        {
+          "material": "Glove_KnittedBlackBacking",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.8500000238418579,
+          "texture_path": "/Visual/_materials/Glove_KnittedBlackBacking/Image_Texture",
+          "scale": [
+            1.7000000476837158,
+            1.7000000476837158,
+            1.7000000476837158,
+            1.0
+          ],
+          "bias": [
+            -0.8500000238418579,
+            -0.8500000238418579,
+            -0.7000000476837158,
+            0.0
+          ]
+        },
+        {
+          "material": "Glove_RoundedRubberWeave",
+          "shader": "Principled BSDF",
+          "texture": "Image Texture",
+          "strength": 0.2800000011920929,
+          "texture_path": "/Visual/_materials/Glove_RoundedRubberWeave/Image_Texture",
+          "scale": [
+            0.5600000023841858,
+            0.5600000023841858,
+            0.5600000023841858,
+            1.0
+          ],
+          "bias": [
+            -0.2800000011920929,
+            -0.2800000011920929,
+            0.4399999976158142,
+            0.0
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "rokae_wuji1_right.xml": "df86bf6bd1871a66fc806ade5661ae85abbab0f0cdee002e90e9444eb6e30301",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_base.stl": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link1.stl": "87def8c59f505c3c54535aef2f1c7955e8b1166de335a3435b987bc0b94d70b6",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link2.stl": "4418b25a88f15494f081a3ccd87b14ad2094e32852cf22c4db8679f75dbe9a66",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link3.stl": "63c99f8a08819e17986aed7d1a518d48b3f82abfa85f074959d07513e0883bc9",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link4.stl": "1246afa1fe4e081e30e549c7aeafecc1aa7ef819f5ea5c867b9bc93859705db1",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link5.stl": "abb885d5bb977d62443aa6a4501d5223debb42d5ec9fdec4e5aab88f2c604f70",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link6.stl": "80a70e99f5a5c40a671af3d57d93503da2b6974fb2d1bae481f82fdd44f7249c",
+    "rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link7.stl": "430c3461cd039ca4e83b5bc5dfdce6426473e6f1916f9f1c6db6416e6d77e01f",
+    "wrist_fisheye/meshes/wrist_fisheye_flange_assembly.stl": "81007ca10b773904635bc1c2eccb35926330765517a73ee4161c3f8258d84a5d",
+    "wuji_hand1/meshes/right/right_palm_link.STL": "1ba4495e3b7adc707d50150a8625a0ed3731fa42ab6d40e62ae7437da103ce5e",
+    "wuji_hand1/meshes/right/right_finger1_link1.STL": "bf75dfb099a56ab2b657cffe587ceaba96521d6f3128b692c30208a5d6aef326",
+    "wuji_hand1/meshes/right/right_finger1_link2.STL": "9d029f972a39492aeb9fe91fd49156816548402061d61bcb6a4681210a34e063",
+    "wuji_hand1/meshes/right/right_finger1_link3.STL": "da791bd67141cdf1209bfb636e5ce47e746d2261b154eb3af0e35f6f4ee46b45",
+    "wuji_hand1/meshes/right/right_finger1_link4.STL": "cdfa7e01e9c352f5a477dc203507b2d448ba9e5071a565a54744f94156c3d5f2",
+    "wuji_hand1/meshes/right/right_finger1_tip_link.STL": "e1e38aa11dc3df0f1c1848111fd0a95e88991f965dc4a9c5c4c989a0df3de716",
+    "wuji_hand1/meshes/right/right_finger2_link1.STL": "36e0471a0373a7634fc10911b33f3b30a5fe829f6526e656a911406cebf19731",
+    "wuji_hand1/meshes/right/right_finger2_link2.STL": "890d04d52e3f5b94f926dfbee28ef21fe26be95dfe665cd0656e7a25f4a29424",
+    "wuji_hand1/meshes/right/right_finger2_link3.STL": "3e9658abdea6acedd342c1866dc45ad61132538ce8de2c7f0dea3e49620d4810",
+    "wuji_hand1/meshes/right/right_finger2_link4.STL": "0e09c2fed7107c1530b726d8bd6f2282e6d02c4abe9fb52a7528a19c6f567709",
+    "wuji_hand1/meshes/right/right_finger2_tip_link.STL": "08da856de7216b963733c1b16cf87e20ba5ca8b0b649994a14d7c9b7eb5d5637",
+    "wuji_hand1/meshes/right/right_finger3_link1.STL": "558fac18be219c0e6bb6224b82c711b3efe762b547818ea074eda93dc38bad07",
+    "wuji_hand1/meshes/right/right_finger3_link2.STL": "e415003612b0630834832c59feb6c6ec73a7ccf291de133b28df22653130139f",
+    "wuji_hand1/meshes/right/right_finger3_link3.STL": "802facc87a170fc5976de6306cf0f6e2deb3d9493d56e4824b51bdccb21f1292",
+    "wuji_hand1/meshes/right/right_finger3_link4.STL": "266dfba22df8d9e35dee4947a212668e0b11cb6a5802fe47c3d791092ffe4dde",
+    "wuji_hand1/meshes/right/right_finger3_tip_link.STL": "7a99f65a6a473899913d4273e61319e3724fbf81ac8532969ed5c2ff1c1bde54",
+    "wuji_hand1/meshes/right/right_finger4_link1.STL": "508321fefaeae1ae0567f89acd2492fac27cc468a2f562d895afcff192b0d00c",
+    "wuji_hand1/meshes/right/right_finger4_link2.STL": "26ebd4e9cd59a386b80b8a7ce04b8635d4b4a32a397e6aa3c54c3b1271809daa",
+    "wuji_hand1/meshes/right/right_finger4_link3.STL": "4070aedb2114726b1f548a49425cd26cd3d4d423dcb4801601be9a3643df9327",
+    "wuji_hand1/meshes/right/right_finger4_link4.STL": "05be89250fc099f835470adb43a4bdf05c65d464c0e5920194ec5be5e7908ee0",
+    "wuji_hand1/meshes/right/right_finger4_tip_link.STL": "885b8d7c77aae7c3144271e81925bbd790a928a2da37383de2ec54c40ae83e69",
+    "wuji_hand1/meshes/right/right_finger5_link1.STL": "85ce22b8285a7d85e4c866151c972cde0736d4f618f35015b0b96fe39e367e49",
+    "wuji_hand1/meshes/right/right_finger5_link2.STL": "95eb71cc2f4c41852a6711973147d3caf10cf7f2bf6203471cef20ff63fef50c",
+    "wuji_hand1/meshes/right/right_finger5_link3.STL": "4e0826e1ef004024e13fb594ab7a16765dcd3c5972bb2693e0f9a35c5c8325c8",
+    "wuji_hand1/meshes/right/right_finger5_link4.STL": "291ac27b50d62223883fda5ff744be19d39ad7f83762c8bd5482ae244c2e1966",
+    "wuji_hand1/meshes/right/right_finger5_tip_link.STL": "d927bbf9ab91cf101e3c6b0e380a78034626cda4df8766fea88b9b5683681012",
+    "rokae_wuji1_left.xml": "3ea14fea96cf1e80f9018418e32754cd409394a1beefe7eb2e8d46e4d3a86bae",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_base.stl": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link1.stl": "fdb3ee7308f8e5e0db4013408a7203b0158da17b946ce9401f0369a507d20ffb",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link2.stl": "183d4e17efd76881812f53c255cfb98e9e40205a36a9ba5642b3b0d1eb3309cd",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link3.stl": "85ceba87b6e18580d6b69be2d0ce37f44314ca32ca56386e28c2026c9a838f9d",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link4.stl": "68e13a43dccbfb70d030c3426b8c87bd9d2aaac0ebdde0c6c92375950fe5c776",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link5.stl": "0125e5bf7c7738bdbc2a62e55400aea27ce786839078ddc3d622a60cf4182b1c",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link6.stl": "e6120969880a60e984e9ac1e1ad57b09ff27c76f159393554f7eb939b1a90b98",
+    "rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link7.stl": "ff61bfc769d0256477c7d04edca37ce843b7664af5aef68d776ff38a73fe3adb",
+    "wuji_hand1/meshes/left/left_palm_link.STL": "23ce67ed4cdbbb6c8bfa7830f4ea9ce2906772b10a71a81e9eb439c90df7560d",
+    "wuji_hand1/meshes/left/left_finger1_link1.STL": "71f3bd91df6067111ddc798b9f5c0102712b5f4a2a34f69bb34ba447c583f067",
+    "wuji_hand1/meshes/left/left_finger1_link2.STL": "ecdc1b1a4ca270b877c7b90a05c8108efbb8b3f8fa3163dc08d97772aa6e7b81",
+    "wuji_hand1/meshes/left/left_finger1_link3.STL": "7b94ff3af239009e6a3a1b57a16b9a7df5c886d0d23887b9f665ce69d5b44560",
+    "wuji_hand1/meshes/left/left_finger1_link4.STL": "d3c08be539c3df633031c671b463534bc01e368f2d591699a929e2fe6750e613",
+    "wuji_hand1/meshes/left/left_finger1_tip_link.STL": "68b6d3e45b27dd726f2dfab091960502b31e72ee6ce09b58023a5cfd80e06861",
+    "wuji_hand1/meshes/left/left_finger2_link1.STL": "f69537b263ba1341b628a7773536465dc3fee1aaaa473f7a81275d0d27a872a0",
+    "wuji_hand1/meshes/left/left_finger2_link2.STL": "deaa715c050523f31d6a56319c7c8eb82d37bcfb510021b5a85c771dd39d3de2",
+    "wuji_hand1/meshes/left/left_finger2_link3.STL": "4d41d5f4b5886b05a70ef83b21c9a0e4c3ef91952274bcc51adc75e1f04ce462",
+    "wuji_hand1/meshes/left/left_finger2_link4.STL": "45f39cc7afe3d8a486eb993bf9fb6382476b186d654c4c618330452357c05ec8",
+    "wuji_hand1/meshes/left/left_finger2_tip_link.STL": "444f21c1f33dc62101463cf2dfabdd6869a0500e72243cc08ec15cbf53480671",
+    "wuji_hand1/meshes/left/left_finger3_link1.STL": "958c98295aa56b586a710442d82279c89c8cd44c2de2e7e9793b6df770ace3d1",
+    "wuji_hand1/meshes/left/left_finger3_link2.STL": "62da611f79b2db7185a24549f6d6478916fad44c3fc248ef5c75fd1a60f66500",
+    "wuji_hand1/meshes/left/left_finger3_link3.STL": "0879ef856c78f9d6046080d7c917086f8a493b00e983455299c04a240a52cc53",
+    "wuji_hand1/meshes/left/left_finger3_link4.STL": "16d7079e439fe3b263f8477e5b2c8b5e73ebb3078efb4e75478c8f04b03e2c88",
+    "wuji_hand1/meshes/left/left_finger3_tip_link.STL": "56cd77fddaa7eb902037efe5eb87b7b839a3155c3e27e7857b018d66b8013c5e",
+    "wuji_hand1/meshes/left/left_finger4_link1.STL": "5d94d100a6a5cbc4a5ea8b5ae5ff4299bcd30b5486de7472fb74697fefc4569b",
+    "wuji_hand1/meshes/left/left_finger4_link2.STL": "a8673481e8c690507eea8a60d64d51cb44dcef813127eafaf09c023abf5f4498",
+    "wuji_hand1/meshes/left/left_finger4_link3.STL": "54b3d014dfad129439d853be4f933b59fe4d81652ebba3a97d44ecd75961140a",
+    "wuji_hand1/meshes/left/left_finger4_link4.STL": "c7e9629db69ab4b7bb8acb72687f1ff67fb1c760b8b2c05d3e93059d3a53aeb0",
+    "wuji_hand1/meshes/left/left_finger4_tip_link.STL": "0c4a000431a05bcd3599a55d2c27987ca27cb61d9de85b4a57f1c2bfba3b0292",
+    "wuji_hand1/meshes/left/left_finger5_link1.STL": "550a218785599fb609229ba897acdf2eacd3f6a9424879886af658257d0aade5",
+    "wuji_hand1/meshes/left/left_finger5_link2.STL": "1baa1b69a20abac1f34233ae5f2f75ebae825f7a83d9ef0725a6be54d86e043f",
+    "wuji_hand1/meshes/left/left_finger5_link3.STL": "056f0b85d4e4577488cfad3ae9deaa041d1dfa28c959795b0d560de2114ab793",
+    "wuji_hand1/meshes/left/left_finger5_link4.STL": "c8cfde6c45b252a758c1c5088327a424bea05ef4b4fce1fc68ec63f981b95a0b",
+    "wuji_hand1/meshes/left/left_finger5_tip_link.STL": "8af31892809e9b8125fdda8c1c3e52769dcdd9c92e9f44e3d626acd6323275a8"
+  },
+  "estimated_details": {
+    "glove_envelope_m": 0.00135,
+    "palm_fabric_bulge_m": 0.0022,
+    "grip_block_dimensions_m": [
+      0.0039,
+      0.0028,
+      0.00116
+    ],
+    "palm_grip_pitch_m": 0.0048,
+    "finger_grip_pitch_m": 0.0044,
+    "glove_contact_physics": "unchanged original collision; not glove-calibrated",
+    "cables": "photo-estimated link-local short runs",
+    "camera_extrinsics": "separate optional photo camera profile, estimated",
+    "additional_palm_bulge_m": 0.008,
+    "cap_radius_m": 0.018625350004787357,
+    "cap_shape": "flat face with rolled edge",
+    "cable_radius_m": 0.0038,
+    "cable_dynamics": "none; visual route fixed to palm",
+    "rubber_roughness": 0.46,
+    "palm_extra_bulge_m": 0.008,
+    "left_cable_routing": "photo-estimated return toward wrist above recorded tabletop",
+    "palm_additional_front_padding_m": 0.016,
+    "finger_additional_radial_padding_m": 0.001,
+    "rubber_pad_profile": "rounded rectangular crown, 1.9 mm total height, roughness 0.42",
+    "cuff": "open textile cuff with 0.8 mm lining and 2.2 mm rolled hem; photo estimated"
+  },
+  "reference": "dex_station_01/jingliyu/2026-08-31/EP-20260831-1412",
+  "total_grip_blocks": 4555,
+  "dependencies": [
+    {
+      "asset": "links/link6_left_geometry.usdc",
+      "sha256": "d5f97932b58db1f02a02ac6599a9c13f164a1b25b1416593f7e35062521adfe3"
+    },
+    {
+      "asset": "links/link6_right_geometry.usdc",
+      "sha256": "6382fad05cb3c53fb8fd77303903748cbcd463d98717f294d89c2d00459eb01e"
+    },
+    {
+      "asset": "links/materials/SpunAnodizedMetal.mdl",
+      "sha256": "0b923390f1bcc88e58ab0ee4116967b3cb3dbce6b4c3d97a532736b586dab7ed"
+    },
+    {
+      "asset": "links/textures/woven_thread_normal.png",
+      "sha256": "ddb10138aea662c0ceab6b0db19908dd08e7e9fbaaaf1545c75321a7e46de5f7"
+    }
+  ],
+  "editable_source_sha256": "2fa12c1468e46d7d9024f44c955a11a0ed5730307bf0dc6e7afda3547673c7b5",
+  "validation_status": "exported; validate dependencies, rendering and motion before benchmark use",
+  "editable_blend": {
+    "asset": "pillow16.blend",
+    "sha256": "2fa12c1468e46d7d9024f44c955a11a0ed5730307bf0dc6e7afda3547673c7b5"
+  }
+}

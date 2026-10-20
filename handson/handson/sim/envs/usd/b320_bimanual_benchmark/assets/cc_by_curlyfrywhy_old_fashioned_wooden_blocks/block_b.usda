@@ -1,0 +1,123 @@
+#usda 1.0
+(
+    defaultPrim = "Asset"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Asset" (
+    customData = {
+        dictionary handson = {
+            string archiveSha256 = "983de66500f8ab94997929442d355cec21c9afa66d0fa27af7860202a760c6b8"
+            string assetRole = "render-and-collision rigid object"
+            string collisionApproximation = "convexHull"
+            bool contentMeshCollisionEnabled = 1
+            string license = "CC BY 4.0"
+            string licenseUrl = "https://creativecommons.org/licenses/by/4.0/"
+            double normalizationScale = 0.04639759584804431
+            bool oldPlaceholderCollisionReused = 0
+            string selectedSourceMesh = "Object_0"
+            string selectedSourceNode = "Object_2"
+            string sourceAuthor = "CurlyFryWhy"
+            string sourceSha256 = "21eaed105a8dcf877747e403233a32d8093402ebdb87c4cdc2d33219b59f57c8"
+            string sourceTitle = "Old Fashioned Wooden Blocks"
+            string sourceUnits = "meters"
+            string sourceUpAxis = "converted Z-up world bounds"
+            string sourceUrl = "https://sketchfab.com/3d-models/old-fashioned-wooden-blocks-8331752cf38243638b0681f5ea230c28"
+            double targetSideM = 0.075
+        }
+    }
+)
+{
+    def Xform "Normalized"
+    {
+        matrix4d xformOp:transform = ( (0.04639759584804431, 0, 0, 0), (0, 0.04639759584804431, 0, 0), (0, 0, 0.04639759584804431, 0), (-0.00895151227426505, -0.07532505658709157, 0.009827128565785175, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "Source" (
+            prepend references = @source/converted_scene.usd@</World>
+        )
+        {
+            over "BlocksSketchfab_obj_cleaner_materialmerger_gles"
+            {
+                over "Object_3" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_4" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_5" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_2"
+                {
+                    over "Object_0" (
+                        customData = {
+                            dictionary handson = {
+                                string classification = "task_visible"
+                            }
+                        }
+                    )
+                    {
+                    }
+                }
+            }
+        }
+
+        def Xform "CollisionSource" (
+            prepend references = @source/converted_scene.usd@</World>
+        )
+        {
+            token visibility = "invisible"
+
+            over "BlocksSketchfab_obj_cleaner_materialmerger_gles"
+            {
+                over "Object_3" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_4" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_5" (
+                    active = false
+                )
+                {
+                }
+
+                over "Object_2"
+                {
+                    over "Object_0" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI"]
+                        customData = {
+                            dictionary handson = {
+                                string classification = "formal_collider"
+                                string collisionRole = "source-derived visual convex hull"
+                                bool renderAndCollisionSameMesh = 1
+                            }
+                        }
+                    )
+                    {
+                        uniform token physics:approximation = "convexHull"
+                        float physxCollision:contactOffset = 0.0015
+                        float physxCollision:restOffset = 0
+                    }
+                }
+            }
+        }
+    }
+}

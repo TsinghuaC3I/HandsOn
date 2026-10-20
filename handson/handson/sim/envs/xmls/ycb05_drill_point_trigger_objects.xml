@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="YCB05_Drill_Point_Trigger_Objects">
+  <default>
+    <default class="ycb05_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="ycb05_drill_collision">
+      <geom type="mesh" group="3" contype="1" conaffinity="3" condim="6"
+            friction="1.25 0.04 0.003" solref="0.003 1"
+            solimp="0.97 0.995 0.001" density="1423.67" rgba="0 0 0 0"/>
+    </default>
+    <default class="ycb05_wood_collision">
+      <geom type="mesh" group="3" contype="1" conaffinity="3" condim="6"
+            friction="1.35 0.04 0.003" solref="0.003 1"
+            solimp="0.97 0.995 0.001" density="498.632" rgba="0 0 0 0"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="ycb05_power_drill_texture"
+             file="lightwheel_ycb/power_drill/visuals/T_power_drill_BC001.png"/>
+    <material name="ycb05_power_drill_material" texture="ycb05_power_drill_texture"
+              specular="0.3"/>
+    <mesh name="ycb05_power_drill_visual"
+          file="lightwheel_ycb/power_drill/visuals/power_drill.obj"/>
+    <mesh name="ycb05_power_drill_trigger_visual"
+          file="lightwheel_ycb/power_drill/visuals/power_drill_Trigger.obj"/>
+    <mesh name="ycb05_power_drill_collision_01" file="lightwheel_ycb/power_drill/collision/power_drill_Collider1_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_02" file="lightwheel_ycb/power_drill/collision/power_drill_Collider2_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_03" file="lightwheel_ycb/power_drill/collision/power_drill_Collider3_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_04" file="lightwheel_ycb/power_drill/collision/power_drill_Collider4_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_05" file="lightwheel_ycb/power_drill/collision/power_drill_Collider5_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_06" file="lightwheel_ycb/power_drill/collision/power_drill_Collider6_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_07" file="lightwheel_ycb/power_drill/collision/power_drill_Collider7_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_08" file="lightwheel_ycb/power_drill/collision/power_drill_Collider8_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_09" file="lightwheel_ycb/power_drill/collision/power_drill_Collider9_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_10" file="lightwheel_ycb/power_drill/collision/power_drill_Collider10_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_11" file="lightwheel_ycb/power_drill/collision/power_drill_Collider11_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_12" file="lightwheel_ycb/power_drill/collision/power_drill_Collider12_m.obj"/>
+    <mesh name="ycb05_power_drill_collision_13" file="lightwheel_ycb/power_drill/collision/power_drill_Collider13_m.obj"/>
+    <mesh name="ycb05_power_drill_trigger_collision_01" file="lightwheel_ycb/power_drill/collision/power_drill_Trigger_Collider1_m.obj"/>
+    <mesh name="ycb05_power_drill_trigger_collision_02" file="lightwheel_ycb/power_drill/collision/power_drill_Trigger_Collider2_m.obj"/>
+    <mesh name="ycb05_power_drill_trigger_collision_03" file="lightwheel_ycb/power_drill/collision/power_drill_Trigger_Collider3_m.obj"/>
+
+    <texture type="2d" name="ycb05_wood_texture"
+             file="lightwheel_ycb/wood_block/visuals/T_wood_block_BC001.png"/>
+    <material name="ycb05_wood_material" texture="ycb05_wood_texture" specular="0.3103"/>
+    <mesh name="ycb05_wood_visual" file="lightwheel_ycb/wood_block/visuals/wood_block.obj"/>
+    <mesh name="ycb05_wood_collision" file="lightwheel_ycb/wood_block/collision/wood_block_Collider1_m.obj"/>
+  </asset>
+
+  <!-- The trigger scan intersects the drill housing at its guided rest
+       position.  It must still collide with the hand, but never with its own
+       parent housing; otherwise PhysX ejects it to the 4 mm upper limit. -->
+  <contact>
+    <exclude body1="ycb05_power_drill" body2="power_drill_Trigger"/>
+  </contact>
+
+  <worldbody>
+    <!-- Local +Y is the drill axis.  This unscaled pose is the stable
+         table-supported attitude of the source 13-hull YCB scan in PhysX. -->
+    <body name="ycb05_power_drill" pos="-0.275 -0.235 0.9838064313"
+          quat="0.9997169375 0.0093907323 0.0218567047 -0.0000000162">
+      <freejoint name="ycb05_power_drill_root_joint"/>
+      <geom name="ycb05_power_drill_visual_geom" class="ycb05_visual"
+            mesh="ycb05_power_drill_visual" material="ycb05_power_drill_material"/>
+      <geom name="ycb05_power_drill_collision_01_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_01"/>
+      <geom name="ycb05_power_drill_collision_02_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_02"/>
+      <geom name="ycb05_power_drill_collision_03_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_03"/>
+      <geom name="ycb05_power_drill_collision_04_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_04"/>
+      <geom name="ycb05_power_drill_collision_05_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_05"/>
+      <geom name="ycb05_power_drill_collision_06_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_06"/>
+      <geom name="ycb05_power_drill_collision_07_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_07"/>
+      <geom name="ycb05_power_drill_collision_08_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_08"/>
+      <geom name="ycb05_power_drill_collision_09_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_09"/>
+      <geom name="ycb05_power_drill_collision_10_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_10"/>
+      <geom name="ycb05_power_drill_collision_11_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_11"/>
+      <geom name="ycb05_power_drill_collision_12_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_12"/>
+      <geom name="ycb05_power_drill_collision_13_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_collision_13"/>
+      <site name="ycb05_drill_tip" pos="0 0.091565 0.060" size="0.001" rgba="0 0 0 0"/>
+      <site name="ycb05_drill_axis_reference" pos="0 0.081565 0.060" size="0.001" rgba="0 0 0 0"/>
+
+      <body name="power_drill_Trigger">
+        <joint name="power_drill_Trigger_joint" pos="0 0.000162 -0.000185"
+               axis="0 -1 0" type="slide" limited="true" range="0 0.004"
+               stiffness="800" springref="0" damping="2" frictionloss="0.05"
+               armature="0.0001"/>
+        <geom name="ycb05_power_drill_trigger_visual_geom" class="ycb05_visual"
+              mesh="ycb05_power_drill_trigger_visual" material="ycb05_power_drill_material"/>
+        <geom name="ycb05_power_drill_trigger_collision_01_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_trigger_collision_01"/>
+        <geom name="ycb05_power_drill_trigger_collision_02_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_trigger_collision_02"/>
+        <geom name="ycb05_power_drill_trigger_collision_03_geom" class="ycb05_drill_collision" mesh="ycb05_power_drill_trigger_collision_03"/>
+      </body>
+    </body>
+
+    <body name="ycb05_wood_block" pos="-0.275 0.145 0.932689">
+      <freejoint name="ycb05_wood_block_root_joint"/>
+      <geom name="ycb05_wood_block_visual_geom" class="ycb05_visual"
+            mesh="ycb05_wood_visual" material="ycb05_wood_material"/>
+      <geom name="ycb05_wood_block_collision_geom" class="ycb05_wood_collision"
+            mesh="ycb05_wood_collision"/>
+      <site name="ycb05_wood_target_face_center" pos="0 -0.100369 0"
+            size="0.001" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-15",
+  "base_commit": "fea6d4e5b5076b6474baee6a259bb0b8faab0b3c",
+  "scope": "Publication integration of robot assets, install constraints, valid task configs and citation metadata.",
+  "focused_tests": {
+    "passed": 53,
+    "skipped": 0,
+    "files": [
+      "test_robot_assets.py",
+      "test_deployment_contract.py",
+      "test_evaluation_entry.py",
+      "test_evaluation_eef52.py",
+      "test_evaluation_rollout.py",
+      "test_evaluation_language.py"
+    ],
+    "python": "3.11.17",
+    "platform": "macOS arm64"
+  },
+  "cpu_factories": {
+    "passed": 66,
+    "total": 66
+  },
+  "reproducible_urdf_descriptions": 8,
+  "wheel": {
+    "wheel_sha256": "845598b8c70a5c2f86c9acff1373d1020e07c1ab94ba07c5a4d301db47a4345e",
+    "relocated_robot_catalog_passed": true,
+    "robot_count": 11,
+    "verified_robot_file_checks": 486,
+    "extracted_files": 504,
+    "scope": "Robot API and all catalog dependencies from the built wheel; no simulator or learned-policy execution."
+  },
+  "configuration_cleanup": {
+    "removed_unregistered": 87,
+    "remaining": {
+      "multi_task": 66,
+      "rand_obj": 8,
+      "rand_full": 8
+    }
+  },
+  "citation_authors": 17,
+  "limitations": [
+    "No new GPU or learned-policy evaluation.",
+    "No clean-machine NVIDIA stack installation; upstream FastAPI/Starlette conflict remains documented.",
+    "Historical robot validation records describe the prior asset-validation workspace; this receipt records the integrated release checks."
+  ]
+}

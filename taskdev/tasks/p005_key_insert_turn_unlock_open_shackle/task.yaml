@@ -1,0 +1,50 @@
+schema_version: 1
+task_id: P0-05
+task_name: p005_key_insert_turn_unlock_open_shackle
+display_name_zh: 左手拿锁右手插钥匙旋转解锁
+display_name_en: Hold Padlock and Turn Key to Unlock
+capability_tags:
+  - articulated_object
+  - constrained_insertion
+  - turn_to_unlock
+  - ordered_bimanual
+roles:
+  right_hand: pick up the key, insert it into the side keyhole, and turn clockwise
+  left_hand: pick up and hold the padlock at least 35 mm above the table
+strict_stages:
+  - left hand holds/lifts the padlock at least 35 mm while right-hand key insertion reaches 12 mm for 4 control steps
+  - both objects remain held while the lock cylinder reaches 55 degrees clockwise
+  - unlocked U-shaped shackle pops up at least 16.0 mm automatically
+  - unlocked geometry remains stable for 12 control steps
+success_contract:
+  insertion_depth_m_min: 0.012
+  insertion_lateral_error_m_max: 0.00804
+  insertion_axis_error_deg_max: 12.0
+  unlock_angle_deg_min: 55.0
+  unlock_hold_angle_deg_min: 45.0
+  shackle_slide_m_min: 0.01596
+  stable_hold_steps: 12
+failure_contract:
+  shackle_motion_before_unlock_m_max: 0.00888
+  max_penetration_m: 0.0037
+  key_drop_margin_below_table_m: 0.015
+  padlock_lift_m_min: 0.035
+asset_source:
+  kind: repository_existing
+  key: handson/handson/sim/envs/xmls/lightwheel_ycb/key_berkeley_meshes
+  padlock: handson/handson/sim/envs/xmls/lightwheel_ycb/padlock
+  note: YCB key and padlock visuals are used at source 1.0 scale and rendered/collided at a consistent task-local 1.2x scale. The key collision vertices are baked at 1.2x and referenced at identity MJCF scale for Isaac-compatible dynamic convex meshes. The primary key blade and single existing rear ring are kept; the interfering spare blade and collider 3 are omitted. The source-derived operable visual and stable three-point support pose are used; the old CC0 duplicate ring at the blade tip is not used. The padlock is free and its side keyhole uses task-local collision/joint proxies for Isaac-compatible articulation.
+randomization:
+  object_scale: 1.2
+  key_xy_bounds_m: [[-0.46, -0.34], [-0.28, -0.10]]
+  padlock_xy_bounds_m: [[-0.46, -0.34], [0.10, 0.28]]
+  minimum_hand_clearance_m: 0.22
+  minimum_object_clearance_m: 0.18
+  key_yaw_half_range_deg: 10.0
+  key_friction_range: [0.95, 1.15]
+runtime:
+  simulator: Isaac Sim 5.1
+  physics: PhysX
+  control_hz: 30
+  physics_hz: 120
+  timeout_steps: 1500

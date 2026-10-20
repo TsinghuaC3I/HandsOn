@@ -1,0 +1,183 @@
+schema_version: 1
+task:
+  id: t46_store_charger
+  canonical_id: B320-FU006
+  title: "B320-FU006 HoldDrawerStoreCharger"
+  description: "Hold an open physical drawer with the left Wuji hand, place and release a charger inside it with the right Wuji hand, and preserve the open stable result."
+  task_complete: false
+  runtime_family: isaac_sim_5_1
+  simulator_version: "5.1"
+  isaaclab_version: "2.3.2"
+  physics_backend: physx
+  newton_allowed: false
+  environment: HandsOnABCIsaacLabEnv
+  action_shape: [54]
+  action_layout: [right_tcp_pose_7, left_tcp_pose_7, right_wuji_20, left_wuji_20]
+  proprioception: [tcp_pose, gripper_pose, charger_pose, drawer_pose, drawer_joint_state, fu006_task_state, table_delta_height]
+  taxonomy:
+    family: articulation
+    interactions: [drawer_hold, bimanual_grasp_place, released_containment, ordered_stability]
+    horizon: medium
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "Benchmark-320 row B320-FU006; exact DexVerse drawer 45575 and dexverse_charger assets."
+  reference: "handson-taskdev-orchestration/b320_32_scene_wave_20260817/source_rows.json#B320-FU006"
+  license: "Drawer and charger bundles retain their upstream CC BY-NC 4.0 attribution."
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    native_dofs_each: 20
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.75, -0.60, 0.84]
+    max: [0.35, 0.60, 1.65]
+  targets:
+    - id: left_drawer_hold
+      arm: left
+      frame: live_drawer_link
+      position_m: [0.0, -0.115, 0.015]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.02
+    - id: right_charger_pregrasp
+      arm: right
+      frame: world
+      position_m: [-0.34, -0.22, 0.96]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.04
+    - id: charger_storage_goal
+      arm: right
+      frame: live_drawer_link
+      position_m: [0.0, 0.0, 0.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.01
+assets:
+  - id: drawer_45575
+    path: taskdev/tasks/t46_store_charger/assets/dv_drawer_45575/45575.usd
+    runtime_path: handson/handson/sim/envs/xmls/assets/bench320_fu006/dv_drawer_45575/45575.usd
+    kind: usd
+    required: true
+    scale_m: [0.35, 0.35, 0.35]
+    collision: {enabled: true, approximation: convex_decomposition, collider_count: 29}
+    joint: {path: joints/joint_1, type: prismatic, initial_position_source_m: 0.28, root_fixed: true}
+  - id: charger
+    path: taskdev/tasks/t46_store_charger/assets/dexverse_charger/model_charger.usd
+    runtime_path: handson/handson/sim/envs/xmls/assets/bench320_fu006/dexverse_charger/model_charger.usd
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision: {enabled: true, approximation: signed_distance_field}
+reset:
+  seedable: true
+  max_settle_steps: 240
+  bounded_retry_count: 128
+  deterministic_fallback_xy: [-0.34, -0.22]
+  action_zero_state_writes_allowed: false
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - exact_assets_composed_before_first_physx
+    - charger_supported_on_table
+    - charger_clear_of_drawer_and_robot_hand_envelopes
+    - drawer_root_fixed_and_joint_open
+    - task_complete_false_at_reset
+contact:
+  monitored_pairs:
+    - id: left_hand_drawer_link
+      bodies: ["robot/left_hand/*", "assets/drawer_45575/link_1"]
+      max_penetration_m: 0.005
+    - id: right_hand_charger
+      bodies: ["robot/right_hand/*", "assets/charger"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: robot_table
+      bodies: ["robot/*", "environment/table"]
+    - id: charger_cabinet_exterior
+      bodies: ["assets/charger", "assets/drawer_45575/exterior_except_cavity"]
+  exact_owner_required: true
+success:
+  logic: all
+  predicates:
+    - id: left_hold_open_drawer
+      type: contact_owner_and_joint_band
+      parameters: {contact_owner: left_hand_drawer_link, joint: assets/drawer_45575/joints/joint_1, min_source_position_m: 0.20}
+    - id: charger_fully_contained
+      type: oriented_support_point_containment
+      parameters: {object: assets/charger, frame: assets/drawer_45575/link_1, support_point_count: 8}
+    - id: right_hand_released
+      type: contact_loss_and_clearance
+      parameters: {contact_owner: right_hand_charger, min_clearance_m: 0.065}
+    - id: ordered_stability
+      type: ordered_event_stability
+      parameters: {order: [left_hold_open_drawer, charger_fully_contained, right_hand_released], left_hold_must_persist: true}
+  hold_steps: 15
+  hold_seconds: 0.5
+  timeout_steps: 2700
+  terminal_failures: [charger_drop, charger_escape, drawer_close_after_hold, order_violation]
+  timeout_is_truncation: true
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  canonical_streams:
+    - {key: ego, source: head_camera, resolution: [640, 480]}
+    - {key: wrist_left, source: wrist_left_camera}
+    - {key: wrist_right, source: wrist_right_camera}
+  reject_black_or_constant: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 0.025
+  max_angular_velocity_radps: 0.25
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams:
+    - action
+    - proprioception
+    - rgb_head
+    - contacts
+    - success
+    - rgb_wrist_left
+    - rgb_wrist_right
+    - current_and_next_physx_truth
+    - low_level_joint_targets
+    - fu006_task_state
+    - rewards_and_dones
+  min_successful_episodes: 1
+  production_min_successful_episodes: 3
+  fresh_process_full_trajectory_replay: required
+  state_restore_after_action_zero: forbidden
+validation:
+  report: taskdev/tasks/t46_store_charger/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 3, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 1, min_negative_trials: 1, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 2.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 1, max_schema_errors: 0}
+  live_runner: scripts/fu006_vertical_slice.py
+  scheduler_only: true
+  host: hp-14
+  physical_gpu: 1

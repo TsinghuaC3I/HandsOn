@@ -1,0 +1,69 @@
+{
+  "asset_id": "water_bottle",
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "extension": "omni.kit.asset_converter 5.0.17",
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 6104657,
+    "default_prim": "/World",
+    "filename": "water_bottle_visual.usd",
+    "forbidden_schema_count": 0,
+    "material_count": 3,
+    "mesh_count": 3,
+    "sha256": "8a1256a6f4c6cf7ad226c42d83f1aa6679801c3fbbcc00a9cd758e51e569e0ea"
+  },
+  "schema": "hs005_downloaded_visual_conversion_v1",
+  "source": {
+    "archive_filename": "water_bottle_3d_model.zip",
+    "archive_sha256": "b85aefd87746787b4cf321797dc880f267aa7c9b8f5e8ee72c7b83e34077dde5",
+    "author": "LukeModels75",
+    "author_url": "https://sketchfab.com/lucss_3d",
+    "files": {
+      "source/license.txt": "c5ba148c0d2c5bf8644f71947b1286529415bcb8db71dd7b46d567e22feb7a0b",
+      "source/scene.bin": "c9cf1ce23c0e94f386493e89f00cbb4d2803f333f4d9a25c632c39aeaeb9fe76",
+      "source/scene.gltf": "d6e6579114ef8dea94f4f80f36182e57651269593e6ec5a01478d8bc5f188775",
+      "source/textures/Label_baseColor.jpeg": "53fde1cc89ff3eafb3744a161966cefd38522aafbec4314526eab21efb088090"
+    },
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "profile": {
+      "bounds_source": [
+        [
+          -0.6926713737243108,
+          0.0006744048441760242,
+          -0.6926713734544947
+        ],
+        [
+          0.6926713731413661,
+          4.996389389038086,
+          0.6926713739110518
+        ]
+      ],
+      "extents_source": [
+        1.385342746865677,
+        4.99571498419391,
+        1.3853427473655464
+      ],
+      "geometry_count": 3,
+      "mesh_node_count": 3,
+      "triangle_count": 87296
+    },
+    "source_url": "https://sketchfab.com/3d-models/water-bottle-3d-model-c30a04cb09734471a75147b62877e7af",
+    "title": "Water Bottle 3D Model"
+  }
+}

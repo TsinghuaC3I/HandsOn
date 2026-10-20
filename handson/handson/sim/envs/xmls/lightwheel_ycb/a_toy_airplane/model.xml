@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="234.142" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="a_toy_airplane_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <texture type="2d" name="a_toy_airplane_FL_Wheel_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <texture type="2d" name="a_toy_airplane_FR_Wheel_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <texture type="2d" name="a_toy_airplane_Propeller_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <texture type="2d" name="a_toy_airplane_RL_Wheel_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <texture type="2d" name="a_toy_airplane_RR_Wheel_material" file="visuals/T_a_toy_airplane_BC001.png"/>
+    <material name="a_toy_airplane_material" texture="a_toy_airplane_material" specular="0.333333"/>
+    <material name="a_toy_airplane_FL_Wheel_material" texture="a_toy_airplane_FL_Wheel_material" specular="0.333333"/>
+    <material name="a_toy_airplane_FR_Wheel_material" texture="a_toy_airplane_FR_Wheel_material" specular="0.333333"/>
+    <material name="a_toy_airplane_Propeller_material" texture="a_toy_airplane_Propeller_material" specular="0.333333"/>
+    <material name="a_toy_airplane_RL_Wheel_material" texture="a_toy_airplane_RL_Wheel_material" specular="0.333333"/>
+    <material name="a_toy_airplane_RR_Wheel_material" texture="a_toy_airplane_RR_Wheel_material" specular="0.333333"/>
+    <mesh name="a_toy_airplane_vis" file="visuals/a_toy_airplane.obj"/>
+    <mesh name="a_toy_airplane_FL_Wheel_vis" file="visuals/a_toy_airplane_FL_Wheel.obj"/>
+    <mesh name="a_toy_airplane_FR_Wheel_vis" file="visuals/a_toy_airplane_FR_Wheel.obj"/>
+    <mesh name="a_toy_airplane_Propeller_vis" file="visuals/a_toy_airplane_Propeller.obj"/>
+    <mesh name="a_toy_airplane_RL_Wheel_vis" file="visuals/a_toy_airplane_RL_Wheel.obj"/>
+    <mesh name="a_toy_airplane_RR_Wheel_vis" file="visuals/a_toy_airplane_RR_Wheel.obj"/>
+    <mesh name="a_toy_airplane_Collider01_m_collision" file="collision/a_toy_airplane_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_Collider03_m_collision" file="collision/a_toy_airplane_Collider03_m.obj"/>
+    <mesh name="a_toy_airplane_Collider04_m_collision" file="collision/a_toy_airplane_Collider04_m.obj"/>
+    <mesh name="a_toy_airplane_Collider05_m_collision" file="collision/a_toy_airplane_Collider05_m.obj"/>
+    <mesh name="a_toy_airplane_Collider06_m_collision" file="collision/a_toy_airplane_Collider06_m.obj"/>
+    <mesh name="a_toy_airplane_Collider07_m_collision" file="collision/a_toy_airplane_Collider07_m.obj"/>
+    <mesh name="a_toy_airplane_RL_Wheel_Collider01_m_collision" file="collision/a_toy_airplane_RL_Wheel_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_FR_Wheel_Collider01_m_collision" file="collision/a_toy_airplane_FR_Wheel_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_FL_Wheel_Collider01_m_collision" file="collision/a_toy_airplane_FL_Wheel_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_Propeller_Collider01_m_collision" file="collision/a_toy_airplane_Propeller_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_Propeller_Collider03_m_collision" file="collision/a_toy_airplane_Propeller_Collider03_m.obj"/>
+    <mesh name="a_toy_airplane_Propeller_Collider02_m_collision" file="collision/a_toy_airplane_Propeller_Collider02_m.obj"/>
+    <mesh name="a_toy_airplane_Collider08_m_collision" file="collision/a_toy_airplane_Collider08_m.obj"/>
+    <mesh name="a_toy_airplane_Collider09_m_collision" file="collision/a_toy_airplane_Collider09_m.obj"/>
+    <mesh name="a_toy_airplane_Collider02_m_collision" file="collision/a_toy_airplane_Collider02_m.obj"/>
+    <mesh name="a_toy_airplane_RR_Wheel_Collider01_m_collision" file="collision/a_toy_airplane_RR_Wheel_Collider01_m.obj"/>
+    <mesh name="a_toy_airplane_Propeller_Collider04_m_collision" file="collision/a_toy_airplane_Propeller_Collider04_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_material" mesh="a_toy_airplane_vis"/>
+        <geom name="a_toy_airplane_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider01_m_collision"/>
+        <geom name="a_toy_airplane_Collider03_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider03_m_collision"/>
+        <geom name="a_toy_airplane_Collider04_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider04_m_collision"/>
+        <geom name="a_toy_airplane_Collider05_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider05_m_collision"/>
+        <geom name="a_toy_airplane_Collider06_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider06_m_collision"/>
+        <geom name="a_toy_airplane_Collider07_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider07_m_collision"/>
+        <geom name="a_toy_airplane_Collider08_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider08_m_collision"/>
+        <geom name="a_toy_airplane_Collider09_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider09_m_collision"/>
+        <geom name="a_toy_airplane_Collider02_m" class="collision" type="mesh" mesh="a_toy_airplane_Collider02_m_collision"/>
+        <body name="a_toy_airplane_FL_Wheel">
+          <joint name="a_toy_airplane_FL_Wheel_joint" pos="0.04835150 -0.08226950 -0.05589450" axis="1 0 0" stiffness="0" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_FL_Wheel_material" mesh="a_toy_airplane_FL_Wheel_vis"/>
+          <geom name="a_toy_airplane_FL_Wheel_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_FL_Wheel_Collider01_m_collision"/>
+        </body>
+        <body name="a_toy_airplane_FR_Wheel">
+          <joint name="a_toy_airplane_FR_Wheel_joint" pos="-0.05244850 -0.08226950 -0.05589450" axis="1 0 0" stiffness="0" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_FR_Wheel_material" mesh="a_toy_airplane_FR_Wheel_vis"/>
+          <geom name="a_toy_airplane_FR_Wheel_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_FR_Wheel_Collider01_m_collision"/>
+        </body>
+        <body name="a_toy_airplane_Propeller">
+          <joint name="a_toy_airplane_Propeller_joint" pos="-0.00244850 -0.12516950 0.03930550" axis="-0.0012613 0.983399 -0.181454" stiffness="0" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_Propeller_material" mesh="a_toy_airplane_Propeller_vis"/>
+          <geom name="a_toy_airplane_Propeller_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_Propeller_Collider01_m_collision"/>
+          <geom name="a_toy_airplane_Propeller_Collider03_m" class="collision" type="mesh" mesh="a_toy_airplane_Propeller_Collider03_m_collision"/>
+          <geom name="a_toy_airplane_Propeller_Collider02_m" class="collision" type="mesh" mesh="a_toy_airplane_Propeller_Collider02_m_collision"/>
+          <geom name="a_toy_airplane_Propeller_Collider04_m" class="collision" type="mesh" mesh="a_toy_airplane_Propeller_Collider04_m_collision"/>
+        </body>
+        <body name="a_toy_airplane_RL_Wheel">
+          <joint name="a_toy_airplane_RL_Wheel_joint" pos="0.01805150 0.09423050 -0.06699450" axis="1 0 0" stiffness="0" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_RL_Wheel_material" mesh="a_toy_airplane_RL_Wheel_vis"/>
+          <geom name="a_toy_airplane_RL_Wheel_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_RL_Wheel_Collider01_m_collision"/>
+        </body>
+        <body name="a_toy_airplane_RR_Wheel">
+          <joint name="a_toy_airplane_RR_Wheel_joint" pos="-0.02214850 0.09423050 -0.06699450" axis="1 0 0" stiffness="0" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="a_toy_airplane_RR_Wheel_material" mesh="a_toy_airplane_RR_Wheel_vis"/>
+          <geom name="a_toy_airplane_RR_Wheel_Collider01_m" class="collision" type="mesh" mesh="a_toy_airplane_RR_Wheel_Collider01_m_collision"/>
+        </body>
+      <geom size="0.1356065 0.1425235 0.0875755" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="a_toy_airplane_FL_Wheel_joint_actuator" joint="a_toy_airplane_FL_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="a_toy_airplane_FR_Wheel_joint_actuator" joint="a_toy_airplane_FR_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="a_toy_airplane_Propeller_joint_actuator" joint="a_toy_airplane_Propeller_joint" gear="0 0 0 0 0 0"/>
+    <general name="a_toy_airplane_RL_Wheel_joint_actuator" joint="a_toy_airplane_RL_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="a_toy_airplane_RR_Wheel_joint_actuator" joint="a_toy_airplane_RR_Wheel_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

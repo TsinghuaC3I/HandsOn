@@ -1,0 +1,10 @@
+env_name: eval_gen07_stack_boxes
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Arrange the four package boxes into four distinct height layers with the large package box on the bottom layer, then keep the hand from touching the boxes for 0.5 seconds."
+robot_type: single_arm
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx

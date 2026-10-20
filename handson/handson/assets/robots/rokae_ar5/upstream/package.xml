@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rokae_description</name>
+  <version>0.0.5</version>
+  <description>URDF description for Rokae robots. Version 0.0.5 adds AR3L/AR3R/AR5L08/AR5R08 and industrial standard models (XB7s/XB7h/NB25s/NB25h/NB12s/NB12h/EB4/NB4/XB4s/XB4h).</description>
+  <maintainer email="wangyifan@rokae.com">wang</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <!-- 0.0.4 起：test_model.launch.py、Gazebo 仿真相关 launch 与资源路径；0.0.5 起：新机型 URDF/mesh -->
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/share/rokae_description"/>
+    <gazebo_ros gazebo_resource_path="${prefix}/share/rokae_description"/>
+  </export>
+</package>

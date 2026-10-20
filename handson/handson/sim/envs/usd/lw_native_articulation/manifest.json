@@ -1,0 +1,69 @@
+{
+  "format_version": 1,
+  "source_archive": {
+    "path": "/home/user/下载/ZRYZ_LW_Assets_20260820.zip",
+    "sha256": "703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce"
+  },
+  "files": [
+    {
+      "path": "assets/Foldingfan001/Foldingfan001.usd",
+      "size_bytes": 164916,
+      "sha256": "f0f3bbdabfc3131a7278b69f6a6216f658effb6f5e5a45e129c5d1eb6a4974f8"
+    },
+    {
+      "path": "assets/Foldingfan001/texture/T_Foldingfan001_BC001.png",
+      "size_bytes": 5013557,
+      "sha256": "12978ae73732fe3696e05f4922512d56f4d8a03018cbc309f49235fe941c7ee4"
+    },
+    {
+      "path": "assets/Foldingfan001/texture/T_Foldingfan001_N001.png",
+      "size_bytes": 3392385,
+      "sha256": "b2082ebfb2523cd5cb0ece1ebdd70a57697f168183951c48d692ca854e7dff44"
+    },
+    {
+      "path": "assets/Foldingfan001/texture/T_Foldingfan001_ORM001.png",
+      "size_bytes": 1963018,
+      "sha256": "d6fd28dbd8c4329b5e76fb9f41f763d02482aa0c94f6ccb39e6fbccbfdcf81c5"
+    },
+    {
+      "path": "assets/MicropipetteBox001/MicropipetteBox001.usd",
+      "size_bytes": 2177085,
+      "sha256": "6a8a143fe0a72e3b843c38e095057394ddb1b40e7dd1bf08c5185087bc031255"
+    },
+    {
+      "path": "assets/MicropipetteBox001/texture/T_MicropipetteBox001_BC001.png",
+      "size_bytes": 17299,
+      "sha256": "840bc48054dfce74ad6adc25ebe050d9be2b950a7e8bd3562bb0d13b06f1d9e2"
+    },
+    {
+      "path": "assets/MicropipetteBox001/texture/T_MicropipetteBox001_N001.png",
+      "size_bytes": 16902,
+      "sha256": "fe7d530dcef44fc4e06f6d6d78bcff2da66f629c86a047ac1947dcbeb9c3067d"
+    },
+    {
+      "path": "assets/MicropipetteBox001/texture/T_MicropipetteBox001_ORM001.png",
+      "size_bytes": 1661566,
+      "sha256": "4207a283d263697510d7c2a9c890e2b8aee63958b1f9e812ec865fa63ca2c705"
+    },
+    {
+      "path": "assets/Ruler035/Ruler035.usd",
+      "size_bytes": 33679,
+      "sha256": "55f3823f9ae46ba34f5bfcc12332aaa512cf99eb344e2db8bfa92a8825ca0369"
+    },
+    {
+      "path": "assets/Ruler035/texture/T_Ruler035_BC001.png",
+      "size_bytes": 2316649,
+      "sha256": "39d63de657476f0e9a90d1a3aa7538a90f7f2654748aaf29c89b06f364178fbf"
+    },
+    {
+      "path": "assets/Ruler035/texture/T_Ruler035_N001.png",
+      "size_bytes": 28323,
+      "sha256": "e2f800d12ca234ae2adbc7f8b79fa58998e0bb9a219cd43f31029d8fdfeb1ff8"
+    },
+    {
+      "path": "assets/Ruler035/texture/T_Ruler035_ORM001.png",
+      "size_bytes": 28298,
+      "sha256": "3d6fef33e1e7638e39acb8dba212f6cf9ec76b9175b0c0da7ba0b1dc78e23da0"
+    }
+  ]
+}

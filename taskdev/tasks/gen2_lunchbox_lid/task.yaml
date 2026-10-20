@@ -1,0 +1,81 @@
+schema_version: 1
+task:
+  id: GEN2
+  canonical_name: eval_gen01_cover_lunchbox
+  title: GEN2 Lunchbox Lid Placement
+  description: Align the lunchbox lid and place it onto the lunchbox.
+  reference_task: t03_cover_box
+  purpose: zero_shot_asset_transfer
+runtime:
+  family: HandsOnABCIsaacLabEnv
+  backend: isaacsim
+  isaac_sim: '5.1'
+  isaaclab: 2.3.2
+  physics_hz: 120
+  config_hz: 30
+  time_limit_seconds: 120
+robot:
+  arm_type: rokae
+  hand_type: wuji1
+  robot_type: single_arm
+  active_hand: right
+  inactive_left_home: b05_raised
+  hand_collision: existing_source_meshes_GEN2_only
+assets:
+  source: handson/handson/sim/envs/xmls/d_long_horizon_objects.xml
+  bodies:
+  - d15_box_left
+  - d15_lid_left
+  geometry_changes: none
+  self_built_assets: false
+reset:
+  box_xy_m:
+  - -0.2
+  - 0.155
+  lid_xy_m:
+  - -0.275
+  - -0.18
+  independent_xy_jitter_m: 0.025
+  yaw_bounds_deg:
+  - -5
+  - 5
+success:
+  reference: B05
+  coverage_ratio_strictly_greater_than: 0.9
+  seated_lid_local_z_m: 0.118
+  height_error_m:
+  - -0.02
+  - 0.025
+  max_relative_tilt_deg: 6
+  moved_distance_or_lift_height_m:
+  - 0.05
+  - 0.015
+  max_linear_speed_mps: 0.025
+  max_angular_speed_radps: 0.3
+  max_box_tilt_deg: 20
+  max_box_support_height_error_m: 0.025
+  right_hand_clearance_m: 0.02
+  min_hold_seconds: 0.5
+  min_hold_control_frames: 15
+collection:
+  online: state_and_raw_actions
+  deferred_cameras:
+  - main
+  - wrist_left
+  - wrist_right
+validation:
+  contract: DESIGN.md
+  fixed_seeds: 20
+  boundary_layouts: 8
+  complete_robot_manipulations: 5
+  contact_duration_seconds: 1
+  complete_saved_episodes: 1
+  human_operator_test: required
+  live_status: awaiting_real_operator_grip_feasibility_validation
+
+rigid_body_solver:
+  position_iterations: 64
+  velocity_iterations: 8
+  scene_velocity_iteration_cap: 8
+  imported_articulation_solver_opinion: matched_to_rigid_body
+  sleep_and_damping: unchanged

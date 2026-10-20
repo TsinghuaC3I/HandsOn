@@ -1,0 +1,92 @@
+schema_version: 1
+task_id: bench320_hs005_sink_bottle_stabilized_scrub
+manifest_sha256: e177140825cd993c222b3a3a3f35b589c10c7cc258025fe4a25f5557f0b30136
+generated_at: "2026-08-26T14:28:56Z"
+git:
+  branch: release/collection
+  commit: cd52f335eda473e4fa5270d9a2f334a179e196f5
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  framework: IsaacLab 2.3.2
+  physics_backend: PhysX
+release:
+  scope: downloaded_asset_core_scene_passed_motion_revalidation_pending
+  core_scene_ready: true
+  full_task_ready: false
+  task_complete: false
+  acceptance_thresholds_changed: true
+  historical_evidence_valid_for_current_scene: false
+checks:
+  schema:
+    status: pass
+    summary: "Current manifests parse; 220 focused HS005/shared-scene/B320 tests pass (one unrelated BC025 external-asset test deselected)."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/task.yaml, sha256: e177140825cd993c222b3a3a3f35b589c10c7cc258025fe4a25f5557f0b30136}
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/collection_manifest.json, sha256: 45ca5f9032f271d80ad5cac7eadcc1fbf2c0c397880b75a0c81292012bf596e0}
+    metrics: {error_count: 0, threshold_change_count: 2, focused_test_count: 220}
+  assets:
+    status: pass
+    summary: "Seven USD layers resolve; all four kitchens own a basin floor, four full-height walls, and an open four-piece countertop ring. The 20 base collision prims are invisible, and both HS005 and KA021 consume the shared scene collision contract."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/scene_manifest.json, sha256: f4507991122701ee25e23e1c3b70c5704ee1d8ab20aae9316043335b7213f64c}
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/scene/hs005_assets.usda, sha256: ea706ecab4785bab4b7f7aa96a6c83b488602b1b47a8866674063f03e3679cba}
+    metrics: {missing_count: 0, used_layer_count: 7, all_scales_verified: true, all_collision_shapes_verified: true, collision_prim_count: 20, background_collision_prim_count: 0}
+  reachability:
+    status: pending
+    summary: "Previous reachability evidence targets the superseded scene/reset."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_MULTI_SEED_PASS.json, sha256: 2d75a45774fec7acfed2ecf0460e490b849cd438c038230ec733c1a3c601c76b}
+    metrics: {target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15, rokae_model_verified: true, wuji_gen1_verified: true, target_count: 22, reachable_count: 22}
+  contact:
+    status: pending
+    summary: "Exact sink mesh and in-sink reset require fresh contact/penetration validation."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_COLLECTION_REPLAY_PASS.json, sha256: 8aaa4363bf4fae9c85ce77eaf11482bd0586c2fc2aaeb6d5a5bd2d0c3addfd36}
+    metrics: {max_penetration_m: 0.0004952509189024568, forbidden_events: 0, required_pairs_observed: true, ordered_bands: [lower, middle, upper], minimum_formal_path_m: 0.08795844795369652, maximum_control_penetration_m: 0.0000533033162355423}
+  reset:
+    status: pass
+    summary: "Analytic layout and fresh collection-start smoke pass. HS005 loaded 20 collision bindings and verified eight shared wall/countertop cubes; KA021 loaded the same base scene with zero reported penetration. Formal 120-step collision-revision foundation capture remains pending."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/foundation_summary.json, sha256: ec732efda18b0500a8a5d0e0284e5f74dfe82e88e941ec90326a1fd3d17b4ef3}
+    metrics: {trials: 1, failure_fraction: 0.0, deterministic: true, forbidden_aabb_overlap_m: 0.0, multi_seed_motion_reset_pending: true}
+  success:
+    status: pending
+    summary: "Success predicates are unchanged, but prior trajectories do not certify the new reset."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_MULTI_SEED_PASS.json, sha256: 2d75a45774fec7acfed2ecf0460e490b849cd438c038230ec733c1a3c601c76b}
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_COLLECTION_REPLAY_PASS.json, sha256: 8aaa4363bf4fae9c85ce77eaf11482bd0586c2fc2aaeb6d5a5bd2d0c3addfd36}
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_SUCCESS_CLASSIFIER_PASS.json, sha256: 1563b0cb28a775df5142e2b7be62a23766bac346c0d4b6d52904c1351e53202d}
+    metrics: {positive_trials: 10, negative_trials: 10, false_positive_fraction: 0.0, false_negative_fraction: 0.0, hold_steps_observed: 1, live_seed_pass_count: 6, formal_episode_pass_count: 3, ordered_coverage: [1, 1, 1], minimum_formal_path_m: 0.08795844795369652, all_contacts_released: true}
+  camera:
+    status: pass
+    summary: "Fresh native head-camera render shows the light countertop, stainless sink, upright soap, visible sponge, bottle, and brush."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/previews/reset_head.png, sha256: 7429cd3616130bc92f0b2ff7e9ab0a947fe8c256240c472fed744207c0d54afb}
+    metrics: {frames: 1, black_fraction: 0.013828125, mean_rgb: 134.31541124131945, unique_rgb_count: 18026, width: 640, height: 480, primary: head}
+  stability:
+    status: pending
+    summary: "The revised HS005 scene reached native runtime and advanced smoke steps; KA021 reached native runtime with zero penetration but its pre-existing left-arm recording-origin drift prevented a formal 120-step foundation result."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/foundation_summary.json, sha256: ec732efda18b0500a8a5d0e0284e5f74dfe82e88e941ec90326a1fd3d17b4ef3}
+    metrics: {sim_seconds: 0.5, nan_count: 0, exploding_body_count: 0, bottle_displacement_m: 0.000000255718861546077, brush_displacement_m: 0.0001254603974651486, bottle_linear_speed_mps: 0.0002793989823602512, brush_linear_speed_mps: 0.0004998512055420878}
+  collection:
+    status: pending
+    summary: "Historical collection/replay evidence is invalid for the revised scene."
+    evidence:
+      - {path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/evidence/FINAL_COLLECTION_REPLAY_PASS.json, sha256: 8aaa4363bf4fae9c85ce77eaf11482bd0586c2fc2aaeb6d5a5bd2d0c3addfd36}
+    metrics:
+      episodes: 3
+      schema_errors: 0
+      streams: [action, raw_action, proprioception, named_current_state, named_next_state, physx_current, physx_next, physx_substeps, rgb_head, rgb_main, rgb_wrist_left, rgb_wrist_right, contacts, success, bimanual_role_contacts, scrub_checkpoints]
+      fresh_replay_count: 3
+      compared_control_steps: 3709
+      strict_schema_pass_count: 3
+      semantic_contact_path_count_expected: 97
+      semantic_contact_path_count_actual: 97
+      maximum_contact_abs_error: 0.0
+      maximum_hidden_state_abs_error: 0.0
+      trajectory_state_write_count: 0
+      state_restore_after_action_zero_count: 0
+      regression_test_count: 304
+      regression_failure_count: 0

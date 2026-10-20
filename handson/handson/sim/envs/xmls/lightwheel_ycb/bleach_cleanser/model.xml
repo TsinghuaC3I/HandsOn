@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1053.05" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="bleach_cleanser_material" file="visuals/T_bleach_cleanser_BC001.png"/>
+    <texture type="2d" name="bleach_cleanser_lid_material" file="visuals/T_bleach_cleanser_BC001.png"/>
+    <material name="bleach_cleanser_material" texture="bleach_cleanser_material" specular="0.310345"/>
+    <material name="bleach_cleanser_lid_material" texture="bleach_cleanser_lid_material" specular="0.310345"/>
+    <mesh name="bleach_cleanser_vis" file="visuals/bleach_cleanser.obj"/>
+    <mesh name="bleach_cleanser_lid_vis" file="visuals/bleach_cleanser_lid.obj"/>
+    <mesh name="bleach_cleanser_Collider1_m_collision" file="collision/bleach_cleanser_Collider1_m.obj"/>
+    <mesh name="bleach_cleanser_Collider2_m_collision" file="collision/bleach_cleanser_Collider2_m.obj"/>
+    <mesh name="bleach_cleanser_Collider3_m_collision" file="collision/bleach_cleanser_Collider3_m.obj"/>
+    <mesh name="bleach_cleanser_Collider4_m_collision" file="collision/bleach_cleanser_Collider4_m.obj"/>
+    <mesh name="bleach_cleanser_Collider5_m_collision" file="collision/bleach_cleanser_Collider5_m.obj"/>
+    <mesh name="bleach_cleanser_lid_Collider1_m_collision" file="collision/bleach_cleanser_lid_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="bleach_cleanser_material" mesh="bleach_cleanser_vis"/>
+        <geom name="bleach_cleanser_Collider1_m" class="collision" type="mesh" mesh="bleach_cleanser_Collider1_m_collision"/>
+        <geom name="bleach_cleanser_Collider2_m" class="collision" type="mesh" mesh="bleach_cleanser_Collider2_m_collision"/>
+        <geom name="bleach_cleanser_Collider3_m" class="collision" type="mesh" mesh="bleach_cleanser_Collider3_m_collision"/>
+        <geom name="bleach_cleanser_Collider4_m" class="collision" type="mesh" mesh="bleach_cleanser_Collider4_m_collision"/>
+        <geom name="bleach_cleanser_Collider5_m" class="collision" type="mesh" mesh="bleach_cleanser_Collider5_m_collision"/>
+        <body name="bleach_cleanser_lid">
+          <joint name="bleach_cleanser_lid_joint" pos="-0.00557800 0.00361700 0.12296250" axis="0 -1 0" stiffness="0.05" limited="true" range="0 1.5708" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="bleach_cleanser_lid_material" mesh="bleach_cleanser_lid_vis"/>
+          <geom name="bleach_cleanser_lid_Collider1_m" class="collision" type="mesh" mesh="bleach_cleanser_lid_Collider1_m_collision"/>
+        </body>
+      <geom size="0.050118 0.033631 0.1252015" pos="0.0 0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="bleach_cleanser_lid_joint_actuator" joint="bleach_cleanser_lid_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

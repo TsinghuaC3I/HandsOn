@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="193.178" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="chips_can_berkeley_meshes_material" file="visuals/T_chips_can_berkeley_meshes_BC001.png"/>
+    <texture type="2d" name="chips_can_berkeley_meshes_Clear_material" file="visuals/T_chips_can_berkeley_meshes_BC001.png"/>
+    <material name="chips_can_berkeley_meshes_material" texture="chips_can_berkeley_meshes_material" specular="0.3333" shininess="0.29"/>
+    <material name="chips_can_berkeley_meshes_Clear_material" texture="chips_can_berkeley_meshes_Clear_material" specular="0.3333" shininess="0.7" rgba="1 1 1 0.3"/>
+    <mesh name="chips_can_berkeley_meshes_vis" file="visuals/chips_can_berkeley_meshes.obj"/>
+    <mesh name="chips_can_berkeley_meshes_Clear_vis" file="visuals/chips_can_berkeley_meshes_Clear.obj"/>
+    <mesh name="chips_can_berkeley_meshes_Collider1_Collider2_m_collision" file="collision/chips_can_berkeley_meshes_Collider1_Collider2_m.obj"/>
+    <mesh name="chips_can_berkeley_meshes_Collider1_Collider3_m_collision" file="collision/chips_can_berkeley_meshes_Collider1_Collider3_m.obj"/>
+    <mesh name="chips_can_berkeley_meshes_Collider1_Collider1_m_collision" file="collision/chips_can_berkeley_meshes_Collider1_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="chips_can_berkeley_meshes_material" mesh="chips_can_berkeley_meshes_vis"/>
+        <geom name="chips_can_berkeley_meshes_Collider1_Collider2_m" class="collision" type="mesh" mesh="chips_can_berkeley_meshes_Collider1_Collider2_m_collision"/>
+        <geom name="chips_can_berkeley_meshes_Collider1_Collider3_m" class="collision" type="mesh" mesh="chips_can_berkeley_meshes_Collider1_Collider3_m_collision"/>
+        <geom name="chips_can_berkeley_meshes_Collider1_Collider1_m" class="collision" type="mesh" mesh="chips_can_berkeley_meshes_Collider1_Collider1_m_collision"/>
+        <body name="chips_can_berkeley_meshes_Clear">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="chips_can_berkeley_meshes_Clear_material" mesh="chips_can_berkeley_meshes_Clear_vis"/>
+        </body>
+      <geom size="0.037659 0.037659 0.1251065" pos="0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

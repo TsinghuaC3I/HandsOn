@@ -1,0 +1,20 @@
+env_name: eval_gen06_spray_shoe
+task_id: GEN7
+display_name: Spray Shoe Care
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: Grasp and aim the spray bottle at the shoe upper before squeezing the trigger. Keep spraying the shoe to complete the task; a spray that entirely misses the shoe upper fails the attempt.
+robot_type: single_arm
+time_limit_seconds: 70
+skills:
+  - contact_control
+  - force_control
+  - aiming
+objects:
+  - spray_bottle
+  - shoe

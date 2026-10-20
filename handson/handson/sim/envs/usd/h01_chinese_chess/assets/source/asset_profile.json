@@ -1,0 +1,64 @@
+{
+  "task": "h01_chinese_chess",
+  "provenance_status": "unresolved_for_active_runtime_assets",
+  "packaged_legacy_source": {
+    "title": "Chinese Chess",
+    "author": "chung_the_artist",
+    "url": "https://sketchfab.com/3d-models/chinese-chess-7ad0f4f0ebbc455d9e9f829c956dda80",
+    "archive": "chinese_chess.zip",
+    "archive_sha256": "65469cb29af91124baaf414e4c94b0063bf08a8a3b9526573aef414c00d87604",
+    "license": "CC-BY-4.0",
+    "license_file": "LICENSE.txt",
+    "runtime_reference_status": "unused_legacy_obj_family_only",
+    "license_applies_to_active_runtime_assets": false
+  },
+  "active_runtime_assets": {
+    "audit_boundary": "checked_in_derived_obj_bytes_only",
+    "mjcf_mesh_asset_count": 44,
+    "board_visual": "h01_chess_board_068.obj",
+    "board_support_audit_mesh": "h01_chess_board_support.obj",
+    "piece_collision_mesh_count": 14,
+    "piece_visual_submesh_count": 28,
+    "upstream_archive_bytes_present": false,
+    "exact_upstream_license_bytes_present": false,
+    "license_closure": false,
+    "historical_upstream_inputs": {
+      "board": {
+        "title": "Chinese chess board - Xiangqi",
+        "author": "elsa2297",
+        "url": "https://sketchfab.com/3d-models/chinese-chess-board-xiangqi-068525be5e4e44aaa10d34c01f72f545",
+        "expected_archive": "chinese_chess_board_-_xiangqi.zip",
+        "documentary_sha256": "905c47a5e310cd5589f3014bdd6d6b9f87879914a628fc2ec41822045bfe2223",
+        "evidence_status": "metadata_only_archive_and_license_bytes_missing"
+      },
+      "pieces": {
+        "title": "Chinese chess - 218414",
+        "author": "mming1106",
+        "url": "https://www.thingiverse.com/thing:218414",
+        "expected_archives": [
+          "Chinese chess - 218414 - part 1 of 2.zip",
+          "Chinese chess - 218414 - part 2 of 2.zip"
+        ],
+        "documentary_sha256": [
+          "d3d92f434feef045c489b580f0445810fc470b42c16be6e5ab3935c53a3bc2aa",
+          "17e67e249495910ad4c65a1e33d770079af878791483c68cf37bac4a36927641"
+        ],
+        "source_mesh_count_claim": 14,
+        "runtime_instance_count": 32,
+        "evidence_status": "metadata_only_archives_and_license_bytes_missing"
+      }
+    }
+  },
+  "source_units_claim": "Board export units scaled by 0.0275, then active MJCF board meshes scaled 0.873x in X/Y (0.97x authored scale × 0.90 layout); piece STL millimetres scaled by 0.001, then active MJCF piece meshes scaled 1.485x in X/Y (1.65x authored scale × 0.90 layout) while retaining the authored Z thickness",
+  "task_board_size_m": [
+    0.55805652,
+    0.61178967
+  ],
+  "task_grid_spacing_m": [
+    0.055872,
+    0.055872
+  ],
+  "collision_truth": "The active board visual and analytic board box are scaled 0.873x in X/Y from the checked-in meshes, with Z unchanged. Each active piece mesh is scaled 1.485x in X/Y and 1x in Z at the MJCF asset declaration, producing an approximately 44.25 mm diameter by 15 mm thick piece, about 79% of the 55.872 mm grid spacing. Each of the 32 free-joint pieces uses a transparent 22.1265 mm radius by 7.5 mm half-height cylinder inscribed in that scaled mesh, preserving the 15 mm height and 32 g mass while providing a planar support face. The 14 full piece meshes remain audit inputs rather than PhysX colliders. This checked-in-byte audit does not prove either missing upstream archive or its license.",
+  "runtime_asset_license_status": "unresolved",
+  "collection_status": "collection_ready"
+}

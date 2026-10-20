@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="t33_reposition_marker_grasp_objects">
+  <default>
+    <default class="ycb10_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="ycb10_collision">
+      <geom type="mesh" group="0" condim="4" friction="0.95 0.005 0.0001" solref="0.004 1" solimp="0.95 0.995 0.001" density="732.687" rgba="0.45 0.08 0.08 0.28" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="ycb10_large_marker_texture" file="lightwheel_ycb/large_marker/visuals/T_large_marker_BC001.png" />
+    <material name="ycb10_large_marker_material" texture="ycb10_large_marker_texture" specular="0.310345" />
+    <mesh name="ycb10_large_marker_visual" file="lightwheel_ycb/large_marker/visuals/large_marker.obj" />
+    <mesh name="ycb10_large_marker_lid_visual" file="lightwheel_ycb/large_marker/visuals/optimized_visuals/large_marker_Lid.obj" />
+    <mesh name="ycb10_marker_collider_01_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Collider01_m.obj" />
+    <mesh name="ycb10_marker_collider_02_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Collider02_m.obj" />
+    <mesh name="ycb10_marker_collider_03_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Collider03_m.obj" />
+    <mesh name="ycb10_lid_collider_01_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider01_m.obj" />
+    <mesh name="ycb10_lid_collider_02_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider02_m.obj" />
+    <mesh name="ycb10_lid_collider_03_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider03_m.obj" />
+    <mesh name="ycb10_lid_collider_04_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider04_m.obj" />
+    <mesh name="ycb10_lid_collider_05_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider05_m.obj" />
+    <mesh name="ycb10_lid_collider_06_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider06_m.obj" />
+    <mesh name="ycb10_lid_collider_07_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider07_m.obj" />
+    <mesh name="ycb10_lid_collider_08_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider08_m.obj" />
+    <mesh name="ycb10_lid_collider_09_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider09_m.obj" />
+    <mesh name="ycb10_lid_collider_10_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider10_m.obj" />
+    <mesh name="ycb10_lid_collider_11_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider11_m.obj" />
+    <mesh name="ycb10_lid_collider_12_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider12_m.obj" />
+    <mesh name="ycb10_lid_collider_13_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider13_m.obj" />
+    <mesh name="ycb10_lid_collider_14_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider14_m.obj" />
+    <mesh name="ycb10_lid_collider_15_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider15_m.obj" />
+    <mesh name="ycb10_lid_collider_16_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider16_m.obj" />
+    <mesh name="ycb10_lid_collider_17_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider17_m.obj" />
+    <mesh name="ycb10_lid_collider_18_mesh" file="lightwheel_ycb/large_marker/collision/large_marker_Lid_Collider18_m.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="ycb10_marker" pos="-0.29 -0.14 0.900522">
+      <freejoint name="ycb10_marker_freejoint" />
+      <!-- Exact density-integrated inertia of the 21 original YCB convex pieces. -->
+      <inertial pos="0.000000200735 0.005930742664 -0.000000515280" quat="1 0 0 0" mass="0.015799936357" diaginertia="0.000016828570 0.000000522457 0.000016828585" />
+      <!-- The original marker and lid meshes share this zero-relative-pose frame. -->
+      <geom name="ycb10_marker_body_visual" class="ycb10_visual" mesh="ycb10_large_marker_visual" material="ycb10_large_marker_material" />
+      <geom name="ycb10_marker_lid_visual" class="ycb10_visual" mesh="ycb10_large_marker_lid_visual" material="ycb10_large_marker_material" />
+      <geom name="ycb10_marker_collision_01" class="ycb10_collision" mesh="ycb10_marker_collider_01_mesh" />
+      <geom name="ycb10_marker_collision_02" class="ycb10_collision" mesh="ycb10_marker_collider_02_mesh" />
+      <geom name="ycb10_marker_collision_03" class="ycb10_collision" mesh="ycb10_marker_collider_03_mesh" />
+      <geom name="ycb10_lid_collision_01" class="ycb10_collision" mesh="ycb10_lid_collider_01_mesh" />
+      <geom name="ycb10_lid_collision_02" class="ycb10_collision" mesh="ycb10_lid_collider_02_mesh" />
+      <geom name="ycb10_lid_collision_03" class="ycb10_collision" mesh="ycb10_lid_collider_03_mesh" />
+      <geom name="ycb10_lid_collision_04" class="ycb10_collision" mesh="ycb10_lid_collider_04_mesh" />
+      <geom name="ycb10_lid_collision_05" class="ycb10_collision" mesh="ycb10_lid_collider_05_mesh" />
+      <geom name="ycb10_lid_collision_06" class="ycb10_collision" mesh="ycb10_lid_collider_06_mesh" />
+      <geom name="ycb10_lid_collision_07" class="ycb10_collision" mesh="ycb10_lid_collider_07_mesh" />
+      <geom name="ycb10_lid_collision_08" class="ycb10_collision" mesh="ycb10_lid_collider_08_mesh" />
+      <geom name="ycb10_lid_collision_09" class="ycb10_collision" mesh="ycb10_lid_collider_09_mesh" />
+      <geom name="ycb10_lid_collision_10" class="ycb10_collision" mesh="ycb10_lid_collider_10_mesh" />
+      <geom name="ycb10_lid_collision_11" class="ycb10_collision" mesh="ycb10_lid_collider_11_mesh" />
+      <geom name="ycb10_lid_collision_12" class="ycb10_collision" mesh="ycb10_lid_collider_12_mesh" />
+      <geom name="ycb10_lid_collision_13" class="ycb10_collision" mesh="ycb10_lid_collider_13_mesh" />
+      <geom name="ycb10_lid_collision_14" class="ycb10_collision" mesh="ycb10_lid_collider_14_mesh" />
+      <geom name="ycb10_lid_collision_15" class="ycb10_collision" mesh="ycb10_lid_collider_15_mesh" />
+      <geom name="ycb10_lid_collision_16" class="ycb10_collision" mesh="ycb10_lid_collider_16_mesh" />
+      <geom name="ycb10_lid_collision_17" class="ycb10_collision" mesh="ycb10_lid_collider_17_mesh" />
+      <geom name="ycb10_lid_collision_18" class="ycb10_collision" mesh="ycb10_lid_collider_18_mesh" />
+      <site name="ycb10_marker_center" pos="0 0 0" size="0.002" rgba="0 0 0 0" />
+      <site name="ycb10_marker_cap_end" pos="0 -0.0605 0" size="0.002" rgba="0 0 0 0" />
+    </body>
+  </worldbody>
+</mujoco>

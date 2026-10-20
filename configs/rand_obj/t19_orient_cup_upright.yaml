@@ -1,0 +1,7 @@
+env_name: t19_orient_cup_upright
+semantic_name: a06_orient_cup_upright
+camera_mapping:
+  base: front
+  wrist: wrist
+prompt: "Pick up the cup and place it upright on the table with its bottom facing down."
+robot_type: single_arm

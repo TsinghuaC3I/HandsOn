@@ -1,0 +1,7 @@
+env_name: t20_pass_and_orient_pen
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Touch the pen anywhere with the right hand only, then with both hands at the same time, then with the left hand only, and finish with the left hand holding the pen tip-up at 90 +/- 2 degrees from horizontal; after both hands have touched it, do not drop the pen."
+robot_type: dual_arm
+time_limit_seconds: 32
+skills: [ordered_handover, load_transfer, slender_object_control, upright_orientation]
+objects: [pen]

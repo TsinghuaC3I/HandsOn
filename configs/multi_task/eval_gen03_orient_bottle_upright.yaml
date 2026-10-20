@@ -1,0 +1,17 @@
+env_name: eval_gen03_orient_bottle_upright
+semantic_name: eval_gen03_orient_bottle_upright
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the yellow mustard bottle and place it upright on the table with its bottom facing down. Release the bottle and keep it upright for 0.5 seconds."
+robot_type: single_arm
+runtime:
+  simulator: isaacsim-5.1
+  runtime_family: isaac_sim_5_1
+  physics_engine: PhysX
+# Native collection limit; the paper evaluator uses evaluation/budgets.json
+# (222 actions at 30 Hz = 7.4 seconds) after the recording-origin reset.
+time_limit_seconds: 120
+skills: [grasping, object_reorientation, placement, release]
+objects: [mustard_bottle]

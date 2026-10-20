@@ -1,0 +1,382 @@
+{
+  "t26_place_fruit_in_bucket": {
+    "steps": 330,
+    "seconds": 11.0,
+    "mode": "demo_3xp75",
+    "p75_frames": 110
+  },
+  "t24_place_ball_in_bowl": {
+    "steps": 321,
+    "seconds": 10.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 107
+  },
+  "t04_cover_pitcher": {
+    "steps": 1146,
+    "seconds": 38.2,
+    "mode": "demo_3xp75",
+    "p75_frames": 382
+  },
+  "t09_insert_peg": {
+    "steps": 1455,
+    "seconds": 48.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 485
+  },
+  "t44_stack_blocks": {
+    "steps": 1161,
+    "seconds": 38.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 387
+  },
+  "t03_cover_box": {
+    "steps": 630,
+    "seconds": 21.0,
+    "mode": "demo_3xp75",
+    "p75_frames": 210
+  },
+  "t05_fill_cup": {
+    "steps": 1590,
+    "seconds": 53.0,
+    "mode": "demo_3xp75",
+    "p75_frames": 530
+  },
+  "t15_open_drawers": {
+    "steps": 558,
+    "seconds": 18.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 186
+  },
+  "t45_stir_pot": {
+    "steps": 1641,
+    "seconds": 54.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 547
+  },
+  "t37_scrub_bottle": {
+    "steps": 777,
+    "seconds": 25.9,
+    "mode": "demo_3xp75",
+    "p75_frames": 259
+  },
+  "t20_pass_and_orient_pen": {
+    "steps": 1272,
+    "seconds": 42.4,
+    "mode": "demo_3xp75",
+    "p75_frames": 424
+  },
+  "t32_press_soap_pump": {
+    "steps": 1233,
+    "seconds": 41.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 411
+  },
+  "t38_set_dual_knobs": {
+    "steps": 1293,
+    "seconds": 43.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 431
+  },
+  "t30_pour_seasonings": {
+    "steps": 708,
+    "seconds": 23.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 236
+  },
+  "t01_align_blocks_in_midair": {
+    "steps": 1197,
+    "seconds": 39.9,
+    "mode": "demo_3xp75",
+    "p75_frames": 399
+  },
+  "t13_load_cans": {
+    "steps": 1134,
+    "seconds": 37.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 378
+  },
+  "t46_store_charger": {
+    "steps": 738,
+    "seconds": 24.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 246
+  },
+  "t08_hammer_nail": {
+    "steps": 1578,
+    "seconds": 52.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 526
+  },
+  "t36_scoop_marbles": {
+    "steps": 2583,
+    "seconds": 86.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 861
+  },
+  "t50_water_plant": {
+    "steps": 417,
+    "seconds": 13.9,
+    "mode": "demo_3xp75",
+    "p75_frames": 139
+  },
+  "t14_move_and_click_mouse": {
+    "steps": 375,
+    "seconds": 12.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 125
+  },
+  "t23_photograph_logo": {
+    "steps": 474,
+    "seconds": 15.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 158
+  },
+  "t02_connect_charger_and_cable": {
+    "steps": 2526,
+    "seconds": 84.2,
+    "mode": "demo_3xp75",
+    "p75_frames": 842
+  },
+  "t11_line_up_blocks": {
+    "steps": 2943,
+    "seconds": 98.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 981
+  },
+  "t12_load_and_start_microwave": {
+    "steps": 1989,
+    "seconds": 66.3,
+    "mode": "demo_3xp75",
+    "p75_frames": 663
+  },
+  "t21_pass_block": {
+    "steps": 585,
+    "seconds": 19.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 195
+  },
+  "t43_squeeze_scissors": {
+    "steps": 663,
+    "seconds": 22.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 221
+  },
+  "t42_sort_objects": {
+    "steps": 2409,
+    "seconds": 80.3,
+    "mode": "demo_3xp75",
+    "p75_frames": 803
+  },
+  "t31_prepare_coffee": {
+    "steps": 3150,
+    "seconds": 105.0,
+    "mode": "demo_3xp75",
+    "p75_frames": 1050
+  },
+  "t06_fit_device_cover": {
+    "steps": 2196,
+    "seconds": 73.2,
+    "mode": "demo_3xp75",
+    "p75_frames": 732
+  },
+  "t18_open_micropipette_box": {
+    "steps": 375,
+    "seconds": 12.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 125
+  },
+  "t49_unfold_ruler": {
+    "steps": 1173,
+    "seconds": 39.1,
+    "mode": "demo_3xp75",
+    "p75_frames": 391
+  },
+  "t48_unfold_fan": {
+    "steps": 972,
+    "seconds": 32.4,
+    "mode": "demo_3xp75",
+    "p75_frames": 324
+  },
+  "t34_roll_ball_through_gate": {
+    "steps": 1044,
+    "seconds": 34.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 348
+  },
+  "t27_place_largest_fitting_ball": {
+    "steps": 1239,
+    "seconds": 41.3,
+    "mode": "demo_3xp75",
+    "p75_frames": 413
+  },
+  "t41_sort_nested_cups": {
+    "steps": 2361,
+    "seconds": 78.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 787
+  },
+  "t47_trigger_drill_on_block": {
+    "steps": 1164,
+    "seconds": 38.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 388
+  },
+  "t28_place_tableware": {
+    "steps": 1782,
+    "seconds": 59.4,
+    "mode": "demo_3xp75",
+    "p75_frames": 594
+  },
+  "t39_set_timer": {
+    "steps": 1665,
+    "seconds": 55.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 555
+  },
+  "t07_flip_sponge": {
+    "steps": 4428,
+    "seconds": 147.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 1476
+  },
+  "t29_place_wine_glass": {
+    "steps": 741,
+    "seconds": 24.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 247
+  },
+  "t33_reposition_marker_grasp": {
+    "steps": 1107,
+    "seconds": 36.9,
+    "mode": "demo_3xp75",
+    "p75_frames": 369
+  },
+  "eval_comb03_pass_block_and_close_box": {
+    "steps": 1215,
+    "seconds": 40.5,
+    "mode": "semantic_3xp75"
+  },
+  "eval_comb02_open_laptop_and_click_mouse": {
+    "steps": 963,
+    "seconds": 32.1,
+    "mode": "semantic_3xp75"
+  },
+  "eval_comb04_place_fruit_and_photograph_logo": {
+    "steps": 804,
+    "seconds": 26.8,
+    "mode": "semantic_3xp75"
+  },
+  "eval_comb05_scrub_bottle_then_fill_cup": {
+    "steps": 2367,
+    "seconds": 78.9,
+    "mode": "semantic_3xp75"
+  },
+  "eval_comb01_cover_pitcher_and_box": {
+    "steps": 1776,
+    "seconds": 59.2,
+    "mode": "semantic_3xp75"
+  },
+  "eval_comb06_season_and_stir": {
+    "steps": 2349,
+    "seconds": 78.3,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen01_cover_lunchbox": {
+    "steps": 630,
+    "seconds": 21.0,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen02_open_trash_bin": {
+    "steps": 375,
+    "seconds": 12.5,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen03_orient_bottle_upright": {
+    "steps": 222,
+    "seconds": 7.4,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen04_pass_glue_stick": {
+    "steps": 585,
+    "seconds": 19.5,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen05_set_mixer_knobs": {
+    "steps": 1293,
+    "seconds": 43.1,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen06_spray_shoe": {
+    "steps": 417,
+    "seconds": 13.9,
+    "mode": "semantic_3xp75"
+  },
+  "eval_gen07_stack_boxes": {
+    "steps": 1161,
+    "seconds": 38.7,
+    "mode": "semantic_3xp75"
+  },
+  "eval_flex01_compress_sponge_into_mug": {
+    "steps": 7200,
+    "seconds": 240,
+    "mode": "native_exception"
+  },
+  "eval_flex02_fold_towel_twice": {
+    "steps": 5400,
+    "seconds": 180,
+    "mode": "native_exception"
+  },
+  "eval_flex03_pack_pillow": {
+    "steps": 5400,
+    "seconds": 180,
+    "mode": "native_exception"
+  },
+  "t25_place_cup_on_plate": {
+    "steps": 405,
+    "seconds": 13.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 135
+  },
+  "t19_orient_cup_upright": {
+    "steps": 222,
+    "seconds": 7.4,
+    "mode": "demo_3xp75",
+    "p75_frames": 74
+  },
+  "t40_slide_knife_blade": {
+    "steps": 1614,
+    "seconds": 53.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 538
+  },
+  "t22_pass_screwdriver": {
+    "steps": 885,
+    "seconds": 29.5,
+    "mode": "demo_3xp75",
+    "p75_frames": 295
+  },
+  "t10_lift_carton": {
+    "steps": 864,
+    "seconds": 28.8,
+    "mode": "demo_3xp75",
+    "p75_frames": 288
+  },
+  "t16_open_laptop": {
+    "steps": 588,
+    "seconds": 19.6,
+    "mode": "demo_3xp75",
+    "p75_frames": 196
+  },
+  "t17_open_latched_door": {
+    "steps": 621,
+    "seconds": 20.7,
+    "mode": "demo_3xp75",
+    "p75_frames": 207
+  },
+  "t35_rotate_propeller": {
+    "steps": 852,
+    "seconds": 28.4,
+    "mode": "demo_3xp75",
+    "p75_frames": 284
+  }
+}

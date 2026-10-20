@@ -1,0 +1,22 @@
+{
+  "schema": "isaac_sim_validator_manual_v1",
+  "task_id": "B320-FU001",
+  "scope": "core_scene_only",
+  "valid": true,
+  "passed": 10,
+  "total": 10,
+  "verdict": "Valid: 10/10 checks passed",
+  "checks": {
+    "app_lifecycle": true,
+    "headless_gpu": true,
+    "real_asset": true,
+    "lighting": true,
+    "camera_640x480": true,
+    "rtx_aces": true,
+    "preview_quality": true,
+    "api_and_paths": true,
+    "physics_duration": true,
+    "result_consistency": true
+  },
+  "task_complete": false
+}

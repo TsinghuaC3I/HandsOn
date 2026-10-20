@@ -1,0 +1,193 @@
+schema_version: 1
+task:
+  id: B320-KA005-2
+  name: t38_set_dual_knobs
+  title: "B320-KA005 Synchronized Dual-Knob Setting-2"
+  description: "Use the left hand on the left knob and the right hand on the right knob, begin both rotations together, reach the two displayed target ticks, release both knobs, and leave both settings stable."
+  taxonomy:
+    family: articulation
+    interactions: [assigned_hand_rotation, synchronized_motion, target_setting, release_and_stabilize]
+    horizon: short
+    handedness: bimanual
+  clean_room:
+    enabled: true
+    prior_task_implementation_inspected: false
+    prior_task_assets_inspected: false
+    implementation_reference: b320_synchronized_double_cabinet_open
+    reference_scope: "shared B320 runtime contracts and synchronized two-DOF semantics only"
+
+runtime:
+  simulator: isaac_sim
+  simulator_version: "5.1"
+  physics_backend: physx
+  isaaclab_runtime_family: "2.3.2-compatible HandsOn B320 runtime"
+  physics_hz: 120
+  control_hz: 30
+  arm_render: live
+  canonical_camera_render: deferred_postrender
+  time_limit_seconds: 40
+
+robot:
+  arms:
+    model: rokae
+    count: 2
+  hands:
+    model: wuji1
+    count: 2
+  role_assignment:
+    left_hand: left_knob
+    right_hand: right_knob
+    same_hand_substitution_allowed: false
+
+fixture:
+  root_prim: /World/Task/B320Benchmark/panel_base
+  placement:
+    support_surface: table
+    base_bottom_z_m: 0.89
+  enclosure:
+    exterior_xyz_m: [0.21, 0.49, 0.05]
+    source_asset: project_boxy
+    fixed: true
+  knobs:
+    source_asset: rotary_knob_metal
+    layout: left_right
+    center_spacing_m: 0.27
+    centers_local_xy_m:
+      left: [0.0, 0.135]
+      right: [0.0, -0.135]
+    moving_grip_diameter_m: 0.06
+    visual_total_height_m: 0.0483
+    rotation_axis: Z
+    limits_deg: [-100.0, 100.0]
+    bodies: [left_knob, right_knob]
+    joints: [left_knob_joint, right_knob_joint]
+  reachability_envelope:
+    maximum_fixture_top_z_m: 0.989
+    simultaneous_two_hand_access_required: true
+
+assets:
+  - id: rotary_knob_metal
+    original_archive: /home/user/下载/rotary_knob.zip
+    original_archive_sha256: 9f65d6d81959812851dc12205d3412c0fbe3f4958e0fa8cb4c17bb4451e9b87b
+    title: Rotary Knob
+    author: 0x.anas
+    source: https://sketchfab.com/3d-models/rotary-knob-d3dd68a3c5ae4b3dbe861f2bcffa376e
+    license: CC-BY-4.0
+    selected_geometry: ["Knob base_0", "Grip_1", "Top face_2", "Index line_3"]
+    excluded_geometry: ["display labels", "leather variant", "green variant"]
+    required: true
+  - id: project_boxy
+    original_archive: /home/user/下载/project-boxy-master.zip
+    original_archive_sha256: 0726041e66f680b6b5dc61b0dcb5c76219bcf42f83b5825bd7913681635e6299
+    title: Project Boxy
+    author: abusetech
+    source: https://github.com/abusetech/project-boxy
+    license: MIT
+    selected_geometry: "parameterized enclosure body and lid design"
+    required: true
+
+reset:
+  seedable: true
+  initial_tick_values_deg: [-80.0, -60.0, -40.0, 0.0, 40.0, 60.0, 80.0]
+  target_tick_values_deg: [-80.0, -60.0, -40.0, 40.0, 60.0, 80.0]
+  pair_constraints:
+    minimum_per_knob_travel_deg: 45.0
+    maximum_per_knob_travel_deg: 120.0
+    minimum_hard_limit_margin_deg: 15.0
+    initially_successful: false
+  reset_all:
+    - left_and_right_joint_positions_and_velocities
+    - target_pair_and_visual_markers
+    - assigned_hand_contact_history
+    - first_motion_timestamps
+    - simultaneous_motion_timer
+    - target_reached_latches
+    - release_latches
+    - stability_timer
+    - success_and_failure_latches
+
+observations:
+  runtime_keys:
+    task_terminal_state:
+      shape: [3]
+      fields: [success_latched, failure_latched, failure_reason_code]
+      failure_reason_codes:
+        0: none
+        1: dof_truth_unavailable
+        2: contact_truth_unavailable
+        3: joint_limit_exceeded
+        4: panel_base_drift
+        5: other
+  required:
+    - left_and_right_joint_position
+    - left_and_right_joint_velocity
+    - left_and_right_target_angle
+    - left_and_right_target_error
+    - assigned_hand_contact_flags
+    - wrong_hand_contact_flags
+    - first_motion_start_gap
+    - simultaneous_motion_duration
+    - release_flags
+    - stability_duration
+    - task_stage
+    - success_and_failure_latches
+
+success:
+  terminal: physical
+  ordered_stages:
+    - id: assigned_contacts
+      predicate: "left hand contacts left knob and right hand contacts right knob"
+    - id: synchronized_rotation
+      predicate: "both knobs move in their target directions; first-motion start gap <= 0.50 s and overlap duration >= 0.30 s"
+    - id: target_pair
+      predicate: "both joint errors enter 5 deg within 0.50 s of each other and remain jointly in range for 0.25 s"
+    - id: release_pair
+      predicate: "all hand-to-knob contacts remain released for 0.25 s after target acquisition"
+    - id: stable_pair
+      predicate: "both errors remain <= 7 deg and both absolute joint velocities <= 0.05 rad/s for 0.50 s"
+  forbidden_shortcuts:
+    - one_knob_only
+    - sequential_motion_outside_sync_window
+    - crossed_hand_substitution
+    - target_state_written_by_task_logic
+    - success_while_either_knob_is_still_grasped
+    - unstable_target_crossing
+
+failure:
+  terminated:
+    - dof_truth_unavailable
+    - contact_truth_unavailable
+    - non_finite_physics_state
+    - fixture_displacement_above_0_002_m
+    - fixture_rotation_above_1_deg
+    - joint_angle_above_limit_plus_2_deg
+  truncated:
+    - time_limit
+
+camera:
+  primary: head
+  views:
+    - {id: head, resolution: [640, 480]}
+    - {id: wrist_left, resolution: [848, 480]}
+    - {id: wrist_right, resolution: [848, 480]}
+  framing_requirement: "both knobs, both target ticks, and both hands remain readable during the manipulation"
+
+collection:
+  format: zarr_v1
+  raw_action_stream_required: true
+  exact_fresh_process_replay_required: true
+  min_successful_episodes: 3
+  min_successful_episodes_scope: formal_certification
+  formal_collection_ready: true
+  release_gate: enabled
+
+validation:
+  required_checks: [schema, assets, scale_axis_pivot, collision, support, reachability, reset, success, negative_trials, camera, stability, collection, fresh_replay]
+  claims:
+    task_complete: false
+    live_physx_validated: true
+    physical_success_validated: false
+    camera_validated: false
+    collection_validated: false
+    fresh_replay_validated: false
+    formal_collection_certified: false

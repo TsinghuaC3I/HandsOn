@@ -1,0 +1,232 @@
+{
+  "authorship_boundary": {
+    "handson_authored_runtime": [
+      "deterministic face partition of the exact HS005 source faucet",
+      "fixed-base articulation and revolute joint for the source side lever",
+      "physical side-lever collider",
+      "verification and reuse of the shared HS005 scene collision",
+      "analytic mug body collider and recessed flat cube foot",
+      "outlet metric and render-only water stream",
+      "preservation of the source white ceramic PBR material closure"
+    ],
+    "downloaded_geometry": [
+      "Visth\u00e9tique Modern Apartment kitchen, sink, drain, and faucet",
+      "Ani 3D Ceramic White Mug visual mesh and PBR textures"
+    ],
+    "reused_hs005_work": [
+      "reviewed kitchen placement and material overrides",
+      "open-basin visual and collision derivative provenance"
+    ],
+    "reuses_hs005_realistic_kitchen": true,
+    "runtime_handle_visual_uses_source_geometry": true,
+    "runtime_safe_open_basin_floor": false,
+    "source_faucet_articulated": false,
+    "source_open_sink_collision_runtime_enabled": true,
+    "uses_shared_scene_collision": true
+  },
+  "hs005_scene": {
+    "deactivated_props": [
+      "Bottle",
+      "Brush",
+      "DishSoap",
+      "Sponge"
+    ],
+    "referenced_prim": "/HS005Assets",
+    "collision_policy": "full_height_basin_and_open_countertop_ring_v1",
+    "collision_root": "/HS005Assets/SceneCollision",
+    "runtime_disabled_collision_prims": [],
+    "sha256": "ea706ecab4785bab4b7f7aa96a6c83b488602b1b47a8866674063f03e3679cba",
+    "source_file_repo_relative": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/scene/hs005_assets.usda"
+  },
+  "license_summary": [
+    "CC BY 4.0",
+    "CC BY 4.0"
+  ],
+  "runtime": {
+    "components": [
+      {
+        "bounds_task_xyz_m": {
+          "max": [
+            0.053681084136078416,
+            -0.12814328080550563,
+            1.399843724870052
+          ],
+          "min": [
+            -0.1398059985709017,
+            -0.32264618945744683,
+            1.0021313437224884
+          ]
+        },
+        "face_count": 8664,
+        "mesh_count": 1,
+        "path": "faucet_static.usd",
+        "sha256": "05f2920eadb231bd0ded5dd6ef07325fbd787f905a7cd5eabe4f135ddcadb966",
+        "size_bytes": 310070
+      },
+      {
+        "bounds_task_xyz_m": {
+          "max": [
+            0.018686236227144937,
+            -0.2703247471823884,
+            1.2024405772188935
+          ],
+          "min": [
+            -0.03253488046729047,
+            -0.33922154037198293,
+            1.1023857381692388
+          ]
+        },
+        "face_count": 1904,
+        "mesh_count": 1,
+        "path": "faucet_handle.usd",
+        "sha256": "4303af3116b68f170bcc15ef9f4d451526cfd3c7d9cec2bb8e9405a829c9c069",
+        "size_bytes": 132125
+      },
+      {
+        "collision": {
+          "runtime_axis": "Z",
+          "runtime_foot_xyz_m": [
+            0.054,
+            0.054,
+            0.006
+          ],
+          "runtime_height_m": 0.0864,
+          "runtime_radius_m": 0.0405,
+          "runtime_support_min_z_m": 0.0,
+          "source_axis": "Z",
+          "source_height_units": 14.4,
+          "source_radius_units": 6.75,
+          "type": "cylinder_with_recessed_cube_foot"
+        },
+        "coordinate_contract": {
+          "runtime_home_orientation_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "runtime_up_axis": "Z",
+          "runtime_visual_bottom_m": 0.0016943422044010427,
+          "runtime_visual_rim_z_m": 0.09386891889393457,
+          "source_up_axis": "Y",
+          "visual_bounds_source_units": {
+            "max": [
+              9.946359413389427,
+              11.544497856198397,
+              15.644819815655762
+            ],
+            "min": [
+              -13.142621602532762,
+              -11.544483685555807,
+              0.28239036740017376
+            ]
+          }
+        },
+        "mesh_count": 1,
+        "path": "ceramic_white_mug.usd",
+        "sha256": "90136fb25fc2d1e18aa18e50137071a33b09f8b374cdcde7b8847d13f4ee0e8b",
+        "size_bytes": 151246
+      }
+    ],
+    "faucet_handle_pivot_w_m": [
+      0.024,
+      -0.275,
+      1.12
+    ],
+    "mug_home_orientation_wxyz": [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mug_rim_height_m": 0.09387,
+    "mug_uniform_scale": 0.006,
+    "mug_up_axis_local": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "outlet_position_w_m": [
+      -0.118627,
+      -0.149335,
+      1.256958
+    ],
+    "safe_open_basin_floor": {
+      "center_w_m": [
+        -0.15,
+        0.0,
+        0.885
+      ],
+      "path": "/World/Task/B320Benchmark/faucet_fixture/hs005_realistic_kitchen/Sink/Collider",
+      "purpose": "shared HS005 scene-owned analytic basin floor",
+      "size_m": [
+        0.42,
+        0.72,
+        0.02
+      ],
+      "top_z_m": 0.895
+    },
+    "source_mesh_split": {
+      "handle_face_count": 1904,
+      "method": "reviewed_task_frame_face_centroid_partition",
+      "preserves_source_uvs": true,
+      "preserves_source_vertices": true,
+      "reviewed_rule": "centroid x < 0.012 m, y < -0.277 m, 1.095 m < z < 1.215 m",
+      "source_face_count": 10568,
+      "static_face_count": 8664
+    }
+  },
+  "schema": "handson.ka021.hs005-kitchen-faucet-cup-assets",
+  "schema_version": 8,
+  "sources": [
+    {
+      "creator": "Visth\u00e9tique",
+      "license": {
+        "attribution_required": true,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "platform": "Sketchfab",
+      "role": "kitchen_sink_and_faucet_visual",
+      "shared_from_task": "B320-HS005",
+      "source_file_repo_relative": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/modern_apartment_kitchen.usd",
+      "source_sha256": "12ac915b9d442399f10af5b302d9c6ef887e32c8aa1d0f6addd3a1dbc5f58524",
+      "source_url": "https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5",
+      "title": "Modern Apartment"
+    },
+    {
+      "creator": "HandsOn HS005 task",
+      "license_inherited_from": "Modern Apartment",
+      "role": "source_open_sink_collision_derivative",
+      "source_file_repo_relative": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/sink_collision_source.ply",
+      "source_sha256": "46839123013a8785fcc70b9744fae0745972561e8c399c14c06b394b4f774082",
+      "title": "HS005 reviewed sink collision derivative"
+    },
+    {
+      "creator": "Ani 3D (anilai)",
+      "download_url": "https://sketchfab.com/3d-models/ceramic-white-mug-fdf735d1f8f6469d892a989b509cd245#download",
+      "license": {
+        "attribution_required": true,
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "platform": "Sketchfab",
+      "role": "manipulated_cup",
+      "source_closure_sha256": {
+        "license.txt": "390f6d90c27d3f576ca9e0148840a3caab8619ede8a3f5552ac9063ac03b48b8",
+        "scene.bin": "e85d79b4a66c75ecc2c5fbfabf0c084e85f3a1c2d9e163953bb20d78628306c0",
+        "scene.gltf": "a0c68b86012fcb1cda80b5c22fd138a3b5adbb247d86ee06b893b2da35fbe36d",
+        "textures/Mug_White_baseColor.png": "039fc544b907b3e4a7ef5e92d582b3910c003a6cbd2287d44f5e2ca317ca25b9",
+        "textures/Mug_White_emissive.jpeg": "d1a77e8d38602635e6ec0850819f15919df3fffd613f625f5b40f48daafad9b4",
+        "textures/Mug_White_metallicRoughness.png": "59de154f99948fee53dfda9407f88077983ad9eb0ff4c7b82a9de6bec9cebca6",
+        "textures/Mug_White_normal.png": "be748b70544c54f70210127a02cf48c3d13cf9f2f6c723e183db7e80a79fbecf"
+      },
+      "source_file": "ceramic_white_mug.zip",
+      "source_sha256": "f9142fbf5bf300af9444a264ebf6de8c0738d93e8758b289a43415024be778e7",
+      "source_url": "https://sketchfab.com/3d-models/ceramic-white-mug-fdf735d1f8f6469d892a989b509cd245",
+      "title": "Ceramic White Mug"
+    }
+  ],
+  "task_id": "B320-KA021",
+  "task_name": "t05_fill_cup"
+}

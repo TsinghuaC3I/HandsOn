@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1380.67" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="knife_material" file="visuals/T_knife_BC001.png"/>
+    <material name="knife_material" texture="knife_material" specular="0.333333" shininess="0.4472"/>
+    <mesh name="knife_vis" file="visuals/knife.obj"/>
+    <mesh name="knife_Collider1_m_collision" file="collision/knife_Collider1_m.obj"/>
+    <mesh name="knife_Collider2_m_collision" file="collision/knife_Collider2_m.obj"/>
+    <mesh name="knife_Collider3_m_collision" file="collision/knife_Collider3_m.obj"/>
+    <mesh name="knife_Collider4_m_collision" file="collision/knife_Collider4_m.obj"/>
+    <mesh name="knife_Collider5_m_collision" file="collision/knife_Collider5_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="knife_material" mesh="knife_vis"/>
+        <geom name="knife_Collider1_m" class="collision" type="mesh" mesh="knife_Collider1_m_collision"/>
+        <geom name="knife_Collider2_m" class="collision" type="mesh" mesh="knife_Collider2_m_collision"/>
+        <geom name="knife_Collider3_m" class="collision" type="mesh" mesh="knife_Collider3_m_collision"/>
+        <geom name="knife_Collider4_m" class="collision" type="mesh" mesh="knife_Collider4_m_collision"/>
+        <geom name="knife_Collider5_m" class="collision" type="mesh" mesh="knife_Collider5_m_collision"/>
+      <geom size="0.010733 0.1080585 0.007146" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

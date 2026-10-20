@@ -1,0 +1,110 @@
+<mujoco model="hammer">
+  <asset>
+    <texture name="c01_ycb_hammer_tex" type="2d"
+             file="lightwheel_ycb/hammer/visuals/T_hammer_BC001.png"/>
+    <material name="c01_ycb_hammer_mat" texture="c01_ycb_hammer_tex"
+              specular="0.3" shininess="0.5"/>
+    <mesh name="c01_ycb_hammer_vis" file="lightwheel_ycb/hammer/visuals/optimized_visuals/hammer.obj"/>
+    <mesh name="c01_ycb_hammer_col_01" file="lightwheel_ycb/hammer/collision/hammer_Collider1_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_02" file="lightwheel_ycb/hammer/collision/hammer_Collider2_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_03" file="lightwheel_ycb/hammer/collision/hammer_Collider3_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_04" file="lightwheel_ycb/hammer/collision/hammer_Collider4_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_05" file="lightwheel_ycb/hammer/collision/hammer_Collider5_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_06" file="lightwheel_ycb/hammer/collision/hammer_Collider6_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_07" file="lightwheel_ycb/hammer/collision/hammer_Collider7_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_08" file="lightwheel_ycb/hammer/collision/hammer_Collider8_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_09" file="lightwheel_ycb/hammer/collision/hammer_Collider9_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_10" file="lightwheel_ycb/hammer/collision/hammer_Collider10_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_11" file="lightwheel_ycb/hammer/collision/hammer_Collider11_m.obj"/>
+    <mesh name="c01_ycb_hammer_col_12" file="lightwheel_ycb/hammer/collision/hammer_Collider12_m.obj"/>
+  </asset>
+
+  <worldbody>
+    <!-- Hammer body. -->
+    <body name="hammer_body" pos="-0.20 -0.35 1" quat="0.6830128 -0.1830125 0.6830128 0.1830125">
+      <joint type="free" name="hammer_joint" damping="0.0005"/>
+
+      <geom name="hammer_visual" type="mesh" mesh="c01_ycb_hammer_vis"
+            material="c01_ycb_hammer_mat" pos="0 0 0.0308"
+            quat="0.7071068 0.7071068 0 0"
+            contype="0" conaffinity="0" group="1" mass="0"/>
+
+      <!--
+        Use the convex decomposition shipped with the YCB asset.  Every piece
+        intentionally has the exact visual transform above: the OBJ hammer's
+        head lies on +Y, so +90 degrees about X maps it onto this body's +Z.
+        The previous -90 degree visual transform put the rendered head at the
+        opposite end from its collision primitives.
+
+        The head-side pieces keep the legacy logical names consumed by the
+        C01/Plan1 contact code.  In particular, Collider8 is the positive-X
+        striking face and therefore retains the required ``face`` name.
+      -->
+      <geom name="handle" type="mesh" mesh="c01_ycb_hammer_col_01"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="5.0 0.05 0.002"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_02" type="mesh" mesh="c01_ycb_hammer_col_02"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="5.0 0.05 0.002"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_03" type="mesh" mesh="c01_ycb_hammer_col_03"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="5.0 0.05 0.002"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_04" type="mesh" mesh="c01_ycb_hammer_col_04"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="5.0 0.05 0.002"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="head" type="mesh" mesh="c01_ycb_hammer_col_05"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_06" type="mesh" mesh="c01_ycb_hammer_col_06"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="neck" type="mesh" mesh="c01_ycb_hammer_col_07"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="face" type="mesh" mesh="c01_ycb_hammer_col_08"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_09" type="mesh" mesh="c01_ycb_hammer_col_09"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_10" type="mesh" mesh="c01_ycb_hammer_col_10"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="claw" type="mesh" mesh="c01_ycb_hammer_col_11"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+      <geom name="hammer_collision_12" type="mesh" mesh="c01_ycb_hammer_col_12"
+            pos="0 0 0.0308" quat="0.7071068 0.7071068 0 0"
+            density="1226.5786" friction="3.0 0.03 0.001"
+            contype="3" conaffinity="3" condim="6"
+            rgba="0 0 0 0" group="3" solref="0.005 1.0" solimp="0.95 0.99 0.001"/>
+
+      <!-- Reference sites. -->
+      <site name="bottom_site" pos="0 0 -0.1271" rgba="0 0 0 0" size="0.005"/>
+      <site name="top_site" pos="0 0 0.1888" rgba="0 0 0 0" size="0.005"/>
+      <site name="horizontal_radius_site" pos="0.2178 0 0" rgba="0 0 0 0" size="0.005"/>
+    </body>
+  </worldbody>
+</mujoco>

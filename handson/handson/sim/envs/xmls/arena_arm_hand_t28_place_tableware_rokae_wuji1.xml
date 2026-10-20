@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji1_YCB06_Single_Step_Table_Setting">
+  <include file="rokae_wuji1_bimanual.xml" />
+
+  <!--
+    These are the authoritative, original-scale Lightwheel-YCB models.  The
+    Isaac 5.1 preparation pass gives each source body its task identity and
+    free/fixed root without replacing any visual or collision mesh.
+  -->
+  <include file="lightwheel_ycb/plate/model.xml" />
+  <include file="lightwheel_ycb/fork/model.xml" />
+  <include file="lightwheel_ycb/knife/model.xml" />
+  <include file="lightwheel_ycb/spoon/model.xml" />
+  <include file="lightwheel_ycb/mug/model.xml" />
+  <include file="lightwheel_ycb/gelatin_box/model.xml" />
+
+  <!-- Collection-platform table, room, lights, and canonical cameras. -->
+  <include file="t25_place_cup_on_plate_scene.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+</mujoco>

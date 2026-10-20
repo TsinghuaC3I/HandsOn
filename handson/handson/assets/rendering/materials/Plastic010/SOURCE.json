@@ -1,0 +1,27 @@
+{
+  "asset_id": "Plastic010",
+  "source": "https://ambientcg.com/a/Plastic010",
+  "download": "https://ambientcg.com/get?file=Plastic010_2K-JPG.zip",
+  "archive_sha256": "81aebd803039a36f0c7b9c25d15f1a39a50758214d540df281eac0e13e3cd1a7",
+  "license": "CC0-1.0",
+  "license_source": "https://docs.ambientcg.com/license/",
+  "source_dimension_cm": [
+    0,
+    0
+  ],
+  "creation_method": "PBRProcedural",
+  "maps": {
+    "Color": {
+      "file": "Plastic010/Color.jpg",
+      "sha256": "9e966978debc85c05e1e4834e1ac8406d863f9267c396d1580ec2d94fdce9738"
+    },
+    "NormalGL": {
+      "file": "Plastic010/NormalGL.jpg",
+      "sha256": "70e36c645d2d6bc9ddc79b86d1275147c52947613fed8ed75dc6aec5d9282187"
+    },
+    "Roughness": {
+      "file": "Plastic010/Roughness.jpg",
+      "sha256": "44a1a3eb43252db6c242cd3e777a2e41819e872058e032e3cf8285cc578f35bb"
+    }
+  }
+}

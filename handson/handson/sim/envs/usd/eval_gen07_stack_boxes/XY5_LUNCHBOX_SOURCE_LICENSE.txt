@@ -1,0 +1,11 @@
+Model Information:
+* title:	Lunchbox
+* source:	https://sketchfab.com/3d-models/lunchbox-dc89faa39e2f4f1096630597e4ea6ccb
+* author:	tjgatt (https://sketchfab.com/tjgatt)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Lunchbox" (https://sketchfab.com/3d-models/lunchbox-dc89faa39e2f4f1096630597e4ea6ccb) by tjgatt (https://sketchfab.com/tjgatt) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

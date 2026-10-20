@@ -1,0 +1,21 @@
+env_name: t16_open_laptop
+task_id: B320-FU015
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Use the right hand to lift the initially closed display from its front edge and open it to the round target shown in the Success Condition panel. The base is fixed after each randomized reset."
+robot_type: dual_arm
+sim_backend: isaacsim
+physics_backend: physx
+time_limit_seconds: 22
+skills:
+  - one_hand_laptop_opening
+  - hinge_actuation
+  - contact_control
+objects:
+  - laptop_base
+  - laptop_display
+roles:
+  left: inactive
+  right: laptop_display_front_edge_open_hinge

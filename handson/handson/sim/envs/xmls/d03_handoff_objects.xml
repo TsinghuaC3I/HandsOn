@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d03_handoff_objects">
+  <compiler angle="radian" />
+
+  <!-- Reuse B04's complete BuildingBlock017 asset contract.  In particular,
+       the visual mesh and its authored convex collision hull must stay paired;
+       substituting a hand-written 30 mm box makes fingertip contact occur at
+       the wrong surface and can launch this very light block. -->
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <default>
+    <default class="d03_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="d03_collision">
+      <geom group="0" friction="1.05 0.01 0.0002" solref="0.004 1" solimp="0.96 0.995 0.001" />
+    </default>
+  </default>
+
+  <asset>
+    <texture name="d03_box_tex" type="2d" file="lightwheel_ycb/Clear_Box/visuals/T_Clear_Box_BC001.png" />
+    <material name="d03_box_mat" texture="d03_box_tex" rgba="1 1 1 .72" specular=".25" />
+    <mesh name="d03_box_vis" file="lightwheel_ycb/Clear_Box/visuals/optimized_visuals/Clear_Box.obj" />
+
+    <texture name="d03_flat_tex" type="2d" file="lightwheel_ycb/flat_screwdriver/visuals/T_flat_screwdriver_BC001.png" />
+    <material name="d03_flat_mat" texture="d03_flat_tex" />
+    <mesh name="d03_flat_vis" file="lightwheel_ycb/flat_screwdriver/visuals/flat_screwdriver.obj" />
+
+    <texture name="d03_phillips_tex" type="2d" file="lightwheel_ycb/phillips_screwdriver/visuals/T_phillips_screwdriver_BC001.png" />
+    <material name="d03_phillips_mat" texture="d03_phillips_tex" />
+    <mesh name="d03_phillips_vis" file="lightwheel_ycb/phillips_screwdriver/visuals/phillips_screwdriver.obj" />
+    <mesh name="d03_phillips_prop_vis" file="lightwheel_ycb/phillips_screwdriver/visuals/phillips_screwdriver_prop.obj" />
+
+    <texture name="d03_spoon_tex" type="2d" file="lightwheel_ycb/spoon/visuals/T_spoon_BC001.png" />
+    <material name="d03_spoon_mat" texture="d03_spoon_tex" specular=".35" shininess=".55" />
+    <mesh name="d03_spoon_vis" file="lightwheel_ycb/spoon/visuals/spoon.obj" />
+
+    <texture name="d03_bolt_tex" type="2d" file="lightwheel_ycb/plastic_bolt/visuals/T_plastic_bolt_BC001.png" />
+    <material name="d03_bolt_mat" texture="d03_bolt_tex" specular=".6" />
+    <mesh name="d03_bolt_vis" file="lightwheel_ycb/plastic_bolt/visuals/plastic_bolt.obj" />
+
+    <texture name="d03_a_marbles_tex" type="2d" file="lightwheel_ycb/a_marbles/visuals/T_a_marbles_BC001.png" />
+    <material name="d03_a_marbles_mat" texture="d03_a_marbles_tex" specular=".7" />
+    <mesh name="d03_a_marbles_vis" file="lightwheel_ycb/a_marbles/visuals/optimized_visuals/a_marbles.obj" />
+
+    <texture name="d03_b_marbles_tex" type="2d" file="lightwheel_ycb/b_marbles/visuals/T_b_marbles_BC001.png" />
+    <material name="d03_b_marbles_mat" texture="d03_b_marbles_tex" specular=".6" />
+    <mesh name="d03_b_marbles_vis" file="lightwheel_ycb/b_marbles/visuals/b_marbles.obj" />
+
+    <texture name="d03_hammer_tex" type="2d" file="lightwheel_ycb/hammer/visuals/T_hammer_BC001.png" />
+    <material name="d03_hammer_mat" texture="d03_hammer_tex" specular=".3" />
+    <mesh name="d03_hammer_vis" file="lightwheel_ycb/hammer/visuals/optimized_visuals/hammer.obj" />
+
+    <texture name="d03_nails_tex" type="2d" file="lightwheel_ycb/a_Nails/visuals/T_a_Nails_BC001.png" />
+    <material name="d03_nails_mat" texture="d03_nails_tex" specular=".8" />
+    <mesh name="d03_nails_vis" file="lightwheel_ycb/a_Nails/visuals/a_Nails.obj" />
+
+    <texture name="d03_bowl_tex" type="2d" file="lightwheel_ycb/bowl/visuals/T_bowl_BC001.png" />
+    <material name="d03_bowl_mat" texture="d03_bowl_tex" specular=".45" />
+    <mesh name="d03_bowl_vis" file="lightwheel_ycb/bowl/visuals/bowl.obj" />
+  </asset>
+
+  <worldbody>
+    <!-- Keep the grasp target as the same single free rigid body used by B04.
+         A nested fixed child makes Isaac import an articulation and puts the
+         collision mass on a different rigid body from the replay/free-joint
+         root; fingertip contact can then produce a large separating impulse. -->
+    <body name="d03_target_root" pos="-0.18 0.47 0.937">
+      <inertial pos="0 0 0" quat="1 0 0 0" mass="0.02"
+                diaginertia="0.0000029700751026 0.0000029700751026 0.0000029700751026" />
+      <freejoint name="d03_target_joint" />
+      <!-- Keep B04's exact visual, collider and 20 g mass.  The Isaac runtime
+           adds a D03-specific GPU contact-safety profile for two-hand squeezing. -->
+      <geom name="d03_target_visual" class="a_series_ycb_visual"
+            mesh="BuildingBlock017_vis"
+            material="BuildingBlock017_material" />
+      <geom name="d03_target_collision" class="a_series_ycb_collision"
+            mesh="BuildingBlock017_Collider1_m_collision" mass="0.02" />
+      <site name="d03_target_center" size=".003" rgba="0 0 0 0" />
+    </body>
+
+    <!-- Clear_Box is fixed on the right. Primitive walls keep placement robust. -->
+    <body name="d03_box" pos="-0.18 -0.48 0.9945">
+      <geom name="d03_box_visual" class="d03_visual" mesh="d03_box_vis" material="d03_box_mat" />
+      <geom name="d03_box_floor" class="d03_collision" type="box" size=".138 .206 .006" pos="0 0 -.0685" mass="0" rgba=".5 .8 .9 .10" />
+      <geom name="d03_box_wall_x_pos" class="d03_collision" type="box" size=".008 .214 .0745" pos=".138 0 0" mass="0" rgba=".5 .8 .9 .08" />
+      <geom name="d03_box_wall_x_neg" class="d03_collision" type="box" size=".008 .214 .0745" pos="-.138 0 0" mass="0" rgba=".5 .8 .9 .08" />
+      <geom name="d03_box_wall_y_pos" class="d03_collision" type="box" size=".146 .008 .0745" pos="0 .206 0" mass="0" rgba=".5 .8 .9 .08" />
+      <geom name="d03_box_wall_y_neg" class="d03_collision" type="box" size=".146 .008 .0745" pos="0 -.206 0" mass="0" rgba=".5 .8 .9 .08" />
+      <site name="d03_box_center" size=".003" rgba="0 0 0 0" />
+    </body>
+
+    <body name="d03_flat_screwdriver" pos="-0.37 -0.10 0.939" quat=".9922 0 0 .1247">
+      <freejoint name="d03_flat_screwdriver_joint" />
+      <geom class="d03_visual" mesh="d03_flat_vis" material="d03_flat_mat" />
+      <geom class="d03_collision" type="box" size=".013 .096 .006" density="310" rgba=".25 .25 .25 .18" />
+    </body>
+
+    <body name="d03_phillips_screwdriver" pos="-0.32 0.15 0.939" quat=".9847 0 0 -.1741">
+      <freejoint name="d03_phillips_screwdriver_joint" />
+      <geom class="d03_visual" mesh="d03_phillips_vis" material="d03_phillips_mat" />
+      <geom class="d03_visual" mesh="d03_phillips_prop_vis" material="d03_phillips_mat" />
+      <geom class="d03_collision" type="box" size=".013 .096 .006" density="310" rgba=".25 .25 .25 .18" />
+    </body>
+
+    <body name="d03_spoon" pos="-0.14 -0.055 0.934" quat=".9997 0 0 .0262">
+      <freejoint name="d03_spoon_joint" />
+      <geom class="d03_visual" mesh="d03_spoon_vis" material="d03_spoon_mat" />
+      <geom class="d03_collision" type="box" size=".018 .086 .004" density="270" rgba=".35 .35 .35 .16" />
+    </body>
+
+    <body name="d03_plastic_bolt" pos="-0.06 -0.225 0.930">
+      <freejoint name="d03_plastic_bolt_joint" />
+      <geom class="d03_visual" mesh="d03_bolt_vis" material="d03_bolt_mat" />
+      <geom class="d03_collision" type="box" size=".0075 .017 .005" density="620" rgba=".65 .15 .12 .18" />
+    </body>
+
+    <body name="d03_a_marbles" pos="-0.035 0.195 0.961">
+      <freejoint name="d03_a_marbles_joint" />
+      <geom class="d03_visual" mesh="d03_a_marbles_vis" material="d03_a_marbles_mat" />
+      <geom class="d03_collision" type="box" size=".052 .051 .037" density="155" rgba=".16 .45 .72 .14" />
+    </body>
+
+    <body name="d03_b_marble_1" pos="-0.22 -0.19 0.940">
+      <freejoint name="d03_b_marble_1_joint" />
+      <geom class="d03_visual" mesh="d03_b_marbles_vis" material="d03_b_marbles_mat" />
+      <geom class="d03_collision" type="sphere" size=".0175" density="1050" rgba=".20 .65 .30 .18" />
+    </body>
+    <body name="d03_b_marble_2" pos="-0.27 -0.15 0.940">
+      <freejoint name="d03_b_marble_2_joint" />
+      <geom class="d03_visual" mesh="d03_b_marbles_vis" material="d03_b_marbles_mat" />
+      <geom class="d03_collision" type="sphere" size=".0175" density="1050" rgba=".20 .65 .30 .18" />
+    </body>
+
+    <body name="d03_hammer" pos="0.075 0.105 0.943" quat=".7071068 0 0 .7071068">
+      <freejoint name="d03_hammer_joint" />
+      <geom class="d03_visual" mesh="d03_hammer_vis" material="d03_hammer_mat" />
+      <geom class="d03_collision" type="box" size=".012 .135 .008" density="350" rgba=".18 .18 .18 .16" />
+      <geom class="d03_collision" type="box" size=".052 .018 .014" pos="0 -.135 0" density="620" rgba=".18 .18 .18 .16" />
+    </body>
+
+    <body name="d03_nails" pos="-0.43 0.30 0.925" quat=".9962 0 0 .0872">
+      <freejoint name="d03_nails_joint" />
+      <geom class="d03_visual" mesh="d03_nails_vis" material="d03_nails_mat" />
+      <geom class="d03_collision" type="box" size=".004 .010 .0022" density="2600" rgba=".2 .2 .2 .20" />
+    </body>
+
+    <body name="d03_bowl" pos="-0.19 0.34 0.950">
+      <freejoint name="d03_bowl_joint" />
+      <geom class="d03_visual" mesh="d03_bowl_vis" material="d03_bowl_mat" />
+      <geom class="d03_collision" type="cylinder" size=".079 .026" density="90" rgba=".8 .8 .8 .12" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,18 @@
+env_name: t13_load_cans
+task_id: B320-BC012
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the left and right tomato-soup cans with their assigned hands, cross-load each can into the opposite-side bin partition, then release both cans within the synchronization window and leave them stable."
+robot_type: dual_arm
+time_limit_seconds: 30
+skills:
+  - bimanual_pick
+  - crossed_transport
+  - opposite_side_bin_loading
+  - stable_release
+objects:
+  - left_tomato_soup_can
+  - right_tomato_soup_can
+  - partitioned_open_bin

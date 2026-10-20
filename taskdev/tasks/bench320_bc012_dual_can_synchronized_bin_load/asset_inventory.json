@@ -1,0 +1,48 @@
+{
+  "schema": "bc012_core_asset_inventory_v1",
+  "task_id": "B320-BC012",
+  "source": {
+    "catalog": "/mnt/pfs/luotianwei/handson-taskdev-orchestration/b320_32_scene_wave_20260817/source_rows.json",
+    "catalog_sha256": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987",
+    "task_selector": "tasks[task_id=B320-BC012]",
+    "excel_row": 173,
+    "snapshot": "source_row.json"
+  },
+  "assets": [
+    {
+      "id": "tomato_soup_can",
+      "source_key": "dexverse_tomato_soup_can",
+      "repo_root": "assets/tomato_soup_can/textured.usd",
+      "sha256": "c54c63ab31dc0e369ccc27d368f0fa60d1e83c2d358ae207022d5a1317d30f26",
+      "meters_per_unit": 1.0,
+      "up_axis": "Z",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "orientation_xyzw": [0.0, 0.0, 0.0, 1.0],
+      "instances": 2,
+      "collision_adapter": "analytic cylinder derived from exact live USD AABB"
+    },
+    {
+      "id": "open_sorting_bin",
+      "source_key": "dexverse_authored_open_bin",
+      "repo_root": "assets/open_bin/dexverse_authored_open_bin.glb",
+      "sha256": "eabe5ab04f5c3ec2f80cd81e9deba260eeb35a671b0a31a931e8a7a62440f1e6",
+      "units": "meters",
+      "source_up_axis": "Y",
+      "scale_xyz": [1.0, 1.0, 1.0],
+      "source_to_world_orientation_xyzw": [0.7071067812, 0.0, 0.0, 0.7071067812],
+      "source_bounds_m": [[-0.1899999976, 0.0, -0.1400000006], [0.1899999976, 0.1500000060, 0.1400000006]],
+      "source_panel_count": 5,
+      "collision_adapter": "five exact-dimension panel boxes plus one task partition divider"
+    },
+    {
+      "id": "dual_rokae_wuji_gen1",
+      "source_key": "native_handson_embodiment",
+      "repo_root": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+      "arms": 2,
+      "arm_dof_per_side": 7,
+      "hands": 2,
+      "hand_dof_per_side": 20
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "task_id": "GEN5",
+  "source_url": "https://sketchfab.com/3d-models/cardboard-boxes-b0e935d3008b4c2f866e1a8fffe2bc1f",
+  "source_archive_sha256": "422418b7bd9396b28a63723d73f4731bf9d87dc7dc6c87c13b7077c1893541a1",
+  "license": "CC-BY-4.0",
+  "archive_credit": "Isaac Rivera (https://sketchfab.com/silverpirate)",
+  "current_page_credit": "JesterArts_ (@JesterArtist_)",
+  "credit_note": "Archive and current page use different author names; preserve both without inferring why.",
+  "selection": "Use the closed near-square component at two uniform scales. Exclude the open box and the elongated box to retain easy support and grasping.",
+  "textures": "Original base-color PNG is referenced directly. Original normal and metallic/roughness maps remain archived; MJCF material uses albedo with the source color factor.",
+  "objects": {
+    "gen5_package_base": {
+      "source_component": "Box_big__CardboardBoxes__0",
+      "source_center": [
+        0.0,
+        0.0,
+        20.450000762939453
+      ],
+      "uniform_scale_m_per_source_unit": 0.001875,
+      "dimensions_m": [
+        0.09,
+        0.09,
+        0.07668750286102295
+      ],
+      "mass_kg": 0.18,
+      "center_of_mass_m": [
+        1.7881449982902281e-09,
+        -1.1315483557143902e-14,
+        -5.187933660568664e-10
+      ],
+      "inertia_kg_m2": [
+        [
+          0.0002096823549998568,
+          -4.56203961711072e-17,
+          -4.153175603243882e-12
+        ],
+        [
+          -4.56203961711072e-17,
+          0.0002096823453450125,
+          -7.75249595064719e-17
+        ],
+        [
+          -4.153175603243882e-12,
+          -7.75249595064719e-17,
+          0.00024296382987968189
+        ]
+      ],
+      "inertia_model": "uniform effective density integrated over the closed source mesh",
+      "visual_mesh": "visuals/base.obj",
+      "collision_mesh": "collision/base.obj",
+      "collision_derivation": "source mesh with UV/normal seams welded; no geometric inflation",
+      "visual_triangle_count": 44,
+      "collision_triangle_count": 44,
+      "support_face_dimensions_m": [
+        0.08925,
+        0.08925
+      ],
+      "bevel_m": 0.000375,
+      "physx": {
+        "static_friction": 1.4,
+        "dynamic_friction": 1.4,
+        "restitution": 0,
+        "friction_combine_mode": "max",
+        "contact_offset_m": 0.001,
+        "rest_offset_m": 0,
+        "linear_damping": 0.25,
+        "angular_damping": 1.0,
+        "sleep_threshold": 0.01
+      }
+    },
+    "gen5_package_small_1": {
+      "source_component": "Box_big__CardboardBoxes__0",
+      "source_center": [
+        0.0,
+        0.0,
+        20.450000762939453
+      ],
+      "uniform_scale_m_per_source_unit": 0.00075,
+      "dimensions_m": [
+        0.036000000000000004,
+        0.036000000000000004,
+        0.03067500114440918
+      ],
+      "mass_kg": 0.03,
+      "center_of_mass_m": [
+        7.152579987890511e-10,
+        -4.526575143483843e-15,
+        -2.0751734726586862e-10
+      ],
+      "inertia_kg_m2": [
+        [
+          5.59152946666285e-06,
+          -1.2165686378691756e-18,
+          -1.1075134932324095e-13
+        ],
+        [
+          -1.2165686378691756e-18,
+          5.591529209200334e-06,
+          -2.0673689680707663e-18
+        ],
+        [
+          -1.1075134932324095e-13,
+          -2.0673689680707663e-18,
+          6.479035463458187e-06
+        ]
+      ],
+      "inertia_model": "uniform effective density integrated over the closed source mesh",
+      "visual_mesh": "visuals/small.obj",
+      "collision_mesh": "collision/small.obj",
+      "collision_derivation": "source mesh with UV/normal seams welded; no geometric inflation",
+      "visual_triangle_count": 44,
+      "collision_triangle_count": 44,
+      "support_face_dimensions_m": [
+        0.0357,
+        0.0357
+      ],
+      "bevel_m": 0.00015000000000000001,
+      "physx": {
+        "static_friction": 4.0,
+        "dynamic_friction": 4.0,
+        "restitution": 0,
+        "friction_combine_mode": "max",
+        "contact_offset_m": 0.001,
+        "rest_offset_m": 0,
+        "linear_damping": 0.25,
+        "angular_damping": 1.0,
+        "sleep_threshold": 0.01
+      }
+    },
+    "gen5_package_small_2": {
+      "source_component": "Box_big__CardboardBoxes__0",
+      "source_center": [
+        0.0,
+        0.0,
+        20.450000762939453
+      ],
+      "uniform_scale_m_per_source_unit": 0.00075,
+      "dimensions_m": [
+        0.036000000000000004,
+        0.036000000000000004,
+        0.03067500114440918
+      ],
+      "mass_kg": 0.03,
+      "center_of_mass_m": [
+        7.152579987890511e-10,
+        -4.526575143483843e-15,
+        -2.0751734726586862e-10
+      ],
+      "inertia_kg_m2": [
+        [
+          5.59152946666285e-06,
+          -1.2165686378691756e-18,
+          -1.1075134932324095e-13
+        ],
+        [
+          -1.2165686378691756e-18,
+          5.591529209200334e-06,
+          -2.0673689680707663e-18
+        ],
+        [
+          -1.1075134932324095e-13,
+          -2.0673689680707663e-18,
+          6.479035463458187e-06
+        ]
+      ],
+      "inertia_model": "uniform effective density integrated over the closed source mesh",
+      "visual_mesh": "visuals/small.obj",
+      "collision_mesh": "collision/small.obj",
+      "collision_derivation": "source mesh with UV/normal seams welded; no geometric inflation",
+      "visual_triangle_count": 44,
+      "collision_triangle_count": 44,
+      "support_face_dimensions_m": [
+        0.0357,
+        0.0357
+      ],
+      "bevel_m": 0.00015000000000000001,
+      "physx": {
+        "static_friction": 4.0,
+        "dynamic_friction": 4.0,
+        "restitution": 0,
+        "friction_combine_mode": "max",
+        "contact_offset_m": 0.001,
+        "rest_offset_m": 0,
+        "linear_damping": 0.25,
+        "angular_damping": 1.0,
+        "sleep_threshold": 0.01
+      }
+    },
+    "gen5_package_small_3": {
+      "source_component": "Box_big__CardboardBoxes__0",
+      "source_center": [
+        0.0,
+        0.0,
+        20.450000762939453
+      ],
+      "uniform_scale_m_per_source_unit": 0.00075,
+      "dimensions_m": [
+        0.036000000000000004,
+        0.036000000000000004,
+        0.03067500114440918
+      ],
+      "mass_kg": 0.03,
+      "center_of_mass_m": [
+        7.152579987890511e-10,
+        -4.526575143483843e-15,
+        -2.0751734726586862e-10
+      ],
+      "inertia_kg_m2": [
+        [
+          5.59152946666285e-06,
+          -1.2165686378691756e-18,
+          -1.1075134932324095e-13
+        ],
+        [
+          -1.2165686378691756e-18,
+          5.591529209200334e-06,
+          -2.0673689680707663e-18
+        ],
+        [
+          -1.1075134932324095e-13,
+          -2.0673689680707663e-18,
+          6.479035463458187e-06
+        ]
+      ],
+      "inertia_model": "uniform effective density integrated over the closed source mesh",
+      "visual_mesh": "visuals/small.obj",
+      "collision_mesh": "collision/small.obj",
+      "collision_derivation": "source mesh with UV/normal seams welded; no geometric inflation",
+      "visual_triangle_count": 44,
+      "collision_triangle_count": 44,
+      "support_face_dimensions_m": [
+        0.0357,
+        0.0357
+      ],
+      "bevel_m": 0.00015000000000000001,
+      "physx": {
+        "static_friction": 4.0,
+        "dynamic_friction": 4.0,
+        "restitution": 0,
+        "friction_combine_mode": "max",
+        "contact_offset_m": 0.001,
+        "rest_offset_m": 0,
+        "linear_damping": 0.25,
+        "angular_damping": 1.0,
+        "sleep_threshold": 0.01
+      }
+    }
+  }
+}

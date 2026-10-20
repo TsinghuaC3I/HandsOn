@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1423.67" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="power_drill_material" file="visuals/T_power_drill_BC001.png"/>
+    <texture type="2d" name="power_drill_Trigger_material" file="visuals/T_power_drill_BC001.png"/>
+    <material name="power_drill_material" texture="power_drill_material" specular="0.3"/>
+    <material name="power_drill_Trigger_material" texture="power_drill_Trigger_material" specular="0.3"/>
+    <mesh name="power_drill_vis" file="visuals/power_drill.obj"/>
+    <mesh name="power_drill_Trigger_vis" file="visuals/power_drill_Trigger.obj"/>
+    <mesh name="power_drill_Collider1_m_collision" file="collision/power_drill_Collider1_m.obj"/>
+    <mesh name="power_drill_Collider2_m_collision" file="collision/power_drill_Collider2_m.obj"/>
+    <mesh name="power_drill_Collider3_m_collision" file="collision/power_drill_Collider3_m.obj"/>
+    <mesh name="power_drill_Collider4_m_collision" file="collision/power_drill_Collider4_m.obj"/>
+    <mesh name="power_drill_Collider5_m_collision" file="collision/power_drill_Collider5_m.obj"/>
+    <mesh name="power_drill_Collider6_m_collision" file="collision/power_drill_Collider6_m.obj"/>
+    <mesh name="power_drill_Collider7_m_collision" file="collision/power_drill_Collider7_m.obj"/>
+    <mesh name="power_drill_Collider8_m_collision" file="collision/power_drill_Collider8_m.obj"/>
+    <mesh name="power_drill_Collider9_m_collision" file="collision/power_drill_Collider9_m.obj"/>
+    <mesh name="power_drill_Collider10_m_collision" file="collision/power_drill_Collider10_m.obj"/>
+    <mesh name="power_drill_Collider11_m_collision" file="collision/power_drill_Collider11_m.obj"/>
+    <mesh name="power_drill_Collider12_m_collision" file="collision/power_drill_Collider12_m.obj"/>
+    <mesh name="power_drill_Collider13_m_collision" file="collision/power_drill_Collider13_m.obj"/>
+    <mesh name="power_drill_Trigger_Collider1_m_collision" file="collision/power_drill_Trigger_Collider1_m.obj"/>
+    <mesh name="power_drill_Trigger_Collider2_m_collision" file="collision/power_drill_Trigger_Collider2_m.obj"/>
+    <mesh name="power_drill_Trigger_Collider3_m_collision" file="collision/power_drill_Trigger_Collider3_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="power_drill_material" mesh="power_drill_vis"/>
+        <geom name="power_drill_Collider1_m" class="collision" type="mesh" mesh="power_drill_Collider1_m_collision"/>
+        <geom name="power_drill_Collider2_m" class="collision" type="mesh" mesh="power_drill_Collider2_m_collision"/>
+        <geom name="power_drill_Collider3_m" class="collision" type="mesh" mesh="power_drill_Collider3_m_collision"/>
+        <geom name="power_drill_Collider4_m" class="collision" type="mesh" mesh="power_drill_Collider4_m_collision"/>
+        <geom name="power_drill_Collider5_m" class="collision" type="mesh" mesh="power_drill_Collider5_m_collision"/>
+        <geom name="power_drill_Collider6_m" class="collision" type="mesh" mesh="power_drill_Collider6_m_collision"/>
+        <geom name="power_drill_Collider7_m" class="collision" type="mesh" mesh="power_drill_Collider7_m_collision"/>
+        <geom name="power_drill_Collider8_m" class="collision" type="mesh" mesh="power_drill_Collider8_m_collision"/>
+        <geom name="power_drill_Collider9_m" class="collision" type="mesh" mesh="power_drill_Collider9_m_collision"/>
+        <geom name="power_drill_Collider10_m" class="collision" type="mesh" mesh="power_drill_Collider10_m_collision"/>
+        <geom name="power_drill_Collider11_m" class="collision" type="mesh" mesh="power_drill_Collider11_m_collision"/>
+        <geom name="power_drill_Collider12_m" class="collision" type="mesh" mesh="power_drill_Collider12_m_collision"/>
+        <geom name="power_drill_Collider13_m" class="collision" type="mesh" mesh="power_drill_Collider13_m_collision"/>
+        <body name="power_drill_Trigger">
+          <joint name="power_drill_Trigger_joint" pos="0.00000000 0.00016200 -0.00018500" axis="0 -1 0" type="slide" stiffness="0.8" limited="true" range="0 0.004" armature="0.01" damping="1" frictionloss="1" springref="-0.1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" material="power_drill_Trigger_material" mesh="power_drill_Trigger_vis"/>
+          <geom name="power_drill_Trigger_Collider1_m" class="collision" type="mesh" mesh="power_drill_Trigger_Collider1_m_collision"/>
+          <geom name="power_drill_Trigger_Collider2_m" class="collision" type="mesh" mesh="power_drill_Trigger_Collider2_m_collision"/>
+          <geom name="power_drill_Trigger_Collider3_m" class="collision" type="mesh" mesh="power_drill_Trigger_Collider3_m_collision"/>
+        </body>
+      <geom size="0.029029 0.091565 0.093721" pos="0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="power_drill_Trigger_joint_actuator" joint="power_drill_Trigger_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

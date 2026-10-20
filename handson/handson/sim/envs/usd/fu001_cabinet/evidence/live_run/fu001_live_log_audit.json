@@ -1,0 +1,130 @@
+{
+  "schema": "fu001_live_log_audit_v1",
+  "task_id": "B320-FU001",
+  "runtime_task": "b320_synchronized_double_cabinet_open",
+  "isaac_sim_target": "5.1",
+  "physics": {
+    "backend": "physx",
+    "device": "cpu",
+    "physics_hz": 120,
+    "zero_action_steps": 1200,
+    "zero_action_duration_target_s": 10.0,
+    "zero_action_elapsed_wall_s": 1.4524552822113037,
+    "zero_action_pass": true,
+    "door_max_position_drift_rad": 0.0,
+    "door_max_speed_rad_s": 4.716865786846824e-10,
+    "robot_max_joint_speed_rad_s": 0.1852208971977234,
+    "robot_max_link_velocity_abs_m_s_rad_s": 0.29803648591041565,
+    "door_finite_all_samples": true,
+    "robot_finite_all_samples": true,
+    "step_exceptions": []
+  },
+  "camera": {
+    "camera": "head_camera",
+    "frames_target": 30,
+    "frames_successful": 30,
+    "resolution_hwc": [480, 640, 3],
+    "dtype": "uint8",
+    "all_nonblack": true,
+    "minimum_nonblack_fraction": 0.9917415364583333,
+    "maximum_black_fraction": 0.008258463541666667,
+    "first_frame_mean_rgb": 109.08021158854167,
+    "last_frame_mean_rgb": 106.47320529513888
+  },
+  "run": {
+    "command": "timeout 360s env PYTHONPATH=. /home/user/miniconda3/envs/isaacsim/bin/python /tmp/fu001_long_stability_camera.py > /tmp/fu001_long_stability_camera.stdout 2>&1",
+    "exit_code": 0,
+    "script": "/tmp/fu001_long_stability_camera.py",
+    "script_sha256": "c133d8dc7f79d4c178dc0364a70681d8d914498ccdd8097cbfff17ac59986f24",
+    "result_json": "/tmp/fu001_long_stability_camera.json",
+    "result_json_sha256": "0a19150e20c41a31cc89ec8c32c8b2d61ad996401188ef694abafdf62feb0702",
+    "stdout": "/tmp/fu001_long_stability_camera.stdout",
+    "stdout_sha256": "04a7ee6c0c8cebdc8ae6bc93cb0199fb0bd95591e35a85bbfe38f39d480f2a15",
+    "started_utc": "2026-08-27T14:50:43Z"
+  },
+  "stdout_decisive_lines": [
+    {
+      "line": 48,
+      "text": "[INFO][AppLauncher]: Using device: cpu"
+    },
+    {
+      "line": 49,
+      "text": "[INFO][AppLauncher]: Loading experience file: /home/user/IsaacLab/apps/isaaclab.python.headless.rendering.kit"
+    },
+    {
+      "line": 55,
+      "text": "[DexJoCo/IsaacLab] Constructing ABC collection scene: b320_synchronized_double_cabinet_open"
+    },
+    {
+      "line": 65,
+      "text": "[DexJoCo/IsaacLab] Circular-mount recording camera profile enabled: head=640x480, wrists=848x480 100deg HFOV, independent circular-mount tracking, renderer=IsaacRTX"
+    },
+    {
+      "line": 73,
+      "text": "[DexJoCo/IsaacLab] Native ABC collection ready: b320_synchronized_double_cabinet_open (simulated_arms=2, online_ik=True, direct_hand_control=False, deferred_camera_render=False, deferred_arm_render=False)"
+    },
+    {
+      "line": 75,
+      "text": "terminal JSON summary: aggregate.pass=true; steps_completed=1200; camera.frame_count=30; camera.successful_frame_count=30; camera.all_nonblack=true; exceptions=[]"
+    }
+  ],
+  "logs": {
+    "isaaclab": {
+      "path": "/tmp/isaaclab/logs/isaaclab_2026-08-27_22-50-52.log",
+      "sha256": "5d5d919b1d6fa259554668a85cd805b9b38ab9eb0c5c5d4636f10ba7301bc96a",
+      "path_stdout_line": 52
+    },
+    "kit": {
+      "path": "/home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260827_225043.log",
+      "sha256": "1afb073797e7fd1872f6c30418767db3998e6f5a9e0335315f97b6980e94c5c0",
+      "path_stdout_line": 2
+    },
+    "fatal_marker_scan": {
+      "patterns": [
+        "Illegal BroadPhaseUpdateData",
+        "Cannot assign transform",
+        "NaN",
+        "nan",
+        "not finite",
+        "Traceback"
+      ],
+      "sources": [
+        "/tmp/fu001_long_stability_camera.stdout",
+        "/tmp/isaaclab/logs/isaaclab_2026-08-27_22-50-52.log",
+        "/home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260827_225043.log"
+      ],
+      "matches": [],
+      "interpretation": "No requested fatal marker occurred in stdout, IsaacLab log, or Kit log. Ordinary plugin/material/Fabric warnings remain in stdout and are not classified as fatal."
+    }
+  },
+  "exact_shape_audit": {
+    "phase": "post-constructor canonical reset; no second env.reset",
+    "script": "evidence/live_run/fu001_shape_audit.py",
+    "script_sha256": "d81f500b1df88aa030ac0722c94ea3b7567a6b52582f8652aef4c84742165623",
+    "result_json": "evidence/live_run/fu001_shape_audit.json",
+    "result_json_sha256": "28be0b9f14e0362123bc77b241360397e8aff5bffc972535f63d9080fdda5edc",
+    "result_stdout": "evidence/live_run/fu001_shape_audit.stdout",
+    "result_stdout_sha256": "bd60b67f5cfceffd87b5b6e75d97c2e09b1669d454d6dd68459547ae04e09520",
+    "api": "omni.physx.get_physx_scene_query_interface().overlap_shape",
+    "inventory": {
+      "cabinet_collision_shapes": 5,
+      "robot_collision_shapes": 60,
+      "table_collision_shapes": 1
+    },
+    "exact_shape_pair_count": 0,
+    "contact_sampled_steps": 120,
+    "contact_row_count": 0,
+    "maximum_penetration_depth_m": 0.0,
+    "classification": {
+      "robot_arm_or_base_overlaps": 0,
+      "robot_hand_overlaps": 0,
+      "table_overlaps": 0,
+      "internal_cabinet_overlaps": 0,
+      "robot_arm_or_base_contacts": 0,
+      "robot_hand_contacts": 0,
+      "table_contacts": 0
+    },
+    "query_errors": [],
+    "contact_policy_note": "Hand-door and table channels remain enabled by production policy; zero rows here means the first spread-home reset pose did not exercise those channels."
+  }
+}

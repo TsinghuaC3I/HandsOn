@@ -1,0 +1,192 @@
+schema_version: 1
+task:
+  id: t49_unfold_ruler
+  benchmark_id: G10
+  title: "G10 Folding Ruler Bimanual Unfold"
+  description: "Start the ruler at a randomized tabletop pose, keep it free to move, and pull both outer segments through the real hinges until all three segments are straight. The only task success condition is the straight joint position; hand assignment, synchronized timing, release, and a stability hold are not required."
+  taxonomy:
+    family: articulation
+    interactions: [dual_revolute_target, straightness_only]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "User-provided archive; the archive contains no author, upstream source, copyright, or license metadata."
+  reference: "ZRYZ_LW_Assets_20260820.zip; archive SHA-256 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce"
+  license: unresolved
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/arena_arm_hand_lw_native_articulation_rokae_wuji1.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/arena_arm_hand_lw_native_articulation_rokae_wuji1.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.65, -0.45, 0.89]
+    max: [0.25, 0.45, 1.40]
+  targets:
+    - id: left_ruler035_outer_grip
+      arm: left
+      frame: world
+      position_m: [-0.405, 0.185, 0.920]
+      orientation_xyzw: [0.0, 0.0, 0.7071067812, 0.7071067812]
+      clearance_m: 0.02
+    - id: right_prop002_outer_grip
+      arm: right
+      frame: world
+      position_m: [-0.189, -0.170, 0.922]
+      orientation_xyzw: [0.0, 0.0, 0.7071067812, 0.7071067812]
+      clearance_m: 0.02
+assets:
+  - id: folding_ruler
+    path: handson/handson/sim/envs/usd/lw_native_articulation/assets/Ruler035/Ruler035.usd
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    sha256: 55f3823f9ae46ba34f5bfcc12332aaa512cf99eb344e2db8bfa92a8825ca0369
+    source_archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+    provenance: user_provided
+    license_status: unresolved
+    composition:
+      prim_path: /World/Task/LWNativeArticulation/folding_ruler
+      # The source collision envelope reaches about 2.833 mm below the
+      # composed root frame. z=.8958 m clears the 2 mm contact shell before the
+      # damped free articulation settles onto the .890 m table under gravity,
+      # without exceeding the physical-origin settling budget.
+      translation_m: [-0.300, 0.0, 0.8958]
+      orientation_wxyz: [1.0, 0.0, 0.0, 0.0]
+      fixed_root: false
+      root_body: Ruler035_Prop001
+      integration_mass_policy: lw_native_finite_mass_properties_v1
+    articulation:
+      body_count_from_static_source_audit: 3
+      source_collider_count_from_static_audit: 5
+      integration_grip_collider_count: 2
+      final_composed_collider_count_expected: 7
+      ordered_dofs: [Prop001_joint, Prop002_joint]
+      lower_limits_deg: [-180.0, -180.0]
+      upper_limits_deg: [180.0, 180.0]
+      passive_dynamics:
+        policy: g10_free_root_passive_hinge_damping_v2
+        link_linear_damping: 2.0
+        link_angular_damping: 8.0
+        joint_friction: 0.03
+        passive_velocity_drive:
+          stiffness: 0.0
+          damping: 0.05
+          max_force_nm: 0.15
+          target_velocity_deg_s: 0.0
+    collision:
+      enabled: true
+      approximation: source_authored_convex_collision
+      # Keep the immutable source/render meshes, but use a composed
+      # integration-layer bounding cube for the three long ``*_Collider1``
+      # shapes; source-authored thin convex hulls are not GPU-compatible in
+      # Isaac Sim 5.1 PhysX.
+      gpu_long_link_approximation: boundingCube
+      gpu_long_link_scope: [Ruler035_Collider1, Ruler035_prop001_Collider1, Ruler035_prop002_Collider1]
+reset:
+  seedable: true
+  max_settle_steps: 240
+  randomization:
+    # Keep the hinges at the audited passive equilibrium.  Meaningful seeded
+    # diversity comes from the free root's XY position and yaw.
+    coherent_opening_deg: {fixed: 90.0}
+    initial_joint_formula_deg: [-opening, opening]
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - task_not_initially_successful
+    - randomized_free_root_pose
+    - native_articulation_truth_available
+    - assigned_contact_truth_available
+    - shared_mirrored_bimanual_arm_home
+contact:
+  thresholds_n: {on: 0.15, off: 0.05}
+  collision_safety:
+    thin_link_speculative_ccd: false
+    thin_link_swept_ccd: true
+    hand_solver_iterations: {position: 64, velocity: 8}
+    hand_max_depenetration_velocity_mps: 0.40
+    source_and_grip_contact_offset_m: 0.002
+  monitored_pairs:
+    - id: left_hand_ruler035_outer
+      bodies: ["robot/left_hand/*", "assets/folding_ruler/Ruler035"]
+      max_penetration_m: 0.005
+    - id: right_hand_prop002_outer
+      bodies: ["robot/right_hand/*", "assets/folding_ruler/Ruler035_Prop002"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: arm_table
+      bodies: ["robot/arms/*", "environment/table"]
+success:
+  # The runtime treats G10 as straightness-only and does not add
+  # hand/release/hold requirements.
+  logic: all
+  timebase: physics_substeps_120_hz
+  predicates:
+    - id: ruler_reaches_straight_position
+      type: joint_position_window
+      parameters: {prop001_window_deg: [175.0, 180.0], prop002_window_deg: [175.0, 180.0], angle_mode: absolute_periodic, accept_wrapped_minus_180: true, velocity_requirement: none, contact_requirement: none}
+  progress_guard_policy:
+    free_root_motion:
+      fixed_root: false
+      ordinary_translation_rotation: allowed
+      root_pose_constraint: false
+      translation_max_m: 0.750
+      rotation_max_deg: 270.0
+      recoverable: true
+      on_violation: clear_current_attempt_progress_without_terminal_reset
+  terminal_policy:
+    gross_root_escape:
+      translation_exclusive_max_m: 0.750
+      rotation_exclusive_max_deg: 270.0
+      consecutive_hold_s: 0.50
+  hold_steps: 1
+  timeout_steps: 10800
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  required_framing: [both_assigned_hands, all_three_segments, both_hinges]
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 0.015
+  max_angular_velocity_radps: 0.08
+  stable_origin_max_dof_speed_rad_s: 0.08
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  recorder: scripts/record_demos_zarr.py
+  fresh_replay: scripts/certify_physx_replay.py
+  required_streams: [action, proprioception, rgb_head, contacts, success, lw_joint_state, lw_contact_state, lw_task_state]
+  min_successful_episodes: 3
+  operator_test_collection_enabled: true
+  launch_scope: operator_test
+validation:
+  report: taskdev/tasks/t49_unfold_ruler/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 2.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

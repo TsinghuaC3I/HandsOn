@@ -1,0 +1,73 @@
+{
+  "sources": {
+    "flexible-towel-softgym": {
+      "task_name": "flexible-towel-softgym",
+      "task_id": "FLEXIBLE-003",
+      "label": "SoftGym 毛巾 · 粒子布料适配",
+      "repository": "https://github.com/halid1020/softgym",
+      "revision": "8a2196648c4ef6c4463ca862324bae442bcba22d",
+      "license": "BSD-3-Clause",
+      "size_xy": [
+        0.3,
+        0.3
+      ],
+      "mass_kg": 0.0054,
+      "solver": "physx_particle_cloth",
+      "source_files": [
+        "benchmarks/fabric_domain_builder.py",
+        "PyFlex/bindings/softgym_scenes/softgym_cloth.h"
+      ],
+      "adaptation": true,
+      "runtime": "Isaac Sim 5.1 / IsaacLab 2.3.2",
+      "grasp_assist": false,
+      "material_calibrated": false,
+      "grid": [
+        41,
+        41
+      ],
+      "upstream_flex_stretch_bend_shear": [
+        2.0,
+        0.5,
+        1.0
+      ],
+      "port_spring_stretch_shear_bend": [
+        9000.0,
+        4500.0,
+        0.06
+      ],
+      "port_parameter_note": "Native dimensional coefficients; not equivalent to FleX stiffness"
+    },
+    "flexible-towel-synthetic-cloth": {
+      "task_name": "flexible-towel-synthetic-cloth",
+      "task_id": "FLEXIBLE-004",
+      "label": "Synthetic Cloth 毛巾 · 网格资产适配",
+      "repository": "https://github.com/tlpss/synthetic-cloth-data",
+      "revision": "9cc1a04f3d7f3c9b2abf1642acb1f7a2a4de51b5",
+      "license": "MIT",
+      "size_xy": [
+        0.3,
+        0.5
+      ],
+      "mass_kg": 0.09,
+      "solver": "physx_surface_deformable",
+      "source_files": [
+        "synthetic-cloth-data/synthetic_cloth_data/meshes/flat_meshes/geometric_templates.py",
+        "synthetic-cloth-data/synthetic_cloth_data/materials/towels.py"
+      ],
+      "adaptation": true,
+      "runtime": "Isaac Sim 5.1 / IsaacLab 2.3.2",
+      "grasp_assist": false,
+      "material_calibrated": false,
+      "grid": [
+        41,
+        41
+      ],
+      "physics_note": "Source geometry/material; DexJoCo native 600 gsm surface physics"
+    }
+  },
+  "sha256": {
+    "synthetic_cloth.npz": "89f94cb4f0741591279570e6583da8b73d3aa4d9f3610b9c570e7349c639c8b8",
+    "synthetic_grid.png": "9be776b594b4c2435b4471459cd52801837fab27668fccbab6b817c4261cc986"
+  },
+  "upstream_template_sha256": "455101531c2f87fb318037d0f4ec8eab1ab6d51190f4a49c5ed5fe45dabfcd3b"
+}

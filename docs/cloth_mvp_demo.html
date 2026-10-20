@@ -1,0 +1,995 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HandsOn Cloth MVP</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #14171b;
+      --panel: rgba(26, 30, 35, 0.88);
+      --line: rgba(255, 255, 255, 0.14);
+      --text: #edf2f7;
+      --muted: #a6b1bd;
+      --accent: #5fd3bc;
+      --accent-2: #e4bf64;
+      --danger: #ee7777;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(190px, 1fr) auto auto auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 14px;
+      background: rgba(17, 20, 24, 0.94);
+      border-bottom: 1px solid var(--line);
+      min-height: 58px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .brand strong {
+      font-size: 15px;
+      letter-spacing: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 38px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.045);
+      border-radius: 8px;
+    }
+
+    button {
+      height: 30px;
+      min-width: 34px;
+      border: 0;
+      border-radius: 6px;
+      padding: 0 10px;
+      color: var(--text);
+      background: transparent;
+      font: inherit;
+      font-size: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    button.active {
+      background: var(--accent);
+      color: #08221d;
+      font-weight: 700;
+    }
+
+    button.primary {
+      background: var(--accent-2);
+      color: #241a05;
+      font-weight: 700;
+    }
+
+    button.warn {
+      color: #ffe0e0;
+    }
+
+    label.toggle {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 0 7px;
+      white-space: nowrap;
+    }
+
+    input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent);
+    }
+
+    main {
+      position: relative;
+      min-height: 0;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+      cursor: grab;
+    }
+
+    canvas.dragging {
+      cursor: grabbing;
+    }
+
+    .hud {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(82px, auto));
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .stat {
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .stat div:first-child {
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 3px;
+    }
+
+    .stat div:last-child {
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (max-width: 860px) {
+      .toolbar {
+        grid-template-columns: 1fr;
+        align-content: start;
+      }
+
+      .group {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+      }
+
+      .hud {
+        grid-template-columns: repeat(2, minmax(94px, auto));
+        right: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="toolbar">
+    <div class="brand">
+      <strong>HandsOn Cloth MVP</strong>
+      <span>Cotton jersey tee cloth, soft local grasp, dense matte render</span>
+    </div>
+
+    <div class="group" aria-label="material preset">
+      <button data-material="cotton" class="active">Cotton Tee</button>
+      <button data-material="silk">Silk</button>
+      <button data-material="denim">Denim</button>
+    </div>
+
+    <div class="group" aria-label="view toggles">
+      <label class="toggle"><input id="showPhysics" type="checkbox">Phys</label>
+      <label class="toggle"><input id="showRender" type="checkbox">Render</label>
+      <label class="toggle"><input id="pause" type="checkbox">Pause</label>
+    </div>
+
+    <div class="group" aria-label="commands">
+      <button id="pinch" class="primary">Pinch Lift</button>
+      <button id="shake">Shake</button>
+      <button id="reset" class="warn">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="stage"></canvas>
+    <div class="hud" aria-hidden="true">
+      <div class="stat"><div>Physics mesh</div><div id="physStat">37 x 37</div></div>
+      <div class="stat"><div>Render mesh</div><div id="renderStat">129 x 129</div></div>
+      <div class="stat"><div>Frame</div><div id="frameStat">0.0 ms</div></div>
+      <div class="stat"><div>Grab nodes</div><div id="grabStat">0</div></div>
+    </div>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const canvas = document.getElementById("stage");
+      const ctx = canvas.getContext("2d", { alpha: false });
+      const showPhysics = document.getElementById("showPhysics");
+      const showRender = document.getElementById("showRender");
+      const pause = document.getElementById("pause");
+      const frameStat = document.getElementById("frameStat");
+      const grabStat = document.getElementById("grabStat");
+      const materialButtons = Array.from(document.querySelectorAll("[data-material]"));
+
+      const PHYS_N = 37;
+      const RENDER_N = 129;
+      const SOLVER_ITERATIONS = 8;
+      const SUBSTEPS = 3;
+      const DT = 1 / 60 / SUBSTEPS;
+      const GRAVITY = 10.0;
+      const TABLE_Z = 0;
+      const HALF_SIZE = 2.15;
+      const NODE_COUNT = PHYS_N * PHYS_N;
+      const REST_SPACING = (HALF_SIZE * 2) / (PHYS_N - 1);
+
+      const materials = {
+        cotton: {
+          color: [202, 199, 188],
+          thread: [236, 233, 222],
+          stretchX: 0.91,
+          stretchY: 0.84,
+          shear: 0.078,
+          bend: 0.030,
+          compression: 0.024,
+          damping: 0.930,
+          tableSlip: 0.055,
+          staticSpeed: 0.032,
+          thickness: 0.040,
+          wrinkle: 0.044,
+          weaveContrast: 0.034,
+          grain: 0.080,
+          sheen: 0.000,
+          name: "Cotton Tee"
+        },
+        silk: {
+          color: [142, 118, 154],
+          thread: [185, 170, 194],
+          stretchX: 0.36,
+          stretchY: 0.30,
+          shear: 0.12,
+          bend: 0.020,
+          compression: 0.08,
+          damping: 0.984,
+          tableSlip: 0.42,
+          staticSpeed: 0.004,
+          thickness: 0.012,
+          wrinkle: 0.064,
+          weaveContrast: 0.030,
+          grain: 0.030,
+          sheen: 0.170,
+          name: "Silk"
+        },
+        denim: {
+          color: [48, 73, 96],
+          thread: [96, 121, 143],
+          stretchX: 0.92,
+          stretchY: 0.86,
+          shear: 0.22,
+          bend: 0.060,
+          compression: 0.14,
+          damping: 0.972,
+          tableSlip: 0.060,
+          staticSpeed: 0.020,
+          thickness: 0.052,
+          wrinkle: 0.034,
+          weaveContrast: 0.070,
+          grain: 0.050,
+          sheen: 0.010,
+          name: "Denim"
+        }
+      };
+
+      let materialKey = "cotton";
+      let material = materials[materialKey];
+      let width = 1;
+      let height = 1;
+      let originX = 0;
+      let originY = 0;
+      let scale = 1;
+      let skew = 0;
+      let depth = 0;
+      let liftScale = 1;
+      let frameStart = performance.now();
+      let lastTime = performance.now();
+      let autoMode = null;
+      let pointerGrab = null;
+
+      const nodes = [];
+      const constraints = [];
+      const renderPoints = new Array(RENDER_N * RENDER_N);
+
+      function makeNode(i, j) {
+        const u = i / (PHYS_N - 1);
+        const v = j / (PHYS_N - 1);
+        const x = (u - 0.5) * HALF_SIZE * 2;
+        const y = (v - 0.5) * HALF_SIZE * 2;
+        const z = contactZ() + 0.002 * Math.sin((u * 13.0 + v * 7.0) * Math.PI);
+        return {
+          x,
+          y,
+          z,
+          px: x,
+          py: y,
+          pz: z,
+          restX: x,
+          restY: y,
+          restZ: z,
+          invMass: 1,
+          pinWeight: 0,
+          tx: x,
+          ty: y,
+          tz: z
+        };
+      }
+
+      function idx(i, j) {
+        return j * PHYS_N + i;
+      }
+
+      function addConstraint(a, b, stiffness, scaleFactor = 1) {
+        const na = nodes[a];
+        const nb = nodes[b];
+        const dx = na.x - nb.x;
+        const dy = na.y - nb.y;
+        const dz = na.z - nb.z;
+        constraints.push({
+          a,
+          b,
+          rest: Math.hypot(dx, dy, dz) * scaleFactor,
+          stiffness
+        });
+      }
+
+      function setupConstraints() {
+        constraints.length = 0;
+        for (let j = 0; j < PHYS_N; j += 1) {
+          for (let i = 0; i < PHYS_N; i += 1) {
+            if (i + 1 < PHYS_N) addConstraint(idx(i, j), idx(i + 1, j), "stretchX");
+            if (j + 1 < PHYS_N) addConstraint(idx(i, j), idx(i, j + 1), "stretchY");
+            if (i + 1 < PHYS_N && j + 1 < PHYS_N) addConstraint(idx(i, j), idx(i + 1, j + 1), "shear");
+            if (i + 1 < PHYS_N && j - 1 >= 0) addConstraint(idx(i, j), idx(i + 1, j - 1), "shear");
+            if (i + 2 < PHYS_N) addConstraint(idx(i, j), idx(i + 2, j), "bend");
+            if (j + 2 < PHYS_N) addConstraint(idx(i, j), idx(i, j + 2), "bend");
+          }
+        }
+      }
+
+      function resetCloth() {
+        nodes.length = 0;
+        for (let j = 0; j < PHYS_N; j += 1) {
+          for (let i = 0; i < PHYS_N; i += 1) {
+            nodes.push(makeNode(i, j));
+          }
+        }
+        setupConstraints();
+        pointerGrab = null;
+        autoMode = null;
+        canvas.classList.remove("dragging");
+      }
+
+      function resize() {
+        const rect = canvas.getBoundingClientRect();
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        width = Math.max(1, Math.floor(rect.width * dpr));
+        height = Math.max(1, Math.floor(rect.height * dpr));
+        canvas.width = width;
+        canvas.height = height;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        const cssWidth = rect.width;
+        const cssHeight = rect.height;
+        scale = Math.min(cssWidth, cssHeight) * 0.105;
+        skew = scale * 0.36;
+        depth = scale * 0.47;
+        liftScale = scale * 1.65;
+        originX = cssWidth * 0.51;
+        originY = cssHeight * 0.54;
+      }
+
+      function project(p) {
+        return {
+          x: originX + p.x * scale + p.y * skew,
+          y: originY + p.y * depth - p.z * liftScale
+        };
+      }
+
+      function screenToWorldFixedY(screenX, screenY, fixedY) {
+        const x = (screenX - originX - fixedY * skew) / scale;
+        const z = (originY + fixedY * depth - screenY) / liftScale;
+        return { x, y: fixedY, z: Math.max(contactZ() + 0.01, z) };
+      }
+
+      function stiffnessValue(kind) {
+        if (kind === "stretchX") return material.stretchX;
+        if (kind === "stretchY") return material.stretchY;
+        if (kind === "shear") return material.shear;
+        return material.bend;
+      }
+
+      function contactZ() {
+        return TABLE_Z + (material.thickness || 0) * 0.5;
+      }
+
+      function applyTableContact(node) {
+        const floor = contactZ();
+        if (node.z > floor + 0.006 || node.pinWeight > 0.18) return;
+        node.z = floor;
+        node.pz = Math.max(node.pz, floor);
+        const dx = node.x - node.px;
+        const dy = node.y - node.py;
+        const planarSpeed = Math.hypot(dx, dy);
+        if (planarSpeed < material.staticSpeed) {
+          node.x = node.px;
+          node.y = node.py;
+          return;
+        }
+        node.x = node.px + dx * material.tableSlip;
+        node.y = node.py + dy * material.tableSlip;
+      }
+
+      function integrateNode(node) {
+        if (node.pinWeight >= 1) {
+          node.x = node.tx;
+          node.y = node.ty;
+          node.z = node.tz;
+          node.px = node.x;
+          node.py = node.y;
+          node.pz = node.z;
+          return;
+        }
+        const vx = (node.x - node.px) * material.damping;
+        const vy = (node.y - node.py) * material.damping;
+        const vz = (node.z - node.pz) * material.damping;
+        node.px = node.x;
+        node.py = node.y;
+        node.pz = node.z;
+        node.x += vx;
+        node.y += vy;
+        node.z += vz - GRAVITY * DT * DT;
+
+        if (node.pinWeight > 0) {
+          node.x += (node.tx - node.x) * node.pinWeight;
+          node.y += (node.ty - node.y) * node.pinWeight;
+          node.z += (node.tz - node.z) * node.pinWeight;
+        }
+
+        applyTableContact(node);
+      }
+
+      function satisfyConstraint(c) {
+        const a = nodes[c.a];
+        const b = nodes[c.b];
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dz = b.z - a.z;
+        const dist = Math.hypot(dx, dy, dz);
+        if (dist < 1e-7) return;
+        let stiffness = stiffnessValue(c.stiffness);
+        if (dist < c.rest && c.stiffness !== "bend") {
+          stiffness *= material.compression;
+        }
+        const correction = (dist - c.rest) / dist * stiffness;
+        const ax = dx * correction * 0.5 * a.invMass;
+        const ay = dy * correction * 0.5 * a.invMass;
+        const az = dz * correction * 0.5 * a.invMass;
+        const bx = dx * correction * 0.5 * b.invMass;
+        const by = dy * correction * 0.5 * b.invMass;
+        const bz = dz * correction * 0.5 * b.invMass;
+        if (a.pinWeight < 1) {
+          a.x += ax;
+          a.y += ay;
+          a.z += az;
+        }
+        if (b.pinWeight < 1) {
+          b.x -= bx;
+          b.y -= by;
+          b.z -= bz;
+        }
+      }
+
+      function clearPins() {
+        for (const n of nodes) {
+          n.pinWeight = 0;
+        }
+      }
+
+      function applyCircularGrab(cx, cy, cz, radius, strength) {
+        let count = 0;
+        for (const n of nodes) {
+          const d = Math.hypot(n.x - cx, n.y - cy);
+          if (d <= radius) {
+            const w = Math.pow(1 - d / radius, 2);
+            n.tx = cx + (n.x - cx) * 0.30;
+            n.ty = cy + (n.y - cy) * 0.30;
+          n.tz = Math.max(contactZ() + 0.008, cz + w * 0.08);
+            n.pinWeight = Math.max(n.pinWeight, Math.min(1, strength * (0.35 + w)));
+            count += 1;
+          }
+        }
+        return count;
+      }
+
+      function updatePointerGrab() {
+        if (!pointerGrab) return 0;
+        let count = 0;
+        const target = screenToWorldFixedY(pointerGrab.x, pointerGrab.y, pointerGrab.anchorY);
+        for (const item of pointerGrab.nodes) {
+          const n = nodes[item.index];
+          n.tx = target.x + item.ox;
+          n.ty = n.y;
+          n.tz = Math.max(contactZ() + 0.015, target.z + item.oz);
+          n.pinWeight = Math.max(n.pinWeight, item.weight);
+          count += 1;
+        }
+        return count;
+      }
+
+      function smoothstep(t) {
+        const x = Math.max(0, Math.min(1, t));
+        return x * x * (3 - 2 * x);
+      }
+
+      function runAutoPinch(time) {
+        if (!autoMode) return 0;
+        const t = (time - autoMode.start) / 1000;
+        if (t > 5.4) {
+          autoMode = null;
+          return 0;
+        }
+        const descend = smoothstep(t / 0.9);
+        const close = smoothstep((t - 0.65) / 0.8);
+        const lift = smoothstep((t - 1.55) / 1.45);
+        const release = smoothstep((t - 3.75) / 0.65);
+        const z = contactZ() + 0.025 + descend * 0.01 + lift * 0.82 - release * 0.62;
+        const radius = 0.34 - 0.10 * close + 0.16 * release;
+        const strength = Math.max(0, close - release) * 0.98;
+        let count = 0;
+        count += applyCircularGrab(-0.62, -0.08, z, radius, strength);
+        count += applyCircularGrab(0.62, 0.08, z, radius, strength);
+        return count;
+      }
+
+      function stepSimulation(time) {
+        clearPins();
+        let activeGrabCount = runAutoPinch(time);
+        activeGrabCount += updatePointerGrab();
+        for (let s = 0; s < SUBSTEPS; s += 1) {
+          for (const n of nodes) integrateNode(n);
+          for (let k = 0; k < SOLVER_ITERATIONS; k += 1) {
+            for (const c of constraints) satisfyConstraint(c);
+            for (const n of nodes) {
+              applyTableContact(n);
+            }
+          }
+        }
+        grabStat.textContent = String(activeGrabCount);
+      }
+
+      function sampleCloth(u, v) {
+        const gx = u * (PHYS_N - 1);
+        const gy = v * (PHYS_N - 1);
+        const i = Math.max(0, Math.min(PHYS_N - 2, Math.floor(gx)));
+        const j = Math.max(0, Math.min(PHYS_N - 2, Math.floor(gy)));
+        const tx = gx - i;
+        const ty = gy - j;
+        const a = nodes[idx(i, j)];
+        const b = nodes[idx(i + 1, j)];
+        const c = nodes[idx(i, j + 1)];
+        const d = nodes[idx(i + 1, j + 1)];
+        const abx = a.x + (b.x - a.x) * tx;
+        const aby = a.y + (b.y - a.y) * tx;
+        const abz = a.z + (b.z - a.z) * tx;
+        const cdx = c.x + (d.x - c.x) * tx;
+        const cdy = c.y + (d.y - c.y) * tx;
+        const cdz = c.z + (d.z - c.z) * tx;
+        let x = abx + (cdx - abx) * ty;
+        let y = aby + (cdy - aby) * ty;
+        let z = abz + (cdz - abz) * ty;
+        const uxLen = Math.hypot(b.x - a.x, b.y - a.y, b.z - a.z);
+        const vyLen = Math.hypot(c.x - a.x, c.y - a.y, c.z - a.z);
+        const compression = Math.max(0, 1 - uxLen / REST_SPACING) + Math.max(0, 1 - vyLen / REST_SPACING);
+        const edgeDistance = Math.min(u, v, 1 - u, 1 - v);
+        const edgeFade = smoothstep(edgeDistance / 0.075);
+        const lift = Math.max(0, Math.min(1, (z - contactZ()) * 1.25));
+        const wrinkleAmp = material.wrinkle * edgeFade * Math.min(1, 0.025 + compression * 3.5 + lift * 0.55);
+        const phase = hashNoise(Math.floor(u * 31), Math.floor(v * 31)) * Math.PI * 2;
+        const wrinkle =
+          Math.sin(u * 58 + v * 17 + phase)
+          * Math.sin(v * 43 - u * 13 + phase * 0.37)
+          * wrinkleAmp;
+        z += wrinkle;
+        x += Math.sin(v * 26 + phase) * wrinkleAmp * 0.025;
+        y += Math.sin(u * 28 - phase) * wrinkleAmp * 0.025;
+        return { x, y, z, u, v };
+      }
+
+      function rebuildRenderPoints() {
+        for (let j = 0; j < RENDER_N; j += 1) {
+          const v = j / (RENDER_N - 1);
+          for (let i = 0; i < RENDER_N; i += 1) {
+            const u = i / (RENDER_N - 1);
+            const p = sampleCloth(u, v);
+            const s = project(p);
+            renderPoints[j * RENDER_N + i] = { ...p, sx: s.x, sy: s.y };
+          }
+        }
+      }
+
+      function hashNoise(u, v) {
+        const n = Math.sin(u * 127.1 + v * 311.7) * 43758.5453123;
+        return n - Math.floor(n);
+      }
+
+      function colorForCell(p, q) {
+        const base = material.color;
+        const thread = material.thread;
+        const rib =
+          Math.sin(p.u * 520)
+          * 0.55
+          + Math.sin((p.u + p.v * 0.18) * 265)
+          * 0.25;
+        const crossThread = Math.sin(p.v * 175) * 0.20;
+        const weave = (rib + crossThread) * material.weaveContrast;
+        const grain = (hashNoise(Math.floor(p.u * 130), Math.floor(p.v * 130)) - 0.5) * material.grain;
+        const slope = Math.max(-0.12, Math.min(0.13, (q.z - p.z) * 0.36));
+        const lift = Math.max(0, Math.min(1, p.z * 0.18));
+        const sheen = material.sheen * Math.pow(Math.max(0, slope + 0.08), 2) * 3.0;
+        const light = 0.80 + weave + grain + slope + lift * (0.035 + material.sheen * 0.04) + sheen;
+        const mix = Math.max(0, Math.min(1, 0.20 + weave * 1.8 + grain * 0.8));
+        const r = Math.round((base[0] * (1 - mix) + thread[0] * mix) * light);
+        const g = Math.round((base[1] * (1 - mix) + thread[1] * mix) * light);
+        const b = Math.round((base[2] * (1 - mix) + thread[2] * mix) * light);
+        return `rgb(${Math.max(0, Math.min(255, r))},${Math.max(0, Math.min(255, g))},${Math.max(0, Math.min(255, b))})`;
+      }
+
+      function drawTable(cssWidth, cssHeight) {
+        const grd = ctx.createLinearGradient(0, 0, cssWidth, cssHeight);
+        grd.addColorStop(0, "#171b20");
+        grd.addColorStop(0.45, "#22272c");
+        grd.addColorStop(1, "#111317");
+        ctx.fillStyle = grd;
+        ctx.fillRect(0, 0, cssWidth, cssHeight);
+
+        ctx.save();
+        ctx.translate(originX, originY + depth * 2.35);
+        ctx.rotate(-0.08);
+        ctx.fillStyle = "#2a3135";
+        ctx.strokeStyle = "rgba(255,255,255,0.08)";
+        ctx.lineWidth = 1;
+        const tableW = scale * 7.4;
+        const tableH = scale * 4.8;
+        ctx.beginPath();
+        ctx.roundRect(-tableW / 2, -tableH / 2, tableW, tableH, 8);
+        ctx.fill();
+        ctx.stroke();
+        for (let i = -5; i <= 5; i += 1) {
+          ctx.beginPath();
+          ctx.moveTo(i * scale * 0.7, -tableH / 2);
+          ctx.lineTo(i * scale * 0.7, tableH / 2);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      function drawRenderCloth() {
+        rebuildRenderPoints();
+        for (let j = 0; j < RENDER_N - 1; j += 2) {
+          for (let i = 0; i < RENDER_N - 1; i += 2) {
+            const p0 = renderPoints[j * RENDER_N + i];
+            const p1 = renderPoints[j * RENDER_N + i + 2];
+            const p2 = renderPoints[(j + 2) * RENDER_N + i + 2];
+            const p3 = renderPoints[(j + 2) * RENDER_N + i];
+            const z = Math.max(0, Math.min(1.6, (p0.z + p1.z + p2.z + p3.z) * 0.25 - contactZ()));
+            ctx.fillStyle = `rgba(0,0,0,${0.035 + z * 0.045})`;
+            ctx.beginPath();
+            ctx.moveTo(p0.sx + z * 5, p0.sy + z * 13);
+            ctx.lineTo(p1.sx + z * 5, p1.sy + z * 13);
+            ctx.lineTo(p2.sx + z * 5, p2.sy + z * 13);
+            ctx.lineTo(p3.sx + z * 5, p3.sy + z * 13);
+            ctx.closePath();
+            ctx.fill();
+          }
+        }
+        for (let j = 0; j < RENDER_N - 1; j += 1) {
+          for (let i = 0; i < RENDER_N - 1; i += 1) {
+            const p0 = renderPoints[j * RENDER_N + i];
+            const p1 = renderPoints[j * RENDER_N + i + 1];
+            const p2 = renderPoints[(j + 1) * RENDER_N + i + 1];
+            const p3 = renderPoints[(j + 1) * RENDER_N + i];
+            ctx.fillStyle = colorForCell(p0, p2);
+            ctx.beginPath();
+            ctx.moveTo(p0.sx, p0.sy);
+            ctx.lineTo(p1.sx, p1.sy);
+            ctx.lineTo(p2.sx, p2.sy);
+            ctx.lineTo(p3.sx, p3.sy);
+            ctx.closePath();
+            ctx.fill();
+          }
+        }
+        if (showRender.checked) {
+          ctx.strokeStyle = "rgba(255,255,255,0.10)";
+          ctx.lineWidth = 0.45;
+          for (let j = 0; j < RENDER_N; j += 4) {
+            ctx.beginPath();
+            for (let i = 0; i < RENDER_N; i += 1) {
+              const p = renderPoints[j * RENDER_N + i];
+              if (i === 0) ctx.moveTo(p.sx, p.sy);
+              else ctx.lineTo(p.sx, p.sy);
+            }
+            ctx.stroke();
+          }
+          for (let i = 0; i < RENDER_N; i += 4) {
+            ctx.beginPath();
+            for (let j = 0; j < RENDER_N; j += 1) {
+              const p = renderPoints[j * RENDER_N + i];
+              if (j === 0) ctx.moveTo(p.sx, p.sy);
+              else ctx.lineTo(p.sx, p.sy);
+            }
+            ctx.stroke();
+          }
+        }
+        drawSmoothEdge();
+      }
+
+      function traceClothOutline(offsetX, offsetY) {
+        ctx.beginPath();
+        for (let i = 0; i < RENDER_N; i += 1) {
+          const p = renderPoints[i];
+          if (i === 0) ctx.moveTo(p.sx + offsetX, p.sy + offsetY);
+          else ctx.lineTo(p.sx + offsetX, p.sy + offsetY);
+        }
+        for (let j = 1; j < RENDER_N; j += 1) {
+          const p = renderPoints[j * RENDER_N + RENDER_N - 1];
+          ctx.lineTo(p.sx + offsetX, p.sy + offsetY);
+        }
+        for (let i = RENDER_N - 2; i >= 0; i -= 1) {
+          const p = renderPoints[(RENDER_N - 1) * RENDER_N + i];
+          ctx.lineTo(p.sx + offsetX, p.sy + offsetY);
+        }
+        for (let j = RENDER_N - 2; j > 0; j -= 1) {
+          const p = renderPoints[j * RENDER_N];
+          ctx.lineTo(p.sx + offsetX, p.sy + offsetY);
+        }
+        ctx.closePath();
+      }
+
+      function drawSmoothEdge() {
+        const edgeWidth = Math.max(2.2, material.thickness * scale * 1.25);
+        const base = material.color;
+        ctx.save();
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        traceClothOutline(0.4, edgeWidth * 0.55);
+        ctx.strokeStyle = "rgba(30,28,24,0.34)";
+        ctx.lineWidth = edgeWidth * 1.55;
+        ctx.stroke();
+        traceClothOutline(0, 0);
+        ctx.strokeStyle = `rgb(${Math.round(base[0] * 0.74)},${Math.round(base[1] * 0.74)},${Math.round(base[2] * 0.74)})`;
+        ctx.lineWidth = edgeWidth;
+        ctx.stroke();
+        traceClothOutline(0, -edgeWidth * 0.10);
+        ctx.strokeStyle = "rgba(255,255,255,0.18)";
+        ctx.lineWidth = Math.max(0.8, edgeWidth * 0.32);
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      function drawPhysicsMesh() {
+        if (!showPhysics.checked) return;
+        ctx.strokeStyle = "rgba(255,255,255,0.32)";
+        ctx.lineWidth = 1;
+        for (let j = 0; j < PHYS_N; j += 1) {
+          ctx.beginPath();
+          for (let i = 0; i < PHYS_N; i += 1) {
+            const s = project(nodes[idx(i, j)]);
+            if (i === 0) ctx.moveTo(s.x, s.y);
+            else ctx.lineTo(s.x, s.y);
+          }
+          ctx.stroke();
+        }
+        for (let i = 0; i < PHYS_N; i += 1) {
+          ctx.beginPath();
+          for (let j = 0; j < PHYS_N; j += 1) {
+            const s = project(nodes[idx(i, j)]);
+            if (j === 0) ctx.moveTo(s.x, s.y);
+            else ctx.lineTo(s.x, s.y);
+          }
+          ctx.stroke();
+        }
+        ctx.fillStyle = "rgba(255,255,255,0.65)";
+        for (let k = 0; k < nodes.length; k += 1) {
+          const s = project(nodes[k]);
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, 1.6, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function drawHands() {
+        const hands = [];
+        if (pointerGrab) {
+          hands.push({ x: pointerGrab.x, y: pointerGrab.y, r: 16, color: "rgba(95,211,188,0.95)" });
+        }
+        if (autoMode) {
+          const phase = Math.min(1, (performance.now() - autoMode.start) / 1800);
+          for (const world of [{ x: -0.62, y: -0.08, z: 0.15 + phase * 0.65 }, { x: 0.62, y: 0.08, z: 0.15 + phase * 0.65 }]) {
+            const s = project(world);
+            hands.push({ x: s.x, y: s.y, r: 18, color: "rgba(228,191,100,0.88)" });
+          }
+        }
+        for (const hand of hands) {
+          ctx.fillStyle = hand.color;
+          ctx.strokeStyle = "rgba(255,255,255,0.55)";
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(hand.x, hand.y, hand.r, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+        }
+      }
+
+      function draw() {
+        const rect = canvas.getBoundingClientRect();
+        drawTable(rect.width, rect.height);
+        drawRenderCloth();
+        drawPhysicsMesh();
+        drawHands();
+      }
+
+      function nearestNode(screenX, screenY) {
+        let best = -1;
+        let bestD = Infinity;
+        for (let k = 0; k < nodes.length; k += 1) {
+          const s = project(nodes[k]);
+          const d = Math.hypot(s.x - screenX, s.y - screenY);
+          if (d < bestD) {
+            bestD = d;
+            best = k;
+          }
+        }
+        return bestD < 34 ? best : -1;
+      }
+
+      function beginPointerGrab(event) {
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const nodeIndex = nearestNode(x, y);
+        if (nodeIndex < 0) return;
+        const anchor = nodes[nodeIndex];
+        pointerGrab = {
+          x,
+          y,
+          anchorY: anchor.y,
+          nodes: []
+        };
+        const radius = REST_SPACING * 0.88;
+        for (let k = 0; k < nodes.length; k += 1) {
+          const n = nodes[k];
+          const d = Math.hypot(n.x - anchor.x, n.y - anchor.y);
+          if (d < radius) {
+            pointerGrab.nodes.push({
+              index: k,
+              ox: (n.x - anchor.x) * 0.12,
+              oz: n.z - anchor.z,
+              weight: 0.72 + 0.26 * Math.pow(1 - d / radius, 1.7)
+            });
+          }
+        }
+        canvas.classList.add("dragging");
+        canvas.setPointerCapture(event.pointerId);
+        autoMode = null;
+      }
+
+      canvas.addEventListener("pointerdown", beginPointerGrab);
+      canvas.addEventListener("pointermove", (event) => {
+        if (!pointerGrab) return;
+        const rect = canvas.getBoundingClientRect();
+        pointerGrab.x = event.clientX - rect.left;
+        pointerGrab.y = event.clientY - rect.top;
+      });
+      canvas.addEventListener("pointerup", (event) => {
+        pointerGrab = null;
+        canvas.classList.remove("dragging");
+        try {
+          canvas.releasePointerCapture(event.pointerId);
+        } catch {
+          // The pointer may already be released by the browser.
+        }
+      });
+      canvas.addEventListener("pointercancel", () => {
+        pointerGrab = null;
+        canvas.classList.remove("dragging");
+      });
+
+      document.getElementById("reset").addEventListener("click", resetCloth);
+      document.getElementById("shake").addEventListener("click", () => {
+        for (const n of nodes) {
+          n.px -= (Math.random() - 0.5) * 0.16;
+          n.py -= (Math.random() - 0.5) * 0.16;
+          n.pz -= 0.20 + Math.random() * 0.18;
+        }
+      });
+      document.getElementById("pinch").addEventListener("click", () => {
+        autoMode = { start: performance.now() };
+        pointerGrab = null;
+        canvas.classList.remove("dragging");
+      });
+
+      for (const button of materialButtons) {
+        button.addEventListener("click", () => {
+          materialKey = button.dataset.material;
+          material = materials[materialKey];
+          for (const item of materialButtons) {
+            item.classList.toggle("active", item === button);
+          }
+        });
+      }
+
+      function animate(time) {
+        frameStart = performance.now();
+        if (!pause.checked) {
+          const steps = Math.min(3, Math.max(1, Math.round((time - lastTime) / 16.7)));
+          for (let k = 0; k < steps; k += 1) {
+            stepSimulation(time);
+          }
+        }
+        lastTime = time;
+        draw();
+        frameStat.textContent = `${(performance.now() - frameStart).toFixed(1)} ms`;
+        requestAnimationFrame(animate);
+      }
+
+      if (!CanvasRenderingContext2D.prototype.roundRect) {
+        CanvasRenderingContext2D.prototype.roundRect = function roundRect(x, y, w, h, r) {
+          const radius = Math.min(r, Math.abs(w) / 2, Math.abs(h) / 2);
+          this.moveTo(x + radius, y);
+          this.arcTo(x + w, y, x + w, y + h, radius);
+          this.arcTo(x + w, y + h, x, y + h, radius);
+          this.arcTo(x, y + h, x, y, radius);
+          this.arcTo(x, y, x + w, y, radius);
+          return this;
+        };
+      }
+
+      window.addEventListener("resize", resize);
+      resize();
+      resetCloth();
+      requestAnimationFrame(animate);
+    })();
+  </script>
+</body>
+</html>

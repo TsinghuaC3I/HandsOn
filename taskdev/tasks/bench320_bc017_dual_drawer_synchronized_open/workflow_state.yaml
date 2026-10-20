@@ -1,0 +1,33 @@
+schema_version: 1
+task_id: B320-BC017
+task_name: t15_open_drawers
+state: collection_ready
+updated_at: "2026-08-27T14:11:20+08:00"
+selected_asset:
+  status: integrated
+  title: Metal Office Desk
+  author: Ulan Cabanilla
+  source: https://polyhaven.com/a/metal_office_desk
+  license: CC0 1.0
+runtime:
+  simulator: Isaac Sim 5.1
+  isaaclab: 2.3.2
+  physics_backend: PhysX
+  physics_hz: 120
+episode_target_selection:
+  candidates_per_side: [top, middle, bottom]
+  independently_randomized_between_sides: true
+  resampled: every_episode
+  fixed_within_episode: true
+  left_marker: emissive_cyan_outline
+  right_marker: emissive_orange_outline
+  only_selected_pair_counts_toward_success: true
+  nonselected_drawer_motion_terminal: false
+recording_metadata:
+  fixed_cardinality_drawer_progress_values: 6
+  fixed_cardinality_hand_drawer_contact_channels: 12
+  selected_target_indices: [left, right]
+preview_ready: true
+collection_ready: true
+blocked: false
+task_specific_gates: []

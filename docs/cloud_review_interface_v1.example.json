@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "engine_codes": {
+    "E02": {
+      "generation": "new",
+      "sim_backend": "isaacsim",
+      "label": "新引擎（Isaac Sim / IsaacLab）",
+      "review_priority": 1
+    },
+    "E01": {
+      "generation": "old",
+      "sim_backend": "mujoco",
+      "label": "旧引擎（MuJoCo）",
+      "review_priority": 2
+    },
+    "E00": {
+      "generation": "unknown",
+      "sim_backend": "",
+      "label": "引擎未知",
+      "review_priority": 3
+    }
+  },
+  "result_codes": {
+    "S01": {
+      "final_outcome": "valid",
+      "is_success": true,
+      "label": "标准成功",
+      "upload": true
+    },
+    "S02": {
+      "final_outcome": "valid",
+      "is_success": true,
+      "label": "多次尝试后成功（期间物品掉落或者交互失败）",
+      "upload": true
+    },
+    "S06": {
+      "final_outcome": "valid",
+      "is_success": true,
+      "label": "利用Bug成功",
+      "upload": true,
+      "training_filter_recommended": true
+    },
+    "S10": {
+      "final_outcome": "valid",
+      "is_success": true,
+      "label": "其他成功",
+      "upload": true
+    },
+    "S11": {
+      "final_outcome": "valid",
+      "is_success": true,
+      "label": "应该成功但系统漏判，调整后成功",
+      "upload": true
+    },
+    "F00": {
+      "final_outcome": "invalid",
+      "is_success": false,
+      "label": "无效",
+      "upload": false
+    }
+  },
+  "video_list_response": {
+    "status": 200,
+    "message": "ok",
+    "data": [
+      {
+        "id": "cloud_episode_000001",
+        "data_code": "t26_place_fruit_in_bucket_demo_000001",
+        "collector_id": "collector_001",
+        "collected_at": "2026-07-16T09:25:00+08:00",
+        "video_url": "https://example.com/video/000001.mp4",
+        "duration_seconds": 43.8,
+        "task_name": "t26_place_fruit_in_bucket",
+        "task_version": "v1",
+        "engine_code": "E02",
+        "engine_generation": "new",
+        "sim_backend": "isaacsim",
+        "item_status": "ready",
+        "is_valid": null,
+        "risk_flags": []
+      }
+    ]
+  },
+  "review_result": {
+    "data_code": "t26_place_fruit_in_bucket_demo_000001",
+    "episode_key": "remote:cloud_episode_000001",
+    "collector_id": "collector_001",
+    "reviewer_id": "reviewer_01",
+    "reviewed_at": "2026-07-16T21:30:00+08:00",
+    "final_outcome": "valid",
+    "result_code": "S02",
+    "result_label": "多次尝试后成功（期间物品掉落或者交互失败）",
+    "is_success": true,
+    "engine_code": "E02",
+    "engine_generation": "new",
+    "sim_backend": "isaacsim",
+    "watched_seconds": 43.8,
+    "playback_rate": 2.0,
+    "note": "第一次抓取时物体掉落，第二次完成"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "asset_id": "cleaning_brush",
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "extension": "omni.kit.asset_converter 5.0.17",
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 8424777,
+    "default_prim": "/World",
+    "filename": "cleaning_brush_visual.usd",
+    "forbidden_schema_count": 0,
+    "material_count": 4,
+    "mesh_count": 5,
+    "sha256": "8c8a8e4150a9b82aa48b2139d400217275b9b50c404acbb60fb8142562a5bbc1"
+  },
+  "schema": "hs005_downloaded_visual_conversion_v1",
+  "source": {
+    "archive_filename": "cleaning_brush.zip",
+    "archive_sha256": "4d566c7c98ce8eca8a6981bcb096c5b8cd6ab81cc5d01c03d76b6a7e997b845c",
+    "author": "amhyde",
+    "author_url": "https://sketchfab.com/amhyde",
+    "files": {
+      "source/license.txt": "38d99f0ae473cbed5a6480f66b72010f46cc4e9a2adbbc671ecb13a1fd95fbb0",
+      "source/scene.bin": "b746f612d3778299c54ec85a0e7625b56e36c23c81a033379626f4ce16f2b0dc",
+      "source/scene.gltf": "1aae1c43dc9f06bc1d8cb4224a1a1ecbc537a188dd57059f132fe35e70c5f3aa",
+      "source/textures/Material.027_metallicRoughness.png": "10de2c7d43e92f93384674a74d9b3330f1317de61055ae8acce4d8001c3efcbf",
+      "source/textures/Material.027_normal.png": "ff1f7713908b3dae308e3e2c4df9ec64c29b0488306e19ca058ec4198b7d68dd",
+      "source/textures/Material.029_baseColor.png": "216fdc5b3e3f23c5cc24cab7d371d8f4d5b14d68051b4f78b478e0fb0c1a5e9f"
+    },
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "profile": {
+      "bounds_source": [
+        [
+          -0.09361676291813588,
+          -0.014021236194759049,
+          -0.014021230861544609
+        ],
+        [
+          0.1907145366507642,
+          0.014021235704929228,
+          0.014021236449480057
+        ]
+      ],
+      "extents_source": [
+        0.2843312995689001,
+        0.028042471899688275,
+        0.028042467311024666
+      ],
+      "geometry_count": 5,
+      "mesh_node_count": 5,
+      "triangle_count": 120240
+    },
+    "source_url": "https://sketchfab.com/3d-models/cleaning-brush-277196dd4c634d44bdc0c1afc05d62f7",
+    "title": "Cleaning Brush"
+  }
+}

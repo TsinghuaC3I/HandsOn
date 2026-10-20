@@ -1,0 +1,35 @@
+{
+  "schema": "hs014_authoritative_asset_inventory_v2",
+  "task_id": "bench320_hs014_bottle_stabilized_cap_opening",
+  "assets": [
+    {
+      "uid": "ganten_570ml_bottle",
+      "selection": "project_authored_from_public_ganten_product_references",
+      "license_status": "project_authored; no third-party mesh or logo texture bundled",
+      "source_path": "https://www.ganten.com.cn/",
+      "copied_path": "assets/ganten_570ml/ganten_570ml_bottle.usda",
+      "sha256": "86594f66838f9c421fc417699e50ba4cbfb4304e248f1c97c2d2f4f915a85e06",
+      "visual_format": "USDA",
+      "collision_path": "assets/ganten_570ml/ganten_570ml_bottle.usda:Root/geometry/collision_body+collision_shoulder+collision_neck"
+    },
+    {
+      "uid": "ganten_570ml_cap",
+      "selection": "project_authored_bosl2_pco1810",
+      "license_status": "project_authored; BOSL2 BSD-2-Clause dependency",
+      "source_path": "https://github.com/BelfrySCAD/BOSL2",
+      "copied_path": "assets/ganten_570ml/ganten_570ml_cap.glb",
+      "sha256": "ccd761ea9a5dbb7fdf08048c39fc463831914a8f082151b1024a54987e5238fa",
+      "visual_format": "GLB",
+      "collision_model": "analytic inner envelope derived from same profile",
+      "thread_spec": "BOSL2 pco1810; pitch 3.18 mm"
+    },
+    {
+      "uid": "bosl2_dependency",
+      "selection": "user_downloaded_BOSL2_master_zip",
+      "license_status": "BOSL2 BSD-2-Clause",
+      "source_path": "https://github.com/BelfrySCAD/BOSL2",
+      "sha256": "1bb78afacb881a5732f8ffcace62cb2ce33833434193dad862956ba7071093b1",
+      "used_by": "assets/ganten_570ml/ganten_570ml.scad"
+    }
+  ]
+}

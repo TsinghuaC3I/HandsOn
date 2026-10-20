@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d02_microwave">
+  <asset>
+    <texture file="robocasa_microwave/visuals/material_0.png"
+             name="d02_microwave_texture" type="2d" />
+    <texture file="robocasa_microwave/visuals/image0.png"
+             name="d02_microwave_image" type="2d" />
+    <material name="d02_microwave_material" texture="d02_microwave_image"
+              specular="0.5" shininess="0.25" />
+    <material name="d02_start_button_material" rgba="0.10 0.78 0.20 1"
+              specular="0.15" shininess="0.25" />
+    <material name="d02_cavity_material" rgba="0.42 0.46 0.50 1"
+              specular="0.35" shininess="0.40" />
+    <mesh file="robocasa_microwave/visuals/microwave2_0.obj"
+          name="d02_microwave_body_mesh" scale="0.6 0.6 0.6" />
+    <mesh file="robocasa_microwave/visuals/microwave2_door_1.obj"
+          name="d02_microwave_door_mesh" scale="0.6 0.6 0.6" />
+  </asset>
+
+  <default>
+    <default class="d02_microwave_visual">
+      <geom contype="0" conaffinity="0" group="1" type="mesh" mass="0" />
+    </default>
+    <default class="d02_microwave_collision">
+      <geom group="3" rgba="0.5 0 0 0.18" friction="0.95 0.3 0.1"
+            solimp="0.998 0.998 0.001" solref="0.001 1" />
+    </default>
+  </default>
+
+  <contact>
+    <!-- The movable button overlaps the fixed keypad shell while travelling.
+         Excluding that internal pair lets a fingertip depress the button. -->
+    <exclude name="d02_start_button_keypad_exclude"
+             body1="microwave_object" body2="d02_start_button_body" />
+  </contact>
+
+  <worldbody>
+    <body name="microwave_object" pos="-0.05 0.12 1.1"
+          quat="0.70710678 0 0 -0.70710678">
+      <geom class="d02_microwave_visual" type="mesh"
+            mesh="d02_microwave_body_mesh" material="d02_microwave_material" />
+
+      <geom class="d02_microwave_collision" type="box"
+            name="d02_microwave_back_shell"
+            pos="0 0.2475 0" size="0.3 0.0192 0.18" />
+      <geom class="d02_microwave_collision" type="box"
+            name="d02_microwave_top_shell"
+            pos="0 0.045 0.176" size="0.3 0.2112 0.010" />
+      <geom class="d02_microwave_collision" type="box"
+            name="d02_microwave_left_shell"
+            pos="-0.282 0.045 0" size="0.024 0.2112 0.18" />
+      <geom class="d02_microwave_collision" type="box"
+            name="d02_microwave_right_shell"
+            pos="0.228 0.045 0" size="0.072 0.2112 0.18" />
+      <geom class="d02_microwave_collision" type="box"
+            pos="0.243 -0.195 0.009" size="0.057 0.0303 0.174" />
+      <geom class="d02_microwave_collision" type="box"
+            pos="0.219 -0.2258 -0.072" size="0.018 0.004 0.015"
+            name="stop_button" />
+      <geom class="d02_microwave_visual" type="cylinder"
+            pos="-0.054 0.03 -0.126" size="0.15 0.003"
+            rgba="0.12 0.35 0.38 0.35" name="tray" />
+      <!-- The source mesh paints the oven opening almost pure black and does
+           not expose readable interior surfaces in Isaac.  These visual-only
+           panels make the real hollow cavity visible while leaving its front
+           completely open.  Keep each visible inner face flush with the real
+           shell collider behind it; an inward visual offset makes a correctly
+           colliding plate appear to sink several millimetres into the oven. -->
+      <geom name="d02_cavity_floor_visual" class="d02_microwave_visual"
+            type="box" pos="-0.051 0.030 -0.123"
+            size="0.207 0.192 0.003" material="d02_cavity_material" />
+      <geom name="d02_cavity_back_visual" class="d02_microwave_visual"
+            type="box" pos="-0.051 0.2323 0.023"
+            size="0.207 0.004 0.143" material="d02_cavity_material" />
+      <geom name="d02_cavity_left_visual" class="d02_microwave_visual"
+            type="box" pos="-0.262 0.030 0.023"
+            size="0.004 0.192 0.143" material="d02_cavity_material" />
+      <geom name="d02_cavity_right_visual" class="d02_microwave_visual"
+            type="box" pos="0.160 0.030 0.023"
+            size="0.004 0.192 0.143" material="d02_cavity_material" />
+      <geom name="d02_cavity_ceiling_visual" class="d02_microwave_visual"
+            type="box" pos="-0.051 0.030 0.170"
+            size="0.207 0.192 0.004" material="d02_cavity_material" />
+      <geom name="d02_microwave_floor_collision" type="box"
+            pos="0 0.045 -0.165" size="0.300 0.2112 0.045"
+            group="3" rgba="0 0 0 0" condim="6" priority="3"
+            friction="1 0.005 0.0001" solref="0.002 1"
+            solimp="0.97 0.995 0.001" />
+
+      <!-- The start control has measurable travel and spring return. -->
+      <body name="d02_start_button_body" pos="0.267 -0.2258 -0.072">
+        <inertial pos="0 0 0" quat="1 0 0 0" mass="0.018"
+                  diaginertia="0.0000039 0.0000075 0.0000039" />
+        <joint name="d02_start_button_joint" type="slide" axis="0 1 0"
+               limited="true" range="0 0.014" damping="1.2"
+               stiffness="90" springref="0" armature="0.002" />
+        <geom name="start_button" class="d02_microwave_collision" type="box"
+              size="0.025 0.005 0.025" mass="0.018"
+              material="d02_start_button_material" rgba="0.10 0.78 0.20 1" />
+        <!-- The collision group is hidden in normal collection views, so keep
+             a non-colliding green face on the same moving body.  Its back face
+             starts flush with the keypad and visibly retreats when pressed. -->
+        <geom name="start_button_visual" class="d02_microwave_visual" type="box"
+              pos="0 -0.0273 0" size="0.024 0.0015 0.024"
+              material="d02_start_button_material" rgba="0.10 0.78 0.20 1" />
+        <!-- The rendered microwave mesh hides the original collision box.
+             This invisible extension reaches the visible green face so normal
+             fingertip contact drives the same physical slide joint without a
+             floating collision plane in front of it. -->
+        <geom name="start_button_press_proxy" class="d02_microwave_collision"
+              type="box" pos="0 -0.0125 0" size="0.030 0.016 0.030"
+              mass="0" rgba="0 0 0 0" />
+      </body>
+
+      <body name="door">
+        <!-- Keep a realistic 800 g door inertia.  Solid-density inference
+             makes this mesh 7.59 kg, beyond the Wuji handle force. -->
+        <inertial pos="-0.038668750056944 -0.19826116785262 0.00612718095429"
+                  quat="0.506306996041454 0.505271351551504 0.493189402702524 0.495094233578544"
+                  mass="0.8"
+                  diaginertia="0.0219089665 0.0147218610 0.00770041105" />
+        <joint axis="0 0 1" limited="true" name="microjoint"
+               range="-1.6 0" damping="0.25" frictionloss="0.05" armature="0.005"
+               pos="-0.27 -0.2202 0" ref="0" />
+        <geom class="d02_microwave_visual" type="mesh"
+              mesh="d02_microwave_door_mesh" material="d02_microwave_material" />
+        <geom class="d02_microwave_collision" type="box"
+              pos="-0.045 -0.1962 0.006" size="0.228 0.024 0.168" />
+        <geom class="d02_microwave_collision" type="box"
+              pos="0.162 -0.243 0.108" size="0.018 0.0228 0.0126" />
+        <geom class="d02_microwave_collision" type="box"
+              pos="0.162 -0.243 -0.09" size="0.018 0.0228 0.0126" />
+        <geom class="d02_microwave_collision" type="box"
+              pos="0.162 -0.275 0.0108" size="0.018 0.0096 0.108"
+              name="door_handle" />
+        <site rgba="1 0 0 0" size="0.006" pos="-0.045 -0.222 0.006"
+              name="door_p1" />
+        <site rgba="0 1 0 0" size="0.006" pos="-0.015 -0.222 0.006"
+              name="door_p2" />
+        <site rgba="0 0 1 0" size="0.006" pos="-0.045 -0.222 0.036"
+              name="door_p3" />
+      </body>
+
+      <site rgba="1 1 1 0" size="0.012" pos="-0.306 -0.222 -0.1698"
+            name="ext_p0" />
+      <site rgba="1 0 0 0" size="0.012" pos="0.306 -0.222 -0.1698"
+            name="ext_px" />
+      <site rgba="0 1 0 0" size="0.012" pos="-0.306 0.273 -0.1698"
+            name="ext_py" />
+      <site rgba="0 0 1 0" size="0.012" pos="-0.306 -0.222 0.183"
+            name="ext_pz" />
+      <site rgba="0.5 0.5 0.5 0" size="0.012" pos="-0.258 -0.162 -0.12"
+            name="int_p0" />
+      <site rgba="1 1 0 0" size="0.012" pos="0.156 -0.162 -0.12"
+            name="int_px" />
+      <site rgba="0 1 1 0" size="0.012" pos="-0.258 0.222 -0.12"
+            name="int_py" />
+      <site rgba="1 0 1 0" size="0.012" pos="-0.258 -0.162 0.166"
+            name="int_pz" />
+    </body>
+  </worldbody>
+</mujoco>

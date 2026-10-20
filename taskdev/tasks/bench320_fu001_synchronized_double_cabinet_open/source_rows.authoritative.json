@@ -1,0 +1,295 @@
+{
+  "source": "dexterous_hand_benchmark_320_tasks_expanded.xlsx (local authoring sheet)",
+  "source_sha256": "5afc356056d7593de541813d29555a18d26886bbf85cb3ac7b50967cdec6c18b",
+  "sheet": "任务总表320",
+  "tasks": [
+    {
+      "task_id": "B320-BC001",
+      "excel_row": 162,
+      "exact_assets": "dexverse_authored_two_handle_tray: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_two_handle_tray/dexverse_authored_two_handle_tray.glb\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "将双把手托盘从取货区水平搬到交付区。",
+      "left_role": "抓左把手并调节滚转",
+      "right_role": "抓右把手并调节俯仰"
+    },
+    {
+      "task_id": "B320-BC003",
+      "excel_row": 164,
+      "exact_assets": "dv_dutch_oven: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Dutch_Oven_B08F2TMKZB_White/model_Dutch_Oven_B08F2TMKZB_White_69323.usd\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "使用两侧锅耳将荷兰锅移到隔热垫区。",
+      "left_role": "抓左锅耳、调节横滚",
+      "right_role": "抓右锅耳、调节俯仰"
+    },
+    {
+      "task_id": "B320-BC009",
+      "excel_row": 170,
+      "exact_assets": "dexverse_authored_small_parcel: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_small_parcel/dexverse_authored_small_parcel.glb\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "将小包裹从右手交给左手并放入交付区。",
+      "left_role": "从包裹左下角接收并承载",
+      "right_role": "在包裹右侧交付后完全释放"
+    },
+    {
+      "task_id": "B320-BC012",
+      "excel_row": 173,
+      "exact_assets": "dexverse_tomato_soup_can: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/ycb/005_tomato_soup_can/textured.usd\ndexverse_authored_open_bin: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_open_bin/dexverse_authored_open_bin.glb",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "同时拾取两个罐头并放入箱内左右分区。",
+      "left_role": "搬运左侧罐头到左分区",
+      "right_role": "搬运右侧罐头到右分区"
+    },
+    {
+      "task_id": "B320-BC016",
+      "excel_row": 177,
+      "exact_assets": "dv_double_cabinet_44781: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_furniture_revolute/44781/mobility.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "左右手同步打开对开柜的两扇门。",
+      "left_role": "驱动target_joint_revolute",
+      "right_role": "驱动joint_11"
+    },
+    {
+      "task_id": "B320-BC019",
+      "excel_row": 180,
+      "exact_assets": "dexverse_water_bottle: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/long_horizon_extra/cooking/water_bottle_opened/water_bottle_opened.usd\ndexverse_authored_bottle_cap: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_bottle_cap/dexverse_authored_bottle_cap.glb",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "一手固定水瓶，另一手对齐并压入瓶盖。",
+      "left_role": "固定瓶身下半部",
+      "right_role": "捏取瓶盖并同轴压入"
+    },
+    {
+      "task_id": "B320-KA001",
+      "excel_row": 188,
+      "exact_assets": "dv_microwave_7167: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手稳定机身，另一手将微波炉门打开到80%行程。",
+      "left_role": "接触微波炉左侧固定壳体",
+      "right_role": "抓门把手驱动joint_0"
+    },
+    {
+      "task_id": "B320-KA002",
+      "excel_row": 189,
+      "exact_assets": "dv_microwave_cavity: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167__cavityprep_v3.usd\ndexverse_authored_dinner_plate: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_dinner_plate/dexverse_authored_dinner_plate.glb",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "左手保持微波炉门开启，右手从腔体取出餐盘。",
+      "left_role": "扶住门使joint_0>55%行程",
+      "right_role": "从腔体内托起餐盘"
+    },
+    {
+      "task_id": "B320-KA005",
+      "excel_row": 192,
+      "exact_assets": "dv_microwave_7167: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "左右手分别设定微波炉两个控制旋钮。",
+      "left_role": "将joint_1转到-25±5°",
+      "right_role": "将joint_2转到+35±5°"
+    },
+    {
+      "task_id": "B320-KA012",
+      "excel_row": 199,
+      "exact_assets": "dv_dutch_oven: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Dutch_Oven_B08F2TMKZB_White/model_Dutch_Oven_B08F2TMKZB_White_69323.usd\ndexverse_authored_spoon: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_spoon/dexverse_authored_spoon.glb",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "一手扶锅耳，另一手使勺子沿锅内圆完成两圈搅拌。",
+      "left_role": "稳定荷兰锅左锅耳",
+      "right_role": "抓勺柄并循迹搅拌"
+    },
+    {
+      "task_id": "B320-KA015",
+      "excel_row": 202,
+      "exact_assets": "dexverse_mixing_bowl: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/long_horizon_extra/cooking/CWCMixingBowl1/model_CWCMixingBowl1_69323.usd\ndexverse_water_bottle: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/long_horizon_extra/cooking/water_bottle_opened/water_bottle_opened.usd",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "稳定搅拌碗并从水瓶向碗内倾倒。",
+      "left_role": "稳定碗沿与底座",
+      "right_role": "抓瓶身倾倒并恢复竖直"
+    },
+    {
+      "task_id": "B320-KA017",
+      "excel_row": 204,
+      "exact_assets": "dexverse_coffee_machine: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/coffee_machine001/model_coffee_machine_6.usd\ndexverse_green_cup: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Cup_B0CMD4LX4D_ForestGreen/model_Cup_B0CMD4LX4D_ForestGreen_69323.usd",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "稳定咖啡机，将杯子放到出液口下方。",
+      "left_role": "接触咖啡机非控件壳体",
+      "right_role": "抓杯把对齐出液口下方"
+    },
+    {
+      "task_id": "B320-FU001",
+      "excel_row": 215,
+      "exact_assets": "dv_double_cabinet_44781: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_furniture_revolute/44781/mobility.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "双手同时打开对开柜两扇门。",
+      "left_role": "驱动左门target_joint_revolute",
+      "right_role": "驱动右门joint_11"
+    },
+    {
+      "task_id": "B320-FU003",
+      "excel_row": 217,
+      "exact_assets": "dv_storage_doors_38516: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_furniture_revolute/38516/mobility.usd\ndexverse_binders: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/mani_twin_selected/binders/002/base_rescaled.usdz",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手保持柜门开启，另一手将文件盒竖直放入。",
+      "left_role": "扶住目标柜门使其>55%行程",
+      "right_role": "抓住文件盒下半部放入货架"
+    },
+    {
+      "task_id": "B320-FU005",
+      "excel_row": 219,
+      "exact_assets": "dv_drawer_45575: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_unit/45575.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手压稳柜体，另一手将抽屉拉出。",
+      "left_role": "接触柜体顶面抵消拉力",
+      "right_role": "抓抽屉把手驱动joint_1"
+    },
+    {
+      "task_id": "B320-FU006",
+      "excel_row": 220,
+      "exact_assets": "dv_drawer_45575: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_unit/45575.usd\ndexverse_charger: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/charger001/model_charger.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "保持抽屉开启并将充电器放入。",
+      "left_role": "持续扶住抽屉把手防止滑动",
+      "right_role": "捏取充电器放入内部区"
+    },
+    {
+      "task_id": "B320-FU015",
+      "excel_row": 229,
+      "exact_assets": "dv_laptop: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/laptop001/model_computer_9.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手压住笔记本底座，另一手将屏幕打开到目标角。",
+      "left_role": "压稳底座前缘且避开触摸板",
+      "right_role": "抓屏幕上缘旋转铰链"
+    },
+    {
+      "task_id": "B320-AS001",
+      "excel_row": 242,
+      "exact_assets": "dexverse_authored_device_body: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_device_body/dexverse_authored_device_body.glb\ndexverse_authored_device_cover: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_device_cover/dexverse_authored_device_cover.glb",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "一手固定设备机身，另一手将盖板对齐压入。",
+      "left_role": "固定机身非接口侧",
+      "right_role": "握持盖板调整偏航和下压"
+    },
+    {
+      "task_id": "B320-AS007",
+      "excel_row": 248,
+      "exact_assets": "dexverse_authored_device_body: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_device_body/dexverse_authored_device_body.glb\ndexverse_authored_screwdriver: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_screwdriver/dexverse_authored_screwdriver.glb",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "固定设备机身，将螺丝刀尖对准螺孔并压紧。",
+      "left_role": "稳定机身并抵消轴向力",
+      "right_role": "抓螺丝刀柄对齐螺孔"
+    },
+    {
+      "task_id": "B320-AS013",
+      "excel_row": 254,
+      "exact_assets": "dv_utility_knife: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/utility knife002/model_utility_knife_3.usd",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手固定美工刀壳体，另一手推动滑块使刀刃伸出。",
+      "left_role": "抓住壳体安全区",
+      "right_role": "用指腹推动滑块"
+    },
+    {
+      "task_id": "B320-AS016",
+      "excel_row": 257,
+      "exact_assets": "dv_insert_peg: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/dexverse_authored/insert_peg/peg/peg.usd | /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/dexverse_authored/insert_peg/hole/hole.usd\ntarget_marker: 任务配置中生成",
+      "initial_state": "家具/设备根姿态XY±0.03 m、yaw±5°；目标关节初态在安全行程10%–30%；小物XY±0.035 m；摩擦0.45–0.85、质量0.8–1.2×。",
+      "objective": "一手固定带外螺纹基件，另一手旋转螺母完成三圈装配。",
+      "left_role": "固定螺杆座并抵消反力矩",
+      "right_role": "对齐螺母后连续旋转"
+    },
+    {
+      "task_id": "B320-AS019",
+      "excel_row": 260,
+      "exact_assets": "dexverse_authored_screwdriver: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_screwdriver/dexverse_authored_screwdriver.glb\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "将螺丝刀从右手交给左手，保持刀尖朝外且不触碰接收手掌。",
+      "left_role": "从刀柄中部接收并放入工具区",
+      "right_role": "从刀柄尾部交付后完全释放"
+    },
+    {
+      "task_id": "B320-HS001",
+      "excel_row": 264,
+      "exact_assets": "dexverse_floral_teapot: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/teapot/model_Teapot_B09T313HT9_WhiteColorfulFloral_TU_69323.usd\ndexverse_green_cup: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Cup_B0CMD4LX4D_ForestGreen/model_Cup_B0CMD4LX4D_ForestGreen_69323.usd",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "一手稳定杯子，另一手将茶壶口对准杯口完成受控倾倒。",
+      "left_role": "握杯把并维持杯口朝上",
+      "right_role": "抓茶壶把手控制壶口轨迹"
+    },
+    {
+      "task_id": "B320-HS002",
+      "excel_row": 265,
+      "exact_assets": "dexverse_green_cup: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Cup_B0CMD4LX4D_ForestGreen/model_Cup_B0CMD4LX4D_ForestGreen_69323.usd\ndexverse_orange_teacup: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/tea_cup/model_Cup_B0CYL5PSR3_Orange_69323.usd\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "左右手各持一杯，将两杯同步放到顾客区。",
+      "left_role": "将绿色杯放到左杯垫",
+      "right_role": "将橙色杯放到右杯垫"
+    },
+    {
+      "task_id": "B320-HS005",
+      "excel_row": 268,
+      "exact_assets": "dexverse_water_bottle: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/long_horizon_extra/cooking/water_bottle_opened/water_bottle_opened.usd\ndexverse_authored_scrub_brush: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_scrub_brush/dexverse_authored_scrub_brush.glb\ndexverse_kitchen_sink: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/sink/sink.usd",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "一手固定水瓶，另一手沿瓶身目标带刷洗。",
+      "left_role": "将瓶身压稳在水槽防滑区",
+      "right_role": "抓刷柄覆盖三个刷洗检查点"
+    },
+    {
+      "task_id": "B320-HS008",
+      "excel_row": 271,
+      "exact_assets": "dv_basket: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/shopping basket002/model_basket_22.usd\ntarget_marker: 任务配置中生成",
+      "initial_state": "沿用SceneSmith模板：物体XY±0.035 m、yaw±12°；摩擦0.45–0.85、质量0.8–1.2×；目标区XY±0.025 m；对跌落/穿透/不可达初态拒绝采样。",
+      "objective": "双手提起空购物篮并放回嵌套区。",
+      "left_role": "抓左侧篮沿并控制滚转",
+      "right_role": "抓右侧篮沿并控制偏航"
+    },
+    {
+      "task_id": "B320-HS010",
+      "excel_row": 273,
+      "exact_assets": "dexverse_authored_open_bin: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_open_bin/dexverse_authored_open_bin.glb\ndexverse_authored_bin_lid: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_bin_lid/dexverse_authored_bin_lid.glb",
+      "initial_state": "基准件XY±0.02 m、yaw±8°；配合件XY±0.025 m、yaw±10°；接触摩擦0.55–0.90、质量0.85–1.15×；对不可达/初始穿透做拒绝采样。",
+      "objective": "一手固定分拣箱，另一手将盖板对齐并闭合。",
+      "left_role": "握住箱体侧壁保持基准",
+      "right_role": "抓盖板把手调姿并下压"
+    },
+    {
+      "task_id": "B320-HL001",
+      "excel_row": 288,
+      "exact_assets": "dv_microwave_cavity: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167__cavityprep_v3.usd\ndexverse_authored_dinner_plate: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_dinner_plate/dexverse_authored_dinner_plate.glb",
+      "initial_state": "根姿态XY±0.025 m、yaw±8°；可动物体XY±0.025 m；质量0.9–1.1×、摩擦0.50–0.80；阶段依赖不随机；对门路净空做拒绝采样。",
+      "objective": "完成开门、装盘、关门、设定旋钮和安全撤手。",
+      "left_role": "开/扶门并在装盘后关门",
+      "right_role": "搬运餐盘并设定旋钮"
+    },
+    {
+      "task_id": "B320-HL002",
+      "excel_row": 289,
+      "exact_assets": "dv_fridge_10797: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/fridge/10797/mobility__decomp.usd\ndv_microwave_cavity: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167__cavityprep_v3.usd\ndexverse_carrot: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/long_horizon_extra/cooking/carrot/carrot.usd",
+      "initial_state": "根姿态XY±0.025 m、yaw±8°；可动物体XY±0.025 m；质量0.9–1.1×、摩擦0.50–0.80；阶段依赖不随机；对门路净空做拒绝采样。",
+      "objective": "从冰箱取食材，关闭冰箱，再装入微波炉并设置旋钮。",
+      "left_role": "依次操作两扇门并保持避碰",
+      "right_role": "取放食材并操作旋钮"
+    },
+    {
+      "task_id": "B320-HL004",
+      "excel_row": 291,
+      "exact_assets": "dv_microwave_7167: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/microwave/7167.usd",
+      "initial_state": "根姿态XY±0.025 m、yaw±8°；可动物体XY±0.025 m；质量0.9–1.1×、摩擦0.50–0.80；阶段依赖不随机；对门路净空做拒绝采样。",
+      "objective": "在门关闭后，两手分别设置功率和时间旋钮。",
+      "left_role": "确认/保持门处于关闭带并设置左旋钮",
+      "right_role": "设置右旋钮并与左手共同保持"
+    },
+    {
+      "task_id": "B320-HL009",
+      "excel_row": 296,
+      "exact_assets": "dv_double_cabinet_44781: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/partnet_mobility/storage_furniture_revolute/44781/mobility.usd\ndexverse_binders: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/mani_twin_selected/binders/002/base_rescaled.usdz\ndexverse_flat_folder: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/flat folder002/model_file_9__collsimple.usd",
+      "initial_state": "根姿态XY±0.025 m、yaw±8°；可动物体XY±0.025 m；质量0.9–1.1×、摩擦0.50–0.80；阶段依赖不随机；对门路净空做拒绝采样。",
+      "objective": "双手开柜门，将两类文件放入不同层并同步关门。",
+      "left_role": "控制左门并将文件夹放下层",
+      "right_role": "控制右门并将文件盒放上层"
+    },
+    {
+      "task_id": "B320-HL012",
+      "excel_row": 299,
+      "exact_assets": "dexverse_authored_two_handle_tray: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_scene_kits_compat/assets/dexverse_authored_two_handle_tray/dexverse_authored_two_handle_tray.glb\ndexverse_floral_teapot: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/teapot/model_Teapot_B09T313HT9_WhiteColorfulFloral_TU_69323.usd\ndexverse_green_cup: /mnt/pfs/luotianwei/dexverse-scenesmith/data/dexverse_release/extracted/assets/core_assets/synthesis/Cup_B0CMD4LX4D_ForestGreen/model_Cup_B0CMD4LX4D_ForestGreen_69323.usd\ntarget_marker: 任务配置中生成",
+      "initial_state": "根姿态XY±0.025 m、yaw±8°；可动物体XY±0.025 m；质量0.9–1.1×、摩擦0.50–0.80；阶段依赖不随机；对门路净空做拒绝采样。",
+      "objective": "先将茶壶和杯装到托盘，再双手水平搬运交付。",
+      "left_role": "装杯，随后抓左把手",
+      "right_role": "装茶壶，随后抓右把手"
+    }
+  ]
+}

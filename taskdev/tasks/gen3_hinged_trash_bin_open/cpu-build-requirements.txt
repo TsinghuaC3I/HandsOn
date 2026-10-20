@@ -1,0 +1,11 @@
+numpy==2.3.5
+scipy==1.18.1
+trimesh==5.1.0
+usd-core==26.8
+vhacdx==0.0.10
+manifold3d==3.5.2
+python-fcl==0.7.0.11
+rtree==1.4.1
+pygltflib==1.16.5
+Pillow==12.3.0
+matplotlib==3.11.1

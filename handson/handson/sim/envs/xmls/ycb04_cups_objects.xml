@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="t41_sort_nested_cups">
+  <default>
+    <default class="ycb04_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="ycb04_collision">
+      <geom type="mesh" group="0" condim="4" friction="0.95 0.03 0.003" solref="0.003 1" solimp="0.98 0.995 0.0005"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="ycb04_small_texture" file="lightwheel_ycb/a_cups/visuals/T_a_cups_BC001.png"/>
+    <material name="ycb04_small_material" texture="ycb04_small_texture" specular="0.45"/>
+    <mesh name="ycb04_small_visual_mesh" file="lightwheel_ycb/a_cups/visuals/a_cups.obj"/>
+    <mesh name="ycb04_small_collision_mesh_1" file="lightwheel_ycb/a_cups/collision/a_cups_Collider1_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_2" file="lightwheel_ycb/a_cups/collision/a_cups_Collider2_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_3" file="lightwheel_ycb/a_cups/collision/a_cups_Collider3_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_4" file="lightwheel_ycb/a_cups/collision/a_cups_Collider4_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_5" file="lightwheel_ycb/a_cups/collision/a_cups_Collider5_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_6" file="lightwheel_ycb/a_cups/collision/a_cups_Collider6_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_7" file="lightwheel_ycb/a_cups/collision/a_cups_Collider7_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_8" file="lightwheel_ycb/a_cups/collision/a_cups_Collider8_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_9" file="lightwheel_ycb/a_cups/collision/a_cups_Collider9_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_10" file="lightwheel_ycb/a_cups/collision/a_cups_Collider10_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_11" file="lightwheel_ycb/a_cups/collision/a_cups_Collider11_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_12" file="lightwheel_ycb/a_cups/collision/a_cups_Collider12_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_13" file="lightwheel_ycb/a_cups/collision/a_cups_Collider13_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_14" file="lightwheel_ycb/a_cups/collision/a_cups_Collider14_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_15" file="lightwheel_ycb/a_cups/collision/a_cups_Collider15_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_16" file="lightwheel_ycb/a_cups/collision/a_cups_Collider16_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_17" file="lightwheel_ycb/a_cups/collision/a_cups_Collider17_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_18" file="lightwheel_ycb/a_cups/collision/a_cups_Collider18_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_19" file="lightwheel_ycb/a_cups/collision/a_cups_Collider19_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_20" file="lightwheel_ycb/a_cups/collision/a_cups_Collider20_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_21" file="lightwheel_ycb/a_cups/collision/a_cups_Collider21_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_22" file="lightwheel_ycb/a_cups/collision/a_cups_Collider22_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_23" file="lightwheel_ycb/a_cups/collision/a_cups_Collider23_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_24" file="lightwheel_ycb/a_cups/collision/a_cups_Collider24_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_25" file="lightwheel_ycb/a_cups/collision/a_cups_Collider25_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_26" file="lightwheel_ycb/a_cups/collision/a_cups_Collider26_m.obj"/>
+    <mesh name="ycb04_small_collision_mesh_27" file="lightwheel_ycb/a_cups/collision/a_cups_Collider27_m.obj"/>
+    <texture type="2d" name="ycb04_medium_texture" file="lightwheel_ycb/b_cups/visuals/T_b_cups_BC001.png"/>
+    <material name="ycb04_medium_material" texture="ycb04_medium_texture" specular="0.45"/>
+    <mesh name="ycb04_medium_visual_mesh" file="lightwheel_ycb/b_cups/visuals/b_cups.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_1" file="lightwheel_ycb/b_cups/collision/b_cups_Collider1_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_2" file="lightwheel_ycb/b_cups/collision/b_cups_Collider2_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_3" file="lightwheel_ycb/b_cups/collision/b_cups_Collider3_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_4" file="lightwheel_ycb/b_cups/collision/b_cups_Collider4_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_5" file="lightwheel_ycb/b_cups/collision/b_cups_Collider5_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_6" file="lightwheel_ycb/b_cups/collision/b_cups_Collider6_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_7" file="lightwheel_ycb/b_cups/collision/b_cups_Collider7_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_8" file="lightwheel_ycb/b_cups/collision/b_cups_Collider8_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_9" file="lightwheel_ycb/b_cups/collision/b_cups_Collider9_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_10" file="lightwheel_ycb/b_cups/collision/b_cups_Collider10_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_11" file="lightwheel_ycb/b_cups/collision/b_cups_Collider11_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_12" file="lightwheel_ycb/b_cups/collision/b_cups_Collider12_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_13" file="lightwheel_ycb/b_cups/collision/b_cups_Collider13_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_14" file="lightwheel_ycb/b_cups/collision/b_cups_Collider14_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_15" file="lightwheel_ycb/b_cups/collision/b_cups_Collider15_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_16" file="lightwheel_ycb/b_cups/collision/b_cups_Collider16_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_17" file="lightwheel_ycb/b_cups/collision/b_cups_Collider17_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_18" file="lightwheel_ycb/b_cups/collision/b_cups_Collider18_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_19" file="lightwheel_ycb/b_cups/collision/b_cups_Collider19_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_20" file="lightwheel_ycb/b_cups/collision/b_cups_Collider20_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_21" file="lightwheel_ycb/b_cups/collision/b_cups_Collider21_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_22" file="lightwheel_ycb/b_cups/collision/b_cups_Collider22_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_23" file="lightwheel_ycb/b_cups/collision/b_cups_Collider23_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_24" file="lightwheel_ycb/b_cups/collision/b_cups_Collider24_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_25" file="lightwheel_ycb/b_cups/collision/b_cups_Collider25_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_26" file="lightwheel_ycb/b_cups/collision/b_cups_Collider26_m.obj"/>
+    <mesh name="ycb04_medium_collision_mesh_27" file="lightwheel_ycb/b_cups/collision/b_cups_Collider27_m.obj"/>
+    <texture type="2d" name="ycb04_large_texture" file="lightwheel_ycb/c_cups/visuals/T_c_cups_BC001.png"/>
+    <material name="ycb04_large_material" texture="ycb04_large_texture" specular="0.45"/>
+    <mesh name="ycb04_large_visual_mesh" file="lightwheel_ycb/c_cups/visuals/c_cups.obj"/>
+    <mesh name="ycb04_large_collision_mesh_1" file="lightwheel_ycb/c_cups/collision/c_cups_Collider1_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_2" file="lightwheel_ycb/c_cups/collision/c_cups_Collider2_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_3" file="lightwheel_ycb/c_cups/collision/c_cups_Collider3_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_4" file="lightwheel_ycb/c_cups/collision/c_cups_Collider4_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_5" file="lightwheel_ycb/c_cups/collision/c_cups_Collider5_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_6" file="lightwheel_ycb/c_cups/collision/c_cups_Collider6_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_7" file="lightwheel_ycb/c_cups/collision/c_cups_Collider7_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_8" file="lightwheel_ycb/c_cups/collision/c_cups_Collider8_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_9" file="lightwheel_ycb/c_cups/collision/c_cups_Collider9_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_10" file="lightwheel_ycb/c_cups/collision/c_cups_Collider10_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_11" file="lightwheel_ycb/c_cups/collision/c_cups_Collider11_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_12" file="lightwheel_ycb/c_cups/collision/c_cups_Collider12_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_13" file="lightwheel_ycb/c_cups/collision/c_cups_Collider13_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_14" file="lightwheel_ycb/c_cups/collision/c_cups_Collider14_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_15" file="lightwheel_ycb/c_cups/collision/c_cups_Collider15_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_16" file="lightwheel_ycb/c_cups/collision/c_cups_Collider16_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_17" file="lightwheel_ycb/c_cups/collision/c_cups_Collider17_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_18" file="lightwheel_ycb/c_cups/collision/c_cups_Collider18_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_19" file="lightwheel_ycb/c_cups/collision/c_cups_Collider19_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_20" file="lightwheel_ycb/c_cups/collision/c_cups_Collider20_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_21" file="lightwheel_ycb/c_cups/collision/c_cups_Collider21_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_22" file="lightwheel_ycb/c_cups/collision/c_cups_Collider22_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_23" file="lightwheel_ycb/c_cups/collision/c_cups_Collider23_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_24" file="lightwheel_ycb/c_cups/collision/c_cups_Collider24_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_25" file="lightwheel_ycb/c_cups/collision/c_cups_Collider25_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_26" file="lightwheel_ycb/c_cups/collision/c_cups_Collider26_m.obj"/>
+    <mesh name="ycb04_large_collision_mesh_27" file="lightwheel_ycb/c_cups/collision/c_cups_Collider27_m.obj"/>
+  </asset>
+  <worldbody>
+    <body name="ycb04_large_cup" pos="-0.25 0 0.922000">
+      <freejoint name="ycb04_large_cup_joint"/>
+      <geom name="ycb04_large_visual" class="ycb04_visual" material="ycb04_large_material" mesh="ycb04_large_visual_mesh"/>
+      <geom name="ycb04_large_collision_1" class="ycb04_collision" mesh="ycb04_large_collision_mesh_1" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_2" class="ycb04_collision" mesh="ycb04_large_collision_mesh_2" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_3" class="ycb04_collision" mesh="ycb04_large_collision_mesh_3" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_4" class="ycb04_collision" mesh="ycb04_large_collision_mesh_4" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_5" class="ycb04_collision" mesh="ycb04_large_collision_mesh_5" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_6" class="ycb04_collision" mesh="ycb04_large_collision_mesh_6" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_7" class="ycb04_collision" mesh="ycb04_large_collision_mesh_7" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_8" class="ycb04_collision" mesh="ycb04_large_collision_mesh_8" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_9" class="ycb04_collision" mesh="ycb04_large_collision_mesh_9" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_10" class="ycb04_collision" mesh="ycb04_large_collision_mesh_10" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_11" class="ycb04_collision" mesh="ycb04_large_collision_mesh_11" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_12" class="ycb04_collision" mesh="ycb04_large_collision_mesh_12" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_13" class="ycb04_collision" mesh="ycb04_large_collision_mesh_13" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_14" class="ycb04_collision" mesh="ycb04_large_collision_mesh_14" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_15" class="ycb04_collision" mesh="ycb04_large_collision_mesh_15" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_16" class="ycb04_collision" mesh="ycb04_large_collision_mesh_16" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_17" class="ycb04_collision" mesh="ycb04_large_collision_mesh_17" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_18" class="ycb04_collision" mesh="ycb04_large_collision_mesh_18" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_19" class="ycb04_collision" mesh="ycb04_large_collision_mesh_19" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_20" class="ycb04_collision" mesh="ycb04_large_collision_mesh_20" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_21" class="ycb04_collision" mesh="ycb04_large_collision_mesh_21" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_22" class="ycb04_collision" mesh="ycb04_large_collision_mesh_22" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_23" class="ycb04_collision" mesh="ycb04_large_collision_mesh_23" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_24" class="ycb04_collision" mesh="ycb04_large_collision_mesh_24" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_25" class="ycb04_collision" mesh="ycb04_large_collision_mesh_25" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_26" class="ycb04_collision" mesh="ycb04_large_collision_mesh_26" mass="0.0022222222"/>
+      <geom name="ycb04_large_collision_27" class="ycb04_collision" mesh="ycb04_large_collision_mesh_27" mass="0.0022222222"/>
+      <site name="ycb04_large_center" pos="0 0 0" size="0.002" rgba="0 0 0 0"/>
+    </body>
+    <body name="ycb04_medium_cup" pos="-0.25 0 0.942180">
+      <freejoint name="ycb04_medium_cup_joint"/>
+      <geom name="ycb04_medium_visual" class="ycb04_visual" material="ycb04_medium_material" mesh="ycb04_medium_visual_mesh"/>
+      <geom name="ycb04_medium_collision_1" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_1" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_2" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_2" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_3" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_3" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_4" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_4" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_5" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_5" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_6" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_6" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_7" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_7" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_8" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_8" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_9" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_9" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_10" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_10" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_11" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_11" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_12" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_12" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_13" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_13" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_14" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_14" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_15" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_15" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_16" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_16" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_17" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_17" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_18" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_18" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_19" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_19" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_20" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_20" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_21" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_21" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_22" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_22" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_23" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_23" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_24" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_24" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_25" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_25" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_26" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_26" mass="0.0022222222"/>
+      <geom name="ycb04_medium_collision_27" class="ycb04_collision" mesh="ycb04_medium_collision_mesh_27" mass="0.0022222222"/>
+      <site name="ycb04_medium_center" pos="0 0 0" size="0.002" rgba="0 0 0 0"/>
+    </body>
+    <body name="ycb04_small_cup" pos="-0.25 0 0.948570">
+      <freejoint name="ycb04_small_cup_joint"/>
+      <geom name="ycb04_small_visual" class="ycb04_visual" material="ycb04_small_material" mesh="ycb04_small_visual_mesh"/>
+      <geom name="ycb04_small_collision_1" class="ycb04_collision" mesh="ycb04_small_collision_mesh_1" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_2" class="ycb04_collision" mesh="ycb04_small_collision_mesh_2" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_3" class="ycb04_collision" mesh="ycb04_small_collision_mesh_3" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_4" class="ycb04_collision" mesh="ycb04_small_collision_mesh_4" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_5" class="ycb04_collision" mesh="ycb04_small_collision_mesh_5" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_6" class="ycb04_collision" mesh="ycb04_small_collision_mesh_6" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_7" class="ycb04_collision" mesh="ycb04_small_collision_mesh_7" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_8" class="ycb04_collision" mesh="ycb04_small_collision_mesh_8" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_9" class="ycb04_collision" mesh="ycb04_small_collision_mesh_9" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_10" class="ycb04_collision" mesh="ycb04_small_collision_mesh_10" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_11" class="ycb04_collision" mesh="ycb04_small_collision_mesh_11" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_12" class="ycb04_collision" mesh="ycb04_small_collision_mesh_12" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_13" class="ycb04_collision" mesh="ycb04_small_collision_mesh_13" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_14" class="ycb04_collision" mesh="ycb04_small_collision_mesh_14" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_15" class="ycb04_collision" mesh="ycb04_small_collision_mesh_15" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_16" class="ycb04_collision" mesh="ycb04_small_collision_mesh_16" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_17" class="ycb04_collision" mesh="ycb04_small_collision_mesh_17" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_18" class="ycb04_collision" mesh="ycb04_small_collision_mesh_18" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_19" class="ycb04_collision" mesh="ycb04_small_collision_mesh_19" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_20" class="ycb04_collision" mesh="ycb04_small_collision_mesh_20" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_21" class="ycb04_collision" mesh="ycb04_small_collision_mesh_21" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_22" class="ycb04_collision" mesh="ycb04_small_collision_mesh_22" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_23" class="ycb04_collision" mesh="ycb04_small_collision_mesh_23" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_24" class="ycb04_collision" mesh="ycb04_small_collision_mesh_24" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_25" class="ycb04_collision" mesh="ycb04_small_collision_mesh_25" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_26" class="ycb04_collision" mesh="ycb04_small_collision_mesh_26" mass="0.0022222222"/>
+      <geom name="ycb04_small_collision_27" class="ycb04_collision" mesh="ycb04_small_collision_mesh_27" mass="0.0022222222"/>
+      <site name="ycb04_small_center" pos="0 0 0" size="0.002" rgba="0 0 0 0"/>
+    </body>
+  </worldbody>
+</mujoco>

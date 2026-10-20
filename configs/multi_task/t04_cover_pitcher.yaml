@@ -1,0 +1,7 @@
+env_name: t04_cover_pitcher
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Align the pitcher lid and place it onto the pitcher body."
+robot_type: single_arm

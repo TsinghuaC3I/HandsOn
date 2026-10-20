@@ -1,0 +1,48 @@
+schema_version: 1
+task_id: B320-KA005-2
+task_name: t38_set_dual_knobs
+state: formal_collection_enabled
+updated_at: "2026-08-22T21:38:52+08:00"
+clean_room: true
+completed_gates:
+  - task_contract_ready
+  - asset_archives_identified
+  - asset_archives_integrity_checked
+  - license_and_attribution_checked
+  - asset_files_integrated
+  - task_registration_ready
+  - scene_ready
+  - physical_task_semantics_ready
+  - live_physx_smoke_ready
+  - formal_initial_state_stable
+  - manual_hard_reset_validated
+  - ui_preview_start_reset_stop_validated
+  - preview_ready
+  - formal_collection_launch_enabled
+selected_assets:
+  rotary_knob:
+    archive: /home/user/下载/rotary_knob.zip
+    sha256: 9f65d6d81959812851dc12205d3412c0fbe3f4958e0fa8cb4c17bb4451e9b87b
+    license: CC-BY-4.0
+  project_boxy:
+    archive: /home/user/下载/project-boxy-master.zip
+    sha256: 0726041e66f680b6b5dc61b0dcb5c76219bcf42f83b5825bd7913681635e6299
+    license: MIT
+pending_gates:
+  - collection_episode_recorded
+  - collection_episode_reviewed
+  - operator_accepted
+  - physical_success_validated
+  - canonical_camera_validated
+  - formal_collection_certified
+  - fresh_process_replay_validated
+blocked: false
+blocked_reason: null
+notes:
+  - "Original archives remain immutable; task-local copies and generated derivatives are separately hashed."
+  - "Project Boxy contains OpenSCAD source only; the task will use an auditable local derivative generator because OpenSCAD is not installed."
+  - "Isaac Sim 5.1 live smoke passed with randomized reset, named DOFs, four contact views, analytic colliders, and zero passive drift."
+  - "Formal recording-origin validation passed for 180 physics steps on the initial reset and again after a live-camera R hard reset with a fresh in-process PhysX Scene."
+  - "KA005-2 keeps both articulated arms live during first-PhysX initialization; canonical cameras remain deferred to post-render."
+  - "The task is registered in the platform's formal Isaac Sim collection set and can be started from the UI."
+  - "Operator physical success, canonical camera, collection review, and fresh-process replay evidence remain pending."

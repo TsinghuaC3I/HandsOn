@@ -1,0 +1,12 @@
+env_name: eval_comb01_cover_pitcher_and_box
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "First align and seat the pitcher lid, then release it and let it settle. Next align and seat the clear-box lid, release it and let it settle. Both lids must remain correctly seated on their own containers."
+robot_type: single_arm
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX
+time_limit_seconds: 240.0
+skills: [lid_alignment, lid_placement, release, sequential_composition]
+objects: [pitcher_lid, 019_pitcher_base, Box_lid, Clear_Box]

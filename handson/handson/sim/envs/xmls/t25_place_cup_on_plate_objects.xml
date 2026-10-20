@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="t25_place_cup_on_plate_objects">
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <worldbody>
+    <body name="003_cracker_box" pos="-0.44 0.54 1.029359">
+      <freejoint name="003_cracker_box_freejoint" />
+      <geom name="003_cracker_box_visual" class="a_series_ycb_visual" material="cracker_box_material" mesh="cracker_box_vis" />
+      <geom name="003_cracker_box_collision_1" class="a_series_ycb_collision" mesh="cracker_box_Collider1_m_collision" mass="0.12" />
+      <site name="003_cracker_box_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+    </body>
+
+    <body name="004_sugar_box" pos="-0.25 0.58 1.010500">
+      <freejoint name="004_sugar_box_freejoint" />
+      <geom name="004_sugar_box_visual" class="a_series_ycb_visual" material="sugar_box_material" mesh="sugar_box_vis" />
+      <geom name="004_sugar_box_collision_1" class="a_series_ycb_collision" mesh="sugar_box_Collider1_m_collision" mass="0.1" />
+      <site name="004_sugar_box_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+    </body>
+
+    <body name="008_pudding_box" pos="-0.37 0.18 0.967637">
+      <freejoint name="008_pudding_box_freejoint" />
+      <geom name="008_pudding_box_visual" class="a_series_ycb_visual" material="pudding_box_material" mesh="pudding_box_vis" />
+      <geom name="008_pudding_box_collision_1" class="a_series_ycb_collision" mesh="pudding_box_Collider1_m_collision" mass="0.07" />
+      <site name="008_pudding_box_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+    </body>
+
+    <body name="025_mug" pos="-0.14 -0.18 0.963765">
+      <freejoint name="025_mug_freejoint" />
+      <geom name="025_mug_visual" class="a_series_ycb_visual" material="mug_material" mesh="mug_vis" />
+      <geom name="025_mug_collision_1" class="a_series_ycb_collision" mesh="mug_Collider1_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_2" class="a_series_ycb_collision" mesh="mug_Collider2_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_3" class="a_series_ycb_collision" mesh="mug_Collider3_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_4" class="a_series_ycb_collision" mesh="mug_Collider4_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_5" class="a_series_ycb_collision" mesh="mug_Collider5_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_6" class="a_series_ycb_collision" mesh="mug_Collider6_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_7" class="a_series_ycb_collision" mesh="mug_Collider7_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_8" class="a_series_ycb_collision" mesh="mug_Collider8_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_9" class="a_series_ycb_collision" mesh="mug_Collider9_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_10" class="a_series_ycb_collision" mesh="mug_Collider10_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_11" class="a_series_ycb_collision" mesh="mug_Collider11_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_12" class="a_series_ycb_collision" mesh="mug_Collider12_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_13" class="a_series_ycb_collision" mesh="mug_Collider13_m_collision" mass="0.0085714286" />
+      <geom name="025_mug_collision_14" class="a_series_ycb_collision" mesh="mug_Collider14_m_collision" mass="0.0085714286" />
+      <site name="025_mug_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+    </body>
+
+    <body name="c_cups" pos="-0.35 -0.02 0.955000">
+      <freejoint name="c_cups_freejoint" />
+      <geom name="c_cups_visual" class="a_series_ycb_visual" material="c_cups_material" mesh="c_cups_vis" />
+      <geom name="c_cups_collision_1" class="a_series_ycb_collision" mesh="c_cups_Collider1_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_2" class="a_series_ycb_collision" mesh="c_cups_Collider2_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_3" class="a_series_ycb_collision" mesh="c_cups_Collider3_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_4" class="a_series_ycb_collision" mesh="c_cups_Collider4_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_5" class="a_series_ycb_collision" mesh="c_cups_Collider5_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_6" class="a_series_ycb_collision" mesh="c_cups_Collider6_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_7" class="a_series_ycb_collision" mesh="c_cups_Collider7_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_8" class="a_series_ycb_collision" mesh="c_cups_Collider8_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_9" class="a_series_ycb_collision" mesh="c_cups_Collider9_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_10" class="a_series_ycb_collision" mesh="c_cups_Collider10_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_11" class="a_series_ycb_collision" mesh="c_cups_Collider11_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_12" class="a_series_ycb_collision" mesh="c_cups_Collider12_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_13" class="a_series_ycb_collision" mesh="c_cups_Collider13_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_14" class="a_series_ycb_collision" mesh="c_cups_Collider14_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_15" class="a_series_ycb_collision" mesh="c_cups_Collider15_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_16" class="a_series_ycb_collision" mesh="c_cups_Collider16_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_17" class="a_series_ycb_collision" mesh="c_cups_Collider17_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_18" class="a_series_ycb_collision" mesh="c_cups_Collider18_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_19" class="a_series_ycb_collision" mesh="c_cups_Collider19_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_20" class="a_series_ycb_collision" mesh="c_cups_Collider20_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_21" class="a_series_ycb_collision" mesh="c_cups_Collider21_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_22" class="a_series_ycb_collision" mesh="c_cups_Collider22_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_23" class="a_series_ycb_collision" mesh="c_cups_Collider23_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_24" class="a_series_ycb_collision" mesh="c_cups_Collider24_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_25" class="a_series_ycb_collision" mesh="c_cups_Collider25_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_26" class="a_series_ycb_collision" mesh="c_cups_Collider26_m_collision" mass="0.0022222222" />
+      <geom name="c_cups_collision_27" class="a_series_ycb_collision" mesh="c_cups_Collider27_m_collision" mass="0.0022222222" />
+      <site name="c_cups_center" pos="0 0 0" size="0.004" rgba="0 0 0 0" />
+    </body>
+  </worldbody>
+</mujoco>

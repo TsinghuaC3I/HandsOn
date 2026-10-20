@@ -1,0 +1,24 @@
+env_name: eval_comb02_open_laptop_and_click_mouse
+task_id: XY2
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Open the initially closed laptop to the requested angle with the right hand and hold it steadily. Then move the mouse onto its pad without pressing either button, and press the left button. Keep the laptop at the target angle."
+robot_type: dual_arm
+sim_backend: isaacsim
+physics_backend: physx
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX
+time_limit_seconds: 120
+skills:
+  - sequential_composition
+  - articulated_object_manipulation
+  - fine_motor
+objects:
+  - laptop
+  - mouse
+  - mousepad
+source_task_ids:
+  - B320-FU015
+  - C05

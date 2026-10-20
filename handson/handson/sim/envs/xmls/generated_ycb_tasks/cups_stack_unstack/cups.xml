@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="cups_stack_unstack_simplified_cups">
+  <default>
+    <default class="cup_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0"/>
+    </default>
+    <default class="cup_collision">
+      <geom group="3" density="520" friction="1.1 0.03 0.001"
+            solref="0.006 1" solimp="0.95 0.98 0.001"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="outer_cup_mat" rgba="0.95 0.52 0.18 0.46" specular="0.25"/>
+    <material name="inner_cup_mat" rgba="0.18 0.42 0.95 0.50" specular="0.25"/>
+    <material name="outer_cup_rim_mat" rgba="1.0 0.76 0.30 0.85" specular="0.35"/>
+    <material name="inner_cup_rim_mat" rgba="0.36 0.66 1.0 0.85" specular="0.35"/>
+  </asset>
+
+  <worldbody>
+    <!-- Simplified Lightwheel-YCB 65 Cups proxy: larger nesting cup. -->
+    <body name="outer_cup_root_body" pos="-0.12 0.18 0.954">
+      <freejoint name="outer_cup_root"/>
+      <site name="outer_cup_center" pos="0 0 0" size="0.004" rgba="0.95 0.52 0.18 0.9"/>
+      <site name="outer_cup_rim_center" pos="0 0 0.034" size="0.004" rgba="1 0.76 0.30 0.9"/>
+      <geom name="outer_cup_visual" class="cup_visual" type="cylinder"
+            size="0.047 0.034" pos="0 0 0" material="outer_cup_mat"/>
+      <geom name="outer_cup_rim_visual" class="cup_visual" type="cylinder"
+            size="0.050 0.002" pos="0 0 0.034" material="outer_cup_rim_mat"/>
+      <geom name="outer_cup_bottom" class="cup_collision" type="cylinder"
+            size="0.040 0.0035" pos="0 0 -0.0305"/>
+      <geom name="outer_cup_wall_000" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="0.044 0 0" quat="1 0 0 0"/>
+      <geom name="outer_cup_wall_045" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="0.031113 0.031113 0" quat="0.923880 0 0 0.382683"/>
+      <geom name="outer_cup_wall_090" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="0 0.044 0" quat="0.707107 0 0 0.707107"/>
+      <geom name="outer_cup_wall_135" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="-0.031113 0.031113 0" quat="0.382683 0 0 0.923880"/>
+      <geom name="outer_cup_wall_180" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="-0.044 0 0" quat="0 0 0 1"/>
+      <geom name="outer_cup_wall_225" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="-0.031113 -0.031113 0" quat="-0.382683 0 0 0.923880"/>
+      <geom name="outer_cup_wall_270" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="0 -0.044 0" quat="-0.707107 0 0 0.707107"/>
+      <geom name="outer_cup_wall_315" class="cup_collision" type="box"
+            size="0.003 0.016 0.032" pos="0.031113 -0.031113 0" quat="-0.923880 0 0 0.382683"/>
+    </body>
+
+    <!-- Simplified Lightwheel-YCB 65 Cups proxy: smaller cup to insert and remove. -->
+    <body name="inner_cup_root_body" pos="-0.30 -0.02 0.950">
+      <freejoint name="inner_cup_root"/>
+      <site name="inner_cup_center" pos="0 0 0" size="0.004" rgba="0.18 0.42 0.95 0.9"/>
+      <site name="inner_cup_rim_center" pos="0 0 0.030" size="0.004" rgba="0.36 0.66 1 0.9"/>
+      <geom name="inner_cup_visual" class="cup_visual" type="cylinder"
+            size="0.036 0.030" pos="0 0 0" material="inner_cup_mat"/>
+      <geom name="inner_cup_rim_visual" class="cup_visual" type="cylinder"
+            size="0.039 0.002" pos="0 0 0.030" material="inner_cup_rim_mat"/>
+      <geom name="inner_cup_bottom" class="cup_collision" type="cylinder"
+            size="0.030 0.003" pos="0 0 -0.027"/>
+      <geom name="inner_cup_wall_000" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="0.034 0 0" quat="1 0 0 0"/>
+      <geom name="inner_cup_wall_045" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="0.024042 0.024042 0" quat="0.923880 0 0 0.382683"/>
+      <geom name="inner_cup_wall_090" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="0 0.034 0" quat="0.707107 0 0 0.707107"/>
+      <geom name="inner_cup_wall_135" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="-0.024042 0.024042 0" quat="0.382683 0 0 0.923880"/>
+      <geom name="inner_cup_wall_180" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="-0.034 0 0" quat="0 0 0 1"/>
+      <geom name="inner_cup_wall_225" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="-0.024042 -0.024042 0" quat="-0.382683 0 0 0.923880"/>
+      <geom name="inner_cup_wall_270" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="0 -0.034 0" quat="-0.707107 0 0 0.707107"/>
+      <geom name="inner_cup_wall_315" class="cup_collision" type="box"
+            size="0.0025 0.012 0.028" pos="0.024042 -0.024042 0" quat="-0.923880 0 0 0.382683"/>
+    </body>
+  </worldbody>
+</mujoco>

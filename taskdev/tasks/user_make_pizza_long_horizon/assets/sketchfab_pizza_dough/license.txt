@@ -1,0 +1,13 @@
+Pizza Dough
+===========
+
+Source: https://sketchfab.com/3d-models/pizza-dough-608fa60edb4a41dcb24e4f1580d576d4
+Author: michael.diaz029 (https://sketchfab.com/michael.diaz029)
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+License URL: https://creativecommons.org/licenses/by/4.0/
+
+This directory contains the publicly downloadable model mesh retained for the
+task, converted from the viewer's glTF-compatible source to pizza_dough.glb.
+The task's runtime USD conversion applies a solid-white material override to
+the external mesh; it does not author or replace geometry. Commercial use is
+permitted by the license when the attribution above is retained.

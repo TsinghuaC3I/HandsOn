@@ -1,0 +1,23 @@
+env_name: t37_scrub_bottle
+benchmark_task_id: B320-HS005
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Retrieve and stabilize the labeled water bottle with the left hand, retrieve the cleaning brush with the right hand, scrub the lower, middle, and upper bottle bands in order with physical bristle contact, then release both objects and leave the bottle upright and stable."
+robot_type: dual_arm
+time_limit_seconds: 45
+physics_backend: physx
+physics_hz: 240
+control_hz: 30
+skills:
+  - bimanual_stabilization
+  - tool_grasp
+  - ordered_contact_coverage
+  - release_and_stability
+objects:
+  - sink
+  - labeled_water_bottle
+  - cleaning_brush
+  - dish_soap_context
+  - dish_sponge_context

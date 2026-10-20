@@ -1,0 +1,25 @@
+// Photo-guided lathe finish. Uses the OmniSurface shipped with Isaac/Kit.
+mdl 1.7;
+import ::math::*;
+import ::state::*;
+import ::OmniSurface::OmniSurfaceBase::*;
+
+export material SpunAnodizedMetal(
+    uniform color base_color = color(0.64, 0.205, 0.035),
+    uniform float roughness = 0.30,
+    uniform float anisotropy = 0.86,
+    uniform float rotation_offset = 0.0
+) = let {
+    float3 uv = state::texture_coordinate(0);
+    float angle = math::atan2(uv.y - 0.5, uv.x - 0.5);
+    float rotation = -angle / (2.0 * math::PI) - 0.25 + rotation_offset;
+} in ::OmniSurface::OmniSurfaceBase::OmniSurfaceBase(
+    diffuse_reflection_weight: 1.0,
+    diffuse_reflection_color: base_color,
+    metalness: 1.0,
+    specular_reflection_weight: 1.0,
+    specular_reflection_color: color(0.95, 0.82, 0.65),
+    specular_reflection_roughness: roughness,
+    specular_reflection_anisotropy: anisotropy,
+    specular_reflection_anisotropy_rotation: rotation
+);

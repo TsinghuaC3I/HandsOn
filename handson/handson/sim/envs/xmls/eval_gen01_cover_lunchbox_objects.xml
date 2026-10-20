@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="GEN2_D15_lunchbox_assets">
+  <!--Existing D15 assets; geometry unchanged. MIT, HandsOn contributors. See GEN2_ASSET_PROVENANCE.json.-->
+  <default>
+    <default class="dlong_object">
+      <joint damping="0.002" armature="0.0001" />
+      <geom condim="4" friction="1.25 0.04 0.004" solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </default>
+  </default>
+  <asset>
+    <material name="dlong_cyan" rgba=".08 .66 .72 1" />
+  </asset>
+  <worldbody>
+    <body name="gen2_lunchbox" pos="-.20 .155 .903">
+      <inertial pos="0 0 0.0194117647058824" mass="0.09" diaginertia="0.000588646505190311 0.000893058269896194 0.00128770588235294" />
+      <freejoint name="gen2_lunchbox_joint" />
+      <geom class="dlong_object" type="box" size=".14 .11 .012" mass="0.0582352941176471" material="dlong_cyan" name="gen2_lunchbox_surface_0" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055" pos=".14 0 .055" mass="0.00794117647058823" material="dlong_cyan" name="gen2_lunchbox_surface_1" />
+      <geom class="dlong_object" type="box" size=".010 .11 .055" pos="-.14 0 .055" mass="0.00794117647058823" material="dlong_cyan" name="gen2_lunchbox_surface_2" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055" pos="0 .11 .055" mass="0.00794117647058823" material="dlong_cyan" name="gen2_lunchbox_surface_3" />
+      <geom class="dlong_object" type="box" size=".14 .010 .055" pos="0 -.11 .055" mass="0.00794117647058823" material="dlong_cyan" name="gen2_lunchbox_surface_4" />
+    </body>
+    <body name="gen2_lid" pos="-.275 -.18 .899">
+      <inertial pos="0 0 0" mass="0.04" diaginertia="0.000192853333333333 0.000300853333333333 0.000492" />
+      <freejoint name="gen2_lid_joint" />
+      <geom class="dlong_object" type="box" size=".15 .12 .008" mass="0.04" material="dlong_cyan" name="gen2_lid_surface_0" />
+    </body>
+  </worldbody>
+</mujoco>

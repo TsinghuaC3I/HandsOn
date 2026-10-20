@@ -1,0 +1,68 @@
+{
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 9241796,
+    "default_prim": "/World",
+    "filename": "realistic_kitchen_scene_visual.usd",
+    "forbidden_schema_count": 0,
+    "mesh_count": 80,
+    "sha256": "a4ff441aa86f0b24be53a266f12cf89051501fa53aeceeca02b0e598b4a08750",
+    "textures": {
+      "file_count": 60,
+      "max_dimension": 1024,
+      "resized_count": 3
+    }
+  },
+  "schema": "hs005_kitchen_background_conversion_v1",
+  "source": {
+    "archive": "realistic_kitchen_scene.zip",
+    "archive_sha256": "a7713fa10a6cfd0839c7a6d961ad4c71bd9ccde0235db590deac0ceb12e489fc",
+    "author": "Katydid",
+    "author_url": "https://sketchfab.com/Katydid.",
+    "directory": "cc_by_katydid_realistic_kitchen_scene",
+    "id": "realistic_kitchen_scene",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "output": "realistic_kitchen_scene_visual.usd",
+    "profile": {
+      "bounds_source": [
+        [
+          -270.0677185058594,
+          -0.8765275478362791,
+          -473.7174987792969
+        ],
+        [
+          75.35276794433594,
+          239.1250000000001,
+          0.28678596019746644
+        ]
+      ],
+      "extents_source": [
+        345.4204864501953,
+        240.0015275478364,
+        474.0042847394943
+      ],
+      "geometry_count": 80,
+      "mesh_node_count": 80,
+      "triangle_count": 126443
+    },
+    "source_url": "https://sketchfab.com/3d-models/realistic-kitchen-scene-2880a251b89e4f0dba4e4c5ae161c0c4",
+    "title": "Realistic kitchen scene"
+  }
+}

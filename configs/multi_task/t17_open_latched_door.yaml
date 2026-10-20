@@ -1,0 +1,43 @@
+env_name: t17_open_latched_door
+task_id: P0-02
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Brace and push the door panel with the left hand. With the right hand, press the long Helindu near-side lever past 25 degrees for five control frames, keep it pressed until the door passes 12 degrees, then push the door to at least 45 degrees and hold it stable. This task has no front table; avoid the far-side Handle001. Door-panel and door-frame contact is allowed."
+robot_type: dual_arm
+sim_backend: isaacsim
+physics_backend: physx
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX
+role_contract_version: 4
+role_contact_layout: [right_front_handle, left_door, legacy_table_zero, diagnostic_frame, rear_handle]
+time_limit_seconds: 24
+skills:
+  - bimanual_role_contact
+  - lever_actuation
+  - latch_state_control
+  - articulated_door_opening
+  - contact_control
+objects:
+  - helindu_near_side_handle002
+  - door_panel
+scene:
+  front_table_present: false
+  compatibility_table_prim_retained: true
+  compatibility_table_visible: false
+  compatibility_table_collisions_enabled: false
+  door_root_nominal_m: [0.01, 0.15, 1.05]
+  stable_origin_seconds: 10.0
+  near_side_handle_body: Door042_Handle002
+  near_side_handle_replaced: true
+  near_side_handle_asset: helindu_door_handle
+  near_side_handle_license: CC-BY-4.0
+  door_asset_root_scale: 0.60
+  near_side_handle_outer_dimensions_m: [0.15, 0.04148298257902923, 0.04849960621353222]
+  near_side_handle_grasp_x_range_m: [0.055, 0.105]
+  near_side_handle_minimum_grasp_clearance_m: 0.03002410272964051
+  near_side_handle_geometry_validation: source_split_and_composed_usd_pass_live_physx_pending
+roles:
+  left: brace_and_push_door_panel_to_target_angle
+  right: depress_helindu_near_side_handle002_and_hold_until_door_escape

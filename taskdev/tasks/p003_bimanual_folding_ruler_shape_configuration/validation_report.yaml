@@ -1,0 +1,17 @@
+schema_version: 1
+task_id: p003_bimanual_folding_ruler_shape_configuration
+manifest_sha256: REPLACE_AFTER_MANIFEST_LOCK
+generated_at: "1970-01-01T00:00:00Z"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+checks:
+  schema: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  assets: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  reachability: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  contact: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  reset: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  success: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  camera: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  stability: {status: pending, summary: "Not run", evidence: [], metrics: {}}
+  collection: {status: pending, summary: "Not run", evidence: [], metrics: {}}

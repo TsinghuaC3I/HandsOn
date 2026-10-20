@@ -1,0 +1,6 @@
+env_name: t26_place_fruit_in_bucket
+camera_mapping:
+  base: random_camera
+  wrist: wrist
+prompt: "Pick the specified fruit from the mixed fruits and place it into the bucket."
+robot_type: single_arm

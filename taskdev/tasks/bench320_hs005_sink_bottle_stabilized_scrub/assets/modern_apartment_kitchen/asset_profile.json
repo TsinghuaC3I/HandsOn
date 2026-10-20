@@ -1,0 +1,39 @@
+{
+  "archive": {
+    "name": "modern_apartment.zip",
+    "sha256": "d1b8f506f69fd66ccf1b816d651a884eab999d9db2f4a1ad9f7f491d0044a2a6"
+  },
+  "author": "Visthétique",
+  "collision": {
+    "face_count": 3753,
+    "node": "Sink_Sink4Metal.001_0",
+    "path": "sink_collision_source.ply",
+    "policy": "source_geometry_reference_only; runtime uses a robot-clearance basin floor",
+    "sha256": "46839123013a8785fcc70b9744fae0745972561e8c399c14c06b394b4f774082",
+    "vertex_count": 2634
+  },
+  "license": "CC-BY-4.0",
+  "schema": "handson_external_asset_profile_v1",
+  "selected_groups": [
+    "Sink",
+    "Plane.002",
+    "Plane.007",
+    "Dishwasher.001",
+    "Hobs.001",
+    "Hood",
+    "Oven.001",
+    "Refrigator.001",
+    "kitchenblind",
+    "Coffee+Maker"
+  ],
+  "source": "https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5",
+  "title": "Modern Apartment",
+  "visual": {
+    "face_count": 100807,
+    "mesh_node_count": 42,
+    "path": "modern_apartment_kitchen.usd",
+    "sha256": "12ac915b9d442399f10af5b302d9c6ef887e32c8aa1d0f6addd3a1dbc5f58524",
+    "texture_count": 41,
+    "texture_max_dimension": 1024
+  }
+}

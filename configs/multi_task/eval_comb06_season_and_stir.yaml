@@ -1,0 +1,7 @@
+env_name: eval_comb06_season_and_stir
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Use the left hand for salt and the right hand for pepper. Pour both into the same open pot together, then put down and release the jars. Hold the pot with the left hand and stir with the right-hand spoon through all six angular sectors and more than 650 degrees, keeping the pot stable."
+robot_type: dual_arm
+time_limit_seconds: 90
+skills: [assigned_hand_roles, synchronized_flow, sequential_composition, bimanual_stabilization, circular_stirring]
+objects: [salt_jar, pepper_jar, dutch_oven, dutch_oven_lid, spoon]

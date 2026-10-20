@@ -1,0 +1,372 @@
+{
+  "acceptance_scope": "3 seeds x 10 s zero action; left/right and simultaneous native hand press/release; 25 mm radius motor sphere, 40 mm depth at 0.04/0.5/2 m/s",
+  "acceptance": [
+    {
+      "label": "g01-4-selected-hands",
+      "task": "g01_4_soft_pillow_to_carton",
+      "kind": "hands",
+      "passed": true,
+      "returncode": 0,
+      "asset_sha256": "ec322a9f2734373a8666df366c0246f8a8d6a102b8c168e32de750be372fa706",
+      "pressure": [],
+      "hands": [
+        {
+          "side": "right",
+          "sampled_hand_mesh_penetration_m": 0.0,
+          "hand_surface_sample_count": 5546,
+          "near_surface_sample_count": 2104,
+          "native_collider_types": {
+            "Cube": 1,
+            "Capsule": 20,
+            "Sphere": 5
+          },
+          "contact_latched": true,
+          "peak_node_displacement_m": 0.06118492854722629,
+          "min_table_gap_m": 0.0009746408462524281,
+          "minimum_hand_clearance_m": -0.028964088867193833,
+          "unexpected_terminal": false,
+          "max_inverted_tet_count": 0,
+          "wall_seconds": 29.72241792100249,
+          "control_steps": 269
+        },
+        {
+          "side": "left",
+          "sampled_hand_mesh_penetration_m": 0.0,
+          "hand_surface_sample_count": 5546,
+          "near_surface_sample_count": 2092,
+          "native_collider_types": {
+            "Cube": 1,
+            "Capsule": 20,
+            "Sphere": 5
+          },
+          "contact_latched": true,
+          "peak_node_displacement_m": 0.06255191259535894,
+          "min_table_gap_m": 0.0009683823585510121,
+          "minimum_hand_clearance_m": -0.027664680766022166,
+          "unexpected_terminal": false,
+          "max_inverted_tet_count": 0,
+          "wall_seconds": 29.31252559297718,
+          "control_steps": 268
+        }
+      ],
+      "bimanual_press": {
+        "protocol": "Both original Wuji hands; open fingers; ramped 40 mm extra palm descent after measured contact; release; 3 s recovery",
+        "inversions": 0,
+        "displacement": 0.06066023864248912,
+        "minimum_table_gap_m": 0.0009560441970825062,
+        "hand_surface_audits": {
+          "right": {
+            "sampled_hand_mesh_penetration_m": 0.0,
+            "hand_surface_sample_count": 5546,
+            "near_surface_sample_count": 2060,
+            "native_collider_types": {
+              "Cube": 1,
+              "Capsule": 20,
+              "Sphere": 5
+            }
+          },
+          "left": {
+            "sampled_hand_mesh_penetration_m": 0.0,
+            "hand_surface_sample_count": 5546,
+            "near_surface_sample_count": 2085,
+            "native_collider_types": {
+              "Cube": 1,
+              "Capsule": 20,
+              "Sphere": 5
+            }
+          }
+        },
+        "contact_latched": {
+          "left": true,
+          "right": true
+        },
+        "unexpected_terminal": false,
+        "final_inversions": 0,
+        "final_rms_speed_mps": 0.003201175053394626,
+        "wall_seconds": 46.42062997899484,
+        "control_steps": 300
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "label": "g01-4-selected-pressure",
+      "task": "g01_4_soft_pillow_to_carton",
+      "kind": "pressure",
+      "passed": true,
+      "returncode": 0,
+      "asset_sha256": "ec322a9f2734373a8666df366c0246f8a8d6a102b8c168e32de750be372fa706",
+      "pressure": [
+        {
+          "name": "slow_press",
+          "speed_mps": 0.04,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 0.22044460475444794,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.039983296394348056,
+          "peak_actual_speed_mps": 0.0451488271355629,
+          "hold_force_n": 1.9220697954297066,
+          "initial_height_m": 0.18039512634277344,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0009871578216552601,
+          "final_height_m": 0.18001556396484375,
+          "wall_seconds": 20.261983704054728
+        },
+        {
+          "name": "tap",
+          "speed_mps": 0.5,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 0.050412826240062714,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.04003932476043692,
+          "peak_actual_speed_mps": 0.5531819462776184,
+          "hold_force_n": 1.9385692924261093,
+          "initial_height_m": 0.18001532554626465,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0009696340560912953,
+          "final_height_m": 0.17999207973480225,
+          "wall_seconds": 10.919093737960793
+        },
+        {
+          "name": "fast_press",
+          "speed_mps": 2.0,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 0.0030930268112570047,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.04020371437072745,
+          "peak_actual_speed_mps": 1.991465449333191,
+          "hold_force_n": 1.9583706259727478,
+          "initial_height_m": 0.1799943447113037,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0008901214599609242,
+          "final_height_m": 0.1800018548965454,
+          "wall_seconds": 10.49015790305566
+        }
+      ],
+      "hands": [],
+      "bimanual_press": null,
+      "seeds": [
+        0
+      ]
+    },
+    {
+      "label": "g01-5-selected-hands",
+      "task": "eval_flex03_pack_pillow",
+      "kind": "hands",
+      "passed": true,
+      "returncode": 0,
+      "asset_sha256": "24eff2a4b8016ab872f2c56a60154c2e8aaf5577c124447afc6c01362a717a57",
+      "pressure": [],
+      "hands": [
+        {
+          "side": "right",
+          "sampled_hand_mesh_penetration_m": 0.0,
+          "hand_surface_sample_count": 5546,
+          "near_surface_sample_count": 2006,
+          "native_collider_types": {
+            "Cube": 1,
+            "Capsule": 20,
+            "Sphere": 5
+          },
+          "contact_latched": true,
+          "peak_node_displacement_m": 0.06409557430400692,
+          "min_table_gap_m": 0.0009721374511718617,
+          "minimum_hand_clearance_m": -0.028185837863474512,
+          "unexpected_terminal": false,
+          "max_inverted_tet_count": 0,
+          "wall_seconds": 30.859868017025292,
+          "control_steps": 267
+        },
+        {
+          "side": "left",
+          "sampled_hand_mesh_penetration_m": 0.0,
+          "hand_surface_sample_count": 5546,
+          "near_surface_sample_count": 1945,
+          "native_collider_types": {
+            "Cube": 1,
+            "Capsule": 20,
+            "Sphere": 5
+          },
+          "contact_latched": true,
+          "peak_node_displacement_m": 0.05899051700669295,
+          "min_table_gap_m": 0.0009773230552673207,
+          "minimum_hand_clearance_m": -0.027354073196022975,
+          "unexpected_terminal": false,
+          "max_inverted_tet_count": 0,
+          "wall_seconds": 30.453797716996633,
+          "control_steps": 266
+        }
+      ],
+      "bimanual_press": {
+        "protocol": "Both original Wuji hands; open fingers; ramped 40 mm extra palm descent after measured contact; release; 3 s recovery",
+        "inversions": 0,
+        "displacement": 0.0523592416661002,
+        "minimum_table_gap_m": 0.000968680381774889,
+        "hand_surface_audits": {
+          "right": {
+            "sampled_hand_mesh_penetration_m": 0.0,
+            "hand_surface_sample_count": 5546,
+            "near_surface_sample_count": 1778,
+            "native_collider_types": {
+              "Cube": 1,
+              "Capsule": 20,
+              "Sphere": 5
+            }
+          },
+          "left": {
+            "sampled_hand_mesh_penetration_m": 0.0,
+            "hand_surface_sample_count": 5546,
+            "near_surface_sample_count": 1891,
+            "native_collider_types": {
+              "Cube": 1,
+              "Capsule": 20,
+              "Sphere": 5
+            }
+          }
+        },
+        "contact_latched": {
+          "left": true,
+          "right": true
+        },
+        "unexpected_terminal": false,
+        "final_inversions": 0,
+        "final_rms_speed_mps": 0.002843258376763783,
+        "wall_seconds": 47.17455398500897,
+        "control_steps": 297
+      },
+      "seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "label": "g01-5-selected-pressure",
+      "task": "eval_flex03_pack_pillow",
+      "kind": "pressure",
+      "passed": true,
+      "returncode": 0,
+      "asset_sha256": "24eff2a4b8016ab872f2c56a60154c2e8aaf5577c124447afc6c01362a717a57",
+      "pressure": [
+        {
+          "name": "slow_press",
+          "speed_mps": 0.04,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 0.22062814235687256,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.03997066020965567,
+          "peak_actual_speed_mps": 0.04605958238244057,
+          "hold_force_n": 3.1041819751262665,
+          "initial_height_m": 0.18174755573272705,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0009866213798522816,
+          "final_height_m": 0.18163573741912842,
+          "wall_seconds": 21.26198127301177
+        },
+        {
+          "name": "tap",
+          "speed_mps": 0.5,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 0.014866004697978497,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.040026092529296786,
+          "peak_actual_speed_mps": 0.5531840324401855,
+          "hold_force_n": 3.1316182613372803,
+          "initial_height_m": 0.1816360354423523,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0009658789634704457,
+          "final_height_m": 0.18163567781448364,
+          "wall_seconds": 11.228517164010555
+        },
+        {
+          "name": "fast_press",
+          "speed_mps": 2.0,
+          "requested_depth_m": 0.04,
+          "probe_radius_m": 0.025,
+          "approach_peak_penetration_m": 0.0,
+          "approach_peak_speed_mps": 6.740148819517344e-05,
+          "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+          "achieved_depth_m": 0.040193819999694735,
+          "peak_actual_speed_mps": 1.9914699792861938,
+          "hold_force_n": 3.138631746172905,
+          "initial_height_m": 0.1816369891166687,
+          "peak_penetration_m": 0.0,
+          "peak_inversion_count": 0,
+          "minimum_table_gap_m": 0.0009087777137756214,
+          "final_height_m": 0.18162614107131958,
+          "wall_seconds": 10.471429453988094
+        }
+      ],
+      "hands": [],
+      "bimanual_press": null,
+      "seeds": [
+        0
+      ]
+    }
+  ],
+  "deep_stress_challenge": [
+    {
+      "task": "g01-4",
+      "name": "slow_press",
+      "speed_mps": 0.04,
+      "requested_depth_m": 0.06,
+      "probe_radius_m": 0.025,
+      "approach_peak_penetration_m": 0.0,
+      "approach_peak_speed_mps": 0.001007063314318657,
+      "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+      "achieved_depth_m": 0.05997183322906485,
+      "peak_actual_speed_mps": 0.046128593385219574,
+      "hold_force_n": 3.0024972707033157,
+      "initial_height_m": 0.17999869585037231,
+      "peak_penetration_m": 0.0,
+      "peak_inversion_count": 4,
+      "minimum_table_gap_m": 0.0009861445426940785,
+      "final_height_m": 0.18006151914596558,
+      "wall_seconds": 22.832490293949377
+    },
+    {
+      "task": "g01-5",
+      "name": "slow_press",
+      "speed_mps": 0.04,
+      "requested_depth_m": 0.06,
+      "probe_radius_m": 0.025,
+      "approach_peak_penetration_m": 0.0,
+      "approach_peak_speed_mps": 0.0014302522176876664,
+      "fixture": "0.5 kg prismatic motor; 400 N max force; 100 kN/m drive",
+      "achieved_depth_m": 0.05995037555694571,
+      "peak_actual_speed_mps": 0.047558192163705826,
+      "hold_force_n": 4.886794537305832,
+      "initial_height_m": 0.18162554502487183,
+      "peak_penetration_m": 0.0,
+      "peak_inversion_count": 0,
+      "minimum_table_gap_m": 0.000979647636413561,
+      "final_height_m": 0.18165045976638794,
+      "wall_seconds": 23.49559180700453
+    }
+  ],
+  "full_boxing_episode_verified": false,
+  "formal_physical_replay_verified": false,
+  "independent_concurrent_kit_processes": [],
+  "code_checks": {
+    "pytest_passed": 34,
+    "git_diff_check_passed": true
+  }
+}

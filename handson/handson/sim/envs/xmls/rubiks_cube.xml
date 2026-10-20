@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="rubiks_cube">
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <worldbody>
+    <body name="rubiks_cube" pos="-0.08 0.0 0.952">
+      <freejoint name="rubiks_cube_root" />
+      <geom name="rubiks_cube_visual" class="a_series_ycb_visual" material="rubiks_cube_material" mesh="rubiks_cube_vis" />
+      <geom name="rubiks_cube_collision" class="a_series_ycb_collision" mesh="rubiks_cube_Collider1_m_collision" mass="0.08" />
+      <site name="rubiks_cube_red_axis" pos="0.032 0 0" size="0.002" rgba="1 0 0 0" />
+      <site name="rubiks_cube_green_axis" pos="0 0.032 0" size="0.002" rgba="0 1 0 0" />
+      <site name="rubiks_cube_blue_axis" pos="0 0 0.032" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+
+  <sensor>
+    <framepos name="rubiks_cube_pos" objtype="body" objname="rubiks_cube" />
+    <framequat name="rubiks_cube_quat" objtype="body" objname="rubiks_cube" />
+  </sensor>
+</mujoco>

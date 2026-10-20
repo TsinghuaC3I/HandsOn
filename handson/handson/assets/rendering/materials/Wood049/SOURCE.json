@@ -1,0 +1,27 @@
+{
+  "asset_id": "Wood049",
+  "source": "https://ambientcg.com/a/Wood049",
+  "download": "https://ambientcg.com/get?file=Wood049_2K-JPG.zip",
+  "archive_sha256": "a9dd578788a1e05434d126f5cb66b15520f98f5108ac535790145905fc176c54",
+  "license": "CC0-1.0",
+  "license_source": "https://docs.ambientcg.com/license/",
+  "source_dimension_cm": [
+    80,
+    80
+  ],
+  "creation_method": "PBRProcedural",
+  "maps": {
+    "Color": {
+      "file": "Wood049/Color.jpg",
+      "sha256": "447ca1455fa88d37465319638f1c99107f02f50fcf491d3c15314658d21e4d5e"
+    },
+    "NormalGL": {
+      "file": "Wood049/NormalGL.jpg",
+      "sha256": "8f2d5697c79927c85a10e48e82701a7054df77166d4654a2931e650f7f4c77f6"
+    },
+    "Roughness": {
+      "file": "Wood049/Roughness.jpg",
+      "sha256": "bb20736bb4b18533cce8c1f36ea8fff7216653b3516ec60f1aedb83362151691"
+    }
+  }
+}

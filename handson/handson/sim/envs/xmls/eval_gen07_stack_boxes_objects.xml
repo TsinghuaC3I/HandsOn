@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="gen5_package_boxes">
+  <asset>
+    <texture name="gen5_cardboard_albedo" type="2d" file="eval_gen07_stack_boxes/source/cardboard_boxes/textures/CardboardBoxes_baseColor.png" />
+    <material name="gen5_cardboard_material" texture="gen5_cardboard_albedo" rgba="0.743902439 0.743902439 0.743902439 1" specular="0" shininess="0" />
+    <mesh name="gen5_base_visual_mesh" file="eval_gen07_stack_boxes/visuals/base.obj" />
+    <mesh name="gen5_base_collision_mesh" file="eval_gen07_stack_boxes/collision/base.obj" />
+    <mesh name="gen5_small_visual_mesh" file="eval_gen07_stack_boxes/visuals/small.obj" />
+    <mesh name="gen5_small_collision_mesh" file="eval_gen07_stack_boxes/collision/small.obj" />
+  </asset>
+  <worldbody>
+    <body name="gen5_package_base" pos="-0.29 0.1 0.928343751431">
+      <freejoint name="gen5_package_base_joint" />
+      <inertial pos="1.78814499829e-09 -1.13154835571e-14 -5.18793366057e-10" mass="0.18" fullinertia="0.000209682355 0.000209682345345 0.00024296382988 -4.56203961711e-17 -4.15317560324e-12 -7.75249595065e-17" />
+      <geom name="gen5_package_base_visual" type="mesh" mesh="gen5_base_visual_mesh" material="gen5_cardboard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen5_package_base_collision" type="mesh" mesh="gen5_base_collision_mesh" group="3" rgba="0 0 0 0" friction="1.4 0.04 0.004" condim="4" solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </body>
+    <body name="gen5_package_small_1" pos="-0.38 -0.2 0.905337500572">
+      <freejoint name="gen5_package_small_1_joint" />
+      <inertial pos="7.15257998789e-10 -4.52657514348e-15 -2.07517347266e-10" mass="0.03" fullinertia="5.59152946666e-06 5.5915292092e-06 6.47903546346e-06 -1.21656863787e-18 -1.10751349323e-13 -2.06736896807e-18" />
+      <geom name="gen5_package_small_1_visual" type="mesh" mesh="gen5_small_visual_mesh" material="gen5_cardboard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen5_package_small_1_collision" type="mesh" mesh="gen5_small_collision_mesh" group="3" rgba="0 0 0 0" friction="4 0.04 0.004" condim="4" solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </body>
+    <body name="gen5_package_small_2" pos="-0.28 -0.22 0.905337500572">
+      <freejoint name="gen5_package_small_2_joint" />
+      <inertial pos="7.15257998789e-10 -4.52657514348e-15 -2.07517347266e-10" mass="0.03" fullinertia="5.59152946666e-06 5.5915292092e-06 6.47903546346e-06 -1.21656863787e-18 -1.10751349323e-13 -2.06736896807e-18" />
+      <geom name="gen5_package_small_2_visual" type="mesh" mesh="gen5_small_visual_mesh" material="gen5_cardboard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen5_package_small_2_collision" type="mesh" mesh="gen5_small_collision_mesh" group="3" rgba="0 0 0 0" friction="4 0.04 0.004" condim="4" solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </body>
+    <body name="gen5_package_small_3" pos="-0.18 -0.16 0.905337500572">
+      <freejoint name="gen5_package_small_3_joint" />
+      <inertial pos="7.15257998789e-10 -4.52657514348e-15 -2.07517347266e-10" mass="0.03" fullinertia="5.59152946666e-06 5.5915292092e-06 6.47903546346e-06 -1.21656863787e-18 -1.10751349323e-13 -2.06736896807e-18" />
+      <geom name="gen5_package_small_3_visual" type="mesh" mesh="gen5_small_visual_mesh" material="gen5_cardboard_material" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen5_package_small_3_collision" type="mesh" mesh="gen5_small_collision_mesh" group="3" rgba="0 0 0 0" friction="4 0.04 0.004" condim="4" solref="0.003 1" solimp="0.95 0.99 0.001" />
+    </body>
+  </worldbody>
+</mujoco>

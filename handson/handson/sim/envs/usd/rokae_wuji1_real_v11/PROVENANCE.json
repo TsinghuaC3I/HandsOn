@@ -1,0 +1,12 @@
+{
+  "runtime_manifest_sha256": "2d8e0d9a656572be1761d733208190e98b69f385a6fea9b80928c2435d8efb1c",
+  "reference_document_sha256": "8b31dac2061134e69e7d6799126dbd31ba3ff932fa2a6acee44a9d8c98b7fd9a",
+  "runtime_dependency_count": 64,
+  "editable_source_packaged": false,
+  "editable_manifest_sha256": "2fa12c1468e46d7d9024f44c955a11a0ed5730307bf0dc6e7afda3547673c7b5",
+  "editable_observed_sha256": "98b35d0e631d756ee8ae86433d1342a296116b3adef0ac6b402ec4e3abe186ab",
+  "scope": "robot visuals and photo-estimated cable only; original physics and camera calibration retained",
+  "editable_manifest_hash_resolved_at": "asset-v6/pillow16.blend",
+  "editable_note": "Historical manifest source hash resolves to the v6 authoring source; v11 file has a later saved hash. Runtime closure is independently verified and no editable file is packaged.",
+  "source_workspace": "internal authoring workspace (path withheld)"
+}

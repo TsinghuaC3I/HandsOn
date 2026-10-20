@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="d04_hanoi_obstacles">
+  <asset>
+    <texture name="d04_block017_tex" type="2d" file="lightwheel_ycb/BuildingBlock017/visuals/T_BuildingBlock017_BC001.png"/>
+    <material name="d04_block017_mat" texture="d04_block017_tex" specular="0.1"/>
+    <mesh name="d04_block017_visual" file="lightwheel_ycb/BuildingBlock017/visuals/optimized_visuals/BuildingBlock017.obj"/>
+    <mesh name="d04_block017_collision" file="lightwheel_ycb/BuildingBlock017/collision/BuildingBlock017_Collider1_m.obj"/>
+
+    <texture name="d04_block018_tex" type="2d" file="lightwheel_ycb/BuildingBlock018/visuals/T_BuildingBlock018_BC001.png"/>
+    <material name="d04_block018_mat" texture="d04_block018_tex" specular="0.1" shininess="0.1"/>
+    <mesh name="d04_block018_visual" file="lightwheel_ycb/BuildingBlock018/visuals/BuildingBlock018.obj"/>
+    <mesh name="d04_block018_collision" file="lightwheel_ycb/BuildingBlock018/collision/BuildingBlock018_Collider1_m.obj"/>
+
+    <texture name="d04_block019_tex" type="2d" file="lightwheel_ycb/BuildingBlock019/visuals/T_BuildingBlock019_BC001.png"/>
+    <material name="d04_block019_mat" texture="d04_block019_tex" specular="0.3"/>
+    <mesh name="d04_block019_visual" file="lightwheel_ycb/BuildingBlock019/visuals/optimized_visuals/BuildingBlock019.obj"/>
+    <mesh name="d04_block019_collision" file="lightwheel_ycb/BuildingBlock019/collision/BuildingBlock019_Collider1_m.obj"/>
+
+    <texture name="d04_tennis_tex" type="2d" file="lightwheel_ycb/tennis_ball/visuals/T_tennis_ball_BC001.png"/>
+    <material name="d04_tennis_mat" texture="d04_tennis_tex" specular="0.3" shininess="0.25"/>
+    <mesh name="d04_tennis_visual" file="lightwheel_ycb/tennis_ball/visuals/tennis_ball.obj"/>
+    <mesh name="d04_tennis_collision" file="lightwheel_ycb/tennis_ball/collision/tennis_ball_Collider1_m.obj"/>
+
+    <texture name="d04_golf_tex" type="2d" file="lightwheel_ycb/golf_ball/visuals/T_golf_ball_BC001.png"/>
+    <material name="d04_golf_mat" texture="d04_golf_tex" specular="0.3"/>
+    <mesh name="d04_golf_visual" file="lightwheel_ycb/golf_ball/visuals/golf_ball.obj"/>
+    <mesh name="d04_golf_collision" file="lightwheel_ycb/golf_ball/collision/golf_ball_Collider1_m.obj"/>
+  </asset>
+
+  <worldbody>
+    <body name="d04_block_0" pos="0 0 -2">
+      <freejoint name="d04_block_0_joint"/>
+      <geom name="d04_block_0_visual" type="mesh" mesh="d04_block017_visual" material="d04_block017_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <!-- A symmetric primitive keeps an inactive parked block from
+           acquiring a persistent torque/sideways drift on the ground plane.
+           The source mesh is retained for the visual asset above; this box
+           matches its 29.85 mm collision envelope and is stable in both
+           MuJoCo and the Isaac first-PhysX import. -->
+      <geom name="d04_block_0_collision" type="box" size="0.014925 0.014925 0.014925" mass="0.025" friction="1.0 0.02 0.002" condim="4" group="3"/>
+    </body>
+    <body name="d04_block_1" pos="0 0 -2">
+      <freejoint name="d04_block_1_joint"/>
+      <geom name="d04_block_1_visual" type="mesh" mesh="d04_block018_visual" material="d04_block018_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_block_1_collision" type="box" size="0.015 0.015 0.015" mass="0.025" friction="1.0 0.02 0.002" condim="4" group="3"/>
+    </body>
+    <body name="d04_block_2" pos="0 0 -2">
+      <freejoint name="d04_block_2_joint"/>
+      <geom name="d04_block_2_visual" type="mesh" mesh="d04_block019_visual" material="d04_block019_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_block_2_collision" type="box" size="0.015 0.015 0.015" mass="0.025" friction="1.0 0.02 0.002" condim="4" group="3"/>
+    </body>
+    <body name="d04_block_3" pos="0 0 -2">
+      <freejoint name="d04_block_3_joint"/>
+      <geom name="d04_block_3_visual" type="mesh" mesh="d04_block017_visual" material="d04_block017_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_block_3_collision" type="box" size="0.014925 0.014925 0.014925" mass="0.025" friction="1.0 0.02 0.002" condim="4" group="3"/>
+    </body>
+    <body name="d04_block_4" pos="0 0 -2">
+      <freejoint name="d04_block_4_joint"/>
+      <geom name="d04_block_4_visual" type="mesh" mesh="d04_block018_visual" material="d04_block018_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_block_4_collision" type="box" size="0.015 0.015 0.015" mass="0.025" friction="1.0 0.02 0.002" condim="4" group="3"/>
+    </body>
+
+    <body name="d04_tennis_ball" pos="0 0 -2">
+      <freejoint name="d04_tennis_ball_joint"/>
+      <geom name="d04_tennis_ball_visual" type="mesh" mesh="d04_tennis_visual" material="d04_tennis_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_tennis_ball_collision" type="sphere" size="0.033021" mass="0.035" friction="0.75 0.02 0.002" condim="4" group="3"/>
+    </body>
+    <body name="d04_golf_ball" pos="0 0 -2">
+      <freejoint name="d04_golf_ball_joint"/>
+      <geom name="d04_golf_ball_visual" type="mesh" mesh="d04_golf_visual" material="d04_golf_mat" contype="0" conaffinity="0" mass="0" group="1"/>
+      <geom name="d04_golf_ball_collision" type="sphere" size="0.021659" mass="0.045" friction="0.75 0.02 0.002" condim="4" group="3"/>
+    </body>
+  </worldbody>
+</mujoco>

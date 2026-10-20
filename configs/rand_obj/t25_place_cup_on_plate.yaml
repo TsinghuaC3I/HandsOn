@@ -1,0 +1,6 @@
+env_name: t25_place_cup_on_plate
+camera_mapping:
+  base: front
+  wrist: wrist
+prompt: "Pick the brown cup and place it at the center of the plate with its bottom facing down."
+robot_type: single_arm

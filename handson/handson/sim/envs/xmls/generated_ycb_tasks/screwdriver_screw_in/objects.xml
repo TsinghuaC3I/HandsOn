@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="screwdriver_screw_in_primitives">
+  <default>
+    <default class="ssi_visual">
+      <geom contype="0" conaffinity="0" group="1" mass="0" />
+    </default>
+    <default class="ssi_tool_collision">
+      <geom group="0" friction="1.05 0.015 0.0002" solref="0.004 1" solimp="0.96 0.995 0.001" density="900" rgba="0.5 0 0 0.35" />
+    </default>
+    <default class="ssi_block_collision">
+      <geom group="0" friction="1.15 0.015 0.0002" solref="0.004 1" solimp="0.96 0.995 0.001" rgba="0.45 0.29 0.12 0.35" />
+    </default>
+    <default class="ssi_screw_collision">
+      <geom group="0" friction="1.25 0.015 0.0002" solref="0.003 1" solimp="0.97 0.996 0.001" density="7800" rgba="0.62 0.62 0.66 1" />
+    </default>
+  </default>
+
+  <asset>
+    <texture type="2d" name="ssi_phillips_screwdriver_tex" file="../../lightwheel_ycb/phillips_screwdriver/visuals/T_phillips_screwdriver_BC001.png" />
+    <texture type="2d" name="ssi_flat_screwdriver_tex" file="../../lightwheel_ycb/flat_screwdriver/visuals/T_flat_screwdriver_BC001.png" />
+    <texture type="2d" name="ssi_wood_block_tex" file="../../lightwheel_ycb/wood_block/visuals/T_wood_block_BC001.png" />
+    <material name="ssi_phillips_screwdriver_mat" texture="ssi_phillips_screwdriver_tex" specular="0.31" shininess="0.14" />
+    <material name="ssi_flat_screwdriver_mat" texture="ssi_flat_screwdriver_tex" specular="0.31" shininess="0.28" />
+    <material name="ssi_wood_block_mat" texture="ssi_wood_block_tex" specular="0.28" shininess="0.22" />
+    <material name="ssi_screw_mat" rgba="0.62 0.62 0.66 1" specular="0.45" shininess="0.65" />
+    <material name="ssi_screw_slot_mat" rgba="0.03 0.03 0.04 1" specular="0.1" shininess="0.1" />
+    <material name="ssi_target_mat" rgba="0.12 0.82 0.28 0.28" specular="0" shininess="0" />
+    <mesh name="ssi_phillips_screwdriver_mesh" file="../../lightwheel_ycb/phillips_screwdriver/visuals/phillips_screwdriver.obj" />
+    <mesh name="ssi_flat_screwdriver_mesh" file="../../lightwheel_ycb/flat_screwdriver/visuals/flat_screwdriver.obj" />
+    <mesh name="ssi_wood_block_mesh" file="../../lightwheel_ycb/wood_block/visuals/wood_block.obj" />
+  </asset>
+
+  <worldbody>
+    <body name="wood_block" pos="0.12 0.20 0.962689" quat="1 0 0 0">
+      <geom name="ssi_wood_block_visual" class="ssi_visual" type="mesh" mesh="ssi_wood_block_mesh" material="ssi_wood_block_mat" />
+      <geom name="ssi_wood_block_collision" class="ssi_block_collision" type="box" size="0.0433705 0.100369 0.042689" />
+      <site name="ssi_wood_block_top" pos="0 0 0.042689" size="0.004" rgba="0.2 0.6 0.2 0.45" />
+    </body>
+
+    <body name="screw_anchor" pos="0.12 0.20 1.0074" quat="1 0 0 0">
+      <site name="ssi_screw_axis" pos="0 0 0" size="0.004" rgba="0.1 0.8 0.3 0.45" />
+      <body name="screw_thread_body" pos="0 0 0" gravcomp="1">
+        <joint name="screw_depth" type="slide" axis="0 0 -1" limited="true" range="0 0.024" damping="4.0" armature="0.0005" />
+        <joint name="screw_yaw" type="hinge" axis="0 0 1" limited="false" damping="0.04" armature="0.0005" />
+        <geom name="ssi_screw_shaft" class="ssi_screw_collision" type="cylinder" size="0.006 0.024" pos="0 0 -0.024" material="ssi_screw_mat" />
+        <geom name="ssi_screw_head" class="ssi_screw_collision" type="cylinder" size="0.015 0.004" pos="0 0 0" material="ssi_screw_mat" />
+        <geom name="ssi_screw_slot_visual" class="ssi_visual" type="box" size="0.012 0.003 0.0012" pos="0 0 0.0053" material="ssi_screw_slot_mat" />
+        <geom name="ssi_screw_target_ring" class="ssi_visual" type="cylinder" size="0.019 0.0007" pos="0 0 0.0058" material="ssi_target_mat" />
+        <site name="ssi_screw_slot_center" pos="0 0 0.006" size="0.004" rgba="0.95 0.70 0.15 0.75" />
+        <site name="ssi_screw_head_center" pos="0 0 0" size="0.003" rgba="0.2 0.8 0.25 0.45" />
+      </body>
+    </body>
+
+    <body name="phillips_screwdriver_root_body" pos="-0.22 -0.10 0.939" quat="1 0 0 0">
+      <freejoint name="phillips_screwdriver_root" />
+      <geom name="ssi_phillips_screwdriver_visual" class="ssi_visual" type="mesh" mesh="ssi_phillips_screwdriver_mesh" material="ssi_phillips_screwdriver_mat" />
+      <geom name="ssi_phillips_screwdriver_collision" class="ssi_tool_collision" type="capsule" fromto="0 -0.108 0 0 0.108 0" size="0.0115" />
+      <geom name="ssi_phillips_tip_collision" class="ssi_tool_collision" type="sphere" pos="0 -0.108 0" size="0.0045" />
+      <site name="ssi_phillips_tip" pos="0 -0.108 0" size="0.004" rgba="0.95 0.68 0.12 0.75" />
+      <site name="ssi_phillips_blade_axis" pos="0.018 -0.096 0" size="0.003" rgba="0.1 0.6 1 0.5" />
+      <site name="ssi_phillips_handle" pos="0 0.084 0" size="0.004" rgba="0.2 0.2 0.9 0.45" />
+    </body>
+
+    <body name="flat_screwdriver_root_body" pos="-0.22 0.16 0.939" quat="1 0 0 0">
+      <freejoint name="flat_screwdriver_root" />
+      <geom name="ssi_flat_screwdriver_visual" class="ssi_visual" type="mesh" mesh="ssi_flat_screwdriver_mesh" material="ssi_flat_screwdriver_mat" />
+      <geom name="ssi_flat_screwdriver_collision" class="ssi_tool_collision" type="capsule" fromto="0 -0.108 0 0 0.108 0" size="0.0115" />
+      <geom name="ssi_flat_tip_collision" class="ssi_tool_collision" type="sphere" pos="0 -0.108 0" size="0.0045" />
+      <site name="ssi_flat_tip" pos="0 -0.108 0" size="0.004" rgba="0.95 0.68 0.12 0.75" />
+      <site name="ssi_flat_blade_axis" pos="0.018 -0.096 0" size="0.003" rgba="1 0.4 0.1 0.5" />
+      <site name="ssi_flat_handle" pos="0 0.084 0" size="0.004" rgba="0.8 0.2 0.2 0.45" />
+    </body>
+  </worldbody>
+</mujoco>

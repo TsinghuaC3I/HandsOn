@@ -1,0 +1,176 @@
+# Current standard-home CUDA acceptance.
+# Human usability, cameras, episodes, and replay remain pending.
+schema_version: 1
+task: t17_open_latched_door
+stage: 1
+branch: collection/release
+base_commit: ac176510102caed0561d9f87b443fe1e1d0adf9c
+evidence_source_worktree_dirty: true
+acceptance_contract: taskdev/tasks/t17_open_latched_door/ACCEPTANCE.md
+evidence_status: standard_home_closer_door_live_priority_zero_pass_operator_pending
+superseded_on: "2026-08-28"
+superseded_by: "Current contract uses left hand on the panel, right hand on a Helindu replacement Handle002, door >=45 degrees, no front table, diagnostic-only panel/frame measurements, and only far-side Handle001 as a forbidden contact."
+current_policy_validated: true
+current_operator_layout_validated: false
+replacement_handle002_validated: true
+role_contract_version: 4
+role_contact_layout: [right_front_handle, left_door, legacy_table_zero, diagnostic_frame, rear_handle]
+current_live_physics_validated: true
+current_composed_scene_geometry_validated: true
+thresholds_changed_during_implementation: true
+overall_status: priority_zero_pass_awaiting_operator_camera_episode_replay
+current_handle002_static_geometry_audit:
+  status: helindu_source_build_static_and_neutral_gpu_pass_operator_sweep_pending
+  basis:
+    - handson/handson/sim/isaaclab/p002_scene_geometry.py
+    - handson/tests/test_p002_scene_geometry.py
+  source_archive_sha256: 330c5bf51744ae54468c55896280d10d6c5ef0d7b63783112fe8052ecf36affd
+  source_author: Helindu
+  source_license: CC-BY-4.0
+  outer_dimensions_m: [0.15, 0.04148298257902923, 0.04849960621353222]
+  grasp_x_range_m: [0.055, 0.105]
+  minimum_grasp_clearance_m: 0.03002410272964051
+  global_neck_minimum_clearance_m: 0.009719147885820635
+  replacement_visual_meshes: 2
+  replacement_native_cube_colliders: 4
+  replacement_max_gpu_convex_vertices: 8
+  old_handle_visual_meshes_disabled: 1
+  old_handle_colliders_disabled: 4
+  body_joint_contact_and_replay_paths_preserved: true
+  live_validation_complete: true
+  operator_usability_validation_complete: false
+  dynamic_operator_sweep_complete: false
+  evidence:
+    - evidence/helindu_handle_build.json
+    - handson/tests/test_p002_scene_geometry.py
+current_live_physics_acceptance:
+  status: current_priority_zero_pass
+  runtime: Isaac Sim 5.1.0.0 / IsaacLab v2.3.2
+  physics_device: cuda:0
+  evidence: evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  evidence_sha256: fdf3016901823b84af03be1fc2bbdc367c9be95368f701d737027e915ce572e8
+  kit_log: /home/user/下载/handson-local-state/runtime/.handson_isaacsim/toolchain/env/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260829_053638.log
+  visible_evidence: pending_current_layout
+  checks_passed: 11
+  checks_total: 11
+  seeded_resets: 20/20
+  current_role_targets: 40/40
+  right_handle_min_joint_margin_rad: 0.11284005641937256
+  left_door_min_joint_margin_rad: 0.16488265991210938
+  contact_views: [right_front_handle, left_door, robot_frame, robot_rear_handle, initial_robot_front_handle, initial_robot_door]
+  stability_steps: 1200
+  stability_seconds: 10.0
+  initial_robot_state:
+    base_position_max_error_m: 3.3463642154317246e-08
+    arm_home_max_error_rad: 0.0
+    arm_max_speed_rad_s: 0.0
+    left_palm_position_error_m: 1.2088080600541328e-07
+    right_palm_position_error_m: 1.940903330554782e-07
+    left_palm_orientation_error_deg: 2.8342198958711723e-05
+    right_palm_orientation_error_deg: 2.3036072399968e-05
+  nonfinite_count: 0
+  exploding_body_count: 0
+  max_hard_failure_penetration_m: 0.0
+  max_forbidden_force_n: 0.0
+  reset_translation_delta_max_error_m: 7.052001732565927e-09
+  reset_yaw_delta_max_error_deg: 4.330373542416055e-06
+  locked_force_probe_drift_deg: 1.1459128966057925
+  locked_force_probe_limit_deg: 2.5
+  table_hidden: true
+  table_colliders_disabled: 1
+  table_collision_instance_deactivated: true
+  replacement_collision_primitive: Cube
+  replacement_max_gpu_convex_vertices: 8
+  visible_stable_origin_steps: pending_current_layout
+  visible_post_origin_zero_action_control_steps: pending_current_layout
+authorized_drive_revision:
+  approved: true
+  change: "locked runtime drive 35/4/45 -> 1000/30/100"
+  acceptance_thresholds_changed: false
+
+operator_latch_threshold_revision:
+  status: current_static_pass_live_retry_pending
+  evidence_log: demos/collection_logs/20260827-234514_collector_001_17_open_latched_door.log
+  observed_handle_angle_deg: 28.168763939095815
+  observed_intended_handle_contact_force_n: 61.19245529174805
+  former_unlock_threshold_deg: 45.0
+  current_unlock_threshold_deg: 25.0
+  current_release_threshold_deg: 15.0
+  diagnosis: "The former threshold kept latch_press_steps at zero and the 100 N door drive locked despite strong intended handle contact."
+
+checks:
+  assets:
+    status: current_pass
+    result: "The retained Helindu CC-BY-4.0 source archive, deterministic split, two runtime USD parts, and exact hashes pass."
+    evidence: evidence/helindu_handle_build.json
+  usd_live_parse_and_topology:
+    status: current_gpu_pass_visible_pending
+    result: "The isolated CUDA gate passes first reset with four native Cube colliders, no CenterRig, and no GPU narrowphase or CUDA 700 errors. A current-layout visible run remains pending."
+    evidence:
+      - evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  multipose_geometry:
+    status: current_static_and_neutral_live_pass_dynamic_human_sweep_pending
+    result: "The Helindu source split, content hashes, 150 mm length, 30.024 mm grasp clearance, four native Cube colliders, real-USD idempotent composition, and neutral live PhysX pass. Human continuous-motion use remains pending."
+    evidence:
+      - handson/tests/test_p002_scene_geometry.py
+  reset:
+    status: current_pass
+    result: "The standard-home, x=0.01 m Door042 layout passes its first reset and all 20 seeded resets using actual base, seven-joint, palm, Door042 root/DOF, six-view contact, and complete four-body clearance readback."
+    evidence:
+      - evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  reachability:
+    status: current_pass
+    result: "All 40 current role targets solve from the standard arm home; minimum joint margins are 0.11284 rad for the right handle and 0.16488 rad for the left door."
+    evidence: evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  semantic_success_contract:
+    status: current_static_pass_live_role_operation_pending
+    result: "Focused current-role contract tests pass, including right-handle latch causality, left-panel credit, no table condition, and diagnostic-only panel/frame measurements. Human intended-contact operation remains pending."
+    evidence:
+      - test_p002_collection.py
+      - ../../../../scripts/tests/test_p002_terminal_diagnostics.py
+  contact_instrumentation:
+    status: current_pass
+    result: "Live PhysX exposes the exact six-view contract. The two initial-only all-robot views plus frame and rear-handle views cover all four Door042 bodies; every seeded reset passes with zero initial penetration."
+    evidence: evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  ten_second_stability:
+    status: current_pass
+    result: "The current layout passes 1200/1200 steps at 120 Hz with zero base, palm, and arm drift; zero arm speed, penetration, forbidden force, non-finite state, explosion, or spontaneous terminal."
+    evidence:
+      - evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  locked_external_force:
+    status: current_pass
+    result: "The 20 N*m locked-force probe drifts 1.145911 degrees against the 2.5-degree limit."
+    evidence: evidence/live_physics_acceptance_standard_home_closer_door_20260829.json
+  collection_static_discovery:
+    status: current_static_pass
+    result: "Current task manifest validates; registration audit is 10/10, platform static acceptance is 12/12 including the Helindu source, license, glTF payload, and runtime USD hashes, and current UI/operator metadata checks pass."
+    evidence:
+      - task.yaml
+      - evidence/platform_static_acceptance_helindu_v2.json
+      - ../../../../collection_ui/tests/test_p002_operator_metadata.py
+  cameras:
+    status: requires_human_or_collection_platform
+    result: "Not passed. The current visible priority-zero run intentionally disabled simulator-camera viewers; 30 consecutive accepted frames from head and both wrists still must be checked."
+  successful_episodes:
+    status: requires_human_or_collection_platform
+    result: "Not passed. Three valid Zarr episodes were not generated; no synthetic substitute is accepted."
+  fresh_process_replay:
+    status: requires_human_or_collection_platform
+    result: "Not passed because no valid episode exists to replay."
+
+blockers:
+  - id: current_operator_contact_and_usability_not_revalidated
+    owner: collection_platform_human_validation
+    required_action: "Run human left-panel/right-Handle002 trials to validate intended contact, latch causality, multi-finger Helindu-handle usability, diagnostic-only panel/frame behavior, and the remaining far-side Handle001 failure semantics."
+  - id: cameras_episodes_and_replay_pending
+    owner: collection_platform_human_validation
+    required_action: "Run the remaining camera, three accepted episode, and fresh-process replay sections of COLLECTION_PLATFORM_CHECKLIST.md."
+
+not_claimed:
+  - current_operator_contact_policy_certified
+  - current_left_panel_right_handle_roles_certified
+  - replacement_handle002_operator_usability_certified
+  - first_stage_acceptance_complete
+  - three_camera_acceptance
+  - valid_episode_generation
+  - fresh_process_replay_passed

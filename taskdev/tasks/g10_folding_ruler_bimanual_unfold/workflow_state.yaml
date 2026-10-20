@@ -1,0 +1,100 @@
+# The live evidence referenced below was produced before the current free-root
+# composition and GPU-safe long-link collision fix.  It remains historical only.
+schema_version: 1
+task_id: G10
+manifest_task_id: t49_unfold_ruler
+task_name: t49_unfold_ruler
+state: bug_iteration
+updated_at: "2026-09-01T23:07:01+08:00"
+runtime_contract:
+  isaac_sim: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+  physics_hz: 120
+  control_hz: 30
+current_arm_home_change:
+  policy: shared_mirrored_bimanual_home
+  raised_home_override_removed: true
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_initial_stability: pending
+selected_asset:
+  provenance: user_provided
+  archive: /home/user/下载/ZRYZ_LW_Assets_20260820.zip
+  archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  usd: handson/handson/sim/envs/usd/lw_native_articulation/assets/Ruler035/Ruler035.usd
+  usd_sha256: 55f3823f9ae46ba34f5bfcc12332aaa512cf99eb344e2db8bfa92a8825ca0369
+  author: unresolved
+  upstream_source: unresolved
+  license: unresolved
+completed_gates:
+  - task_contract_authored
+  - supplied_archive_safety_and_integrity_checked
+  - selected_asset_bytes_hash_bound
+  - static_source_usd_audited
+  - runtime_and_scene_scaffold_implemented
+  - task_registration_static_ready
+  - static_task_manifest_schema_passed
+  - shared_physical_contract_tests_35_passed
+  - collection_registration_tests_15_passed
+  - operator_test_collection_enabled
+historical_completed_gates:
+  - live_first_physx_scene_construction
+  - exact_live_3_body_7_collider_2_dof_inventory
+  - initial_nonpenetration_audit
+  - zero_action_240_physics_step_stability
+  - stable_recording_origin_acceptance
+  - same_seed_reset_repeat
+  - different_seed_reset_acceptance
+  - same_process_scene_rebuilding_hard_reset
+pending_gates:
+  - current_free_root_gpu_safe_initial_state_validation
+  - twenty_trial_seeded_reset_validation
+  - operator_manual_r_reset_validation
+  - operator_preview_start_reset_stop
+  - live_assigned_contact_truth_validation
+  - physical_positive_and_negative_success_trials
+  - canonical_head_and_wrist_camera_validation
+  - successful_zarr_episode_recorded_and_reviewed
+  - fresh_process_physical_replay
+  - operator_acceptance
+  - asset_author_source_and_license_resolution
+  - formal_collection_certification
+live_initial_state_evidence:
+  status: historical_superseded_requires_rerun
+  path: taskdev/tasks/t49_unfold_ruler/evidence/live_initial_stability.json
+  sha256: de18aba27572d02d7c6f0909f13135847ab05ae4aec77277224b96c664d668c5
+  stale_reason: "This evidence used a world-fixed root; current G10 requires a free root and composed GPU-safe boundingCube Collider1 shapes."
+  topology: {rigid_bodies: 3, colliders: 7, revolute_dofs: 2, historical_fixed_base: true, current_expected_fixed_base: false}
+  zero_action:
+    physics_hz: 120
+    physics_frames: 240
+    max_q_drift_rad: 0.0
+    max_abs_qd_rad_s: 0.0000234086637647124
+    max_root_translation_drift_m: 0.0
+    max_root_rotation_drift_deg: 0.0
+    truth_unreadable: false
+  stable_recording_origin: historical_pass
+  reset_trials:
+    accepted: 4
+    same_seed_repeat: historical_pass
+    different_seed_reset: historical_pass
+    same_process_hard_reset: historical_pass
+    scene_rebuilt: true
+    process_restarted: false
+release_gate:
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+  redistribution_blocked: true
+  reason: "Operator test collection is enabled for start/reset/stop and trial episode capture. This is not task acceptance or certification: physical success/negative trials, canonical cameras, reviewed Zarr output, fresh-process replay, operator acceptance, asset rights, and redistribution remain pending."
+blocked: false
+blocked_reason: null
+notes:
+  - "Development can continue locally; the release gate, not implementation progress, is blocked by unresolved asset rights."
+  - "The source joint tree is serial Ruler035 -> Prop001 -> Prop002, with Prop001 as the true middle segment. G10 keeps Prop001 in a free native articulation, assigns left to outer Ruler035/negative Prop001_joint and right to outer Prop002/positive Prop002_joint, and starts at (-90,+90) degrees so both thin links are separately graspable before straightening to (-180,+180)."
+  - "Updated contract: success latches when both hinge positions enter the absolute-periodic +/-180 degree straight target windows; hand contact, synchronized timing, release, and a stability hold are not required. Free-root gross-escape and joint-limit/penetration checks remain safety guards."
+  - "The prior Isaac initial-state topology, nonpenetration, stable-origin, zero-action, and reset results are historical only because they used a world-fixed root. They do not validate the current free-root scene and must be rerun after the composed GPU-safe boundingCube collision fix."
+  - "The current integration preserves source/render geometry and applies boundingCube only to the three long Ruler035 *_Collider1 meshes; the source hinge-pin Collider2 meshes remain unchanged."
+  - "Operator reach and assigned-contact trials, manual-R/start/stop behavior, physical positive and negative success trials, canonical cameras, Zarr recording, fresh-process replay, license resolution, and formal certification remain pending."
+  - "Operator test collection may proceed despite those pending validation gates; collection remains unvalidated and redistribution remains blocked until asset rights are resolved."

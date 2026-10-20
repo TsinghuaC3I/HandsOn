@@ -1,0 +1,7 @@
+env_name: eval_gen05_set_mixer_knobs
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Use your left hand to turn the left knob counterclockwise and your right hand to turn the right knob clockwise, in either order. Set both displayed targets, release both knobs, and keep the settings stable."
+robot_type: dual_arm
+time_limit_seconds: 40
+skills: [bimanual_articulation, assigned_direction_rotation, assigned_hand_roles, release_and_stabilize]
+objects: [audio_mixer, knob_left, knob_right]

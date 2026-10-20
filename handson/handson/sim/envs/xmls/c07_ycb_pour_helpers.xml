@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="c07_ycb_pour_helpers">
+  <compiler angle="radian" />
+  <default>
+    <default class="c07_helper_visual">
+      <geom contype="0" conaffinity="0" group="1" />
+    </default>
+    <default class="c07_return_zone">
+      <geom contype="0" conaffinity="0" group="1" />
+    </default>
+    <default class="c07_particle">
+      <geom type="sphere" size="0.0065" density="1400" friction="0.25 0.003 0.0001" solref="0.003 1" solimp="0.97 0.996 0.001" group="3" />
+    </default>
+  </default>
+
+  <asset>
+    <material name="c07_green_zone" rgba="0.08 0.70 0.30 0.42" specular="0.10" />
+    <material name="c07_particle_red" rgba="0.86 0.10 0.08 1" specular="0.25" />
+    <material name="c07_particle_blue" rgba="0.16 0.35 0.90 1" specular="0.20" />
+    <material name="c07_particle_green" rgba="0.08 0.70 0.30 1" specular="0.12" />
+    <material name="c07_particle_yellow" rgba="0.98 0.78 0.18 1" specular="0.25" />
+    <material name="c07_particle_white" rgba="0.94 0.94 0.90 1" specular="0.18" />
+    <material name="c07_particle_purple" rgba="0.42 0.20 0.72 1" specular="0.22" />
+    <material name="c07_particle_orange" rgba="0.95 0.55 0.16 1" specular="0.25" />
+    <material name="c07_particle_dark" rgba="0.06 0.07 0.08 1" specular="0.20" />
+  </asset>
+
+  <worldbody>
+    <body name="c07_return_zone" pos="-0.380 -0.260 0.8908">
+      <freejoint name="c07_return_zone_joint" />
+      <inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001"/>
+      <geom name="c07_return_zone_visual" class="c07_return_zone" type="box" size="0.085 0.140 0.0008" material="c07_green_zone" />
+    </body>
+    <body name="c07_particle_0" pos="-0.380 -0.260 0.913"><freejoint name="c07_particle_0_joint"/><geom name="c07_particle_0_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_red"/></body>
+    <body name="c07_particle_1" pos="-0.362 -0.260 0.913"><freejoint name="c07_particle_1_joint"/><geom name="c07_particle_1_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_blue"/></body>
+    <body name="c07_particle_2" pos="-0.398 -0.260 0.913"><freejoint name="c07_particle_2_joint"/><geom name="c07_particle_2_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_green"/></body>
+    <body name="c07_particle_3" pos="-0.380 -0.242 0.913"><freejoint name="c07_particle_3_joint"/><geom name="c07_particle_3_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_yellow"/></body>
+    <body name="c07_particle_4" pos="-0.380 -0.278 0.913"><freejoint name="c07_particle_4_joint"/><geom name="c07_particle_4_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_white"/></body>
+    <body name="c07_particle_5" pos="-0.370 -0.250 0.932"><freejoint name="c07_particle_5_joint"/><geom name="c07_particle_5_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_purple"/></body>
+    <body name="c07_particle_6" pos="-0.390 -0.250 0.932"><freejoint name="c07_particle_6_joint"/><geom name="c07_particle_6_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_orange"/></body>
+    <body name="c07_particle_7" pos="-0.380 -0.270 0.932"><freejoint name="c07_particle_7_joint"/><geom name="c07_particle_7_geom" class="c07_particle" type="sphere" size="0.0065" material="c07_particle_dark"/></body>
+  </worldbody>
+</mujoco>

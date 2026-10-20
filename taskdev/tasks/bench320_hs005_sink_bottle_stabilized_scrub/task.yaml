@@ -1,0 +1,201 @@
+schema_version: 1
+task:
+  id: bench320_hs005_sink_bottle_stabilized_scrub
+  title: "B320-HS005 Sink Bottle Stabilized Scrub"
+  description: "A labeled 1.5 L water bottle and realistic cleaning brush begin inside a realistic kitchen sink. The left ROKAE/Wuji hand retrieves and physically stabilizes the bottle while the right hand retrieves the brush by its safe handle, covers lower/middle/upper bottle bands in order, releases both objects, and leaves the upright bottle stable. A dish-soap dispenser and sponge remain as physical context on the counter beside the sink."
+  taxonomy:
+    family: tool_use
+    interactions: [forced_bimanual_stabilization, safe_tool_grasp, surface_scrubbing]
+    horizon: medium
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "Authoritative 32-task scene-wave row B320-HS005 (source_index 267, source_row 268). Kitchen and sink: Modern Apartment by Visthétique; bottle: LukeModels75; brush: amhyde; dish-soap dispenser: Mike Nov; sponge: Requital (Azamkhon). All downloaded assets are CC BY 4.0."
+  reference: "/mnt/pfs/luotianwei/handson-taskdev-orchestration/b320_32_scene_wave_20260817/source_rows.json#source_index=267"
+  reference_sha256: c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987
+  license: project + CC-BY-4.0
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.45, -0.45, 0.68]
+    max: [0.55, 0.45, 1.35]
+  targets:
+    - id: left_bottle_support
+      arm: left
+      frame: world
+      position_m: [-0.10, 0.11, 1.02]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.02
+    - id: right_brush_safe_handle
+      arm: right
+      frame: world
+      position_m: [-0.09, -0.125, 0.93]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: kitchen_background
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/modern_apartment_kitchen.usd
+    kind: usd
+    required: true
+    license: CC-BY-4.0
+    attribution: "Modern Apartment by Visthétique"
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: false
+      approximation: render_only
+  - id: kitchen_sink
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/sink_collision_source.ply
+    kind: mesh
+    required: true
+    license: CC-BY-4.0
+    attribution: "Modern Apartment by Visthétique"
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: false
+      approximation: source_reference_only_runtime_uses_task_owned_basin_floor
+  - id: water_bottle
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_lukemodels75_water_bottle/water_bottle_visual.usd
+    kind: usd
+    required: true
+    license: CC-BY-4.0
+    attribution: "Water Bottle 3D Model by LukeModels75"
+    scale_m: [0.05, 0.05, 0.05]
+    collision:
+      enabled: true
+      approximation: compound_cylinders_from_selected_visual
+  - id: scrub_brush
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_amhyde_cleaning_brush/cleaning_brush_visual.usd
+    kind: usd
+    required: true
+    license: CC-BY-4.0
+    attribution: "Cleaning Brush by amhyde"
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: compound_cylinders_from_selected_visual
+  - id: dish_soap_context
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_mike_nov_dishwashing_dispenser/dishwashing_dispenser_visual.usd
+    kind: usd
+    required: true
+    license: CC-BY-4.0
+    attribution: "DIsh washing liquid dispenser by Mike Nov"
+    scale_m: [0.035, 0.035, 0.035]
+    collision:
+      enabled: true
+      approximation: static_compound_primitives_from_selected_visual
+  - id: dish_sponge_context
+    path: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_requital_dish_sponge/dish_sponge_visual.usd
+    kind: usd
+    required: true
+    license: CC-BY-4.0
+    attribution: "Sponge For Washing Dishes by Requital (Azamkhon)"
+    scale_m: [0.018, 0.018, 0.018]
+    collision:
+      enabled: true
+      approximation: static_box_from_selected_visual
+reset:
+  seedable: true
+  max_settle_steps: 240
+  randomization:
+    bottle_xy_m: 0.02
+    bottle_yaw_deg: 8.0
+    brush_xy_m: 0.015
+    brush_yaw_deg: 10.0
+    friction_range: [0.55, 0.90]
+    mass_scale_range: [0.85, 1.15]
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - success_false_at_reset
+    - bottle_supported_inside_sink_basin
+    - brush_supported_inside_sink_basin
+contact:
+  monitored_pairs:
+    - id: bottle_sink_support
+      bodies: ["assets/water_bottle/body", "assets/kitchen_sink/real_basin_mesh"]
+      max_penetration_m: 0.001
+    - id: brush_sink_support
+      bodies: ["assets/scrub_brush/*", "assets/kitchen_sink/real_basin_mesh"]
+      max_penetration_m: 0.001
+  forbidden_pairs:
+    - id: bottle_sink_rim_or_drainboard
+      bodies: ["assets/water_bottle/body", "assets/kitchen_sink/rim_or_drainboard"]
+    - id: brush_sink_rim_or_drainboard
+      bodies: ["assets/scrub_brush/*", "assets/kitchen_sink/rim_or_drainboard"]
+    - id: asset_robot_at_reset
+      bodies: ["assets/*", "robot/*"]
+success:
+  logic: all
+  predicates:
+    - id: left_bottle_stability
+      type: baseline_displacement
+      parameters: {object: assets/water_bottle, work_max_m: 0.04, final_max_m: 0.025, min_up_alignment: 0.9659258263}
+    - id: right_safe_brush_grasp
+      type: opposing_tip_contact
+      parameters: {required_region: assets/scrub_brush/handle, forbidden_region: assets/scrub_brush/bristles}
+    - id: ordered_scrub_coverage
+      type: ordered_surface_checkpoints
+      parameters: {checkpoint_count: 3, order: [lower, middle, upper], cumulative_path_strict_min_m: 0.08, contact_required: true}
+    - id: forced_bimanual_roles
+      type: simultaneous_role_contacts
+      parameters: {same_hand_substitution_allowed: false}
+    - id: released_and_stable
+      type: physical_release_then_velocity_hold
+      parameters: {clearance_m: 0.06, hold_seconds: 0.5, max_linear_velocity_mps: 0.03, max_angular_velocity_radps: 0.4}
+  hold_steps: 1
+  timeout_steps: 1350
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  streams:
+    - {id: main, source: head, required: true, resolution: [640, 480]}
+    - {id: wrist_left, source: left_wrist, required: true}
+    - {id: wrist_right, source: right_wrist, required: true}
+stability:
+  physics_hz: 240
+  control_hz: 30
+  settle_steps: 240
+  max_linear_velocity_mps: 0.02
+  max_angular_velocity_radps: 0.15
+collection:
+  format: zarr_v2
+  schema: handson.b320_hs005.collection_vertical_slice
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, raw_action, proprioception, named_current_state, named_next_state, physx_current, physx_next, physx_substeps, rgb_head, rgb_main, rgb_wrist_left, rgb_wrist_right, contacts, success, bimanual_role_contacts, scrub_checkpoints]
+  min_successful_episodes: 1
+  replay:
+    requires_fresh_process: true
+    input: recorded_per_substep_robot_joint_targets
+    forbid_object_or_robot_state_restore_after_action_zero: true
+    full_trajectory_comparison: true
+validation:
+  report: taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.001, max_forbidden_events: 0}
+    reset: {min_trials: 1, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 1, max_black_fraction: 0.35, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 0.5, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 3, max_schema_errors: 0}

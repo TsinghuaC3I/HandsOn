@@ -1,0 +1,26 @@
+env_name: eval_gen02_open_trash_bin
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "The trash bin is fixed after reset at a randomized tabletop pose and yaw. Open its hinged lid from closed to at least 75 degrees. Success is immediate when the physical lid reaches that opening. Either hand may be used; no assigned contact, release, or stable hold is required."
+robot_type: dual_arm
+time_limit_seconds: 90
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx
+  control_hz: 30
+  physics_hz: 120
+  arm_type: rokae
+  hand_type: wuji1
+skills:
+  - articulated_lid_opening
+  - revolute_joint_manipulation
+objects:
+  - trash_bin_base
+  - trash_bin_lid
+workflow:
+  - inspect_randomized_bin_xy_and_yaw
+  - open_physical_lid_to_at_least_75_degrees
+success_criteria:
+  - physical_lid_joint_opened_to_at_least_75_degrees

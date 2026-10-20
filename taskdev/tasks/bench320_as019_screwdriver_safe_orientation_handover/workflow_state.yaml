@@ -1,0 +1,169 @@
+schema_version: 1
+task_id: B320-AS019
+task_name: bench320_as019_screwdriver_safe_orientation_handover
+state: bug_iteration
+updated_at: "2026-09-01T22:56:22+08:00"
+task_complete: false
+selected_asset:
+  status: selected_built_and_hash_locked
+  asset_id: polyhaven_flathead_screwdriver
+  title: Flathead Screwdriver
+  author: Dylan Detwiller
+  provider: Poly Haven
+  source_url: https://polyhaven.com/a/flathead_screwdriver
+  license: CC0-1.0
+  license_url: https://polyhaven.com/license
+  source_archive: assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip
+  archive_sha256: 0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb
+  asset_manifest: assets/polyhaven_flathead_screwdriver/asset_manifest.json
+  asset_manifest_sha256: d6df5854f14aafae5aadfba102b221f4ab4e390eeab66c885320d40428f54207
+  runtime_usd: assets/polyhaven_flathead_screwdriver/runtime/flathead_screwdriver.usd
+  runtime_sha256: 5ff790e9049bd953c7c1e0d495bd63fd93cfcac945a48d5180faa87e637b7bec
+  visual_mesh_count: 1
+  invisible_source_derived_collider_count: 5
+  rigid_owner_count: 1
+runtime:
+  simulator: Isaac Sim 5.1.0.0
+  isaaclab: 2.3.2
+  physics_backend: PhysX
+  physics_hz: 120
+  control_hz: 30
+  newton_enabled: false
+current_checkpoint:
+  status: pending_explicit_scheduler_assignment
+  content_fingerprint_sha256: 8f560a93bb24d7c77702b282ed4b0e707d185813964ce8f2b81b1be88f396626
+  ik_backend: haorui_new
+  dls_fallback_allowed: false
+  applied_control_trace_required: true
+  live_run_started: false
+  live_evidence_bound: false
+  heavy_slot_allocated: false
+layout:
+  status: current_preview_hash_plus_pre_hardening_unbound_live_baseline
+  current_checkpoint_live_pass: false
+  tool_orientation: horizontal
+  handle_tail_screen_side: right
+  marker_orientation: horizontal
+  marker_collision_enabled: false
+  preview: previews/reset_head.png
+  preview_sha256: 37b84a38512a2b80534b2c6e11bed1d8af5c50b82f99c673f545adc0b2449475
+live_core_audit:
+  status: pre_hardening_unbound_baseline_pass
+  current_checkpoint_pass: false
+  scene_manifest: scene_manifest.json
+  scene_manifest_sha256: 4ba39b24f02f37d3ca578d2b5e461bc44d5041b4bbc4bd7882c56a15599b0da4
+  summary: evidence/core_scene_summary.json
+  summary_sha256: f29a1d14c6c32c3dbc51afed664df144f196ddfd4350dbc46cbb087a9575aeef
+  zero_action: evidence/zero_action.json
+  zero_action_sha256: ae87cd0302e78b029df2922f809d3e8c6839e8d7d996b3adbe781eb1fb8a18a2
+  zero_action_seconds: 4.0
+  position_drift_m: 0.0
+  orientation_drift_rad: 0.0
+full_environment_no_contact_audit:
+  status: pre_hardening_unbound_baseline_pass
+  current_checkpoint_pass: false
+  evidence: evidence/polyhaven_camera_stability_20260828/as019_acceptance_validation.json
+  evidence_sha256: debd5a5869a9f8d65b45a667bea3d90a7c35bdaf1aa17989bd4d8333bf8693b2
+  three_camera_frames_per_camera: 30
+  stability_seconds: 10.0
+  right_wrench_gate_failure_count: 0
+  intended_contact_executed: false
+outcomes_audit:
+  status: pre_hardening_unbound_baseline_non_pass_automatic_right_tail_acquisition
+  current_checkpoint_status: not_run
+  status_scope: pre_haorui_pre_arrival_live_baseline
+  evidence: evidence/polyhaven_outcomes_20260828/as019_acceptance_validation.json
+  evidence_sha256: 13523b202d27608134ba59096fe73d699d0528c41446013e8628a3cac4053716
+  randomized_reset_trials_passed: 20
+  randomized_reset_trials_total: 20
+  negative_trials_passed: 10
+  negative_trials_total: 10
+  positive_trials_passed: 0
+  positive_trials_total: 10
+  positive_false_negative_count: 10
+  first_event_reached_count: 0
+  right_wrench_gate_failure_count: 0
+  intended_contact_executed: false
+giver_calibration_candidate:
+  name: Candidate C
+  status: cpu_audited_pending_instrumented_single_seed_canary
+  live_validated: false
+  robust: false
+  tool_local_pick_palm_m: [-0.177808511, 0.117600038, 0.103877986]
+  tool_local_acquire_reseat_palm_m: [-0.147738511, 0.117600038, 0.044227986]
+  wrist_roll_offset_rad: -1.574236454637
+  composed_tool_local_palm_roll_deg: 89.802895
+  right_hand_target: [1.41641399, 0.045268495, 1.41739004, 0.553414384, 0.037472055, 0.245187309, 0.151820915, 0.264527498, 1.204081680, -0.312368777, 1.034289708, -0.365826094, 1, 0, 1, 1, 0.769586480, 0.040202724, 0.938132077, 0.372722983]
+  raised_approach_world_z_m: 1.09
+  post_contact_preload_m: 0.0
+  reseat_max_correction_m_per_control_frame: 0.001
+  nominal_dual_model_audit:
+    accepted_collider_roles: [TailMain]
+    pick_tool_contact_count_per_model: 0
+    palm_or_non_tail_main_contact_count: 0
+    detailed_source_stl: {contact_depth_mm: 2.433, table_gap_mm: 16.727, radial_opposition_cosine: -0.458465, opposing_span_mm: 28.356}
+    calibrated_production_primitive: {contact_depth_mm: 3.741, table_gap_mm: 13.517, radial_opposition_cosine: -0.545760, opposing_span_mm: 27.870}
+    minimum_hand_physical_limit_margin_rad: 0.057631
+  perturbation_detailed_passed: 42
+  perturbation_primitive_passed: 37
+  perturbation_intersection_passed: 34
+  perturbation_samples_per_model: 81
+  minimum_role_x_margin_mm: 0.0468
+  haorui_command_path_audit: {solved_samples: 236, total_samples: 236, minimum_arm_operational_margin_rad: 0.063329, maximum_proposed_joint_delta_rad: 0.024265, joint_step_cap_rad: 0.03, pose_or_joint_cap_count: 0, approximate_max_position_error_m: 0.00003, approximate_max_rotation_error_rad: 0.000085}
+  next_live_action: scheduler_authorized_instrumented_camera_off_haorui_single_seed_stage0_canary
+automatic_arrival_gate:
+  status: cpu_tested_pending_live_canary
+  scope: automatic_wrapper_only
+  raw_manual_gate_required: false
+  position_tolerance_m: 0.010
+  rotation_tolerance_deg: 10.0
+  consecutive_distinct_control_steps_required: 4
+  pick_arrival_timeout_steps: 30
+  acquire_arrival_timeout_steps: 30
+  close_steps_after_pick_arrival: 35
+  fixed_pick_to_acquire_steps: 64
+  blocks_before_open: [right_semantic_owner, right_assist_wrench, stage_0_event, stage_0_transition, no_owner_reseat]
+checkpoint_validation:
+  ik_backend: haorui_new
+  dls_fallback_allowed: false
+  applied_control_trace_required: true
+  validation_fingerprint: 8f560a93bb24d7c77702b282ed4b0e707d185813964ce8f2b81b1be88f396626
+  live_run_started: false
+  heavy_slot_allocated: false
+preview_ready: true
+operator_visual_review_ready: true
+operator_contact_test_ready: false
+collection_ready: false
+blocked: false
+block_reason: null
+pending_gates:
+  - scheduler_authorized_candidate_c_arrival_gate_canary
+  - automatic_right_screwdriver_contact_acquisition
+  - current_checkpoint_instrumented_single_seed_stage0_canary
+  - table_safety_live_exact_view_creation_and_filter_path_parity
+  - table_safety_live_detailed_buffer_cardinality_and_last_substep_lineage
+  - table_safety_live_tool_support_and_arm_hand_penetration_thresholds
+  - active_right_wrench_positive_coverage
+  - right_left_any_screwdriver_surface_reachability
+  - ordered_contact_surface_sweep
+  - sustained_contact_without_reset
+  - off_surface_and_forbidden_marker_contact_sweep
+  - ordered_contact_airborne_zone_landing_success
+  - saved_zarr_episode
+  - fresh_process_physical_replay
+notes:
+  - "2026-09-03 operator bug iteration: restored the shared bimanual arm home and changed success to right-hand screwdriver contact -> left-hand screwdriver contact while airborne -> supported landing in the target zone. Contact location, simultaneous touch, tip direction, hand release, and final stability hold are not success gates. Current CPU/static validation passed (131 passed, 1 live-only skip), task registration audit passed, and live Isaac revalidation remains required."
+  - "The selected Poly Haven source archive, runtime USD, textures, and license/provenance closure are hash-bound."
+  - "Core and no-contact diagnostics ran on an otherwise idle local GPU0. Their checkpoint is unknown, so they are an unbound pre-hardening baseline and do not pass a current-checkpoint live gate."
+  - "Both standalone Isaac diagnostics wrote complete evidence before Kit cleanup lingered; only their already-finished cleanup processes were exact-stopped."
+  - "The outcomes campaign wrote complete evidence before Kit cleanup lingered; memory scheduling released only the completed teardown residue, and no follow-up Isaac run was started. Its checkpoint is unknown, so it is an unbound pre-hardening baseline."
+  - "The right-wrench check saw no invariant violation, but the positive campaign never reached right-tail ownership, so it is not positive coverage of active compliant assistance."
+  - "CPU-only Wuji collision-mesh/FK analysis shows the old pick/acquire/reseat trajectory is geometrically incompatible with the replacement handle; the new event latches use validated contact anywhere on the screwdriver envelope."
+  - "Candidate C passes 42/81 detailed, 37/81 primitive, and 34/81 intersected +/-2 mm, +/-2 degree perturbations, but its weakest role-x margin is 0.0468 mm; it is not robust or live-validated."
+  - "The 0/10 campaign and later 320-step seed-103 diagnostic are pre-Haorui/pre-arrival physical NON_PASS baselines; neither represents the current checkpoint."
+  - "The automatic-only measured-arrival gate is CPU-tested and prevents ownership, wrench, stage 0, or reseat before four consecutive, distinct in-tolerance pick and acquire samples; the manual path remains unaffected."
+  - "The reset gate proves exact authored +0.199947 mm clearance without requiring a sleeping-rigid contact row; physical table support is mandatory only for the final in-zone landing event."
+  - "Camera-off traced Haorui stage-0 telemetry is bound to fingerprint 8f560a93bb24d7c77702b282ed4b0e707d185813964ce8f2b81b1be88f396626, but no heavy slot is allocated and no live run was started."
+  - "Exact tool-table, table-arm, and table-hand views and fail-closed table-safety gates are implemented and CPU-covered, but their live view creation, filter paths, buffer cardinality, support, and penetration thresholds remain unverified."
+  - "The outcomes-only file intentionally has null camera/stability sections; those gates are supported only by the separate camera/stability evidence file."
+  - "The prior SceneSmith asset and all v2-v8 trajectory evidence are historical and superseded for current physical claims."

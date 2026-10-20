@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Arena_Allegro_B02_Nut_Bolt_Assembly">
+  <include file="panda_allegro_copy.xml" />
+  <include file="b02_nut_bolt_objects.xml" />
+  <include file="b02_nut_bolt_scene.xml" />
+
+  <option timestep=".002" noslip_iterations="5" noslip_tolerance="0" />
+</mujoco>

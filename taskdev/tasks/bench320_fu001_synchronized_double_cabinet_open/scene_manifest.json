@@ -1,0 +1,338 @@
+{
+  "schema": "fu001_core_scene_manifest_v1",
+  "task_id": "B320-FU001",
+  "runtime_task_name": "b320_synchronized_double_cabinet_open",
+  "scope": "selected_asset_integration",
+  "task_complete": false,
+  "success_motion_executed": false,
+  "authority": {
+    "path": "source_rows.authoritative.json",
+    "sha256": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987",
+    "excel_row": 215,
+    "left_role": "驱动左门target_joint_revolute",
+    "right_role": "驱动右门joint_11"
+  },
+  "cabinet": {
+    "asset_id": "cabinet-polyhaven-painted",
+    "asset": "handson/handson/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime",
+    "source_archive": "assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip",
+    "archive_sha256": "dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf",
+    "source_url": "https://polyhaven.com/a/painted_wooden_cabinet",
+    "license": "CC0 1.0",
+    "license_url": "https://polyhaven.com/license",
+    "components": {
+      "body": "runtime/painted_cabinet_body.usd",
+      "door_left": "runtime/painted_cabinet_door_left.usd",
+      "door_right": "runtime/painted_cabinet_door_right.usd"
+    },
+    "prim_path": "/World/Task/B320Benchmark/fixture_base",
+    "scale_xyz": [0.55, 0.55, 0.55],
+    "orientation_wxyz": [0.5, 0.5, -0.5, -0.5],
+    "converter_source_to_runtime": "(x,y,z) -> (x,-z,y)",
+    "scene_extra_rotation": "Rz(-90 degrees)",
+    "source_to_runtime": "(x,y,z) -> (-z,-x,y)",
+    "hinge_axis_source": "+Y",
+    "hinge_axis_runtime": "+Z",
+    "root_home_m": [-0.15, 0.0, 0.891203977235],
+    "table_top_z_m": 0.89,
+    "table_clearance_m": 0.001,
+    "collision_derivation": "source_mesh_topology_then_physx_convex_decomposition",
+    "placeholder_primitives": false
+  },
+  "historical_cabinet_reference": {
+    "asset": "assets/dv_double_cabinet_44781/mobility.usd",
+    "sha256": "9d3caff24dcf4b8465baa0d8186e588da33c1f4ce5cebd864358ababf15e9c46",
+    "evidence": "evidence/live_run/core_scene_summary.json",
+    "selected": false
+  },
+  "articulation": {
+    "root_path": "/World/Task/B320Benchmark/fixture_base/world_fixed_joint",
+    "dof_count": 2,
+    "axis": "Z",
+    "door_joints": {
+      "target_joint_revolute": {
+        "path": "/World/Task/B320Benchmark/target_joint_revolute",
+        "body0": "/World/Task/B320Benchmark/fixture_base",
+        "body1": "/World/Task/B320Benchmark/cabinet_door_left",
+        "limits_deg": [0.0, 90.0],
+        "initial_fraction": [0.10, 0.30],
+        "target_fraction": 0.80,
+        "source_pivot_m": [-0.5682284236, 0.5324437022, 0.2114711404]
+      },
+      "joint_11": {
+        "path": "/World/Task/B320Benchmark/joint_11",
+        "body0": "/World/Task/B320Benchmark/fixture_base",
+        "body1": "/World/Task/B320Benchmark/cabinet_door_right",
+        "limits_deg": [-90.0, 0.0],
+        "initial_fraction": [0.10, 0.30],
+        "target_absolute_fraction": 0.80,
+        "source_pivot_m": [0.5677881241, 0.5334159732, 0.2114711404]
+      }
+    },
+    "live_verified": true,
+    "live_evidence": "evidence/live_run/selected_asset_cpu_smoke.json"
+  },
+  "colliders": {
+    "selected_runtime_policy": "source_mesh_topology_then_physx_convex_decomposition",
+    "visual_mesh_collision_enabled": true,
+    "placeholder_primitives": false,
+    "component_mesh_counts": {"body": 3, "door_left": 1, "door_right": 1},
+    "owner_map": {
+      "body": "/World/Task/B320Benchmark/fixture_base",
+      "door_left": "/World/Task/B320Benchmark/cabinet_door_left",
+      "door_right": "/World/Task/B320Benchmark/cabinet_door_right"
+    },
+    "live_shape_overlap_audit": "pass_authored_post_constructor_post_settle_exact_physx",
+    "live_aabb_clearance_evidence": "evidence/live_run/selected_asset_cpu_smoke.json",
+    "live_exact_shape_evidence": "evidence/live_run/fu001_pre_post_shape_audit.json",
+    "live_exact_shape_evidence_sha256": "ee01eeae434a21d62c4e358f261ccf65519c0799fbcd982408d32c00849945e8",
+    "live_exact_shape_query_phases": [
+      "authored_after_sim_reset_before_task_reset_or_settle",
+      "post_constructor_reset_and_five_step_settle",
+      "post_constructor_plus_120_raw_physx_steps"
+    ],
+    "live_exact_shape_inventory": {
+      "cabinet_collision_shapes": 5,
+      "robot_collision_shapes": 60,
+      "table_collision_shapes": 1
+    },
+    "live_exact_shape_pair_count_each_phase": 0,
+    "live_exact_shape_query_errors": 0,
+    "historical_count": 54,
+    "historical_owner_map_evidence": "evidence/live_run/core_scene_summary.json"
+  },
+  "robots": {
+    "model": "ROKAE + Wuji gen1",
+    "left": {"root_path": "/World/HandsOnRobots/LeftRobot", "arm_joint_count": 7, "hand_joint_count": 20},
+    "right": {"root_path": "/World/HandsOnRobots/RightRobot", "arm_joint_count": 7, "hand_joint_count": 20}
+  },
+  "lighting": {
+    "dome": {"path": "/World/FU001CoreScene/DomeLight", "intensity": 350.0},
+    "distant": {"path": "/World/FU001CoreScene/DistantLight", "intensity": 2500.0}
+  },
+  "historical_head_camera": {
+    "prim_path": "/World/RecordCameras/head_camera",
+    "resolution_wh": [640, 480],
+    "preview": "previews/fu001_head_preview.png",
+    "sha256": "40c52b60845521dfa57c5f08b84c31fadc36a71de5918d213a86cb5a4caf01bf",
+    "bytes": 922446,
+    "mean_rgb": 190.66061631944444,
+    "std_rgb": 33.57889117336441,
+    "black_fraction": 0.0,
+    "manual_visual_review": "pass: both door leaves and handles visible; tabletop visible; no obvious interpenetration"
+  },
+  "historical_initial_clearance": {
+    "robot_collider_count": 60,
+    "cabinet_collider_count": 54,
+    "maximum_aabb_overlap_m": 0.0,
+    "threshold_m": 0.002,
+    "pass": true
+  },
+  "historical_zero_action": {
+    "physics_hz": 120,
+    "settle_steps": 120,
+    "duration_seconds": 3.0,
+    "steps": 360,
+    "finite": true,
+    "maximum_dof_position_drift_rad": 0.0013746321201324463,
+    "maximum_dof_speed_rad_s": 2.6127756427740678e-05,
+    "pass": true
+  },
+  "renderer": {"mode": "RayTracedLighting", "tonemap_operator": 4},
+  "historical_scheduler_run": {
+    "asset": "dv_double_cabinet_44781",
+    "run_id": "b320-fu001-core-scene-framed-r2-20260817T101457Z-e623f3c0",
+    "host": "hp-13",
+    "physical_gpu": 6,
+    "logical_gpu": 0,
+    "gpu_uuid_prefix": "be1de89c",
+    "input_commit": "79905e37c701db132180b8a74f9961630838aba9",
+    "status": "succeeded",
+    "exit_code": 0
+  },
+  "evidence": {
+    "historical_live_summary": "evidence/live_run/core_scene_summary.json",
+    "historical_live_summary_sha256": "bd375b5b8a441d213e40e6c4ac68abacac7fac6a5cf00105634754af4132e778",
+    "selected_asset_live_summary": "evidence/live_run/selected_asset_cpu_smoke.json",
+    "selected_asset_live_summary_sha256": "0076d10188fdfae16685e194730d1b8aca65b3926e43c1ea2f35c56b3ef082f8",
+    "selected_asset_head_preview": "evidence/live_run/selected_asset_cpu_smoke_head.png",
+    "selected_asset_head_preview_sha256": "56ce970e1f9396c07187cfbfbb83fd2b6c6a87f67ffc589c53befc031743ad57",
+    "selected_exact_shape_audit": "evidence/live_run/fu001_pre_post_shape_audit.json",
+    "selected_exact_shape_audit_sha256": "ee01eeae434a21d62c4e358f261ccf65519c0799fbcd982408d32c00849945e8",
+    "selected_exact_shape_audit_script": "evidence/live_run/fu001_pre_post_shape_audit.py",
+    "selected_exact_shape_audit_script_sha256": "379e85de9437f01b8326adfd03c46da3c47da3031a387e64a444654bd9f9543a",
+    "selected_exact_shape_audit_stdout": "evidence/live_run/fu001_pre_post_shape_audit.stdout",
+    "selected_exact_shape_audit_stdout_sha256": "bd9bcc3d141139443c2a41424a9154ab0e84273d19be1f7ee134a3e1e29212cc",
+    "selected_live_log_audit": "evidence/live_run/fu001_live_log_audit.json",
+    "selected_live_log_audit_sha256": "50040886159fca1e5f6235fb7fe1ba5388a79576b4b8b6569e6cc399ca794a9b",
+    "selected_long_stability_camera": "evidence/live_run/fu001_long_stability_camera.json",
+    "selected_long_stability_camera_sha256": "0a19150e20c41a31cc89ec8c32c8b2d61ad996401188ef694abafdf62feb0702",
+    "selected_long_stability_camera_script": "evidence/live_run/fu001_long_stability_camera.py",
+    "selected_long_stability_camera_script_sha256": "c133d8dc7f79d4c178dc0364a70681d8d914498ccdd8097cbfff17ac59986f24",
+    "selected_long_stability_camera_stdout": "evidence/live_run/fu001_long_stability_camera.stdout",
+    "selected_long_stability_camera_stdout_sha256": "04a7ee6c0c8cebdc8ae6bc93cb0199fb0bd95591e35a85bbfe38f39d480f2a15",
+    "selected_reach_contact_probe": "evidence/live_run/fu001_reach_probe.json",
+    "selected_reach_contact_probe_sha256": "7395d0681bde36900f506d4b32bcaa0fadddf51fdc044208e04ef33c608653e6",
+    "selected_reach_contact_probe_script": "evidence/live_run/fu001_reach_probe.py",
+    "selected_reach_contact_probe_script_sha256": "b76cf7141cf98e2eb194bb052075bb216a49c9ea5ccfd2b4f39272d9635e4967",
+    "selected_reach_contact_probe_stdout": "evidence/live_run/fu001_reach_probe.stdout",
+    "selected_reach_contact_probe_stdout_sha256": "6de4f03dab5d3d3bf27eb49784379ec12f525febfbc8241883c4da0a322ec89d",
+    "cpu_contract": "evidence/cpu_contract.json"
+  },
+  "selected_asset_checks": {
+    "asset_manifest_and_source_hash": true,
+    "runtime_component_closure": true,
+    "source_geometry_and_hinge_mapping": true,
+    "collision_derivation_recorded": true,
+    "composed_shape_overlap": "pass_post_reset_exact_physx_shape_audit",
+    "authored_shape_overlap": "pass_earliest_cooked_physx_query_before_task_reset",
+    "shape_contact_window": "pass_zero_rows_120_post_reset_physx_steps",
+    "support_and_reach": "pending",
+    "seeded_position_randomization": "pending_fixed_root_exemption",
+    "first_physx_zero_action_stability": true,
+    "head_camera_live": true,
+    "operator_contact_and_success": "pending"
+  },
+  "selected_randomization": {
+    "source_fixture_translation_range_m": [[-0.03, -0.03, 0.0], [0.03, 0.03, 0.0]],
+    "applied_fixture_translation_range_m": [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+    "mode": "fixed_articulated_root_exempt",
+    "exemption_reason": "The selected cabinet base is attached to /World/Task/B320Benchmark/fixture_base/world_fixed_joint; moving this fixed articulation root is not implemented or PhysX-verified.",
+    "door_translation_range_m": [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]],
+    "door_angle_fraction_range": [0.10, 0.30],
+    "seeded_position_randomization": "pending_fixed_root_exemption_audit"
+  },
+  "reset_staging": {
+    "mode": "collision_clear_spread_home",
+    "arm_home_source": "_C_TOOL_SPREAD_ARM_HOME",
+    "tcp_y_m": [-0.36, 0.36],
+    "applies_to": ["b320_synchronized_double_cabinet_open"],
+    "hand_door_collision_filtering": false,
+    "contact_policy": "ordinary_hand_door_and_table_contacts_remain_enabled",
+    "evidence": "evidence/live_run/selected_asset_cpu_smoke.json",
+    "reason": "The selected cabinet enters the normal tabletop hand envelope; verified spread-home staging removes startup hand/finger-to-door impulse while operator/IK still approaches the handles during the task."
+  },
+  "head_camera": {
+    "prim_path": "/World/RecordCameras/head_camera",
+    "resolution_wh": [640, 480],
+    "preview": "evidence/live_run/selected_asset_cpu_smoke_head.png",
+    "sha256": "56ce970e1f9396c07187cfbfbb83fd2b6c6a87f67ffc589c53befc031743ad57",
+    "bytes": 922446,
+    "mean_rgb": 176.747705078125,
+    "std_rgb": 45.36465976177833,
+    "black_fraction": 0.0060546875,
+    "manual_visual_review": "pass: selected cabinet body, both doors/handles, tabletop, and both Wuji hands are visible; no obvious reset-frame interpenetration",
+    "live_verified": true,
+    "historical_preview": "previews/fu001_head_preview.png",
+    "long_campaign": {
+      "evidence": "evidence/live_run/fu001_long_stability_camera.json",
+      "frames_target": 30,
+      "frames_successful": 30,
+      "resolution_hwc": [480, 640, 3],
+      "dtype": "uint8",
+      "all_nonblack": true,
+      "minimum_nonblack_fraction": 0.9917415364583333,
+      "maximum_black_fraction": 0.008258463541666667,
+      "first_frame_mean_rgb": 109.08021158854167,
+      "last_frame_mean_rgb": 106.47320529513888,
+      "live_verified": true,
+      "contract_max_black_fraction": 0.0,
+      "contract_threshold_met": false,
+      "threshold_note": "The 30 live RTX frames are populated and non-flat; the current YAML zero-black threshold is stricter than the measured dark-pixel fraction and remains an explicit review gate."
+    }
+  },
+  "initial_clearance": {
+    "live_shape_query": "robot_vs_selected_cabinet_exact_physx_pass_at_authored_post_constructor_post_settle",
+    "unapproved_overlap_pairs": [],
+    "evidence": "evidence/live_run/selected_asset_cpu_smoke.json",
+    "exact_shape_evidence": "evidence/live_run/fu001_pre_post_shape_audit.json",
+    "exact_shape_inventory": {
+      "cabinet_collision_shapes": 5,
+      "robot_collision_shapes": 60,
+      "table_collision_shapes": 1
+    },
+    "exact_shape_pair_count": 0,
+    "exact_shape_query_errors": 0,
+    "exact_shape_contact_rows_post_settle": 0,
+    "exact_shape_max_penetration_m": 0.0,
+    "intended_contact_allowlist": ["table_fixture_support", "left_hand_left_door", "right_hand_right_door"]
+  },
+  "zero_action": {
+    "physics_hz": 120,
+    "duration_seconds": 3.0,
+    "live_verified": true,
+    "finite": true,
+    "maximum_dof_position_drift_rad": 0.0,
+    "maximum_dof_speed_rad_s": 4.716851909059017e-10,
+    "settle_steps": 120,
+    "evidence": "evidence/live_run/selected_asset_cpu_smoke.json",
+    "pending_reason": "The 3-second core smoke is retained for backward comparison; the separate 10-second live zero-action campaign passes, while an action/contact-phase stability run remains untested.",
+    "long_campaign": {
+      "evidence": "evidence/live_run/fu001_long_stability_camera.json",
+      "log_audit": "evidence/live_run/fu001_live_log_audit.json",
+      "physics_hz": 120,
+      "steps": 1200,
+      "duration_seconds": 10.0,
+      "door_finite_all_samples": true,
+      "robot_finite_all_samples": true,
+      "door_max_position_drift_rad": 0.0,
+      "door_max_speed_rad_s": 4.716865786846824e-10,
+      "robot_max_joint_speed_rad_s": 0.1852208971977234,
+      "robot_max_link_velocity_abs_m_s_rad_s": 0.29803648591041565,
+      "step_exceptions": [],
+      "pass": true,
+      "contact_phase_tested": false
+    }
+  },
+  "reach_contact_probe": {
+    "evidence": "evidence/live_run/fu001_reach_probe.json",
+    "script": "evidence/live_run/fu001_reach_probe.py",
+    "stdout": "evidence/live_run/fu001_reach_probe.stdout",
+    "probe_run_pass": true,
+    "diagnostic_only": true,
+    "status": "pending_no_contact",
+    "constructor_reset": true,
+    "second_reset_avoided": true,
+    "completed_phases": [
+      "hold_spread_home",
+      "retreat_x",
+      "align_yz",
+      "approach_12cm",
+      "approach_06cm",
+      "approach_03cm_probe"
+    ],
+    "frames_completed": 49,
+    "finite_readback_all_frames": true,
+    "contact_observed": false,
+    "contact_observed_by_side": {"left": false, "right": false},
+    "peak_contact_force_n": {"left": 0.0, "right": 0.0},
+    "formal_success_observed": false,
+    "task_success_claimed": false,
+    "final_handle_error_m": {
+      "left": 0.22385915939086876,
+      "right": 0.19056235984730116
+    },
+    "final_joint_limit_margin_min_rad": {
+      "left": -0.000091552734375,
+      "right": -0.00020360946655273438
+    },
+    "caveat": "probe_run_pass only means the diagnostic completed with finite readback and no exception; it is not a reach/contact/success pass. Final handle errors remain large and both final minimum joint-limit margins are negative.",
+    "log_audit": {
+      "isaaclab_path": "/tmp/isaaclab/logs/isaaclab_2026-08-27_23-13-10.log",
+      "isaaclab_sha256": "ebf4eb6fcbea82ca000f8bf046db31fe5cd2df4b8b39c08dd0ef8288d010878b",
+      "kit_path": "/home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260827_231303.log",
+      "kit_sha256": "920fc0f26abc9da41f281301cade0e615ab141cc225019a4be2ea2df5d4bc0aa",
+      "stdout_sha256": "6de4f03dab5d3d3bf27eb49784379ec12f525febfbc8241883c4da0a322ec89d"
+    }
+  },
+  "checks": {
+    "selected_asset_provenance": true,
+    "selected_runtime_closure": true,
+    "selected_scene_live_audit": true,
+    "selected_exact_shape_audit": true,
+    "selected_live_log_audit": true,
+    "selected_long_stability_camera_campaign": true,
+    "selected_reach_contact_probe_diagnostic": true,
+    "core_scene_pass": true
+  }
+}

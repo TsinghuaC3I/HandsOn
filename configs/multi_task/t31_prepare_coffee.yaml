@@ -1,0 +1,46 @@
+env_name: t31_prepare_coffee
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Open either cabinet door, remove the mug, then close both doors. Place the mug upright on the coffee-machine base with its opening directly under the circular outlet. Press the bright-green start button and keep the mug aligned for the full 2-second brew. Place the filled mug upright and stable on the serving tray, then release it with both hands."
+robot_type: dual_arm
+scene: kitchen
+time_limit_seconds: 200
+skills:
+  - cabinet_door_manipulation
+  - handle_grasping
+  - precise_placement
+  - button_pressing
+  - wait_state_tracking
+objects:
+  - cabinet
+  - coffee_machine
+  - mug
+  - tray
+ui_feedback:
+  - coffee_flow_animation
+  - brew_progress_seconds
+  - brew_interruption_warning
+  - stage_checkmarks
+workflow:
+  - open_either_cabinet_door_at_least_0_65_rad
+  - remove_mug_after_opening_door
+  - close_both_cabinet_doors_within_0_10_rad
+  - align_upright_mug_under_outlet_within_40_mm
+  - press_green_start_button_at_least_1_5_mm
+  - keep_mug_aligned_for_uninterrupted_2_second_brew
+  - place_filled_mug_upright_on_tray
+  - stabilize_mug_and_release_both_hands
+success_criteria:
+  - either_cabinet_door_opened_at_least_0_65_rad
+  - mug_removed_after_door_opened
+  - both_cabinet_doors_closed_within_0_10_rad
+  - upright_mug_aligned_within_40_mm_xy_and_30_mm_base_z
+  - green_start_button_pressed_at_least_1_5_mm
+  - uninterrupted_2_second_brew_completed
+  - filled_mug_upright_and_stable_on_serving_tray
+  - both_hands_released_from_mug
+references:
+  - https://robocasa.ai/
+  - https://arxiv.org/abs/2603.04356

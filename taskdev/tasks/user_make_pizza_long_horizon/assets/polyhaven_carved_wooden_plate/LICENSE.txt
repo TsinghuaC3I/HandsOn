@@ -1,0 +1,8 @@
+Carved Wooden Plate
+===================
+
+Source: https://polyhaven.com/a/carved_wooden_plate
+License: CC0 1.0 (https://polyhaven.com/license)
+
+The downloaded glTF, binary buffer, and texture maps are retained from Poly
+Haven. No geometry was authored in this task.

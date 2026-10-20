@@ -1,0 +1,8 @@
+{
+  "foundation_pass": true,
+  "runner_rc": 0,
+  "schema": "hs005_core_scene_foundation_marker_v1",
+  "summary_path": "/home/user/dexjoco-main/taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/previews/scene_variants/modern_apartment/foundation_summary.json",
+  "summary_sha256": "f2056e70b49f78f3f7b1eb19a6ab436989322247d2db5cf1136fcde0b74fb6d0",
+  "task_complete": false
+}

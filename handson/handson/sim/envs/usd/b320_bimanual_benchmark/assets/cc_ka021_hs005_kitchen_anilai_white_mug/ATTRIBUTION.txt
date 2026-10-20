@@ -1,0 +1,9 @@
+"Modern Apartment" by Visthétique is licensed under CC BY 4.0.
+Source: https://sketchfab.com/3d-models/modern-apartment-1fbb649cd6624f2bb7b7d6e30c6533a5
+License: https://creativecommons.org/licenses/by/4.0/
+
+"Ceramic White Mug" by Ani 3D (anilai) is licensed under CC BY 4.0.
+Source: https://sketchfab.com/3d-models/ceramic-white-mug-fdf735d1f8f6469d892a989b509cd245
+License: https://creativecommons.org/licenses/by/4.0/
+
+KA021 reuses B320-HS005's reviewed kitchen placement, open-sink visual, and scene-owned analytic basin/countertop collision. It partitions the source faucet faces only to attach the exact side-lever geometry to runtime physics; it does not claim authorship of either downloaded visual model.

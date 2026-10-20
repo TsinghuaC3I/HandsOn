@@ -1,0 +1,24 @@
+env_name: t21_pass_block
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the left block with the left hand, transfer it to the right hand in the middle, then place it stably inside the right box."
+robot_type: dual_arm
+time_limit_seconds: 180
+skills:
+  - bimanual_coordination
+  - handoff
+  - pick_and_place
+objects:
+  - BuildingBlock017
+  - Clear_Box
+  - flat_screwdriver
+  - phillips_screwdriver
+  - spoon
+  - plastic_bolt
+  - a_marbles
+  - b_marbles
+  - hammer
+  - a_Nails
+  - 024_bowl

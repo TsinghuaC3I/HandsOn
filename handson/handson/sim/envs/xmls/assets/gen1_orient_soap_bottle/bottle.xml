@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="GEN1SourceSoapDispenser">
+  <asset>
+    <material name="gen1_mat_Object_11" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_11" file="visual_Object_11.obj" />
+    <material name="gen1_mat_Object_13" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_13" file="visual_Object_13.obj" />
+    <material name="gen1_mat_Object_15" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_15" file="visual_Object_15.obj" />
+    <material name="gen1_mat_Object_17" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_17" file="visual_Object_17.obj" />
+    <material name="gen1_mat_Object_19" rgba="1 1 1 1" shininess="0.861364" specular="0.0" />
+    <mesh name="gen1_visual_Object_19" file="visual_Object_19.obj" />
+    <material name="gen1_mat_Object_21" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_21" file="visual_Object_21.obj" />
+    <material name="gen1_mat_Object_23" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_23" file="visual_Object_23.obj" />
+    <material name="gen1_mat_Object_6" rgba="1 1 1 1" shininess="0.855263" specular="0.131579" />
+    <mesh name="gen1_visual_Object_6" file="visual_Object_6.obj" />
+    <material name="gen1_mat_Object_7" rgba="1 1 1 1" shininess="0.861364" specular="0.0" />
+    <mesh name="gen1_visual_Object_7" file="visual_Object_7.obj" />
+    <material name="gen1_mat_Object_9" rgba="1 1 1 1" shininess="0.8" specular="1.0" />
+    <mesh name="gen1_visual_Object_9" file="visual_Object_9.obj" />
+    <mesh name="gen1_collision_Object_11" file="collision_Object_11.obj" />
+    <mesh name="gen1_collision_Object_13" file="collision_Object_13.obj" />
+    <mesh name="gen1_collision_Object_15" file="collision_Object_15.obj" />
+    <mesh name="gen1_collision_Object_17_part_00" file="collision_Object_17_part_00.obj" />
+    <mesh name="gen1_collision_Object_17_part_01" file="collision_Object_17_part_01.obj" />
+    <mesh name="gen1_collision_Object_17_part_02" file="collision_Object_17_part_02.obj" />
+    <mesh name="gen1_collision_Object_17_part_03" file="collision_Object_17_part_03.obj" />
+    <mesh name="gen1_collision_Object_17_part_04" file="collision_Object_17_part_04.obj" />
+    <mesh name="gen1_collision_Object_17_part_05" file="collision_Object_17_part_05.obj" />
+    <mesh name="gen1_collision_Object_17_part_06" file="collision_Object_17_part_06.obj" />
+    <mesh name="gen1_collision_Object_17_part_07" file="collision_Object_17_part_07.obj" />
+    <mesh name="gen1_collision_Object_17_part_08" file="collision_Object_17_part_08.obj" />
+    <mesh name="gen1_collision_Object_19" file="collision_Object_19.obj" />
+    <mesh name="gen1_collision_Object_21_part_00" file="collision_Object_21_part_00.obj" />
+    <mesh name="gen1_collision_Object_21_part_01" file="collision_Object_21_part_01.obj" />
+    <mesh name="gen1_collision_Object_21_part_02" file="collision_Object_21_part_02.obj" />
+    <mesh name="gen1_collision_Object_21_part_03" file="collision_Object_21_part_03.obj" />
+    <mesh name="gen1_collision_Object_21_part_04" file="collision_Object_21_part_04.obj" />
+    <mesh name="gen1_collision_Object_21_part_05" file="collision_Object_21_part_05.obj" />
+    <mesh name="gen1_collision_Object_21_part_06" file="collision_Object_21_part_06.obj" />
+    <mesh name="gen1_collision_Object_21_part_07" file="collision_Object_21_part_07.obj" />
+    <mesh name="gen1_collision_Object_21_part_08" file="collision_Object_21_part_08.obj" />
+    <mesh name="gen1_collision_Object_21_part_09" file="collision_Object_21_part_09.obj" />
+    <mesh name="gen1_collision_Object_21_part_10" file="collision_Object_21_part_10.obj" />
+    <mesh name="gen1_collision_Object_21_part_11" file="collision_Object_21_part_11.obj" />
+    <mesh name="gen1_collision_Object_21_part_12" file="collision_Object_21_part_12.obj" />
+    <mesh name="gen1_collision_Object_21_part_13" file="collision_Object_21_part_13.obj" />
+    <mesh name="gen1_collision_Object_21_part_14" file="collision_Object_21_part_14.obj" />
+    <mesh name="gen1_collision_Object_21_part_15" file="collision_Object_21_part_15.obj" />
+    <mesh name="gen1_collision_Object_23" file="collision_Object_23.obj" />
+    <mesh name="gen1_collision_Object_9" file="collision_Object_9.obj" />
+    <mesh name="gen1_collision_body_part_00" file="collision_body_part_00.obj" />
+    <mesh name="gen1_collision_body_part_01" file="collision_body_part_01.obj" />
+    <mesh name="gen1_collision_body_part_02" file="collision_body_part_02.obj" />
+  </asset>
+  <worldbody>
+    <body name="gen1_soap_bottle" pos="-0.3 -0.06 0.923009445891" quat="-0.68489439056 0.68489439056 0.175839909519 0.175839909519">
+      <freejoint name="gen1_soap_bottle_joint" />
+      <inertial mass="0.1" pos="4.11005967928e-05 -7.67344819189e-06 -0.0264088061083" quat="-0.492853060554 -0.505469494038 -0.494420385083 0.507094600755" diaginertia="4.99267432299e-05 0.000167519976497 0.000167705021506" />
+      <geom name="gen1_visual_Object_11" type="mesh" mesh="gen1_visual_Object_11" material="gen1_mat_Object_11" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_13" type="mesh" mesh="gen1_visual_Object_13" material="gen1_mat_Object_13" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_15" type="mesh" mesh="gen1_visual_Object_15" material="gen1_mat_Object_15" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_17" type="mesh" mesh="gen1_visual_Object_17" material="gen1_mat_Object_17" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_19" type="mesh" mesh="gen1_visual_Object_19" material="gen1_mat_Object_19" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_21" type="mesh" mesh="gen1_visual_Object_21" material="gen1_mat_Object_21" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_23" type="mesh" mesh="gen1_visual_Object_23" material="gen1_mat_Object_23" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_6" type="mesh" mesh="gen1_visual_Object_6" material="gen1_mat_Object_6" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_7" type="mesh" mesh="gen1_visual_Object_7" material="gen1_mat_Object_7" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_visual_Object_9" type="mesh" mesh="gen1_visual_Object_9" material="gen1_mat_Object_9" contype="0" conaffinity="0" group="1" mass="0" />
+      <geom name="gen1_collision_Object_11" type="mesh" mesh="gen1_collision_Object_11" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_13" type="mesh" mesh="gen1_collision_Object_13" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_15" type="mesh" mesh="gen1_collision_Object_15" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_00" type="mesh" mesh="gen1_collision_Object_17_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_01" type="mesh" mesh="gen1_collision_Object_17_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_02" type="mesh" mesh="gen1_collision_Object_17_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_03" type="mesh" mesh="gen1_collision_Object_17_part_03" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_04" type="mesh" mesh="gen1_collision_Object_17_part_04" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_05" type="mesh" mesh="gen1_collision_Object_17_part_05" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_06" type="mesh" mesh="gen1_collision_Object_17_part_06" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_07" type="mesh" mesh="gen1_collision_Object_17_part_07" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_17_part_08" type="mesh" mesh="gen1_collision_Object_17_part_08" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_19" type="mesh" mesh="gen1_collision_Object_19" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_00" type="mesh" mesh="gen1_collision_Object_21_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_01" type="mesh" mesh="gen1_collision_Object_21_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_02" type="mesh" mesh="gen1_collision_Object_21_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_03" type="mesh" mesh="gen1_collision_Object_21_part_03" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_04" type="mesh" mesh="gen1_collision_Object_21_part_04" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_05" type="mesh" mesh="gen1_collision_Object_21_part_05" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_06" type="mesh" mesh="gen1_collision_Object_21_part_06" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_07" type="mesh" mesh="gen1_collision_Object_21_part_07" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_08" type="mesh" mesh="gen1_collision_Object_21_part_08" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_09" type="mesh" mesh="gen1_collision_Object_21_part_09" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_10" type="mesh" mesh="gen1_collision_Object_21_part_10" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_11" type="mesh" mesh="gen1_collision_Object_21_part_11" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_12" type="mesh" mesh="gen1_collision_Object_21_part_12" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_13" type="mesh" mesh="gen1_collision_Object_21_part_13" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_14" type="mesh" mesh="gen1_collision_Object_21_part_14" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_21_part_15" type="mesh" mesh="gen1_collision_Object_21_part_15" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_23" type="mesh" mesh="gen1_collision_Object_23" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_Object_9" type="mesh" mesh="gen1_collision_Object_9" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_00" type="mesh" mesh="gen1_collision_body_part_00" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_01" type="mesh" mesh="gen1_collision_body_part_01" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+      <geom name="gen1_collision_body_part_02" type="mesh" mesh="gen1_collision_body_part_02" group="3" rgba="0 0 0 0" friction=".8 .005 .0001" mass="0" />
+    </body>
+  </worldbody>
+</mujoco>

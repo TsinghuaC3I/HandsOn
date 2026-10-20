@@ -1,0 +1,100 @@
+schema_version: 1
+task_id: G05
+manifest_task_id: g05_folding_fan_bimanual_open
+task_name: g05_folding_fan_bimanual_open
+state: bug_iteration
+updated_at: "2026-09-01T23:07:01+08:00"
+runtime_contract:
+  isaac_sim: "5.1"
+  isaaclab: "2.3.2"
+  physics_backend: physx
+  physics_hz: 120
+  control_hz: 30
+current_arm_home_change:
+  policy: shared_mirrored_bimanual_home
+  task_local_spread_override_removed: true
+  static_validation: {status: pass, focused_home_tests: 7, affected_family_tests: 217, registration_audit_checks: 10}
+  live_initial_stability: pending
+selected_asset:
+  provenance: user_provided
+  archive: /home/user/下载/ZRYZ_LW_Assets_20260820.zip
+  archive_sha256: 703110ce837af54e127ab06c8be3b8c4602211fb731ee46d03bbcbc5427200ce
+  usd: handson/handson/sim/envs/usd/lw_native_articulation/assets/Foldingfan001/Foldingfan001.usd
+  usd_sha256: f0f3bbdabfc3131a7278b69f6a6216f658effb6f5e5a45e129c5d1eb6a4974f8
+  author: unresolved
+  upstream_source: unresolved
+  license: unresolved
+live_evidence:
+  first_attempt:
+    path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability.json
+    sha256: d59cf4261c1b1096db3832f88282c5f29ee5a3e090ee23019b23c588914f4bc5
+    status: fail
+    finding: "The upright fan self-opened under gravity from the seeded +/-2.5 degree reset to the +/-8 degree limits, so the stable-origin gate correctly rejected it."
+  corrected_rerun:
+    path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_initial_stability_rerun.json
+    sha256: 5f5af72ac8fc92c325b280c67ef1a7e9cf402664be2eb97677dc23c1ac58ee06
+    status: pass
+    topology: {bodies: 20, colliders: 23, dofs: 19, fixed_base: true}
+    zero_action_audit: {physics_hz: 120, physics_frames: 240, unreadable_frames: 0, max_q_drift_rad: 2.9993626045077496e-11, max_abs_qd_rad_s: 1.6602090227024746e-6}
+    reset_trials: {count: 4, seeds: [20260823, 20260823, 20260824, 20360826], same_seed_repeat: pass, different_seed: pass, same_process_hard_reset: pass}
+  collision_visibility_and_proxy_geometry_fix:
+    status: live_static_pass_rendered_operator_retest_pending
+    user_observation: "Unexpected convex polyhedra were visible and the grip proxy appeared to intersect the fan."
+    correction: "The 21 source collision prims and both assigned grip proxies now have computed visibility invisible; each proxy is collision-only and reduced to 30 x 4 x 50 mm."
+    geometry_envelope: {assigned_rib_embedding_m: 0.00085, maximum_outward_protrusion_m: 0.0032, neighbor_rib_clearance_exclusive_min_m: 0.0011}
+    persistent_live_static_evidence: {path: taskdev/tasks/g05_folding_fan_bimanual_open/evidence/live_collision_visibility_fix.json, sha256: 9fef0cbabe011eade4905d9608cfe0de726763ee02b240c2bde19d78283be303, status: pass, renderable_collision_only_path_count: 0, scope: not_operator_render_or_hand_sweep_evidence}
+completed_gates:
+  - task_contract_authored
+  - supplied_archive_safety_and_integrity_checked
+  - selected_asset_bytes_hash_bound
+  - static_source_usd_audited
+  - runtime_and_scene_scaffold_implemented
+  - task_registration_static_ready
+  - static_task_manifest_schema_passed
+  - shared_physical_contract_tests_35_passed
+  - collection_registration_tests_15_passed
+  - operator_test_collection_enabled
+  - live_first_physx_scene_construction_passed
+  - exact_live_20_body_23_collider_19_dof_inventory_passed
+  - initial_nonpenetration_audit_passed
+  - zero_action_exact_240_physics_frame_stability_passed
+  - stable_recording_origin_accepted
+  - same_seed_and_different_seed_reset_validation_passed
+  - same_process_hard_scene_reset_validation_passed
+  - post_fix_contract_and_runtime_review_74_passed
+  - final_composed_collision_only_visibility_live_static_audit_passed
+  - assigned_grip_proxy_static_geometry_envelope_audit_passed
+pending_gates:
+  - formal_twenty_reset_trial_threshold
+  - operator_manual_r_reset_validation
+  - operator_assigned_grip_reachability
+  - operator_preview_start_reset_stop
+  - live_assigned_manipulation_contact_validation
+  - post_fix_operator_hand_sweep_without_off_surface_contact
+  - post_fix_human_viewport_and_canonical_camera_visual_retest
+  - physical_positive_and_negative_success_trials
+  - canonical_head_and_wrist_camera_validation
+  - successful_zarr_episode_recorded_and_reviewed
+  - fresh_process_physical_replay
+  - operator_acceptance
+  - asset_author_source_and_license_resolution
+  - formal_collection_certification
+release_gate:
+  collection_unverified_gate_active: false
+  formal_collection_launch_enabled: true
+  operator_test_collection_enabled: true
+  launch_scope: operator_test_only
+  redistribution_blocked: true
+  reason: "Operator test collection is enabled for start/reset/stop and trial episode capture. This is not task acceptance or certification: physical success/negative trials, canonical cameras, reviewed Zarr output, fresh-process replay, operator acceptance, asset rights, and redistribution remain pending."
+blocked: false
+blocked_reason: null
+notes:
+  - "The first live failure is retained as evidence rather than overwritten; it demonstrated that the upright hinge orientation was physically unstable under gravity."
+  - "The corrected tabletop, gravity-neutral scene passed first-PhysX construction with exactly 20 bodies, 23 colliders, and 19 DOFs."
+  - "Four stable-origin trials passed: the same seed repeated deterministically, a different seed passed, and a same-process hard scene rebuild passed without restarting the SimulationApp."
+  - "The post-accept audit sampled exactly 240 consecutive 120 Hz physics frames with zero unreadable frames, approximately 3.0e-11 rad maximum coordinate drift, and zero root translation/rotation drift."
+  - "Assigned contact views were readable during reset validation, but operator reach, real manipulation contacts, physical positive/negative success trials, camera quality, Zarr recording, and replay are not yet validated."
+  - "The user later found visible convex polyhedra and apparent grip-proxy intersection. The old grip sleeves were visible 36 x 12 x 55 mm cubes, while the source /Collisions prims relied on inherited guide visibility; same-rigid-body overlap was not visible to the PhysX contact audit."
+  - "The fix makes all source collision prims and grip proxies explicitly invisible and reduces each collision-only grip proxy to 30 x 4 x 50 mm. Live static composition reports zero renderable collision-only paths, approximately 0.85 mm embedding into only the assigned rib, no more than 3.2 mm outward protrusion, and more than 1.1 mm neighbor-rib clearance."
+  - "The post-fix artifact is persistent live static evidence, not operator render or hand-sweep evidence. A human-viewport/canonical-camera render retest and a real operator hand sweep remain pending, so the visual/contact regression is not yet operator-accepted."
+  - "Operator test collection is enabled, but collection validation and formal certification remain pending. The user-provided archive still has no author, upstream-source, copyright, or license metadata, so redistribution remains blocked."

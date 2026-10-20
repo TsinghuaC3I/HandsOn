@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="269.284" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="lemon_material" file="visuals/T_lemon_BC001.png"/>
+    <material name="lemon_material" texture="lemon_material" specular="0.3103" shininess="0"/>
+    <mesh name="lemon_vis" file="visuals/lemon.obj"/>
+    <mesh name="lemon_Collider1_m_collision" file="collision/lemon_Collider1_m.obj"/>
+    <mesh name="lemon_Collider2_m_collision" file="collision/lemon_Collider2_m.obj"/>
+    <mesh name="lemon_Collider3_m_collision" file="collision/lemon_Collider3_m.obj"/>
+    <mesh name="lemon_Collider4_m_collision" file="collision/lemon_Collider4_m.obj"/>
+    <mesh name="lemon_Collider5_m_collision" file="collision/lemon_Collider5_m.obj"/>
+    <mesh name="lemon_Collider6_m_collision" file="collision/lemon_Collider6_m.obj"/>
+    <mesh name="lemon_Collider7_m_collision" file="collision/lemon_Collider7_m.obj"/>
+    <mesh name="lemon_Collider8_m_collision" file="collision/lemon_Collider8_m.obj"/>
+    <mesh name="lemon_Collider9_m_collision" file="collision/lemon_Collider9_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="lemon_material" mesh="lemon_vis"/>
+        <geom name="lemon_Collider1_m" class="collision" type="mesh" mesh="lemon_Collider1_m_collision"/>
+        <geom name="lemon_Collider2_m" class="collision" type="mesh" mesh="lemon_Collider2_m_collision"/>
+        <geom name="lemon_Collider3_m" class="collision" type="mesh" mesh="lemon_Collider3_m_collision"/>
+        <geom name="lemon_Collider4_m" class="collision" type="mesh" mesh="lemon_Collider4_m_collision"/>
+        <geom name="lemon_Collider5_m" class="collision" type="mesh" mesh="lemon_Collider5_m_collision"/>
+        <geom name="lemon_Collider6_m" class="collision" type="mesh" mesh="lemon_Collider6_m_collision"/>
+        <geom name="lemon_Collider7_m" class="collision" type="mesh" mesh="lemon_Collider7_m_collision"/>
+        <geom name="lemon_Collider8_m" class="collision" type="mesh" mesh="lemon_Collider8_m_collision"/>
+        <geom name="lemon_Collider9_m" class="collision" type="mesh" mesh="lemon_Collider9_m_collision"/>
+      <geom size="0.0277835 0.0344735 0.028012" pos="-0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

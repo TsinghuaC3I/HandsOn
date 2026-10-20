@@ -1,0 +1,80 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+# External assets stay excluded even after a local import.
+exclude = [
+  "handson/assets/robots/tianji_m6_ccs/model_*.urdf",
+  "handson/assets/robots/tianji_m6_ccs/source/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["handson", "handson_openpi_client"]
+artifacts = [
+  "handson/runtime/nvidia_egl_vendor.json",
+  "handson/assets/rendering/**",
+  "handson/assets/robots/**",
+  "handson/sim/envs/xmls/**",
+  "handson/sim/envs/usd/**",
+  "handson/sim/envs/*.npy",
+  "handson/sim/isaaclab/usd/**",
+  "handson/evaluation/*.json",
+  "handson/tasks/assets/*.json",
+  "handson/policies/assets/**",
+  "handson/policies/vendor/**",
+  "handson/policies/source_provenance.json",
+  "!handson/assets/robots/tianji_m6_ccs/model_*.urdf",
+  "!handson/assets/robots/tianji_m6_ccs/source/**",
+]
+
+[project]
+name = "handson"
+version = "0.0.1"
+description = "HandsOn: A Large-Scale Simulation Benchmark for Generalizable Dexterous Manipulation"
+readme = "README.md"
+requires-python = ">=3.11, <3.13"
+license = "MIT"
+authors = [
+    { name = "Tianwei Luo" },
+    { name = "Yiming He" },
+    { name = "Hongjin Wu" },
+]
+keywords = ["embodied AI", "benchmark", "toolkit"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "absl-py",
+    "av",
+    "dm-robotics-transformations",
+    "glfw",
+    "gymnasium==1.2.1",
+    "numcodecs>=0.12,<0.16",
+    "numpy==1.26.0; python_version < '3.12'",
+    "numpy>=2,<2.4; python_version >= '3.12'",
+    "scipy>=1.11,<1.16; python_version < '3.12'",
+    "scipy>=1.15,<1.18; python_version >= '3.12'",
+    "zarr<3",
+    "opencv-python<4.12",
+    "tqdm",
+    "imageio[ffmpeg]",
+    "pyyaml",
+    "tyro==0.9.17",
+    "typing-extensions==4.12.2"
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10", "pytest-subtests", "mujoco==3.3.0"]
+
+[project.scripts]
+handson-eval = "handson.evaluation.cli:main"
+handson-openpi-eval = "handson_openpi_client.cli.evaluate:main"
+
+[project.urls]
+Homepage = "https://llltttwww.github.io/HandsOn-website/"
+Repository = "https://github.com/TsinghuaC3I/HandsOn"
+Paper = "https://arxiv.org/abs/2610.26765"
+Documentation = "https://github.com/TsinghuaC3I/HandsOn/tree/main/docs"

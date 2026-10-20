@@ -1,0 +1,40 @@
+env_name: eval_flex01_compress_sponge_into_mug
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Use the left hand to stabilize the YCB mug. With the right hand, physically grasp and compress the YCB sponge, insert it through the mug rim until it is mostly inside, then release both objects and leave the mug upright and stable."
+robot_type: dual_arm
+time_limit_seconds: 240
+physics_hz: 120
+control_hz: 15
+skills:
+  - bimanual_coordination
+  - deformable_object_manipulation
+  - in_hand_compression
+  - constrained_insertion
+  - release_and_stability
+objects:
+  - lightwheel_ycb/sponge
+  - lightwheel_ycb/mug
+asset_constraints:
+  ycb_only: true
+  source_scale: 1.0
+  replacement_geometry: false
+workflow:
+  - stabilize_mug_with_left_hand
+  - physically_grasp_and_lift_sponge_with_right_hand
+  - compress_sponge_to_at_most_82_percent_principal_span
+  - cross_mug_rim_after_compression
+  - pack_sponge_mostly_inside_mug
+  - release_both_hands
+  - hold_stable_for_one_second
+success_criteria:
+  - ordered_physical_events_are_latched
+  - inside_node_fraction_at_least_0.85
+  - below_rim_node_fraction_at_least_0.80
+  - sponge_center_at_least_0.012_m_below_rim
+  - mug_tilt_at_most_15_degrees
+  - mug_final_displacement_at_most_0.05_m
+  - both_hands_clear_by_at_least_0.0275_m
+  - released_state_stable_for_1.0_s

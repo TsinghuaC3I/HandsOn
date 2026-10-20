@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1124.88" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="medium_clamp_material" file="visuals/T_medium_clamp_BC001.png"/>
+    <texture type="2d" name="medium_clamp_Lid_material" file="visuals/T_medium_clamp_BC001.png"/>
+    <material name="medium_clamp_material" texture="medium_clamp_material" specular="0.310345" shininess="0.1414"/>
+    <material name="medium_clamp_Lid_material" texture="medium_clamp_Lid_material" specular="0.310345" shininess="0.1414"/>
+    <mesh name="medium_clamp_vis" file="visuals/medium_clamp.obj"/>
+    <mesh name="medium_clamp_Lid_vis" file="visuals/medium_clamp_Lid.obj"/>
+    <mesh name="medium_clamp_Collider1_m_collision" file="collision/medium_clamp_Collider1_m.obj"/>
+    <mesh name="medium_clamp_Collider2_m_collision" file="collision/medium_clamp_Collider2_m.obj"/>
+    <mesh name="medium_clamp_Collider3_m_collision" file="collision/medium_clamp_Collider3_m.obj"/>
+    <mesh name="medium_clamp_Collider4_m_collision" file="collision/medium_clamp_Collider4_m.obj"/>
+    <mesh name="medium_clamp_Collider5_m_collision" file="collision/medium_clamp_Collider5_m.obj"/>
+    <mesh name="medium_clamp_Collider6_m_collision" file="collision/medium_clamp_Collider6_m.obj"/>
+    <mesh name="medium_clamp_Collider7_m_collision" file="collision/medium_clamp_Collider7_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider1_m_collision" file="collision/medium_clamp_Lid_Collider1_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider2_m_collision" file="collision/medium_clamp_Lid_Collider2_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider3_m_collision" file="collision/medium_clamp_Lid_Collider3_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider4_m_collision" file="collision/medium_clamp_Lid_Collider4_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider5_m_collision" file="collision/medium_clamp_Lid_Collider5_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider6_m_collision" file="collision/medium_clamp_Lid_Collider6_m.obj"/>
+    <mesh name="medium_clamp_Collider8_m_collision" file="collision/medium_clamp_Collider8_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider7_m_collision" file="collision/medium_clamp_Lid_Collider7_m.obj"/>
+    <mesh name="medium_clamp_Lid_Collider8_m_collision" file="collision/medium_clamp_Lid_Collider8_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="medium_clamp_material" mesh="medium_clamp_vis"/>
+        <geom name="medium_clamp_Collider1_m" class="collision" type="mesh" mesh="medium_clamp_Collider1_m_collision"/>
+        <geom name="medium_clamp_Collider2_m" class="collision" type="mesh" mesh="medium_clamp_Collider2_m_collision"/>
+        <geom name="medium_clamp_Collider3_m" class="collision" type="mesh" mesh="medium_clamp_Collider3_m_collision"/>
+        <geom name="medium_clamp_Collider4_m" class="collision" type="mesh" mesh="medium_clamp_Collider4_m_collision"/>
+        <geom name="medium_clamp_Collider5_m" class="collision" type="mesh" mesh="medium_clamp_Collider5_m_collision"/>
+        <geom name="medium_clamp_Collider6_m" class="collision" type="mesh" mesh="medium_clamp_Collider6_m_collision"/>
+        <geom name="medium_clamp_Collider7_m" class="collision" type="mesh" mesh="medium_clamp_Collider7_m_collision"/>
+        <geom name="medium_clamp_Collider8_m" class="collision" type="mesh" mesh="medium_clamp_Collider8_m_collision"/>
+        <body name="medium_clamp_Lid">
+          <joint name="medium_clamp_Lid_joint" pos="0.00042050 -0.00287250 -0.00036050" axis="0 0 1" stiffness="0.05" limited="true" range="0 0.610865" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="medium_clamp_Lid_material" mesh="medium_clamp_Lid_vis"/>
+          <geom name="medium_clamp_Lid_Collider1_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider1_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider2_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider2_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider3_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider3_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider4_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider4_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider5_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider5_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider6_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider6_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider7_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider7_m_collision"/>
+          <geom name="medium_clamp_Lid_Collider8_m" class="collision" type="mesh" mesh="medium_clamp_Lid_Collider8_m_collision"/>
+        </body>
+      <geom size="0.0459225 0.0575115 0.0125435" pos="-0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="medium_clamp_Lid_joint_actuator" joint="medium_clamp_Lid_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

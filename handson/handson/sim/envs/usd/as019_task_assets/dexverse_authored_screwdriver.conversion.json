@@ -1,0 +1,40 @@
+{
+  "center_of_mass_m": [
+    -0.0540714742,
+    0.025,
+    0.0
+  ],
+  "collider_count": 2,
+  "collider_paths": [
+    "/World/driver_handle/Cylinder",
+    "/World/driver_shaft/Cylinder_001"
+  ],
+  "collision_approximation": "convexDecomposition",
+  "context": {
+    "convert_stage_up_z": false,
+    "create_world_as_default_root_prim": true,
+    "disabling_instancing": true,
+    "embed_textures": true,
+    "export_preview_surface": true,
+    "ignore_animations": true,
+    "ignore_camera": true,
+    "ignore_light": true,
+    "keep_all_materials": true,
+    "merge_all_meshes": false,
+    "single_mesh": false,
+    "use_meter_as_world_unit": true
+  },
+  "context_sha256": "050a03b400f018cfb26de3b9e7f3b2f4e6762f86b9be22598ce5fa246c9c6671",
+  "mass_kg": 0.18,
+  "output": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/dexverse_authored_screwdriver.usd",
+  "output_bytes": 26028,
+  "output_sha256": "e63c067f689b25d4cb26cfe1d16cb8278dfac5a1dd6638d732453e1506a015b1",
+  "physics_authoring_version": 3,
+  "rigid_owner": "/World",
+  "schema": "as019_screwdriver_conversion_v1",
+  "source": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/dexverse_authored_screwdriver.glb",
+  "source_bytes": 18004,
+  "source_sha256": "b73daa7642be1ebaf06399d4ec10727aaf0005105dee2b8d21dd922e3e07c890",
+  "stable_facet_rotation_deg": -9.0,
+  "starts_asleep": true
+}

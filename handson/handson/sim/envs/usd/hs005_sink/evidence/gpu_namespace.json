@@ -1,0 +1,21 @@
+{
+  "hidden_devices": [
+    "/dev/nvidia0",
+    "/dev/nvidia1",
+    "/dev/nvidia2",
+    "/dev/nvidia3",
+    "/dev/nvidia4",
+    "/dev/nvidia6",
+    "/dev/nvidia7"
+  ],
+  "isolated_at": "2026-08-17T10:11:58.800145+00:00",
+  "logical_gpu": 0,
+  "mount_namespace_inode": 4026537423,
+  "physical_gpu": 5,
+  "schema_version": 1,
+  "selected_device": "/dev/nvidia5",
+  "selected_rdev": [
+    195,
+    5
+  ]
+}

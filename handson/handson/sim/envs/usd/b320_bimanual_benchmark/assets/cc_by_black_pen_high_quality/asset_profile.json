@@ -1,0 +1,26 @@
+{
+  "title": "Black Pen High Quality / Pen_A",
+  "license": "CC-BY-4.0",
+  "source_bbox_min": [
+    -0.8846095253892282,
+    -1.3463607518652914e-08,
+    -0.25027280673384666
+  ],
+  "source_bbox_max": [
+    0.5153351087743699,
+    0.10291745108672667,
+    -0.12596702575683594
+  ],
+  "source_longest_axis": 0,
+  "normalization_scale": 0.11429023412457491,
+  "length_m": 0.16,
+  "collision_radius_m": 0.007103468405450343,
+  "collision_height_m": 0.14579306318909932,
+  "collision_center_xyz_m": [
+    0.0,
+    0.0,
+    0.006103468405450343
+  ],
+  "collision_hull_vertices": 381,
+  "collision_hull_faces": 758
+}

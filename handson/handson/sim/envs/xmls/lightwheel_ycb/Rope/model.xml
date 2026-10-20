@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="38.1151" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="Rope_material" file="visuals/T_Rope_BC001.png"/>
+    <material name="Rope_material" texture="Rope_material" specular="0.3103"/>
+    <mesh name="Rope_vis" file="visuals/Rope.obj"/>
+    <mesh name="Rope_Collider1_m_collision" file="collision/Rope_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="Rope_material" mesh="Rope_vis"/>
+        <geom name="Rope_Collider1_m" class="collision" type="mesh" mesh="Rope_Collider1_m_collision"/>
+      <geom size="0.0763805 0.150986 0.054808" pos="-0.0 -0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

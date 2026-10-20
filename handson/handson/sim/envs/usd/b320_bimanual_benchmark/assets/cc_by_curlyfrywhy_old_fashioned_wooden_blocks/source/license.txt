@@ -1,0 +1,11 @@
+Model Information:
+* title:	Old Fashioned Wooden Blocks
+* source:	https://sketchfab.com/3d-models/old-fashioned-wooden-blocks-8331752cf38243638b0681f5ea230c28
+* author:	CurlyFryWhy (https://sketchfab.com/CurlyFryWhy)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Old Fashioned Wooden Blocks" (https://sketchfab.com/3d-models/old-fashioned-wooden-blocks-8331752cf38243638b0681f5ea230c28) by CurlyFryWhy (https://sketchfab.com/CurlyFryWhy) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

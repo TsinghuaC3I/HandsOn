@@ -1,0 +1,73 @@
+schema_version: 1
+task: t17_open_latched_door
+state: awaiting_operator_camera_episode_and_replay_validation
+task_complete: false
+updated_at: "2026-08-29T02:45:00+08:00"
+asset_selection:
+  near_side_handle:
+    id: helindu_door_handle
+    title: Door Handle
+    author: Helindu
+    source_url: https://sketchfab.com/3d-models/door-handle-b17802a127954b868a1250f55597142d
+    author_url: https://sketchfab.com/Helindu
+    license: CC-BY-4.0
+    license_url: https://creativecommons.org/licenses/by/4.0/
+    downloaded_archive: /home/user/下载/door_handle.zip
+    archive_sha256: 330c5bf51744ae54468c55896280d10d6c5ef0d7b63783112fe8052ecf36affd
+    resolved_files: [license.txt, scene.gltf, scene.bin]
+    selected_by_user: true
+    split_contract:
+      fixed_component: round_rosette_attached_to_door_panel
+      moving_component: lever_attached_to_existing_handle002_joint
+  door:
+    id: project_owned_door042
+    decision: reuse_existing
+    reason: preserves the qualified frame, panel, three revolute DOFs, reset, contact, and replay paths
+    additional_download_required: false
+integration_contract:
+  runtime: Isaac Sim 5.1 / IsaacLab v2.3.2
+  physics_hz: 120
+  control_hz: 30
+  preserve_paths:
+    - /World/Task/P002Door
+    - /World/Task/P002Door/Door042_Door
+    - /World/Task/P002Door/Door042_Handle002
+    - /World/Task/P002Door/Door042_Handle002/Handle002_joint
+  success: right Handle002 press unlocks; left hand opens door to at least 45 degrees; speed <= 0.5 rad/s for 15 control frames
+completed:
+  - retained source archive, license, and exact SHA-256
+  - split fixed rosette from moving lever and generated two runtime USD parts
+  - replaced unstable cooked convex meshes with four native Cube colliders
+  - preserved Door042 articulation, Handle002 body, joint, contact path, and replay schema
+  - verified 150 mm length and 30.024 mm minimum grasp-span clearance
+  - added fail-closed runtime checks for actual robot bases, arm homes, and palms
+  - moved the actual robot-state gate ahead of the collection-ready marker and repeated it after every public reset and at stable-origin acceptance
+  - added the matching actual Door042 root-pose, three-DOF, velocity, initial-contact, and hard-penetration gate at the same boundaries
+  - passed the earlier isolated headless CUDA gate: first reset, 20 seeded resets, 40 role targets, and 10 seconds of stable physics; this is historical after the latest minimal-scene and runtime-gate changes
+  - permanently omitted the nonsemantic CenterRig, added a pre-reset fail-closed stage-presence check, and preserved the independent /World/RecordCameras head and wrist paths
+  - routed the collection-platform P0-02 Preview action through the real dynamic recorder environment instead of the generic robot-only preview
+  - passed the bounded lightweight gate: 69 tests passed, 1 skipped, with Python compile, YAML parse, and scoped diff checks green
+  - passed the current family-aware registration audit with all 10 checks green using the fixed Isaac 5.1 toolchain Python
+  - passed the current-source CUDA priority-zero gate with 20/20 randomized resets, 40/40 role targets, and 1200/1200 zero-action physics steps
+  - made P0-02 Preview require the same stable-recording-origin gate as production collection instead of accepting a legacy zero-step summary
+  - passed the current visible production-backed preview at seed 20260829 with correct bases, arm homes, palms, Door042 root/DOFs/contacts, a 180-step stable origin, and no CUDA 700
+  - superseded the P0-02-specific x=-0.40 folded home and A01's side-raised inactive-left parking pose; P0-02 now uses A01's active right-arm home and its active mirror on the left
+  - separated controller TCP targets from physical world palm-link readback, removing the false 0.29 m / 180 degree startup rejection
+  - translated Door042 from x=0.28 m to x=-0.01 m so the platform/A01 bases retain the same task-relative reach as the formerly qualified x=-0.40 m robot / x=0.34 m door layout
+  - removed the P0-02-only 10-second recorder-ready delay; normal startup now matches A01's one-second settle plus 0.5 stable seconds, while the offline 10-second qualification remains separate
+  - passed the bilateral-A01-active Isaac 5.1 CUDA gate with 12/12 checks, 20/20 resets, 2/2 near-home palm motion targets, 40/40 role targets, and 1200/1200 stable physics steps
+  - passed a bounded production-recorder visible preview at seed 32002 with both arm chains idle and controllable, all robot/task gates green, a 180-step stable origin, and no demo writes
+  - calibrated Handle002 unlock/release to 25/15 degrees after the operator log showed 28.1688 degrees and 61.1925 N of intended contact while the former 45-degree gate left latch_press_steps at zero and the door drive locked
+evidence:
+  build: evidence/helindu_handle_build.json
+  live_physics_historical_cpu: evidence/live_physics_acceptance_helindu_v4_20260828.json
+  gpu_first_reset_failure: demos/collection_logs/20260828-190850_collector_001_17_open_latched_door.log
+  live_physics_current_gpu: evidence/live_physics_acceptance_bilateral_a01_active_reachable_20260829.json
+  visible_first_reset_current: evidence/visible_first_reset_bilateral_a01_active_20260829.json
+  visible_first_reset_failure: /home/user/下载/handson-local-state/runtime/.handson_isaacsim/toolchain/env/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260828_201232.log
+  platform_static: evidence/platform_static_acceptance_helindu_v2.json
+pending:
+  - operator visually confirms the bilateral active-arm pose in their collection window; the runtime pose and production gates already pass
+  - operator visually confirms the replacement and wraps at least two fingers around it
+  - operator completes intended right-handle/left-door success sequence
+  - capture three camera streams, a certified episode, and fresh-process replay

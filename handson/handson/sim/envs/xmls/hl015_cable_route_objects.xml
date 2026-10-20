@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="hl015_cable_route_objects">
+  <worldbody>
+    <!-- A light, dynamic cover starts beside the strip and must be carried
+         onto the green target after both connectors are seated. -->
+  <body name="hl015_cover" pos="-0.21 0.42 0.948" quat="0.7071068 0 0 0.7071068">
+      <freejoint name="hl015_cover_joint" />
+      <geom name="hl015_cover_collision" class="ctool_collision" type="box" size="0.108 0.043 0.008" mass="0.045" rgba="0 0 0 0" />
+      <geom name="hl015_cover_visual" class="ctool_visual" type="box" pos="0 0 0.002" size="0.108 0.043 0.008" material="ctool_appliance" />
+      <geom name="hl015_cover_handle" class="ctool_visual" type="box" pos="0 0 0.012" size="0.030 0.010 0.003" material="ctool_cyan" />
+    </body>
+  </worldbody>
+</mujoco>

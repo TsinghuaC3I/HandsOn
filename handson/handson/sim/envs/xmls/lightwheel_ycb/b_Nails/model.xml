@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="13214.8" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="b_Nails_material" file="visuals/T_b_Nails_BC001.png"/>
+    <material name="b_Nails_material" texture="b_Nails_material" specular="1"/>
+    <mesh name="b_Nails_vis" file="visuals/b_Nails.obj"/>
+    <mesh name="b_Nails_Collider1_m_collision" file="collision/b_Nails_Collider1_m.obj"/>
+    <mesh name="b_Nails_Collider2_m_collision" file="collision/b_Nails_Collider2_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="b_Nails_material" mesh="b_Nails_vis"/>
+        <geom name="b_Nails_Collider1_m" class="collision" type="mesh" mesh="b_Nails_Collider1_m_collision"/>
+        <geom name="b_Nails_Collider2_m" class="collision" type="mesh" mesh="b_Nails_Collider2_m_collision"/>
+      <geom size="0.003 0.026491 0.003" pos="0.0 0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

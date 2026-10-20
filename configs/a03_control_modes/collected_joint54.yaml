@@ -1,0 +1,13 @@
+env_name: t24_place_ball_in_bowl
+sim_backend: isaacsim
+robot_type: dual_arm
+arm_type: rokae
+hand_type: wuji1
+policy_schema: joint54
+controller_mode: real_aligned
+playback_slowdown: 1
+hand_lookahead_frames: 0
+prompt: Pick the tennis ball and place it into the bowl.
+target_object: tennis_ball
+randomize: true
+max_steps: 600

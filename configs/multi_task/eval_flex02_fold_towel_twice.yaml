@@ -1,0 +1,25 @@
+env_name: eval_flex02_fold_towel_twice
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Using both hands, fold the flat towel in half once. Keep the folded towel on the table, rotate it 90 degrees in the plane, then fold it in half a second time and release it stable on the table."
+robot_type: dual_arm
+time_limit_seconds: 180
+runtime:
+  simulator: isaacsim-5.1
+  physics_backend: physx
+  control_hz: 30
+  physics_hz: 120
+  arm_type: rokae
+  hand_type: wuji1
+skills:
+  - bimanual_coordination
+  - deformable_object_manipulation
+  - towel_folding
+  - planar_rotation
+  - ordered_multistage_manipulation
+  - release_and_stabilize
+objects:
+  - Towl011
+  - support_table

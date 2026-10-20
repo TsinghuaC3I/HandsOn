@@ -1,0 +1,27 @@
+{
+  "task_id": "GEN3",
+  "source": "https://sketchfab.com/3d-models/trash-can-with-animations-garbage-can-animated-d4bed4900def46e7b2f098b0a9ec6209",
+  "license": "CC-BY-4.0",
+  "files": [
+    {
+      "path": "ATTRIBUTION.md",
+      "size_bytes": 1455,
+      "sha256": "d999c3430b71bb4a3eb9ca611dcffed0387f5e9a5eec6265d683dceb1e078ea2"
+    },
+    {
+      "path": "geometry_report.json",
+      "size_bytes": 164002,
+      "sha256": "5591a6061306a9e8bac429d23e21899b807edd3807a65e17d3897d0d010c346d"
+    },
+    {
+      "path": "runtime/trash_bin.usda",
+      "size_bytes": 888690,
+      "sha256": "e12a481aaa47bcf31d751659782f2d88295a8e1bdc6f3dbea3ed256af09e5626"
+    },
+    {
+      "path": "source/d4bed4900def46e7b2f098b0a9ec6209.glb",
+      "size_bytes": 94644,
+      "sha256": "99274599f28b909fb5d56cf8a4646c433037559b4969751d8aee275b6a5d9626"
+    }
+  ]
+}

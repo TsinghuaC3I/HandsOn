@@ -1,0 +1,168 @@
+{
+  "schema": 1,
+  "benchmark_configuration": {
+    "arm": "rokae_ar5",
+    "hand": "wuji1",
+    "physics": "physx"
+  },
+  "robots": {
+    "kuka_kr6_r700": {
+      "kind": "arm",
+      "model": "KUKA KR6 R700 sixx",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/kuka_kr6_r700/model_right.urdf"
+        }
+      },
+      "source_record": "assets/robots/kuka_kr6_r700/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "ur5e": {
+      "kind": "arm",
+      "model": "Universal Robots UR5e",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/ur5e/model_right.urdf"
+        }
+      },
+      "source_record": "assets/robots/ur5e/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "abb_irb120": {
+      "kind": "arm",
+      "model": "ABB IRB120-3/0.58",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/abb_irb120/model_right.urdf"
+        }
+      },
+      "source_record": "assets/robots/abb_irb120/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "fanuc_lrmate200id": {
+      "kind": "arm",
+      "model": "FANUC LR Mate 200iD",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/fanuc_lrmate200id/model_right.urdf"
+        }
+      },
+      "source_record": "assets/robots/fanuc_lrmate200id/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "tianji_m6_ccs": {
+      "kind": "arm",
+      "model": "Tianji Marvin M6-CCS",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/tianji_m6_ccs/model_right.urdf"
+        },
+        "left": {
+          "format": "urdf",
+          "path": "assets/robots/tianji_m6_ccs/model_left.urdf"
+        }
+      },
+      "source_record": "assets/robots/tianji_m6_ccs/SOURCE.json",
+      "benchmark_qualified": false,
+      "distribution": "external"
+    },
+    "sharpa_wave": {
+      "kind": "hand",
+      "model": "Sharpa Wave",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/sharpa_wave/model_right.urdf"
+        },
+        "left": {
+          "format": "urdf",
+          "path": "assets/robots/sharpa_wave/model_left.urdf"
+        }
+      },
+      "source_record": "assets/robots/sharpa_wave/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "wuji1": {
+      "kind": "hand",
+      "model": "Wuji Hand 1",
+      "entries": {
+        "right": {
+          "format": "mjcf",
+          "path": "sim/envs/xmls/wuji_hand1/mjcf/right.xml"
+        },
+        "left": {
+          "format": "mjcf",
+          "path": "sim/envs/xmls/wuji_hand1/mjcf/left.xml"
+        }
+      },
+      "source_record": "assets/robots/wuji1/SOURCE.json",
+      "benchmark_qualified": true
+    },
+    "wuji2": {
+      "kind": "hand",
+      "model": "Wuji Hand 2 beta1",
+      "entries": {
+        "right": {
+          "format": "mjcf",
+          "path": "assets/robots/wuji2/model_right.xml"
+        },
+        "left": {
+          "format": "mjcf",
+          "path": "assets/robots/wuji2/model_left.xml"
+        }
+      },
+      "source_record": "assets/robots/wuji2/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "allegro": {
+      "kind": "hand",
+      "model": "Wonik Allegro Hand V3",
+      "entries": {
+        "right": {
+          "format": "mjcf",
+          "path": "assets/robots/allegro/model_right.xml"
+        },
+        "left": {
+          "format": "mjcf",
+          "path": "assets/robots/allegro/model_left.xml"
+        }
+      },
+      "source_record": "assets/robots/allegro/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "panda": {
+      "kind": "arm",
+      "model": "Franka Emika Panda",
+      "entries": {
+        "right": {
+          "format": "mjcf",
+          "path": "assets/robots/panda/model_right.xml"
+        }
+      },
+      "source_record": "assets/robots/panda/SOURCE.json",
+      "benchmark_qualified": false
+    },
+    "rokae_ar5": {
+      "kind": "arm",
+      "model": "ROKAE AR5-5_08",
+      "entries": {
+        "right": {
+          "format": "urdf",
+          "path": "assets/robots/rokae_ar5/model_right.urdf"
+        },
+        "left": {
+          "format": "urdf",
+          "path": "assets/robots/rokae_ar5/model_left.urdf"
+        }
+      },
+      "source_record": "assets/robots/rokae_ar5/SOURCE.json",
+      "benchmark_qualified": true,
+      "distribution": "bundled"
+    }
+  }
+}

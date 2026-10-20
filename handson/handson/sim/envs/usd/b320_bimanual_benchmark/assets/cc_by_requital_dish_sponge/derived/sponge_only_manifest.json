@@ -1,0 +1,43 @@
+{
+  "default_root_transform_identity": true,
+  "derived": {
+    "bin": "derived/sponge_only.bin",
+    "bin_sha256": "94671c6a447b02581680d2196728ceda01a2e5d9412692ba6f60fe63f51a8174",
+    "gltf": "derived/sponge_only.gltf",
+    "gltf_sha256": "c9eb86b1a5fd4b921940fcf569c57a0e9e95177b29a84ac469224e3b1562af0e"
+  },
+  "normalized_source_bounds": [
+    [
+      -1.054204816696,
+      0.0,
+      -0.593744208059
+    ],
+    [
+      1.054204816696,
+      0.365954520912,
+      0.593744208059
+    ]
+  ],
+  "normalized_source_extents": [
+    2.108409633392,
+    0.365954520912,
+    1.187488416118
+  ],
+  "schema": "handson_ka020_sponge_split_v1",
+  "selection": {
+    "component_count": 5,
+    "component_roots": [
+      5076,
+      5178,
+      26682,
+      26853,
+      30011
+    ],
+    "policy": "five compact shells centered at source mesh Y=-0.38; holder removed",
+    "removed_triangle_count": 45508,
+    "triangle_count": 3180,
+    "vertex_count": 1905
+  },
+  "source_gltf": "source/scene.gltf",
+  "source_sha256": "875ad3a55f1327dfac573f50366d33baf035b85c460526bc00ba8a27fd988ea9"
+}

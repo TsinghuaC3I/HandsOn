@@ -1,0 +1,128 @@
+schema_version: 1
+task:
+  id: synchronized_dual_knob_setting
+  title: "Synchronized Dual-Knob Setting"
+  description: "Use the assigned hands to rotate two spring-centered knobs in opposite directions, satisfy the sampled relation, and hold both settings synchronously."
+  taxonomy:
+    family: articulation
+    interactions: [assigned_contact, opposite_rotation, relational_setting, synchronized_hold]
+    horizon: short
+    handedness: bimanual
+source:
+  origin: original
+  attribution: "Original calibration-panel asset and task contract created for this benchmark; concept adapted from internal expansion-sheet row B320-KA005."
+  reference: "dexterous_hand_benchmark_320_tasks_expanded.xlsx:B320-KA005"
+  license: project
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.45, 0.0, 0.0], orientation_xyzw: [0.0, 0.0, 0.0, 1.0]}
+      - {position_m: [0.45, 0.0, 0.0], orientation_xyzw: [0.0, 0.0, 1.0, 0.0]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.75, -0.65, 0.55]
+    max: [0.75, 0.65, 1.45]
+  targets:
+    - id: left_knob
+      arm: left
+      frame: world
+      position_m: [-0.145, 0.135, 0.987]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+    - id: right_knob
+      arm: right
+      frame: world
+      position_m: [-0.145, -0.135, 0.987]
+      orientation_xyzw: [0.0, 0.0, 0.0, 1.0]
+      clearance_m: 0.03
+assets:
+  - id: dual_knob_calibration_panel
+    path: taskdev/tasks/synchronized_dual_knob_setting/assets/panel_asset_spec.yaml
+    kind: config
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: analytic
+reset:
+  seedable: true
+  max_settle_steps: 300
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+contact:
+  monitored_pairs:
+    - id: left_hand_left_knob
+      bodies: ["robot/hands/left/*", "assets/panel/left_knob"]
+      max_penetration_m: 0.005
+    - id: right_hand_right_knob
+      bodies: ["robot/hands/right/*", "assets/panel/right_knob"]
+      max_penetration_m: 0.005
+  forbidden_pairs:
+    - id: cross_hand_knob
+      bodies: ["robot/hands/*", "assets/panel/opposite_knob"]
+      max_penetration_m: 0.005
+    - id: arm_table
+      bodies: ["robot/arms/*", "environment/table"]
+      max_penetration_m: 0.005
+success:
+  logic: all
+  predicates:
+    - id: opposite_target_bands
+      type: dual_joint_target
+      parameters: {left_tolerance_deg: 5.0, right_tolerance_deg: 5.0, left_direction: negative, right_direction: positive}
+    - id: sampled_relation
+      type: relation_residual
+      parameters: {families: [ratio_total, sum_difference], linear_tolerance_deg: 3.0}
+    - id: assigned_contacts
+      type: dual_assigned_contact
+      parameters: {minimum_force_n: 0.15, forbid_cross_contact: true}
+    - id: synchronized_entry
+      type: event_time_delta
+      parameters: {start_max_s: 0.8, target_entry_max_s: 1.0}
+    - id: low_joint_velocity
+      type: joint_velocity
+      parameters: {maximum_abs_deg_per_s: 5.0}
+  hold_steps: 15
+  timeout_steps: 960
+camera:
+  primary: head
+  prim_path: /World/HandsOnRobots/CenterRig/head_camera
+  pose_source: robot_head
+  resolution: [640, 640]
+  require_rgb: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  settle_steps: 300
+  max_linear_velocity_mps: 20.0
+  max_angular_velocity_radps: 50.0
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, proprioception, rgb_head, rgb_wrist_left, rgb_wrist_right, contacts, success]
+  min_successful_episodes: 1
+validation:
+  report: taskdev/tasks/synchronized_dual_knob_setting/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 3, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 2, min_negative_trials: 1, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 60, max_black_fraction: 0.1, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 2.0, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 1, max_schema_errors: 0}

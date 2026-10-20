@@ -1,0 +1,15 @@
+Poly Haven Flathead Screwdriver by Dylan Detwiller
+
+License: CC0 1.0 Universal
+Source: https://polyhaven.com/a/flathead_screwdriver
+Poly Haven license reference: https://polyhaven.com/license
+CC0 reference: https://creativecommons.org/publicdomain/zero/1.0/
+
+Poly Haven states that its assets are released under CC0 and may be used,
+modified, and redistributed for any purpose, including commercial work,
+without required attribution. Attribution is retained here for provenance.
+
+The downloaded archive did not include a license file. This record binds the
+reviewed archive SHA-256
+0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb
+to the upstream source and license pages above.

@@ -1,0 +1,67 @@
+schema_version: 1
+task_id: bench320_bc007_bimanual_long_rod_yaw_reorientation
+canonical_task_id: B320-BC007
+runtime_task_name: bench320_bc007_bimanual_long_rod_yaw_reorientation
+manifest_sha256: 573ac641f222fe30177cca078e182a74f73b770d4391c5bbc992a4ac27e02bda
+generated_at: "2026-09-01T00:14:00+08:00"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+  physics_backend: physx
+task_complete: false
+checks:
+  schema:
+    status: pass
+    summary: "Sixteen focused BC007 contract tests pass, including continuous awake/support/contact readiness, acceptance-time actual-state recheck, contact-evidence fail-closed semantics, fixed-shape replay assist encoding, both reset clear paths, and per-physics-frame live-smoke sampling."
+    evidence: &machine_evidence
+      - path: taskdev/tasks/bench320_bc007_bimanual_long_rod_yaw_reorientation/evidence/machine_validation_20260829.json
+        sha256: 44557c73c706b5375ada670c90e04471ccd022482b46f8a72f35fef7748265a9
+    metrics: {error_count: 0}
+  assets:
+    status: pass
+    summary: "The unchanged BSD-3-Clause DexVerse stick USD was hash-verified and its live visual, single rigid body, scale, and convex collision proxy were inspected."
+    evidence: *machine_evidence
+    metrics: {missing_count: 0, all_scales_verified: true, all_collision_shapes_verified: true}
+  reachability:
+    status: pass
+    summary: "A full contact-first physical completion reached the randomized rod target through normal robot actions with both assigned grasp frames continuous and every arm joint at least 0.06529 rad from its soft limit."
+    evidence: *machine_evidence
+    metrics:
+      target_fraction: 1.0
+      min_joint_limit_margin_rad: 0.0652930736541748
+      max_position_error_m: 0.0012187694234952928
+      max_orientation_error_rad: 0.06443012584487698
+      rokae_model_verified: true
+      wuji_gen1_verified: true
+  contact:
+    status: pass
+    summary: "Exact left-hand, right-hand, and table contact views were live; both measured grasp events occurred, no forbidden terminal contact occurred, and eight reset poses had zero observed penetration."
+    evidence: *machine_evidence
+    metrics: {max_penetration_m: 0.0, forbidden_events: 0, required_pairs_observed: true}
+  reset:
+    status: pass
+    summary: "A fresh exact Isaac Sim 5.1/IsaacLab 2.3.2 CUDA run passed all eight randomized resets. Every seed remained awake and supported for 1200/1200 actual physics frames, same-seed replay was exact, and randomized XY span exceeded 31 mm on both axes."
+    evidence: &priority_zero_evidence
+      - path: taskdev/tasks/bench320_bc007_bimanual_long_rod_yaw_reorientation/evidence/priority_zero_live_20260901.json
+        sha256: 2cac7c60db2fcb4311547096a52d658ab357e058a1d41cc070712aaec0a6f161
+    metrics: {trials: 8, passed_trials: 8, physics_steps_per_trial: 1200, sampled_physics_steps_per_trial: 1200, same_seed_max_pose_error: 0.0, randomized_xy_min_span_m: 0.03193420171737671, repaired_runtime_live_validated: true}
+  success:
+    status: pass
+    summary: "One state-write-free physical positive trial passed all unchanged predicates and the 15-frame hold; 12 terminal near misses and six explicit failure cases remained rejected."
+    evidence: *machine_evidence
+    metrics: {positive_trials: 1, negative_trials: 18, false_positive_fraction: 0.0, false_negative_fraction: 0.0, hold_steps_observed: 15}
+  camera:
+    status: pass
+    summary: "Head and both wrist RGB streams were live uint8 480x640x3 images with nonzero fraction 1.0 and minimum mean RGB 124.29."
+    evidence: *machine_evidence
+    metrics: {frames: 3, black_fraction: 0.0, mean_rgb: 124.29311089409723, width: 640, height: 480, primary: head}
+  stability:
+    status: pass
+    summary: "The awake neutral-hold gate passed eight seeds at 120 Hz for 10 seconds each. All 54 arm/hand joints, both bases, and both palms had zero observed peak speed and zero drift; rod center drift stayed below 11.2 nm, minimum table support was 2.158 N, maximum table penetration was 1.772 micrometres, and hand penetration was zero."
+    evidence: *priority_zero_evidence
+    metrics: {required_neutral_hold_seconds: 10.0, physics_hz: 120, physics_steps_per_seed: 1200, seeds: 8, max_all_54_joint_speed_rad_s: 0.0, max_arm_drift_rad: 0.0, max_hand_drift_rad: 0.0, max_base_drift_m: 0.0, max_palm_drift_m: 0.0, max_rod_center_drift_m: 1.1175870895385742e-08, min_table_support_force_n: 2.1581997871673066, max_table_penetration_m: 1.7713754232318024e-06, repaired_runtime_live_validated: true}
+  collection:
+    status: pending
+    summary: "The official recorder loaded, stabilized, reset, entered teleoperation, rendered all cameras, ran 60 preview steps, and exited 0; a human-operated saved episode plus schema/readability/replay inspection is still required."
+    evidence: *machine_evidence
+    metrics: {episodes: 0, schema_errors: 0, streams: []}

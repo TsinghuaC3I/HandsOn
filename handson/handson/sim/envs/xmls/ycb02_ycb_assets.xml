@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="ycb02_ycb_assets">
+  <default>
+    <default class="ycb02_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" mass="0" friction="0.95 0.30 0.10" solref="0.001 1" solimp="0.998 0.998 0.001" />
+    </default>
+    <default class="ycb02_collision">
+      <geom type="mesh" condim="4" group="3" friction="0.95 0.03 0.003" solref="0.004 1" solimp="0.998 0.998 0.001" rgba="0 0 0 0" />
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="ycb02_g_cups_texture" file="lightwheel_ycb/g_cups/visuals/T_g_cups_BC001.png" />
+    <material name="ycb02_g_cups_material" texture="ycb02_g_cups_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_g_cups_vis" file="lightwheel_ycb/g_cups/visuals/g_cups.obj" />
+    <mesh name="ycb02_g_cups_collision_1" file="lightwheel_ycb/g_cups/collision/g_cups_Collider1_m.obj" />
+    <mesh name="ycb02_g_cups_collision_2" file="lightwheel_ycb/g_cups/collision/g_cups_Collider2_m.obj" />
+    <mesh name="ycb02_g_cups_collision_3" file="lightwheel_ycb/g_cups/collision/g_cups_Collider3_m.obj" />
+    <mesh name="ycb02_g_cups_collision_4" file="lightwheel_ycb/g_cups/collision/g_cups_Collider4_m.obj" />
+    <mesh name="ycb02_g_cups_collision_5" file="lightwheel_ycb/g_cups/collision/g_cups_Collider5_m.obj" />
+    <mesh name="ycb02_g_cups_collision_6" file="lightwheel_ycb/g_cups/collision/g_cups_Collider6_m.obj" />
+    <mesh name="ycb02_g_cups_collision_7" file="lightwheel_ycb/g_cups/collision/g_cups_Collider7_m.obj" />
+    <mesh name="ycb02_g_cups_collision_8" file="lightwheel_ycb/g_cups/collision/g_cups_Collider8_m.obj" />
+    <mesh name="ycb02_g_cups_collision_9" file="lightwheel_ycb/g_cups/collision/g_cups_Collider9_m.obj" />
+    <mesh name="ycb02_g_cups_collision_10" file="lightwheel_ycb/g_cups/collision/g_cups_Collider10_m.obj" />
+    <mesh name="ycb02_g_cups_collision_11" file="lightwheel_ycb/g_cups/collision/g_cups_Collider11_m.obj" />
+    <mesh name="ycb02_g_cups_collision_12" file="lightwheel_ycb/g_cups/collision/g_cups_Collider12_m.obj" />
+    <mesh name="ycb02_g_cups_collision_13" file="lightwheel_ycb/g_cups/collision/g_cups_Collider13_m.obj" />
+    <mesh name="ycb02_g_cups_collision_14" file="lightwheel_ycb/g_cups/collision/g_cups_Collider14_m.obj" />
+    <mesh name="ycb02_g_cups_collision_15" file="lightwheel_ycb/g_cups/collision/g_cups_Collider15_m.obj" />
+    <mesh name="ycb02_g_cups_collision_16" file="lightwheel_ycb/g_cups/collision/g_cups_Collider16_m.obj" />
+    <mesh name="ycb02_g_cups_collision_17" file="lightwheel_ycb/g_cups/collision/g_cups_Collider17_m.obj" />
+    <texture type="2d" name="ycb02_c_cups_texture" file="lightwheel_ycb/c_cups/visuals/T_c_cups_BC001.png" />
+    <material name="ycb02_c_cups_material" texture="ycb02_c_cups_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_c_cups_vis" file="lightwheel_ycb/c_cups/visuals/c_cups.obj" />
+    <mesh name="ycb02_c_cups_collision_1" file="lightwheel_ycb/c_cups/collision/c_cups_Collider1_m.obj" />
+    <mesh name="ycb02_c_cups_collision_2" file="lightwheel_ycb/c_cups/collision/c_cups_Collider2_m.obj" />
+    <mesh name="ycb02_c_cups_collision_3" file="lightwheel_ycb/c_cups/collision/c_cups_Collider3_m.obj" />
+    <mesh name="ycb02_c_cups_collision_4" file="lightwheel_ycb/c_cups/collision/c_cups_Collider4_m.obj" />
+    <mesh name="ycb02_c_cups_collision_5" file="lightwheel_ycb/c_cups/collision/c_cups_Collider5_m.obj" />
+    <mesh name="ycb02_c_cups_collision_6" file="lightwheel_ycb/c_cups/collision/c_cups_Collider6_m.obj" />
+    <mesh name="ycb02_c_cups_collision_7" file="lightwheel_ycb/c_cups/collision/c_cups_Collider7_m.obj" />
+    <mesh name="ycb02_c_cups_collision_8" file="lightwheel_ycb/c_cups/collision/c_cups_Collider8_m.obj" />
+    <mesh name="ycb02_c_cups_collision_9" file="lightwheel_ycb/c_cups/collision/c_cups_Collider9_m.obj" />
+    <mesh name="ycb02_c_cups_collision_10" file="lightwheel_ycb/c_cups/collision/c_cups_Collider10_m.obj" />
+    <mesh name="ycb02_c_cups_collision_11" file="lightwheel_ycb/c_cups/collision/c_cups_Collider11_m.obj" />
+    <mesh name="ycb02_c_cups_collision_12" file="lightwheel_ycb/c_cups/collision/c_cups_Collider12_m.obj" />
+    <mesh name="ycb02_c_cups_collision_13" file="lightwheel_ycb/c_cups/collision/c_cups_Collider13_m.obj" />
+    <mesh name="ycb02_c_cups_collision_14" file="lightwheel_ycb/c_cups/collision/c_cups_Collider14_m.obj" />
+    <mesh name="ycb02_c_cups_collision_15" file="lightwheel_ycb/c_cups/collision/c_cups_Collider15_m.obj" />
+    <mesh name="ycb02_c_cups_collision_16" file="lightwheel_ycb/c_cups/collision/c_cups_Collider16_m.obj" />
+    <mesh name="ycb02_c_cups_collision_17" file="lightwheel_ycb/c_cups/collision/c_cups_Collider17_m.obj" />
+    <mesh name="ycb02_c_cups_collision_18" file="lightwheel_ycb/c_cups/collision/c_cups_Collider18_m.obj" />
+    <mesh name="ycb02_c_cups_collision_19" file="lightwheel_ycb/c_cups/collision/c_cups_Collider19_m.obj" />
+    <mesh name="ycb02_c_cups_collision_20" file="lightwheel_ycb/c_cups/collision/c_cups_Collider20_m.obj" />
+    <mesh name="ycb02_c_cups_collision_21" file="lightwheel_ycb/c_cups/collision/c_cups_Collider21_m.obj" />
+    <mesh name="ycb02_c_cups_collision_22" file="lightwheel_ycb/c_cups/collision/c_cups_Collider22_m.obj" />
+    <mesh name="ycb02_c_cups_collision_23" file="lightwheel_ycb/c_cups/collision/c_cups_Collider23_m.obj" />
+    <mesh name="ycb02_c_cups_collision_24" file="lightwheel_ycb/c_cups/collision/c_cups_Collider24_m.obj" />
+    <mesh name="ycb02_c_cups_collision_25" file="lightwheel_ycb/c_cups/collision/c_cups_Collider25_m.obj" />
+    <mesh name="ycb02_c_cups_collision_26" file="lightwheel_ycb/c_cups/collision/c_cups_Collider26_m.obj" />
+    <mesh name="ycb02_c_cups_collision_27" file="lightwheel_ycb/c_cups/collision/c_cups_Collider27_m.obj" />
+    <texture type="2d" name="ycb02_j_cups_texture" file="lightwheel_ycb/j_cups/visuals/T_j_cups_BC001.png" />
+    <material name="ycb02_j_cups_material" texture="ycb02_j_cups_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_j_cups_vis" file="lightwheel_ycb/j_cups/visuals/j_cups.obj" />
+    <mesh name="ycb02_j_cups_collision_1" file="lightwheel_ycb/j_cups/collision/j_cups_Collider1_m.obj" />
+    <mesh name="ycb02_j_cups_collision_2" file="lightwheel_ycb/j_cups/collision/j_cups_Collider2_m.obj" />
+    <mesh name="ycb02_j_cups_collision_3" file="lightwheel_ycb/j_cups/collision/j_cups_Collider3_m.obj" />
+    <mesh name="ycb02_j_cups_collision_4" file="lightwheel_ycb/j_cups/collision/j_cups_Collider4_m.obj" />
+    <mesh name="ycb02_j_cups_collision_5" file="lightwheel_ycb/j_cups/collision/j_cups_Collider5_m.obj" />
+    <mesh name="ycb02_j_cups_collision_6" file="lightwheel_ycb/j_cups/collision/j_cups_Collider6_m.obj" />
+    <mesh name="ycb02_j_cups_collision_7" file="lightwheel_ycb/j_cups/collision/j_cups_Collider7_m.obj" />
+    <mesh name="ycb02_j_cups_collision_8" file="lightwheel_ycb/j_cups/collision/j_cups_Collider8_m.obj" />
+    <mesh name="ycb02_j_cups_collision_9" file="lightwheel_ycb/j_cups/collision/j_cups_Collider9_m.obj" />
+    <mesh name="ycb02_j_cups_collision_10" file="lightwheel_ycb/j_cups/collision/j_cups_Collider10_m.obj" />
+    <mesh name="ycb02_j_cups_collision_11" file="lightwheel_ycb/j_cups/collision/j_cups_Collider11_m.obj" />
+    <mesh name="ycb02_j_cups_collision_12" file="lightwheel_ycb/j_cups/collision/j_cups_Collider12_m.obj" />
+    <mesh name="ycb02_j_cups_collision_13" file="lightwheel_ycb/j_cups/collision/j_cups_Collider13_m.obj" />
+    <mesh name="ycb02_j_cups_collision_14" file="lightwheel_ycb/j_cups/collision/j_cups_Collider14_m.obj" />
+    <mesh name="ycb02_j_cups_collision_15" file="lightwheel_ycb/j_cups/collision/j_cups_Collider15_m.obj" />
+    <mesh name="ycb02_j_cups_collision_16" file="lightwheel_ycb/j_cups/collision/j_cups_Collider16_m.obj" />
+    <mesh name="ycb02_j_cups_collision_17" file="lightwheel_ycb/j_cups/collision/j_cups_Collider17_m.obj" />
+    <mesh name="ycb02_j_cups_collision_18" file="lightwheel_ycb/j_cups/collision/j_cups_Collider18_m.obj" />
+    <mesh name="ycb02_j_cups_collision_19" file="lightwheel_ycb/j_cups/collision/j_cups_Collider19_m.obj" />
+    <mesh name="ycb02_j_cups_collision_20" file="lightwheel_ycb/j_cups/collision/j_cups_Collider20_m.obj" />
+    <mesh name="ycb02_j_cups_collision_21" file="lightwheel_ycb/j_cups/collision/j_cups_Collider21_m.obj" />
+    <mesh name="ycb02_j_cups_collision_22" file="lightwheel_ycb/j_cups/collision/j_cups_Collider22_m.obj" />
+    <mesh name="ycb02_j_cups_collision_23" file="lightwheel_ycb/j_cups/collision/j_cups_Collider23_m.obj" />
+    <mesh name="ycb02_j_cups_collision_24" file="lightwheel_ycb/j_cups/collision/j_cups_Collider24_m.obj" />
+    <mesh name="ycb02_j_cups_collision_25" file="lightwheel_ycb/j_cups/collision/j_cups_Collider25_m.obj" />
+    <mesh name="ycb02_j_cups_collision_26" file="lightwheel_ycb/j_cups/collision/j_cups_Collider26_m.obj" />
+    <mesh name="ycb02_j_cups_collision_27" file="lightwheel_ycb/j_cups/collision/j_cups_Collider27_m.obj" />
+    <mesh name="ycb02_j_cups_collision_28" file="lightwheel_ycb/j_cups/collision/j_cups_Collider28_m.obj" />
+    <mesh name="ycb02_j_cups_collision_29" file="lightwheel_ycb/j_cups/collision/j_cups_Collider29_m.obj" />
+    <mesh name="ycb02_j_cups_collision_30" file="lightwheel_ycb/j_cups/collision/j_cups_Collider30_m.obj" />
+    <mesh name="ycb02_j_cups_collision_31" file="lightwheel_ycb/j_cups/collision/j_cups_Collider31_m.obj" />
+    <mesh name="ycb02_j_cups_collision_32" file="lightwheel_ycb/j_cups/collision/j_cups_Collider32_m.obj" />
+    <mesh name="ycb02_j_cups_collision_33" file="lightwheel_ycb/j_cups/collision/j_cups_Collider33_m.obj" />
+    <mesh name="ycb02_j_cups_collision_34" file="lightwheel_ycb/j_cups/collision/j_cups_Collider34_m.obj" />
+    <mesh name="ycb02_j_cups_collision_35" file="lightwheel_ycb/j_cups/collision/j_cups_Collider35_m.obj" />
+    <mesh name="ycb02_j_cups_collision_36" file="lightwheel_ycb/j_cups/collision/j_cups_Collider36_m.obj" />
+    <mesh name="ycb02_j_cups_collision_37" file="lightwheel_ycb/j_cups/collision/j_cups_Collider37_m.obj" />
+    <mesh name="ycb02_j_cups_collision_38" file="lightwheel_ycb/j_cups/collision/j_cups_Collider38_m.obj" />
+    <mesh name="ycb02_j_cups_collision_39" file="lightwheel_ycb/j_cups/collision/j_cups_Collider39_m.obj" />
+    <mesh name="ycb02_j_cups_collision_40" file="lightwheel_ycb/j_cups/collision/j_cups_Collider40_m.obj" />
+    <mesh name="ycb02_j_cups_collision_41" file="lightwheel_ycb/j_cups/collision/j_cups_Collider41_m.obj" />
+    <mesh name="ycb02_j_cups_collision_42" file="lightwheel_ycb/j_cups/collision/j_cups_Collider42_m.obj" />
+    <mesh name="ycb02_j_cups_collision_43" file="lightwheel_ycb/j_cups/collision/j_cups_Collider43_m.obj" />
+    <texture type="2d" name="ycb02_golf_ball_texture" file="lightwheel_ycb/golf_ball/visuals/T_golf_ball_BC001.png" />
+    <material name="ycb02_golf_ball_material" texture="ycb02_golf_ball_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_golf_ball_vis" file="lightwheel_ycb/golf_ball/visuals/golf_ball.obj" />
+    <mesh name="ycb02_golf_ball_collision_1" file="lightwheel_ycb/golf_ball/collision/golf_ball_Collider1_m.obj" />
+    <texture type="2d" name="ycb02_d_marble_texture" file="lightwheel_ycb/d_marbles_berkeley_rgbd/visuals/T_d_marbles_berkeley_rgbd_BC001.png" />
+    <material name="ycb02_d_marble_material" texture="ycb02_d_marble_texture" specular="0.33" shininess="0.7" />
+    <mesh name="ycb02_d_marble_vis" file="lightwheel_ycb/d_marbles_berkeley_rgbd/visuals/d_marbles_berkeley_rgbd.obj" />
+    <mesh name="ycb02_d_marble_collision_1" file="lightwheel_ycb/d_marbles_berkeley_rgbd/collision/d_marbles_berkeley_rgbd_Collider_m.obj" />
+    <texture type="2d" name="ycb02_tennis_ball_texture" file="lightwheel_ycb/tennis_ball/visuals/T_tennis_ball_BC001.png" />
+    <material name="ycb02_tennis_ball_material" texture="ycb02_tennis_ball_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_tennis_ball_vis" file="lightwheel_ycb/tennis_ball/visuals/tennis_ball.obj" />
+    <mesh name="ycb02_tennis_ball_collision_1" file="lightwheel_ycb/tennis_ball/collision/tennis_ball_Collider1_m.obj" />
+    <texture type="2d" name="ycb02_baseball_texture" file="lightwheel_ycb/baseball/visuals/T_baseball_BC001.png" />
+    <material name="ycb02_baseball_material" texture="ycb02_baseball_texture" specular="0.31" shininess="0.1" />
+    <mesh name="ycb02_baseball_vis" file="lightwheel_ycb/baseball/visuals/baseball.obj" />
+    <mesh name="ycb02_baseball_collision_1" file="lightwheel_ycb/baseball/collision/baseball_Collider1_m.obj" />
+  </asset>
+</mujoco>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  YCB04 is a full collection scene, not just the three-cup object include.
+  Keep the common Wuji/table/camera bootstrap in one place and add the
+  original-scale cup meshes as a task-local include.  task_preview expands and
+  coalesces these sections before Isaac's MJCF converter sees them.
+-->
+<mujoco model="Rokae_Arena_Wuji1_YCB04_Cups_Denest_Order">
+  <include file="arena_arm_hand_ycb_tasks_rokae_wuji1.xml" />
+  <include file="ycb04_cups_objects.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+</mujoco>

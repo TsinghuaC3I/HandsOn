@@ -1,0 +1,33 @@
+{
+  "provisional": true,
+  "units": "m",
+  "table_height": 0.8,
+  "pipette_length": 0.235,
+  "bottle_height": 0.145,
+  "bottle_radius": 0.032,
+  "cap_radius": 0.023,
+  "cap_height": 0.013,
+  "plunger_travel": 0.008,
+  "bottle_mass_kg": 0.13,
+  "cap_mass_kg": 0.012,
+  "pipette_mass_kg": 0.085,
+  "plunger_mass_kg": 0.004,
+  "plunger_stiffness_n_m": 20,
+  "plunger_damping_n_s_m": 0.5,
+  "plunger_spring_preload_m": 0.002,
+  "pipette_capacity_ul": 100.0,
+  "cap_required_turn_rad": 3.141592653589793,
+  "cap_lift_distance_m": 0.04,
+  "completion_hold_seconds": 0.5,
+  "workspace_offset_x_m": -0.25,
+  "pipette_tube_x_m": 0.08,
+  "pipette_tube_spacing_m": 0.15,
+  "bottle_xy_m": [
+    0,
+    0.105
+  ],
+  "cap_dish_xy_m": [
+    0,
+    -0.11
+  ]
+}

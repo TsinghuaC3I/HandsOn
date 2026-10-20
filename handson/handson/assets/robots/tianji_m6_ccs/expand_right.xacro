@@ -1,0 +1,1 @@
+<robot name="tianji_m6_ccs" xmlns:xacro="http://www.ros.org/wiki/xacro"><xacro:include filename="source/m6_ccs_description/xacro/arm.xacro"/><xacro:M6_CCS name="" direction="1"/></robot>

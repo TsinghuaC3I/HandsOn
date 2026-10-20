@@ -1,0 +1,550 @@
+{
+  "source_branch": "release/collection",
+  "base_commit": "282390f0fec08daca53e2d6b03f6ad8772b609f4",
+  "external_asset": {
+    "title": "Cardboard Boxes",
+    "url": "https://sketchfab.com/3d-models/cardboard-boxes-b0e935d3008b4c2f866e1a8fffe2bc1f",
+    "license": "CC BY 4.0",
+    "archive_author": "Isaac Rivera (@silverpirate)",
+    "page_author": "JesterArts_ (@JesterArtist_)",
+    "selected_component": "Box_big__CardboardBoxes__0"
+  },
+  "repository_assets_note": "Existing ROKAE/Wuji1 robots, attachment/camera mounts, center rig and table/wall/floor scene resources are reused at the pinned baseline. Their upstream licenses are not re-declared as CC BY. No external table texture pool was used in the retained GEN5 live runs.",
+  "files": [
+    {
+      "path": "handson/handson/sim/envs/xmls/arena_arm_hand_eval_gen07_stack_boxes_rokae_wuji1.xml",
+      "role": "scene_definition",
+      "sha256": "0d8ee299b09a89a3a0110ca6f7053127eba1720d06a4c728b09da909710d2f84"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/README.md",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "bcb2b5866434903e69405b71191978f0397846160446153a1b696b12278eb6fa"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/collision/base.obj",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "10907e38c6715088aff08a4244e85dc6779591be54c8619b5eec4b5409a2f1d3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/collision/small.obj",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "be0da598f81e8a0a04296ddb90314990463e88c5fc91e4dd84c9ff0d4c9a5ece"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/geometry.json",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "e5c0b251d8f650715d22d948c2b1284d03d54f9ead53a428385f3ffa96d229dd"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes.zip",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "422418b7bd9396b28a63723d73f4731bf9d87dc7dc6c87c13b7077c1893541a1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/license.txt",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "f50878eabb6869c14539d6c55c11b2c77fa748f46f5df51f79d296390ab94c78"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/scene.bin",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "a3933af4f9fb20d337d49efa061b27dda9276cbe66e99f341bbfb8c6d239292e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/scene.gltf",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "6e08cf4049b3f04851330385de6712087bd186048479c31a4133759c9c9effbf"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/textures/CardboardBoxes_baseColor.png",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "73e2c892beb1c48cba8614ac9cd4645f3a66048dcfc40f503a67bd151fc81c56"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/textures/CardboardBoxes_metallicRoughness.png",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "214e1ddac242954547f82773e09d972ba5c11b6aefeb86ec7e27d46eb25ad846"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/source/cardboard_boxes/textures/CardboardBoxes_normal.png",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "29caf713490c25eab6d2ca4b1921e19409ac271ca0947cf72e8f382e4224caeb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/visuals/base.obj",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "0dfa90490e8aea55ce7cccf0357e1b37ae4bada555104c9d417de5204b2c5503"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes/visuals/small.obj",
+      "role": "approved_package_source_or_derivative",
+      "sha256": "8fea1c3b2dee82d975baa767a48eee9660133f3e31ccd8ba1edca21a693bad7f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/eval_gen07_stack_boxes_objects.xml",
+      "role": "scene_definition",
+      "sha256": "00b8d59fd2863d41fc06cad02ef15c7ddd8330a103b6f5249d39f15e7b06ae87"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/center/body.stl",
+      "role": "mesh",
+      "sha256": "9f3a4f4ddf34f92fe53cc72892c54076bc36a84483d4c69150c9a71bc5121af9"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/center/head_fixed.stl",
+      "role": "mesh",
+      "sha256": "0c68e6ba96505fe8dd379cb12dfbde26b1a52467c453e4f6c56fbd763ac1dd34"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_base.stl",
+      "role": "mesh",
+      "sha256": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link1.stl",
+      "role": "mesh",
+      "sha256": "fdb3ee7308f8e5e0db4013408a7203b0158da17b946ce9401f0369a507d20ffb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link2.stl",
+      "role": "mesh",
+      "sha256": "183d4e17efd76881812f53c255cfb98e9e40205a36a9ba5642b3b0d1eb3309cd"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link3.stl",
+      "role": "mesh",
+      "sha256": "85ceba87b6e18580d6b69be2d0ce37f44314ca32ca56386e28c2026c9a838f9d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link4.stl",
+      "role": "mesh",
+      "sha256": "68e13a43dccbfb70d030c3426b8c87bd9d2aaac0ebdde0c6c92375950fe5c776"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link5.stl",
+      "role": "mesh",
+      "sha256": "0125e5bf7c7738bdbc2a62e55400aea27ce786839078ddc3d622a60cf4182b1c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link6.stl",
+      "role": "mesh",
+      "sha256": "e6120969880a60e984e9ac1e1ad57b09ff27c76f159393554f7eb939b1a90b98"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/left/AR5-5_08L-W4C6C11_link7.stl",
+      "role": "mesh",
+      "sha256": "ff61bfc769d0256477c7d04edca37ce843b7664af5aef68d776ff38a73fe3adb"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_base.stl",
+      "role": "mesh",
+      "sha256": "4bbc32045fe84b14e460875dfd2741288e3cc7c33257f411d8e6cb7633660a5c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link1.stl",
+      "role": "mesh",
+      "sha256": "87def8c59f505c3c54535aef2f1c7955e8b1166de335a3435b987bc0b94d70b6"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link2.stl",
+      "role": "mesh",
+      "sha256": "4418b25a88f15494f081a3ccd87b14ad2094e32852cf22c4db8679f75dbe9a66"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link3.stl",
+      "role": "mesh",
+      "sha256": "63c99f8a08819e17986aed7d1a518d48b3f82abfa85f074959d07513e0883bc9"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link4.stl",
+      "role": "mesh",
+      "sha256": "1246afa1fe4e081e30e549c7aeafecc1aa7ef819f5ea5c867b9bc93859705db1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link5.stl",
+      "role": "mesh",
+      "sha256": "abb885d5bb977d62443aa6a4501d5223debb42d5ec9fdec4e5aab88f2c604f70"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link6.stl",
+      "role": "mesh",
+      "sha256": "80a70e99f5a5c40a671af3d57d93503da2b6974fb2d1bae481f82fdd44f7249c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_arm/meshes/right/AR5-5_08R-W4C1C9-ZY2_link7.stl",
+      "role": "mesh",
+      "sha256": "430c3461cd039ca4e83b5bc5dfdce6426473e6f1916f9f1c6db6416e6d77e01f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "role": "scene_definition",
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_left.xml",
+      "role": "scene_definition",
+      "sha256": "3ea14fea96cf1e80f9018418e32754cd409394a1beefe7eb2e8d46e4d3a86bae"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_right.xml",
+      "role": "scene_definition",
+      "sha256": "df86bf6bd1871a66fc806ade5661ae85abbab0f0cdee002e90e9444eb6e30301"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/blue-wood.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "9b1eab21395a05d7463751f9075b16bc4fba8fd4be42938bda25ea634a345884"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/brass-ambra.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "246007818045b92276631294bb61d797806f2381d7044e98b6e3c4465f8e085c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/ceramic.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "beef464a2aa9143ba6a25a44adcbfd1f1aff16c5969edbf08019b61025388402"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/clay.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "0ea2ced7f0f07996292314e3f3f5df68c4d8c5b2cbf2180c899ed269906fdcd2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/dark-wood.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "5da8dbf7af06ecd251840aceec25fedcfa98267041cea289b2829c982e008dc3"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/gray-felt.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "04c1b483f04be0bd3d26a42ca530c05244cf4b52c0ccb027dbb8fc2bee41ca05"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/gray-woodgrain.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "b9e65c147f2683dbcfe6279b359db649aef0cb40ef8b1e3ed5ba6f29fab6b3d0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/green-wood.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "e4fd42ec6dea58f46aa96fc1d78d57c52450a6497dcad887ae8e2ff8c4af3797"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-gray-floor-tile.png",
+      "role": "texture",
+      "sha256": "a2aae4ba3b38c3ab9851eca9ad6e76cef9357ef75b3e9a4b280f694ca30acbc5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-gray-plaster.png",
+      "role": "texture",
+      "sha256": "d0bdaf13b44ab6ef3122451f6b3853e40bdf20bb9be7662649683ba525dfe191"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/light-wood.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "967be64bdb170d36283bc43c2ae5d525ec88f78bc837dc7d0efc9a28d68caad1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/red-wood.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "d42411e594d6be26c4876ada623b163af6621402462b244d86eaf6e72aca6494"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/steel-brushed.png",
+      "role": "texture",
+      "sha256": "43f30e7a2d0e8085aa15f58623b1753a003f93e5fe336eeaf65c146f955a81d5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/steel-scratched.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "7e22a111d516cc84addde9b2b18353d8a6ec521b9b79ec5e9c169e2d9000d3fe"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/white-plaster.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "a35c03edcef74c940400dd39e2384d05169d1d15ac247166b3b7a930acd70f03"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/wood-tiles.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "18d87069529422d832559ce969858576dd46f83efc3dfd9e5ffbf26d740be123"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/table_arena/textures/wood-varnished-panels.png",
+      "role": "bundled_table_texture_pool",
+      "sha256": "67b48dc99b89004d98cb0811f170d39993e7e205cc8d5bd3d01a4be137e33a85"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wrist_fisheye/meshes/wrist_fisheye_flange_assembly.stl",
+      "role": "mesh",
+      "sha256": "81007ca10b773904635bc1c2eccb35926330765517a73ee4161c3f8258d84a5d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_attachment/direct_adapter/meshes/Direct-Adapter-Mount-binary.stl",
+      "role": "mesh",
+      "sha256": "7b2fbf1c998d424bb9023ed711e50a49e47c2da1d27043bfa69a198eb2b928c8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link1.STL",
+      "role": "mesh",
+      "sha256": "71f3bd91df6067111ddc798b9f5c0102712b5f4a2a34f69bb34ba447c583f067"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link2.STL",
+      "role": "mesh",
+      "sha256": "ecdc1b1a4ca270b877c7b90a05c8108efbb8b3f8fa3163dc08d97772aa6e7b81"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link3.STL",
+      "role": "mesh",
+      "sha256": "7b94ff3af239009e6a3a1b57a16b9a7df5c886d0d23887b9f665ce69d5b44560"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_link4.STL",
+      "role": "mesh",
+      "sha256": "d3c08be539c3df633031c671b463534bc01e368f2d591699a929e2fe6750e613"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger1_tip_link.STL",
+      "role": "mesh",
+      "sha256": "68b6d3e45b27dd726f2dfab091960502b31e72ee6ce09b58023a5cfd80e06861"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link1.STL",
+      "role": "mesh",
+      "sha256": "f69537b263ba1341b628a7773536465dc3fee1aaaa473f7a81275d0d27a872a0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link2.STL",
+      "role": "mesh",
+      "sha256": "deaa715c050523f31d6a56319c7c8eb82d37bcfb510021b5a85c771dd39d3de2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link3.STL",
+      "role": "mesh",
+      "sha256": "4d41d5f4b5886b05a70ef83b21c9a0e4c3ef91952274bcc51adc75e1f04ce462"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_link4.STL",
+      "role": "mesh",
+      "sha256": "45f39cc7afe3d8a486eb993bf9fb6382476b186d654c4c618330452357c05ec8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger2_tip_link.STL",
+      "role": "mesh",
+      "sha256": "444f21c1f33dc62101463cf2dfabdd6869a0500e72243cc08ec15cbf53480671"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link1.STL",
+      "role": "mesh",
+      "sha256": "958c98295aa56b586a710442d82279c89c8cd44c2de2e7e9793b6df770ace3d1"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link2.STL",
+      "role": "mesh",
+      "sha256": "62da611f79b2db7185a24549f6d6478916fad44c3fc248ef5c75fd1a60f66500"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link3.STL",
+      "role": "mesh",
+      "sha256": "0879ef856c78f9d6046080d7c917086f8a493b00e983455299c04a240a52cc53"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_link4.STL",
+      "role": "mesh",
+      "sha256": "16d7079e439fe3b263f8477e5b2c8b5e73ebb3078efb4e75478c8f04b03e2c88"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger3_tip_link.STL",
+      "role": "mesh",
+      "sha256": "56cd77fddaa7eb902037efe5eb87b7b839a3155c3e27e7857b018d66b8013c5e"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link1.STL",
+      "role": "mesh",
+      "sha256": "5d94d100a6a5cbc4a5ea8b5ae5ff4299bcd30b5486de7472fb74697fefc4569b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link2.STL",
+      "role": "mesh",
+      "sha256": "a8673481e8c690507eea8a60d64d51cb44dcef813127eafaf09c023abf5f4498"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link3.STL",
+      "role": "mesh",
+      "sha256": "54b3d014dfad129439d853be4f933b59fe4d81652ebba3a97d44ecd75961140a"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_link4.STL",
+      "role": "mesh",
+      "sha256": "c7e9629db69ab4b7bb8acb72687f1ff67fb1c760b8b2c05d3e93059d3a53aeb0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger4_tip_link.STL",
+      "role": "mesh",
+      "sha256": "0c4a000431a05bcd3599a55d2c27987ca27cb61d9de85b4a57f1c2bfba3b0292"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link1.STL",
+      "role": "mesh",
+      "sha256": "550a218785599fb609229ba897acdf2eacd3f6a9424879886af658257d0aade5"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link2.STL",
+      "role": "mesh",
+      "sha256": "1baa1b69a20abac1f34233ae5f2f75ebae825f7a83d9ef0725a6be54d86e043f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link3.STL",
+      "role": "mesh",
+      "sha256": "056f0b85d4e4577488cfad3ae9deaa041d1dfa28c959795b0d560de2114ab793"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_link4.STL",
+      "role": "mesh",
+      "sha256": "c8cfde6c45b252a758c1c5088327a424bea05ef4b4fce1fc68ec63f981b95a0b"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_finger5_tip_link.STL",
+      "role": "mesh",
+      "sha256": "8af31892809e9b8125fdda8c1c3e52769dcdd9c92e9f44e3d626acd6323275a8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/left/left_palm_link.STL",
+      "role": "mesh",
+      "sha256": "23ce67ed4cdbbb6c8bfa7830f4ea9ce2906772b10a71a81e9eb439c90df7560d"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link1.STL",
+      "role": "mesh",
+      "sha256": "bf75dfb099a56ab2b657cffe587ceaba96521d6f3128b692c30208a5d6aef326"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link2.STL",
+      "role": "mesh",
+      "sha256": "9d029f972a39492aeb9fe91fd49156816548402061d61bcb6a4681210a34e063"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link3.STL",
+      "role": "mesh",
+      "sha256": "da791bd67141cdf1209bfb636e5ce47e746d2261b154eb3af0e35f6f4ee46b45"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_link4.STL",
+      "role": "mesh",
+      "sha256": "cdfa7e01e9c352f5a477dc203507b2d448ba9e5071a565a54744f94156c3d5f2"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger1_tip_link.STL",
+      "role": "mesh",
+      "sha256": "e1e38aa11dc3df0f1c1848111fd0a95e88991f965dc4a9c5c4c989a0df3de716"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link1.STL",
+      "role": "mesh",
+      "sha256": "36e0471a0373a7634fc10911b33f3b30a5fe829f6526e656a911406cebf19731"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link2.STL",
+      "role": "mesh",
+      "sha256": "890d04d52e3f5b94f926dfbee28ef21fe26be95dfe665cd0656e7a25f4a29424"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link3.STL",
+      "role": "mesh",
+      "sha256": "3e9658abdea6acedd342c1866dc45ad61132538ce8de2c7f0dea3e49620d4810"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_link4.STL",
+      "role": "mesh",
+      "sha256": "0e09c2fed7107c1530b726d8bd6f2282e6d02c4abe9fb52a7528a19c6f567709"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger2_tip_link.STL",
+      "role": "mesh",
+      "sha256": "08da856de7216b963733c1b16cf87e20ba5ca8b0b649994a14d7c9b7eb5d5637"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link1.STL",
+      "role": "mesh",
+      "sha256": "558fac18be219c0e6bb6224b82c711b3efe762b547818ea074eda93dc38bad07"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link2.STL",
+      "role": "mesh",
+      "sha256": "e415003612b0630834832c59feb6c6ec73a7ccf291de133b28df22653130139f"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link3.STL",
+      "role": "mesh",
+      "sha256": "802facc87a170fc5976de6306cf0f6e2deb3d9493d56e4824b51bdccb21f1292"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_link4.STL",
+      "role": "mesh",
+      "sha256": "266dfba22df8d9e35dee4947a212668e0b11cb6a5802fe47c3d791092ffe4dde"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger3_tip_link.STL",
+      "role": "mesh",
+      "sha256": "7a99f65a6a473899913d4273e61319e3724fbf81ac8532969ed5c2ff1c1bde54"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link1.STL",
+      "role": "mesh",
+      "sha256": "508321fefaeae1ae0567f89acd2492fac27cc468a2f562d895afcff192b0d00c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link2.STL",
+      "role": "mesh",
+      "sha256": "26ebd4e9cd59a386b80b8a7ce04b8635d4b4a32a397e6aa3c54c3b1271809daa"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link3.STL",
+      "role": "mesh",
+      "sha256": "4070aedb2114726b1f548a49425cd26cd3d4d423dcb4801601be9a3643df9327"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_link4.STL",
+      "role": "mesh",
+      "sha256": "05be89250fc099f835470adb43a4bdf05c65d464c0e5920194ec5be5e7908ee0"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger4_tip_link.STL",
+      "role": "mesh",
+      "sha256": "885b8d7c77aae7c3144271e81925bbd790a928a2da37383de2ec54c40ae83e69"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link1.STL",
+      "role": "mesh",
+      "sha256": "85ce22b8285a7d85e4c866151c972cde0736d4f618f35015b0b96fe39e367e49"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link2.STL",
+      "role": "mesh",
+      "sha256": "95eb71cc2f4c41852a6711973147d3caf10cf7f2bf6203471cef20ff63fef50c"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link3.STL",
+      "role": "mesh",
+      "sha256": "4e0826e1ef004024e13fb594ab7a16765dcd3c5972bb2693e0f9a35c5c8325c8"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_link4.STL",
+      "role": "mesh",
+      "sha256": "291ac27b50d62223883fda5ff744be19d39ad7f83762c8bd5482ae244c2e1966"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_finger5_tip_link.STL",
+      "role": "mesh",
+      "sha256": "d927bbf9ab91cf101e3c6b0e380a78034626cda4df8766fea88b9b5683681012"
+    },
+    {
+      "path": "handson/handson/sim/envs/xmls/wuji_hand1/meshes/right/right_palm_link.STL",
+      "role": "mesh",
+      "sha256": "1ba4495e3b7adc707d50150a8625a0ed3731fa42ab6d40e62ae7437da103ce5e"
+    }
+  ]
+}

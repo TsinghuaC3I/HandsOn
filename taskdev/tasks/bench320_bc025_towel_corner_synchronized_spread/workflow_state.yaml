@@ -1,0 +1,81 @@
+schema_version: 1
+task_id: B320-BC025
+task_name: b320_towel_corner_synchronized_spread
+state: physical_integration_audit
+updated_at: "2026-08-28T00:20:58+08:00"
+selected_asset:
+  status: selected_and_hash_locked
+  asset_class: towel_surface_material
+  asset_id: bc025-towel-01
+  title: Terry Cloth
+  source_url: https://polyhaven.com/a/terry_cloth
+  license: CC0 1.0
+  license_url: https://polyhaven.com/license
+  original_archive: /home/user/下载/terry_cloth_4k.gltf.zip
+  archive_sha256: 35df068d309815a136aea26a19553d121a050b680418ae803a304976491a29ef
+  search_checkpoint: 2026-08-27
+  candidate_count: 5
+  candidate_document: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/ASSET_CANDIDATES.md
+collision_source:
+  status: selected_and_hash_locked
+  title: Pillow024
+  local_usd: /home/user/下载/Pillow024/Pillow024.usd
+  usd_sha256: 8b08e24ba0e8bc359f8802fce393fddb6234b31ca60a8e51a85404638cc80305
+  provenance: user_provided
+  license_status: unresolved_user_provided_source
+  use: collision_parameters_and_physics_calibration_only
+  volume_topology_composed: false
+  audited_parameters:
+    contact_offset_m: 0.008
+    rest_offset_m: 0.004
+    self_collision: true
+    enable_speculative_ccd: true
+    linear_damping: 0.1
+    solver_position_iterations: 32
+    static_friction: 3.0
+    dynamic_friction: 3.0
+    poissons_ratio: 0.48
+    youngs_modulus_pa: 1000000.0
+    elasticity_damping: 0.0
+runtime:
+  family: e01_detached_wuji_surface_deformable
+  simulator: Isaac Sim 5.1
+  isaaclab: 2.3.2
+  physics_backend: PhysX
+  physics_hz: 120
+  control_hz: 30
+reset_randomization:
+  status: implemented_live_reverification_pending_after_root_frame_sync_and_clean_gpu
+  object: bc025_towel_surface
+  translation_bounds_m:
+    x: [-0.03, 0.03]
+    y: [-0.03, 0.03]
+  sampled_state_field: garment_initial_state[0:2]
+  root_frame_sync: true
+  yaw_randomized: false
+  wrinkle_randomized: false
+  table_height_randomized: false
+preview_ready: false
+collection_ready: false
+blocked: false
+block_reason: null
+latest_live_validation:
+  status: pending_clean_single_process_reverification
+  phase_reached: construct_environment
+  validation_json_written: false
+  kit_log: /home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260828_001642.log
+  host_signal: same_gpu_parallel_isaac_process_and_cuda_700
+  evidence_record: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/evidence/live_run/bc025_retry_contention_20260828.json
+  task_physics_conclusion: not_inferred
+task_specific_gates:
+  - selected_material_source_and_license_resolved
+  - single_surface_visual_sim_collision_topology
+  - collision_free_first_physx_state
+  - assigned_distinct_corner_contact_truth
+  - spread_distance_coverage_release_and_stability_semantics
+  - intended_corner_contact_no_reset
+  - three_camera_and_human_viewport_visibility
+  - diagnostic_state_guided_replay_scope_declared
+  - seeded_translation_repeatability_and_span
+  - authored_and_settled_collision_overlap_query
+  - live_root_synchronized_reset_reverification

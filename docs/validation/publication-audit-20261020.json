@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-20",
+  "base_commit": "45d1f44fc04c4dcce64bd37e33c2c47e9b256c21",
+  "scope": "Publication consistency, documented CPU release suite, asset integrity, local documentation links and credential scanning. No new GPU or learned-policy rollout.",
+  "changes": [
+    "Align EVAL-Gen03 YAML, task summary and native UI prompt with the existing yellow mustard bottle task prompt and scene.",
+    "Explain the retained historical soap-dispenser attribution and compatibility body name.",
+    "Distinguish the 120-second native collection limit from the unchanged 222-step, 7.4-second paper evaluation budget.",
+    "Fix the contributor test command and disclose dependencies of historical collection-tool tests.",
+    "Mark the MuJoCo/Panda/Allegro explanation as historical; repair existing-file links and retain absent paths as historical text."
+  ],
+  "runtime_contract": "Scene meshes, collision geometry, dynamics, resets, success predicates and evaluation budgets are unchanged.",
+  "cpu_tests": {
+    "platform": "macOS arm64, Python 3.11.17",
+    "command": "python -m pytest handson/tests -q",
+    "passed": 1887,
+    "skipped": 11,
+    "subtests_passed": 9,
+    "failed": 0,
+    "elapsed_seconds": 264.12,
+    "pip_check": "No broken requirements found"
+  },
+  "checks": {
+    "physx_cpu_factories_passed": 66,
+    "robot_files_verified": 531,
+    "bundled_rendering_integrity": true,
+    "missing_local_links_in_root_and_docs_markdown": 0,
+    "excluded_tianji_paths_tracked": 0,
+    "excluded_tianji_files_per_historical_commit": 15,
+    "excluded_tianji_historical_commits_before_cleanup": 3,
+    "excluded_tianji_historical_commits": 0
+  },
+  "credential_scan": {
+    "tool": "gitleaks 8.30.1",
+    "reachable_main_commits": 9,
+    "worktree_findings_reviewed": 11,
+    "history_findings_reviewed": 13,
+    "tracked_zip_archives_scanned": 7,
+    "archive_findings": 0,
+    "confirmed_service_credentials": 0,
+    "classification": "Transformer class imports, USD API variables, file SHA256 values, a public Sketchfab asset identifier and a local ownership nonce in a completed historical scheduler run."
+  },
+  "limitations": [
+    "Collecting handson/tests together with historical scripts/tests produced nine collection errors for unshipped teleoperation, collection UI, arm-planning and removed MuJoCo modules. The maintained release suite is handson/tests; these historical workflows were not repaired or certified.",
+    "The previously documented RTX 4090 PhysX CUDA 700 initialization failure remains unresolved.",
+    "The upstream full NVIDIA FastAPI/Starlette dependency conflict is outside the verified CPU environment.",
+    "Optional Tianji assets remain excluded pending licensing clarification; robot integrity verification does not qualify every embodiment for benchmark rollout."
+  ],
+  "publication_ready": false,
+  "publication_blockers": [
+    "The current GitHub account has push permission but not admin permission; the visibility update request returned HTTP 404. An organization owner or repository administrator must change visibility."
+  ],
+  "pre_rewrite_base_commit": "25df2b043d78ae2e379a095e8f65fdb7b7cdd9d7",
+  "history_cleanup": {
+    "cleaned_head": "70febed572a6d51ff4b403e0f8e779ea5f0a666a",
+    "reachable_commits_verified": 11,
+    "restricted_paths_remaining": 0,
+    "current_tree_unchanged": true,
+    "remote_main_verified": true,
+    "scope": "All commits reachable from main; this does not certify physical erasure of unreachable objects or caches on GitHub. Existing clones must realign to the cleaned history and must not republish old branches."
+  },
+  "content_ready_for_publication": true
+}

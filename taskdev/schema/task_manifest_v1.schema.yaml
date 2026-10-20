@@ -1,0 +1,111 @@
+schema_name: handson_task_manifest
+schema_version: 1
+strict_top_level: true
+allowed_top_level:
+  - schema_version
+  - task
+  - source
+  - robot
+  - workspace
+  - assets
+  - reset
+  - contact
+  - success
+  - camera
+  - stability
+  - collection
+  - validation
+required_paths:
+  schema_version: integer
+  task: mapping
+  task.id: string
+  task.title: string
+  task.description: string
+  task.taxonomy: mapping
+  task.taxonomy.family: string
+  task.taxonomy.interactions: sequence
+  task.taxonomy.horizon: string
+  task.taxonomy.handedness: string
+  source: mapping
+  source.origin: string
+  source.attribution: string
+  robot: mapping
+  robot.arms: mapping
+  robot.arms.model: string
+  robot.arms.count: integer
+  robot.arms.asset: string
+  robot.arms.base_poses: sequence
+  robot.hands: mapping
+  robot.hands.model: string
+  robot.hands.generation: integer
+  robot.hands.count: integer
+  robot.hands.asset: string
+  workspace: mapping
+  workspace.frame: string
+  workspace.bounds_m: mapping
+  workspace.bounds_m.min: sequence
+  workspace.bounds_m.max: sequence
+  workspace.targets: sequence
+  assets: sequence
+  reset: mapping
+  reset.seedable: boolean
+  reset.max_settle_steps: integer
+  reset.invariants: sequence
+  contact: mapping
+  contact.monitored_pairs: sequence
+  contact.forbidden_pairs: sequence
+  success: mapping
+  success.logic: string
+  success.predicates: sequence
+  success.hold_steps: integer
+  success.timeout_steps: integer
+  camera: mapping
+  camera.primary: string
+  camera.prim_path: string
+  camera.pose_source: string
+  camera.resolution: sequence
+  camera.require_rgb: boolean
+  stability: mapping
+  stability.physics_hz: integer
+  stability.control_hz: integer
+  stability.settle_steps: integer
+  stability.max_linear_velocity_mps: number
+  stability.max_angular_velocity_radps: number
+  collection: mapping
+  collection.format: string
+  collection.output_env_var: string
+  collection.required_streams: sequence
+  collection.min_successful_episodes: integer
+  validation: mapping
+  validation.report: string
+  validation.required_checks: sequence
+  validation.thresholds: mapping
+enums:
+  task.taxonomy.family:
+    - pick_place
+    - assembly
+    - tool_use
+    - articulation
+    - deformable
+    - long_horizon
+    - interactive_control
+  task.taxonomy.horizon: [short, medium, long]
+  task.taxonomy.handedness: [unimanual, bimanual, either]
+  source.origin: [original, adapted, handson]
+  robot.arms.model: [rokae]
+  robot.hands.model: [wuji_gen1]
+  success.logic: [all, any, expression]
+  camera.pose_source: [robot_head]
+numeric_ranges:
+  robot.arms.count: {min: 1, max: 2}
+  robot.hands.generation: {min: 1, max: 1}
+  robot.hands.count: {min: 1, max: 2}
+  reset.max_settle_steps: {min: 1}
+  success.hold_steps: {min: 1}
+  success.timeout_steps: {min: 2}
+  stability.physics_hz: {min: 30}
+  stability.control_hz: {min: 1}
+  stability.settle_steps: {min: 1}
+  stability.max_linear_velocity_mps: {exclusive_min: 0}
+  stability.max_angular_velocity_radps: {exclusive_min: 0}
+  collection.min_successful_episodes: {min: 1}

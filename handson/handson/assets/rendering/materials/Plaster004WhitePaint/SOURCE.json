@@ -1,0 +1,21 @@
+{
+  "asset_id": "Plaster004WhitePaint",
+  "license": "CC0-1.0",
+  "derived_from": "Plaster004",
+  "derivation": "White paint albedo 237/237/236 sRGB; source luminance microvariation std 2.5, clipped +/-6. Normal and roughness unchanged.",
+  "source_color_sha256": "2a1f298f1ee6469c8cc09fe5375741c51e1eecabbfd422c9a1369c57b171dc5b",
+  "maps": {
+    "Color": {
+      "file": "Plaster004WhitePaint/Color.jpg",
+      "sha256": "51aba277a73543f6a39e9011625c0275b42cfba59c4151e579e877aba82f5d4b"
+    },
+    "NormalGL": {
+      "file": "Plaster004WhitePaint/NormalGL.jpg",
+      "sha256": "6d980fc5343ddcfce2b5c80ffe7b2b3181d05d13325ca0b33aed33575a5577be"
+    },
+    "Roughness": {
+      "file": "Plaster004WhitePaint/Roughness.jpg",
+      "sha256": "69b3a2d34b525314e4155cbbb737591f457193c64e4025f656e854912e2353aa"
+    }
+  }
+}

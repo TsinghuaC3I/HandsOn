@@ -1,0 +1,201 @@
+schema_version: 1
+task_id: B320-AS013
+task_name: t40_slide_knife_blade
+state: physical_integration_audit
+updated_at: "2026-08-31T19:00:00+08:00"
+prior_certified_state:
+  task_complete: true
+  collection_capability_preserved: true
+  reference_commit: 84c42730edda68ef694f49069d304b6ac3cfb3dd
+  evidence_scope: historical_utility_knife002_only
+contract:
+  operator_prompt: "Pick up the utility knife with the right hand. After pickup, touch the slider with the left fingertips and move it to the episode target: bottom to retract the blade or top to extend it."
+  operation_mode: bimanual_handheld_right_pickup_left_touch_bidirectional_endpoint
+  operator_roles:
+    left: distal_fingertips_touch_and_operate_slider_after_pickup
+    right: full_hand_multi_point_housing_grasp_and_pickup
+  ordered_success_sequence:
+    - right_grip_contact_now_with_two_distinct_owners_and_grip_seen
+    - utility_knife_root_or_body_lift_delta_at_least_0_020_m_with_housing_and_moving_component_table_contacts_false_for_4_physics_substeps
+    - pickup_seen_after_grip_seen
+    - left_fingertip_slider_contact_for_4_substeps_after_pickup_seen
+    - sampled_target_endpoint_reached_retracted_lte_0_05_or_extended_gte_0_95
+  prepickup_left_fingertip_button_contact: allowed_but_not_counted
+  prepickup_slider_progress: recoverable_but_not_counted
+  incidental_hand_contact: allowed_diagnostic_only_never_terminal
+  randomized_task:
+    endpoints: [retracted_bottom, extended_top]
+    retract_start_progress: [0.55, 0.85]
+    extend_start_progress: [0.15, 0.45]
+    knife_xy_offset_m: [-0.05, 0.05]
+    knife_yaw_deg: [-180.0, 180.0]
+  runtime_slider_resistance: {drive_damping: 25.0, joint_static_friction: 3.0, joint_dynamic_friction: 2.4, blade_contact_static_friction_default: 2.0, friction_combine_mode: max, manual_hand_feel_status: pending}
+  completion_requires_current_contact: false
+  completion_requires_stability_hold: false
+  completion_requires_release: false
+  completion_requires_table_support: false
+  ordinary_relative_xy_displacement_over_0_060_m_is_terminal: false
+  hard_workspace_failure: absolute_articulation_root_or_body_escape_only
+  both_arms_active_in_hardware_interface: true
+  arm_count: 2
+  runtime_family: abc_shared_rigid_articulated
+  reference_tasks: [b320_as013_existing_certified_slice, c08_tongs_ice]
+  physics_backend: physx
+  isaac_sim: "5.1"
+  isaaclab: "2.3.2"
+  physics_hz: 120
+  control_hz: 30
+  replay_claim: formal_fresh_process_physx_replay_after_recertification
+visible_asset_classes:
+  - id: utility_knife_assembly
+    role: dynamic_articulated_rigid_asset
+    required: true
+    parts: [housing_body, blade_slider]
+    replacement_scope: visual_geometry_collision_topology_and_prismatic_joint
+    platform_assets_kept: [rokae_wuji1_bimanual, tabletop, canonical_cameras]
+candidate_ids:
+  - as013-opengameart-tool-pack-2
+  - as013-cgtrader-separated-parts
+  - as013-free3d-kd-utility-knife
+  - as013-sketchfab-ahtusik
+  - as013-cgtrader-diy-essentials
+selected_asset: as013-sketchfab-ahtusik
+download_checkpoint:
+  status: resolved
+  user_selected_candidate_ids: [as013-sketchfab-ahtusik]
+  resolved_files:
+    - "/home/user/下载/utility_knife.zip"
+    - "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/utility_knife.zip"
+    - "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/sketchfab_utility_knife/scene.gltf"
+    - "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/sketchfab_utility_knife/scene.bin"
+    - "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/source/sketchfab_utility_knife/license.txt"
+  archive_sha256: 85fe8c49f43383aa15e5ea9803dfca52fec196d3dc00424ea8eaaca326aa648b
+  archive_size_bytes: 7143425
+  archive_mtime: "2026-08-28T01:04:46+08:00"
+  source_file_sha256:
+    license.txt: 5f89a19cb535af5dd35016f8315ff3c4ea1cc07bd58da421f5eb7a05642eddd1
+    scene.bin: 5b41b20a8a2a0c523fcb06dcca2da09301dbebbb7ea09cb37a14becef81755ba
+    scene.gltf: 7e155ea959934f7d37380e1d0eb5f35d0d36076dd71d063f68b66acc5b8100ee
+    textures/Material.001_baseColor.png: fea7c19eb3a7898bdf6edf231eefe110ebd2a0c09dc519a40f4791d2b0ae507b
+    textures/Material.001_metallicRoughness.png: a2e686f398053f2ae43aa98eaab9e2c33f4f695a8b94cbb43a8a237abf8066ca
+    textures/Material.001_normal.png: 40f7b47ae84a175ec7bb83256e2f6bee03d9e663ec2a598c645ee59d468b04d7
+  source_title: Utility Knife
+  source_author: ahtusik
+  source_url: https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92
+  license: CC-BY-4.0
+  attribution_required: true
+  attribution_text: >-
+    This work is based on "Utility Knife"
+    (https://sketchfab.com/3d-models/utility-knife-083c2d52b3d04eedb5350cce6e2d1b92)
+    by ahtusik (https://sketchfab.com/ahtusik) licensed under CC-BY-4.0
+    (http://creativecommons.org/licenses/by/4.0/).
+  license_verified: true
+  source_hash_bound: true
+integration_checkpoint:
+  task_local_usd: "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik.usda"
+  runtime_usd: "handson/handson/sim/isaaclab/usd/t40_slide_knife_blade/utility_knife_ahtusik/utility_knife_ahtusik.usda"
+  metadata: "taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/assets/utility_knife_ahtusik/runtime/utility_knife_ahtusik_metadata.json"
+  integrated_usd_sha256: 2722183ee64303f8c85dac65f17acbea0977ed4d9604fd589ee5bf627b7a18d7
+  binary_usd_sha256: 9a2709c0fb0a6418a42224b30d7ebed96ef1f914a7080c3b07b0f3b20347c8d2
+  metadata_sha256: f67a448283852e90a4349947a0e342245f04a65f3533eaa78621947218f725f6
+  source_conversion_scale_to_m: 0.008
+  axis_mapping: "canonical=[-x,z,y]*0.008"
+  ergonomic_scale_xyz: [1.3, 1.3, 2.35]
+  authored_size_xyz_mm: [60.9109, 204.0765, 10.3091]
+  button_size_xyz_mm: [23.0, 51.2034, 2.8129]
+  slider_collider_count: 6
+  total_collider_count: 9
+  sampled_slider_surface_gap_max_m: 0.002965306
+  builder_certification_slider_surface_gap_max_m: 0.002964179
+  joint_name: PrismaticJoint_utility_knife_3_middle
+  joint_axis_body_local: [0.0, 1.0, 0.0]
+  joint_limits_m: [0.0, 0.08]
+  visual_animation_used_as_physics: false
+  low_pinning_physx_profile:
+    rigid_contact_capacity: 262144
+    rigid_patch_capacity: 16384
+    found_lost_pair_capacity: 65536
+    found_lost_aggregate_pair_capacity: 65536
+    total_aggregate_pair_capacity: 65536
+    collision_stack_bytes: 4194304
+    heap_bytes: 4194304
+    temporary_buffer_bytes: 1048576
+    soft_body_contact_capacity: 16384
+    particle_contact_capacity: 16384
+    gpu_partitions_preserved: 8
+    live_reset_recheck: passed_single_canary_20260828
+live_canary_checkpoint:
+  status: passed_bounded_scope
+  evidence: taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+  session_id: t40_slide_knife_blade-20260828-225215-140941-e2318df8
+  process_pid: 140941
+  reset:
+    accepted: true
+    physics_steps: 180
+  contact_views:
+    resolved_exact_views: 9
+    exact_sensor_filter_count_path_and_check_contract: true
+  stable_origin:
+    task_acceptance_accepted: true
+    contact_report_valid: true
+    episode_semantics_cleared: true
+    physics_state_writes: false
+    stability_metric: velocity_or_static_pose
+    task_velocity_gate_stable: false
+    task_static_pose_gate_stable: true
+    final_boundary_velocity_zero_source: existing_velocity_only_boundary_write
+  bounded_idle_control_loop_seconds_approx: 64.0
+  exit_code: 0
+  saved_demos: 0
+  no_new_kernel_or_nvidia_allocator_errors: true
+  scope: [allocator_boundary, first_reset, nine_contact_view_bindings, stable_recording_origin, bounded_idle_control_loop]
+  excluded_scope: [manual_right_grip_left_slide, camera, successful_episode, replay, multi_seed]
+physical_integration_audit:
+  status: static_and_single_live_reset_pass_remaining_live_gates_pending
+  evidence:
+    - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/static_asset_audit.json
+    - taskdev/tasks/bench320_as013_utility_knife_body_stabilized_blade_slide/evidence/low_pinning_reset_canary_20260828.json
+  completed_static_checks:
+    - source_units_axis_and_rigid_link_audit
+    - visual_collision_bounds_alignment_audit
+    - source_winding_and_normal_alignment_audit
+    - source_derived_convex_hull_watertightness_audit
+    - slider_full_rank_thickness_volume_and_svd_audit
+    - bidirectional_sampled_slider_collision_coverage_audit
+    - prismatic_axis_and_joint_limit_audit
+    - support_polygon_and_com_projection_audit
+    - dimension_derived_mass_and_inertia_audit
+    - collision_only_visibility_and_placeholder_audit
+  completed_live_checks:
+    - single_low_pinning_allocator_and_first_reset_boundary
+    - nine_exact_contact_view_bindings
+    - stable_recording_origin_with_valid_contact_report_and_write_free_task_acceptance
+    - bounded_idle_control_loop_over_10_seconds
+  pending_live_checks:
+    - first_physx_overlap_and_depenetration_audit
+    - seeded_position_randomization_in_runtime
+    - three_camera_and_human_viewport_visibility_audit
+    - fresh_standard_recorder_episode
+    - fresh_process_physx_replay
+    - bimanual_right_grip_left_slide_operator_acceptance
+pending_gates:
+  - seeded_position_randomization_audit
+  - three_camera_and_human_viewport_visibility_audit
+  - fresh_standard_recorder_episode
+  - fresh_process_physx_replay
+  - bimanual_right_grip_left_slide_operator_acceptance
+notes:
+  - "The prior project-license utility_knife002 bundle remains immutable historical evidence only."
+  - "The user selected and downloaded the Sketchfab ahtusik archive; its license.txt and exact archive hash are retained beside the extracted source."
+  - "Existing discoverability, collection button, recorder path, publication behavior, and training eligibility remain unchanged while this fresh asset is re-certified."
+  - "One scheduled Isaac Sim 5.1 low-pinning canary passed first reset, all nine exact contact-view bindings, stable recording-origin acceptance, and approximately 64 seconds of idle control. It saved zero demos and does not establish manual interaction, camera, episode, replay, or multi-seed evidence."
+  - "The current schema-v5 success contract is handheld bimanual: right-hand pickup by at least 20 mm, a post-pickup physical-left fingertip slider touch, and the sampled endpoint (retracted <=5 percent or extended >=95 percent). Current terminal contact and a stability hold are not required."
+  - "Right-hand contact with the moving assembly is recoverable and diagnostic rather than terminal; only post-pickup distal-thumb contact inside the button region is credited. Pre-pickup slider travel is also recoverable and uncredited."
+  - "Runtime slider resistance is provisionally tuned to damping 25.0 with static/dynamic joint friction 3.0/2.4 and blade-side contact friction 2.0 using max combine mode; fresh manual vertical-hold and hand-feel calibration remains pending."
+  - "Randomized episodes sample retracted/extended targets, target-aware slider start bands, +/-50 mm knife XY, and full tabletop yaw. Relative XY movement beyond 60 mm is recoverable, while only absolute workspace escape is terminal."
+  - "The dual-arm robot/action interface remains unchanged, but any left-hand contact with the knife invalidates the current sequence."
+  - "This workstation exposes a single local RTX 4090. The cross-task scheduler explicitly released one canary slot, monitored PID 140941, confirmed no new allocator/NVIDIA errors, and confirmed that no Isaac process remained after exit. A future heavy run still requires a new explicit lease."
+  - "An unscheduled local Isaac Sim probe reached Kit startup but failed at sim.reset with a CUDA illegal-memory-access error; evidence/noncertifying_local_probe.json is diagnostic only and does not advance any live gate."
+  - "The earlier read-only hp-14 scheduler audit remains historical evidence only. Current fresh live evidence is the local bounded canary in evidence/low_pinning_reset_canary_20260828.json."
+  - "Stable-origin acceptance used the declared velocity_or_static_pose metric: task velocity stability was false while task static-pose stability was true. Final zero boundary velocities followed the existing velocity-only boundary write and are not claimed as natural velocity-gate convergence."
+  - "The journal does not serialize the eleven PhysxScene capacity readbacks. Their exact values are bound by code/static tests and a pre-reset mismatch-fails-closed control path; this live canary proves only that this build crossed the allocator/reset boundary. An optional DLSS-context error auto-disabled DLSS and did not block the canary."

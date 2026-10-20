@@ -1,0 +1,18 @@
+env_name: t41_sort_nested_cups
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Separate the three nested YCB cups, then place them upright in a straight row from left to right in the main camera: large, medium, small. Release all cups."
+robot_type: dual_arm
+time_limit_seconds: 120
+skills:
+  - bimanual_manipulation
+  - nested_object_separation
+  - dexterous_grasping
+  - multi_object_ordering
+  - precise_placement
+objects:
+  - c_cups
+  - b_cups
+  - a_cups

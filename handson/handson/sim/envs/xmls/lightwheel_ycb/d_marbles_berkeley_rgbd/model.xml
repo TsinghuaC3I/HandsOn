@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="2590.21" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="d_marbles_berkeley_rgbd_material" file="visuals/T_d_marbles_berkeley_rgbd_BC001.png"/>
+    <material name="d_marbles_berkeley_rgbd_material" texture="d_marbles_berkeley_rgbd_material" specular="0.333333" shininess="0.7"/>
+    <mesh name="d_marbles_berkeley_rgbd_vis" file="visuals/d_marbles_berkeley_rgbd.obj"/>
+    <mesh name="d_marbles_berkeley_rgbd_Collider_m_collision" file="collision/d_marbles_berkeley_rgbd_Collider_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="d_marbles_berkeley_rgbd_material" mesh="d_marbles_berkeley_rgbd_vis"/>
+        <geom name="d_marbles_berkeley_rgbd_Collider_m" class="collision" type="mesh" mesh="d_marbles_berkeley_rgbd_Collider_m_collision"/>
+      <geom size="0.0108505 0.010851 0.010851" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

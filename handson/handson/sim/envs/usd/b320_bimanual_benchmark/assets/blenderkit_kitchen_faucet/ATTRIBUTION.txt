@@ -1,0 +1,5 @@
+"Kitchen Faucet" by Cody Flynn is used under the BlenderKit Royalty Free license.
+Source: https://www.blendkit.com/asset-gallery-detail/b372d45e-2fbe-41cf-bf10-d0fd70dd2574/
+License: https://www.blendkit.com/docs/licenses/
+
+The source file is converted into task-specific visual derivatives; the revolute joint, collision geometry, and task logic are authored by HandsOn.

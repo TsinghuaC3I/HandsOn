@@ -1,0 +1,68 @@
+{
+  "converter": {
+    "context": {
+      "convert_stage_up_z": true,
+      "create_world_as_default_root_prim": true,
+      "disabling_instancing": true,
+      "embed_textures": true,
+      "export_preview_surface": true,
+      "ignore_animations": true,
+      "ignore_camera": true,
+      "ignore_light": true,
+      "keep_all_materials": true,
+      "merge_all_meshes": false,
+      "single_mesh": false,
+      "use_meter_as_world_unit": true
+    },
+    "runtime": "Isaac Sim 5.1.0.0"
+  },
+  "output": {
+    "bytes": 19361069,
+    "default_prim": "/World",
+    "filename": "appartement_visual.usd",
+    "forbidden_schema_count": 0,
+    "mesh_count": 6,
+    "sha256": "6971e51bc29fcbed200628966a7350d2848d394dcd620ded338c6ea76ec66c08",
+    "textures": {
+      "file_count": 5,
+      "max_dimension": 1024,
+      "resized_count": 5
+    }
+  },
+  "schema": "hs005_kitchen_background_conversion_v1",
+  "source": {
+    "archive": "appartement.zip",
+    "archive_sha256": "c8b68631b82cd2d2472beb898b81088cf8dcfdd07b631fa9c6f642299db6f6e5",
+    "author": "SrMonteiro",
+    "author_url": "https://sketchfab.com/crispimrafael",
+    "directory": "cc_by_srmonteiro_appartement",
+    "id": "appartement",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "output": "appartement_visual.usd",
+    "profile": {
+      "bounds_source": [
+        [
+          -6.758660793304443,
+          -0.009927758015692234,
+          -6.273755311965942
+        ],
+        [
+          0.29276371002197266,
+          2.5000009536743164,
+          4.385048151016235
+        ]
+      ],
+      "extents_source": [
+        7.051424503326416,
+        2.5099287116900086,
+        10.658803462982178
+      ],
+      "geometry_count": 6,
+      "mesh_node_count": 6,
+      "triangle_count": 165243
+    },
+    "source_url": "https://sketchfab.com/3d-models/appartement-6a7a5fe208344b2e8123a88923dbd5b3",
+    "title": "Appartement"
+  }
+}

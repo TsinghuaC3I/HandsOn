@@ -1,0 +1,120 @@
+{
+  "schema": "handson.wrist_cable_routing.v1",
+  "hardware": "rokae_ar5_5_08_wuji1",
+  "visual_bundle_sha256": "752cacb613433e9e82b55efe93a170a987730a95a19dd94025ec14ac058403ce",
+  "radius_m": 0.0038,
+  "role": "visual routing approximation; no cable physics",
+  "sides": {
+    "left": {
+      "palm_link": "left_palm_link",
+      "forearm_link": "link5_left",
+      "palm_controls_m": [
+        [
+          0.0014,
+          0.0206,
+          0.015
+        ],
+        [
+          -0.007911654099831023,
+          0.04266265360221742,
+          0.015046297132560886
+        ],
+        [
+          0.003288345900168979,
+          0.057502653602217416,
+          -0.003153702867439122
+        ],
+        [
+          0.014628345900168975,
+          0.0639426536022174,
+          -0.02023370286743912
+        ]
+      ],
+      "forearm_entry_m": [
+        -0.03949314744014087,
+        0.027545661166755414,
+        -0.11482497763313337
+      ],
+      "forearm_outward": [
+        -0.9699153823533205,
+        0.22716941662229287,
+        -0.08751118343331296
+      ],
+      "length_m": 0.278,
+      "anchor_evidence": {
+        "surface_point_m": [
+          -0.04143297820484751,
+          0.028,
+          -0.115
+        ],
+        "surface_normal": [
+          -0.9699153823533205,
+          0.22716941662229287,
+          -0.08751118343331296
+        ],
+        "entry_inset_m": 0.002,
+        "source_mesh": "links/link5_left.usdc",
+        "observability": "estimated hidden forearm endpoint; not an observed connector"
+      },
+      "reorient_strain_relief": true,
+      "proximal_revision": {
+        "reason": "Original photo fit crossed the physical camera bracket",
+        "camera_ray_depth_scale": 1.4,
+        "maximum_prefix_centerline_pixel_shift": 7.106,
+        "status": "estimated clearance correction; not a measured cable route"
+      }
+    },
+    "right": {
+      "palm_link": "right_palm_link",
+      "forearm_link": "link5_right",
+      "palm_controls_m": [
+        [
+          -0.0044,
+          -0.022,
+          0.015
+        ],
+        [
+          -0.0052,
+          -0.0475,
+          0.015
+        ],
+        [
+          -0.0064,
+          -0.0725,
+          0.015
+        ],
+        [
+          -0.0113,
+          -0.109,
+          0.015
+        ]
+      ],
+      "forearm_entry_m": [
+        -0.039493147440140826,
+        -0.027545661166755414,
+        -0.11482497763313337
+      ],
+      "forearm_outward": [
+        -0.9699153823533205,
+        -0.22716941662229287,
+        -0.08751118343331296
+      ],
+      "length_m": 0.301,
+      "anchor_evidence": {
+        "surface_point_m": [
+          -0.04143297820484747,
+          -0.028,
+          -0.115
+        ],
+        "surface_normal": [
+          -0.9699153823533205,
+          -0.22716941662229287,
+          -0.08751118343331296
+        ],
+        "entry_inset_m": 0.002,
+        "source_mesh": "links/link5_right.usdc",
+        "observability": "estimated hidden forearm endpoint; not an observed connector"
+      }
+    }
+  }
+}

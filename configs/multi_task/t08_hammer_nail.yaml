@@ -1,0 +1,16 @@
+env_name: t08_hammer_nail
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the wood block with the left hand, keep the vertical nail inserted in the block, then use the right hand to pick up the hammer and strike the nail head so the nail sinks slightly into the block."
+robot_type: dual_arm
+time_limit_seconds: 80
+skills:
+  - tool_use
+  - contact_control
+  - force_control
+objects:
+  - hammer
+  - nail
+  - wood_block

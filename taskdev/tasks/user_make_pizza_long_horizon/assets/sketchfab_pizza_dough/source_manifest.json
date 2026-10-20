@@ -1,0 +1,16 @@
+{
+  "title": "Pizza Dough",
+  "source_url": "https://sketchfab.com/3d-models/pizza-dough-608fa60edb4a41dcb24e4f1580d576d4",
+  "author": "michael.diaz029",
+  "author_url": "https://sketchfab.com/michael.diaz029",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "source_mesh_stats": {"vertices": 550, "triangles": 840},
+  "conversion": "Public viewer source converted to GLB with source geometry and UVs retained; task runtime overrides only the material to solid white.",
+  "files": {
+    "pizza_dough.glb": "29a63835122ee0c1d9ce1b4aa87c8c9a21485b74d8bc059bb26be09fdc838e7b",
+    "source_file.osgjs": "6a37e49de995ab4aee1f4fc8d4b0f480d8b19f176d64403a108baa499873775a",
+    "source_model_file.bin": "646862205755222aaa705f12554669a29d9527309984ea7d4a2c0472417bd291",
+    "source_model_file_wireframe.bin": "ef340dc3833ddce2c656114100b44ade7255a7603db5970a7ed4626364b98608"
+  }
+}

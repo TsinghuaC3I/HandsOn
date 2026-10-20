@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="7166.46" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="padlock_material" file="visuals/T_padlock_BC001.png"/>
+    <texture type="2d" name="padlock_prop_material" file="visuals/T_padlock_BC001.png"/>
+    <material name="padlock_material" texture="padlock_material" specular="0.310345"/>
+    <material name="padlock_prop_material" texture="padlock_prop_material" specular="0.310345"/>
+    <mesh name="padlock_vis" file="visuals/padlock.obj"/>
+    <mesh name="padlock_prop_vis" file="visuals/padlock_prop.obj"/>
+    <mesh name="padlock_Collider1_m_collision" file="collision/padlock_Collider1_m.obj"/>
+    <mesh name="padlock_prop_Collider1_m_collision" file="collision/padlock_prop_Collider1_m.obj"/>
+    <mesh name="padlock_prop_Collider2_m_collision" file="collision/padlock_prop_Collider2_m.obj"/>
+    <mesh name="padlock_prop_Collider3_m_collision" file="collision/padlock_prop_Collider3_m.obj"/>
+    <mesh name="padlock_prop_Collider4_m_collision" file="collision/padlock_prop_Collider4_m.obj"/>
+    <mesh name="padlock_prop_Collider5_m_collision" file="collision/padlock_prop_Collider5_m.obj"/>
+    <mesh name="padlock_prop_Collider6_m_collision" file="collision/padlock_prop_Collider6_m.obj"/>
+    <mesh name="padlock_prop_Collider7_m_collision" file="collision/padlock_prop_Collider7_m.obj"/>
+    <mesh name="padlock_prop_Collider8_m_collision" file="collision/padlock_prop_Collider8_m.obj"/>
+    <mesh name="padlock_prop_Collider9_m_collision" file="collision/padlock_prop_Collider9_m.obj"/>
+    <mesh name="padlock_Collider2_m_collision" file="collision/padlock_Collider2_m.obj"/>
+    <mesh name="padlock_Collider3_m_collision" file="collision/padlock_Collider3_m.obj"/>
+    <mesh name="padlock_Collider4_m_collision" file="collision/padlock_Collider4_m.obj"/>
+    <mesh name="padlock_Collider5_m_collision" file="collision/padlock_Collider5_m.obj"/>
+    <mesh name="padlock_Collider6_m_collision" file="collision/padlock_Collider6_m.obj"/>
+    <mesh name="padlock_Collider7_m_collision" file="collision/padlock_Collider7_m.obj"/>
+    <mesh name="padlock_Collider8_m_collision" file="collision/padlock_Collider8_m.obj"/>
+    <mesh name="padlock_Collider9_m_collision" file="collision/padlock_Collider9_m.obj"/>
+    <mesh name="padlock_Collider10_m_collision" file="collision/padlock_Collider10_m.obj"/>
+    <mesh name="padlock_Collider11_m_collision" file="collision/padlock_Collider11_m.obj"/>
+    <mesh name="padlock_Collider12_m_collision" file="collision/padlock_Collider12_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="padlock_material" mesh="padlock_vis"/>
+        <geom name="padlock_Collider1_m" class="collision" type="mesh" mesh="padlock_Collider1_m_collision"/>
+        <geom name="padlock_Collider2_m" class="collision" type="mesh" mesh="padlock_Collider2_m_collision"/>
+        <geom name="padlock_Collider3_m" class="collision" type="mesh" mesh="padlock_Collider3_m_collision"/>
+        <geom name="padlock_Collider4_m" class="collision" type="mesh" mesh="padlock_Collider4_m_collision"/>
+        <geom name="padlock_Collider5_m" class="collision" type="mesh" mesh="padlock_Collider5_m_collision"/>
+        <geom name="padlock_Collider6_m" class="collision" type="mesh" mesh="padlock_Collider6_m_collision"/>
+        <geom name="padlock_Collider7_m" class="collision" type="mesh" mesh="padlock_Collider7_m_collision"/>
+        <geom name="padlock_Collider8_m" class="collision" type="mesh" mesh="padlock_Collider8_m_collision"/>
+        <geom name="padlock_Collider9_m" class="collision" type="mesh" mesh="padlock_Collider9_m_collision"/>
+        <geom name="padlock_Collider10_m" class="collision" type="mesh" mesh="padlock_Collider10_m_collision"/>
+        <geom name="padlock_Collider11_m" class="collision" type="mesh" mesh="padlock_Collider11_m_collision"/>
+        <geom name="padlock_Collider12_m" class="collision" type="mesh" mesh="padlock_Collider12_m_collision"/>
+        <body name="padlock_prop">
+          <joint name="padlock_prop_joint" pos="0.01442500 0.00000050 -0.00666500" axis="0 0 1" stiffness="0.00" limited="true" type="hinge" range="-1 1" frictionloss="1"/>
+          <joint name="padlock_prop_joint1" pos="0.01442500 0.00000050 -0.00666500" axis="0 0 1" type="slide" stiffness="0.5" limited="true" range="-0.012 0" armature="0.01" damping="1" frictionloss="1" springref="2"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="padlock_prop_material" mesh="padlock_prop_vis"/>
+          <geom name="padlock_prop_Collider1_m" class="collision" type="mesh" mesh="padlock_prop_Collider1_m_collision"/>
+          <geom name="padlock_prop_Collider2_m" class="collision" type="mesh" mesh="padlock_prop_Collider2_m_collision"/>
+          <geom name="padlock_prop_Collider3_m" class="collision" type="mesh" mesh="padlock_prop_Collider3_m_collision"/>
+          <geom name="padlock_prop_Collider4_m" class="collision" type="mesh" mesh="padlock_prop_Collider4_m_collision"/>
+          <geom name="padlock_prop_Collider5_m" class="collision" type="mesh" mesh="padlock_prop_Collider5_m_collision"/>
+          <geom name="padlock_prop_Collider6_m" class="collision" type="mesh" mesh="padlock_prop_Collider6_m_collision"/>
+          <geom name="padlock_prop_Collider7_m" class="collision" type="mesh" mesh="padlock_prop_Collider7_m_collision"/>
+          <geom name="padlock_prop_Collider8_m" class="collision" type="mesh" mesh="padlock_prop_Collider8_m_collision"/>
+          <geom name="padlock_prop_Collider9_m" class="collision" type="mesh" mesh="padlock_prop_Collider9_m_collision"/>
+        </body>
+      <geom size="0.023635 0.0123105 0.035719" pos="0.0 0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="padlock_prop_joint_actuator" joint="padlock_prop_joint" gear="0 0 0 0 0 0"/>
+    <general name="padlock_prop_joint1_actuator" joint="padlock_prop_joint1" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

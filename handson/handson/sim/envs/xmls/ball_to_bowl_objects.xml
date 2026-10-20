@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="ball_to_bowl_objects">
+  <include file="a_series_ycb_mesh_assets.xml" />
+
+  <worldbody>
+    <body name="024_bowl" pos="0.14 0.04 0.92">
+      <freejoint name="024_bowl_freejoint" />
+      <geom name="024_bowl_visual" class="a_series_ycb_visual" material="bowl_material" mesh="bowl_vis" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_1" class="a_series_ycb_collision" mesh="bowl_Collider1_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_2" class="a_series_ycb_collision" mesh="bowl_Collider2_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_3" class="a_series_ycb_collision" mesh="bowl_Collider3_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_4" class="a_series_ycb_collision" mesh="bowl_Collider4_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_5" class="a_series_ycb_collision" mesh="bowl_Collider5_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_6" class="a_series_ycb_collision" mesh="bowl_Collider6_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_7" class="a_series_ycb_collision" mesh="bowl_Collider7_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_8" class="a_series_ycb_collision" mesh="bowl_Collider8_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_9" class="a_series_ycb_collision" mesh="bowl_Collider9_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_10" class="a_series_ycb_collision" mesh="bowl_Collider10_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_11" class="a_series_ycb_collision" mesh="bowl_Collider11_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_12" class="a_series_ycb_collision" mesh="bowl_Collider12_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_13" class="a_series_ycb_collision" mesh="bowl_Collider13_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_14" class="a_series_ycb_collision" mesh="bowl_Collider14_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_15" class="a_series_ycb_collision" mesh="bowl_Collider15_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_16" class="a_series_ycb_collision" mesh="bowl_Collider16_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_17" class="a_series_ycb_collision" mesh="bowl_Collider17_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_18" class="a_series_ycb_collision" mesh="bowl_Collider18_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_19" class="a_series_ycb_collision" mesh="bowl_Collider19_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_20" class="a_series_ycb_collision" mesh="bowl_Collider20_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_21" class="a_series_ycb_collision" mesh="bowl_Collider21_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_22" class="a_series_ycb_collision" mesh="bowl_Collider22_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_23" class="a_series_ycb_collision" mesh="bowl_Collider23_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_24" class="a_series_ycb_collision" mesh="bowl_Collider24_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_25" class="a_series_ycb_collision" mesh="bowl_Collider25_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_26" class="a_series_ycb_collision" mesh="bowl_Collider26_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_27" class="a_series_ycb_collision" mesh="bowl_Collider27_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_28" class="a_series_ycb_collision" mesh="bowl_Collider28_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_29" class="a_series_ycb_collision" mesh="bowl_Collider29_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_30" class="a_series_ycb_collision" mesh="bowl_Collider30_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_31" class="a_series_ycb_collision" mesh="bowl_Collider31_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_32" class="a_series_ycb_collision" mesh="bowl_Collider32_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <geom name="024_bowl_collision_33" class="a_series_ycb_collision" mesh="bowl_Collider33_m_collision" mass="0.0060606061" pos="0 0 0.027397" />
+      <site name="024_bowl_inner_center" pos="0 0 0.044" size="0.006" rgba="0 0.6 1 0" />
+      <site name="024_bowl_rim_center" pos="0 0 0.086" size="0.006" rgba="0 0.6 1 0" />
+    </body>
+
+    <body name="tennis_ball" pos="-0.24 -0.16 0.954">
+      <freejoint name="tennis_ball_freejoint" />
+      <geom name="tennis_ball_visual" class="a_series_ycb_visual" material="tennis_ball_material" mesh="tennis_ball_vis" />
+      <geom name="tennis_ball_collision_1" class="a_series_ycb_collision" type="sphere" size="0.034" mass="0.058" />
+    </body>
+
+    <body name="golf_ball" pos="-0.18 0.02 0.941">
+      <freejoint name="golf_ball_freejoint" />
+      <geom name="golf_ball_visual" class="a_series_ycb_visual" material="golf_ball_material" mesh="golf_ball_vis" />
+      <geom name="golf_ball_collision_1" class="a_series_ycb_collision" type="sphere" size="0.022" mass="0.046" />
+    </body>
+
+    <body name="mini_soccer_ball" pos="-0.30 0.18 0.958">
+      <freejoint name="mini_soccer_ball_freejoint" />
+      <geom name="mini_soccer_ball_visual" class="a_series_ycb_visual" material="mini_soccer_ball_material" mesh="mini_soccer_ball_vis" />
+      <geom name="mini_soccer_ball_collision_1" class="a_series_ycb_collision" type="sphere" size="0.038" mass="0.07" />
+    </body>
+  </worldbody>
+</mujoco>

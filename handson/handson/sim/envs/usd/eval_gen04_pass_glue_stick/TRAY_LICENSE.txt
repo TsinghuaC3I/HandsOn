@@ -1,0 +1,11 @@
+Model Information:
+* title:	wooden tray
+* source:	https://sketchfab.com/3d-models/wooden-tray-cfc8d2947628410694cc99d815c22dab
+* author:	demidrew (https://sketchfab.com/demidrew)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "wooden tray" (https://sketchfab.com/3d-models/wooden-tray-cfc8d2947628410694cc99d815c22dab) by demidrew (https://sketchfab.com/demidrew) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

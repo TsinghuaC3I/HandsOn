@@ -1,0 +1,17 @@
+env_name: t29_place_wine_glass
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Place the YCB plastic wine glass upright at the center of the YCB plate, release it, and leave it stable. Only the final placement is evaluated; no minimum travel or lift history is required."
+sim_backend: isaacsim
+robot_type: single_arm
+time_limit_seconds: 60
+skills:
+  - precision_grasp
+  - upright_transport
+  - precise_placement
+  - release
+objects:
+  - YCB plastic wine glass
+  - YCB plate

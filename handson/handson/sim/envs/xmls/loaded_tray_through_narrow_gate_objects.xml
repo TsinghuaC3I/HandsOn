@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="loaded_tray_through_narrow_gate_objects">
+  <asset>
+    <!-- Transparent converter scaffolds only.  The selected downloaded tray
+         USD is the sole visible tray in the production runtime. -->
+    <material name="ltng_tray_red" rgba="0 0 0 0" />
+    <material name="ltng_tray_dark" rgba="0 0 0 0" />
+    <material name="ltng_goal_green" rgba="0.10 0.68 0.25 0.65" specular="0.02" shininess="0.02" />
+
+    <!-- Reuse the production D09 cup and Lightwheel-YCB can in place.  The
+         D09 visual is millimetre-authored and Y-up; its 880 scale includes
+         the BC005 0.88 fit, while the geom's X+90 rotation makes it Z-up. -->
+    <texture type="2d" name="loaded_tray_cup_texture"
+             file="assets/t31_prepare_coffee/textures/mug_base_color.png" />
+    <material name="loaded_tray_cup_material" texture="loaded_tray_cup_texture"
+              specular="0.30" shininess="0.45" />
+    <mesh name="loaded_tray_cup_visual_mesh"
+          file="assets/t31_prepare_coffee/d09_mug_visual.obj"
+          scale="880 880 880" />
+    <mesh name="loaded_tray_cup_body_collision_mesh"
+          file="assets/t31_prepare_coffee/d09_mug_body_collision.obj"
+          scale="0.88 0.88 0.88" />
+    <mesh name="loaded_tray_cup_handle_upper_collision_mesh"
+          file="assets/t31_prepare_coffee/d09_mug_handle_upper_collision.obj"
+          scale="0.88 0.88 0.88" />
+    <mesh name="loaded_tray_cup_handle_outer_collision_mesh"
+          file="assets/t31_prepare_coffee/d09_mug_handle_outer_collision.obj"
+          scale="0.88 0.88 0.88" />
+    <mesh name="loaded_tray_cup_handle_lower_collision_mesh"
+          file="assets/t31_prepare_coffee/d09_mug_handle_lower_collision.obj"
+          scale="0.88 0.88 0.88" />
+
+    <texture type="2d" name="loaded_tray_can_texture"
+             file="lightwheel_ycb/tomato_soup_can/visuals/T_tomato_soup_can_BC001.png" />
+    <material name="loaded_tray_can_material" texture="loaded_tray_can_texture"
+              specular="0.31" shininess="0.30" />
+    <mesh name="loaded_tray_can_visual_mesh"
+          file="lightwheel_ycb/tomato_soup_can/visuals/tomato_soup_can.obj" />
+    <mesh name="loaded_tray_can_collision_mesh"
+          file="lightwheel_ycb/tomato_soup_can/collision/tomato_soup_can_Collider1_m.obj" />
+  </asset>
+
+  <worldbody>
+    <!-- The tray is one dynamic compound rigid body.  Every payload below is
+         independent; none is welded or kinematically attached to the tray. -->
+    <body name="loaded_tray" pos="-0.478675260 0 0.916647638"
+          quat="0.707106781 0 0 0.707106781">
+      <freejoint name="loaded_tray_joint" />
+      <!-- Uniform-density 0.30 kg mass properties integrated from the selected
+           tray USD's five boxes and twelve convex handle prisms. -->
+      <inertial pos="0.000000023852169 0 -0.017203753841848" mass="0.30"
+                diaginertia="0.004672670357746 0.001642322448420 0.006257482400569" />
+
+      <geom name="loaded_tray_base_visual" type="box" pos="-0.000000006 0 -0.023728013" size="0.099371570 0.181324831 0.001919625"
+            material="ltng_tray_red" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_base_collision" type="box" pos="-0.000000006 0 -0.023728013" size="0.099371570 0.181324831 0.001919625"
+            rgba="0 0 0 0" condim="6" friction="1.20 0.03 0.002"
+            solref="0.003 1" solimp="0.95 0.99 0.001" density="0" group="3" />
+
+      <geom name="loaded_tray_rim_front_visual" type="box" pos="0.102963523 0 -0.011419748" size="0.003591959 0.188675259 0.014227890"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_rim_back_visual" type="box" pos="-0.102963529 0 -0.011419748" size="0.003591952 0.188675259 0.014227890"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_rim_left_visual" type="box" pos="-0.000000006 0.185000045 -0.011419748" size="0.099371570 0.003675215 0.014227890"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_rim_right_visual" type="box" pos="-0.000000006 -0.185000045 -0.011419748" size="0.099371570 0.003675215 0.014227890"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_rim_front_collision" type="box" pos="0.102963523 0 -0.011419748" size="0.003591959 0.188675259 0.014227890"
+            rgba="0 0 0 0" condim="6" friction="1.10 0.02 0.002" density="0" group="3" />
+      <geom name="loaded_tray_rim_back_collision" type="box" pos="-0.102963529 0 -0.011419748" size="0.003591952 0.188675259 0.014227890"
+            rgba="0 0 0 0" condim="6" friction="1.10 0.02 0.002" density="0" group="3" />
+      <geom name="loaded_tray_rim_left_collision" type="box" pos="-0.000000006 0.185000045 -0.011419748" size="0.099371570 0.003675215 0.014227890"
+            rgba="0 0 0 0" condim="6" friction="1.10 0.02 0.002" density="0" group="3" />
+      <geom name="loaded_tray_rim_right_collision" type="box" pos="-0.000000006 -0.185000045 -0.011419748" size="0.099371570 0.003675215 0.014227890"
+            rgba="0 0 0 0" condim="6" friction="1.10 0.02 0.002" density="0" group="3" />
+
+      <!-- Converter-startup scaffold only: the BC005 runtime disables every
+           tray primitive before the first PhysX step and replaces them with
+           the selected wooden tray visual and its source-fitted compound
+           collision.  The selected tray starts yawed +90 degrees, so its
+           narrow face leads through the frame.  End handles remain visual;
+           the transparent sites mark the two long-side rim grip regions. -->
+      <geom name="loaded_tray_left_handle_visual" type="capsule" fromto="-0.060978176 0.185 0.014667695 0.060978176 0.185 0.014667695" size="0.003675215"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_right_handle_visual" type="capsule" fromto="-0.060978176 -0.185 0.014667695 0.060978176 -0.185 0.014667695" size="0.003675215"
+            material="ltng_tray_dark" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_left_handle_collision" type="capsule" fromto="-0.060978176 0.185 0.014667695 0.060978176 0.185 0.014667695" size="0.003675215"
+            rgba="0 0 0 0" condim="6" friction="1.35 0.04 0.004" density="0" group="3" />
+      <geom name="loaded_tray_right_handle_collision" type="capsule" fromto="-0.060978176 -0.185 0.014667695 0.060978176 -0.185 0.014667695" size="0.003675215"
+            rgba="0 0 0 0" condim="6" friction="1.35 0.04 0.004" density="0" group="3" />
+      <geom name="loaded_tray_left_handle_support_front" type="capsule" fromto="0.043847185 0.185 0.005032482 0.036190365 0.185 0.022374406" size="0.003675215"
+            material="ltng_tray_dark" condim="6" friction="1.20 0.03 0.003" density="0" group="3" />
+      <geom name="loaded_tray_left_handle_support_back" type="capsule" fromto="-0.043847218 0.185 0.005032482 -0.036190398 0.185 0.022374406" size="0.003675215"
+            material="ltng_tray_dark" condim="6" friction="1.20 0.03 0.003" density="0" group="3" />
+      <geom name="loaded_tray_right_handle_support_front" type="capsule" fromto="0.043847185 -0.185 0.005032482 0.036190365 -0.185 0.022374406" size="0.003675215"
+            material="ltng_tray_dark" condim="6" friction="1.20 0.03 0.003" density="0" group="3" />
+      <geom name="loaded_tray_right_handle_support_back" type="capsule" fromto="-0.043847218 -0.185 0.005032482 -0.036190398 -0.185 0.022374406" size="0.003675215"
+            material="ltng_tray_dark" condim="6" friction="1.20 0.03 0.003" density="0" group="3" />
+      <site name="loaded_tray_left_handle_site" pos="0.102963523 0 0.002808142" size="0.006" rgba="0.2 0.4 1 0" />
+      <site name="loaded_tray_right_handle_site" pos="-0.102963529 0 0.002808142" size="0.006" rgba="1 0.3 0.2 0" />
+    </body>
+
+    <body name="loaded_tray_can" pos="-0.408675260 -0.025 0.944536250"
+          quat="0.707106781 0 0 0.707106781">
+      <freejoint name="loaded_tray_can_joint" />
+      <inertial pos="0 0 0" mass="0.12" diaginertia="0.000151 0.000151 0.000061" />
+      <geom name="loaded_tray_can_visual" type="mesh" mesh="loaded_tray_can_visual_mesh"
+            material="loaded_tray_can_material" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_can_collision" type="mesh" mesh="loaded_tray_can_collision_mesh"
+            rgba="0 0 0 0" condim="6" friction="0.90 0.025 0.002"
+            solref="0.004 1" solimp="0.94 0.99 0.001" density="0" group="3" />
+    </body>
+
+    <!-- Every D09 mesh shares this rotated offset, so the complete scaled cup
+         AABB is centred on the dynamic body root.  The extra +90 degrees about
+         body Z points the handle along +Y and leaves physical rim clearance. -->
+    <body name="loaded_tray_cup" pos="-0.548675260 0.025 0.937519250"
+          quat="0.707106781 0 0 0.707106781">
+      <freejoint name="loaded_tray_cup_joint" />
+      <inertial pos="0 0 0" mass="0.09" diaginertia="0.000087 0.000087 0.000052" />
+      <geom name="loaded_tray_cup_visual" type="mesh" mesh="loaded_tray_cup_visual_mesh"
+            pos="0 -0.013860 -0.042680" quat="0.5 0.5 0.5 0.5"
+            material="loaded_tray_cup_material" contype="0" conaffinity="0" density="0" group="1" />
+      <geom name="loaded_tray_cup_collision" type="mesh" mesh="loaded_tray_cup_body_collision_mesh"
+            pos="0 -0.013860 -0.042680" quat="0.707107 0 0 0.707107"
+            rgba="0 0 0 0" condim="6" friction="0.95 0.025 0.002"
+            solref="0.004 1" solimp="0.94 0.99 0.001" density="0" group="3" />
+      <geom name="loaded_tray_cup_handle_upper_collision" type="mesh"
+            mesh="loaded_tray_cup_handle_upper_collision_mesh"
+            pos="0 -0.013860 -0.042680" quat="0.707107 0 0 0.707107"
+            rgba="0 0 0 0" condim="6" friction="0.95 0.025 0.002"
+            solref="0.004 1" solimp="0.94 0.99 0.001" density="0" group="3" />
+      <geom name="loaded_tray_cup_handle_outer_collision" type="mesh"
+            mesh="loaded_tray_cup_handle_outer_collision_mesh"
+            pos="0 -0.013860 -0.042680" quat="0.707107 0 0 0.707107"
+            rgba="0 0 0 0" condim="6" friction="0.95 0.025 0.002"
+            solref="0.004 1" solimp="0.94 0.99 0.001" density="0" group="3" />
+      <geom name="loaded_tray_cup_handle_lower_collision" type="mesh"
+            mesh="loaded_tray_cup_handle_lower_collision_mesh"
+            pos="0 -0.013860 -0.042680" quat="0.707107 0 0 0.707107"
+            rgba="0 0 0 0" condim="6" friction="0.95 0.025 0.002"
+            solref="0.004 1" solimp="0.94 0.99 0.001" density="0" group="3" />
+    </body>
+
+    <!-- Static wood-frame collision fitted to the uniformly scaled downloaded
+         mesh: 0.377350520 m clear width (the tray's long dimension) and
+         0.480 m useful height above the table.
+         Post boxes use their below-lintel source AABBs while fixing both inner
+         faces at Y=+/-0.188675260 m; this intentionally excludes decorative join
+         protrusions.  The lintel preserves the selected asset's full overhang. -->
+    <body name="loaded_tray_gate" pos="-0.260 0 0.890">
+      <geom name="loaded_tray_gate_left_post" type="box"
+            pos="0 0.248042187 0.240000000"
+            size="0.010 0.059366927 0.240000000"
+            rgba="0 0 0 0" friction="0.70 0.01 0.001" group="3" />
+      <geom name="loaded_tray_gate_right_post" type="box"
+            pos="0 -0.249698951 0.240000000"
+            size="0.010 0.061023691 0.240000000"
+            rgba="0 0 0 0" friction="0.70 0.01 0.001" group="3" />
+      <geom name="loaded_tray_gate_lintel" type="box"
+            pos="0 -0.001094293 0.536812932"
+            size="0.010 0.340238271 0.056812933"
+            rgba="0 0 0 0" friction="0.70 0.01 0.001" group="3" />
+      <site name="loaded_tray_gate_plane" pos="0 0 0.090" size="0.003 0.188675260 0.090" type="box" rgba="0.15 0.55 1 0" />
+    </body>
+
+    <body name="loaded_tray_goal" pos="-0.035 0 0.8915">
+      <inertial pos="0 0 0" mass="0.001" diaginertia="0.000001 0.000001 0.000001" />
+      <geom name="loaded_tray_goal_visual" type="box" size="0.205 0.120 0.0015"
+            material="ltng_goal_green" contype="0" conaffinity="0" density="0" group="1" />
+      <site name="loaded_tray_goal_center" size="0.008" rgba="0.1 1 0.2 0" />
+    </body>
+  </worldbody>
+</mujoco>

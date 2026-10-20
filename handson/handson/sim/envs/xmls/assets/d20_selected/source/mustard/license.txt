@@ -1,0 +1,11 @@
+Model Information:
+* title:	Squeeze Bottle (Ketchup, Mustard, BBQ)
+* source:	https://sketchfab.com/3d-models/squeeze-bottle-ketchup-mustard-bbq-d868f44463a945f7a9c2c475612fdef7
+* author:	Faneesh17 (https://sketchfab.com/Faneesh17)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Squeeze Bottle (Ketchup, Mustard, BBQ)" (https://sketchfab.com/3d-models/squeeze-bottle-ketchup-mustard-bbq-d868f44463a945f7a9c2c475612fdef7) by Faneesh17 (https://sketchfab.com/Faneesh17) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

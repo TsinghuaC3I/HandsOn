@@ -1,0 +1,14 @@
+env_name: t43_squeeze_scissors
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Lift the scissors clear of the table and make three complete cuts in the air. Try one hand first; the other hand may reposition or assist."
+robot_type: dual_arm
+time_limit_seconds: 180
+skills:
+  - bimanual_coordination
+  - articulated_object
+  - repeated_manipulation
+objects:
+  - 037_scissors

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji1_D_Long_Horizon">
+  <include file="rokae_wuji1_bimanual.xml" />
+  <include file="d_long_horizon_objects.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+  <statistic center="-0.05 0 1.02" extent=".9" />
+
+  <visual>
+    <headlight diffuse=".25 .25 .25" ambient=".30 .30 .30" />
+    <global azimuth="160" elevation="-20" offheight="2048" offwidth="2048" />
+    <quality offsamples="8" />
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".30 .50 .70" rgb2="0 0 0"
+             width="32" height="512" />
+    <texture name="dlong_floor_texture" type="2d" builtin="checker"
+             width="512" height="512" rgb1=".82 .84 .86" rgb2=".72 .74 .76" />
+    <material name="dlong_floor_material" texture="dlong_floor_texture"
+              texrepeat="2 2" texuniform="true" reflectance=".01" />
+    <material name="dlong_table_material" rgba=".70 .70 .66 1"
+              specular=".12" shininess=".08" />
+    <material name="dlong_leg_material" rgba=".44 .45 .47 1"
+              reflectance=".18" shininess=".28" />
+  </asset>
+
+  <worldbody>
+    <geom name="floor" size="3 3 .01" type="plane"
+          material="dlong_floor_material" />
+    <body name="table" pos="-.15 0 0">
+      <geom name="table_collision" type="box" size=".4 .8 .03"
+            pos="0 0 .86" friction="1 0.005 0.0001" group="3" />
+      <geom name="table_visual" type="box" size=".4 .8 .03"
+            pos="0 0 .86" contype="0" conaffinity="0" group="1"
+            material="dlong_table_material" />
+      <site name="table_top" pos="0 0 .89" size=".002" rgba="0 0 0 0" />
+      <geom pos=".32 .72 .43" type="cylinder" size=".04 .43"
+            contype="0" conaffinity="0" group="1" material="dlong_leg_material" />
+      <geom pos=".32 -.72 .43" type="cylinder" size=".04 .43"
+            contype="0" conaffinity="0" group="1" material="dlong_leg_material" />
+      <geom pos="-.32 .72 .43" type="cylinder" size=".04 .43"
+            contype="0" conaffinity="0" group="1" material="dlong_leg_material" />
+      <geom pos="-.32 -.72 .43" type="cylinder" size=".04 .43"
+            contype="0" conaffinity="0" group="1" material="dlong_leg_material" />
+    </body>
+
+    <camera name="front" pos="1.28 0 1.62"
+            quat=".5963678 .3799282 .3799282 .5963678" fovy="48" />
+    <camera name="back" pos="-1.30 0 2.20"
+            quat=".6532815 .2705981 -.2705981 -.6532815" fovy="48" />
+    <camera name="left" pos="-1 .8 2"
+            quat="-.3535 -.146424 .3535 .853424" fovy="45" />
+    <camera name="right" pos="-1 -.8 2"
+            quat=".853424 .3535 -.146424 -.3535" fovy="45" />
+    <camera name="top0" pos=".17 0 1.85" quat=".707 0 0 -.707" fovy="48" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse=".65 .65 .65"
+           specular=".06 .06 .06" />
+
+    <body name="target_right" pos="-.12 -.34 1.08" quat="0 1 0 0"
+          mocap="true">
+      <geom name="target_right" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".6 .3 .3 0" />
+    </body>
+    <body name="target_left" pos="-.12 .34 1.08" quat="0 1 0 0"
+          mocap="true">
+      <geom name="target_left" type="box" size=".03 .03 .03"
+            contype="0" conaffinity="0" rgba=".3 .3 .6 0" />
+    </body>
+  </worldbody>
+</mujoco>

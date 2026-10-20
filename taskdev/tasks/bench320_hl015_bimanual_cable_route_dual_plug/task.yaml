@@ -1,0 +1,30 @@
+task_id: B320-HL015
+name: bench320_hl015_bimanual_cable_route_dual_plug
+title: Bimanual Cable Route and Dual Plug
+description: >-
+  Route the charging cable through two ordered guides, insert the charger plug
+  and cable connector in sequence, close the cover, and finish with both hands
+  clear of the stable assembly.
+robot: dual_arm
+backend: isaacsim
+time_limit_seconds: 240
+skills:
+  - bimanual_stabilization
+  - cable_routing
+  - precision_insertion
+  - ordered_stages
+  - cover_closing
+objects:
+  - c10_power_strip
+  - c10_charger_plug
+  - c10_charging_cable
+  - hl015_cover
+success_contract:
+  - cable_passes_route_gate_a
+  - cable_passes_route_gate_b_in_order
+  - charger_plug_connected_first
+  - cable_connector_connected_second
+  - both_hands_participated
+  - cover_seated
+  - both_hands_clear
+  - assembly_stable_for_seconds: 0.5

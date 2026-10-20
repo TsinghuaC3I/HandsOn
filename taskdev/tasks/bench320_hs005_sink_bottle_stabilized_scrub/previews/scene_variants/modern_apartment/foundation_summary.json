@@ -1,0 +1,409 @@
+{
+  "action_tuning_performed": false,
+  "asset_layer": {
+    "bytes": 12629,
+    "collision_paths": {
+      "bottle": [
+        "/HS005Assets/Bottle/Colliders/body",
+        "/HS005Assets/Bottle/Colliders/shoulder",
+        "/HS005Assets/Bottle/Colliders/cap"
+      ],
+      "brush": [
+        "/HS005Assets/Brush/Colliders/bristles",
+        "/HS005Assets/Brush/Colliders/ferrule",
+        "/HS005Assets/Brush/Colliders/handle",
+        "/HS005Assets/Brush/Colliders/stability_foot"
+      ],
+      "dish_soap": [
+        "/HS005Assets/DishSoap/Colliders/body",
+        "/HS005Assets/DishSoap/Colliders/neck",
+        "/HS005Assets/DishSoap/Colliders/pump"
+      ],
+      "sink": [
+        "/HS005Assets/Sink/Collider"
+      ],
+      "sponge": [
+        "/HS005Assets/Sponge/Colliders/body"
+      ]
+    },
+    "context_prop_policy": {
+      "dish_soap": "static physical context; not a success entity",
+      "sponge": "static physical context; not a success entity"
+    },
+    "joint_policy": {
+      "authored_joint_count": 0,
+      "bottle": "free rigid body; no articulation joint",
+      "brush": "free rigid body; no articulation joint",
+      "sink": "static collision owner; no joint required"
+    },
+    "poses": {
+      "bottle": [
+        -0.1,
+        0.11,
+        0.895
+      ],
+      "brush": [
+        -0.191,
+        -0.125,
+        0.9090212400000001
+      ],
+      "dish_soap": [
+        0.16,
+        0.24,
+        0.9930216329714998
+      ],
+      "kitchen_translation": [
+        -1.135,
+        -2.8,
+        0.18151906000000007
+      ],
+      "sink": [
+        -0.15,
+        0.0,
+        0.895
+      ],
+      "sponge": [
+        0.16,
+        -0.18,
+        1.0143149999999999
+      ]
+    },
+    "scene_path": "scene/hs005_assets.usda",
+    "schema": "hs005_asset_layer_v4",
+    "sha256": "5196ac1c18bdf11d533a7833dfe9dfd3505ca6f4be05302c118f9089c09454c2",
+    "sink_collision_policy": "static_analytic_basin_floor_robot_clearance",
+    "sink_collision_reason": "full source rim overlaps the right ROKAE/Wuji reset pose",
+    "sink_collision_source": "../assets/modern_apartment_kitchen/sink_collision_source.ply",
+    "sink_floor_top_z": 0.895,
+    "source_scale_xyz": {
+      "bottle": [
+        0.05,
+        0.05,
+        0.05
+      ],
+      "brush": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dish_soap": [
+        0.035,
+        0.035,
+        0.035
+      ],
+      "kitchen": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sink": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "sponge": [
+        0.018,
+        0.018,
+        0.018
+      ]
+    },
+    "table_top_z": 0.89,
+    "visual_axis_corrections_deg": {
+      "bottle_rotate_x": 90.0,
+      "brush_rotate_x": 0.0,
+      "dish_soap_rotate_x": 90.0,
+      "kitchen_rotate_xyz": [
+        90.0,
+        0.0,
+        -90.0
+      ],
+      "sponge_rotate_x": 90.0
+    },
+    "visual_paths": {
+      "bottle": "../assets/cc_by_lukemodels75_water_bottle/water_bottle_visual.usd",
+      "brush": "../assets/cc_by_amhyde_cleaning_brush/cleaning_brush_visual.usd",
+      "dish_soap": "../assets/cc_by_mike_nov_dishwashing_dispenser/dishwashing_dispenser_visual.usd",
+      "kitchen": "../assets/modern_apartment_kitchen/modern_apartment_kitchen.usd",
+      "sponge": "../assets/cc_by_requital_dish_sponge/dish_sponge_visual.usd"
+    }
+  },
+  "checks": {
+    "asset_layer": true,
+    "dual_rokae_wuji": true,
+    "generic_table_collision_disabled": true,
+    "head_camera": true,
+    "initial_layout": true,
+    "lighting": true,
+    "no_action_object_writes": true,
+    "physical_views": true,
+    "scope_guard": true,
+    "source_assets": true,
+    "visible_support_alignment": true,
+    "zero_action_stability": true
+  },
+  "cleanup_policy": {
+    "evidence_written_before_teardown": true,
+    "kit_cleanup_watchdog_seconds": 20.0
+  },
+  "core_scene_ready": true,
+  "disabled_generic_table_colliders": [],
+  "elapsed_wall_seconds": 4.612794399261475,
+  "foundation_pass": true,
+  "grasp_motion_executed": false,
+  "grasp_validated": false,
+  "head_camera": {
+    "black_fraction": 0.011181640625,
+    "dtype": "uint8",
+    "max_rgb": 220.0,
+    "mean_rgb": 135.220166015625,
+    "pass": true,
+    "pixel_stddev": 48.27635356120928,
+    "preview_bytes": 922446,
+    "preview_path": "/home/user/handson-main/taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/previews/scene_variants/modern_apartment/reset_head.png",
+    "preview_sha256": "50bddc98583ff98f6eda7524a18bc4359c70e8d9d7473b65fbf4564bab8a9c0b",
+    "prim_path": "/World/RecordCameras/head_camera",
+    "resolution_hwc": [
+      480,
+      640,
+      3
+    ],
+    "unique_rgb_count": 17726
+  },
+  "hidden_native_c10_prims": [
+    "/World/Task/c10_power_strip/c10_power_strip",
+    "/World/Task/c10_charger_plug/c10_charger_plug",
+    "/World/Task/c10_charging_cable/c10_charging_cable"
+  ],
+  "initial_layout": {
+    "forbidden_overlap_m": {
+      "bottle_brush": 0.0,
+      "bottle_dish_soap": 0.0,
+      "bottle_sponge": 0.0,
+      "brush_dish_soap": 0.0,
+      "brush_sponge": 0.0,
+      "dish_soap_sponge": 0.0
+    },
+    "pass": true,
+    "support_gaps_m": {
+      "bottle_to_basin": 0.0,
+      "brush_to_basin": 8.200000012337227e-09,
+      "dish_soap_to_counter": 0.0029999999999998916,
+      "sink_to_table": 0.0050000000000000044,
+      "sponge_to_counter": 0.0030002503997998975
+    }
+  },
+  "lighting": {
+    "distant": {
+      "intensity": 2500.0,
+      "path": "/World/HS005Lights/Key"
+    },
+    "dome": {
+      "intensity": 600.0,
+      "path": "/World/HS005Lights/Dome"
+    },
+    "film_iso": 200,
+    "pass": true,
+    "render_mode": "RayTracedLighting",
+    "tonemap": "ACES"
+  },
+  "parked_generic_table_bodies": [
+    "/World/Task/table/table"
+  ],
+  "parked_native_c10_bodies": [
+    {
+      "body_count": 1,
+      "name": "c10_power_strip",
+      "path": "/World/Task/c10_power_strip/c10_power_strip",
+      "reset_only_pose_writes": 1,
+      "reset_only_velocity_writes": 1
+    },
+    {
+      "body_count": 1,
+      "name": "c10_charger_plug",
+      "path": "/World/Task/c10_charger_plug/c10_charger_plug",
+      "reset_only_pose_writes": 1,
+      "reset_only_velocity_writes": 1
+    },
+    {
+      "body_count": 1,
+      "name": "c10_charging_cable",
+      "path": "/World/Task/c10_charging_cable/c10_charging_cable",
+      "reset_only_pose_writes": 1,
+      "reset_only_velocity_writes": 1
+    }
+  ],
+  "robot": {
+    "arm_joint_counts": {
+      "left": 7,
+      "right": 7
+    },
+    "hand_joint_counts": {
+      "left": 20,
+      "right": 20
+    },
+    "names": [
+      "left",
+      "right"
+    ],
+    "pass": true
+  },
+  "runner_rc": 0,
+  "runtime": {
+    "dirty_source_allowed": true,
+    "git_branch": "release/collection",
+    "git_head": "51a71d980652c4eb25e134f1a35069a225d64d7a",
+    "host": "user-System-Product-Name",
+    "logical_device": "cuda:0",
+    "physical_gpu": 4,
+    "physics_hz": 240,
+    "prelaunch_worktree_clean": false,
+    "requested_host": "hp-13",
+    "simulated_seconds": 0.5,
+    "total_physics_steps": 240,
+    "warmup_steps": 120,
+    "worktree_status_sha256": "3b34dc2736e00294617dc1d556be4289fd9fb49c21d2f77f6e63bf741a7f15bd",
+    "zero_action_steps": 120
+  },
+  "schema": "hs005_core_scene_foundation_v1",
+  "scrub_motion_executed": false,
+  "scrub_path_validated": false,
+  "simulation_scene_variant": null,
+  "sources": {
+    "bottle_source": {
+      "bytes": 8489,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_lukemodels75_water_bottle/source/scene.gltf",
+      "sha256": "d6e6579114ef8dea94f4f80f36182e57651269593e6ec5a01478d8bc5f188775"
+    },
+    "bottle_visual": {
+      "bytes": 6104657,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_lukemodels75_water_bottle/water_bottle_visual.usd",
+      "sha256": "8a1256a6f4c6cf7ad226c42d83f1aa6679801c3fbbcc00a9cd758e51e569e0ea"
+    },
+    "brush_source": {
+      "bytes": 16154,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_amhyde_cleaning_brush/source/scene.gltf",
+      "sha256": "1aae1c43dc9f06bc1d8cb4224a1a1ecbc537a188dd57059f132fe35e70c5f3aa"
+    },
+    "brush_visual": {
+      "bytes": 8424777,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_amhyde_cleaning_brush/cleaning_brush_visual.usd",
+      "sha256": "8c8a8e4150a9b82aa48b2139d400217275b9b50c404acbb60fb8142562a5bbc1"
+    },
+    "dish_soap_source": {
+      "bytes": 20947,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_mike_nov_dishwashing_dispenser/source/scene.gltf",
+      "sha256": "cf8f25d6d101e6a4224d277098eb8585b97eb5bcbf6e3d43428155ce3be00fd5"
+    },
+    "dish_soap_visual": {
+      "bytes": 9972703,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_mike_nov_dishwashing_dispenser/dishwashing_dispenser_visual.usd",
+      "sha256": "604c50edab0ac49627e139894105f5b2fe707d3ab508b5ca919a16913eec1123"
+    },
+    "kitchen": {
+      "bytes": 4311867,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/modern_apartment_kitchen.usd",
+      "sha256": "12ac915b9d442399f10af5b302d9c6ef887e32c8aa1d0f6addd3a1dbc5f58524"
+    },
+    "robot": {
+      "bytes": 3034,
+      "path": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63"
+    },
+    "sink": {
+      "bytes": 122794,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/modern_apartment_kitchen/sink_collision_source.ply",
+      "sha256": "46839123013a8785fcc70b9744fae0745972561e8c399c14c06b394b4f774082"
+    },
+    "sponge_source": {
+      "bytes": 7724,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_requital_dish_sponge/source/scene.gltf",
+      "sha256": "875ad3a55f1327dfac573f50366d33baf035b85c460526bc00ba8a27fd988ea9"
+    },
+    "sponge_visual": {
+      "bytes": 3528273,
+      "path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/assets/cc_by_requital_dish_sponge/dish_sponge_visual.usd",
+      "sha256": "17cf9caca532499991af0589a9ab3875ded6d070929fc005f0b27aef9b6e7ea6"
+    }
+  },
+  "success_motion_executed": false,
+  "task_complete": false,
+  "task_id": "bench320_hs005_sink_bottle_stabilized_scrub",
+  "visible_support_alignment": {
+    "expected_root_z": {},
+    "pass": true,
+    "settled_root_z": {
+      "bottle": 0.8949999809265137,
+      "brush": 0.9090583920478821
+    }
+  },
+  "zero_action_stability": {
+    "bottle": {
+      "angular_speed_rad_s": 0.004735443364619187,
+      "displacement_m": 3.7349634943885454e-07,
+      "final_transform_xyzw": [
+        -0.10000014305114746,
+        0.11000028997659683,
+        0.8950001001358032,
+        2.6074243919538276e-07,
+        -9.371759119858325e-07,
+        4.789392704651618e-08,
+        0.9999999403953552
+      ],
+      "final_velocity": [
+        0.0002980013086926192,
+        -0.0001518511853646487,
+        -0.00010547557758400217,
+        0.001704620779491961,
+        0.004408515524119139,
+        0.00028927967650815845
+      ],
+      "initial_transform_xyzw": [
+        -0.09999987483024597,
+        0.11000005900859833,
+        0.8949999809265137,
+        -6.418239877348242e-07,
+        -1.3582030078396201e-06,
+        1.959369377857456e-08,
+        0.9999999403953552
+      ],
+      "linear_speed_m_s": 0.00035069739084550014
+    },
+    "brush": {
+      "angular_speed_rad_s": 0.02282694296167684,
+      "displacement_m": 1.0536712127723508e-07,
+      "final_transform_xyzw": [
+        -0.19093957543373108,
+        -0.12499982863664627,
+        0.9090583324432373,
+        -6.486337952082977e-06,
+        0.002250916790217161,
+        -1.2154110891060554e-06,
+        0.9999973773956299
+      ],
+      "final_velocity": [
+        -1.0378386832599062e-05,
+        0.0003264103434048593,
+        3.3296750189037994e-05,
+        -0.022826364263892174,
+        2.5524965167278424e-05,
+        0.00016052396676968783
+      ],
+      "initial_transform_xyzw": [
+        -0.1909395009279251,
+        -0.12499987334012985,
+        0.9090583920478821,
+        1.7118746882260893e-06,
+        0.002250985475257039,
+        -5.136718073117663e-07,
+        0.9999974370002747
+      ],
+      "linear_speed_m_s": 0.00032826833043727574
+    },
+    "object_pose_or_velocity_writes_during_action": 0,
+    "pass": true,
+    "simulated_seconds": 0.5,
+    "total_physics_steps": 240,
+    "warmup_steps": 120,
+    "zero_action_steps": 120
+  }
+}

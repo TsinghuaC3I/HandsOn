@@ -1,0 +1,11 @@
+{
+  "dependency_paths": [
+    "source/textures/metal_office_desk_diff_1k.jpg",
+    "source/textures/metal_office_desk_nor_gl_1k.jpg",
+    "source/textures/metal_office_desk_arm_1k.jpg"
+  ],
+  "external_absolute_references": [],
+  "runtime_usd_sha256": "b48feffebbc30ca37d49784f731c3a32a493a38d50bded323e8848c2b26b5ee9",
+  "schema": "handson.bc017.material-closure",
+  "unresolved_references": []
+}

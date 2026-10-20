@@ -1,0 +1,6 @@
+env_name: t44_stack_blocks
+camera_mapping:
+  base: random_camera
+  wrist: wrist
+prompt: "Arrange the four blocks into four distinct height layers with the large wood block on the bottom layer, then keep the hand from touching the blocks for 0.5 seconds."
+robot_type: single_arm

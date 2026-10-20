@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="model">
+  <default>
+    <default class="ycb_dice_visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0" />
+    </default>
+    <default class="ycb_dice_spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0" />
+      <site group="4" rgba="1 1 1 0.5" />
+    </default>
+    <default class="ycb_dice_collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1314.17" rgba="0.5 0 0 0.5" />
+    </default>
+    <default class="ycb_dice_region">
+      <geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0" />
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="ycb_dice_dice_material" file="../lightwheel_ycb/dice/visuals/T_dice_BC001.png" />
+    <material name="ycb_dice_dice_material" texture="ycb_dice_dice_material" specular="0.5103" />
+    <mesh name="ycb_dice_dice_vis" file="../lightwheel_ycb/dice/visuals/dice.obj" />
+    <mesh name="ycb_dice_dice_Collider1_m_collision" file="../lightwheel_ycb/dice/collision/dice_Collider1_m.obj" />
+  </asset>
+  <worldbody>
+    <body name="dice_root_body" pos="0 0 0.93" quat="1 0 0 0">
+      <freejoint name="dice_root" />
+      <body name="ycb_dice_object">
+        <geom class="ycb_dice_visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="ycb_dice_dice_material" mesh="ycb_dice_dice_vis" />
+        <geom name="ycb_dice_dice_Collider1_m" class="ycb_dice_collision" type="mesh" mesh="ycb_dice_dice_Collider1_m_collision" />
+        <geom size="0.008076 0.008076 0.008075" pos="-0.0 0.0 0.0" name="ycb_dice_reg_bbox" class="ycb_dice_region" type="box" quat="1.0 0.0 0.0 0.0" />
+        <site name="dice_center" pos="0 0 0" size="0.004" rgba="0 1 0 0.35" group="4" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

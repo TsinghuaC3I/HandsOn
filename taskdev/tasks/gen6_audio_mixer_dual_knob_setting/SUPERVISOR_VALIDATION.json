@@ -1,0 +1,270 @@
+{
+  "format": "handson.gen6.supervisor_validation.v1",
+  "validated_at_utc": "2026-09-07T16:26:20.614743+00:00",
+  "task": "eval_gen05_set_mixer_knobs",
+  "reviewed_commit": "1d68a889e213d05d617d1ed2da8a240095f50ed8",
+  "scope": "Independent CPU/read-only validation of existing engineering artifacts; no new native simulation or fresh-process certification was executed.",
+  "result": "passed_existing_engineering_evidence_checks",
+  "production_code_changed": false,
+  "new_native_simulation_executed": false,
+  "episode_relative_path": "taskdev/tasks/eval_gen05_set_mixer_knobs/evidence/policy_episodes/.physical_replay_pending/eval_gen05_set_mixer_knobs_demo_1_2026-09-07_21-08-28_409631__stable_v2",
+  "checks": {
+    "schema_exact_array_set": true,
+    "all_declared_fields_shape_dtype_finite": true,
+    "all_current_next_boundaries_exact": true,
+    "embedded_schema_matches_sidecar": true,
+    "terminal_only_last": true,
+    "succeed_only_last": true,
+    "each_transition_has_four_substeps": true,
+    "all_task_truth_and_fixture_valid": true,
+    "final_released": true,
+    "final_target_errors_within_7_deg": true,
+    "final_knob_speeds_within_0_05_rad_s": true,
+    "final_stages_complete": true,
+    "final_hidden_terminal_success_no_failure": true,
+    "policy_source_hash_matches": true,
+    "all_raw_actions_exact_policy_conversion": true,
+    "raw_action_semantics_declared": true,
+    "certified_inputs_exact": true,
+    "local_existing_certificate_valid": true,
+    "three_canonical_postrender_contract": true,
+    "launch_bound_source_hashes_match": true,
+    "asset_dependency_hashes_match": true,
+    "asset_audit_manifest_hash_matches": true,
+    "remote_runtime_and_asset_hashes_match": true,
+    "all_three_videos_decode_and_match_proof": true,
+    "episode_inputs_unchanged_after_readback": true
+  },
+  "recording": {
+    "step_count": 1018,
+    "declared_field_count": 171,
+    "current_next_pair_count": 83,
+    "field_failures": [],
+    "raw_action_shape": [
+      1018,
+      54
+    ],
+    "policy_source_sha256": "b99ab3c0e603dd3e814f071360375e7654165d3976f581edd04ea518ce4dd6aa",
+    "state_shape": [
+      1018,
+      144
+    ],
+    "task_state_slices_zero_based_end_exclusive": {
+      "knob_joint_state": [
+        74,
+        78
+      ],
+      "knob_target_state": [
+        78,
+        84
+      ],
+      "knob_contact_state": [
+        84,
+        92
+      ],
+      "task_validity": [
+        92,
+        96
+      ],
+      "sync_task_state": [
+        96,
+        116
+      ],
+      "task_terminal_state": [
+        116,
+        119
+      ],
+      "task_metrics": [
+        119,
+        143
+      ]
+    },
+    "hidden_state_scope": "Declared progress/target/contact/terminal channels are present and continuous in state/next_state. This check does not claim an arbitrary mid-trajectory serialization of every Python member.",
+    "final_angles_deg": [
+      61.43281143298071,
+      -61.44451837721811
+    ],
+    "final_target_errors_deg": [
+      -1.4328114329807107,
+      1.4445183772181125
+    ],
+    "final_hold_release_stable_seconds": [
+      0.24999999999999997,
+      0.24999999999999997,
+      0.5000000000000007
+    ]
+  },
+  "existing_certificate": {
+    "sha256": "3ae67fab0c8079cb74a1ab5487b06659e8e2b9d9aff8a8bd793a89979c31155a",
+    "status": "passed",
+    "initialization_mode": "fresh_process_seeded_reset_identical_stabilization_no_extra_t0_restore",
+    "steps_executed": 1018,
+    "substeps_executed": 4072,
+    "compared_field_count": 59,
+    "maximum_reported_field_error": 0.0,
+    "final_succeed": true,
+    "trajectory_state_writes_performed": false,
+    "state_writes_after_action_start": false,
+    "source_identity": "dirty_content_match",
+    "portable": false,
+    "local_report_blocker": null,
+    "publication_blocker": {
+      "code": "physical_replay_certification_invalid",
+      "detail": "连续 PhysX replay 认证未通过上传门禁：portable 必须为 true"
+    },
+    "certified_inputs": {
+      "algorithm": "sha256_tree_v1",
+      "replay_manifest_sha256": "4975c15c369c6124c22da0efb8c89c0746d503130083d8b8951af78d3372ab9a",
+      "recording_schema_sha256": "6d3ceb8fe57131a7b2748a43ba69323f1a731b3f9adf2e354b7485a882708653",
+      "replay_zarr_sha256": "8627c19f071df2f131892018878e930031bb7b0b76d7e99cf2cee8a970b65e99",
+      "replay_zarr_file_count": 843,
+      "replay_zarr_bytes": 8558783
+    }
+  },
+  "source_and_assets": {
+    "launch_hashes_verified": {
+      "recording_006": {
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/launch_remote_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/live_scene_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/manipulation_probe.py": true,
+        "handson/handson/sim/isaaclab/abc_collection_env.py": true,
+        "handson/handson/sim/isaaclab/b320_bimanual_env.py": true,
+        "handson/handson/sim/isaaclab/gen6_audio_mixer_scene.py": true,
+        "handson/handson/sim/isaaclab/b320_ka005_2_contract.py": true,
+        "handson/handson/tasks/eval_gen05_set_mixer_knobs/config.py": true
+      },
+      "certification_004": {
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/launch_remote_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/live_scene_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/manipulation_probe.py": true,
+        "handson/handson/sim/isaaclab/abc_collection_env.py": true,
+        "handson/handson/sim/isaaclab/b320_bimanual_env.py": true,
+        "handson/handson/sim/isaaclab/gen6_audio_mixer_scene.py": true,
+        "handson/handson/sim/isaaclab/b320_ka005_2_contract.py": true,
+        "handson/handson/tasks/eval_gen05_set_mixer_knobs/config.py": true
+      },
+      "postrender_002": {
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/launch_remote_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/live_scene_probe.py": true,
+        "taskdev/tasks/eval_gen05_set_mixer_knobs/manipulation_probe.py": true,
+        "handson/handson/sim/isaaclab/abc_collection_env.py": true,
+        "handson/handson/sim/isaaclab/b320_bimanual_env.py": true,
+        "handson/handson/sim/isaaclab/gen6_audio_mixer_scene.py": true,
+        "handson/handson/sim/isaaclab/b320_ka005_2_contract.py": true,
+        "handson/handson/tasks/eval_gen05_set_mixer_knobs/config.py": true
+      }
+    },
+    "current_vs_remote_sha256": {
+      "collection_ui/server.py": "e11fc7f06c9eb8b1e02ac756f2b42e20baede6e09f25a9c02401ba8ebc42fa41",
+      "configs/multi_task/eval_gen05_set_mixer_knobs.yaml": "2f10749fb8c80999ea331596eb9695b519ffea40cb91eb2b4b1a5cac55415784",
+      "handson/handson/data/recording_origin_profile.py": "df38c41b86d1ae0712bfb054d19cac55ee530e008f67fb1b5a82340635c64cb5",
+      "handson/handson/runtime/collection_support.py": "8f3fec1b9f57b1422f6c6cc163f25f07581d82a079bc8cd8c8d0d60ec07482c8",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/asset_manifest.json": "cf5105935df8352aad5436c9f66a4ab3288c0c83eab3ec0972172a52f231866c",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/knob_collision.usda": "f329cfa6d137fb43d1b61027bb285d5c0c5ea3654dac519f9b643891fee08841",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/knob_visual.usda": "5a215e23ddc5b65664c6f3c61a53f36858daf129a59e13d95bd0d9dd6fe78881",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/mixer_fixed_collision.usda": "10c19a6266048126ef9744476625340458c5181ffe96f4bdfc633553fd10ec06",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/mixer_fixed_visual.usda": "b3c33e426dcc5c0e850d2bee141d23eec2cc250428f705b451bfe44af6ce24ef",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/textures/wire_061135006_baseColor.jpeg": "91580f77b84bdfe22766b1dd34d4ac07710c0f1d386500fa9934fa217f0abcb5",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/textures/wire_153228153_emissive.jpeg": "a082c28c84d70dae3d617647fe24689c8d69b98d95cb71f28b2b1f180b03fb56",
+      "handson/handson/sim/isaaclab/abc_collection_env.py": "7190e7f63cce2e40c019ac1e6aeab3b8d675b49874ca403862aa9e8b385da61b",
+      "handson/handson/sim/isaaclab/b320_bimanual_env.py": "f4e8fb9cc64db0b0958ae70bf9a2bd2a01daf29ba7d8b10e802df9ee5efb3600",
+      "handson/handson/sim/isaaclab/b320_bimanual_scene.py": "28dff0a1ee177f8d65169f8a23ff1cc04fdbb54cbd3fff26e350093a60f92e0d",
+      "handson/handson/sim/isaaclab/gen6_audio_mixer_scene.py": "a1708f90d6a11167a76495c447673846da7e097df323f1a5b437967b216723ff",
+      "handson/handson/tasks/eval_gen05_set_mixer_knobs/__init__.py": "df1385784a775da145c694f32daa077f570a92ce8dadf3f7567389f6eb4360af",
+      "handson/handson/tasks/eval_gen05_set_mixer_knobs/config.py": "54729dd47e3d4a856c2ae48e3489a21d8fb836c6acc414457686902840fc3be7",
+      "handson/handson/tasks/mappings.py": "9062a5346e39bb17a27531a5962b0472ad96c0b5807a4ea438a02a1d48fc6deb",
+      "scripts/record_demos_zarr.py": "5443a10b46b3acd53d67dc395a2efe36c8465ddc423ae42f8e1fde66efe374f9"
+    },
+    "runtime_asset_dependencies": {
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/asset_manifest.json": "cf5105935df8352aad5436c9f66a4ab3288c0c83eab3ec0972172a52f231866c",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/ATTRIBUTION.md": "7f2bf1ca1dad019118e0e5378929c093298c559e594ff2e15b412ca7182855bb",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/SOURCE_LICENSE.txt": "a61a7907e46be118774fe65414e49cce2a8ed95ddbd420b32ab40c939a7183a0",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/knob_collision.usda": "f329cfa6d137fb43d1b61027bb285d5c0c5ea3654dac519f9b643891fee08841",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/knob_visual.usda": "5a215e23ddc5b65664c6f3c61a53f36858daf129a59e13d95bd0d9dd6fe78881",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/mixer_fixed_collision.usda": "10c19a6266048126ef9744476625340458c5181ffe96f4bdfc633553fd10ec06",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/mixer_fixed_visual.usda": "b3c33e426dcc5c0e850d2bee141d23eec2cc250428f705b451bfe44af6ce24ef",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/textures/wire_153228153_emissive.jpeg": "a082c28c84d70dae3d617647fe24689c8d69b98d95cb71f28b2b1f180b03fb56",
+      "handson/handson/sim/envs/usd/eval_gen05_set_mixer_knobs/textures/wire_061135006_baseColor.jpeg": "91580f77b84bdfe22766b1dd34d4ac07710c0f1d386500fa9934fa217f0abcb5"
+    },
+    "isaacsim_in_existing_certificate": "5.1.0.0",
+    "remote_isaaclab_version_file": "2.3.2",
+    "source_binding_limit": "Launch records bind eight selected code/probe files; runtime and asset comparison covers 19 changed files. The original full dirty-source fingerprint is retained, not recertified against the current clean commit."
+  },
+  "videos": [
+    {
+      "camera": "main",
+      "path": "taskdev/tasks/eval_gen05_set_mixer_knobs/evidence/policy_episodes/.physical_replay_pending/eval_gen05_set_mixer_knobs_demo_1_2026-09-07_21-08-28_409631__stable_v2/videos/main.mp4",
+      "sha256": "aba7021e9c9513aec306c9fcaf37f5f3418a517badada86f7ab487645423f67f",
+      "bytes": 2389457,
+      "decoded_frames": 1018,
+      "fps": 30.0,
+      "dimensions": [
+        [
+          640,
+          640
+        ]
+      ],
+      "unique_downsampled_frames": 1018,
+      "minimum_gray_std": 26.739408923133436,
+      "pts_monotonic": true,
+      "pts_step_seconds_min": 0.03333333333333333,
+      "pts_step_seconds_max": 0.03333333333333333,
+      "existing_artifact_hash_matches": true,
+      "passed": true
+    },
+    {
+      "camera": "wrist_left",
+      "path": "taskdev/tasks/eval_gen05_set_mixer_knobs/evidence/policy_episodes/.physical_replay_pending/eval_gen05_set_mixer_knobs_demo_1_2026-09-07_21-08-28_409631__stable_v2/videos/wrist_left.mp4",
+      "sha256": "f661d1fa3d993361ab5cb133ece2662ea253fa7d1b09dc04f7607a9a064bf56b",
+      "bytes": 4322985,
+      "decoded_frames": 1018,
+      "fps": 30.0,
+      "dimensions": [
+        [
+          848,
+          480
+        ]
+      ],
+      "unique_downsampled_frames": 1018,
+      "minimum_gray_std": 38.8329900035819,
+      "pts_monotonic": true,
+      "pts_step_seconds_min": 0.03333333333333333,
+      "pts_step_seconds_max": 0.03333333333333333,
+      "existing_artifact_hash_matches": true,
+      "passed": true
+    },
+    {
+      "camera": "wrist_right",
+      "path": "taskdev/tasks/eval_gen05_set_mixer_knobs/evidence/policy_episodes/.physical_replay_pending/eval_gen05_set_mixer_knobs_demo_1_2026-09-07_21-08-28_409631__stable_v2/videos/wrist_right.mp4",
+      "sha256": "05b4e9801385ebe69f480f2f6cd28c369f674d7ce83cf87164fc4ec68f5d42f0",
+      "bytes": 4084048,
+      "decoded_frames": 1018,
+      "fps": 30.0,
+      "dimensions": [
+        [
+          848,
+          480
+        ]
+      ],
+      "unique_downsampled_frames": 1018,
+      "minimum_gray_std": 43.40193561478133,
+      "pts_monotonic": true,
+      "pts_step_seconds_min": 0.03333333333333333,
+      "pts_step_seconds_max": 0.03333333333333333,
+      "existing_artifact_hash_matches": true,
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "Existing dirty-source episode remains non-portable and is not approved for publication by this report.",
+    "Human target-pair trials and ordinary hardware start/reset/stop acceptance remain pending.",
+    "Existing full physical operation/replay demonstrates the nominal target pair; other randomized target pairs lack equivalent full operation evidence."
+  ],
+  "wall_clock_frequency_policy": "Below 30 Hz is explicitly excluded from defects and blockers by the user; historical cadence metadata is preserved without changing collection or publication policy.",
+  "cleanup": {
+    "gpu_started": false,
+    "services_started": false,
+    "remote_files_modified": false,
+    "old_episode_metadata_modified": false
+  }
+}

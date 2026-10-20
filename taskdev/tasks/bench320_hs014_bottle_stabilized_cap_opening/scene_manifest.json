@@ -1,0 +1,243 @@
+{
+  "schema": "hs014_core_scene_manifest_v1",
+  "task_id": "B320-HS014",
+  "task_complete": false,
+  "scope": "core_scene_only",
+  "exact_production_child": false,
+  "priority_zero_qualified": false,
+  "forbidden_scope": {
+    "ik_path": true,
+    "grasp": true,
+    "insertion_motion": true,
+    "success_action": true
+  },
+  "assets": {
+    "bottle": {
+      "path": "assets/ganten_570ml/ganten_570ml_bottle.usda",
+      "sha256": "86594f66838f9c421fc417699e50ba4cbfb4304e248f1c97c2d2f4f915a85e06",
+      "scale_xyz": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "source_mesh_axis": "+Y",
+      "source_axis_semantics": "base_to_open_mouth",
+      "composed_axis": "+Z_from_base_to_open_mouth",
+      "visual_correction_wxyz": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0.0,
+        0.0
+      ],
+      "visual_translation_m": [
+        0.0,
+        0.0,
+        -0.2
+      ]
+    },
+    "cap": {
+      "path": "assets/ganten_570ml/ganten_570ml_cap.glb",
+      "sha256": "ccd761ea9a5dbb7fdf08048c39fc463831914a8f082151b1024a54987e5238fa",
+      "scale_xyz": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "orientation_xyzw": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ]
+    }
+  },
+  "physics": {
+    "backend": "physx",
+    "rigid_owner_solver": {
+      "position_iteration_count": 16,
+      "velocity_iteration_count": 8,
+      "max_depenetration_velocity_m_s": 1.0
+    },
+    "bottle_collision": {
+      "type": "source_convex_decomposition_dynamic",
+      "authoritative_source_collision_enabled": true,
+      "extra_stability_proxy_present": false,
+      "center_of_mass_local_m": [
+        0.0,
+        0.0,
+        -0.1
+      ],
+      "source_axis_correction_applies_to_visual_and_collision": true,
+      "cradle_supports": {
+        "type": "three_invisible_spheres",
+        "count": 3,
+        "sphere_radius_m": 0.0015,
+        "ring_radius_m": 0.0024,
+        "center_z_m": -0.0055,
+        "angles_deg": [
+          0.0,
+          120.0,
+          240.0
+        ],
+        "centers_xyz_m": [
+          [
+            0.0024,
+            0,
+            -0.0055
+          ],
+          [
+            -0.0012,
+            0.002078460969083,
+            -0.0055
+          ],
+          [
+            -0.0012,
+            -0.002078460969083,
+            -0.0055
+          ]
+        ],
+        "radial_envelope_m": 0.0039,
+        "top_z_m": -0.004,
+        "inside_bottle_mouth": true,
+        "nested_rigid_owner": false
+      }
+    },
+    "cap_collision": {
+      "type": "outer_cylinder_and_com_centered_cradle_sphere",
+      "axis": "Y",
+      "radius_m": 0.0142,
+      "height_m": 0.014,
+      "center_y_m": 0.009,
+      "bottom_inset_m": 0.002,
+      "top_inset_m": 0.002,
+      "inside_visible_geometry": true,
+      "outer_physics_material_binding": "default_grasp_friction",
+      "cradle_sphere": {
+        "type": "invisible_sphere",
+        "radius_m": 0.013,
+        "center_y_m": 0.009,
+        "local_aabb_m": [
+          [
+            -0.013,
+            0,
+            -0.013
+          ],
+          [
+            0.013,
+            0.017,
+            0.013
+          ]
+        ],
+        "inside_visible_bounds": true,
+        "center_matches_cap_com": true,
+        "nested_rigid_owner": false
+      },
+      "helper_physics_material": {
+        "binding_scope": "cradle_sphere_and_three_support_spheres",
+        "binding_purpose": "physics",
+        "contact_offset_m": 5e-05,
+        "rest_offset_m": 0.0,
+        "static_friction": 0.0,
+        "dynamic_friction": 0.0,
+        "restitution": 0.0,
+        "friction_combine_mode": "min",
+        "applies_to_cap_outer_or_cap_hand": false
+      }
+    },
+    "cap_bottle_contact_topology": {
+      "contact_truth_topology": "three_sphere_cradle_to_com_sphere",
+      "filtered_shape_role_pairs": [
+        [
+          "bottle_source",
+          "cap_outer"
+        ],
+        [
+          "bottle_source",
+          "cap_cradle"
+        ],
+        [
+          "bottle_support_0",
+          "cap_outer"
+        ],
+        [
+          "bottle_support_1",
+          "cap_outer"
+        ],
+        [
+          "bottle_support_2",
+          "cap_outer"
+        ]
+      ],
+      "unfiltered_contact_role_pairs": [
+        [
+          "bottle_support_0",
+          "cap_cradle"
+        ],
+        [
+          "bottle_support_1",
+          "cap_cradle"
+        ],
+        [
+          "bottle_support_2",
+          "cap_cradle"
+        ]
+      ],
+      "cap_seated_height_m": -0.0002,
+      "center_delta_z_m": 0.0143,
+      "center_horizontal_offset_m": 0.0024,
+      "center_distance_m": 0.0145,
+      "radius_sum_m": 0.0145,
+      "exact_initial_tangency": true,
+      "contact_normals_intersect_cap_com": true,
+      "axial_lift_separates_immediately": true
+    },
+    "cap_mass_properties": {
+      "mass_kg": 0.009,
+      "center_of_mass_local_m": [
+        0.0,
+        0.009,
+        0.0
+      ],
+      "diagonal_inertia_kg_m2": [
+        2.1e-06,
+        2.8e-06,
+        2.1e-06
+      ],
+      "principal_axes_wxyz": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "source": "uniform_surface_integral_of_hash_bound_visible_mesh"
+    }
+  },
+  "runtime": {
+    "simulator": "Isaac Sim 5.1.0.0",
+    "isaaclab_checkout": "IsaacLab-v2.3.2",
+    "physics_hz": 120,
+    "head_camera_prim_path": "/World/RecordCameras/head_camera",
+    "head_resolution_wh": [
+      640,
+      480
+    ],
+    "arm_model": "rokae",
+    "hand_model": "wuji_gen1",
+    "arm_count": 2,
+    "hand_count": 2
+  },
+  "evidence": {
+    "status": "historical_stale_pending_regeneration",
+    "qualifies_current_source": false,
+    "invalidated_by": "torque_neutral_three_sphere_cradle_20260901",
+    "source_commit": "2c2177cbee24e8120c4aa83a07a4faf2a6bb5c4e",
+    "run_id": "hs014-core-final-v107-archive-20260830-20260830T143928Z-2b292879",
+    "host": "hp-14",
+    "physical_gpu": 0,
+    "physical_gpu_uuid": "GPU-fcd2b24b-654f-54a7-2766-cd77e43bd56b",
+    "core_report_sha256": "21810a25a8c96360e9efeb33ee07a23e615b0363e5473e3160e628f3b5c1f76f",
+    "preview_sha256": "34306214810271fdb77a44894248fafd077771914b62d83772d87096db74aa4d",
+    "portable_usd_sha256": "80634fd3436e4c9a47708d15f0c578b411c6a3b26b0ad68415401e457d81c13f",
+    "scheduler_exit_code": 0
+  }
+}

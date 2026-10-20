@@ -1,0 +1,224 @@
+schema_version: 1
+task_id: B320-HS014
+manifest_sha256: 40b8aaf68dbad9cf344e7bb47ec9371377ae31aaa4c250c602d7efd60eb1a67a
+generated_at: "2026-09-01T04:01:54+08:00"
+current_release_status: blocked_torque_neutral_cradle_live_validator_exceeded_two_hours
+historical_evidence_invalidated_by: "2026-09-01 torque-neutral three-sphere cradle; failed v15b support, radial_construction radial construction, and archived core evidence remain stale"
+archived_core_artifact_status: stale_pending_regeneration
+simulator:
+  name: isaac_sim
+  version: "5.1.0.0"
+  isaaclab_checkout: IsaacLab-v2.3.2
+  physics_backend: physx
+  host: hp-14
+  physical_gpu: 0
+  physical_gpu_uuid: GPU-fcd2b24b-654f-54a7-2766-cd77e43bd56b
+  execution_mode: authorized_lease_backed_gpu0_no_device_mask
+source_commit: f391956d0eb6868d67ef895a7cf842e02d5bb88e
+core_evidence_commit: 2c2177cbee24e8120c4aa83a07a4faf2a6bb5c4e
+checks:
+  schema:
+    status: pass
+    summary: "58 focused HS014 collection/validator tests and 11 core-scene tests pass for the pending torque-neutral cradle source."
+    evidence:
+      - scene_manifest.json
+      - task.yaml
+      - evidence/final_validation_tests_f391956d.txt
+    metrics:
+      controller_runtime_tests_passed: 58
+      core_scene_tests_passed: 11
+  assets:
+    status: pass
+    summary: "Repository-frozen BC019 bottle and project-authored free cap loaded with exact expected hashes; no HS014 geometry was fabricated."
+    evidence:
+      - asset_inventory.json
+      - evidence/core_scene_report.json
+    metrics:
+      bottle_sha256: 2ead6e7bd4e494b8af3613ff987947cfd1cb3d9a5040698cbb5bac9c0c271186
+      bottle_dependency_sha256: bf9952cb9d0b98904be63beff9310a5938f84ce80dc24080556fd667f0652d67
+      cap_sha256: 0f5f7365cbac96e699a3c9c2f340d12df4dd5e94ba0631ef2120a1fab638df21
+      cap_vertices: 1200
+      cap_triangles: 636
+      technical_asset_contract_pass: true
+      bottle_license_note: "repository frozen; original external license not independently verified"
+  reachability:
+    status: stale_after_geometry_fix
+    summary: "Historical trajectories used an inverted bottle visual and must be rerun against the corrected source orientation/collider."
+    evidence:
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+      - evidence/final_validation_tests_f391956d.txt
+    metrics:
+      randomized_full_runs_passed: 3
+      left_fixture_grasp_frames: [30, 28, 26]
+      right_cap_role_retained_all_runs: true
+      multistart_ik_contract_test_pass: true
+  contact:
+    status: stale_after_geometry_fix
+    summary: "Historical contact evidence used an inverted visual plus protruding analytic proxies and cannot qualify corrected visible-surface contact."
+    evidence:
+      - evidence/core_scene_report.json
+      - evidence/seed7_right_contact_front_f391956d.png
+      - evidence/seed19_right_contact_front_f391956d.png
+      - evidence/seed212_right_contact_front_f391956d.png
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+    metrics:
+      role_contact_hold_substeps: 4
+      bottle_cap_initial_aabb_overlap_m: 0.0
+      bottle_table_penetration_m: 0.0
+      cap_table_penetration_m: 0.0
+      forbidden_contact_failures: 0
+      visual_randomized_poses_reviewed: 3
+  reset:
+    status: stale_after_geometry_fix
+    summary: "Historical resets predate the corrected bottle axis, source collider, canonical table height, and 1200-frame robot audit."
+    evidence:
+      - evidence/final_validation_tests_f391956d.txt
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+    metrics:
+      deterministic_same_seed: true
+      physically_executed_random_seeds: [7, 19, 212]
+      post_reset_trajectory_state_writes: 0
+  success:
+    status: stale_after_geometry_fix
+    summary: "Success semantics remain unchanged, but all physical positives must be rerun on the corrected geometry."
+    evidence:
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+      - evidence/final_validation_tests_f391956d.txt
+    metrics:
+      required_continuous_twist_strictly_over_deg: 180.0
+      observed_continuous_twist_deg: [201.7843921907288, 210.12032454751454, 206.1040535139161]
+      required_axial_separation_m: 0.04
+      observed_axial_separation_m: [0.04273707774901352, 0.041509479770207705, 0.04057959837646711]
+      required_success_hold_frames: 15
+      observed_success_hold_frames: [15, 15, 15]
+      reversal_cancels_test_pass: true
+      early_lift_failure_test_pass: true
+  camera:
+    status: stale_after_geometry_fix
+    summary: "Historical frames showed the wrong end of the source bottle under the cap and are retained only as invalidated history."
+    evidence:
+      - evidence/reset_head_2c2177cb.png
+      - evidence/seed7_final_front_f391956d.png
+      - evidence/seed19_final_front_f391956d.png
+      - evidence/seed212_final_front_f391956d.png
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+    metrics:
+      core_preview_resolution_wh: [640, 480]
+      core_preview_mean_rgb: 203.128486328125
+      core_preview_pixel_variance: 166.22670632424885
+      core_preview_black_fraction: 0.0
+      front_targets_in_frame_all_runs: true
+      wrist_left_target_in_frame_all_runs: true
+      wrist_right_target_in_frame_all_runs: true
+  stability:
+    status: blocked_live_validator_performance
+    summary: "radial_construction failed the unchanged construction gate at 2.256 mm radial error. The torque-neutral cradle source passed its static contract, but the exclusive v17 exact-child validator remained CPU/GPU-active for 2 h 16 min without completing its bounded 1800-frame production gate or atomically writing JSON; it was terminated without claiming a physical pass."
+    evidence:
+      - evidence/core_scene_report.json
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+    metrics:
+      core_zero_action_seconds: 3.0
+      core_exact_production_child: false
+      core_priority_zero_qualified: false
+      required_production_zero_action_seconds: 10.0
+      required_dual_arm_actual_readback: true
+      historical_inverted_bottom_band_visible_radius_m: 0.012992114
+      historical_body_proxy_min_visual_protrusion_m: 0.015507886
+      historical_stability_base_min_visual_protrusion_m: 0.021007886
+      corrected_source_axis: "+Z_from_base_to_open_mouth"
+      corrected_extra_stability_proxy_present: false
+      corrected_runtime_center_of_mass_local_z_m: -0.1
+      corrected_collision_contact_offset_m: 0.0005
+      corrected_collision_rest_offset_m: 0.0
+      corrected_seated_cap_axial_window_m: [-0.0005, 0.0015]
+      corrected_seated_cap_radial_max_m: 0.002
+      corrected_seated_cap_axis_error_max_deg: 2.0
+      corrected_public_reset_physics_steps: 120
+      corrected_production_origin_physics_steps: 1200
+      corrected_bottle_and_cap_must_remain_awake: true
+      corrected_cap_mass_kg: 0.012
+      corrected_cap_center_of_mass_local_m: [0.0, 0.013, 0.0]
+      corrected_cap_diagonal_inertia_kg_m2: [0.000003635590, 0.000004745227, 0.000003635590]
+      corrected_cap_principal_axes_wxyz: [1.0, 0.0, 0.0, 0.0]
+      corrected_cap_mass_properties_live_readback: passed_in_v13b
+      corrected_cap_mass_properties_only_stability_pass: false
+      corrected_cap_mass_properties_only_max_cap_rotation_per_frame_rad: 0.00006630535858680852
+      v14_planar_mouth_support_live_pass: false
+      v14_planar_contact_diagnosis: redundant_plane_to_plane_manifold
+      v15b_three_point_support_live_pass: false
+      v15b_cap_final_angular_speed_rad_s: 0.154
+      v15b_cap_max_rotation_per_frame_rad: 0.000587
+      radial_construction_source_outer_live_pass: false
+      radial_construction_construction_radial_error_m: 0.002256
+      radial_construction_construction_radial_limit_m: 0.002
+      corrected_contact_truth_topology: three_sphere_cradle_to_com_sphere
+      corrected_cap_cradle_radius_m: 0.013
+      corrected_cap_cradle_center_local_m: [0.0, 0.013, 0.0]
+      corrected_bottle_support_count: 3
+      corrected_bottle_support_radius_m: 0.0015
+      corrected_bottle_support_ring_radius_m: 0.0024
+      corrected_bottle_support_center_z_m: -0.0015
+      corrected_bottle_support_radial_envelope_m: 0.0039
+      corrected_cradle_center_delta_z_m: 0.0143
+      corrected_cradle_center_distance_m: 0.0145
+      corrected_cradle_radius_sum_m: 0.0145
+      corrected_helper_contact_offset_m: 0.00005
+      corrected_helper_rest_offset_m: 0.0
+      corrected_helper_static_friction: 0.0
+      corrected_helper_dynamic_friction: 0.0
+      corrected_helper_restitution: 0.0
+      corrected_helper_friction_combine_mode: min
+      corrected_cap_outer_uses_helper_material: false
+      corrected_contact_normals_intersect_cap_com: true
+      corrected_torque_neutral_cradle_live_rerun: incomplete_no_result_json
+      v17_exclusive_live_started_at: "2026-09-01T01:45:05+08:00"
+      v17_exclusive_live_terminated_at: "2026-09-01T04:01:54+08:00"
+      v17_wall_seconds_before_termination: 8209
+      v17_other_kit_processes_present: false
+      v17_process_state_before_termination: active_cpu_gpu
+      v17_result_json_written: false
+      v17_release_claim: none
+      v17_log_path_ephemeral: /tmp/hs014_v17.log
+      corrected_dynamic_task_success_validation: pending
+      core_bottle_translation_m: 0.0000014759109341236647
+      core_cap_translation_m: 0.0000017896908744371405
+      bottle_displacement_limit_m: 0.02
+      observed_bottle_displacement_m: [0.0024592910871854726, 0.0006508367555736743, 0.0001431243601517021]
+      bottle_orientation_limit_deg: 5.0
+      observed_bottle_orientation_drift_deg: [2.1247217882628404, 0.24262619226107987, 0.27213863120359916]
+      bottle_yaw_limit_deg: 8.0
+      observed_bottle_yaw_drift_deg: [0.24386331103406378, 0.11045113541596083, 0.16440221863145058]
+  collection:
+    status: stale_after_geometry_fix
+    summary: "Historical recordings and replay are invalidated by the bottle-axis/collider correction and must not be published as current evidence."
+    evidence:
+      - evidence/collection_seed7_f391956d.json
+      - evidence/collection_seed19_f391956d.json
+      - evidence/collection_seed212_f391956d.json
+      - evidence/fresh_replay_seed212_f391956d.json
+    metrics:
+      collection_pass: [true, true, true]
+      collection_steps: [1153, 1177, 1175]
+      zarr_sha256:
+        - 86bf4520eebb61e688fa3ed597dca2ad92375a96321976ce49a2fc4389552f01
+        - 8ba092fc2197653a8dd2df643bb240f484a3a434728d9ad68c432b486e7c76c4
+        - ba9cbab03750dc962bde94e92f69a507b39f9e4632574f39add388e2b0306674
+      fresh_process_replay_pass: true
+      replay_source_zarr_sha256: ba9cbab03750dc962bde94e92f69a507b39f9e4632574f39add388e2b0306674
+      trajectory_state_write_count: 0
+      corrected_collect_and_replay_use_shared_stable_origin: true
+human_validation:
+  status: pending
+  summary: "A data-collection operator must still perform glove/VR teleoperation and judge subjective ergonomics in the live UI; this cannot be automated honestly."

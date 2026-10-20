@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Rokae_Arena_Wuji2_A02_Object_To_Tray">
+  <include file="rokae_wuji2_bimanual.xml" />
+  <include file="t25_place_cup_on_plate_plate.xml" />
+  <include file="t25_place_cup_on_plate_objects.xml" />
+  <include file="t25_place_cup_on_plate_scene.xml" />
+
+  <option timestep=".002" noslip_iterations="0" noslip_tolerance="0" />
+</mujoco>

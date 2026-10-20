@@ -1,0 +1,94 @@
+#usda 1.0
+(
+    defaultPrim = "Asset"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "Asset" (
+    customData = {
+        dictionary handson = {
+            string archiveSha256 = "a60fe7e5289422527695254baf4c6d98463fd71a3c5c5cd0c6e88696dcb9594d"
+            string assetRole = "render-and-collision rigid object"
+            string[] collisionSourceMeshes = ["/Asset/Normalized/Source/Salt_and_Pepper_Shakers_FBX/RootNode/Salt/Object_8/Salt_08___Default_0/Salt_08___Default_0", "/Asset/Normalized/Source/Salt_and_Pepper_Shakers_FBX/RootNode/Salt/Object_8/Salt_02___Default_0/Salt_02___Default_0"]
+            bool contentMeshCollisionEnabled = 0
+            string disabledSourceNode = "Peeper"
+            string license = "CC BY 4.0"
+            string licenseUrl = "https://creativecommons.org/licenses/by/4.0/"
+            string logicalRole = "salt_jar"
+            double normalizationScale = 0.0006978960571727079
+            string selectedSourceNode = "Salt"
+            string sourceAuthor = "Anthony Yanez"
+            string sourceTitle = "Salt And Pepper Shakers"
+            string sourceUrl = "https://sketchfab.com/3d-models/salt-and-pepper-shakers-5f2adebdda754e40915d1330a61fa70c"
+            double targetHeightM = 0.096
+        }
+    }
+)
+{
+    def Xform "Normalized"
+    {
+        matrix4d xformOp:transform = ( (0.0006978960571727079, 0, 0, 0), (0, 0, 0.0006978960571727079, 0), (0, -0.0006978960571727079, 0, 0), (-0.00015749808910741134, -0.05792074332700291, -0.021110376205768333, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "Source" (
+            prepend references = @source/converted_scene.usd@</World>
+        )
+        {
+            over "Salt_and_Pepper_Shakers_FBX"
+            {
+                over "RootNode"
+                {
+                    over "Peeper" (
+                        active = false
+                    )
+                    {
+                    }
+
+                    over "Salt"
+                    {
+                        over "Object_8"
+                        {
+                            over "Salt_08___Default_0"
+                            {
+                                over "Salt_08___Default_0" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI"]
+                                    customData = {
+                                        dictionary handson = {
+                                            string collisionRole = "source-derived visual convex hull"
+                                        }
+                                    }
+                                )
+                                {
+                                    uniform token physics:approximation = "convexHull"
+                                    bool physics:collisionEnabled = 1
+                                    float physxCollision:contactOffset = 0.0015
+                                    float physxCollision:restOffset = 0
+                                }
+                            }
+
+                            over "Salt_02___Default_0"
+                            {
+                                over "Salt_02___Default_0" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI", "PhysxCollisionAPI"]
+                                    customData = {
+                                        dictionary handson = {
+                                            string collisionRole = "source-derived visual convex hull"
+                                        }
+                                    }
+                                )
+                                {
+                                    uniform token physics:approximation = "convexHull"
+                                    bool physics:collisionEnabled = 1
+                                    float physxCollision:contactOffset = 0.0015
+                                    float physxCollision:restOffset = 0
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

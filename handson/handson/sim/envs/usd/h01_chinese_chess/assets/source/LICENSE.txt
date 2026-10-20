@@ -1,0 +1,10 @@
+Model Information:
+* title: Chinese Chess
+* source: https://sketchfab.com/3d-models/chinese-chess-7ad0f4f0ebbc455d9e9f829c956dda80
+* author: chung_the_artist (https://sketchfab.com/chung_the_artist)
+
+Model License:
+* license type: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements: Author must be credited. Commercial use is allowed.
+
+This work is based on "Chinese Chess" (https://sketchfab.com/3d-models/chinese-chess-7ad0f4f0ebbc455d9e9f829c956dda80) by chung_the_artist (https://sketchfab.com/chung_the_artist) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/).

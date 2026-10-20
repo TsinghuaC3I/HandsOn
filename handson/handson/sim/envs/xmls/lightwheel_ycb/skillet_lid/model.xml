@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="645.963" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="skillet_lid_material" file="visuals/T_skillet_lid_BC001.png"/>
+    <texture type="2d" name="skillet_lid_Clear_material" file="visuals/T_skillet_lid_BC001.png"/>
+    <material name="skillet_lid_material" texture="skillet_lid_material" specular="0.5"/>
+    <material name="skillet_lid_Clear_material" texture="skillet_lid_Clear_material" specular="0.3103" rgba="1 1 1 0.75"/>
+    <mesh name="skillet_lid_vis" file="visuals/optimized_visuals/skillet_lid.obj"/>
+    <mesh name="skillet_lid_Clear_vis" file="visuals/skillet_lid_Clear.obj"/>
+    <mesh name="skillet_lid_Collider1_m_collision" file="collision/skillet_lid_Collider1_m.obj"/>
+    <mesh name="skillet_lid_Collider2_m_collision" file="collision/skillet_lid_Collider2_m.obj"/>
+    <mesh name="skillet_lid_Collider3_m_collision" file="collision/skillet_lid_Collider3_m.obj"/>
+    <mesh name="skillet_lid_Collider4_m_collision" file="collision/skillet_lid_Collider4_m.obj"/>
+    <mesh name="skillet_lid_Collider5_m_collision" file="collision/skillet_lid_Collider5_m.obj"/>
+    <mesh name="skillet_lid_Collider6_m_collision" file="collision/skillet_lid_Collider6_m.obj"/>
+    <mesh name="skillet_lid_Collider7_m_collision" file="collision/skillet_lid_Collider7_m.obj"/>
+    <mesh name="skillet_lid_Collider8_m_collision" file="collision/skillet_lid_Collider8_m.obj"/>
+    <mesh name="skillet_lid_Collider9_m_collision" file="collision/skillet_lid_Collider9_m.obj"/>
+    <mesh name="skillet_lid_Collider10_m_collision" file="collision/skillet_lid_Collider10_m.obj"/>
+    <mesh name="skillet_lid_Collider11_m_collision" file="collision/skillet_lid_Collider11_m.obj"/>
+    <mesh name="skillet_lid_Collider12_m_collision" file="collision/skillet_lid_Collider12_m.obj"/>
+    <mesh name="skillet_lid_Collider13_m_collision" file="collision/skillet_lid_Collider13_m.obj"/>
+    <mesh name="skillet_lid_Collider14_m_collision" file="collision/skillet_lid_Collider14_m.obj"/>
+    <mesh name="skillet_lid_Collider15_m_collision" file="collision/skillet_lid_Collider15_m.obj"/>
+    <mesh name="skillet_lid_Collider16_m_collision" file="collision/skillet_lid_Collider16_m.obj"/>
+    <mesh name="skillet_lid_Collider17_m_collision" file="collision/skillet_lid_Collider17_m.obj"/>
+    <mesh name="skillet_lid_Collider18_m_collision" file="collision/skillet_lid_Collider18_m.obj"/>
+    <mesh name="skillet_lid_Collider19_m_collision" file="collision/skillet_lid_Collider19_m.obj"/>
+    <mesh name="skillet_lid_Collider20_m_collision" file="collision/skillet_lid_Collider20_m.obj"/>
+    <mesh name="skillet_lid_Collider21_m_collision" file="collision/skillet_lid_Collider21_m.obj"/>
+    <mesh name="skillet_lid_Collider22_m_collision" file="collision/skillet_lid_Collider22_m.obj"/>
+    <mesh name="skillet_lid_Collider23_m_collision" file="collision/skillet_lid_Collider23_m.obj"/>
+    <mesh name="skillet_lid_Collider24_m_collision" file="collision/skillet_lid_Collider24_m.obj"/>
+    <mesh name="skillet_lid_Collider25_m_collision" file="collision/skillet_lid_Collider25_m.obj"/>
+    <mesh name="skillet_lid_Collider26_m_collision" file="collision/skillet_lid_Collider26_m.obj"/>
+    <mesh name="skillet_lid_Collider27_m_collision" file="collision/skillet_lid_Collider27_m.obj"/>
+    <mesh name="skillet_lid_Collider28_m_collision" file="collision/skillet_lid_Collider28_m.obj"/>
+    <mesh name="skillet_lid_Collider29_m_collision" file="collision/skillet_lid_Collider29_m.obj"/>
+    <mesh name="skillet_lid_Collider30_m_collision" file="collision/skillet_lid_Collider30_m.obj"/>
+    <mesh name="skillet_lid_Collider31_m_collision" file="collision/skillet_lid_Collider31_m.obj"/>
+    <mesh name="skillet_lid_Collider32_m_collision" file="collision/skillet_lid_Collider32_m.obj"/>
+    <mesh name="skillet_lid_Collider33_m_collision" file="collision/skillet_lid_Collider33_m.obj"/>
+    <mesh name="skillet_lid_Collider34_m_collision" file="collision/skillet_lid_Collider34_m.obj"/>
+    <mesh name="skillet_lid_Collider35_m_collision" file="collision/skillet_lid_Collider35_m.obj"/>
+    <mesh name="skillet_lid_Collider36_m_collision" file="collision/skillet_lid_Collider36_m.obj"/>
+    <mesh name="skillet_lid_Collider37_m_collision" file="collision/skillet_lid_Collider37_m.obj"/>
+    <mesh name="skillet_lid_Collider38_m_collision" file="collision/skillet_lid_Collider38_m.obj"/>
+    <mesh name="skillet_lid_Collider39_m_collision" file="collision/skillet_lid_Collider39_m.obj"/>
+    <mesh name="skillet_lid_Collider40_m_collision" file="collision/skillet_lid_Collider40_m.obj"/>
+    <mesh name="skillet_lid_Collider41_m_collision" file="collision/skillet_lid_Collider41_m.obj"/>
+    <mesh name="skillet_lid_Collider42_m_collision" file="collision/skillet_lid_Collider42_m.obj"/>
+    <mesh name="skillet_lid_Collider43_m_collision" file="collision/skillet_lid_Collider43_m.obj"/>
+    <mesh name="skillet_lid_Collider44_m_collision" file="collision/skillet_lid_Collider44_m.obj"/>
+    <mesh name="skillet_lid_Collider45_m_collision" file="collision/skillet_lid_Collider45_m.obj"/>
+    <mesh name="skillet_lid_Collider46_m_collision" file="collision/skillet_lid_Collider46_m.obj"/>
+    <mesh name="skillet_lid_Collider47_m_collision" file="collision/skillet_lid_Collider47_m.obj"/>
+    <mesh name="skillet_lid_Collider48_m_collision" file="collision/skillet_lid_Collider48_m.obj"/>
+    <mesh name="skillet_lid_Collider49_m_collision" file="collision/skillet_lid_Collider49_m.obj"/>
+    <mesh name="skillet_lid_Collider50_m_collision" file="collision/skillet_lid_Collider50_m.obj"/>
+    <mesh name="skillet_lid_Collider51_m_collision" file="collision/skillet_lid_Collider51_m.obj"/>
+    <mesh name="skillet_lid_Collider52_m_collision" file="collision/skillet_lid_Collider52_m.obj"/>
+    <mesh name="skillet_lid_Collider53_m_collision" file="collision/skillet_lid_Collider53_m.obj"/>
+    <mesh name="skillet_lid_Collider54_m_collision" file="collision/skillet_lid_Collider54_m.obj"/>
+    <mesh name="skillet_lid_Collider55_m_collision" file="collision/skillet_lid_Collider55_m.obj"/>
+    <mesh name="skillet_lid_Collider56_m_collision" file="collision/skillet_lid_Collider56_m.obj"/>
+    <mesh name="skillet_lid_Collider57_m_collision" file="collision/skillet_lid_Collider57_m.obj"/>
+    <mesh name="skillet_lid_Collider58_m_collision" file="collision/skillet_lid_Collider58_m.obj"/>
+    <mesh name="skillet_lid_Collider59_m_collision" file="collision/skillet_lid_Collider59_m.obj"/>
+    <mesh name="skillet_lid_Collider60_m_collision" file="collision/skillet_lid_Collider60_m.obj"/>
+    <mesh name="skillet_lid_Collider61_m_collision" file="collision/skillet_lid_Collider61_m.obj"/>
+    <mesh name="skillet_lid_Collider62_m_collision" file="collision/skillet_lid_Collider62_m.obj"/>
+    <mesh name="skillet_lid_Collider63_m_collision" file="collision/skillet_lid_Collider63_m.obj"/>
+    <mesh name="skillet_lid_Collider64_m_collision" file="collision/skillet_lid_Collider64_m.obj"/>
+    <mesh name="skillet_lid_Collider65_m_collision" file="collision/skillet_lid_Collider65_m.obj"/>
+    <mesh name="skillet_lid_Collider66_m_collision" file="collision/skillet_lid_Collider66_m.obj"/>
+    <mesh name="skillet_lid_Collider67_m_collision" file="collision/skillet_lid_Collider67_m.obj"/>
+    <mesh name="skillet_lid_Collider68_m_collision" file="collision/skillet_lid_Collider68_m.obj"/>
+    <mesh name="skillet_lid_Collider69_m_collision" file="collision/skillet_lid_Collider69_m.obj"/>
+    <mesh name="skillet_lid_Collider70_m_collision" file="collision/skillet_lid_Collider70_m.obj"/>
+    <mesh name="skillet_lid_Collider71_m_collision" file="collision/skillet_lid_Collider71_m.obj"/>
+    <mesh name="skillet_lid_Collider72_m_collision" file="collision/skillet_lid_Collider72_m.obj"/>
+    <mesh name="skillet_lid_Collider73_m_collision" file="collision/skillet_lid_Collider73_m.obj"/>
+    <mesh name="skillet_lid_Collider74_m_collision" file="collision/skillet_lid_Collider74_m.obj"/>
+    <mesh name="skillet_lid_Collider75_m_collision" file="collision/skillet_lid_Collider75_m.obj"/>
+    <mesh name="skillet_lid_Collider76_m_collision" file="collision/skillet_lid_Collider76_m.obj"/>
+    <mesh name="skillet_lid_Collider77_m_collision" file="collision/skillet_lid_Collider77_m.obj"/>
+    <mesh name="skillet_lid_Collider78_m_collision" file="collision/skillet_lid_Collider78_m.obj"/>
+    <mesh name="skillet_lid_Collider79_m_collision" file="collision/skillet_lid_Collider79_m.obj"/>
+    <mesh name="skillet_lid_Collider80_m_collision" file="collision/skillet_lid_Collider80_m.obj"/>
+    <mesh name="skillet_lid_Collider81_m_collision" file="collision/skillet_lid_Collider81_m.obj"/>
+    <mesh name="skillet_lid_Collider82_m_collision" file="collision/skillet_lid_Collider82_m.obj"/>
+    <mesh name="skillet_lid_Collider83_m_collision" file="collision/skillet_lid_Collider83_m.obj"/>
+    <mesh name="skillet_lid_Collider84_m_collision" file="collision/skillet_lid_Collider84_m.obj"/>
+    <mesh name="skillet_lid_Collider85_m_collision" file="collision/skillet_lid_Collider85_m.obj"/>
+    <mesh name="skillet_lid_Collider86_m_collision" file="collision/skillet_lid_Collider86_m.obj"/>
+    <mesh name="skillet_lid_Collider87_m_collision" file="collision/skillet_lid_Collider87_m.obj"/>
+    <mesh name="skillet_lid_Collider88_m_collision" file="collision/skillet_lid_Collider88_m.obj"/>
+    <mesh name="skillet_lid_Collider89_m_collision" file="collision/skillet_lid_Collider89_m.obj"/>
+    <mesh name="skillet_lid_Collider90_m_collision" file="collision/skillet_lid_Collider90_m.obj"/>
+    <mesh name="skillet_lid_Collider91_m_collision" file="collision/skillet_lid_Collider91_m.obj"/>
+    <mesh name="skillet_lid_Collider92_m_collision" file="collision/skillet_lid_Collider92_m.obj"/>
+    <mesh name="skillet_lid_Collider93_m_collision" file="collision/skillet_lid_Collider93_m.obj"/>
+    <mesh name="skillet_lid_Collider94_m_collision" file="collision/skillet_lid_Collider94_m.obj"/>
+    <mesh name="skillet_lid_Collider95_m_collision" file="collision/skillet_lid_Collider95_m.obj"/>
+    <mesh name="skillet_lid_Collider96_m_collision" file="collision/skillet_lid_Collider96_m.obj"/>
+    <mesh name="skillet_lid_Collider97_m_collision" file="collision/skillet_lid_Collider97_m.obj"/>
+    <mesh name="skillet_lid_Collider98_m_collision" file="collision/skillet_lid_Collider98_m.obj"/>
+    <mesh name="skillet_lid_Collider99_m_collision" file="collision/skillet_lid_Collider99_m.obj"/>
+    <mesh name="skillet_lid_Collider100_m_collision" file="collision/skillet_lid_Collider100_m.obj"/>
+    <mesh name="skillet_lid_Collider101_m_collision" file="collision/skillet_lid_Collider101_m.obj"/>
+    <mesh name="skillet_lid_Collider102_m_collision" file="collision/skillet_lid_Collider102_m.obj"/>
+    <mesh name="skillet_lid_Collider103_m_collision" file="collision/skillet_lid_Collider103_m.obj"/>
+    <mesh name="skillet_lid_Collider104_m_collision" file="collision/skillet_lid_Collider104_m.obj"/>
+    <mesh name="skillet_lid_Collider105_m_collision" file="collision/skillet_lid_Collider105_m.obj"/>
+    <mesh name="skillet_lid_Collider106_m_collision" file="collision/skillet_lid_Collider106_m.obj"/>
+    <mesh name="skillet_lid_Collider107_m_collision" file="collision/skillet_lid_Collider107_m.obj"/>
+    <mesh name="skillet_lid_Collider108_m_collision" file="collision/skillet_lid_Collider108_m.obj"/>
+    <mesh name="skillet_lid_Collider109_m_collision" file="collision/skillet_lid_Collider109_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="skillet_lid_material" mesh="skillet_lid_vis"/>
+        <geom name="skillet_lid_Collider1_m" class="collision" type="mesh" mesh="skillet_lid_Collider1_m_collision"/>
+        <geom name="skillet_lid_Collider2_m" class="collision" type="mesh" mesh="skillet_lid_Collider2_m_collision"/>
+        <geom name="skillet_lid_Collider3_m" class="collision" type="mesh" mesh="skillet_lid_Collider3_m_collision"/>
+        <geom name="skillet_lid_Collider4_m" class="collision" type="mesh" mesh="skillet_lid_Collider4_m_collision"/>
+        <geom name="skillet_lid_Collider5_m" class="collision" type="mesh" mesh="skillet_lid_Collider5_m_collision"/>
+        <geom name="skillet_lid_Collider6_m" class="collision" type="mesh" mesh="skillet_lid_Collider6_m_collision"/>
+        <geom name="skillet_lid_Collider7_m" class="collision" type="mesh" mesh="skillet_lid_Collider7_m_collision"/>
+        <geom name="skillet_lid_Collider8_m" class="collision" type="mesh" mesh="skillet_lid_Collider8_m_collision"/>
+        <geom name="skillet_lid_Collider9_m" class="collision" type="mesh" mesh="skillet_lid_Collider9_m_collision"/>
+        <geom name="skillet_lid_Collider10_m" class="collision" type="mesh" mesh="skillet_lid_Collider10_m_collision"/>
+        <geom name="skillet_lid_Collider11_m" class="collision" type="mesh" mesh="skillet_lid_Collider11_m_collision"/>
+        <geom name="skillet_lid_Collider12_m" class="collision" type="mesh" mesh="skillet_lid_Collider12_m_collision"/>
+        <geom name="skillet_lid_Collider13_m" class="collision" type="mesh" mesh="skillet_lid_Collider13_m_collision"/>
+        <geom name="skillet_lid_Collider14_m" class="collision" type="mesh" mesh="skillet_lid_Collider14_m_collision"/>
+        <geom name="skillet_lid_Collider15_m" class="collision" type="mesh" mesh="skillet_lid_Collider15_m_collision"/>
+        <geom name="skillet_lid_Collider16_m" class="collision" type="mesh" mesh="skillet_lid_Collider16_m_collision"/>
+        <geom name="skillet_lid_Collider17_m" class="collision" type="mesh" mesh="skillet_lid_Collider17_m_collision"/>
+        <geom name="skillet_lid_Collider18_m" class="collision" type="mesh" mesh="skillet_lid_Collider18_m_collision"/>
+        <geom name="skillet_lid_Collider19_m" class="collision" type="mesh" mesh="skillet_lid_Collider19_m_collision"/>
+        <geom name="skillet_lid_Collider20_m" class="collision" type="mesh" mesh="skillet_lid_Collider20_m_collision"/>
+        <geom name="skillet_lid_Collider21_m" class="collision" type="mesh" mesh="skillet_lid_Collider21_m_collision"/>
+        <geom name="skillet_lid_Collider22_m" class="collision" type="mesh" mesh="skillet_lid_Collider22_m_collision"/>
+        <geom name="skillet_lid_Collider23_m" class="collision" type="mesh" mesh="skillet_lid_Collider23_m_collision"/>
+        <geom name="skillet_lid_Collider24_m" class="collision" type="mesh" mesh="skillet_lid_Collider24_m_collision"/>
+        <geom name="skillet_lid_Collider25_m" class="collision" type="mesh" mesh="skillet_lid_Collider25_m_collision"/>
+        <geom name="skillet_lid_Collider26_m" class="collision" type="mesh" mesh="skillet_lid_Collider26_m_collision"/>
+        <geom name="skillet_lid_Collider27_m" class="collision" type="mesh" mesh="skillet_lid_Collider27_m_collision"/>
+        <geom name="skillet_lid_Collider28_m" class="collision" type="mesh" mesh="skillet_lid_Collider28_m_collision"/>
+        <geom name="skillet_lid_Collider29_m" class="collision" type="mesh" mesh="skillet_lid_Collider29_m_collision"/>
+        <geom name="skillet_lid_Collider30_m" class="collision" type="mesh" mesh="skillet_lid_Collider30_m_collision"/>
+        <geom name="skillet_lid_Collider31_m" class="collision" type="mesh" mesh="skillet_lid_Collider31_m_collision"/>
+        <geom name="skillet_lid_Collider32_m" class="collision" type="mesh" mesh="skillet_lid_Collider32_m_collision"/>
+        <geom name="skillet_lid_Collider33_m" class="collision" type="mesh" mesh="skillet_lid_Collider33_m_collision"/>
+        <geom name="skillet_lid_Collider34_m" class="collision" type="mesh" mesh="skillet_lid_Collider34_m_collision"/>
+        <geom name="skillet_lid_Collider35_m" class="collision" type="mesh" mesh="skillet_lid_Collider35_m_collision"/>
+        <geom name="skillet_lid_Collider36_m" class="collision" type="mesh" mesh="skillet_lid_Collider36_m_collision"/>
+        <geom name="skillet_lid_Collider37_m" class="collision" type="mesh" mesh="skillet_lid_Collider37_m_collision"/>
+        <geom name="skillet_lid_Collider38_m" class="collision" type="mesh" mesh="skillet_lid_Collider38_m_collision"/>
+        <geom name="skillet_lid_Collider39_m" class="collision" type="mesh" mesh="skillet_lid_Collider39_m_collision"/>
+        <geom name="skillet_lid_Collider40_m" class="collision" type="mesh" mesh="skillet_lid_Collider40_m_collision"/>
+        <geom name="skillet_lid_Collider41_m" class="collision" type="mesh" mesh="skillet_lid_Collider41_m_collision"/>
+        <geom name="skillet_lid_Collider42_m" class="collision" type="mesh" mesh="skillet_lid_Collider42_m_collision"/>
+        <geom name="skillet_lid_Collider43_m" class="collision" type="mesh" mesh="skillet_lid_Collider43_m_collision"/>
+        <geom name="skillet_lid_Collider44_m" class="collision" type="mesh" mesh="skillet_lid_Collider44_m_collision"/>
+        <geom name="skillet_lid_Collider45_m" class="collision" type="mesh" mesh="skillet_lid_Collider45_m_collision"/>
+        <geom name="skillet_lid_Collider46_m" class="collision" type="mesh" mesh="skillet_lid_Collider46_m_collision"/>
+        <geom name="skillet_lid_Collider47_m" class="collision" type="mesh" mesh="skillet_lid_Collider47_m_collision"/>
+        <geom name="skillet_lid_Collider48_m" class="collision" type="mesh" mesh="skillet_lid_Collider48_m_collision"/>
+        <geom name="skillet_lid_Collider49_m" class="collision" type="mesh" mesh="skillet_lid_Collider49_m_collision"/>
+        <geom name="skillet_lid_Collider50_m" class="collision" type="mesh" mesh="skillet_lid_Collider50_m_collision"/>
+        <geom name="skillet_lid_Collider51_m" class="collision" type="mesh" mesh="skillet_lid_Collider51_m_collision"/>
+        <geom name="skillet_lid_Collider52_m" class="collision" type="mesh" mesh="skillet_lid_Collider52_m_collision"/>
+        <geom name="skillet_lid_Collider53_m" class="collision" type="mesh" mesh="skillet_lid_Collider53_m_collision"/>
+        <geom name="skillet_lid_Collider54_m" class="collision" type="mesh" mesh="skillet_lid_Collider54_m_collision"/>
+        <geom name="skillet_lid_Collider55_m" class="collision" type="mesh" mesh="skillet_lid_Collider55_m_collision"/>
+        <geom name="skillet_lid_Collider56_m" class="collision" type="mesh" mesh="skillet_lid_Collider56_m_collision"/>
+        <geom name="skillet_lid_Collider57_m" class="collision" type="mesh" mesh="skillet_lid_Collider57_m_collision"/>
+        <geom name="skillet_lid_Collider58_m" class="collision" type="mesh" mesh="skillet_lid_Collider58_m_collision"/>
+        <geom name="skillet_lid_Collider59_m" class="collision" type="mesh" mesh="skillet_lid_Collider59_m_collision"/>
+        <geom name="skillet_lid_Collider60_m" class="collision" type="mesh" mesh="skillet_lid_Collider60_m_collision"/>
+        <geom name="skillet_lid_Collider61_m" class="collision" type="mesh" mesh="skillet_lid_Collider61_m_collision"/>
+        <geom name="skillet_lid_Collider62_m" class="collision" type="mesh" mesh="skillet_lid_Collider62_m_collision"/>
+        <geom name="skillet_lid_Collider63_m" class="collision" type="mesh" mesh="skillet_lid_Collider63_m_collision"/>
+        <geom name="skillet_lid_Collider64_m" class="collision" type="mesh" mesh="skillet_lid_Collider64_m_collision"/>
+        <geom name="skillet_lid_Collider65_m" class="collision" type="mesh" mesh="skillet_lid_Collider65_m_collision"/>
+        <geom name="skillet_lid_Collider66_m" class="collision" type="mesh" mesh="skillet_lid_Collider66_m_collision"/>
+        <geom name="skillet_lid_Collider67_m" class="collision" type="mesh" mesh="skillet_lid_Collider67_m_collision"/>
+        <geom name="skillet_lid_Collider68_m" class="collision" type="mesh" mesh="skillet_lid_Collider68_m_collision"/>
+        <geom name="skillet_lid_Collider69_m" class="collision" type="mesh" mesh="skillet_lid_Collider69_m_collision"/>
+        <geom name="skillet_lid_Collider70_m" class="collision" type="mesh" mesh="skillet_lid_Collider70_m_collision"/>
+        <geom name="skillet_lid_Collider71_m" class="collision" type="mesh" mesh="skillet_lid_Collider71_m_collision"/>
+        <geom name="skillet_lid_Collider72_m" class="collision" type="mesh" mesh="skillet_lid_Collider72_m_collision"/>
+        <geom name="skillet_lid_Collider73_m" class="collision" type="mesh" mesh="skillet_lid_Collider73_m_collision"/>
+        <geom name="skillet_lid_Collider74_m" class="collision" type="mesh" mesh="skillet_lid_Collider74_m_collision"/>
+        <geom name="skillet_lid_Collider75_m" class="collision" type="mesh" mesh="skillet_lid_Collider75_m_collision"/>
+        <geom name="skillet_lid_Collider76_m" class="collision" type="mesh" mesh="skillet_lid_Collider76_m_collision"/>
+        <geom name="skillet_lid_Collider77_m" class="collision" type="mesh" mesh="skillet_lid_Collider77_m_collision"/>
+        <geom name="skillet_lid_Collider78_m" class="collision" type="mesh" mesh="skillet_lid_Collider78_m_collision"/>
+        <geom name="skillet_lid_Collider79_m" class="collision" type="mesh" mesh="skillet_lid_Collider79_m_collision"/>
+        <geom name="skillet_lid_Collider80_m" class="collision" type="mesh" mesh="skillet_lid_Collider80_m_collision"/>
+        <geom name="skillet_lid_Collider81_m" class="collision" type="mesh" mesh="skillet_lid_Collider81_m_collision"/>
+        <geom name="skillet_lid_Collider82_m" class="collision" type="mesh" mesh="skillet_lid_Collider82_m_collision"/>
+        <geom name="skillet_lid_Collider83_m" class="collision" type="mesh" mesh="skillet_lid_Collider83_m_collision"/>
+        <geom name="skillet_lid_Collider84_m" class="collision" type="mesh" mesh="skillet_lid_Collider84_m_collision"/>
+        <geom name="skillet_lid_Collider85_m" class="collision" type="mesh" mesh="skillet_lid_Collider85_m_collision"/>
+        <geom name="skillet_lid_Collider86_m" class="collision" type="mesh" mesh="skillet_lid_Collider86_m_collision"/>
+        <geom name="skillet_lid_Collider87_m" class="collision" type="mesh" mesh="skillet_lid_Collider87_m_collision"/>
+        <geom name="skillet_lid_Collider88_m" class="collision" type="mesh" mesh="skillet_lid_Collider88_m_collision"/>
+        <geom name="skillet_lid_Collider89_m" class="collision" type="mesh" mesh="skillet_lid_Collider89_m_collision"/>
+        <geom name="skillet_lid_Collider90_m" class="collision" type="mesh" mesh="skillet_lid_Collider90_m_collision"/>
+        <geom name="skillet_lid_Collider91_m" class="collision" type="mesh" mesh="skillet_lid_Collider91_m_collision"/>
+        <geom name="skillet_lid_Collider92_m" class="collision" type="mesh" mesh="skillet_lid_Collider92_m_collision"/>
+        <geom name="skillet_lid_Collider93_m" class="collision" type="mesh" mesh="skillet_lid_Collider93_m_collision"/>
+        <geom name="skillet_lid_Collider94_m" class="collision" type="mesh" mesh="skillet_lid_Collider94_m_collision"/>
+        <geom name="skillet_lid_Collider95_m" class="collision" type="mesh" mesh="skillet_lid_Collider95_m_collision"/>
+        <geom name="skillet_lid_Collider96_m" class="collision" type="mesh" mesh="skillet_lid_Collider96_m_collision"/>
+        <geom name="skillet_lid_Collider97_m" class="collision" type="mesh" mesh="skillet_lid_Collider97_m_collision"/>
+        <geom name="skillet_lid_Collider98_m" class="collision" type="mesh" mesh="skillet_lid_Collider98_m_collision"/>
+        <geom name="skillet_lid_Collider99_m" class="collision" type="mesh" mesh="skillet_lid_Collider99_m_collision"/>
+        <geom name="skillet_lid_Collider100_m" class="collision" type="mesh" mesh="skillet_lid_Collider100_m_collision"/>
+        <geom name="skillet_lid_Collider101_m" class="collision" type="mesh" mesh="skillet_lid_Collider101_m_collision"/>
+        <geom name="skillet_lid_Collider102_m" class="collision" type="mesh" mesh="skillet_lid_Collider102_m_collision"/>
+        <geom name="skillet_lid_Collider103_m" class="collision" type="mesh" mesh="skillet_lid_Collider103_m_collision"/>
+        <geom name="skillet_lid_Collider104_m" class="collision" type="mesh" mesh="skillet_lid_Collider104_m_collision"/>
+        <geom name="skillet_lid_Collider105_m" class="collision" type="mesh" mesh="skillet_lid_Collider105_m_collision"/>
+        <geom name="skillet_lid_Collider106_m" class="collision" type="mesh" mesh="skillet_lid_Collider106_m_collision"/>
+        <geom name="skillet_lid_Collider107_m" class="collision" type="mesh" mesh="skillet_lid_Collider107_m_collision"/>
+        <geom name="skillet_lid_Collider108_m" class="collision" type="mesh" mesh="skillet_lid_Collider108_m_collision"/>
+        <geom name="skillet_lid_Collider109_m" class="collision" type="mesh" mesh="skillet_lid_Collider109_m_collision"/>
+        <body name="skillet_lid_Clear">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="skillet_lid_Clear_material" mesh="skillet_lid_Clear_vis"/>
+        </body>
+      <geom size="0.134899 0.134946 0.050556" pos="0.0 -0.0 -0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

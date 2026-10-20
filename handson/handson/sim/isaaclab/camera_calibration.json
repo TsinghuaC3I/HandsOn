@@ -1,0 +1,223 @@
+{
+  "version": "handson",
+  "device_serial": "CP965630008J",
+  "position_m": [
+    -0.6548241839280105,
+    0.012561357233655243,
+    1.5471263727537892
+  ],
+  "quaternion_wxyz_opengl": [
+    0.6615863460911702,
+    0.2349328201778931,
+    -0.2387186550508383,
+    -0.6709124237929381
+  ],
+  "rotation_camera_to_world_opengl": [
+    [
+      -0.014220153337992288,
+      0.7755673042883466,
+      -0.6311047011058869
+    ],
+    [
+      -0.9998986917290155,
+      -0.010633820792906755,
+      0.009461930772723715
+    ],
+    [
+      0.0006273098496439866,
+      0.6311753150862691,
+      0.7756399474679606
+    ]
+  ],
+  "native_width_height": [
+    854,
+    480
+  ],
+  "runtime_K": [
+    [
+      463.3933732340937,
+      0.0,
+      431.76725775402184
+    ],
+    [
+      0.0,
+      463.0018988711111,
+      239.9189724391111
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "runtime_D": [
+    0.00646656053141,
+    -0.0479530096054,
+    -0.000352804054273,
+    -0.000104829683551,
+    0.0332237109542,
+    0,
+    0,
+    0
+  ],
+  "factory_color": {
+    "width": 1920,
+    "height": 1080,
+    "fx": 1041.82116699,
+    "fy": 1041.75427246,
+    "cx": 970.717956543,
+    "cy": 539.817687988,
+    "distortion_model": 4,
+    "D_opencv": [
+      0.00646656053141,
+      -0.0479530096054,
+      -0.000352804054273,
+      -0.000104829683551,
+      0.0332237109542,
+      0,
+      0,
+      0
+    ]
+  },
+  "lens_model": "opencvPinhole",
+  "profile": "handson",
+  "profile_version": "1",
+  "status": "default",
+  "runtime_projection": "native OmniLensDistortionOpenCvPinholeAPI; full scaled factory K and unmodified dimensionless D",
+  "lens_distortion_rendered": true,
+  "runtime_focal_matches_scaled_factory": true,
+  "runtime_center_offset_vs_scaled_factory_px": [
+    0.0,
+    0.0
+  ],
+  "intrinsic_scaling": {
+    "source_width_height": [
+      1920,
+      1080
+    ],
+    "scale_xy": [
+      0.44479166666666664,
+      0.4444444444444444
+    ],
+    "cropping": false,
+    "pixel_coordinate_convention": "K row-scaled by output/input image size"
+  },
+  "factory_stream_is_rectified": "Raw SDK MJPG; no host undistortion/filter requested; onboard state not separately queried",
+  "extrinsic_source": "robust balanced rigid registration of RGB-D forearm surfaces to measured-pose native meshes",
+  "calibration_status": "single-pose RGB-D/CAD arm registration; native image landmark checked; no independent pose holdout",
+  "full_robot_extrinsic_calibration": false,
+  "fit_frames": [
+    "floor7_station_01_20260916T223242+0800"
+  ],
+  "holdout_frames": [],
+  "downward_pitch_deg": 50.86308849345662,
+  "roll_deg": 0.05694486799161626,
+  "surface_fit_metrics": {
+    "left": {
+      "points": 2333,
+      "training_points": 1866,
+      "holdout_same_pose_points": 467,
+      "median_mm": 1.2847162866692359,
+      "p95_mm": 4.894903210356823,
+      "rms_mm": 5.120125994432444,
+      "holdout_same_pose_rms_mm": 5.196634373805143
+    },
+    "right": {
+      "points": 436,
+      "training_points": 348,
+      "holdout_same_pose_points": 88,
+      "median_mm": 1.1537776552518262,
+      "p95_mm": 2.6234482741370866,
+      "rms_mm": 1.480578065878715,
+      "holdout_same_pose_rms_mm": 1.3984800610217867
+    }
+  },
+  "measured_camera_plane_distance_m": 0.7476778977342429,
+  "table_plane_normal_in_sim_world": [
+    0.026330572155445597,
+    -0.010142295180881167,
+    0.9996018381427827
+  ],
+  "implied_station_table_z_m": 0.7991506596204517,
+  "nominal_benchmark_table_z_m": 0.89,
+  "table_comparison_note": "Real tabletop inferred near 0.80 m in the native robot frame, versus nominal benchmark 0.89 m; no task table geometry or physics changed.",
+  "cad_camera_component_origin_m": [
+    -0.6700120110793429,
+    3.014949401247685e-15,
+    1.5562224603331067
+  ],
+  "cad_design_pitch_deg": 49.99999999999972,
+  "geometry_registration": "Native native arm mounts and ROKAE joint convention; no TIANJI sign flip; hand fingers excluded from pose estimation",
+  "native_task_resets_preserved": true,
+  "wrist_camera_contract_preserved": true,
+  "limitations": [
+    "One static arm pose; same-pose held-out depth points are not an independent pose validation.",
+    "Arm surface geometry, encoder zeros and base mounts inherit the native native embodiment.",
+    "Finger angles are not measured and are excluded from registration.",
+    "Same-pose image landmark verification is not independent multi-pose calibration.",
+    "Task object placement, native resets, tabletop geometry and randomized appearances remain task-specific."
+  ],
+  "provenance_note": "Factory lens projection plus measured robot-to-camera estimate cross-checked with user-supplied assembly; supersedes the wider virtual-lens profile for real-camera alignment.",
+  "evidence_sha256": {
+    "factory_intrinsics.json": "9d3bfe48be42eda2a8681aa63a8df4195c8a8944b7fdc274ff6ef15109c08800",
+    "sdk_capture.json": "c48e6bd7f0d9f636c10990729ac7b4eb6b7c8c26bb2084d2d85fcdf25362800f",
+    "head_sdk_native.jpg": "255fb57b0a7470eeee7a39fa10c69e5b422eebac6857a7b21b45a254bf806ee7",
+    "head_depth_y16.bin": "de20b78795590ab7b43b68a612ede02529d384f1a5666c84cbd88c8eeb9a96b5",
+    "JOINT_STATE_AND_CAPTURE.json": "b8f15f96e2ff09ef5c26c13a2751cda6082b7cfe49f86aed1928360565ad85e5"
+  },
+  "cad_assembly_sha256": "c51eab815e6b87fdf0a80dd78215b992aaf2c4ed86723e09bff2cf9cfdc33a2d",
+  "wrist_camera_to_palm_opengl": {
+    "left": [
+      [
+        -0.617599028871665,
+        0.7390631484760475,
+        0.2689927547378342,
+        0.06877913524957757
+      ],
+      [
+        0.7726180464901028,
+        0.6340756668206006,
+        0.03177110296839675,
+        0.029143365994456466
+      ],
+      [
+        -0.14708090893992237,
+        0.22745045902500025,
+        -0.9626180420679449,
+        -0.034815742831402215
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "right": [
+      [
+        0.599389508276727,
+        0.7840520956737164,
+        0.1612281880982245,
+        0.06378304461597961
+      ],
+      [
+        0.800290762027034,
+        -0.5910937176233098,
+        -0.10071203106106014,
+        -0.022633119403028243
+      ],
+      [
+        0.016337490075669182,
+        0.18939516428860553,
+        -0.9817650218673097,
+        -0.03375643894785378
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  }
+}

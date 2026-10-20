@@ -1,0 +1,42 @@
+{
+  "source": "https://api.polyhaven.com/files/terry_cloth",
+  "archive_sha256": "92498e0f29a843af8670530aea6700e290b4471778207c1f19fce671b72e26ce",
+  "members": {
+    "terry_cloth_4k.gltf": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/4k/terry_cloth/terry_cloth_4k.gltf",
+      "md5": "3b1b3af2f993e07e08e0f5d8c71ee094",
+      "sha256": "4edd9b7fec0391b6cd01016748b30d04ed4bddb5ece105cab0cb56203afda10e",
+      "size": 4198
+    },
+    "textures/terry_cloth_spec_ior_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/terry_cloth/terry_cloth_spec_ior_4k.jpg",
+      "md5": "64fb05d382202cb6d7f78fbcd65d3129",
+      "sha256": "ed8715cbb3957f6f0d74ad724314c178fc336658e43493e0d9483c5d7c41ca09",
+      "size": 17311598
+    },
+    "textures/terry_cloth_nor_gl_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/terry_cloth/terry_cloth_nor_gl_4k.jpg",
+      "md5": "4c0e7c034abf073ebd009a9e33c697a7",
+      "sha256": "e9681112e21b1221d2f79fbf86324361ac6fc2605e7cb53627c847254323a07f",
+      "size": 13895248
+    },
+    "textures/terry_cloth_diff_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/terry_cloth/terry_cloth_diff_4k.jpg",
+      "md5": "4ade322fb82481ddba2cfedff05d11a4",
+      "sha256": "7b41cf0ab31c22b5b26188e997651e09df479fd3ca1fd60240047887d8271d2b",
+      "size": 13923706
+    },
+    "textures/terry_cloth_arm_4k.jpg": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/terry_cloth/terry_cloth_arm_4k.jpg",
+      "md5": "9cba6eea3d643c93e2f35c5d3223733c",
+      "sha256": "2bbd51845517a11069cbdf3e37c491a9775442f8a2057d3443ea46ddc29a3c57",
+      "size": 18043876
+    },
+    "terry_cloth.bin": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/gltf/8k/terry_cloth/terry_cloth.bin",
+      "md5": "7c02acbd5516c521c8955b53c4d4dfea",
+      "sha256": "e3af74a87e9ae1a6ffc4ad34b5b6e1f4c3ff8f4316c3546e7e8a466174af8b33",
+      "size": 2370292
+    }
+  }
+}

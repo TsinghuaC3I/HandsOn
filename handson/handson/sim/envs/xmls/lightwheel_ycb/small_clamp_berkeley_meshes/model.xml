@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="1852.9" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="small_clamp_berkeley_meshes_material" file="visuals/T_small_clamp_berkeley_meshes_BC001.png"/>
+    <texture type="2d" name="small_clamp_berkeley_meshes_Lid_material" file="visuals/T_small_clamp_berkeley_meshes_BC001.png"/>
+    <material name="small_clamp_berkeley_meshes_material" texture="small_clamp_berkeley_meshes_material" specular="0.310345" shininess="0.5"/>
+    <material name="small_clamp_berkeley_meshes_Lid_material" texture="small_clamp_berkeley_meshes_Lid_material" specular="0.310345" shininess="0.5"/>
+    <mesh name="small_clamp_berkeley_meshes_vis" file="visuals/small_clamp_berkeley_meshes.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_vis" file="visuals/small_clamp_berkeley_meshes_Lid.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider1_m_collision" file="collision/small_clamp_berkeley_meshes_Collider1_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider2_m_collision" file="collision/small_clamp_berkeley_meshes_Collider2_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider3_m_collision" file="collision/small_clamp_berkeley_meshes_Collider3_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider4_m_collision" file="collision/small_clamp_berkeley_meshes_Collider4_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider5_m_collision" file="collision/small_clamp_berkeley_meshes_Collider5_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider6_m_collision" file="collision/small_clamp_berkeley_meshes_Collider6_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider7_m_collision" file="collision/small_clamp_berkeley_meshes_Collider7_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider1_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider1_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider2_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider2_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider3_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider3_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider4_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider4_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider5_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider5_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider6_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider6_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Collider8_m_collision" file="collision/small_clamp_berkeley_meshes_Collider8_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider7_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider7_m.obj"/>
+    <mesh name="small_clamp_berkeley_meshes_Lid_Collider8_m_collision" file="collision/small_clamp_berkeley_meshes_Lid_Collider8_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="small_clamp_berkeley_meshes_material" mesh="small_clamp_berkeley_meshes_vis"/>
+        <geom name="small_clamp_berkeley_meshes_Collider1_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider1_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider2_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider2_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider3_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider3_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider4_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider4_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider5_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider5_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider6_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider6_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider7_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider7_m_collision"/>
+        <geom name="small_clamp_berkeley_meshes_Collider8_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Collider8_m_collision"/>
+        <body name="small_clamp_berkeley_meshes_Lid">
+          <joint name="small_clamp_berkeley_meshes_Lid_joint" pos="0.00030650 -0.00226200 -0.00013350" axis="0 0 1" stiffness="0.05" limited="true" range="0 0.610865" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="small_clamp_berkeley_meshes_Lid_material" mesh="small_clamp_berkeley_meshes_Lid_vis"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider1_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider1_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider2_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider2_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider3_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider3_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider4_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider4_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider5_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider5_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider6_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider6_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider7_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider7_m_collision"/>
+          <geom name="small_clamp_berkeley_meshes_Lid_Collider8_m" class="collision" type="mesh" mesh="small_clamp_berkeley_meshes_Lid_Collider8_m_collision"/>
+        </body>
+      <geom size="0.0333365 0.0424 0.0046455" pos="-0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="small_clamp_berkeley_meshes_Lid_joint_actuator" joint="small_clamp_berkeley_meshes_Lid_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

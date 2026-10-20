@@ -1,0 +1,105 @@
+schema_version: 1
+task_id: B320-FU001
+task_name: b320_synchronized_double_cabinet_open
+state: physical_integration_audit
+updated_at: "2026-08-27T23:15:00+08:00"
+contract:
+  operator_prompt: "Use both hands at the same time to open the left and right cabinet doors, then release both handles while both doors remain open."
+  arm_count: 2
+  runtime_family: abc_shared_rigid_articulated
+  reference_tasks: [c10_two_stage_charging, d02_microwave]
+  physics_backend: physx
+  isaac_sim: "5.1"
+  isaaclab: "2.3.2"
+  isaaclab_runtime_detected: "0.54.2"
+  isaaclab_version_compatibility: pending
+  physics_hz: 120
+  control_hz: 30
+visible_asset_classes:
+  - id: double_door_cabinet
+    role: dynamic_articulated_fixture
+    required: true
+    door_count: 2
+    replacement_scope: cabinet_visual_collision_and_door_joints
+    platform_assets_kept: [rokae_wuji1_bimanual, tabletop, canonical_cameras]
+candidate_ids:
+  - cabinet-polyhaven-painted
+  - cabinet-sketchfab-corner-cupboard
+  - cabinet-sketchfab-lowpoly-double
+  - cabinet-polyhaven-modern
+  - cabinet-sketchfab-armario
+selected_asset: cabinet-polyhaven-painted
+download_checkpoint:
+  status: resolved
+  user_selected_candidate_ids: [cabinet-polyhaven-painted]
+  resolved_files:
+    - "assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf.zip"
+    - "assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet_4k.gltf"
+    - "assets/polyhaven_painted_wooden_cabinet/source/painted_wooden_cabinet.bin"
+    - "assets/polyhaven_painted_wooden_cabinet/source/textures/painted_wooden_cabinet_diff_4k.jpg"
+    - "assets/polyhaven_painted_wooden_cabinet/source/textures/painted_wooden_cabinet_nor_gl_4k.jpg"
+    - "assets/polyhaven_painted_wooden_cabinet/source/textures/painted_wooden_cabinet_arm_4k.jpg"
+    - "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_body.usd"
+    - "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_left.usd"
+    - "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/polyhaven_painted_wooden_cabinet/runtime/painted_cabinet_door_right.usd"
+  archive_sha256: dec8c52b933705c3332619faf6ec8618f5e8ca4ff57c24f25016e9876eba0ddf
+  source_page: https://polyhaven.com/a/painted_wooden_cabinet
+  license_page: https://polyhaven.com/license
+  license_verified: true
+  source_hash_bound: true
+  runtime_converter: "Isaac Sim 5.1 omni.kit.asset_converter"
+  runtime_components: [painted_cabinet_body.usd, painted_cabinet_door_left.usd, painted_cabinet_door_right.usd]
+  collision_derivation: source_mesh_topology_then_physx_convex_decomposition
+  runtime_scale: 0.55
+  runtime_orientation_wxyz: [0.5, 0.5, -0.5, -0.5]
+  hinge_axis_source: "+Y"
+  hinge_axis_runtime: "+Z"
+reach_contact_probe:
+  status: pending_no_contact
+  probe_run_pass: true
+  diagnostic_only: true
+  task_success_claimed: false
+  formal_success_observed: false
+  contact_observed: false
+  contact_observed_by_side: {left: false, right: false}
+  peak_contact_force_n: {left: 0.0, right: 0.0}
+  completed_phases: [hold_spread_home, retreat_x, align_yz, approach_12cm, approach_06cm, approach_03cm_probe]
+  frames_completed: 49
+  finite_readback_all_frames: true
+  final_handle_error_m: {left: 0.22385915939086876, right: 0.19056235984730116}
+  final_joint_limit_margin_min_rad: {left: "-0.000091552734375", right: "-0.00020360946655273438"}
+  caveat: "probe_run_pass only means the diagnostic completed with finite readback and no exception; it is not a reach/contact/success pass. Final handle errors remain large and both final minimum joint-limit margins are negative."
+  evidence:
+    result: evidence/live_run/fu001_reach_probe.json
+    result_sha256: 7395d0681bde36900f506d4b32bcaa0fadddf51fdc044208e04ef33c608653e6
+    script: evidence/live_run/fu001_reach_probe.py
+    script_sha256: b76cf7141cf98e2eb194bb052075bb216a49c9ea5ccfd2b4f39272d9635e4967
+    stdout: evidence/live_run/fu001_reach_probe.stdout
+    stdout_sha256: 6de4f03dab5d3d3bf27eb49784379ec12f525febfbc8241883c4da0a322ec89d
+    isaaclab_log_path: /tmp/isaaclab/logs/isaaclab_2026-08-27_23-13-10.log
+    isaaclab_log_sha256: ebf4eb6fcbea82ca000f8bf046db31fe5cd2df4b8b39c08dd0ef8288d010878b
+    kit_log_path: /home/user/miniconda3/envs/isaacsim/lib/python3.11/site-packages/isaacsim/kit/logs/Kit/Isaac-Sim/5.1/kit_20260827_231303.log
+    kit_log_sha256: 920fc0f26abc9da41f281301cade0e615ab141cc225019a4be2ea2df5d4bc0aa
+pending_gates:
+  - support_and_ik_reachability_audit
+  - seeded_position_randomization_audit
+  - camera_black_fraction_contract_decision
+  - intended_contact_and_contact_phase_stability_audit
+  - operator_positive_negative_success_trials
+  - selected_asset_collection_replay
+  - isaaclab_version_compatibility_audit
+notes:
+  - "The user said downloading was complete; the unique fresh archive was resolved by filename, mtime, archive members, and SHA-256."
+  - "Poly Haven Painted Wooden Cabinet is CC0; the archive has no embedded license file, so the external Poly Haven license page is recorded beside the source."
+  - "The repository's dv_double_cabinet_44781 remains a historical benchmark reference and is not used as the selected visual asset."
+  - "The source row requests furniture-root XY/yaw jitter, but the selected cabinet is currently mounted through a world-fixed articulation root. Applied root translation is therefore zero and explicitly exempted/pending until a fixed-root PhysX reset primitive is validated; door translation remains constrained while seeded 10–30% angular reset is retained."
+  - "The requested IsaacLab contract is 2.3.2, while the available local distribution reports 0.54.2; selected-asset runtime compatibility remains a pending gate and is not claimed as validated."
+  - "Isaac Sim 5.1 CPU smoke passed all nine core checks at 120 Hz: source-derived cabinet topology, two revolute joints, dual ROKAE/Wuji inventory, 0 m robot/cabinet AABB overlap, live head RGB, lighting, scale/table pose, and 3 seconds of zero-action stability."
+  - "The exact PhysX overlap audit passed at the earliest cooked authored query (before task reset/settle), after the canonical constructor reset, and after 120 additional raw steps: 5 cabinet / 60 robot / 1 table collision shapes, zero pairs, zero query errors, zero contact rows, and 0 m maximum penetration."
+  - "The selected head camera is live-bound at /World/RecordCameras/head_camera; the 10-second campaign captured 30/30 populated 640x480 RGB frames. The measured maximum dark-pixel fraction is 0.00825846, so the YAML zero-black threshold remains an explicit pending decision."
+  - "The actual Kit/IsaacLab logs for the 10-second campaign were opened and hashed; the zero-action initial-stability subgate passed at 1,200 PhysX steps with finite robot/door state and no fatal marker. This campaign did not execute an opening/contact action."
+  - "The live camera is render-only: the Isaac Sim 5.1 stage probe found Camera prims with no RigidBody, Collision, or ArticulationRoot APIs, so enabling the sensor does not alter PhysX contact semantics."
+  - "FU001 reset uses the verified C-tool spread-home staging for the fixed-root cabinet; this is a collision-clear starting pose, not a hand/door collision filter. Ordinary hand-door and table contacts remain enabled."
+  - "The source fixture-root XY±0.03 m randomization is still explicitly exempted because the selected base is a world-fixed articulation root; no acceptance claim is made until a dedicated fixed-root reset campaign passes."
+  - "The selected asset is not accepted yet: support/reach, fixed-root/randomization proof, camera threshold decision, intended contact/contact-phase stability, operator success trials, collection/replay, and IsaacLab compatibility remain open."
+  - "The six-phase reach/contact probe completed diagnostically (probe_run_pass=true, 49 finite frames) but contact_observed=false on both sides, status=pending_no_contact, and formal_success_observed=false; final handle errors are 0.223859 m (left) and 0.190562 m (right), with negative final joint-limit margins, so no reach/contact/success acceptance is claimed."

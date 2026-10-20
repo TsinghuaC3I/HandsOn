@@ -1,0 +1,29 @@
+env_name: t06_fit_device_cover
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "At each reset device_body and device_cover receive independently randomized tabletop positions and yaw directions, and device_body remains free to move under contact. Use both hands on opposite sides of device_cover and carry it together above device_body. One hand may arrive up to two seconds before the other. Keep both side contacts during the effective transport, align the matching interface, and seat the cover."
+robot_type: dual_arm
+time_limit_seconds: 120
+skills:
+  - bimanual_shared_object_transport
+  - opposite_side_grasp
+  - rigid_body_alignment
+  - physical_seating
+objects:
+  - device_body
+  - device_cover
+workflow:
+  - approach_opposite_cover_sides
+  - establish_dual_contact_with_two_second_join_grace
+  - transport_cover_while_both_side_contacts_are_active
+  - align_and_seat_cover_on_body
+success_criteria:
+  - both_assigned_cover_sides_contacted_for_at_least_0.2_seconds
+  - cover_moved_at_least_0.10_m_during_continuous_dual_contact
+  - cover_reached_above_device_body_during_that_dual_contact
+  - no_single_hand_cover_contact_at_success
+  - cover_physically_seated_aligned_and_not_deeply_penetrating
+  - device_body_is_dynamically_stable_at_success
+  - final_assembly_stable_for_eight_control_frames

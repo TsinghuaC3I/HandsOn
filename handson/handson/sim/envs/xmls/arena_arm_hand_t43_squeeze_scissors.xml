@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="Arena_Allegro_D05_Scissors_Three_Cuts">
+  <include file="panda_allegro_bimanual.xml" />
+  <include file="d05_scissors_objects.xml" />
+  <option timestep=".002" noslip_iterations="5" noslip_tolerance="0" />
+  <statistic center="0 0 1" extent=".8" />
+  <visual>
+    <headlight diffuse=".4 .4 .4" ambient=".5 .5 .5" />
+    <global azimuth="160" elevation="-20" offheight="2048" offwidth="2048" />
+    <quality offsamples="8" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512" />
+    <texture name="d05_floor_tex" type="2d" builtin="checker" width="512" height="512" rgb1=".82 .84 .86" rgb2=".72 .74 .76" />
+    <material name="d05_floor" texture="d05_floor_tex" texrepeat="2 2" texuniform="true" reflectance=".01" />
+    <texture name="d05_table_tex" type="2d" builtin="flat" width="1" height="1" rgb1=".08 .09 .10" rgb2=".08 .09 .10" />
+    <material name="table_ceramic" texture="d05_table_tex" specular=".2" />
+    <material name="table_legs_metal" rgba=".45 .46 .47 1" reflectance=".2" shininess=".3" />
+  </asset>
+  <worldbody>
+    <geom name="floor" size="3 3 .01" type="plane" material="d05_floor" />
+    <body name="table" pos="-.15 0 0">
+      <geom name="table_collision" type="box" size=".4 .8 .03" pos="0 0 .89" friction="1 .005 .0001" group="3" />
+      <geom name="table_visual" type="box" size=".4 .8 .03" pos="0 0 .89" contype="0" conaffinity="0" group="1" material="table_ceramic" />
+      <site name="table_top" pos="0 0 .92" size=".002" rgba="0 0 0 0" />
+      <geom pos=".32 .72 .43" type="cylinder" size=".04 .43" contype="0" conaffinity="0" material="table_legs_metal" />
+      <geom pos=".32 -.72 .43" type="cylinder" size=".04 .43" contype="0" conaffinity="0" material="table_legs_metal" />
+      <geom pos="-.32 .72 .43" type="cylinder" size=".04 .43" contype="0" conaffinity="0" material="table_legs_metal" />
+      <geom pos="-.32 -.72 .43" type="cylinder" size=".04 .43" contype="0" conaffinity="0" material="table_legs_metal" />
+    </body>
+    <camera name="front" pos="1.25 0 1.55" quat=".5963678 .3799282 .3799282 .5963678" fovy="45" />
+    <camera name="back" pos="-1.3 0 2.2" quat=".6532815 .2705981 -.2705981 -.6532815" fovy="45" />
+    <camera name="left" pos="-1 .8 2" quat="-.3535 -.146424 .3535 .853424" fovy="45" />
+    <camera name="right" pos="-1 -.8 2" quat=".853424 .3535 -.146424 -.3535" fovy="45" />
+    <light pos="0 0 3" dir="0 0 -1" diffuse="1 1 1" specular=".3 .3 .3" />
+    <body name="target_right" pos="-.12 -.18 1.02" quat="0 1 0 0" mocap="true">
+      <geom name="target_right" type="box" size=".03 .03 .03" contype="0" conaffinity="0" rgba=".6 .3 .3 0" />
+    </body>
+    <body name="target_left" pos="-.12 .18 1.02" quat="0 1 0 0" mocap="true">
+      <geom name="target_left" type="box" size=".03 .03 .03" contype="0" conaffinity="0" rgba=".3 .3 .6 0" />
+    </body>
+  </worldbody>
+</mujoco>

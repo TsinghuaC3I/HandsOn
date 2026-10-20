@@ -1,0 +1,165 @@
+{
+  "authoritative_source": {
+    "excel_row": 260,
+    "left_role_zh": "\u4ece\u5200\u67c4\u4e2d\u90e8\u63a5\u6536\u5e76\u653e\u5165\u5de5\u5177\u533a",
+    "objective_zh": "\u5c06\u87ba\u4e1d\u5200\u4ece\u53f3\u624b\u4ea4\u7ed9\u5de6\u624b\uff0c\u4fdd\u6301\u5200\u5c16\u671d\u5916\u4e14\u4e0d\u89e6\u78b0\u63a5\u6536\u624b\u638c\u3002",
+    "right_role_zh": "\u4ece\u5200\u67c4\u5c3e\u90e8\u4ea4\u4ed8\u540e\u5b8c\u5168\u91ca\u653e",
+    "source_rows_sha256": "c1bf0990e8ec0ae651ae6d904c6b61e45796c8e11a670f6da782f4b23052e987"
+  },
+  "claims": {
+    "core_scene_ready": true,
+    "handover_path_validated": false,
+    "motion_or_grasp_validated": false,
+    "task_complete": false
+  },
+  "components": {
+    "head_camera": {
+      "preview": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/previews/reset_head.png",
+      "prim_path": "/World/envs/env_0/HeadRecordCamera",
+      "resolution_hwc": [
+        480,
+        640,
+        3
+      ]
+    },
+    "lighting": {
+      "distant_intensity": 950.0,
+      "dome_intensity": 650.0,
+      "render_mode": "RayTracedLighting",
+      "tonemap": "ACES_op4"
+    },
+    "robot": {
+      "arm_dof_per_side": 7,
+      "asset": "handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "hand_dof_per_side": 20,
+      "sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+      "sides": [
+        "left",
+        "right"
+      ]
+    },
+    "safe_orientation_marker": {
+      "asset": "procedural_usd_cube",
+      "collider_count": 0,
+      "collision_enabled": false,
+      "orientation_wxyz": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "overlay": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/scene/as019_core_scene.usda",
+      "position_m": [
+        -0.3,
+        -0.02,
+        0.924
+      ],
+      "randomization_xy_m": 0.025,
+      "size_m": [
+        0.44,
+        0.13,
+        0.0015
+      ]
+    },
+    "screwdriver": {
+      "asset_manifest": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/asset_manifest.json",
+      "asset_manifest_sha256": "d6df5854f14aafae5aadfba102b221f4ab4e390eeab66c885320d40428f54207",
+      "canonical_reset_only": true,
+      "collider_count": 5,
+      "collider_paths": [
+        "/FlatheadScrewdriver/Colliders/TailMain",
+        "/FlatheadScrewdriver/Colliders/HandleNeck",
+        "/FlatheadScrewdriver/Colliders/Ferrule",
+        "/FlatheadScrewdriver/Colliders/Stem",
+        "/FlatheadScrewdriver/Colliders/FlatBlade"
+      ],
+      "collision_approximation": "convexHull",
+      "randomization_contract": {
+        "friction_range": [
+          0.45,
+          0.85
+        ],
+        "mass_multiplier_range": [
+          0.8,
+          1.2
+        ],
+        "xy_m": 0.035,
+        "yaw_rad": 0.20943951023931956
+      },
+      "reset_orientation_wxyz": [
+        0.7071067811865476,
+        0.0,
+        0.0,
+        0.7071067811865476
+      ],
+      "reset_position_m": [
+        -0.13,
+        -0.025,
+        0.9426107778710577
+      ],
+      "rigid_owner": "/FlatheadScrewdriver",
+      "runtime_asset": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/runtime/flathead_screwdriver.usd",
+      "runtime_sha256": "5ff790e9049bd953c7c1e0d495bd63fd93cfcac945a48d5180faa87e637b7bec",
+      "safe_tip_axis_world": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "scale_xyz": [
+        1.5,
+        1.5,
+        1.5
+      ],
+      "source_archive": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/assets/polyhaven_flathead_screwdriver/source/flathead_screwdriver_4k.gltf.zip",
+      "source_archive_sha256": "0162ab02ff2357585ebf702fc3844e4bf6313cf043239eaf763180ab12c26dbb",
+      "source_member_sha256": {
+        "flathead_screwdriver.bin": "d6cf744aa352c7ed92532c2aaa98e84baf2936361aa07025a6665a8d9ca0b9b0",
+        "flathead_screwdriver_4k.gltf": "657eb5aab940361252ecd071ed3b8e5a1f159fd27b74417829792c43419ff0c1",
+        "textures/flathead_screwdriver_arm_4k.jpg": "97043e2b562a0acb7835d9da26259ad17abbbe820649b97c6458af1bb5998439",
+        "textures/flathead_screwdriver_diff_4k.jpg": "d3df707481cd6a14bbe0a075fb06abc9684316d0933a816682f7e935b586f4b1",
+        "textures/flathead_screwdriver_nor_gl_4k.jpg": "b85b2ca09f710358b5a8b037654b7b676db58b8e4f4d4538b30466583676c730"
+      },
+      "visual_mesh_paths": [
+        "/FlatheadScrewdriver/Visual/SourceMesh"
+      ]
+    },
+    "table": {
+      "kinematic": true,
+      "source": "handson.sim.isaaclab.bimanual_assembly_scene",
+      "top_height_m": 0.92
+    }
+  },
+  "isaac_sim_version": "5.1.0.0",
+  "live_core_scene_evidence": {
+    "head_frame_metrics": {
+      "black_fraction": 0.0010709635416666667,
+      "dtype": "uint8",
+      "finite": true,
+      "mean_rgb": 207.12904357910156,
+      "pass": true,
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "std_rgb": 37.31957244873047,
+      "unique_rgb_count": 5020
+    },
+    "object_state_writes_during_action": 0,
+    "overlay": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/scene/as019_core_scene.usda",
+    "overlay_sha256": "cf17f0395461800e98e5c66413562f0f0701e785234e99ebde1e4b992886d60a",
+    "preview_bytes": 922446,
+    "preview_sha256": "23d5bf3036f3016e63badb9f2b79ebc2b4adbdd272d1fb51f1888e92441dd2f3",
+    "screwdriver_orientation_drift_rad": 0.0,
+    "screwdriver_position_drift_m": 0.0,
+    "summary": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/evidence/core_scene_summary.json",
+    "summary_sha256": "e08b4f6bbe6691e65fc5334bc6d9e88af2d657b879e171887e843536840b47ad",
+    "zero_action": "taskdev/tasks/bench320_as019_screwdriver_safe_orientation_handover/evidence/zero_action.json",
+    "zero_action_seconds": 4.0,
+    "zero_action_sha256": "9ae2d8503f62ad6f61d6ba81799d48a7f2f8dc0b20cad900abcae43f7d49b6f3"
+  },
+  "schema": "as019_core_scene_handoff_v1",
+  "scope": "core_scene_only",
+  "task_id": "B320-AS019",
+  "task_name": "bench320_as019_screwdriver_safe_orientation_handover"
+}

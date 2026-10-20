@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cleaning Brush
+* source:	https://sketchfab.com/3d-models/cleaning-brush-277196dd4c634d44bdc0c1afc05d62f7
+* author:	amhyde (https://sketchfab.com/amhyde)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cleaning Brush" (https://sketchfab.com/3d-models/cleaning-brush-277196dd4c634d44bdc0c1afc05d62f7) by amhyde (https://sketchfab.com/amhyde) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

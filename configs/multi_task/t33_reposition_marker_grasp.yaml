@@ -1,0 +1,16 @@
+env_name: t33_reposition_marker_grasp
+sim_backend: isaacsim
+camera_mapping:
+  base: ego
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the capped YCB marker with the right hand. From the grasp point recorded on each pickup, move both the thumb and index contact points at least 2.5 cm along the marker toward its writing tip under the cap. Success occurs while both fingers hold the lifted marker there. Dropping it onto the table does not reset the episode; the next pickup records a new starting grasp point."
+robot_type: single_arm
+time_limit_seconds: 90
+skills:
+  - in_hand_manipulation
+  - fingertip_gaiting
+  - contact_transition
+  - stable_grasp
+objects:
+  - 040_large_marker

@@ -1,0 +1,679 @@
+{
+  "task_id": "GEN6",
+  "task_name": "eval_gen05_set_mixer_knobs",
+  "source": {
+    "author": "Rayan (https://sketchfab.com/rayanamarasekara)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/audio-mixer-40cccd93ff904e2f9d5f2e02bbbbe92b",
+    "title": "Audio Mixer",
+    "url": "https://sketchfab.com/3d-models/audio-mixer-40cccd93ff904e2f9d5f2e02bbbbe92b",
+    "archives": {
+      "audio-mixer.zip": "402bbe68c91b5dcf0579b298bfdf2c10416e44ab4421718cab135f5b3c3b201e",
+      "audio_mixer_gltf.zip": "e69015a291d60f5d1f23e43759efb4c3ef727208a5065dbac7ef19c0c9f3f5e0"
+    }
+  },
+  "source_match": {
+    "obj_faces": 538824,
+    "source_zero_area_faces_omitted_by_gltf": 60,
+    "gltf_faces": 538764,
+    "group_count": 157,
+    "max_centroid_match_error_source_units": 5.157638918625324e-06
+  },
+  "geometry": {
+    "root_home_m": [
+      -0.14,
+      0.0,
+      0.915
+    ],
+    "knob_centers_m": {
+      "left": [
+        0.0,
+        0.135,
+        0.0347940141787052
+      ],
+      "right": [
+        0.0,
+        -0.135,
+        0.03479409089584118
+      ]
+    },
+    "knob_orientation_wxyz": [
+      0.9981534806443889,
+      -0.00010358676060022861,
+      -0.06074214037270398,
+      -0.00010358676060022864
+    ],
+    "knob_com_m": [
+      0.00034496048965533386,
+      -0.0004194844516842199,
+      0.019987705572518055
+    ],
+    "knob_diagonal_inertia_kg_m2": [
+      2.2604009256526934e-05,
+      2.456101434357732e-05,
+      2.542625197159586e-05
+    ],
+    "knob_principal_axes_wxyz": [
+      0.6763802036361711,
+      0.23451076174101151,
+      -0.6641666963434298,
+      0.2153999123142728
+    ],
+    "knob_mass_kg": 0.09,
+    "base_mass_kg": 2.4,
+    "knob_local_bounds_m": [
+      [
+        -0.025081694007516087,
+        -0.025081848662819706,
+        0.0
+      ],
+      [
+        0.025081694007516142,
+        0.025081848662821482,
+        0.04499999999999993
+      ]
+    ],
+    "fixed_bounds_m": [
+      [
+        -0.1812577783584595,
+        -0.22510950050354,
+        -0.025000000000000022
+      ],
+      [
+        0.18125777835845944,
+        0.22510950050354006,
+        0.05991094970703126
+      ]
+    ],
+    "source_knob_axis": [
+      -0.0002193751343898561,
+      0.9926207633054515,
+      0.12125993620917519
+    ],
+    "source_to_fixed_transform": [
+      [
+        0.0,
+        0.0,
+        -0.0066,
+        0.13266131801605233
+      ],
+      [
+        -0.0066,
+        0.0,
+        0.0,
+        -0.5938185115814208
+      ],
+      [
+        0.0,
+        0.0066,
+        0.0,
+        -0.4726351104736328
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "source_to_knob_transform": [
+      [
+        0.003276810486793452,
+        -0.0032519167369370336,
+        0.026625767960125526,
+        0.4971310228795332
+      ],
+      [
+        0.026823617332252168,
+        0.00040318686202262124,
+        -0.0032519167369370336,
+        3.016382701898438
+      ],
+      [
+        -4.400848873613516e-06,
+        0.019912803610425977,
+        0.002432575848509683,
+        -1.5727970406775418
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "whole_panel_uniform_scale": 0.0066,
+    "grip_radial_axial_scales": [
+      0.027023026642046925,
+      0.027023026642046925,
+      0.020060837276983663
+    ],
+    "grip_max_swept_diameter_m": 0.055,
+    "grip_axial_height_m": 0.045,
+    "knob_spacing_m": 0.27,
+    "mount_vertical_clearance_m": 0.002,
+    "cleared_control_radius_m": 0.062,
+    "removed_source_controls": [
+      "Cylinder046",
+      "Cylinder047",
+      "Cylinder048",
+      "Cylinder049",
+      "Cylinder054",
+      "Cylinder055",
+      "Cylinder056",
+      "Cylinder057",
+      "Cylinder090",
+      "Box021",
+      "Box022",
+      "Box023",
+      "Box024",
+      "Cylinder093",
+      "Box029",
+      "Box030",
+      "Box031",
+      "Box032",
+      "Box033",
+      "Box034",
+      "Box042",
+      "Box043",
+      "Cylinder106",
+      "Cylinder107",
+      "Cylinder108",
+      "Cylinder109",
+      "Cylinder115",
+      "Cylinder116",
+      "Cylinder117",
+      "Cylinder118",
+      "Cylinder123",
+      "Cylinder124",
+      "Cylinder125",
+      "Cylinder126"
+    ],
+    "kept_source_groups": [
+      "Box016",
+      "Arc001",
+      "Arc002",
+      "Arc003",
+      "Arc004",
+      "Arc005",
+      "Arc006",
+      "Cylinder001",
+      "Cylinder002",
+      "Cylinder003",
+      "Cylinder004",
+      "Cylinder005",
+      "Cylinder006",
+      "Cylinder007",
+      "Cylinder008",
+      "Cylinder010",
+      "Cylinder011",
+      "Cylinder012",
+      "Cylinder013",
+      "Cylinder014",
+      "Cylinder015",
+      "Cylinder016",
+      "Cylinder017",
+      "Cylinder018",
+      "Cylinder019",
+      "Cylinder020",
+      "Cylinder021",
+      "Cylinder022",
+      "Cylinder023",
+      "Cylinder024",
+      "Cylinder025",
+      "Cylinder034",
+      "Cylinder035",
+      "Cylinder036",
+      "Cylinder037",
+      "Cylinder038",
+      "Cylinder039",
+      "Cylinder040",
+      "Cylinder041",
+      "Cylinder042",
+      "Cylinder043",
+      "Cylinder044",
+      "Cylinder045",
+      "Cylinder050",
+      "Cylinder051",
+      "Cylinder052",
+      "Cylinder053",
+      "Box017",
+      "Box018",
+      "Box019",
+      "Box020",
+      "Box025",
+      "Box026",
+      "Cylinder092",
+      "Box027",
+      "Box028",
+      "Box035",
+      "Box036",
+      "Box037",
+      "Box038",
+      "Box039",
+      "Box040",
+      "Box041",
+      "Box044",
+      "Box045",
+      "Box046",
+      "Box047",
+      "Box048",
+      "Box049",
+      "Box050",
+      "Box051",
+      "Box052",
+      "Box053",
+      "Box054",
+      "Box055",
+      "Box056",
+      "Box057",
+      "Box058",
+      "Box059",
+      "Box060",
+      "Box061",
+      "Box062",
+      "Box063",
+      "Box064",
+      "Box065",
+      "Box066",
+      "Sphere001",
+      "Sphere002",
+      "Sphere003",
+      "Sphere004",
+      "Sphere005",
+      "Sphere006",
+      "Sphere009",
+      "Sphere010",
+      "Box067",
+      "Cylinder094",
+      "Cylinder098",
+      "Cylinder099",
+      "Cylinder100",
+      "Cylinder101",
+      "Cylinder102",
+      "Cylinder103",
+      "Cylinder104",
+      "Cylinder105",
+      "Cylinder110",
+      "Cylinder111",
+      "Cylinder112",
+      "Cylinder113",
+      "Cylinder119",
+      "Cylinder120",
+      "Cylinder121",
+      "Cylinder122",
+      "Cylinder127",
+      "Cylinder128",
+      "Cylinder129",
+      "Cylinder130",
+      "Cylinder131",
+      "Cylinder132",
+      "Box068",
+      "Box069",
+      "Box070",
+      "Box071"
+    ],
+    "source_panel_pockets": [
+      {
+        "bounds": [
+          -0.014817,
+          -0.112653,
+          0.021766,
+          -0.046655
+        ],
+        "floor_normal": [
+          0.12446000964384756,
+          -2.8413754071766203e-07,
+          -1.0
+        ],
+        "floor_offset": -0.0313650182526775,
+        "delta_min": -0.0014191871936702002
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.181214,
+          -0.072243,
+          0.18471
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.016909708925421475,
+        "delta_min": -0.0406838286045482
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.152665,
+          -0.072243,
+          0.156093
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.017798188807073224,
+        "delta_min": -0.04013266083954177
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.124136,
+          -0.072243,
+          0.127103
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.01787489811659364,
+        "delta_min": -0.03936752615207696
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.095571,
+          -0.072243,
+          0.098531
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.017951899061056254,
+        "delta_min": -0.03964842507335322
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.066911,
+          -0.072243,
+          0.070128
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018029063450661176,
+        "delta_min": -0.04003512711904486
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.038128,
+          -0.072243,
+          0.041546
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018106551654955606,
+        "delta_min": -0.040108078639610946
+      },
+      {
+        "bounds": [
+          -0.14947,
+          0.010507,
+          -0.072243,
+          0.01318
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018180899464149847,
+        "delta_min": -0.040188544597316266
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.018357,
+          -0.072243,
+          -0.015387
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018237720775925382,
+        "delta_min": -0.0401849045511665
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.048424,
+          -0.072243,
+          -0.045704
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018186185809432476,
+        "delta_min": -0.040189979229105374
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.078028,
+          -0.072243,
+          -0.075383
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.018115990203667765,
+        "delta_min": -0.04009677571304398
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.107741,
+          -0.072243,
+          -0.105039
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.01800455975804043,
+        "delta_min": -0.03984602789437397
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.137551,
+          -0.072243,
+          -0.134518
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.017893638762780096,
+        "delta_min": -0.039391909724343914
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.168188,
+          -0.072243,
+          -0.165513
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.01761509089272655,
+        "delta_min": -0.0402884916056321
+      },
+      {
+        "bounds": [
+          -0.14947,
+          -0.181072,
+          -0.072243,
+          -0.178038
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.016797853877976655,
+        "delta_min": -0.04057207712343744
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.053376,
+          0.080489,
+          -0.050567
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.012661937930105328,
+        "delta_min": -0.05384867584677145
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.067406,
+          0.080489,
+          -0.064204
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.012657783312419225,
+        "delta_min": -0.053855899429934906
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.08002,
+          0.080489,
+          -0.076856
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.012654280371710836,
+        "delta_min": -0.053862020049318844
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.093207,
+          0.080489,
+          -0.089989
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.01279268515303238,
+        "delta_min": -0.054095752387756886
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.105016,
+          0.080489,
+          -0.101705
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.013330788300025698,
+        "delta_min": -0.0546630248468884
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.117174,
+          0.080489,
+          -0.113989
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.014778523468687844,
+        "delta_min": -0.05719462413389108
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.130099,
+          0.080489,
+          -0.127231
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.015100597488122803,
+        "delta_min": -0.05754535100568127
+      },
+      {
+        "bounds": [
+          0.037876,
+          -0.143013,
+          0.080489,
+          -0.140024
+        ],
+        "floor_normal": [
+          0,
+          0,
+          -1.0
+        ],
+        "floor_offset": 0.015179824454746239,
+        "delta_min": -0.05774544949963521
+      }
+    ],
+    "enclosure_convex_parts": 57,
+    "fixed_collision_parts": 178,
+    "knob_collision_vertices": 130
+  },
+  "files": {
+    "ATTRIBUTION.md": "7f2bf1ca1dad019118e0e5378929c093298c559e594ff2e15b412ca7182855bb",
+    "SOURCE_LICENSE.txt": "a61a7907e46be118774fe65414e49cce2a8ed95ddbd420b32ab40c939a7183a0",
+    "knob_collision.usda": "c63f7775ec3f676ebefc4bc3f8d1d54c64236a6f93d763f425d23bdf7f7997a6",
+    "knob_visual.usda": "d5bc385cb86005d8f31851ef90c3b746fca6e772b0cc65176d9a6644837ca1a7",
+    "mixer_fixed_collision.usda": "e8d945f0b78aef9a265da820a2a0e4dd59d81849dbc23f15404dc9aa61bde59f",
+    "mixer_fixed_visual.usda": "98df29e0b491080c730446cda6d2f4054cb2ae8db4bb3f1aafcb5d3f8e0f2b70",
+    "textures/wire_153228153_emissive.jpeg": "a082c28c84d70dae3d617647fe24689c8d69b98d95cb71f28b2b1f180b03fb56",
+    "textures/wire_061135006_baseColor.jpeg": "91580f77b84bdfe22766b1dd34d4ac07710c0f1d386500fa9934fa217f0abcb5"
+  },
+  "live_acceptance": "pending",
+  "collider_surface_audit": "pending"
+}

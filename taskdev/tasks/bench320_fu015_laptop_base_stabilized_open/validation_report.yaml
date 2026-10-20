@@ -1,0 +1,161 @@
+schema_version: 1
+task_id: t16_open_laptop
+manifest_sha256: 3c6982d37bf90780ee36e0726997750100e47e0ca893a073a84f89102d783717
+generated_at: "2026-08-20T14:24:11Z"
+simulator:
+  name: isaac_sim
+  version: "5.1"
+checks:
+  schema:
+    status: pass
+    summary: "The repaired FU015 task, recorder, validators, report, fresh-worker, session-history, and certification surface passes the final 224-test expanded CPU suite."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/task.yaml
+        sha256: 3c6982d37bf90780ee36e0726997750100e47e0ca893a073a84f89102d783717
+      - path: taskdev/tasks/t16_open_laptop/scene_manifest.json
+        sha256: a69009df5c7c2110349ddc861d4fbd9cba63faceea00f43f4da46ebed4a54ccf
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_repair_validation_20260820.json
+        sha256: b481fe28abe4ba38e7b8b527a3a58e53bd33a3e4f8ef76f62d45082d44a590e5
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_live_acceptance_trials.json
+        sha256: 8b56b5b2d5f371a5fb985fcababb899aee4cb79169a6adc26c04c4f783858a2c
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_certified_outputs_validation.json
+        sha256: c072a89016f6456b16bf05f155b90d6a9d61d582ea598efd9fb5d67eb3c7ae6c
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_reachability_validation.json
+        sha256: e42999a0b798f3c92c6e759347b1ce229321cf1889fe20638b528789c2a0a431
+    metrics: {error_count: 0, expanded_tests_passed: 224, task_complete: true, path_or_action_tuned: true}
+  assets:
+    status: pass
+    summary: "Exact meter/Z-up laptop bundle, identity scale, two rigid owners, X hinge, and all 13 source colliders verified."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/source_asset_audit.json
+        sha256: a9029d2b90d399635d2d72efdbaf8088e1a5e7531b3b05b5e22555cb2bc8b7c7
+      - path: taskdev/tasks/t16_open_laptop/evidence/laptop_physics_live.json
+        sha256: ef6469d9ae443ab3034fa3f4717fab3cc76d2b71a9b3cade0121d5ea63ec4c4c
+    metrics:
+      laptop_sha256: 31ad6079c08b7f2f80a082ec1d5d67309eb98d4bffb3fc24688c583170847aac
+      scale_xyz: [1.0, 1.0, 1.0]
+      collision_shape_count: 13
+      hinge_limits_deg: [-110.0, 0.0]
+      reset_hinge_magnitude_deg: 22.0
+      missing_count: 0
+      all_scales_verified: true
+      all_collision_shapes_verified: true
+  reachability:
+    status: pass
+    summary: "All six arm targets from three freshly certified randomized episodes pass the pre-contact physical-TCP gate: maximum position error 0.002175 m, maximum orientation error 0.002757 rad, and minimum joint-limit margin 0.105074 rad."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_reachability_validation.json
+        sha256: e42999a0b798f3c92c6e759347b1ce229321cf1889fe20638b528789c2a0a431
+    metrics:
+      target_fraction: 1.0
+      target_count: 6
+      target_pass_count: 6
+      max_position_error_m: 0.0021745087413635733
+      max_orientation_error_rad: 0.002756729926196142
+      min_joint_limit_margin_rad: 0.10507414312362662
+      full_threshold_report_available: true
+      acceptance_threshold_met: true
+      rokae_model_verified: true
+      wuji_gen1_verified: true
+      left_arm_dof: 7
+      right_arm_dof: 7
+      left_hand_dof: 20
+      right_hand_dof: 20
+  contact:
+    status: pass
+    summary: "All three final trajectories retain exact 21/21/66 contact filters, valid public reports/signatures, the required left-base/right-display roles, no forbidden terminal, and maximum penetration 0.000653 m (<0.005 m)."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_certified_outputs_validation.json
+        sha256: c072a89016f6456b16bf05f155b90d6a9d61d582ea598efd9fb5d67eb3c7ae6c
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_live_acceptance_trials.json
+        sha256: 8b56b5b2d5f371a5fb985fcababb899aee4cb79169a6adc26c04c4f783858a2c
+    metrics:
+      episodes: 3
+      max_penetration_m: 0.0006531951949000359
+      forbidden_events: 0
+      required_pairs_observed: true
+      contact_reports_all_valid: true
+      contact_signatures_all_valid: true
+  reset:
+    status: pass
+    summary: "Twenty-one complete live randomized episodes (11 scripted positive and 10 zero-action negative) initialized and ran without reset/runtime failure; the required 20-trial failure fraction is exactly zero."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_live_acceptance_trials.json
+        sha256: 8b56b5b2d5f371a5fb985fcababb899aee4cb79169a6adc26c04c4f783858a2c
+    metrics:
+      scope: full_bimanual_live_task
+      object_state_writes: 0
+      trials: 21
+      required_trials: 20
+      failure_fraction: 0.0
+      deterministic: true
+      acceptance_threshold_met: true
+  success:
+    status: pass
+    summary: "Eleven scripted positive trials all reached the physical terminal in 476--537 steps and ten zero-action negative trials all timed out at 660 steps; false-positive and false-negative fractions are both zero."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_live_acceptance_trials.json
+        sha256: 8b56b5b2d5f371a5fb985fcababb899aee4cb79169a6adc26c04c4f783858a2c
+    metrics:
+      success_motion_executed: true
+      task_complete: true
+      positive_trials: 11
+      negative_trials: 10
+      false_positive_fraction: 0.0
+      false_negative_fraction: 0.0
+      max_positive_terminal_step: 537
+      negative_timeout_steps: 660
+      hold_steps_observed: 15
+      acceptance_threshold_met: true
+  camera:
+    status: pass
+    summary: "All nine final videos decode at 30 fps with frame counts exactly matching 509/489/505-step Zarr trajectories: head 640x480, wrists 848x480, no black frame, and minimum per-video mean RGB 136.863."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_certified_outputs_validation.json
+        sha256: c072a89016f6456b16bf05f155b90d6a9d61d582ea598efd9fb5d67eb3c7ae6c
+    metrics:
+      prim_path: /World/RecordCameras/head_camera
+      target_resolution_hwc: [480, 640, 3]
+      production_head_frame_available: true
+      head_camera_runtime_initialized: true
+      left_wrist_camera_runtime_initialized: true
+      right_wrist_camera_runtime_initialized: true
+      design_preview_is_camera_evidence: false
+      minimum_frames_per_video: 489
+      trajectory_frames: [509, 489, 505]
+      black_fraction: 0.0
+      minimum_video_mean_rgb: 136.863260151137
+      minimum_frame_mean_rgb: 105.37531610324947
+      width: 640
+      height: 480
+      primary: head
+  stability:
+    status: pass
+    summary: "Each accepted full-task trajectory spans 489--509 control steps (at least 16.3 simulated seconds), all actions/states are finite, no failure latch fired, and all nine exact fresh replays completed."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_certified_outputs_validation.json
+        sha256: c072a89016f6456b16bf05f155b90d6a9d61d582ea598efd9fb5d67eb3c7ae6c
+    metrics:
+      episodes: 3
+      scheduler_host: hp-13
+      minimum_sim_seconds: 16.3
+      nan_count: 0
+      exploding_body_count: 0
+      exact_fresh_replays: 9
+  collection:
+    status: pass
+    summary: "Three clean-runtime stable-v2 Zarr episodes from seeds 15700--15702 were published after every episode passed three independent fresh-process PhysX certifications with zero initialization or trajectory error."
+    evidence:
+      - path: taskdev/tasks/t16_open_laptop/evidence/fu015_certified_outputs_validation.json
+        sha256: c072a89016f6456b16bf05f155b90d6a9d61d582ea598efd9fb5d67eb3c7ae6c
+    metrics:
+      task_complete: true
+      episodes: 3
+      schema_errors: 0
+      streams: [action, state, next_state, contacts, success, hinge_angle, bimanual_role_contacts, rgb_head, rgb_wrist_left, rgb_wrist_right]
+      runtime_commit: e083762996c7c822f9340684be1692e3fdb7fae1
+      fresh_certification_runs_passed: 9
+      fresh_certification_runs_required: 9
+      max_replay_error: 0.0
+      clean_commit_match: true
+      portable: true

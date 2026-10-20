@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="859.393" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="g_lego_duplo_material" file="visuals/T_g_lego_duplo_BC001.png"/>
+    <texture type="2d" name="g_lego_duplo_FL_Wheel_material" file="visuals/T_g_lego_duplo_BC001.png"/>
+    <texture type="2d" name="g_lego_duplo_FR_Wheel_material" file="visuals/T_g_lego_duplo_BC001.png"/>
+    <texture type="2d" name="g_lego_duplo_RL_Wheel_material" file="visuals/T_g_lego_duplo_BC001.png"/>
+    <texture type="2d" name="g_lego_duplo_RR_Wheel_material" file="visuals/T_g_lego_duplo_BC001.png"/>
+    <material name="g_lego_duplo_material" texture="g_lego_duplo_material" specular="0.333333"/>
+    <material name="g_lego_duplo_FL_Wheel_material" texture="g_lego_duplo_FL_Wheel_material" specular="0.333333"/>
+    <material name="g_lego_duplo_FR_Wheel_material" texture="g_lego_duplo_FR_Wheel_material" specular="0.333333"/>
+    <material name="g_lego_duplo_RL_Wheel_material" texture="g_lego_duplo_RL_Wheel_material" specular="0.333333"/>
+    <material name="g_lego_duplo_RR_Wheel_material" texture="g_lego_duplo_RR_Wheel_material" specular="0.333333"/>
+    <mesh name="g_lego_duplo_vis" file="visuals/g_lego_duplo.obj"/>
+    <mesh name="g_lego_duplo_FL_Wheel_vis" file="visuals/g_lego_duplo_FL_Wheel.obj"/>
+    <mesh name="g_lego_duplo_FR_Wheel_vis" file="visuals/g_lego_duplo_FR_Wheel.obj"/>
+    <mesh name="g_lego_duplo_RL_Wheel_vis" file="visuals/g_lego_duplo_RL_Wheel.obj"/>
+    <mesh name="g_lego_duplo_RR_Wheel_vis" file="visuals/g_lego_duplo_RR_Wheel.obj"/>
+    <mesh name="g_lego_duplo_Collider1_m_collision" file="collision/g_lego_duplo_Collider1_m.obj"/>
+    <mesh name="g_lego_duplo_RR_Wheel_Collider1_m_collision" file="collision/g_lego_duplo_RR_Wheel_Collider1_m.obj"/>
+    <mesh name="g_lego_duplo_FR_Wheel_Collider1_m_collision" file="collision/g_lego_duplo_FR_Wheel_Collider1_m.obj"/>
+    <mesh name="g_lego_duplo_RL_Wheel_Collider1_m_collision" file="collision/g_lego_duplo_RL_Wheel_Collider1_m.obj"/>
+    <mesh name="g_lego_duplo_FL_Wheel_Collider1_m_collision" file="collision/g_lego_duplo_FL_Wheel_Collider1_m.obj"/>
+    <mesh name="g_lego_duplo_Collider2_m_collision" file="collision/g_lego_duplo_Collider2_m.obj"/>
+    <mesh name="g_lego_duplo_Collider3_m_collision" file="collision/g_lego_duplo_Collider3_m.obj"/>
+    <mesh name="g_lego_duplo_Collider4_m_collision" file="collision/g_lego_duplo_Collider4_m.obj"/>
+    <mesh name="g_lego_duplo_Collider5_m_collision" file="collision/g_lego_duplo_Collider5_m.obj"/>
+    <mesh name="g_lego_duplo_Collider6_m_collision" file="collision/g_lego_duplo_Collider6_m.obj"/>
+    <mesh name="g_lego_duplo_Collider7_m_collision" file="collision/g_lego_duplo_Collider7_m.obj"/>
+    <mesh name="g_lego_duplo_Collider8_m_collision" file="collision/g_lego_duplo_Collider8_m.obj"/>
+    <mesh name="g_lego_duplo_Collider9_m_collision" file="collision/g_lego_duplo_Collider9_m.obj"/>
+    <mesh name="g_lego_duplo_Collider10_m_collision" file="collision/g_lego_duplo_Collider10_m.obj"/>
+    <mesh name="g_lego_duplo_Collider11_m_collision" file="collision/g_lego_duplo_Collider11_m.obj"/>
+    <mesh name="g_lego_duplo_Collider12_m_collision" file="collision/g_lego_duplo_Collider12_m.obj"/>
+    <mesh name="g_lego_duplo_Collider13_m_collision" file="collision/g_lego_duplo_Collider13_m.obj"/>
+    <mesh name="g_lego_duplo_Collider14_m_collision" file="collision/g_lego_duplo_Collider14_m.obj"/>
+    <mesh name="g_lego_duplo_Collider15_m_collision" file="collision/g_lego_duplo_Collider15_m.obj"/>
+    <mesh name="g_lego_duplo_Collider16_m_collision" file="collision/g_lego_duplo_Collider16_m.obj"/>
+    <mesh name="g_lego_duplo_Collider17_m_collision" file="collision/g_lego_duplo_Collider17_m.obj"/>
+    <mesh name="g_lego_duplo_Collider18_m_collision" file="collision/g_lego_duplo_Collider18_m.obj"/>
+    <mesh name="g_lego_duplo_Collider19_m_collision" file="collision/g_lego_duplo_Collider19_m.obj"/>
+    <mesh name="g_lego_duplo_Collider20_m_collision" file="collision/g_lego_duplo_Collider20_m.obj"/>
+    <mesh name="g_lego_duplo_Collider21_m_collision" file="collision/g_lego_duplo_Collider21_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="g_lego_duplo_material" mesh="g_lego_duplo_vis"/>
+        <geom name="g_lego_duplo_Collider1_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider1_m_collision"/>
+        <geom name="g_lego_duplo_Collider2_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider2_m_collision"/>
+        <geom name="g_lego_duplo_Collider3_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider3_m_collision"/>
+        <geom name="g_lego_duplo_Collider4_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider4_m_collision"/>
+        <geom name="g_lego_duplo_Collider5_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider5_m_collision"/>
+        <geom name="g_lego_duplo_Collider6_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider6_m_collision"/>
+        <geom name="g_lego_duplo_Collider7_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider7_m_collision"/>
+        <geom name="g_lego_duplo_Collider8_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider8_m_collision"/>
+        <geom name="g_lego_duplo_Collider9_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider9_m_collision"/>
+        <geom name="g_lego_duplo_Collider10_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider10_m_collision"/>
+        <geom name="g_lego_duplo_Collider11_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider11_m_collision"/>
+        <geom name="g_lego_duplo_Collider12_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider12_m_collision"/>
+        <geom name="g_lego_duplo_Collider13_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider13_m_collision"/>
+        <geom name="g_lego_duplo_Collider14_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider14_m_collision"/>
+        <geom name="g_lego_duplo_Collider15_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider15_m_collision"/>
+        <geom name="g_lego_duplo_Collider16_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider16_m_collision"/>
+        <geom name="g_lego_duplo_Collider17_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider17_m_collision"/>
+        <geom name="g_lego_duplo_Collider18_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider18_m_collision"/>
+        <geom name="g_lego_duplo_Collider19_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider19_m_collision"/>
+        <geom name="g_lego_duplo_Collider20_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider20_m_collision"/>
+        <geom name="g_lego_duplo_Collider21_m" class="collision" type="mesh" mesh="g_lego_duplo_Collider21_m_collision"/>
+        <body name="g_lego_duplo_FL_Wheel">
+          <joint name="g_lego_duplo_FL_Wheel_joint" pos="0.05525650 -0.10647800 -0.00752800" axis="-1 0 0" stiffness="0.05" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="g_lego_duplo_FL_Wheel_material" mesh="g_lego_duplo_FL_Wheel_vis"/>
+          <geom name="g_lego_duplo_FL_Wheel_Collider1_m" class="collision" type="mesh" mesh="g_lego_duplo_FL_Wheel_Collider1_m_collision"/>
+        </body>
+        <body name="g_lego_duplo_FR_Wheel">
+          <joint name="g_lego_duplo_FR_Wheel_joint" pos="-0.05534350 -0.10577800 -0.00752800" axis="-1 0 0" stiffness="0.05" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="g_lego_duplo_FR_Wheel_material" mesh="g_lego_duplo_FR_Wheel_vis"/>
+          <geom name="g_lego_duplo_FR_Wheel_Collider1_m" class="collision" type="mesh" mesh="g_lego_duplo_FR_Wheel_Collider1_m_collision"/>
+        </body>
+        <body name="g_lego_duplo_RL_Wheel">
+          <joint name="g_lego_duplo_RL_Wheel_joint" pos="0.05525650 -0.01057800 -0.00752800" axis="-1 0 0" stiffness="0.05" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="g_lego_duplo_RL_Wheel_material" mesh="g_lego_duplo_RL_Wheel_vis"/>
+          <geom name="g_lego_duplo_RL_Wheel_Collider1_m" class="collision" type="mesh" mesh="g_lego_duplo_RL_Wheel_Collider1_m_collision"/>
+        </body>
+        <body name="g_lego_duplo_RR_Wheel">
+          <joint name="g_lego_duplo_RR_Wheel_joint" pos="-0.05534350 -0.00987800 -0.00752800" axis="-1 0 0" stiffness="0.05" limited="false" range="0 360" armature="0.01" damping="1" frictionloss="1"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="g_lego_duplo_RR_Wheel_material" mesh="g_lego_duplo_RR_Wheel_vis"/>
+          <geom name="g_lego_duplo_RR_Wheel_Collider1_m" class="collision" type="mesh" mesh="g_lego_duplo_RR_Wheel_Collider1_m_collision"/>
+        </body>
+      <geom size="0.0629135 0.151151 0.029852" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="g_lego_duplo_FL_Wheel_joint_actuator" joint="g_lego_duplo_FL_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="g_lego_duplo_FR_Wheel_joint_actuator" joint="g_lego_duplo_FR_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="g_lego_duplo_RL_Wheel_joint_actuator" joint="g_lego_duplo_RL_Wheel_joint" gear="0 0 0 0 0 0"/>
+    <general name="g_lego_duplo_RR_Wheel_joint_actuator" joint="g_lego_duplo_RR_Wheel_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

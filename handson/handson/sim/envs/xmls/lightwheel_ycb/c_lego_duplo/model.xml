@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="12407.8" rgba="0.5 0 0 0.5"/>
+    </default>
+  <default class="region"><geom group="1" conaffinity="0" contype="0" rgba="0 1 0 0" mass="0"/></default></default>
+  <asset>
+    <texture type="2d" name="c_lego_duplo_material" file="visuals/T_c_lego_duplo_BC001.png"/>
+    <material name="c_lego_duplo_material" texture="c_lego_duplo_material" specular="0.1" shininess="0.4472"/>
+    <mesh name="c_lego_duplo_vis" file="visuals/c_lego_duplo.obj"/>
+    <mesh name="c_lego_duplo_Collider1_m_collision" file="collision/c_lego_duplo_Collider1_m.obj"/>
+    <mesh name="c_lego_duplo_Collider2_m_collision" file="collision/c_lego_duplo_Collider2_m.obj"/>
+    <mesh name="c_lego_duplo_Collider3_m_collision" file="collision/c_lego_duplo_Collider3_m.obj"/>
+    <mesh name="c_lego_duplo_Collider4_m_collision" file="collision/c_lego_duplo_Collider4_m.obj"/>
+    <mesh name="c_lego_duplo_Collider5_m_collision" file="collision/c_lego_duplo_Collider5_m.obj"/>
+    <mesh name="c_lego_duplo_Collider6_m_collision" file="collision/c_lego_duplo_Collider6_m.obj"/>
+    <mesh name="c_lego_duplo_Collider7_m_collision" file="collision/c_lego_duplo_Collider7_m.obj"/>
+    <mesh name="c_lego_duplo_Collider8_m_collision" file="collision/c_lego_duplo_Collider8_m.obj"/>
+    <mesh name="c_lego_duplo_Collider9_m_collision" file="collision/c_lego_duplo_Collider9_m.obj"/>
+    <mesh name="c_lego_duplo_Collider10_m_collision" file="collision/c_lego_duplo_Collider10_m.obj"/>
+    <mesh name="c_lego_duplo_Collider11_m_collision" file="collision/c_lego_duplo_Collider11_m.obj"/>
+    <mesh name="c_lego_duplo_Collider12_m_collision" file="collision/c_lego_duplo_Collider12_m.obj"/>
+    <mesh name="c_lego_duplo_Collider13_m_collision" file="collision/c_lego_duplo_Collider13_m.obj"/>
+    <mesh name="c_lego_duplo_Collider14_m_collision" file="collision/c_lego_duplo_Collider14_m.obj"/>
+    <mesh name="c_lego_duplo_Collider15_m_collision" file="collision/c_lego_duplo_Collider15_m.obj"/>
+    <mesh name="c_lego_duplo_Collider16_m_collision" file="collision/c_lego_duplo_Collider16_m.obj"/>
+    <mesh name="c_lego_duplo_Collider17_m_collision" file="collision/c_lego_duplo_Collider17_m.obj"/>
+    <mesh name="c_lego_duplo_Collider18_m_collision" file="collision/c_lego_duplo_Collider18_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="c_lego_duplo_material" mesh="c_lego_duplo_vis"/>
+        <geom name="c_lego_duplo_Collider1_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider1_m_collision"/>
+        <geom name="c_lego_duplo_Collider2_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider2_m_collision"/>
+        <geom name="c_lego_duplo_Collider3_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider3_m_collision"/>
+        <geom name="c_lego_duplo_Collider4_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider4_m_collision"/>
+        <geom name="c_lego_duplo_Collider5_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider5_m_collision"/>
+        <geom name="c_lego_duplo_Collider6_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider6_m_collision"/>
+        <geom name="c_lego_duplo_Collider7_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider7_m_collision"/>
+        <geom name="c_lego_duplo_Collider8_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider8_m_collision"/>
+        <geom name="c_lego_duplo_Collider9_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider9_m_collision"/>
+        <geom name="c_lego_duplo_Collider10_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider10_m_collision"/>
+        <geom name="c_lego_duplo_Collider11_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider11_m_collision"/>
+        <geom name="c_lego_duplo_Collider12_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider12_m_collision"/>
+        <geom name="c_lego_duplo_Collider13_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider13_m_collision"/>
+        <geom name="c_lego_duplo_Collider14_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider14_m_collision"/>
+        <geom name="c_lego_duplo_Collider15_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider15_m_collision"/>
+        <geom name="c_lego_duplo_Collider16_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider16_m_collision"/>
+        <geom name="c_lego_duplo_Collider17_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider17_m_collision"/>
+        <geom name="c_lego_duplo_Collider18_m" class="collision" type="mesh" mesh="c_lego_duplo_Collider18_m_collision"/>
+      <geom size="0.032033 0.0160075 0.0149485" pos="0.0 -0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+</mujoco>

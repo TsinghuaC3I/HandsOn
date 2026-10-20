@@ -1,0 +1,66 @@
+HandsOn
+======
+
+Copyright (c) 2026 HandsOn contributors.  Released under the MIT License; see
+LICENSE.
+
+Third-party and lineage notes
+-----------------------------
+
+Task designs and assets
+  HandsOn incorporates selected task designs and assets from DexJoCo
+  (https://github.com/brave-eai/dexjoco) and DexVerse
+  (https://github.com/ycyao216/DexVerse).  Per-task
+  attribution, including which tasks reuse an upstream asset family, is given
+  in the task-inventory appendix of the HandsOn manuscript.  The upstream
+  projects are distributed under their own licenses; consult them directly.
+
+Historical asset names
+  Some locally authored assets retain a dexverse_authored prefix in
+  development source bundles, while several preliminary DexVerse assets
+  were replaced before data collection.  Attribution follows documented
+  task-design adaptations and retained asset reuse, rather than historical
+  directory names or candidates considered during development.
+
+Simulator
+  Simulation and data collection use NVIDIA Isaac Sim / Isaac Lab, which are
+  distributed under the NVIDIA Software License Agreement.
+
+Vendored assets
+  Task assets carry their own licenses next to the asset, e.g.
+  taskdev/tasks/*/assets/*/LICENSE.txt.  These include CC BY and CC0 works
+  whose attribution requirements are stated in those files.
+
+OpenPI
+  The openpi/ directory is derived from OpenPI and is distributed under the
+  Apache License 2.0; see openpi/LICENSE and openpi/NOTICE.  Gemma-based model
+  components are additionally subject to the Gemma Terms of Use
+  (openpi/LICENSE_GEMMA.txt).
+
+Reference clients
+  docs/reference_code/ contains integration examples for third-party policy
+  stacks.  docs/reference_code/handson_lerobot_client/ adapts the LeRobot robot
+  and asynchronous-inference interfaces (Apache License 2.0), and
+  docs/reference_code/handson_dp_eval/ follows the Diffusion Policy evaluation
+  structure (MIT).  Both are adapted against their upstream interfaces rather
+  than vendored; install the upstream packages from their own releases and
+  consult their licenses directly.  Neither upstream is redistributed here.
+
+Robot descriptions
+  Third-party arm and hand descriptions retain their own licenses and notices.
+  Exact models, pinned source repositories, modifications and known provenance
+  gaps are documented in docs/robot-assets.md and per-model SOURCE.json files
+  under handson/handson/assets/robots/. Citation entries are in
+  docs/robot-assets.bib. These assets are not relicensed by the repository MIT
+  license.
+
+  ROKAE AR5-08 meshes match rokae_description 0.0.5 in the public Airomantic/ar3_ws
+  mirror, pinned in SOURCE.json. That package explicitly declares Apache-2.0.
+  Its declaration, full license text, mesh correspondence and benchmark
+  parameter adaptations accompany the bundled descriptions and converted layers.
+  The mirror is not represented as an official manufacturer-hosted release.
+  Legacy AR5-07 meshes have separate official Apache-2.0 provenance.
+
+  Tianji M6-CCS source files and generated URDFs are not redistributed while
+  the exact BSD variant/text remain unresolved. Local import instructions and
+  pinned upstream links are in docs/robot-assets.md; links grant no extra rights.

@@ -1,0 +1,75 @@
+{
+  "title": "Towel laying flat on the ground",
+  "author": "Marc Sawyer",
+  "url": "https://sketchfab.com/3d-models/towel-laying-flat-on-the-ground-89a99925b1754746910ee364ace35564",
+  "license": "CC-BY-4.0",
+  "archive_sha256": "29d3803c736d415c3f381b01c8b39aa3ba4cf99a7bca35afcc4d62c33d917a46",
+  "uniform_scale": 0.0022586995994547747,
+  "source_to_cloth_axes": [
+    [
+      -0.7798826816888,
+      -0.6259257166804106,
+      0.0
+    ],
+    [
+      0.6259257166804106,
+      -0.7798826816888,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "collision_source": "Average of main front/back source meshes, sampled in source UV coordinates on 41x41 grid; border holes use nearest source vertices.",
+  "simulation_vertices": 1681,
+  "simulation_triangles": 3200,
+  "area_m2": 0.0756943357264811,
+  "bounds_m": [
+    [
+      -0.18157343254593442,
+      -0.11060759266444717,
+      0.0
+    ],
+    [
+      0.17980837393392643,
+      0.11015100341710497,
+      0.006497588768311425
+    ]
+  ],
+  "max_visual_normal_offset_m": 0.0031281835074550355,
+  "source_boundary_nearest_samples": 38,
+  "meshes": [
+    {
+      "name": "Object_0",
+      "vertices": 4449,
+      "triangles": 7854,
+      "material": 0
+    },
+    {
+      "name": "Object_1",
+      "vertices": 2984,
+      "triangles": 4984,
+      "material": 1
+    },
+    {
+      "name": "Object_2",
+      "vertices": 6401,
+      "triangles": 12367,
+      "material": 2
+    },
+    {
+      "name": "Object_3",
+      "vertices": 6401,
+      "triangles": 12367,
+      "material": 2
+    },
+    {
+      "name": "Object_4",
+      "vertices": 5733,
+      "triangles": 10296,
+      "material": 2
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+schema_version: 1
+task:
+  id: bench320_bc025_towel_corner_synchronized_spread
+  title: "B320-BC025 Towel Corner Synchronized Spread"
+  description: >-
+    The left and right ROKAE/Wuji hands must physically contact the assigned
+    upper-left and upper-right corners of one Terry Cloth surface, spread the
+    towel across the target frame without exceeding 15 percent structural
+    stretch, place at least three corners in the frame with over 80 percent
+    projected coverage, release within one second, and hold the released cloth
+    stable for 0.5 seconds.
+  operator_prompt: "Physically contact the assigned upper-left and upper-right Terry Cloth corners with the matching hands, spread the towel without overstretching it, place at least three corners inside the target frame with over 80 percent coverage, then release together."
+  taxonomy:
+    family: deformable_surface
+    interactions: [assigned_corner_contact, bimanual_spread, synchronized_release, surface_stability]
+    horizon: medium
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: >-
+    B320-BC025 task contract. Visible material selected by the user from Poly
+    Haven Terry Cloth (CC0); Pillow024 is a user-provided physics-calibration
+    source and is not composed as a BC025 volume collider.
+  reference: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/TASK_CONTRACT.md
+  license: CC0 material + user-provided calibration source
+  material_source_url: https://polyhaven.com/a/terry_cloth
+  material_license_url: https://polyhaven.com/license
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    control_runtime: e01_detached_wuji_surface_deformable
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  table_top_z_m: 0.89
+  bounds_m:
+    min: [-0.55, -0.65, 0.89]
+    max: [0.25, 0.65, 1.35]
+  towel:
+    root: /World/Task/B320Benchmark/BC025TerryCloth
+    mesh: /World/Task/B320Benchmark/BC025TerryCloth/mesh
+    size_m: [0.280, 0.260]
+    topology: {nodes: 1681, triangles: 3200}
+    authored_placement_m: [-0.05, 0.0, 0.894]
+  targets:
+    - id: assigned_upper_left_corner
+      arm: left
+      node_index: 1640
+      frame: world
+      position_m: [-0.19, 0.13, 0.894]
+      clearance_m: 0.01
+    - id: assigned_upper_right_corner
+      arm: right
+      node_index: 1680
+      frame: world
+      position_m: [0.09, 0.13, 0.894]
+      clearance_m: 0.01
+    - id: towel_target_frame
+      arm: either
+      frame: world
+      position_m: [-0.05, 0.0, 0.892]
+      size_m: [0.240, 0.235]
+      collision_enabled: false
+      clearance_m: 0.0
+assets:
+  - id: bc025-towel-01
+    title: Terry Cloth
+    path: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/assets/terry_cloth_4k.gltf.zip
+    kind: pbr_material_archive
+    required: true
+    sha256: 35df068d309815a136aea26a19553d121a050b680418ae803a304976491a29ef
+    source_url: https://polyhaven.com/a/terry_cloth
+    license: CC0 1.0
+    license_url: https://polyhaven.com/license
+    geometry_composed: false
+    maps: [diffuse, normal_opengl, arm]
+  - id: Pillow024_collision_parameters
+    title: Pillow024
+    path: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/assets/Pillow024/Pillow024.usd
+    kind: usd_physics_calibration_source
+    required: true
+    sha256: 8b08e24ba0e8bc359f8802fce393fddb6234b31ca60a8e51a85404638cc80305
+    license: unresolved_user_provided_source
+    geometry_composed: false
+    audited_collision:
+      contact_offset_m: 0.008
+      rest_offset_m: 0.004
+      static_friction: 3.0
+      dynamic_friction: 3.0
+      self_collision: true
+      enable_speculative_ccd: true
+      linear_damping: 0.1
+      solver_position_iterations: 32
+      poissons_ratio: 0.48
+      youngs_modulus_pa: 1000000.0
+      elasticity_damping: 0.0
+  - id: bc025-authored-surface
+    title: BC025 41x41 surface mesh
+    path: runtime_authored:/World/Task/B320Benchmark/BC025TerryCloth/mesh
+    kind: surface_deformable_mesh
+    required: true
+    geometry_composed: true
+    render_simulation_collision_same_mesh: true
+    collision:
+      enabled: true
+      approximation: exact_task_authored_surface_topology
+reset:
+  seedable: true
+  max_settle_steps: 600
+  randomization:
+    towel_translation_xy_m: [[-0.030, 0.030], [-0.030, 0.030]]
+    sampled_from: environment_rng
+    recorded_in: garment_initial_state[0:2]
+    root_transform_synchronized: true
+    yaw_deg: 0.0
+    wrinkle_m: 0.0
+    table_height_m: 0.0
+  invariants:
+    - all_required_sources_hash_locked
+    - finite_first_physx_surface_state
+    - no_unapproved_authored_collision_overlap
+    - no_unapproved_settled_collision_overlap
+    - complete_palm_and_finger_reset_clearance
+    - same_seed_translation_repeatability
+    - different_seed_translation_span_on_x_and_y
+    - success_false_at_reset
+contact:
+  witness:
+    type: localized_post_physx_surface_nodal_response
+    report_scope: deformable_nodal_readback_no_rigid_manifold_in_isaacsim_5_1
+    response_radius_m: 0.055
+    assigned_region_distance_m: 0.075
+    proximity_alone_is_insufficient: true
+  monitored_pairs:
+    - id: towel_table_support
+      bodies: [assets/bc025-authored-surface, environment/worktable]
+      allowlisted: true
+      reason: intended tabletop support
+    - id: assigned_left_hand_towel
+      bodies: [robot/left_hand/*, assets/bc025-authored-surface]
+      allowlisted: true
+      reason: intended physical corner contact
+    - id: assigned_right_hand_towel
+      bodies: [robot/right_hand/*, assets/bc025-authored-surface]
+      allowlisted: true
+      reason: intended physical corner contact
+  forbidden_pairs:
+    - id: cross_hand_corner_substitution
+      bodies: [robot/left_hand/*, assigned_upper_right_corner]
+    - id: cross_hand_corner_substitution
+      bodies: [robot/right_hand/*, assigned_upper_left_corner]
+    - id: robot_table_at_reset
+      bodies: [robot/*, environment/worktable]
+    - id: cross_robot_reset_overlap
+      bodies: [robot/left_hand/*, robot/right_hand/*]
+success:
+  logic: all
+  predicates:
+    - id: assigned_distinct_physical_corner_contacts
+      type: ordered_physical_surface_response
+      parameters: {left_node: 1640, right_node: 1680, same_hand_substitution_allowed: false}
+    - id: target_end_distance
+      type: geometry_derived_distance
+      parameters: {target_m: 0.240, relative_tolerance: 0.10}
+    - id: structural_stretch_limit
+      type: maximum_edge_stretch
+      parameters: {max_ratio: 0.15}
+    - id: target_corner_count
+      type: corners_inside_frame
+      parameters: {minimum_count: 3}
+    - id: projected_coverage
+      type: projected_surface_coverage
+      parameters: {strict_minimum: 0.80}
+    - id: synchronized_release
+      type: physical_release_window
+      parameters: {max_delta_seconds: 1.0}
+    - id: released_surface_stability
+      type: nodal_velocity_hold
+      parameters: {hold_seconds: 0.5, max_nodal_speed_mps: 0.04}
+  hold_steps: 15
+  timeout_steps: 1350
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 640]
+  require_rgb: true
+  streams:
+    - {id: ego, source: head, required: true, resolution: [640, 640]}
+    - {id: wrist_left, source: left_wrist, required: true, resolution: [848, 480]}
+    - {id: wrist_right, source: right_wrist, required: true, resolution: [848, 480]}
+  human_viewport_required: true
+stability:
+  physics_hz: 120
+  control_hz: 30
+  reset_settle_required: true
+  max_nodal_speed_mps: 0.04
+  zero_action_validation_steps: 8
+collection:
+  status: evidence_pending
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  required_streams: [action, raw_action, proprioception, named_current_state, named_next_state, physx_current, physx_next, physx_substeps, rgb_ego, rgb_wrist_left, rgb_wrist_right, contacts, success, garment_initial_state]
+  replay:
+    scope: diagnostic_state_guided
+    physical_surface_solver_certified: false
+    fresh_process_full_trajectory_required_before_claim: true
+    forbid_object_state_restore_after_action_zero: true
+validation:
+  report: taskdev/tasks/bench320_bc025_towel_corner_synchronized_spread/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0, required_node_count: 1681, required_triangle_count: 3200}
+    reachability: {min_target_fraction: 1.0, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_unapproved_overlap_m: 0.0, max_forbidden_events: 0}
+    reset: {min_trials: 3, max_failure_fraction: 0.0, require_same_seed_repeatability: true, require_xy_span: true}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 1, max_black_fraction: 0.35, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 0.066, max_nan_count: 0, max_exploding_body_count: 0}
+    collection: {min_episodes: 1, max_schema_errors: 0}

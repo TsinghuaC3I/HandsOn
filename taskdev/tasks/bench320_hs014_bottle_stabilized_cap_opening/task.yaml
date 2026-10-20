@@ -1,0 +1,251 @@
+schema_version: 1
+task:
+  id: B320-HS014
+  public_task_key: bench320_hs014_bottle_stabilized_cap_opening
+  title: "B320-HS014 Bottle Stabilized Free-Cap Opening"
+  description: "The left hand stabilizes an upright water bottle while the right hand continuously twists a free, non-child-safety cap by at least 180 degrees and lifts it at least 40 mm from the bottle mouth."
+  taxonomy:
+    family: articulation
+    interactions: [bimanual_stabilization, continuous_rotation, axial_extraction]
+    horizon: medium
+    handedness: bimanual
+source:
+  origin: adapted
+  attribution: "B320-HS014 definition; repository-frozen bottle and project-authored free cap reused from the BC019 task assets."
+  reference: taskdev/tasks/bench320_bc019_bottle_cap_alignment_with_fixture_hand
+  license: mixed_repository_frozen
+robot:
+  arms:
+    model: rokae
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+    base_poses:
+      - {position_m: [-0.75, 0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, -0.7071067812]}
+      - {position_m: [-0.75, -0.065, 1.34], orientation_xyzw: [0.7071067812, 0.0, 0.0, 0.7071067812]}
+  hands:
+    model: wuji_gen1
+    generation: 1
+    count: 2
+    asset: handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml
+workspace:
+  frame: world
+  bounds_m:
+    min: [-0.50, -0.40, 0.89]
+    max: [0.10, 0.40, 1.35]
+  targets:
+    - id: left_bottle_body
+      arm: left
+      frame: world
+      position_m: [-0.4225, -0.0825, 1.0318]
+      orientation_xyzw: [0.0, 1.0, 0.0, 0.0]
+      clearance_m: 0.03
+    - id: right_cap_top
+      arm: right
+      frame: world
+      position_m: [-0.4225, -0.1225, 1.12]
+      orientation_xyzw: [0.0, 1.0, 0.0, 0.0]
+      clearance_m: 0.03
+assets:
+  - id: water_bottle_opened
+    path: taskdev/tasks/bench320_hs014_bottle_stabilized_cap_opening/assets/dexverse_water_bottle/water_bottle_opened.usd
+    kind: usd
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    collision:
+      enabled: true
+      approximation: source_convex_decomposition
+      contact_offset_m: 0.0005
+      rest_offset_m: 0.0
+      cradle_supports: {type: three_invisible_spheres, count: 3, sphere_radius_m: 0.0015, ring_radius_m: 0.0024, center_z_m: -0.0015, angles_deg: [0.0, 120.0, 240.0], radial_envelope_m: 0.0039, top_z_m: 0.0, inside_bottle_mouth: true, nested_rigid_owner: false}
+  - id: free_bottle_cap
+    path: taskdev/tasks/bench320_hs014_bottle_stabilized_cap_opening/assets/dexverse_authored_bottle_cap/dexverse_authored_bottle_cap.glb
+    kind: mesh
+    required: true
+    scale_m: [1.0, 1.0, 1.0]
+    mass_properties:
+      mass_kg: 0.012
+      center_of_mass_local_m: [0.0, 0.013, 0.0]
+      diagonal_inertia_kg_m2: [0.000003635590, 0.000004745227, 0.000003635590]
+      principal_axes_wxyz: [1.0, 0.0, 0.0, 0.0]
+      source: uniform_surface_integral_of_hash_bound_visible_mesh
+    collision:
+      enabled: true
+      approximation: source_bevel_hull_and_com_centered_cradle_sphere
+      radius_m: 0.023
+      height_m: 0.026
+      center_y_m: 0.013
+      bottom_inset_m: 0.0
+      top_inset_m: 0.0
+      contact_offset_m: 0.0005
+      rest_offset_m: 0.0
+      outer_physics_material_binding: default_grasp_friction
+      cradle_sphere: {visible: false, radius_m: 0.013, center_y_m: 0.013, local_aabb_m: [[-0.013, 0.0, -0.013], [0.013, 0.026, 0.013]], inside_visible_bounds: true, center_matches_cap_com: true, nested_rigid_owner: false}
+      helper_physics_material: {binding_scope: cradle_sphere_and_three_support_spheres, binding_purpose: physics, contact_offset_m: 0.00005, rest_offset_m: 0.0, static_friction: 0.0, dynamic_friction: 0.0, restitution: 0.0, friction_combine_mode: min, applies_to_cap_outer_or_cap_hand: false}
+contact_topology:
+  contact_truth_topology: three_sphere_cradle_to_com_sphere
+  filtered_shape_role_pairs:
+    - [bottle_source, cap_outer]
+    - [bottle_source, cap_cradle]
+    - [bottle_support_0, cap_outer]
+    - [bottle_support_1, cap_outer]
+    - [bottle_support_2, cap_outer]
+  unfiltered_contact_role_pairs:
+    - [bottle_support_0, cap_cradle]
+    - [bottle_support_1, cap_cradle]
+    - [bottle_support_2, cap_cradle]
+  cap_seated_height_m: -0.0002
+  center_delta_z_m: 0.0143
+  center_horizontal_offset_m: 0.0024
+  center_distance_m: 0.0145
+  radius_sum_m: 0.0145
+  exact_initial_tangency: true
+  contact_normals_intersect_cap_com: true
+  axial_lift_separates_immediately: true
+reset:
+  seedable: true
+  max_settle_steps: 300
+  ready_state_settle_physics_steps: 120
+  public_reset_total_physics_steps: 120
+  randomization:
+    bottle_root_xy_m: {distribution: uniform, half_range: 0.015}
+    bottle_root_yaw_deg: {distribution: uniform, half_range: 8.0}
+    cap_relative_yaw_deg: {distribution: uniform, half_range: 12.0}
+  invariants:
+    - all_required_assets_present
+    - finite_actor_state
+    - no_initial_interpenetration_above_threshold
+    - targets_inside_workspace
+    - bottle_upright_and_supported
+    - table_at_canonical_height_clear_of_both_open_hands
+    - source_base_maps_to_local_z_minus_0_2_and_open_mouth_maps_to_local_z_zero
+    - free_cap_seated_at_bottle_mouth
+    - free_cap_axial_position_between_minus_0_5_and_plus_1_5_mm
+    - free_cap_radial_offset_at_most_2_mm
+    - free_cap_axis_error_at_most_2_deg
+    - free_cap_explicit_mass_properties_match_post_reset_readback
+    - no_d6_or_cap_seat_helper
+    - three_bottle_support_spheres_are_inside_the_mouth
+    - cap_cradle_sphere_is_com_centered_and_inside_visible_bounds
+    - exact_bidirectional_filters_leave_only_three_support_to_cradle_contacts
+    - helper_contact_offset_and_zero_friction_material_match_post_reset_readback
+    - cap_outer_keeps_default_grasp_friction
+    - exact_bottle_table_and_cap_bottle_contact_readable
+    - bottle_and_cap_physx_awake
+    - both_robot_bases_actual_readback
+    - all_fourteen_arm_joints_actual_position_and_velocity_readback
+    - both_physical_palms_actual_pose_and_velocity_readback
+    - task_not_initially_successful
+contact:
+  monitored_pairs:
+    - id: left_hand_bottle
+      bodies: ["robot/left_hand/*", "assets/water_bottle_opened"]
+      max_penetration_m: 0.005
+    - id: right_hand_cap
+      bodies: ["robot/right_hand/*", "assets/free_bottle_cap"]
+      max_penetration_m: 0.005
+    - id: cap_bottle
+      bodies: ["assets/free_bottle_cap", "assets/water_bottle_opened"]
+      max_penetration_m: 0.005
+  incidental_pairs:
+    - id: left_hand_cap
+      bodies: ["robot/left_hand/*", "assets/free_bottle_cap"]
+    - id: right_hand_bottle
+      bodies: ["robot/right_hand/*", "assets/water_bottle_opened"]
+  incidental_touch_policy: recoverable_no_role_credit
+  forbidden_pairs:
+    - id: robot_table
+      bodies: ["robot/*", "environment/table"]
+success:
+  logic: all
+  predicates:
+    - id: left_fixture_retained
+      type: sustained_role_contact
+      parameters: {hand: left, object: assets/water_bottle_opened}
+    - id: right_cap_retained
+      type: sustained_role_contact
+      parameters: {hand: right, object: assets/free_bottle_cap}
+    - id: continuous_cap_rotation
+      type: signed_accumulated_relative_rotation
+      parameters: {object: assets/free_bottle_cap, reference: assets/water_bottle_opened, axis: bottle_local_z, min_rad: 3.141592653589793, reversal_cancels_before_target: true, reached_target_latched: true}
+    - id: axial_cap_separation
+      type: relative_axis_separation
+      parameters: {object: assets/free_bottle_cap, reference: assets/water_bottle_opened, axis: bottle_local_z, min_m: 0.040}
+    - id: bottle_translation_stable
+      type: baseline_displacement
+      parameters: {object: assets/water_bottle_opened, max_m: 0.020}
+    - id: bottle_orientation_stable
+      type: baseline_orientation_drift
+      parameters: {object: assets/water_bottle_opened, max_deg: 5.0}
+    - id: bottle_yaw_stable
+      type: baseline_yaw_drift
+      parameters: {object: assets/water_bottle_opened, max_deg: 8.0}
+    - id: ordered_bimanual_roles
+      type: ordered_events
+      parameters: {events: [left_fixture_contact, right_cap_contact, continuous_twist_seen, cap_axially_separated], same_hand_substitution_allowed: false}
+  hold_steps: 15
+  timeout_steps: 2700
+camera:
+  primary: head
+  prim_path: /World/RecordCameras/head_camera
+  pose_source: robot_head
+  resolution: [640, 480]
+  require_rgb: true
+  views:
+    - {id: ego, prim_path: /World/RecordCameras/head_camera, resolution: [640, 480]}
+    - {id: wrist_left, prim_path: /World/RecordCameras/wrist_left_camera, resolution: [848, 480]}
+    - {id: wrist_right, prim_path: /World/RecordCameras/wrist_right_camera, resolution: [848, 480]}
+stability:
+  physics_hz: 120
+  control_hz: 30
+  solver_position_iteration_count: 64
+  cap_solver_position_iteration_count: 64
+  solver_velocity_iteration_count: 1
+  cap_solver_velocity_iteration_count: 1
+  scene_max_velocity_iteration_count: 8
+  reset_contact_refresh:
+    scope: reset_only_before_authored_origin_and_action_zero
+    setup_steps: 1
+    clearance_m: 0.030
+    final_write: sampled_poses_and_zero_velocity
+    ordinary_awake_settling_and_origin_gates_unchanged: true
+  max_depenetration_velocity_m_s: 1.0
+  bottle_linear_damping: 0.2
+  bottle_angular_damping: 5.0
+  cap_linear_damping: 0.2
+  cap_angular_damping: 5.0
+  sleep_threshold: 0.0
+  awake: true
+  min_physics_steps: 1200
+  min_sim_seconds: 10.0
+  max_linear_velocity_mps: 0.001
+  max_angular_velocity_radps: 0.002
+  static_pose_fallback_max_translation_per_frame_m: 0.000001
+  static_pose_fallback_max_rotation_per_frame_rad: 0.00001
+  max_support_penetration_m: 0.0005
+  exact_support_force_min_n: 0.01
+  exact_cap_bottle_force_min_n: 0.01
+  public_reset_pre_action_trace_substep_count: 0
+  production_origin_required_after_reset: true
+collection:
+  format: zarr_v1
+  output_env_var: HANDSON_OUTPUT_DIR
+  scripted_policy: hs014_scripted_bimanual_free_cap_twist_v1
+  recorder: scripts/hs014_auto_collection.py
+  fresh_replay: scripts/hs014_auto_collection.py
+  reset_origin: strict_shared_stabilize_recording_origin_10s_awake
+  required_streams: [action, proprioception, rgb_head, contacts, success, accumulated_cap_rotation, axial_cap_separation, bimanual_role_contacts]
+  min_successful_episodes: 3
+validation:
+  report: taskdev/tasks/bench320_hs014_bottle_stabilized_cap_opening/validation_report.yaml
+  required_checks: [schema, assets, reachability, contact, reset, success, camera, stability, collection]
+  thresholds:
+    schema: {max_errors: 0}
+    assets: {max_missing: 0}
+    reachability: {min_target_fraction: 1.0, min_joint_limit_margin_rad: 0.05, max_position_error_m: 0.01, max_orientation_error_rad: 0.15}
+    contact: {max_penetration_m: 0.005, max_forbidden_events: 0}
+    reset: {min_trials: 20, max_failure_fraction: 0.0}
+    success: {min_positive_trials: 10, min_negative_trials: 10, max_false_positive_fraction: 0.0, max_false_negative_fraction: 0.0}
+    camera: {min_frames: 30, max_black_fraction: 0.0, min_mean_rgb: 30.0, min_width: 640, min_height: 480}
+    stability: {min_sim_seconds: 10.0, min_physics_steps: 1200, max_nan_count: 0, max_support_penetration_m: 0.0005}
+    priority_zero: {exact_production_child_required: true, first_reset_attempt_required: true, dual_arm_actual_readback_required: true, both_bases_required: true, fourteen_arm_joints_required: true, both_physical_palms_required: true}
+    collection: {min_episodes: 3, max_schema_errors: 0}

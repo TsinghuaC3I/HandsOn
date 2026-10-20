@@ -1,0 +1,143 @@
+{
+  "task": "t03_cover_box",
+  "seed": 1,
+  "status": "diagnostic_completed",
+  "completed": true,
+  "scope": "Supplementary held-measured-action rendering diagnostic; seed 1 selected before execution",
+  "seed_selection": "Next sequential seed after the preserved seed-0 initialization rejection; authorized by user",
+  "previous_attempt": {
+    "seed": 0,
+    "status": "native_initialization_rejected",
+    "error": "RecordingOriginStabilityError(\"The robot and task objects did not remain physically stable before the recording-origin timeout: linear=0.000286703 m/s (limit 0.001), angular=0.00255763 rad/s (limit 0.002), robot_joint=0 rad/s (limit 0.001), steps=4800, timeout=39s, metric=velocity, pose_delta=None. Fastest task bodies: [{'name': '/World/Task/Box_lid/Box_lid', 'linear_velocity': 0.00022886515715123107, 'angular_velocity': 0.002557631312261862, 'limit_ratio': 1.278815656130931}, {'name': '/World/Task/Clear_Box/Clear_Box', 'linear_velocity': 0.0002867034261710025, 'angular_velocity': 0.001866714664880679, 'limit_ratio': 0.9333573324403395}, {'name': '/World/Task/table/table', 'linear_velocity': 0.0, 'angular_velocity': 0.0, 'limit_ratio': 0.0}]. Fastest joints: [{'side': 'right', 'joint': 'joint1_right', 'velocity': 0.0}, {'side': 'right', 'joint': 'joint2_right', 'velocity': 0.0}, {'side': 'right', 'joint': 'joint3_right', 'velocity': 0.0}, {'side': 'right', 'joint': 'joint4_right', 'velocity': 0.0}, {'side': 'right', 'joint': 'joint5_right', 'velocity': 0.0}]\")",
+    "counts_as_model_failure": false
+  },
+  "actions": 90,
+  "frame_steps": [
+    0,
+    30,
+    60,
+    90
+  ],
+  "physical_action_hz": 30,
+  "counts_as_formal_trial": false,
+  "learned_policy_tested": false,
+  "success": null,
+  "native_thresholds_unchanged": true,
+  "robot_links": 60,
+  "appearance_before_physics": true,
+  "appearance_did_not_change_physics": true,
+  "result_sha256": "b46021a9594285d8a7c7dc88cf3c962a73f5fb7605c655f44806074f4ab7d060",
+  "rendering_sha256": "acd8dc510b0fa30cf6b4400cf838c674456748c6b563cae01239bdea287b76c9",
+  "source_provenance_sha256": "43c1e39d70ae72e5089ddff35675b05237f3e2a38c502fbe92cfbaece1c74eef",
+  "assets_manifest_sha256": "7e1fff0a856e670be5955e30b20aba09cac9eb648852bb5146721eed03e79c5f",
+  "wheel_sha256": "651e493925face623a5a94b360b0462e0b93b006929a0c29c5755b88c9c82238",
+  "videos": {
+    "main": {
+      "frames": 4,
+      "shape": [
+        480,
+        854,
+        3
+      ],
+      "sha256": "e09481321caf97c96fa112d3bd9fb61a271229db98f21725d53a0ba2cd151092",
+      "unique_decoded_frames": 4,
+      "frame_mean": [
+        118.22326876788966,
+        118.16947290528233,
+        118.17803799115275,
+        118.17337529274005
+      ],
+      "frame_std": [
+        58.54900733342023,
+        58.59350959388507,
+        58.59063231943365,
+        58.589485816499526
+      ]
+    },
+    "wrist_left": {
+      "frames": 4,
+      "shape": [
+        480,
+        848,
+        3
+      ],
+      "sha256": "dca1786c81125612a3f7f2920034a4de27f4eb2f34e648e318878869e3bbc1c8",
+      "unique_decoded_frames": 4,
+      "frame_mean": [
+        146.4336191365304,
+        146.43273552148847,
+        146.43618071933963,
+        146.4330852004717
+      ],
+      "frame_std": [
+        62.102034594904964,
+        62.103863929878415,
+        62.1034207595447,
+        62.102350171998275
+      ]
+    },
+    "wrist_right": {
+      "frames": 4,
+      "shape": [
+        480,
+        848,
+        3
+      ],
+      "sha256": "708efe8101eed525db0c4b7c1caa1c7a9c6813b390c0be2885705bddd26500ec",
+      "unique_decoded_frames": 4,
+      "frame_mean": [
+        164.80821950340672,
+        164.80886317479036,
+        164.80951421645702,
+        164.80783952437108
+      ],
+      "frame_std": [
+        73.31823033900419,
+        73.317515499621,
+        73.31726541616169,
+        73.31819973402332
+      ]
+    }
+  },
+  "all_three_videos_decoded": true,
+  "camera_readback": {
+    "camera_frame_00090_000.json": {
+      "main": {
+        "max_pose_error": 7.609992737182825e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      },
+      "wrist_left": {
+        "max_pose_error": 9.586913812809073e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      },
+      "wrist_right": {
+        "max_pose_error": 4.1050845514534196e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      }
+    },
+    "camera_initial_000.json": {
+      "main": {
+        "max_pose_error": 7.609992737182825e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      },
+      "wrist_left": {
+        "max_pose_error": 9.586913812809073e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      },
+      "wrist_right": {
+        "max_pose_error": 4.1050845514534196e-08,
+        "intrinsic_max_error_px": 0.0,
+        "lens_errors": {}
+      }
+    }
+  },
+  "all_three_camera_contracts_verified": true,
+  "fatal_graphics_errors": [],
+  "clean_exit": true,
+  "remaining_owned_processes": []
+}

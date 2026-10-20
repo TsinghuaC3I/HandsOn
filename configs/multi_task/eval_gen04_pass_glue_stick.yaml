@@ -1,0 +1,28 @@
+env_name: eval_gen04_pass_glue_stick
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Pick up the glue stick with the left hand, transfer it to the right hand in the middle, then place it stably inside the right tray and release it."
+robot_type: dual_arm
+time_limit_seconds: 180
+skills:
+  - bimanual_coordination
+  - handoff
+  - pick_and_place
+objects:
+  - Customisable_Glue_Stick
+  - BC005_Wooden_Tray
+  - flat_screwdriver
+  - phillips_screwdriver
+  - spoon
+  - plastic_bolt
+  - a_marbles
+  - b_marbles
+  - hammer
+  - a_Nails
+  - 024_bowl
+runtime:
+  simulator: isaacsim-5.1
+  runtime_family: isaac_sim_5_1
+  physics_engine: PhysX

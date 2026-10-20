@@ -1,0 +1,117 @@
+{
+  "scope": "Migrated paper model sources and CPU protocol/dependency checks",
+  "models": [
+    "dp",
+    "hy",
+    "dm05",
+    "lingbot",
+    "pi05",
+    "spatial",
+    "openwam",
+    "fastwam",
+    "motus"
+  ],
+  "dependency_imports": {
+    "dp": true,
+    "hy": true,
+    "dm05": true,
+    "lingbot": true,
+    "pi05": true,
+    "spatial": true,
+    "openwam": true,
+    "fastwam": true,
+    "motus": true
+  },
+  "inspected_runtime_versions": {
+    "dp": {
+      "python": "3.11.15",
+      "torch": "2.9.0+cu128",
+      "torchvision": "0.24.0+cu128",
+      "diffusers": "0.35.2"
+    },
+    "hy": {
+      "python": "3.12.13",
+      "torch": "2.8.0+cu128",
+      "torchvision": "0.23.0+cu128",
+      "transformers": "4.57.6",
+      "timm": "1.0.21"
+    },
+    "dm05": {
+      "python": "3.12.13",
+      "torch": "2.11.0+cu128",
+      "torchvision": "0.26.0+cu128",
+      "transformers": "5.3.0",
+      "diffusers": "0.38.0",
+      "timm": "1.0.27"
+    },
+    "lingbot": {
+      "python": "3.12.13",
+      "torch": "2.8.0",
+      "torchvision": "0.23.0",
+      "transformers": "4.51.3",
+      "diffusers": "0.35.2"
+    },
+    "pi05": {
+      "python": "3.11.9",
+      "torch": "2.7.1",
+      "torchvision": "0.22.1",
+      "transformers": "4.53.2",
+      "diffusers": "0.35.2",
+      "jax": "0.6.2",
+      "flax": "0.10.2",
+      "orbax-checkpoint": "0.11.13"
+    },
+    "spatial": {
+      "python": "3.11.9",
+      "torch": "2.7.1",
+      "torchvision": "0.22.1",
+      "transformers": "4.53.2",
+      "diffusers": "0.35.2",
+      "jax": "0.6.2",
+      "flax": "0.10.2",
+      "orbax-checkpoint": "0.11.13"
+    },
+    "openwam": {
+      "python": "3.10.12",
+      "torch": "2.7.1+cu128",
+      "torchvision": "0.22.1+cu128",
+      "transformers": "5.17.0",
+      "diffusers": "0.38.0",
+      "timm": "1.0.29"
+    },
+    "fastwam": {
+      "python": "3.10.12",
+      "torch": "2.7.1+cu128",
+      "torchvision": "0.22.1+cu128",
+      "transformers": "5.17.0",
+      "diffusers": "0.38.0",
+      "timm": "1.0.29"
+    },
+    "motus": {
+      "python": "3.10.12",
+      "torch": "2.7.1+cu128",
+      "torchvision": "0.22.1+cu128",
+      "transformers": "5.17.0",
+      "diffusers": "0.38.0",
+      "timm": "1.0.29"
+    }
+  },
+  "protocol_tests": {
+    "passed": 23,
+    "model_subtests_passed": 9,
+    "learned_weights_used": false
+  },
+  "dp": {
+    "task_contracts": 50,
+    "published_prompt_coverage_complete": true,
+    "implicit_transfer_routing": false
+  },
+  "packaging": {
+    "policy_files": 968,
+    "missing_files": []
+  },
+  "model_gpu_rollouts_this_change": 0,
+  "checkpoint_numerical_parity_retested": false,
+  "fresh_environment_install_certified": false,
+  "weights_included": false
+}

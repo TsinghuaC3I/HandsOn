@@ -1,0 +1,12 @@
+env_name: eval_gen01_cover_lunchbox
+camera_mapping:
+  base: front
+  wrist_left: wrist_left
+  wrist_right: wrist_right
+prompt: "Align the lunchbox lid and place it onto the lunchbox."
+robot_type: single_arm
+time_limit_seconds: 120
+skills: [grasp, lift, transport, align, controlled_release]
+objects: [lunchbox, lunchbox_lid]
+runtime_family: isaac_sim_5_1
+physics_engine: PhysX

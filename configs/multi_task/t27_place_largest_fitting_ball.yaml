@@ -1,0 +1,20 @@
+env_name: t27_place_largest_fitting_ball
+camera_mapping:
+  base: front
+  wrist_left: wrist
+  wrist_right: wrist
+prompt: "Find the target C, G, or J YCB cup in the shuffled cup row. Choose the largest of the four balls in the shuffled ball row that can fit in that cup, place it into the cup using either hand as needed, release both hands, and leave the ball and cup stable."
+robot_type: dual_arm
+time_limit_seconds: 60
+skills:
+  - size_comparison
+  - object_selection
+  - spherical_grasp
+  - containment
+  - release
+objects:
+  - YCB c/g/j cups
+  - YCB d marble
+  - YCB golf ball
+  - YCB tennis ball
+  - YCB baseball

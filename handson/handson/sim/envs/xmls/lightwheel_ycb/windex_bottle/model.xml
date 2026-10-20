@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mujoco model="model">
+  <compiler angle="radian"/>
+  <default>
+    <default class="visual">
+      <geom type="mesh" contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="spawn">
+      <geom contype="0" conaffinity="0" group="4" rgba="1 1 1 0.5" mass="0"/>
+      <site group="4" rgba="1 1 1 0.5"/>
+    </default>
+    <default class="region">
+      <geom contype="0" conaffinity="0" group="5" rgba="0 1 0 0" mass="0"/>
+    </default>
+    <default class="collision">
+      <geom group="0" solref="0.004" solimp="0.998 0.998" density="722.352" rgba="0.5 0 0 0.5"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="windex_bottle_material" file="visuals/T_windex_bottle_BC001.png"/>
+    <texture type="2d" name="windex_bottle_Trigger_material" file="visuals/T_windex_bottle_BC001.png"/>
+    <material name="windex_bottle_material" texture="windex_bottle_material" specular="0.333333"/>
+    <material name="windex_bottle_Clear_material" specular="0.333333" rgba="0.646681 0.646681 0.646681 0.4"/>
+    <material name="windex_bottle_Prop_material" specular="0.333333" rgba="0.021642 0.0925188 0.800331 0.8"/>
+    <material name="windex_bottle_Trigger_material" texture="windex_bottle_Trigger_material" specular="0.333333"/>
+    <mesh name="windex_bottle_vis" file="visuals/windex_bottle.obj"/>
+    <mesh name="windex_bottle_Clear_vis" file="visuals/optimized_visuals/windex_bottle_Clear.obj"/>
+    <mesh name="windex_bottle_Prop_vis" file="visuals/windex_bottle_Prop.obj"/>
+    <mesh name="windex_bottle_Trigger_vis" file="visuals/windex_bottle_Trigger.obj"/>
+    <mesh name="windex_bottle_Collider8_m_collision" file="collision/windex_bottle_Collider8_m.obj"/>
+    <mesh name="windex_bottle_Collider1_m_collision" file="collision/windex_bottle_Collider1_m.obj"/>
+    <mesh name="windex_bottle_Collider2_m_collision" file="collision/windex_bottle_Collider2_m.obj"/>
+    <mesh name="windex_bottle_Collider3_m_collision" file="collision/windex_bottle_Collider3_m.obj"/>
+    <mesh name="windex_bottle_Collider4_m_collision" file="collision/windex_bottle_Collider4_m.obj"/>
+    <mesh name="windex_bottle_Collider5_m_collision" file="collision/windex_bottle_Collider5_m.obj"/>
+    <mesh name="windex_bottle_Collider6_m_collision" file="collision/windex_bottle_Collider6_m.obj"/>
+    <mesh name="windex_bottle_Collider7_m_collision" file="collision/windex_bottle_Collider7_m.obj"/>
+    <mesh name="windex_bottle_Trigger_Collider1_m_collision" file="collision/windex_bottle_Trigger_Collider1_m.obj"/>
+  </asset>
+  <worldbody>
+    <body>
+      <body name="object">
+        <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="windex_bottle_material" mesh="windex_bottle_vis"/>
+        <geom name="windex_bottle_Collider1_m" class="collision" type="mesh" mesh="windex_bottle_Collider1_m_collision"/>
+        <geom name="windex_bottle_Collider2_m" class="collision" type="mesh" mesh="windex_bottle_Collider2_m_collision"/>
+        <geom name="windex_bottle_Collider3_m" class="collision" type="mesh" mesh="windex_bottle_Collider3_m_collision"/>
+        <geom name="windex_bottle_Collider4_m" class="collision" type="mesh" mesh="windex_bottle_Collider4_m_collision"/>
+        <geom name="windex_bottle_Collider5_m" class="collision" type="mesh" mesh="windex_bottle_Collider5_m_collision"/>
+        <geom name="windex_bottle_Collider6_m" class="collision" type="mesh" mesh="windex_bottle_Collider6_m_collision"/>
+        <geom name="windex_bottle_Collider7_m" class="collision" type="mesh" mesh="windex_bottle_Collider7_m_collision"/>
+        <body name="windex_bottle_Clear">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="windex_bottle_Clear_material" mesh="windex_bottle_Clear_vis"/>
+        </body>
+        <body name="windex_bottle_Prop">
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="windex_bottle_Prop_material" mesh="windex_bottle_Prop_vis"/>
+        </body>
+        <body name="windex_bottle_Trigger">
+          <joint name="windex_bottle_Trigger_joint" pos="-0.00007000 0.03310500 0.11628250" axis="-1 0 0" stiffness="10" limited="true" range="0 0.523599" armature="0.01" damping="1" frictionloss="1" springref="-2"/>
+          <geom class="visual" friction="0.95 0.3 0.1" solref="0.001" solimp="0.998 0.998" mass="0" material="windex_bottle_Trigger_material" mesh="windex_bottle_Trigger_vis"/>
+          <geom name="windex_bottle_Trigger_Collider1_m" class="collision" type="mesh" mesh="windex_bottle_Trigger_Collider1_m_collision"/>
+        </body>
+      <geom size="0.042498 0.056137 0.1353045" pos="0.0 0.0 0.0" name="reg_bbox" class="region" type="box" quat="1.0 0.0 0.0 0.0"/></body>
+    </body>
+  </worldbody>
+  <actuator>
+    <general name="windex_bottle_Trigger_joint_actuator" joint="windex_bottle_Trigger_joint" gear="0 0 0 0 0 0"/>
+  </actuator>
+</mujoco>

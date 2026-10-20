@@ -1,0 +1,8 @@
+# Recorder-only dependencies for the Python 3.12 Isaac Sim 6.0.1 runtime.
+# Keep these separate from handson/pyproject.toml: installing the full project
+# would apply its Python <3.12 and NumPy 1.26 constraints to Isaac Sim.
+absl-py==2.4.0
+glfw==2.10.0
+zarr==2.18.3
+numcodecs==0.15.1
+av==17.1.0

@@ -1,0 +1,541 @@
+{
+  "schema": 1,
+  "scope": "Selected transplanted evaluator and native modules. This is not a claim that every environment file is byte-identical to every historical run.",
+  "files": {
+    "data/recording_origin_profile.py": {
+      "source_sha256": "c0e2dca2e20b69337be0103881cd56fbc528cb51e1d43ea97b4db8db096fed50",
+      "packaged_sha256": "b29cb6cf20b862635fdf6b0d0ba4bb89d06bed694eaa089beceddde0b17f019c",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "evaluation/as019_bridge.py": {
+      "source_sha256": "deef4c536684c12a569d4568c06219e4662815e60e1857e5a0b0f2776306154c",
+      "packaged_sha256": "1b92f27720c8a0249855744af4de486bbcb382b18c48801a6ef168a87f094884",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/boundary.py": {
+      "source_sha256": "e177206a04d0bbce3fec7876c0cdd102d275a02d80655aa90e3388f1fa1411da",
+      "packaged_sha256": "acd407b748c6934d701752cfaeeb9c070aa53e9597829e60484cc822ded44be5",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/camera_randomization.py": {
+      "source_sha256": "59b89498967ddd6470853f2e770872beb104ee605cb011c2f21b1d2365d23a33",
+      "packaged_sha256": "78a0ada800ef6d103188107993b87077fe141d5ece020c1a43dade2a3ce46996",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/cameras.py": {
+      "source_sha256": "ede7a7f11296dd69f89f6433c907b1ffb45323c02dc3988fd20e1fcdf7e3c7ea",
+      "packaged_sha256": "281ca578c83446bab1d69075bebeccf8e73a74707b9e5dc12051cc02650d550f",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/contact_numeric.py": {
+      "source_sha256": "0a75d1a2f447f91543e7d39f851b6725b8c0e2949a78611132077388f942a061",
+      "packaged_sha256": "fe1ac67d681fa0975c0a06b45b07581df1a1d1d053292eb0d162d0424c467b6c",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/evidence.py": {
+      "source_sha256": "9cdfeef973a7c6cf38c0f517295153e64aaa7d736721b129067ff06253170ea2",
+      "packaged_sha256": "9cdfeef973a7c6cf38c0f517295153e64aaa7d736721b129067ff06253170ea2",
+      "adaptation": "relative imports and public task names; rollout task-setting receipt and package provenance boundary"
+    },
+    "evaluation/goals.py": {
+      "source_sha256": "493ab1df01cba2e60105a45b4abed57e9b3b6720e45e7a64adf43d61f3b64582",
+      "packaged_sha256": "fb353005bd70b331991f628d7199842ca2410c0a664f75adee1c2048c3873e0a",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "evaluation/history.py": {
+      "source_sha256": "42c05246711a9bdb31c0239e9aac72a1be56f8100ac33d2eceeb03e5eccd487e",
+      "packaged_sha256": "ac77039828fdea0e675e7e399c9807db5b1af459fe4832c3e6d07b21fed99fb6",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "evaluation/policy.py": {
+      "source_sha256": "5097491c0d5fe4f068425d14a8e18c018ecb34e399cb7ce9324f7c90da0b3401",
+      "packaged_sha256": "58a9db55d5c2ddb44e84a6d827ee69099f8cdd9dfe99e3c8ca7cb28994c88d17",
+      "adaptation": "relative imports and public task names; rollout task-setting receipt and package provenance boundary Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "evaluation/readback.py": {
+      "source_sha256": "f35c6923f276dd039ecde2548990fc0780ee5427374398960f61d0adb182f65a",
+      "packaged_sha256": "96d1d2bb015e6167d4b2fc44921f225394e36fc21a4dc241605d4d3aca70dee8",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/rollout.py": {
+      "source_sha256": "500eb607555c0a71fdc93e6d1d27abe09bbf421be646e900597a29258f61be57",
+      "packaged_sha256": "ea6ceff149cc6ea7238faab50ce9d6be9a826e5ab610aa6e0b0f42204ce65db8",
+      "adaptation": "relative imports and public task names; rollout task-setting receipt and package provenance boundary Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "evaluation/schedule.py": {
+      "source_sha256": "e430278f05ccf1a78869ff66f33571b5d2e0d2f5441124cf0f20b1df2e70da72",
+      "packaged_sha256": "e430278f05ccf1a78869ff66f33571b5d2e0d2f5441124cf0f20b1df2e70da72",
+      "adaptation": "relative imports and public task names; rollout task-setting receipt and package provenance boundary"
+    },
+    "evaluation/setting_runtime.py": {
+      "source_sha256": "fae415ef3b21aeab117635d9d378d6a8c8bc8e31462f5abf9138f0166aa4177c",
+      "packaged_sha256": "3473aecdca9165b318d2255f923795d244b45d54b634b82c7d2660461064d3ad",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "evaluation/settings.py": {
+      "source_sha256": "8d180eb933c7fd97ab08156bd7f1f304b233c9210042dcbe766ce181295ec698",
+      "packaged_sha256": "566bf7a6b21ef5c4c44e9c76021a2bdba2effd596bea5d49a6479c0417a886ca",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted."
+    },
+    "sim/envs/xmls/arena_arm_hand_eval_gen03_orient_bottle_upright_rokae_wuji1.xml": {
+      "source_sha256": "a00f59f0ed619af55005b7ac043e258bc9d24adedb1bf0ad4b61a7344ea6b544",
+      "packaged_sha256": "a00f59f0ed619af55005b7ac043e258bc9d24adedb1bf0ad4b61a7344ea6b544",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/envs/xmls/eval_gen06_spray_shoe_objects.xml": {
+      "source_sha256": "6bc3d4efc8d02e2a9a7bc2fee926a0abba4c9aa2dcdc737714bdfd3cd2aa8db6",
+      "packaged_sha256": "1d8499600bedd5413760bdab5736dbecda56a94d007440a108a0003af4263115",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/core_box_base.py": {
+      "source_sha256": "cf1670246e0ed320b86e271cc5c75782c054bc62c0b3a42d03e5f8da2fea6a49",
+      "packaged_sha256": "598cd6499b024753b104f1aeb71d07e661dbc8673f4286acf3670b64bfe7261b",
+      "adaptation": "public package and task names; matching original base lifecycle retained; passive PhysX backend metadata; shared calibrated camera launcher"
+    },
+    "sim/isaaclab/core_box_env.py": {
+      "source_sha256": "aa31032a09e8167539bc320c9e4e97b847574d17734b35c4a6cb26086a34de24",
+      "packaged_sha256": "f391700b4e0206f22612b06a801416d272aa47b2eff7e53e0583fdaef4eea338",
+      "adaptation": "public package and task names; packaged appearance installed before first physics reset; preserve task family membership across public rename; refresh the packaged paper appearance at native reset; shared calibrated camera launcher; fail explicitly on camera construction errors; print constructor exceptions before Kit fast shutdown; defer appearance until native robots are constructed; explicitly bind native visual roots; match current shared joint-name expressions while retaining original reset values; inherit matching frozen base implementation"
+    },
+    "sim/isaaclab/core_peg_base.py": {
+      "source_sha256": "d6ac86a019d417cedc589c31af191997d79e88aca8e90c02d5e659725cdc9818",
+      "packaged_sha256": "493f5e26a8555171e484f23ce84c059c26761e3c1e4e48491bd3f7152a853da2",
+      "adaptation": "public package and task names; matching original base lifecycle retained; passive PhysX backend metadata; shared calibrated camera launcher"
+    },
+    "sim/isaaclab/core_peg_env.py": {
+      "source_sha256": "4ef74ad246d28d543047c566b95888afff0ef6c971c4747beb14e8144cd99a57",
+      "packaged_sha256": "1d240b0b209933266a8215e823c6f8f3f06bd3745e34d36e085b9954248454c3",
+      "adaptation": "public package and task names; packaged appearance installed before first physics reset; preserve task family membership across public rename; refresh the packaged paper appearance at native reset; shared calibrated camera launcher; fail explicitly on camera construction errors; print constructor exceptions before Kit fast shutdown; defer appearance until native robots are constructed; explicitly bind native visual roots; match current shared joint-name expressions while retaining original reset values; inherit matching frozen base implementation"
+    },
+    "sim/isaaclab/default_appearance.py": {
+      "source_sha256": "06ec9045c0db5afdcb444766d55326ad835242b83e68ab7f4fcf5e3987dabd6a",
+      "packaged_sha256": "dad11aed36bb188ac075d1c08b0453fa1c1ae4eb6f01fe5197fc676204800d94",
+      "adaptation": "Portable pre-physics appearance adapter; original native visual-mask restoration, packaged assets and no physical-state writes."
+    },
+    "sim/isaaclab/eval_comb01_cover_pitcher_and_box_env.py": {
+      "source_sha256": "cc56ad2b6d3d54bc714392d00b6cd3ea2e77e62a0add0ba044bc44e8677faf87",
+      "packaged_sha256": "6d9c1d2df284a8f0d87530728c7840b3544083e296b2fdc79e42415caf58eefd",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/eval_flex02_fold_towel_twice_env.py": {
+      "source_sha256": "af4bef0e16c7a1b3af8a85743e9dd426aede48f4f974e7a8602201ad57a04fb2",
+      "packaged_sha256": "b3409cbd3df7854a3a0c5e5ed16173ad8d0a52d99f7f734e85ebaa4781ad9ab7",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/flexible_cotton_towel.py": {
+      "source_sha256": "c0c018ce25d0e07d602387cb2e469109f524632d8fc4262449e9b6396ba36751",
+      "packaged_sha256": "19e2093f716b8dd9ca076ca07741baf469562c1cd8a946077580135c4c22eac7",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/flexible_hand_colliders.py": {
+      "source_sha256": "bdc332703b49aa845be7124e918f3861732cadd9f93bb27d4504c13b4d231768",
+      "packaged_sha256": "23e215bc5ec15e409e52fab549184abb20a0224f329e6711236de42b43f44d1e",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/flexible_towel_double_fold_contract.py": {
+      "source_sha256": "135cab17f56a13251d47d864d11df5e0d587076be704d7031b72aadc623f0e17",
+      "packaged_sha256": "155ca19758b9abe054619530d3983d2fe2ae7814b37b3b26a26a21517b5df5d9",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/flexible_towel_double_fold_scene.py": {
+      "source_sha256": "5c639ccb7cbc06784c82604b182e3f2ad46ad53ba72c0cf01575fe8e3244290f",
+      "packaged_sha256": "c0a27a97df1cf28577324301885a949c2a47ed5de721db25c94fe5c98b426a67",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/gen4_env.py": {
+      "source_sha256": "6d3166ff7d0cb2029218f40db47d1a4ddaeb9bd21351b225a90c63352426b8ee",
+      "packaged_sha256": "4a18e82de46c8773e6fd697556fa802cca9db612418847df952f5e7969bc7b10",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/gen4_scene.py": {
+      "source_sha256": "08bcf91cc33ae49a5dd30d1640919a584e1f480c8424ab8dc3c1b6d8f33d139e",
+      "packaged_sha256": "5c65f05ddabdd6ce45b571612e7bb275ae2b1660a6cb345e2d6874df618ad10b",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/marc_sawyer_towel.py": {
+      "source_sha256": "df93ba19596be1083531085e5a8fff3e1789038315c12618e9db88a87bb30ce2",
+      "packaged_sha256": "6ea9b6cf5e29a6fb0cc2f03e506c74d182bbf646bb25283ac92ad015b165e5d7",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/open_source_towels.py": {
+      "source_sha256": "17e30190ad9b7f87327641d99767b0cc0cf9935f89313604c130ad4849275908",
+      "packaged_sha256": "aa4e29b885d2328d4cf2aeeed55858ecbf72ed04ad72e2bc3fe312b56acd27b4",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/origins/native_1b733a0f70d8.py": {
+      "source_sha256": "1b733a0f70d8269d6868150ff8ba6a771e4f4c420baad5f8eed0b93814dd36cd",
+      "packaged_sha256": "b09b8d9c25060944074dcc965428defd4ab2c1675c626fda0404391cc6aaa71a",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_212a782a01aa.py": {
+      "source_sha256": "212a782a01aad7a956f7b2430b71869eaead72ab03f76e82a8575abd0dccfc49",
+      "packaged_sha256": "6fe4207dc150d08f6b7acbf9ca92eb4f3b8a7aa0665f20b8ff9474e11115f708",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_261a8510c4ed.py": {
+      "source_sha256": "261a8510c4ed6676fe5a8cfdf245f5034fb8d0208e08efbd7b9652b33b0e6f0e",
+      "packaged_sha256": "9c84a5ccb1c8834669cf7401e263e9c9f8bf8a618e81f9bd09fb5bce101be363",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_28b99e41abbe.py": {
+      "source_sha256": "28b99e41abbe040216ce29cca5435625c20eaff97d8f63a52849900fac62eafd",
+      "packaged_sha256": "072df050e28c36af838a9b66e788a7079a2a2fdd8840de75a53ab1b6d3a6e897",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_33af3710e9b9.py": {
+      "source_sha256": "33af3710e9b977d258b089a341e1e3eed80ee1c03aa6f163b5848ea472e312be",
+      "packaged_sha256": "f990a94fc8c1a83a23cab006cd3d9e287c0205f46f3463ca247bd8e09f1aac88",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_3867c4b3e98c.py": {
+      "source_sha256": "3867c4b3e98c1a2cf60cdfd4bfb24ff1cf3a7d4799a888f31e772525b6a51c37",
+      "packaged_sha256": "68c6314f714bbd5e9a017b5e54a03cbfeac69a52210c496e70b02c34fce49dbf",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_3e41ab60098b.py": {
+      "source_sha256": "3e41ab60098bb19dc63287dd67ae5d513bca16e263b1349e8ac3dd3b643790a9",
+      "packaged_sha256": "0c36e5cd351448690c9b27300412421f1e04730ba17ce430801c9c50bdcfce7b",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_47f9933e5213.py": {
+      "source_sha256": "47f9933e52130dda41ecbd7ff273ed4d57976629b15f42ede88dee90a73fd62d",
+      "packaged_sha256": "fb1f51f3436d4e35ffaf87135327a03183fade05275d40aa27e50365ca964aa9",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_49a8111f235e.py": {
+      "source_sha256": "49a8111f235e1d1872044d47e720e5186b1a794614ad1910ac4e97faa60a9464",
+      "packaged_sha256": "5dc818d3393262f621d3fe64436c7aa803cf9a380ac1e05756c56ca4cb2799ed",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_4a733bfaef3d.py": {
+      "source_sha256": "4a733bfaef3d33cb4d0ff1deab0a19ac6fb771bb72394f16c22aa521af323161",
+      "packaged_sha256": "9456f4ff5da4be82075e7ec192a5894ca4db0fe7707c18b47515211eef291577",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_5343ebb5ac06.py": {
+      "source_sha256": "5343ebb5ac06e122f32ee3303293dc98806325aeb4d4e55ef40130d25e773c93",
+      "packaged_sha256": "d41013bcfaf0c290946d33e2bbbbecdf35d5bbc1747bb0d050f586652be308b1",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_5f34575ab469.py": {
+      "source_sha256": "5f34575ab46906d69a2bb54f007765f5a28d9b0868100a994f25663617e45b2b",
+      "packaged_sha256": "6e1ca90f00e54a08990ecdacaf8a87224abc57a3574a4ced606c75a274cd3847",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_689abb23556f.py": {
+      "source_sha256": "689abb23556f403d3ef948262834e274c950eeb8911521b9977106fdbb2b0c3a",
+      "packaged_sha256": "23b755e85e78c99cfda982620f6378f42a7afcf0637dfc1522e659bc2f94f082",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_8933925eaaa2.py": {
+      "source_sha256": "8933925eaaa2e7c7325ceefa1d5891d65d3b21764f3457892aa8d900f463d39c",
+      "packaged_sha256": "96773124f4c889f23765cdb8a1a6c402e93d1de1829a0633b64f31684e19b290",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_b2639e845931.py": {
+      "source_sha256": "b2639e84593159b947ed451e35365597766287d72a4dddf0f4da829b730c63c3",
+      "packaged_sha256": "8a2346e7af5563535265f58a14f5eeef5480105190548731793524d201cc09f6",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_c16e1c2e8fd8.py": {
+      "source_sha256": "c16e1c2e8fd8fa0405644fb5b7e93328f7edb6f50d1f31e27ece61c9ba3bea07",
+      "packaged_sha256": "5a5329c72c8c16da3a6e41cb55996dc5239bd3935509b8c59e3c3e05ccecf8f9",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_c4424d284726.py": {
+      "source_sha256": "c4424d2847260e61aebd5301b16d1b51237700fe11e08972b084210bc0b8ef1b",
+      "packaged_sha256": "0e889ab49f7197bd9a2543494066b4f13b6f51b3bbed87d0a1d1ea6a1026eff8",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_cff3cc0eae91.py": {
+      "source_sha256": "cff3cc0eae919d7adc4eed851b740ccd8c92aa062b062f62c52815a50cd340a9",
+      "packaged_sha256": "af4f1fdb05ba34470eef6ad15ed9ef6eac5fda195932d4192ff8fc0ec8cb3d3e",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_e5f4b1194e76.py": {
+      "source_sha256": "e5f4b1194e76cf50b188059ada06cfe66bad41865bf9507501ba283354b510f6",
+      "packaged_sha256": "429684108c60b5be002bb04a40b523833bdb4f06771eb66a3e5cfcff2b143939",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_e9b53f5ee3e3.py": {
+      "source_sha256": "e9b53f5ee3e32a1d2022944300877c483365cd67a4c0dee4b057c77f8eaee2a5",
+      "packaged_sha256": "a44a1d0c8214bfbbdca9c295f744e0e1f7e85c3784041abb05dcf75409bc0fb5",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/native_fdecd563de57.py": {
+      "source_sha256": "fdecd563de5716085ef358825c539b5ba002e0a2e1d3ccfe63c671c5746dbb44",
+      "packaged_sha256": "bac034f42b54c74f65db5be61f2a36a109b4eb1eeb072c870a9d8beedb6d6e2f",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_026e6f7f2766.py": {
+      "source_sha256": "026e6f7f276607a01026e2c8fe86693c2feb30e78305a49abfcd4d670919efb7",
+      "packaged_sha256": "e1c026837e89aa2297c2ef5f134ffd4d0ef09ece4452acb5356dcb92aec30ab6",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_230634577562.py": {
+      "source_sha256": "2306345775620ea3907a0bc5120bd4a7720579c25529c850fc87b48abce8d8b0",
+      "packaged_sha256": "a264e40bb8a9b1d4d3b3ce976bce4f1419f26d0ab3e0907f64a5291f03f22d99",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_30896f62f36f.py": {
+      "source_sha256": "30896f62f36f48cf709e97758b370d84493464c56f4054685a98f6d7ce7c8923",
+      "packaged_sha256": "2dc0b7b373b1b0debd34eac643eff96664910fd18fc46a4b9d22258dba5ac31b",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_3bc529c93a95.py": {
+      "source_sha256": "3bc529c93a95f7f385247c6c214b8f9759d83e8a39c72b358bc81d360f51da8f",
+      "packaged_sha256": "e7eb86accc14fa9126feb2735783d59702d3eb48c2117927ca7e82e584389894",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_40091947eb3f.py": {
+      "source_sha256": "40091947eb3f512b8c10ff501c0a384092018c933860106b13105c9859d23a73",
+      "packaged_sha256": "9331d1ee0e1ad31f77046e1dadd9e75f2c957d0a826c0388413d1d3b08dffcbe",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_4b18ed32f2a4.py": {
+      "source_sha256": "4b18ed32f2a494f0b63bef4b985b105a461d4a15bcfd74bb87113a40cd9db6b1",
+      "packaged_sha256": "8955ce1d35ec449b3d71a6212f4bd513e57ffb9baf56f829881831541cd4f4e8",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_4facde467bf9.py": {
+      "source_sha256": "4facde467bf9810b5b52e5d93237510e0f96426f1aac0b96619cd812635a1bde",
+      "packaged_sha256": "fccff0af4bb52fe94f757f9bb13726254326bd40a5df7c293ac1f36ae3f079b2",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_57e1a769d722.py": {
+      "source_sha256": "57e1a769d72277cb428d3a751ab969dfc31297fdbb0c2cfce9b087c5e913fe6c",
+      "packaged_sha256": "fb9303b13fd5385ff7ed722a9ef0e13c3a16f073b08e03ca38ea82662a5ae336",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_66b0f72fac9b.py": {
+      "source_sha256": "66b0f72fac9b195c8e8f53a9778b4d608d2209e551a5907090f741f0f194b91c",
+      "packaged_sha256": "1dc8bb555cd4726f215b72894002d4a08e775aec790700eb3a6d17654b977365",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_66b97e001d4c.py": {
+      "source_sha256": "66b97e001d4c915d49e07ccf12c9125e2a6a6ea76aa50d90e09e650652b9ff82",
+      "packaged_sha256": "0abe56130c5fc1ea15bc7cf4f48850b16e0f8d940688cf2f4b8297bf514ef957",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_77bf602bf1f3.py": {
+      "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
+      "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_7919a05d78e6.py": {
+      "source_sha256": "7919a05d78e6f887b15fb5b27cd853a0fc0d18fac5f498acfe3a952e05945287",
+      "packaged_sha256": "b77fcf1bf2be933bc5e05ee2b9ce3ef4e5cba800cea114ec0a8c6177b854cbf6",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_b57bef7e55b4.py": {
+      "source_sha256": "b57bef7e55b48bdf8566b8c1a69ef753617f5d2d6df6491860a5bc99880cf9d7",
+      "packaged_sha256": "76ca0e3c3c08db0713501f244768c0230b3bbccf4b1bbae309710ebf292c546e",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_dd7ce7987814.py": {
+      "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
+      "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_f033481c143c.py": {
+      "source_sha256": "f033481c143cb9d716ebb1895587984d126916172e8a5bac9f4544649d87976b",
+      "packaged_sha256": "359902c938d2a99bcabedfd0aaad8b6d74296ab8c6f99cf4617433633a45d0be",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/origins/trace_f29859071e44.py": {
+      "source_sha256": "f29859071e44f3f8acae0aba68db6294325b3b96ec37f0cbe711081217a5ddf8",
+      "packaged_sha256": "7b2aa581f64c8e72508bff61b2753ba28e38da5b060a5c0cd467bfae07a12711",
+      "adaptation": "Public package/task names and relative imports; native boundary and contact serialization retained."
+    },
+    "sim/isaaclab/xy3_appearance.py": {
+      "source_sha256": "185d969f1d1ccbddea466774eb2aaedbb4e7611a368177a0d3a8015570268c7c",
+      "packaged_sha256": "499809484498f6f5cc341fbeb6c7eb811e0ecd1e7d6fbb5bdd6c056c217095dc",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/xy4_contract.py": {
+      "source_sha256": "8745ea5193203b89c70139f3649a4263bab2fb3f4eb23f990b2903eae0b7e65b",
+      "packaged_sha256": "423f646a08e6525038e8dee1d3a2bec829f6abec252e6a718930d55b4d61dae6",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/xy4_env.py": {
+      "source_sha256": "1d0f9ab64f3f379bebac01f15be71fc47881d229bf8784dd4c594ddd3ad439e0",
+      "packaged_sha256": "12d0405bf22e72edfebddab6cfb04a6fcf5f777cc38dd6210f14a1685f72ba2c",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/xy5_object_appearance.py": {
+      "source_sha256": "27a718b7c8e761b5ce0ece7607b69b63f096d62ce6dec34034c423719e3412bc",
+      "packaged_sha256": "f5c714ffccdf37cbe1db13900b3bdebb942342e1d7d51f2f3be1bde85956ddb7",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/xy_container_appearance.py": {
+      "source_sha256": "1a084dd98632b95e91418c1d6f0f8876c28913466d54b223948ea4d16440673f",
+      "packaged_sha256": "1a084dd98632b95e91418c1d6f0f8876c28913466d54b223948ea4d16440673f",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/xy_pilot_lighting.py": {
+      "source_sha256": "52141f09d9b553f28ef8f1e28eb0fec58d5cab7369656c56b564c9c37975fc64",
+      "packaged_sha256": "4c3842c217236e02998415d59197e87e3d6dd132b889247b363689ad98e5dd2a",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/ycb11_compress_sponge_env.py": {
+      "source_sha256": "ddf0c7c828ad1b92c1775b1f8158b58d194e2a5ea68baae17da63167365cbc44",
+      "packaged_sha256": "ebac89a77aaf9837904b8186a5496fe001db557ebed8e3330a1d2d99642598b0",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/ycb11_control_safety.py": {
+      "source_sha256": "db767bc4e05e6b12097648b63d78f0970d0f3f0eab3b32242e191e39ef26b53d",
+      "packaged_sha256": "db767bc4e05e6b12097648b63d78f0970d0f3f0eab3b32242e191e39ef26b53d",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/ycb11_scene.py": {
+      "source_sha256": "daa98df81b3b090f777afef26d092fb65063f69ea7f47d244a8c9c3b1392e13b",
+      "packaged_sha256": "60883b48f631fa28a56a581d1c434763f487b62f1741fcaa7bae2eb8d43bbeb5",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/ycb11_semantics.py": {
+      "source_sha256": "44acd87359d708996af78901a5f4d80652aa501eb55bb1ac35a1637f91ec854d",
+      "packaged_sha256": "ef2ebc0993fe52df18694344e04dba6565e911ed4ad089d26d29b9ce4d46fdcd",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "sim/isaaclab/ycb11_visual_materials.py": {
+      "source_sha256": "ad0d71777f8002fbe96f78c32b89ee424853980b671157acb7d73c18878403c1",
+      "packaged_sha256": "7795da9f3f8132a78b88117f957b835fbdcfda6b834431fad0fec945aa9b2a42",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_comb01_cover_pitcher_and_box/config.py": {
+      "source_sha256": "6a2c55af4fda7b4cc1102d29fe6d61ad9d627a94dfdd8b4b97b4161aa02580a5",
+      "packaged_sha256": "3471c4e20648db3ed8ba8f60847b8726be97e53b7ca9d06de274fcf8a6c53844",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_comb01_cover_pitcher_and_box/layout.py": {
+      "source_sha256": "a43b34b6549cb839a05a04a23e0938f19b46bd0b1754f3a03f12f0f0c201ad36",
+      "packaged_sha256": "0e5b871eae83a171caf8d8cb106e1b22f024902e0a8ce47b2ca9d2088e333ea2",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_comb02_open_laptop_and_click_mouse/config.py": {
+      "source_sha256": "cd08a16b7cb5702e0ee4ac5260a211cfeb6351643421354f51401d52970dad4a",
+      "packaged_sha256": "63a34c36fd68b51cee50b331e3d78eca7908e1005cd759c42e9d1fc5cee0e6e7",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_comb03_pass_block_and_close_box/__init__.py": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packaged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_comb03_pass_block_and_close_box/config.py": {
+      "source_sha256": "9ad756b9ed592ca47bd2b1aeba982c1c2fa7286582a1beda5e32b3e1f752f81d",
+      "packaged_sha256": "c82f98c371a05df837c8b2ba56b54ab1ab2717f18aa99197d1d38f5475c0724e",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_comb03_pass_block_and_close_box/contract.py": {
+      "source_sha256": "1b0298ecb0a14c39bc62a2a954af109bf80c9d7068c0c0beed50d9aac7d059be",
+      "packaged_sha256": "df8febfdcfeba74f95a0020dbb9b5b99be1682d8c399d40011d2423bcf8f51ce",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_comb04_place_fruit_and_photograph_logo/config.py": {
+      "source_sha256": "0f217ae9727f9ac3fa3d19aa153a96915aa164188a43aa5cd059c569f3f73d38",
+      "packaged_sha256": "f314bfc5ee7b857d1c64ec425a9411f42d047fa06f06876f32c4663e0fe75c0a",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_comb04_place_fruit_and_photograph_logo/semantics.py": {
+      "source_sha256": "d4e6943fbb133bd683fed05319284445d1cea260d6af676fb7c44b949d2cccf5",
+      "packaged_sha256": "5c35ac2b76306436f118e8221c7c516e10967d399e26443fb32d7949bc4c4d95",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_comb05_scrub_bottle_then_fill_cup/config.py": {
+      "source_sha256": "9ba28d10e42bc84664b33dfab4040eb55e8c356fcd9cec86a92d44ae61630de5",
+      "packaged_sha256": "ddc9074a96f34b4ffcceb525af062bc5456234edcfe0ecd57121074d97917b78",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_flex01_compress_sponge_into_mug/config.py": {
+      "source_sha256": "d96017e93a1a9992039b5b2070a7bf232afcb57b959eb8fe47e8c0966be2c88e",
+      "packaged_sha256": "a1553025a9f0cb9473a91b91b70fb8228927f60efdb9f625cf77bf93e6b51f3a",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_flex02_fold_towel_twice/config.py": {
+      "source_sha256": "198741300f60e3e8d667d9b65521d9992b742bcb524caf54c1d7a2cdbbd450f3",
+      "packaged_sha256": "bd851816930424aa94ddcd251e35b68dba3197184d1c0b226bf5d8f8256e42db",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_flex03_pack_pillow/__init__.py": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packaged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_flex03_pack_pillow/config.py": {
+      "source_sha256": "ce6c32d155aa52ceb55b05a532c15cd1c8373603ec13ad3479482559c0e082d5",
+      "packaged_sha256": "8398beeb4adfe351b7f9ab3eb2813f445112a93c585b2ed4358f9263c9038776",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen01_cover_lunchbox/config.py": {
+      "source_sha256": "29e4ebf46a5eb6872ccd06915c6030d071db38c2bef0ba2b100bfcc97a17d5c3",
+      "packaged_sha256": "521d150dae93726e34c157ecae9113288b5565c43b27af845ea6bdf2efc7e27d",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen01_cover_lunchbox/visual_appearance.py": {
+      "source_sha256": "8f851e883c1a46f5badf74b3dd6c0e440eea941cd8ff0d05b73eec4af0f160df",
+      "packaged_sha256": "23c0f35f5212ecc947630e9267fd7b872b7c28715b65e047b885f1d57be0a283",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen02_open_trash_bin/config.py": {
+      "source_sha256": "ade3f8c7c874b3830d00cd39cc16dc1e12618b02e82b2c7dd516e93efdb85f69",
+      "packaged_sha256": "e1e4827dd1f5f624cd29fcd835c8fe670dcea72e296ff4a30dbe7fa62e60b368",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen03_orient_bottle_upright/__init__.py": {
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "packaged_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen03_orient_bottle_upright/config.py": {
+      "source_sha256": "4a0c7f8ab3b29e30205e4923fc6dcd26a308e0f3147501e4bc2f34d861163a90",
+      "packaged_sha256": "13f2999da8a49792ab6a4f859508f8bfbdde044707f61042e945b947a8d2b4b2",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen03_orient_bottle_upright/visual_appearance.py": {
+      "source_sha256": "e82db1cbfc19521a68e445cd5e5c7a922a554fd7b37b1b2598d8f8994f2c844b",
+      "packaged_sha256": "5a701984abb4af14f16b212567565f09a7dbc103f9a7c31964a1657f7c4c1cb2",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen04_pass_glue_stick/config.py": {
+      "source_sha256": "5336eafc845d1a87591646d7a5a1f1ef9972046ec662f2f52271b5cc6268c892",
+      "packaged_sha256": "7d9cfef5233fcb2d9bb66b052721363cb155942b5266e7ae639a8317d5bd81d3",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen04_pass_glue_stick/contract.py": {
+      "source_sha256": "30a63a39580057fd78df8c503924fca4023894cd5359788a21e3550e446d7c5a",
+      "packaged_sha256": "b123a36dbd9745e3acc7da6796ad6ea87f8bf906e8af7d6cc06461ed234e06fe",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen04_pass_glue_stick/visual_appearance.py": {
+      "source_sha256": "3771ea202ec57c9ca02c4c97244b7892829d542ac6439c588aeb86607f0cdc3a",
+      "packaged_sha256": "3771ea202ec57c9ca02c4c97244b7892829d542ac6439c588aeb86607f0cdc3a",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history."
+    },
+    "tasks/eval_gen05_set_mixer_knobs/config.py": {
+      "source_sha256": "8f2965e7457105b2ad09e10c97504a9f6dc530de230c0ef2e92b8f6c158fcffe",
+      "packaged_sha256": "1c8a46b2b1be254681fb01df9cc60e6848e3ae03243f435776516e0aecfb1087",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen06_spray_shoe/config.py": {
+      "source_sha256": "f424086d44b077118f9f4ec99a28c0baa906d2e8eaed96a93d77e443f1e4cdaf",
+      "packaged_sha256": "47a7a7c76b8d7aa03ee8f0ce1f339fe2f7b0712f1068cdbbaa8c60b746725065",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/eval_gen07_stack_boxes/config.py": {
+      "source_sha256": "5cda2cd72a5888a4107da886661416169b6967b4e7cc8c76d372218d81b4212b",
+      "packaged_sha256": "8528ec88ad0aeddb39a4de6e92b63552b62aa6529230580413fd9df557775628",
+      "adaptation": "Frozen Transfer source with public names and package dependency paths; subsequent portability fixes recorded in release history. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "eef52.py": {
+      "source_sha256": "3f250d2d871a3e1e676342c69f201cf1d0462851309b68769e5ee46a067dab84",
+      "packaged_sha256": "38412002a368fdc365464a17fa54d78efa02ba11f046cc3e92079ba81005e807",
+      "adaptation": "relative imports and public task names; rollout task-setting receipt and package provenance boundary Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    },
+    "tasks/language.py": {
+      "source_sha256": "493ab1df01cba2e60105a45b4abed57e9b3b6720e45e7a64adf43d61f3b64582",
+      "packaged_sha256": "67dd68f8d6f39a6e4142ddd963c6dda35f3107c6bc97c86e63caf8bcb62bbc6a",
+      "adaptation": "Consumed native functions retained; package imports, public task identifiers and portable asset lookup adapted. Interface refactor: common EEF52 control, instance-owned transports/history and registered task hooks; native protocol retained."
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "b320_fu006_asset_contract_v1",
+  "task_complete": false,
+  "assets": {
+    "drawer_45575": {
+      "source": "DexVerse core_assets/partnet_mobility/storage_unit/45575.usd",
+      "entry": "assets/dv_drawer_45575/45575.usd",
+      "entry_sha256": "0ded92a0ac6e5aafc0b3b9dbe3cd2d50f295ab8de21bf46bc97ed39f2c3a5157",
+      "default_prim": "/partnet_26dcf7a76c89d5aa4da5feafe6f1c8fc",
+      "meters_per_unit": 1.0,
+      "up_axis": "Z",
+      "scene_scale_xyz": [0.35, 0.35, 0.35],
+      "collision_api_count": 29,
+      "rigid_body_api_count": 4,
+      "prismatic_joint": {
+        "relative_path": "joints/joint_1",
+        "axis": "Z",
+        "lower_limit_source_m": 0.0,
+        "upper_limit_source_m": 0.7760000228881836,
+        "initial_position_source_m": 0.28,
+        "initial_position_world_m": 0.098
+      },
+      "required_dependencies": [
+        "configuration/drawer_base.usd",
+        "configuration/drawer_physics.usd",
+        "configuration/drawer_robot.usd",
+        "configuration/drawer_sensor.usd"
+      ]
+    },
+    "modern_wooden_bedside_table_visual": {
+      "source": "https://sketchfab.com/3d-models/modern-wooden-bedside-table-free-cb5896d029a740e99746308071a5c593",
+      "author": "M4nT1Core",
+      "license": "CC BY 4.0",
+      "commercial_use_allowed": true,
+      "entry": "handson/handson/sim/envs/xmls/assets/bench320_fu006/modern_wooden_bedside_table_m4nt1core/modern_wooden_bedside_table.usd",
+      "entry_sha256": "6913758e2ae66d5d4f0ddb864d99696936066e61026433748ade77dcbeeb671d",
+      "source_gltf_sha256": "d6e5276bcde3cfca64a269a1540c3ed560081128f4cfb1dc9ac083eff8652fef",
+      "mesh_count": 9,
+      "static_mesh_count": 5,
+      "moving_drawer_mesh_count": 4,
+      "world_scale_xyz": [0.625, 0.42, 0.8],
+      "moving_drawer_node": "BedsideTableDrawer2",
+      "role": "visible cabinet, lower-drawer visual, and static fixture collision"
+    },
+    "dexverse_charger": {
+      "source": "DexVerse core_assets/synthesis/charger001/model_charger.usd",
+      "entry": "assets/dexverse_charger/model_charger.usd",
+      "entry_sha256": "9f996dc4d29fcc9d9062f40fbb994f5e7daec12027b32f93c027be830bb41219",
+      "meters_per_unit": 1.0,
+      "up_axis": "Z",
+      "scene_scale_xyz": [1.0, 1.0, 1.0],
+      "local_aabb_size_m": [0.042, 0.0550934095, 0.0270040706],
+      "upstream_license": "CC BY-NC 4.0"
+    },
+    "rokae_wuji1_bimanual": {
+      "entry": "../../../handson/handson/sim/envs/xmls/rokae_wuji1_bimanual.xml",
+      "entry_sha256": "a425da3c71e547fc5f427fc172d0a18de1c51668b22d87ac6628ddba38bf6a63",
+      "arm_count": 2,
+      "hand_generation": 1
+    }
+  }
+}

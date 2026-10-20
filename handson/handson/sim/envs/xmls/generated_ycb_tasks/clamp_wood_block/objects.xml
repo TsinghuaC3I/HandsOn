@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="clamp_wood_block_objects">
+  <compiler angle="radian"/>
+
+  <default>
+    <default class="clamp_wood_block_visual">
+      <geom contype="0" conaffinity="0" group="2" mass="0"/>
+    </default>
+    <default class="clamp_wood_block_collision">
+      <geom group="3" density="850" friction="1.05 0.18 0.01" solref="0.006 1" solimp="0.95 0.98 0.001"/>
+    </default>
+    <default class="clamp_wood_block_marker">
+      <geom type="box" contype="0" conaffinity="0" group="4" mass="0"/>
+    </default>
+  </default>
+
+  <asset>
+    <material name="spring_clamp_body_mat" rgba="0.96 0.70 0.10 1" specular="0.18" shininess="0.25"/>
+    <material name="spring_clamp_grip_mat" rgba="0.10 0.12 0.14 1" specular="0.08" shininess="0.15"/>
+    <material name="spring_clamp_spring_mat" rgba="0.65 0.67 0.68 1" specular="0.35" shininess="0.55"/>
+    <material name="wood_block_mat" rgba="0.63 0.43 0.22 1" specular="0.04" shininess="0.08"/>
+    <material name="wood_block_edge_mat" rgba="0.10 0.23 0.95 1" specular="0.02"/>
+  </asset>
+
+  <worldbody>
+    <body name="wood_block_body" pos="0.08 0.18 0.941">
+      <freejoint name="wood_block_root"/>
+      <geom name="wood_block_collision" class="clamp_wood_block_collision" type="box"
+            size="0.044 0.044 0.021" material="wood_block_mat" density="620"
+            friction="1.15 0.02 0.001"/>
+      <geom name="wood_block_visual" class="clamp_wood_block_visual" type="box"
+            size="0.0442 0.0442 0.0212" material="wood_block_mat"/>
+      <geom name="wood_block_marked_edge" class="clamp_wood_block_marker"
+            size="0.046 0.002 0.022" pos="0 -0.046 0.0005"
+            material="wood_block_edge_mat" rgba="0.10 0.23 0.95 0.72"/>
+      <site name="wood_block_marked_edge_center" pos="0 -0.044 0" size="0.006"
+            rgba="0.10 0.23 0.95 0.75"/>
+    </body>
+
+    <body name="spring_clamp_root_body" pos="-0.18 -0.15 0.941" quat="1 0 0 0">
+      <freejoint name="spring_clamp_root"/>
+      <body name="spring_clamp_fixed_jaw">
+        <site name="spring_clamp_hinge_site" pos="0 0 0" size="0.006" rgba="0.95 0.65 0.10 0.85"/>
+        <site name="spring_clamp_fixed_pad_site" pos="0.085 -0.012 0" size="0.004" rgba="0.20 0.85 0.95 0.85"/>
+        <geom name="spring_clamp_fixed_arm" class="clamp_wood_block_collision" type="capsule"
+              fromto="0.000 -0.012 0.000 0.085 -0.012 0.000" size="0.006"
+              material="spring_clamp_body_mat"/>
+        <geom name="spring_clamp_fixed_pad" class="clamp_wood_block_collision" type="box"
+              size="0.008 0.006 0.014" pos="0.085 -0.012 0"
+              material="spring_clamp_grip_mat"/>
+        <geom name="spring_clamp_fixed_handle" class="clamp_wood_block_collision" type="capsule"
+              fromto="-0.010 -0.020 0.000 -0.072 -0.040 0.000" size="0.011"
+              material="spring_clamp_body_mat"/>
+        <geom name="spring_clamp_fixed_handle_grip" class="clamp_wood_block_collision" type="box"
+              size="0.018 0.012 0.012" pos="-0.078 -0.042 0"
+              material="spring_clamp_grip_mat"/>
+        <geom name="spring_clamp_hinge_knob" class="clamp_wood_block_collision" type="sphere"
+              size="0.014" pos="0 0 0" material="spring_clamp_spring_mat"/>
+      </body>
+
+      <body name="spring_clamp_moving_jaw">
+        <joint name="spring_clamp_moving_jaw_joint" pos="0 0 0" axis="0 0 1"
+               limited="true" range="0 0.70" damping="0.10" armature="0.002"
+               frictionloss="0.010" stiffness="5.0" springref="0"/>
+        <site name="spring_clamp_moving_pad_site" pos="0.085 0.012 0" size="0.004" rgba="0.95 0.30 0.20 0.85"/>
+        <geom name="spring_clamp_moving_arm" class="clamp_wood_block_collision" type="capsule"
+              fromto="0.000 0.012 0.000 0.085 0.012 0.000" size="0.006"
+              material="spring_clamp_body_mat"/>
+        <geom name="spring_clamp_moving_pad" class="clamp_wood_block_collision" type="box"
+              size="0.008 0.006 0.014" pos="0.085 0.012 0"
+              material="spring_clamp_grip_mat"/>
+        <geom name="spring_clamp_moving_handle" class="clamp_wood_block_collision" type="capsule"
+              fromto="-0.010 0.020 0.000 -0.072 0.040 0.000" size="0.011"
+              material="spring_clamp_body_mat"/>
+        <geom name="spring_clamp_moving_handle_grip" class="clamp_wood_block_collision" type="box"
+              size="0.018 0.012 0.012" pos="-0.078 0.042 0"
+              material="spring_clamp_grip_mat"/>
+      </body>
+
+      <body name="spring_clamp_visual_spring">
+        <geom name="spring_clamp_spring_bar" class="clamp_wood_block_visual" type="capsule"
+              fromto="-0.016 0.000 -0.012 0.016 0.000 -0.012" size="0.0025"
+              material="spring_clamp_spring_mat" rgba="0.65 0.67 0.68 1"/>
+        <geom name="spring_clamp_spring_bar_top" class="clamp_wood_block_visual" type="capsule"
+              fromto="-0.016 0.000 0.012 0.016 0.000 0.012" size="0.0025"
+              material="spring_clamp_spring_mat" rgba="0.65 0.67 0.68 1"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <contact>
+    <exclude body1="spring_clamp_fixed_jaw" body2="spring_clamp_moving_jaw"/>
+  </contact>
+</mujoco>

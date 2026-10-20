@@ -1,0 +1,7 @@
+env_name: t32_press_soap_pump
+camera_mapping: {base: front, wrist_left: wrist_left, wrist_right: wrist_right}
+prompt: "Place the dish sponge under the dish-soap bottle, hold the bottle with the right hand, align its outlet over the sponge, and physically depress the visible pump head with the right hand."
+robot_type: dual_arm
+time_limit_seconds: 90
+skills: [bimanual_stabilization, nozzle_alignment, physical_dispense]
+objects: [dish_sponge, dish_soap_bottle, moving_pump_head, soap_flow_visual]
