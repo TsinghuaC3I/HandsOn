@@ -325,8 +325,6 @@ def test_carton_uses_bounded_gpu_buffers_without_changing_contact_partitions() -
         "gpu_heap_capacity": 2**22,
         "gpu_temp_buffer_capacity": 2**20,
         "gpu_max_num_partitions": 8,
-        "gpu_max_particle_contacts": 2**16,
-        "gpu_max_soft_body_contacts": 2**20,
     }
 
 
@@ -1038,15 +1036,17 @@ def test_ka021_faucet_reset_writes_closed_position_velocity_and_target(
         def set_dof_position_targets(self, values, _indices) -> None:
             self.targets = np.asarray(values, dtype=np.float32).copy()
 
-    monkeypatch.setattr(
-        b320_env_module,
+    env = _rigid_env(_KA021_TASK_NAME)
+    # The Core faucet uses its recovered source module; patch the function's
+    # actual binding so the NumPy fake does not import the Isaac Warp frontend.
+    monkeypatch.setitem(
+        env._set_articulation_reset.__func__.__globals__,
         "_array_like",
         lambda _reference, values, _torch: np.asarray(
             values,
             dtype=np.float32,
         ).copy(),
     )
-    env = _rigid_env(_KA021_TASK_NAME)
     view = FakeArticulationView()
     indices = np.asarray([0], dtype=np.int32)
     for randomize in (False, True):

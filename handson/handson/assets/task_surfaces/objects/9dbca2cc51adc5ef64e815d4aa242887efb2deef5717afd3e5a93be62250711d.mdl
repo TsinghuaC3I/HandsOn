@@ -1,0 +1,73 @@
+mdl 1.7;
+
+import ::base::*;
+import ::df::*;
+import ::math::*;
+import ::state::*;
+import ::tex::*;
+
+// This material changes only the shading of the original USD Cube.
+// No displacement, cutout, geometry replacement, or physics is involved.
+float3 softened_cube_normal(uniform float half_edge, uniform float rim_m)
+{
+    float3 p = state::transform_point(
+        state::coordinate_internal, state::coordinate_object, state::position());
+    float3 axis_x = state::transform_vector(
+        state::coordinate_object, state::coordinate_internal, float3(1.0, 0.0, 0.0));
+    float3 axis_y = state::transform_vector(
+        state::coordinate_object, state::coordinate_internal, float3(0.0, 1.0, 0.0));
+    float3 axis_z = state::transform_vector(
+        state::coordinate_object, state::coordinate_internal, float3(0.0, 0.0, 1.0));
+    float3 metric = float3(math::length(axis_x), math::length(axis_y), math::length(axis_z));
+    float3 inward_distance = (float3(half_edge) - math::abs(p)) * metric;
+    float3 weights = math::max(float3(rim_m) - inward_distance, float3(0.0));
+    float3 result =
+        math::normalize(axis_x) * math::sign(p.x) * weights.x +
+        math::normalize(axis_y) * math::sign(p.y) * weights.y +
+        math::normalize(axis_z) * math::sign(p.z) * weights.z;
+    return math::length(result) > 0.0000001 ? math::normalize(result) : state::normal();
+}
+
+export material BlueCradle(
+    uniform texture_2d diffuse_texture = texture_2d(),
+    uniform texture_2d roughness_texture = texture_2d(),
+    uniform texture_2d normal_texture = texture_2d(),
+    uniform color base_color = color(0.12, 0.24, 0.34),
+    uniform float roughness = 0.49,
+    uniform float texture_repeats_per_m = 50.0,
+    uniform float cube_half_edge = 0.01,
+    uniform float edge_shading_width_m = 0.00025,
+    uniform float normal_strength = 1.0
+) = let {
+    base::texture_coordinate_info projection = base::coordinate_projection(
+        coordinate_system: base::texture_coordinate_world,
+        projection_type: base::projection_cubic);
+    float2 uv = float2(projection.position.x, projection.position.y) * texture_repeats_per_m;
+    color albedo = tex::texture_isvalid(diffuse_texture)
+        ? tex::lookup_color(diffuse_texture, uv) : base_color;
+    float r = tex::texture_isvalid(roughness_texture)
+        ? tex::lookup_float3(roughness_texture, uv).x : roughness;
+    float3 packed = tex::texture_isvalid(normal_texture)
+        ? tex::lookup_float3(normal_texture, uv) : float3(0.5, 0.5, 1.0);
+    float3 tangent_normal = packed * 2.0 - 1.0;
+    float3 micro_normal = math::normalize(
+        math::normalize(projection.tangent_u) * tangent_normal.x * normal_strength +
+        math::normalize(projection.tangent_v) * tangent_normal.y * normal_strength +
+        state::normal() * tangent_normal.z);
+    float3 edge_normal = softened_cube_normal(cube_half_edge, edge_shading_width_m);
+    float3 finish_normal = math::normalize(edge_normal + micro_normal - state::normal());
+    float ggx_alpha = math::clamp(r * r, 0.001, 1.0);
+    bsdf finish = df::fresnel_layer(
+        ior: 1.5,
+        weight: 1.0,
+        layer: df::microfacet_ggx_smith_bsdf(
+            roughness_u: ggx_alpha,
+            roughness_v: ggx_alpha,
+            tint: color(1.0),
+            mode: df::scatter_reflect),
+        base: df::diffuse_reflection_bsdf(tint: albedo),
+        normal: finish_normal);
+} in material(
+    surface: material_surface(scattering: finish),
+    geometry: material_geometry(normal: finish_normal)
+);

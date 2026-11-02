@@ -1768,7 +1768,10 @@ def test_preview_uses_raised_arm_home_for_imported_inactive_left_hand(
         "t30_pour_seasonings"
     )
 
-    assert a01_home == task_preview._A01_CLEAR_ARM_HOME
+    # Core's archived reset differs from Transfer's composed-task reset.
+    assert a01_home["right"] == default_home["right"]
+    assert a01_home["left"] == task_preview._RAISED_ARM_HOME["left"]
+    assert task_preview._task_arm_home(task_preview.xy3.TASK_NAME) == task_preview._A01_CLEAR_ARM_HOME
     assert b05_home["right"] == default_home["right"]
     assert b05_home["left"] != default_home["left"]
     assert c05_home["right"] == default_home["right"]

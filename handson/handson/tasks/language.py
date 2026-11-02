@@ -34,6 +34,10 @@ def sample(task, values, seed):
 
 
 @lru_cache(maxsize=None)
-def allowed_prompts(task):
+def allowed_prompts(task, paper_variant=None):
+    if paper_variant is not None:
+        from ..evaluation.paper_variants import load
+        goal = load(task, paper_variant)["language_goal"]
+        return frozenset([goal["canonical"], *goal["train"]])
     return frozenset(text for goal in bank()["tasks"][task]["goals"]
                      for text in [goal["canonical"], *goal["train"]])

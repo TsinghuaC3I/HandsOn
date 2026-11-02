@@ -20,6 +20,15 @@ _previews: dict[str, object] = {}
 FILM_ISO = {"head_camera": 260.0, "wrist_left_camera": 690.0, "wrist_right_camera": 590.0}
 
 
+def episode_appearance_seed(environment) -> int:
+    """Approved settings give appearance its own stream, separate from reset."""
+    from .b_eval_setting import setting_for
+    selection = setting_for(str(getattr(environment, "task_name", "")))
+    if selection is not None:
+        return int(selection["seeds"]["appearance"])
+    return int(getattr(environment, "_seed", 0))
+
+
 def _key(stage) -> str:
     return stage.GetRootLayer().identifier
 
@@ -104,7 +113,7 @@ def hide_helpers(stage) -> list[str]:
 
 def install_environment(environment) -> dict:
     """Run once after native scene construction, before its first physics reset."""
-    from . import room_appearance, station_appearance
+    from . import room_appearance, station_appearance, task_surfaces
     from .blender_visual_layer import physics_signature
     from .wrist_cable_visuals import apply_configured_wrist_cables
 
@@ -127,7 +136,8 @@ def install_environment(environment) -> dict:
         cables = apply_configured_wrist_cables(environment, root / "cables.json")
     else:
         cables = {"applied": False, "reason": "Native detached hands have no forearm cable attachment"}
-    profile = {"mode": "randomized", "seed": int(getattr(environment, "_seed", 0)),
+    surfaces = task_surfaces.apply(environment)
+    profile = {"mode": "randomized", "seed": episode_appearance_seed(environment),
                "task": str(getattr(environment, "task_name", "")), "spp": 32}
     room = room_appearance.apply(stage, getattr(environment, "_cameras", {}), profile, root / "materials",
                                  table_required=environment.task_name != "t17_open_latched_door")
@@ -137,7 +147,7 @@ def install_environment(environment) -> dict:
     after = physics_signature(stage), physics_material_signature(stage)
     if before != after:
         raise RuntimeError("Default appearance changed the physical scene or effective contact material")
-    report = {"profile": PROFILE, "robot": robot, "room": room, "station": body,
+    report = {"profile": PROFILE, "robot": robot, "room": room, "station": body, "task_surfaces": surfaces,
               "cables": {k: v for k, v in cables.items() if k not in {"stage", "indices"}}, "hidden_helpers": hidden, "physics_before": before, "physics_after": after,
               "applied_before_physics": True, "restored_native_visuals": restored_visuals,
               "assets_manifest_sha256": hashlib.sha256((root / "manifest.json").read_bytes()).hexdigest()}
@@ -163,7 +173,7 @@ def refresh_environment(environment) -> None:
     from .blender_visual_layer import physics_signature
     before = physics_signature(environment._stage), physics_material_signature(environment._stage)
     root = validate_assets()
-    profile = dict(report["room"]["profile"], seed=int(getattr(environment, "_seed", 0)))
+    profile = dict(report["room"]["profile"], seed=episode_appearance_seed(environment))
     # Resolve from the seed rather than carrying the previous episode's resolved values.
     profile = {k: profile[k] for k in ("mode", "seed", "task", "spp")}
     report["room"] = room_appearance.apply(environment._stage, getattr(environment, "_cameras", {}), profile, root / "materials",

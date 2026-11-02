@@ -75,9 +75,9 @@ class TaskConfig(TaskConfigBase):
         kwargs.setdefault("hz", 30)
         kwargs.setdefault("control_dt", 1.0 / 30.0)
         kwargs.setdefault("physics_dt", 1.0 / 240.0)
-        from ...sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
+        from ...sim.isaaclab.core_scrub_bottle_env import CoreScrubBottleEnv
 
-        env = HandsOnABCIsaacLabEnv(
+        env = CoreScrubBottleEnv(
             self.task_name,
             render_mode=render_mode,
             randomize=randomize,

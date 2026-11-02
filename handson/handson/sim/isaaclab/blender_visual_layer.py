@@ -8,7 +8,9 @@ def physics_signature(stage):
     """Fingerprint physics attributes/relationships, collision geometry and schema."""
     from pxr import Usd, UsdPhysics
     rows=[]
-    for prim in stage.Traverse():
+    # Material grafts deinstance existing objects. Include their composed
+    # collision descendants on both sides of the comparison.
+    for prim in Usd.PrimRange.Stage(stage, Usd.TraverseInstanceProxies()):
         schemas=[s for s in prim.GetAppliedSchemas() if 'Physics' in s or 'Physx' in s]
         attrs={a.GetName():str(a.Get()) for a in prim.GetAttributes()
                if a.GetName().startswith(('physics:', 'physx'))}

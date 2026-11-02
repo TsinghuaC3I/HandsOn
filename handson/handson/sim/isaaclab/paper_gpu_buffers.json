@@ -1,0 +1,481 @@
+{
+  "schema": "handson_paper_gpu_buffers_v2",
+  "isaac_lab": "v2.3.2",
+  "scope": "Native allocation kwargs before the per-trial approved solver overrides. Omitted fields retain the paper Isaac Lab defaults. Not a claim about all seeds or trajectories.",
+  "tasks": {
+    "t01_align_blocks_in_midair": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "7193b8c44209213d7ea253593971e550f4b63f11",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t02_connect_charger_and_cable": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "aecf45135d5d381e0554ebca31868a5ab135fceb",
+          "abc_sha256": "91639371d9a972263eb73caf2ddf4abb2916e7321aeb11ebf800308420f7fbf5",
+          "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c"
+        }
+      ]
+    },
+    "t05_fill_cup": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "b64b0fec84981e9c7a1d4c23d3038e21a95af45b",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t06_fit_device_cover": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "bb00df54dc5809134a37422ea5443bd67059b421",
+          "abc_sha256": "f58a1499a11abef7740dbb9a02aeff3ab601683a0370234f0861eda0d4081782",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t07_flip_sponge": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "282390f0fec08daca53e2d6b03f6ad8772b609f4",
+          "abc_sha256": "81d5e878b2cdc34f8d1bbe9a97ba851775f4dc49e54650c7505ec8f2837a6141",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t10_lift_carton": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 262144,
+        "gpu_max_rigid_patch_count": 16384,
+        "gpu_found_lost_pairs_capacity": 65536,
+        "gpu_found_lost_aggregate_pairs_capacity": 65536,
+        "gpu_total_aggregate_pairs_capacity": 65536,
+        "gpu_collision_stack_size": 4194304,
+        "gpu_heap_capacity": 4194304,
+        "gpu_temp_buffer_capacity": 1048576,
+        "gpu_max_num_partitions": 8
+      },
+      "sources": [
+        {
+          "source_commit": "a3d474c2159bdf84223cdb7249a618fc851a2c95",
+          "abc_sha256": "9ccc02757a526c763b1e53caef12fc006ca0d4ff68bee6a9a03dbc987b04d998",
+          "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c"
+        }
+      ]
+    },
+    "t11_line_up_blocks": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "aef0f4b4ddad391b091a1fbaa99324ea843cccc2",
+          "abc_sha256": "0ab44177fbc9815a96ccdeaeb7b9741ae563bbec75251a618b1387ff341a33f0",
+          "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c"
+        }
+      ]
+    },
+    "t12_load_and_start_microwave": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "c70ab76cc54718943997a7403c8bdb65b5d46b5c",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t13_load_cans": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "a82f9c66aa02a30ac7e0461ba78a1fe0317bb7a0",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t15_open_drawers": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "08c51c595c4e9a49cbb393d89ecb17443a531a37",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "b48ad10be634a1b4ab2352156b578dbde020a8e9",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "cd52f335eda473e4fa5270d9a2f334a179e196f5",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t16_open_laptop": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "0995c7bb87a1ec53c3e53ce9ee70cfb643995fad",
+          "abc_sha256": "7cf20517e2245d85ff27c8d337646d308466f3c311a8173c56ff4be9c960e248",
+          "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c"
+        }
+      ]
+    },
+    "t17_open_latched_door": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "1a0121a5ec749f800c4aa26b995149631ded9633",
+          "abc_sha256": "440728de69c772a58b6a9aaa750cab98cf59df450d3c18739d4f8b06744c7a0e",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t18_open_micropipette_box": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "bb00df54dc5809134a37422ea5443bd67059b421",
+          "abc_sha256": "f58a1499a11abef7740dbb9a02aeff3ab601683a0370234f0861eda0d4081782",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t20_pass_and_orient_pen": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "b62fa09914b0301005bb6c4ffb2be8c1b7f300c6",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t21_pass_block": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 262144,
+        "gpu_max_rigid_patch_count": 16384,
+        "gpu_found_lost_pairs_capacity": 65536,
+        "gpu_found_lost_aggregate_pairs_capacity": 65536,
+        "gpu_total_aggregate_pairs_capacity": 65536,
+        "gpu_collision_stack_size": 4194304,
+        "gpu_heap_capacity": 4194304,
+        "gpu_temp_buffer_capacity": 1048576,
+        "gpu_max_num_partitions": 1
+      },
+      "sources": [
+        {
+          "source_commit": "049fdce323a398c56a47186ca2f0c35ac467d9c8",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "fd7ea00b916a77d764c66769bba90a037d97f695",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t22_pass_screwdriver": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "7cb708a9f73aebda6c35c54d2f826a64acdfc1e4",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+          "bimanual_assembly_env_sha256": "bcb75cd249630c2171f3118fdeba7324d62f45a4475020ad7c0f855a2b11b2a7",
+          "as019_screwdriver_handover_env_sha256": "390328ac1921b97566f0849514124044a0c4670ffc1cbee44764daed723ae5e3"
+        }
+      ]
+    },
+    "t27_place_largest_fitting_ball": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "5738b0ba73e680186ac017c29e95170ce1a3812c",
+          "abc_sha256": "add9d28407cd76f7db76a9c2b6aa41dc7e47a4b606dbaf9f1723029c95b2febe",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "7cb708a9f73aebda6c35c54d2f826a64acdfc1e4",
+          "abc_sha256": "3a38d8d87f46e31fe673a7829c99fdb092a63a2ad6ddd8d16e9906e23dbe3a2b",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "b46d06e8c5826248113c51279582612d0244b4d7",
+          "abc_sha256": "94630e190aa731377648947d581f1991f639d87014a19ed25057eca0cbcd5cae",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        },
+        {
+          "source_commit": "c7bbd2efbeed37e48a91784ff1a9c041cb4c7557",
+          "abc_sha256": "c1041dd8a8780a1c929cc91fc279a040559a65fdd80056ff7e4d00bf2edb8690",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t28_place_tableware": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "6e84298fcca230f89f5e3c5c9a9987178285e887",
+          "abc_sha256": "6acb9c7b2e2be18b0244f4df7f7f2225014910bf8b3c40cdeed445904abb19ff",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t29_place_wine_glass": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "d41468eb3d04540c3cd91d5c4afa4700597adc8b",
+          "abc_sha256": "647236f47a788f2dba3964b0a688041e49d4f1fca03232d8d56656d43bdde271",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t30_pour_seasonings": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "6f0c5169add5f5bacf81c4228d0a52d4525494ba",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t31_prepare_coffee": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "01eadb537dd1b6f84be40b807c36d5a2f7e227f8",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t32_press_soap_pump": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "97697a8e12c1f5c0fff568c4cf0dc36239d75d8a",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t34_roll_ball_through_gate": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "4ccf75088d7e95bbe6291e5c44f5911c08f7d36b",
+          "abc_sha256": "0b7cfe01ef24e2790e8544e5dd57f4ad83857b3e96f5367a3bdd5f6f3810fb4b",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t35_rotate_propeller": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "6e84298fcca230f89f5e3c5c9a9987178285e887",
+          "abc_sha256": "6acb9c7b2e2be18b0244f4df7f7f2225014910bf8b3c40cdeed445904abb19ff",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t37_scrub_bottle": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "17d1dd8179977cced49ad96ceaea0050a19603eb",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t38_set_dual_knobs": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "0995c7bb87a1ec53c3e53ce9ee70cfb643995fad",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t39_set_timer": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "6e84298fcca230f89f5e3c5c9a9987178285e887",
+          "abc_sha256": "6acb9c7b2e2be18b0244f4df7f7f2225014910bf8b3c40cdeed445904abb19ff",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t42_sort_objects": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "b30291ffb19521514bc412581c915c544413b962",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t43_squeeze_scissors": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "9c5579dec2d7303ac734213fc9a414caca433bcf",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t45_stir_pot": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "17d1dd8179977cced49ad96ceaea0050a19603eb",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t46_store_charger": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "a4edf6d7831c384d0bb59d8e8506edc24ad4b61d",
+          "abc_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t48_unfold_fan": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "b64b0fec84981e9c7a1d4c23d3038e21a95af45b",
+          "abc_sha256": "539310117e3897619e2772e00ecde492992ae261894fd4971ca7aa80fd9e7a0e",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    },
+    "t49_unfold_ruler": {
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      },
+      "sources": [
+        {
+          "source_commit": "a4edf6d7831c384d0bb59d8e8506edc24ad4b61d",
+          "abc_sha256": "2d0933bf05335c3595318a339046e619563595cb7e3d92c1e1c2d690f3106f58",
+          "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd"
+        }
+      ]
+    }
+  }
+}

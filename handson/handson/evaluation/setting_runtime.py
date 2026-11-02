@@ -3,13 +3,18 @@ import os
 from .contracts import require, write_new
 from . import settings
 
-def prepare(task, seed, output):
+def prepare(task, seed, output, *, paper_trial=None):
     from handson.sim.isaaclab import b_eval_setting
     b_eval_setting.selected.cache_clear()
     os.environ.pop("HANDSON_B_EVAL_SELECTION", None)
     if task not in settings.task_ids():
         return None
-    selection = settings.select_setting(seed, task, 0)
+    if paper_trial is None:
+        selection = settings.select_setting(seed, task, 0)
+    else:
+        from .paper_trials import select_setting
+        selection = select_setting(paper_trial)
+        require(selection is not None, 'Paper trial is missing an approved setting')
     path = output / "SETTING_SELECTION.json"
     write_new(path, selection)
     os.environ["HANDSON_B_EVAL_SELECTION"] = str(path.resolve())

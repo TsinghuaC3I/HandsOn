@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 ASSET_ROOT = Path(__file__).resolve().parents[2] / "assets" / "rendering"
-MANIFEST_SHA256 = "5f70aa593acf49b72cad870e9db36b5b4574666aba3bc7801f2c36bb9846e227"
+MANIFEST_SHA256 = "30bf4ef2f1403daac0bc97a52ad7cab5918adcd6f166560e8a4db9b7b84c0f35"
 _verified: dict[tuple[Path, bool], tuple[tuple[str, int, int], ...]] = {}
 
 

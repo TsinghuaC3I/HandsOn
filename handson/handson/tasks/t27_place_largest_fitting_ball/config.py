@@ -67,10 +67,10 @@ class TaskConfig(TaskConfigBase):
                 f"received sim_backend={sim_backend!r}."
             )
 
-        from ...sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
+        from ...sim.isaaclab.core_largest_ball_env import CoreLargestBallEnv
 
         kwargs.setdefault("time_limit", 60.0)
-        env = HandsOnABCIsaacLabEnv(
+        env = CoreLargestBallEnv(
             self.task_name,
             render_mode=render_mode,
             randomize=randomize,

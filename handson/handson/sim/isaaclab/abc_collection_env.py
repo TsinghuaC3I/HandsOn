@@ -1,4 +1,6 @@
 from __future__ import annotations
+
+from .collection_runtime import CollectionRuntimeSupport
 from ...runtime.task_families import ABC_PREFIX_TASKS, ORDINARY_AD_TASKS, YCB_TASKS
 
 from argparse import Namespace
@@ -77,6 +79,7 @@ from .physics_config import (
     SINGLE_ENV_GPU_MAX_RIGID_CONTACT_COUNT,
     SINGLE_ENV_GPU_MAX_RIGID_PATCH_COUNT,
     bounded_single_env_gpu_physx_kwargs,
+    paper_gpu_physx_kwargs,
 )
 from .newton_determinism import (
     NEWTON_CROSS_GPU_PROFILE,
@@ -161,7 +164,6 @@ from .ycb01_semantics import (
     YCB01_RIGHT_GATE_NAME,
     YCB01_START_SIDE_MARGIN_M,
     YCB01_SUGAR_HALF_EXTENTS_M,
-    YCB01_TABLE_XY_BOUNDS_M,
     YCB01_TASK_NAME,
     sample_ycb01_layout,
     world_to_ycb01_gate,
@@ -1763,7 +1765,6 @@ _B320_COLLISION_CLEAR_START_TASKS = (
     | _B320_CABINET_START_TASKS
     | _B320_HANDOVER_START_TASKS
     | _B320_SEASONING_START_TASKS
-    | _B320_SOAP_START_TASKS
     | _B320_BLOCK_MATING_START_TASKS
 )
 # These tasks are exposed as certified collection environments.  Their live
@@ -1942,6 +1943,8 @@ _TASK_TABLE_HEIGHT_BOUNDS = {
     # generic +50 mm range lifts its lid into attachment_right at seed 23.
     gen2_geometry.TASK_NAME: (0.0, 0.010),
     xy5.TASK_NAME: (0.0, 0.010),
+    # Paper source d41468eb keeps the tall glass within a 10 mm height band.
+    ycb09.TASK_NAME: (0.0, 0.010),
     "t08_hammer_nail": (0.0, 0.03),
     "t50_water_plant": (0.0, 0.02),
     # The C08 tongs rest on a fixed cradle.  Keep their shared tabletop height
@@ -3933,7 +3936,7 @@ _TASK_SPECS: dict[str, ABCIsaacTaskSpec] = {
     ),
     YCB01_TASK_NAME: ABCIsaacTaskSpec(
         YCB01_TASK_NAME,
-        True,
+        False,
         (YCB01_BALL_NAME, YCB01_LEFT_GATE_NAME),
         YCB01_RIGHT_GATE_NAME,
         {
@@ -4696,6 +4699,10 @@ def _physx_scene_ccd_enabled(task_name: str) -> bool:
 def _physx_gpu_buffer_kwargs(task_name: str) -> dict[str, int]:
     """Return pinned/GPU buffer capacities for one collection environment."""
 
+    paper_profile = paper_gpu_physx_kwargs(task_name)
+    if paper_profile is not None:
+        return paper_profile
+
     if task_name in _d20_stages.TASK_NAMES:
         # D20's repeated hard resets hit failed 64--256 MiB host mappings,
         # followed by Xid 31 / CUDA 700 in GPU narrowphase. Reuse the bounded
@@ -5343,7 +5350,7 @@ def _is_independent_task_rigid_body_path(
     return parent_path not in articulation_container_paths
 
 
-class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
+class HandsOnABCIsaacLabEnv(CollectionRuntimeSupport, BimanualAssemblyIsaacLabEnv):
     """Task-specific scene layer over the bimanual assembly robot runtime."""
 
     metadata = {"render_modes": ["rgb_array", "human"]}
@@ -6393,12 +6400,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             truncated = True
         return observation, reward, terminated, truncated, info
 
-    def _resolve_target_object(self, target_object: str | None) -> str:
-        if target_object:
-            value = str(target_object).strip()
-            if value in self._spec.target_objects:
-                return value
-        return self._spec.target_objects[0]
 
     def get_recording_schema(self) -> dict[str, Any] | None:
         schema = super().get_recording_schema()
@@ -7215,10 +7216,21 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 task_root_path=_TASK_ROOT,
                 task_name=self.task_name,
             )
-        reference_robot_appearance = apply_reference_robot_appearance(
-            self._stage,
-            robot_root_paths=self._reference_robot_visual_roots,
-        )
+        # These paper tasks derive their contact hulls from the imported CAD
+        # below. The paper evaluator installs V16 surfaces only after that
+        # native collision setup. Installing them here changes the hull inputs
+        # (52 imported components become 156 display components). The shared
+        # install_environment boundary still applies V16 before PhysX reset.
+        if self.task_name in {
+            "eval_flex01_compress_sponge_into_mug",
+            "eval_flex02_fold_towel_twice",
+        }:
+            reference_robot_appearance = 0
+        else:
+            reference_robot_appearance = apply_reference_robot_appearance(
+                self._stage,
+                robot_root_paths=self._reference_robot_visual_roots,
+            )
         from .task_visual_appearance import apply_task_visual_appearance
 
         task_appearance = apply_task_visual_appearance(self)
@@ -7705,9 +7717,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             flush=True,
         )
 
-    def _task_specific_isaac_kit_args(self) -> str | None:
-        """Return optional Kit settings that must be present before launch."""
-        return None
 
     def _ready_state_settle_physics_steps(self) -> int:
         """Physics frames completed before a task may announce ready.
@@ -10308,79 +10317,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return 0
         return self._configure_smooth_grasp_hand_physics(sim_utils)
 
-    def _configure_named_reset_stability(
-        self,
-        sim_utils,
-        names: tuple[str, ...],
-        *,
-        linear_damping: float,
-        angular_damping: float,
-        sleep_threshold: float,
-        warning_label: str,
-        strip_redundant_articulation_root: bool = False,
-        locked_rot_axis: int | None = None,
-    ) -> int:
-        """Apply wakeable PhysX damping to independent task rigid bodies."""
-        from pxr import PhysxSchema, UsdPhysics
-
-        paths: list[str] = []
-        for name in names:
-            prim = self._find_rigid_body_prim(name)
-            if prim is None:
-                self._add_task_state_warning(
-                    f"Could not tune {warning_label} reset stability for {name}"
-                )
-                continue
-            path = str(prim.GetPath())
-            paths.append(path)
-            sim_utils.make_uninstanceable(path, stage=self._stage)
-        if not paths:
-            return 0
-        sim_utils.update_stage()
-
-        tuned = 0
-        for path in paths:
-            prim = self._stage.GetPrimAtPath(path)
-            if not prim.IsValid():
-                continue
-            if strip_redundant_articulation_root:
-                if prim.HasAPI(UsdPhysics.ArticulationRootAPI):
-                    prim.RemoveAPI(UsdPhysics.ArticulationRootAPI)
-                if prim.HasAPI(PhysxSchema.PhysxArticulationAPI):
-                    prim.RemoveAPI(PhysxSchema.PhysxArticulationAPI)
-            rigid_api = PhysxSchema.PhysxRigidBodyAPI(prim)
-            if not rigid_api:
-                rigid_api = PhysxSchema.PhysxRigidBodyAPI.Apply(prim)
-            for getter_name, creator_name, value in (
-                ("GetLinearDampingAttr", "CreateLinearDampingAttr", linear_damping),
-                ("GetAngularDampingAttr", "CreateAngularDampingAttr", angular_damping),
-                ("GetSleepThresholdAttr", "CreateSleepThresholdAttr", sleep_threshold),
-            ):
-                attribute = getattr(rigid_api, getter_name)()
-                if not attribute or not attribute.IsValid():
-                    attribute = getattr(rigid_api, creator_name)()
-                attribute.Set(value)
-            if locked_rot_axis is not None:
-                locked_rot_attr = rigid_api.GetLockedRotAxisAttr()
-                if not locked_rot_attr or not locked_rot_attr.IsValid():
-                    locked_rot_attr = rigid_api.CreateLockedRotAxisAttr()
-                locked_rot_attr.Set(int(locked_rot_axis))
-            # MJCF free joints are imported as one-link articulation roots in
-            # some cached USDs.  Their articulation sleep opinion overrides
-            # the link-level value, so author the same physical threshold at
-            # both levels while leaving the bodies wakeable during collection.
-            if UsdPhysics.ArticulationRootAPI(prim):
-                articulation_api = PhysxSchema.PhysxArticulationAPI(prim)
-                if not articulation_api:
-                    articulation_api = PhysxSchema.PhysxArticulationAPI.Apply(
-                        prim
-                    )
-                sleep_attr = articulation_api.GetSleepThresholdAttr()
-                if not sleep_attr or not sleep_attr.IsValid():
-                    sleep_attr = articulation_api.CreateSleepThresholdAttr()
-                sleep_attr.Set(sleep_threshold)
-            tuned += 1
-        return tuned
 
     def _configure_b02_reset_stability(self, sim_utils) -> int:
         if self._stage is None or self.task_name != "b02_nut_bolt_assembly":
@@ -13461,23 +13397,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             configured += 1
         return configured
 
-    def _c04_right_hand_body_paths(self) -> list[str]:
-        if self._stage is None:
-            return []
-
-        from pxr import Usd, UsdPhysics
-
-        root = self._stage.GetPrimAtPath(
-            "/World/HandsOnRobots/RightRobot"
-        )
-        paths: list[str] = []
-        for prim in Usd.PrimRange(root):
-            name = prim.GetName()
-            if not prim.HasAPI(UsdPhysics.RigidBodyAPI):
-                continue
-            if name == "right_palm_link" or name.startswith("right_finger"):
-                paths.append(str(prim.GetPath()))
-        return paths
 
     def _ycb04_hand_body_paths(self) -> list[str]:
         """Return rigid palm/finger links for both hands used by YCB04."""
@@ -14641,9 +14560,10 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return
 
         physics_sim_view = next(iter(self._robots.values()))._physics_sim_view
-        # Either hand may establish the required ball-contact event.  Both
-        # hands are also monitored for the forbidden box-contact rule.
-        active_hand_paths = self._c02_hand_body_paths()
+        # The active right hand is the only hand allowed to establish the
+        # required ball-contact event.  Both hands are monitored for the
+        # forbidden box-contact rule.
+        active_hand_paths = self._c04_right_hand_body_paths()
         all_hand_paths = self._c02_hand_body_paths()
         ball_prim = self._find_rigid_body_prim(YCB01_BALL_NAME)
         if physics_sim_view is None or ball_prim is None:
@@ -14689,7 +14609,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 self._ycb01_ball_contact_view = view
                 self._ycb01_contact_available = True
             elif not active_hand_paths:
-                errors.append("hand paths unavailable")
+                errors.append("right-hand paths unavailable")
 
             for name in YCB01_GATE_BODY_NAMES:
                 gate_prim = self._find_rigid_body_prim(name)
@@ -14723,7 +14643,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 "YCB01 contact reporting is incomplete: " + "; ".join(errors)
             )
         print(
-            "[HandsOn/IsaacLab] YCB01 contact views: "
+            "[DexJoCo/IsaacLab] YCB01 contact views: "
             f"ball_hand={int(self._ycb01_contact_available)}, "
             f"ball_gate={len(self._ycb01_ball_gate_contact_views)}/2, "
             f"hand_gate={len(self._ycb01_hand_gate_contact_views)}/2",
@@ -14923,19 +14843,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         names = {f"right_finger{finger_index}_link4", f"right_finger{finger_index}_tip_link"}
         return [path for path in paths if path.rsplit("/", 1)[-1].lower() in names]
 
-    def _c04_contact_force(self, view: Any | None) -> float:
-        if view is None:
-            return 0.0
-        try:
-            matrix = view.get_contact_force_matrix(self._sim_dt)
-            if hasattr(matrix, "detach"):
-                matrix = matrix.detach().cpu().numpy()
-            forces = np.asarray(matrix, dtype=np.float64)
-            if forces.size == 0:
-                return 0.0
-            return float(np.linalg.norm(forces, axis=-1).sum())
-        except Exception:
-            return 0.0
 
     def _ycb05_contact_force(self, key: str) -> tuple[float, bool]:
         """Return contact force with validity; an unavailable sensor is not clearance."""
@@ -15266,9 +15173,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         return float(np.linalg.norm(forces, axis=-1).sum())
 
 
-    def _c04_trigger_contact_force(self) -> float:
-        return self._c04_contact_force(self._c04_trigger_contact_view)
-
     def _08_hammer_nail_contact_force(self) -> tuple[float, bool]:
         views = list(self._08_hammer_nail_contact_views)
         if not views and self._08_hammer_nail_contact_view is not None:
@@ -15279,10 +15183,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         # report instead of double-counting it.
         return max(self._c04_contact_force(view) for view in views), True
 
-    def _c04_grasp_contact_force(self) -> float:
-        return float(
-            sum(self._c04_contact_force(view) for view in self._c04_grasp_contact_views)
-        )
 
     def _b04_right_hand_contact_force(self) -> tuple[float, bool]:
         available = len(self._b04_block_contact_views) == len(
@@ -15300,8 +15200,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             True,
         )
 
-    def _c06_right_hand_shutter_contact_force(self) -> float:
-        return self._c04_contact_force(self._c06_shutter_contact_view)
 
     def _c06_right_hand_shutter_proximity(self) -> tuple[bool, float]:
         camera_role = "camera" if self.task_name == xy3.TASK_NAME else "target"
@@ -15489,27 +15387,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             )
         state.tick(self._physics_dt)
 
-    def _c12_right_hand_block_contact_force(self) -> float:
-        return float(
-            sum(
-                self._c04_contact_force(view)
-                for view in self._c12_block_contact_views.values()
-            )
-        )
-
-    def _reset_c04_trigger_cycle(self) -> None:
-        self._c04_trigger_phase = "idle"
-        self._c04_trigger_cycle_latched = False
-        self._c04_trigger_contact_seen = False
-        self._c04_grasp_seen = False
-        self._c04_trigger_contact_grace = 0
-        self._c04_grasp_contact_grace = 0
-        self._c04_grasp_ready_steps = 0
-        self._c04_trigger_armed = False
-        self._c04_trigger_pulled = False
-        self._c04_water_emitting = False
-        self._c04_failed_trigger_outside = False
-        self._last_c04_success_metrics = {}
 
     def _c04_hand_gripping_spray(self) -> bool:
         force = self._c04_grasp_contact_force()
@@ -15893,15 +15770,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         self._set_task_visual_colors(prompt_colors)
 
-    def _control_robot(self, side: str):
-        try:
-            return self._robots[side]
-        except KeyError as exc:
-            raise RuntimeError(f"IsaacLab {side} robot is not initialized") from exc
-
-    @staticmethod
-    def _tensor_view(value: Any) -> Any:
-        return value.torch if hasattr(value, "torch") else value
 
     def _cache_joint_targets(self) -> None:
         if not self._direct_hand_control:
@@ -16606,7 +16474,9 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         elif self.task_name in _SHARED_MIRRORED_HOME_TASKS:
             return False
         elif self.task_name == ycb09.TASK_NAME:
-            arm_home = _C_TOOL_SPREAD_ARM_HOME.get(side)
+            # Paper source d41468eb parks the inactive left arm above the table.
+            arm_home = (_C_TOOL_SPREAD_ARM_HOME if side == "right"
+                        else _RAISED_ARM_HOME).get(side)
         elif self.task_name == gen1.TASK_NAME:
             arm_home = _GEN1_CLEAR_ARM_HOME.get(side)
         elif self.task_name in {_HS005_TASK_NAME, _XY4_TASK_NAME}:
@@ -16617,7 +16487,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             arm_home = _KA012_CLEAR_ARM_HOME.get(side)
         elif self.task_name == _KA021_TASK_NAME:
             arm_home = _KA021_CLEAR_ARM_HOME.get(side)
-        elif self.task_name == YCB01_TASK_NAME:
+        elif self.task_name == YCB01_TASK_NAME and side == "right":
             arm_home = _YCB01_CLEAR_ARM_HOME.get(side)
         elif self.task_name == "t26_place_fruit_in_bucket":
             arm_home = _A01_CLEAR_ARM_HOME.get(side)
@@ -17002,33 +16872,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         if self.task_name == "t14_move_and_click_mouse":
             self._c05_capture_start_pending = True
 
-    def _reset_robot_body_points(self, side: str) -> tuple[np.ndarray, ...]:
-        """Return live reset-home arm/hand body origins for clearance sampling."""
-        points: list[np.ndarray] = []
-        robot = self._robots.get(side)
-        if robot is not None:
-            try:
-                body_names = list(robot.body_names)
-                body_poses = robot.data.body_pose_w[0]
-                for index, name in enumerate(body_names):
-                    normalized = str(name).lower()
-                    if normalized in {f"base_{side}", f"base_{side}/base_{side}"}:
-                        continue
-                    point = body_poses[int(index), :3]
-                    if hasattr(point, "detach"):
-                        point = point.detach().cpu().numpy()
-                    point_np = np.asarray(point, dtype=np.float64).reshape(3)
-                    if np.all(np.isfinite(point_np)):
-                        points.append(point_np)
-            except Exception:
-                points = []
-        if points:
-            return tuple(points)
-
-        # Interface-only probes do not construct an Isaac articulation, so
-        # use the same task-owned TCP pose that the live scene starts from.
-        fallback = self._left_tcp_pose if side == "left" else self._right_tcp_pose
-        return (np.asarray(fallback[:3], dtype=np.float64).copy(),)
 
     def _c05_reset_xy_positions(self) -> tuple[np.ndarray, np.ndarray]:
         if not self.randomize:
@@ -17304,43 +17147,23 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         center = np.asarray(center_xy, dtype=np.float64)
         return center - offset, center + offset
 
-    @staticmethod
-    def _point_segment_distance_xy(
-        point_xy: np.ndarray,
-        start_xy: np.ndarray,
-        end_xy: np.ndarray,
-    ) -> float:
-        start = np.asarray(start_xy, dtype=np.float64)
-        delta = np.asarray(end_xy, dtype=np.float64) - start
-        denominator = float(np.dot(delta, delta))
-        if denominator <= 1e-12:
-            return float(np.linalg.norm(np.asarray(point_xy) - start))
-        fraction = float(
-            np.clip(
-                np.dot(np.asarray(point_xy, dtype=np.float64) - start, delta)
-                / denominator,
-                0.0,
-                1.0,
-            )
-        )
-        return float(
-            np.linalg.norm(
-                np.asarray(point_xy, dtype=np.float64)
-                - (start + fraction * delta)
-            )
-        )
 
     @staticmethod
     def _c01_head_ndc(world_xyz: np.ndarray) -> np.ndarray:
+        # Paper source 706162e6 uses real_v1 geometry for reset rejection.
+        # Its deployment calibrates rendered cameras separately; changing this
+        # projection changes accepted hammer/wood layouts and RNG consumption.
+        # recording_cameras.py SHA256: 46868599613d01054c4e251946d4cb1c1e47ed796a29d212a32a5a1d8b119a90
         points = np.asarray(world_xyz, dtype=np.float64).reshape(-1, 3)
         rotation = _quat_wxyz_to_matrix(
-            np.asarray(_HEAD_RECORDING_CAMERA_QUAT_WXYZ, dtype=np.float64)
+            np.asarray((0.6607228661203985, 0.25188349327743953,
+                        -0.25188349327743953, -0.6607228661203985), dtype=np.float64)
         )
-        eye = np.asarray(HEAD_RECORDING_CAMERA_EYE, dtype=np.float64)
+        eye = np.asarray((-0.675, 0.0, 1.5885), dtype=np.float64)
         camera_points = (rotation.T @ (points - eye).T).T
         depth = -camera_points[:, 2]
         tan_half_fovy = math.tan(
-            math.radians(_HEAD_RECORDING_CAMERA_FOVY) / 2.0
+            math.radians(55.109536510547784) / 2.0
         )
         return camera_points[:, :2] / (
             np.maximum(depth, 1e-9)[:, None] * tan_half_fovy
@@ -17841,47 +17664,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             float(best_yaw),
         )
 
-    def _c04_reset_spray_pose(self) -> tuple[np.ndarray, float]:
-        xy_by_name, yaw_degrees = self._c04_reset_layout()
-        return xy_by_name["spray"].copy(), yaw_degrees
-
-    @staticmethod
-    def _reset_transform_state_for_path(
-        path: str,
-        rigid_states: Mapping[str, tuple[Any, Any, Any, Any]],
-        articulation_states: Mapping[str, tuple[Any, Any, Any, Any]],
-    ) -> tuple[str, Any, Any, Any, Any] | None:
-        """Prefer an articulation root writer over a child rigid-body writer."""
-        state = articulation_states.get(path)
-        if state is not None:
-            return ("articulation", *state)
-        state = rigid_states.get(path)
-        if state is not None:
-            return ("rigid", *state)
-        return None
-
-    def _write_rigid_reset_state(
-        self,
-        path: str,
-        view: Any,
-        indices: Any,
-        transforms: Any,
-        velocities: Any,
-    ) -> None:
-        """Write a rigid reset pose without assigning velocity to kinematics."""
-        view.set_transforms(transforms, indices)
-        if path not in self._task_kinematic_body_paths:
-            view.set_velocities(velocities, indices)
-            self._record_authored_task_reset_write(
-                path,
-                transform_xyzw=transforms,
-                velocity=velocities,
-            )
-        else:
-            self._record_authored_task_reset_write(
-                path,
-                transform_xyzw=transforms,
-            )
 
     def _c06_reset_pose(self) -> tuple[np.ndarray, float]:
         if not self.randomize:
@@ -18320,23 +18102,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 margin = min(margin, distance - required)
         return float(margin)
 
-    @staticmethod
-    def _c08_point_segment_distance(
-        point_xy: np.ndarray,
-        segment_start: np.ndarray,
-        segment_end: np.ndarray,
-    ) -> float:
-        point = np.asarray(point_xy, dtype=np.float64).reshape(2)
-        start = np.asarray(segment_start, dtype=np.float64).reshape(2)
-        end = np.asarray(segment_end, dtype=np.float64).reshape(2)
-        segment = end - start
-        length_sq = float(np.dot(segment, segment))
-        if length_sq <= 1e-12:
-            return float(np.linalg.norm(point - start))
-        fraction = float(
-            np.clip(np.dot(point - start, segment) / length_sq, 0.0, 1.0)
-        )
-        return float(np.linalg.norm(point - (start + fraction * segment)))
 
     @staticmethod
     def _c08_reset_tongs_segment(
@@ -18702,13 +18467,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 min_margin = min(min_margin, pair_margin)
         return float(min_margin)
 
-    @classmethod
-    def _a01_reset_layout_is_clear(
-        cls,
-        xy_by_name: dict[str, np.ndarray],
-        hand_points: tuple[np.ndarray, ...] | None = None,
-    ) -> bool:
-        return cls._a01_reset_layout_margin(xy_by_name, hand_points) >= 0.0
 
     def _a01_reset_xy_positions(self) -> dict[str, np.ndarray] | None:
         if self.task_name != "t26_place_fruit_in_bucket":
@@ -18878,13 +18636,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 )
         return min(margins) if margins else float("inf")
 
-    @classmethod
-    def _a02_reset_layout_is_clear(
-        cls,
-        xy_by_name: dict[str, np.ndarray],
-        hand_points: tuple[np.ndarray, ...] | None = None,
-    ) -> bool:
-        return cls._a02_reset_layout_margin(xy_by_name, hand_points) >= 0.0
 
     def _a02_reset_xy_positions(self) -> dict[str, np.ndarray] | None:
         if self.task_name != "t25_place_cup_on_plate":
@@ -18998,13 +18749,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 )
         return min(margins) if margins else float("inf")
 
-    @classmethod
-    def _a03_reset_layout_is_clear(
-        cls,
-        xy_by_name: dict[str, np.ndarray],
-        hand_points: tuple[np.ndarray, ...] | None = None,
-    ) -> bool:
-        return cls._a03_reset_layout_margin(xy_by_name, hand_points) >= 0.0
 
     def _a03_reset_xy_positions(self) -> dict[str, np.ndarray] | None:
         if self.task_name != "t24_place_ball_in_bowl" or not self.randomize:
@@ -19115,13 +18859,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 )
         return min(margins) if margins else float("inf")
 
-    @classmethod
-    def _b01_reset_layout_is_clear(
-        cls,
-        xy_by_name: dict[str, np.ndarray],
-        hand_points: tuple[np.ndarray, ...] | None = None,
-    ) -> bool:
-        return cls._b01_reset_layout_margin(xy_by_name, hand_points) >= 0.0
 
     def _b01_reset_xy_positions(self) -> dict[str, np.ndarray] | None:
         if self.task_name != "t04_cover_pitcher":
@@ -19947,18 +19684,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         if layout is None:
             raise RuntimeError("YCB01 could not sample a robot-clear reset layout")
 
-        # Keep the authored gate pose unchanged and mirror only the ball's
-        # travel contract.  A positive local-Y start is an image-left start
-        # and therefore travels toward local -Y; a negative start travels
-        # toward local +Y as in the historical episodes.
-        ball_local = world_to_ycb01_gate(
-            layout[YCB01_BALL_NAME][:3],
-            layout["gate_frame"],
-        )
-        self._ycb01_travel_direction = (
-            -1.0 if float(ball_local[1]) > 0.0 else 1.0
-        )
-
         for name in (YCB01_BALL_NAME, *YCB01_GATE_BODY_NAMES):
             prim = self._find_rigid_body_prim(name)
             if prim is None:
@@ -20008,7 +19733,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             name: layout[name].copy() for name in YCB01_GATE_BODY_NAMES
         }
         print(
-            "[HandsOn/IsaacLab] YCB01 reset layout: "
+            "[DexJoCo/IsaacLab] YCB01 reset layout: "
             f"gate={self._ycb01_gate_frame_pose[:2].round(4).tolist()}, "
             f"ball={layout[YCB01_BALL_NAME][:2].round(4).tolist()}, "
             f"width={YCB01_GATE_WIDTH_M:.3f}m",
@@ -20741,6 +20466,10 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             if (
                 self.task_name in {"t02_connect_charger_and_cable", _HL015_TASK_NAME}
                 and name in _C10_SUPPORT_LOCAL_MIN_Z
+                # The paper's C10 reset adjusts only these two loose parts.
+                # Keep the strip's authored support pose (+3 mm clearance).
+                and (self.task_name != "t02_connect_charger_and_cable"
+                     or name in {"c10_charger_plug", "c10_charging_cable"})
             ):
                 randomized_pose[:, 2] = (
                     _TABLE_TOP_Z
@@ -20874,20 +20603,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 flush=True,
             )
 
-    @staticmethod
-    def _free_body_names(task_mjcf: Path) -> tuple[str, ...]:
-        root = ET.parse(task_mjcf).getroot()
-        names: list[str] = []
-        for body in root.iter("body"):
-            has_free_joint = any(
-                child.tag == "freejoint"
-                or (child.tag == "joint" and child.attrib.get("type") == "free")
-                for child in body
-            )
-            name = body.attrib.get("name")
-            if has_free_joint and name:
-                names.append(name)
-        return tuple(names)
 
     def _task_state_candidate_names(self, task_mjcf: Path) -> set[str]:
         names = set(self._spec.target_objects) | {
@@ -21349,11 +21064,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                     f"Could not restore rigid body {path}: {exc}"
                 )
 
-    def _add_task_state_warning(self, detail: str) -> None:
-        message = f"Task reset state warning: {detail}"
-        if message not in self._isaac_warnings:
-            self._isaac_warnings.append(message)
-            print(f"[HandsOn/IsaacLab] {message}", flush=True)
 
     def _find_rigid_body_prim(self, name: str):
         if self._stage is None:
@@ -21590,28 +21300,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._isaac_warnings.append(message)
             print(f"[HandsOn/IsaacLab] {message}", flush=True)
 
-    def _native_camera_prim_path(
-        self,
-        side: str,
-        names: tuple[str, ...],
-    ) -> str | None:
-        if self._stage is None:
-            return None
-        from pxr import Usd, UsdGeom
-
-        root_path = f"/World/HandsOnRobots/{side.capitalize()}Robot"
-        root = self._stage.GetPrimAtPath(root_path)
-        if not root.IsValid():
-            return None
-        cameras = {
-            prim.GetName(): str(prim.GetPath())
-            for prim in Usd.PrimRange(root)
-            if prim.IsA(UsdGeom.Camera)
-        }
-        for name in names:
-            if name in cameras:
-                return cameras[name]
-        return None
 
     def reset(self, seed: int | None = None, **kwargs: Any):
         target_label = kwargs.get("target_label") or kwargs.get("target_object")
@@ -21991,14 +21679,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             ).ravel()
             if gate_frame.size >= 7:
                 self._ycb01_gate_frame_pose = gate_frame[:7].copy()
-            start_direction = np.asarray(
-                state_parts.get("ycb01_start_direction", np.zeros(0)),
-                dtype=np.float64,
-            ).ravel()
-            if start_direction.size:
-                self._ycb01_travel_direction = (
-                    -1.0 if float(start_direction[0]) < 0.0 else 1.0
-                )
             flags = np.asarray(
                 state_parts.get("ycb01_event_flags", np.zeros(0)),
                 dtype=np.float64,
@@ -22253,32 +21933,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         self._ycb09_capture_reset_pending = False
         self._last_ycb09_metrics = {}
 
-    def restore_recorded_visual_state(
-        self,
-        state_parts: Mapping[str, np.ndarray],
-        *,
-        robot_iterations: int = 8,
-    ) -> dict[str, Any]:
-        """Restore recorded task objects and drive robot visuals toward state.
-
-        Historical ABC zarr episodes only store TCP and hand command state, not
-        the complete PhysX articulation qpos.  This method is therefore a
-        best-effort visual reconstruction path: it restores task objects exactly
-        and repeatedly solves/writes the robot joint targets from the recorded
-        TCP + gripper state before rendering.
-        """
-        self.restore_recorded_initial_state(state_parts)
-        self._restore_recorded_robot_command_state(state_parts)
-        self._snap_robot_to_command_state(robot_iterations)
-        if self._sim is not None:
-            self._sim.forward()
-        if self._scene is not None:
-            try:
-                self._scene.update(0.0)
-            except Exception:
-                pass
-        self._refresh_object_poses()
-        return self._compute_observation()
 
     def apply_recorded_visual_arm_qpos(
         self,
@@ -22378,89 +22032,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         info.update(configured_blender_visual_metadata(self))
         return info
 
-    def _restore_recorded_robot_command_state(
-        self,
-        state_parts: Mapping[str, np.ndarray],
-    ) -> None:
-        tcp_pose = np.asarray(
-            state_parts.get("tcp_pose", np.zeros(0)),
-            dtype=np.float64,
-        ).ravel()
-        if tcp_pose.size >= 7:
-            right_pose = tcp_pose[:7].astype(np.float64, copy=True)
-            if np.all(np.isfinite(right_pose)) and not np.allclose(right_pose[:7], 0.0):
-                quat_norm = float(np.linalg.norm(right_pose[3:7]))
-                if quat_norm > 1e-8:
-                    right_pose[3:7] /= quat_norm
-                    self._right_tcp_pose = right_pose
-                    self._right_pose_commanded = True
-                    self._arm_pose_filters["right"] = None
-        if tcp_pose.size >= 14:
-            left_pose = tcp_pose[7:14].astype(np.float64, copy=True)
-            if np.all(np.isfinite(left_pose)) and not np.allclose(left_pose[:7], 0.0):
-                quat_norm = float(np.linalg.norm(left_pose[3:7]))
-                if quat_norm > 1e-8:
-                    left_pose[3:7] /= quat_norm
-                    self._left_tcp_pose = left_pose
-                    self._left_pose_commanded = True
-                    self._arm_pose_filters["left"] = None
-
-        gripper_pose = np.asarray(
-            state_parts.get("gripper_pose", np.zeros(0)),
-            dtype=np.float64,
-        ).ravel()
-        if not gripper_pose.size:
-            return
-
-        if self._spec.bimanual and gripper_pose.size >= 32:
-            right_size = min(16, self._right_hand.size)
-            left_size = min(16, self._left_hand.size)
-            if right_size:
-                self._right_hand[:right_size] = gripper_pose[:right_size]
-            if left_size:
-                self._left_hand[:left_size] = gripper_pose[16 : 16 + left_size]
-            return
-
-        right_size = min(self._right_hand.size, gripper_pose.size)
-        if right_size:
-            self._right_hand[:right_size] = gripper_pose[:right_size]
-
-    def _snap_robot_to_command_state(self, robot_iterations: int) -> None:
-        if not self._robots or self._torch is None:
-            return
-        iterations = max(1, int(robot_iterations))
-        for _ in range(iterations):
-            self._apply_joint_targets()
-            self._write_joint_targets_as_state()
-            if self._sim is not None:
-                self._sim.forward()
-            if self._scene is not None:
-                try:
-                    self._scene.update(0.0)
-                except Exception:
-                    pass
-            for robot in self._robots.values():
-                try:
-                    robot.update(0.0)
-                except Exception:
-                    pass
-
-    def _write_joint_targets_as_state(self) -> None:
-        for side, robot in self._robots.items():
-            target = self._joint_targets.get(side)
-            if target is None:
-                continue
-            try:
-                joint_pos = target.clone()
-                joint_vel = self._torch.zeros_like(joint_pos)
-                robot.write_joint_state_to_sim(joint_pos, joint_vel)
-                robot.set_joint_position_target(joint_pos)
-                robot.write_data_to_sim()
-            except Exception as exc:
-                message = f"{side} robot visual state restore failed: {exc}"
-                if message not in self._isaac_warnings:
-                    self._isaac_warnings.append(message)
-                    print(f"[HandsOn/IsaacLab] {message}", flush=True)
 
     def _restore_recorded_table_height(self, delta_height: float) -> bool:
         table_prim = self._find_rigid_body_prim("table")
@@ -22889,6 +22460,13 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 margins.append(float(np.linalg.norm(a - b)) - clearance)
         return min(margins) if margins else math.inf
 
+    def _ycb02_reset_clearance_points(self) -> tuple[np.ndarray, ...]:
+        """Clearance cloud for the later full-arm reset variant."""
+        return (
+            *self._reset_robot_body_points("right"),
+            *self._reset_robot_body_points("left"),
+        )
+
     def _ycb02_reset_xy_positions(self) -> dict[str, np.ndarray]:
         """Place every cup and ball in hand-clear rows with shuffled identities."""
 
@@ -22919,17 +22497,10 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             }
         )
 
-        # Screen against the complete live arm body cloud, not only palm and
-        # finger origins.  The PhysX origin gate sees collisions from links
-        # such as link5/link7; omitting those links here lets a layout pass the
-        # static predicate and then forces a full reset when the scene settles.
-        # Interface-only probes fall back to the corresponding live TCP pose,
-        # so seeded randomness is preserved when Isaac articulations are not
-        # present.
-        hand_points = (
-            *self._reset_robot_body_points("right"),
-            *self._reset_robot_body_points("left"),
-        )
+        # The paper used both hand-only and later full-arm clearance clouds.
+        # The task factory selects the historical variant explicitly; the
+        # geometric predicate and random draws below are shared by both.
+        hand_points = self._ycb02_reset_clearance_points()
         table_top_z = _TABLE_TOP_Z + float(self.delta_h[0])
         bounds = np.asarray(ycb02.RESET_XY_BOUNDS_M, dtype=np.float64)
         minimum_margin = float(ycb02.RESET_MIN_MARGIN_M)
@@ -23134,7 +22705,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         if layout is None:
             raise RuntimeError(
                 "YCB02 could not place the randomized objects away from both "
-                "live robot arm body clouds while preserving the supported, visible, "
+                "live robot clearance points while preserving the supported, visible, "
                 f"reachable row layout (best_margin={best_margin:.6f}, "
                 f"attempts={attempts}, cups={cup_order!r}, balls={ball_order!r})"
             )
@@ -24215,7 +23786,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._left_tcp_pose = _GEN1_CLEAR_LEFT_START_TCP.copy()
         elif self.task_name == YCB01_TASK_NAME:
             self._right_tcp_pose = _YCB01_CLEAR_RIGHT_START_TCP.copy()
-            self._left_tcp_pose = _YCB01_CLEAR_LEFT_START_TCP.copy()
         elif self.task_name in {_HS005_TASK_NAME, _XY4_TASK_NAME}:
             self._right_tcp_pose = _HS005_CLEAR_RIGHT_START_TCP.copy()
             self._left_tcp_pose = _HS005_CLEAR_LEFT_START_TCP.copy()
@@ -24605,9 +24175,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._ycb09_capture_reset_pending = True
         self._update_success_condition_overlay()
 
-    def _apply_reset_visual_randomization(self) -> None:
-        from .default_appearance import refresh_environment
-        refresh_environment(self)
 
     def _c07_pour_hand_tracking_ready(
         self,
@@ -25580,13 +25147,10 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             ball_position,
             self._ycb01_gate_frame_pose,
         )
-        travel_direction = (
-            -1.0 if self._ycb01_travel_direction < 0.0 else 1.0
-        )
 
         self._ycb01_start_side_seen = bool(
             self._ycb01_start_side_seen
-            or travel_direction * float(ball_local[1])
+            or ball_local[1]
             <= -(YCB01_BALL_RADIUS_M + YCB01_START_SIDE_MARGIN_M)
         )
         self._ycb01_last_contact_force = self._c04_contact_force(
@@ -25690,7 +25254,7 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._ycb01_failure_reason = "ball_or_hand_touched_gate"
             self._manual_reset_requested = True
             print(
-                "[HandsOn/IsaacLab] YCB01 ball/hand touched a gate box; "
+                "[DexJoCo/IsaacLab] YCB01 ball/hand touched a gate box; "
                 "resetting episode",
                 flush=True,
             )
@@ -25709,36 +25273,49 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._ycb01_previous_ball_position,
             ball_position,
             self._ycb01_gate_frame_pose,
-            direction_sign=travel_direction,
         )
         # ``y == 0`` is only the centre-plane event.  Full success requires
-        # the sphere centre to reach the far Y face of the deeper carton. The
-        # pure geometry helper also interpolates a fast one-substep crossing,
-        # so a flick cannot evade this boundary by jumping between samples.
+        # the sphere centre to clear the far face of the deeper carton by one
+        # radius plus the configured safety margin.  The pure geometry helper
+        # also interpolates a fast one-substep crossing, so a flick cannot
+        # evade this boundary by jumping between samples.
         far_side_threshold = float(
             crossing.get(
                 "full_pass_threshold",
                 YCB01_FULL_PASS_LOCAL_Y_THRESHOLD_M,
             )
         )
-        # YCB01 success is intentionally a single geometric event: the ball
-        # centre's direction-sensitive local Y coordinate reaches the far
-        # face of the deeper box. The lateral opening and centre-plane values
-        # remain diagnostic telemetry, but they are no longer required for
-        # success. Use the current-position predicate rather than only the
-        # interpolated crossing flag so a later sampled frame can certify a
-        # pass even when the first threshold-crossing substep was not observed
-        # by the recorder.
+        # A full-depth crossing is valid only when the sphere centre was still
+        # inside the usable lateral opening at the far face.  The geometry
+        # helper interpolates that point for a high-speed segment; this
+        # prevents a discrete sample that crosses the centre and then jumps
+        # sideways outside the boxes from being accepted as a pass.
         full_pass_crossed_now = bool(crossing.get("full_pass_crossed_now", False))
-        full_pass_now = bool(crossing.get("full_passed_now", False))
         full_pass_inside_opening_now = bool(
             crossing.get("full_pass_inside_opening_now", False)
         )
-        far_side_crossed_now = bool(full_pass_crossed_now)
-        if crossing["center_crossed_now"] and crossing["inside_opening_now"]:
+        # Only the sampled transition itself can latch success.  Do not use a
+        # later ``full_passed_now`` position as a fallback: if contact data was
+        # missing on an illegal far-face crossing, moving back inside the
+        # opening on the next frame must not retroactively wash that event.
+        far_side_crossed_now = bool(
+            full_pass_crossed_now and full_pass_inside_opening_now
+        )
+        valid_center_crossing = bool(
+            crossing["center_crossed_now"]
+            and crossing["inside_opening_now"]
+            and self._ycb01_start_side_seen
+            and self._ycb01_hand_contact_seen
+            and self._ycb01_table_supported_recently
+            and self._ycb01_failure_reason is None
+            and not gate_violation_now
+        )
+        if valid_center_crossing:
             self._ycb01_center_crossed = True
         if (
-            full_pass_now
+            self._ycb01_center_crossed
+            and far_side_crossed_now
+            and self._ycb01_table_supported_recently
             and self._ycb01_failure_reason is None
             and not gate_violation_now
         ):
@@ -25747,7 +25324,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
 
         self._last_ycb01_metrics = {
             "ycb01_ball_gate_local": ball_local.copy(),
-            "ycb01_start_direction": float(travel_direction),
             "ycb01_start_side_seen": bool(self._ycb01_start_side_seen),
             "ycb01_hand_contact_seen": bool(self._ycb01_hand_contact_seen),
             "ycb01_contact_available": bool(self._ycb01_contact_available),
@@ -25766,7 +25342,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "ycb01_center_crossed": bool(self._ycb01_center_crossed),
             "ycb01_full_passed": bool(self._ycb01_full_passed),
             "ycb01_far_side_crossed": bool(far_side_crossed_now),
-            "ycb01_far_side_y_passed": bool(full_pass_now),
             "ycb01_full_pass_inside_opening": bool(
                 full_pass_inside_opening_now
             ),
@@ -25893,67 +25468,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         self._ycb10_state.update(sample, self._sim_dt)
 
-    def _hand_command_max(self, side: str) -> float:
-        values = self._right_hand if side == "right" else self._left_hand
-        if values.size == 0:
-            return 0.0
-        return float(np.max(np.abs(values)))
-
-    def _raw_right_hand_command_max(self) -> float:
-        values = np.asarray(
-            getattr(self, "_c_assist_raw_right_hand", self._right_hand),
-            dtype=np.float64,
-        )
-        if values.size == 0:
-            return 0.0
-        return float(np.max(np.abs(values)))
-
-    def _actual_hand_joint_pose(self, side: str) -> np.ndarray:
-        """Read a visible hand pose at contact, falling back to the raw glove."""
-        raw_name = f"_c_assist_raw_{side}_hand"
-        commanded = self._right_hand if side == "right" else self._left_hand
-        fallback = np.asarray(
-            getattr(self, raw_name, commanded),
-            dtype=np.float64,
-        ).reshape(-1).copy()
-        robot = self._robots.get(side)
-        joint_ids = self._hand_joint_ids.get(side, [])
-        if robot is None or not joint_ids:
-            return fallback
-        try:
-            values = robot.data.joint_pos[0, joint_ids]
-            if hasattr(values, "detach"):
-                values = values.detach().cpu().numpy()
-            actual = np.asarray(values, dtype=np.float64).reshape(-1)
-        except Exception:
-            return fallback
-        if actual.size != fallback.size or not np.all(np.isfinite(actual)):
-            return fallback
-        return actual.copy()
-
-    def _actual_right_hand_joint_pose(self) -> np.ndarray:
-        """Compatibility wrapper for the established C07/C08 right hand."""
-        return self._actual_hand_joint_pose("right")
-
-    def _raw_hand_command_max(self, side: str) -> float:
-        values = np.asarray(
-            getattr(
-                self,
-                f"_c_assist_raw_{side}_hand",
-                self._right_hand if side == "right" else self._left_hand,
-            ),
-            dtype=np.float64,
-        )
-        if values.size == 0:
-            return 0.0
-        return float(np.max(np.abs(values)))
-
-    def _raw_tcp_pose(self, side: str) -> np.ndarray:
-        fallback = self._right_tcp_pose if side == "right" else self._left_tcp_pose
-        return np.asarray(
-            getattr(self, f"_c_assist_raw_{side}_tcp_pose", fallback),
-            dtype=np.float64,
-        ).reshape(7).copy()
 
     @staticmethod
     def _tool_power_grip_pose(hand: np.ndarray) -> np.ndarray:
@@ -25970,16 +25484,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             result[start + 3] = max(float(result[start + 3]), 0.72)
         return result
 
-    def _current_body_pose(self, name: str) -> np.ndarray | None:
-        pose = self._physics_body_pose(name)
-        if pose is None:
-            pose = self._poses.get(name)
-        if pose is None:
-            return None
-        pose_np = np.asarray(pose, dtype=np.float64).reshape(7)
-        if not np.all(np.isfinite(pose_np)):
-            return None
-        return pose_np.copy()
 
     def _current_body_matrix(self, name: str) -> np.ndarray | None:
         pose = self._current_body_pose(name)
@@ -26020,29 +25524,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         return _pose_vector_to_matrix(pose_wxyz)
 
-    @staticmethod
-    def _rotation_error_vector(
-        target_rotation: np.ndarray,
-        current_rotation: np.ndarray,
-    ) -> np.ndarray:
-        error = (
-            np.asarray(target_rotation, dtype=np.float64).reshape(3, 3)
-            @ np.asarray(current_rotation, dtype=np.float64).reshape(3, 3).T
-        )
-        vector = 0.5 * np.asarray(
-            [
-                error[2, 1] - error[1, 2],
-                error[0, 2] - error[2, 0],
-                error[1, 0] - error[0, 1],
-            ],
-            dtype=np.float64,
-        )
-        sin_angle = float(np.linalg.norm(vector))
-        cos_angle = float(np.clip((np.trace(error) - 1.0) * 0.5, -1.0, 1.0))
-        angle = float(math.atan2(sin_angle, cos_angle))
-        if sin_angle <= 1e-8 or angle <= 1e-8:
-            return np.zeros(3, dtype=np.float64)
-        return vector * (angle / sin_angle)
 
     @staticmethod
     def _pose_matrix_to_vector(matrix: np.ndarray) -> np.ndarray:
@@ -26051,77 +25532,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             [pose[:3, 3], _matrix_to_quat_wxyz(pose[:3, :3])]
         )
 
-    @staticmethod
-    def _wuji_tip_names(side: str) -> tuple[str, tuple[str, ...]]:
-        return (
-            f"{side}_finger1_tip",
-            tuple(f"{side}_finger{index}_tip" for index in range(2, 6)),
-        )
-
-    @staticmethod
-    def _point_box_surface_metrics(
-        point: np.ndarray,
-        center: np.ndarray,
-        half_extents: np.ndarray,
-    ) -> tuple[float, np.ndarray]:
-        """Return signed distance and outward normal for an axis-aligned box."""
-        local = np.asarray(point, dtype=np.float64).reshape(3) - np.asarray(
-            center,
-            dtype=np.float64,
-        ).reshape(3)
-        half = np.asarray(half_extents, dtype=np.float64).reshape(3)
-        outside = np.maximum(np.abs(local) - half, 0.0)
-        outside_distance = float(np.linalg.norm(outside))
-        if outside_distance > 1e-12:
-            closest = np.clip(local, -half, half)
-            delta = local - closest
-            return outside_distance, delta / max(float(np.linalg.norm(delta)), 1e-12)
-
-        face_clearance = half - np.abs(local)
-        axis = int(np.argmin(face_clearance))
-        normal = np.zeros(3, dtype=np.float64)
-        normal[axis] = 1.0 if float(local[axis]) >= 0.0 else -1.0
-        return -float(face_clearance[axis]), normal
-
-    @staticmethod
-    def _segment_intersects_aabb(
-        start: np.ndarray,
-        end: np.ndarray,
-        center: np.ndarray,
-        half_extents: np.ndarray,
-        *,
-        margin: float = 0.0,
-    ) -> bool:
-        first = np.asarray(start, dtype=np.float64).reshape(3) - np.asarray(
-            center,
-            dtype=np.float64,
-        ).reshape(3)
-        second = np.asarray(end, dtype=np.float64).reshape(3) - np.asarray(
-            center,
-            dtype=np.float64,
-        ).reshape(3)
-        half = np.asarray(half_extents, dtype=np.float64).reshape(3) + max(
-            float(margin),
-            0.0,
-        )
-        direction = second - first
-        lower = 0.0
-        upper = 1.0
-        for axis in range(3):
-            if abs(float(direction[axis])) <= 1e-12:
-                if abs(float(first[axis])) > float(half[axis]):
-                    return False
-                continue
-            inverse = 1.0 / float(direction[axis])
-            near = (-float(half[axis]) - float(first[axis])) * inverse
-            far = (float(half[axis]) - float(first[axis])) * inverse
-            if near > far:
-                near, far = far, near
-            lower = max(lower, near)
-            upper = min(upper, far)
-            if lower > upper:
-                return False
-        return True
 
     @classmethod
     def _visible_box_pinch_contact(
@@ -26340,74 +25750,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return False, float(thumb_surface), 1
         return True, max(float(thumb_surface), min(valid)), 1 + len(valid)
 
-    def _assist_hand_tracking_ready(
-        self,
-        side: str,
-        state: dict[str, Any],
-        *,
-        position_tolerance: float,
-        angle_tolerance: float,
-    ) -> bool:
-        target_value = state.get("hand_target_matrix")
-        if target_value is None:
-            state["hand_tracking_ready"] = True
-            return True
-        if not bool(state.get("hand_target_installed")):
-            # The target is only copied into the robot command by
-            # _postprocess_hand_action at the next control frame.  Advancing
-            # the object during the intervening PhysX substeps would make it
-            # visibly move before the hand has even received that command.
-            state["hand_tracking_ready"] = False
-            return False
-        installed_value = state.get("hand_target_installed_matrix")
-        if installed_value is not None:
-            installed = np.asarray(
-                installed_value,
-                dtype=np.float64,
-            ).reshape(4, 4)
-            requested = np.asarray(
-                target_value,
-                dtype=np.float64,
-            ).reshape(4, 4)
-            if not np.allclose(
-                installed,
-                requested,
-                rtol=0.0,
-                atol=1e-10,
-            ):
-                # A PhysX substep has staged a newer guide target than the one
-                # copied into the robot command at the control-frame boundary.
-                # The object must wait for that exact target to be installed.
-                state["hand_target_installed"] = False
-                state["hand_tracking_ready"] = False
-                return False
-        palm = self._robot_link_pose_matrix(side)
-        if palm is None:
-            state["hand_tracking_ready"] = False
-            return False
-        target = np.asarray(
-            installed_value
-            if installed_value is not None
-            else target_value,
-            dtype=np.float64,
-        ).reshape(4, 4)
-        position_error = float(np.linalg.norm(palm[:3, 3] - target[:3, 3]))
-        angle_error = float(
-            np.linalg.norm(
-                self._rotation_error_vector(
-                    target[:3, :3],
-                    palm[:3, :3],
-                )
-            )
-        )
-        ready = bool(
-            position_error <= float(position_tolerance)
-            and angle_error <= float(angle_tolerance)
-        )
-        state["hand_tracking_position_error"] = position_error
-        state["hand_tracking_angle_error"] = angle_error
-        state["hand_tracking_ready"] = ready
-        return ready
 
     def _start_raw_hand_handoff(
         self,
@@ -26436,31 +25778,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "hand_anchor": target.copy(),
         }
 
-    @staticmethod
-    def _map_raw_hand_handoff(
-        raw: np.ndarray,
-        raw_anchor: np.ndarray,
-        hand_anchor: np.ndarray,
-    ) -> np.ndarray:
-        """Apply raw translation/rotation deltas without a rotating lever arm."""
-        current = np.asarray(raw, dtype=np.float64).reshape(4, 4)
-        source = np.asarray(raw_anchor, dtype=np.float64).reshape(4, 4)
-        destination = np.asarray(
-            hand_anchor,
-            dtype=np.float64,
-        ).reshape(4, 4)
-        target = destination.copy()
-        target[:3, 3] = (
-            destination[:3, 3]
-            + current[:3, 3]
-            - source[:3, 3]
-        )
-        target[:3, :3] = (
-            current[:3, :3]
-            @ source[:3, :3].T
-            @ destination[:3, :3]
-        )
-        return target
 
     def _preserve_released_hand_handoff(
         self,
@@ -26511,40 +25828,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             np.asarray(hand_anchor, dtype=np.float64).reshape(4, 4),
         )
 
-    @classmethod
-    def _bounded_pose_step(
-        cls,
-        current: np.ndarray,
-        goal: np.ndarray,
-        *,
-        dt: float,
-        max_linear_speed: float,
-        max_angular_speed: float,
-    ) -> np.ndarray:
-        start = np.asarray(current, dtype=np.float64).reshape(4, 4)
-        end = np.asarray(goal, dtype=np.float64).reshape(4, 4)
-        distance = float(np.linalg.norm(end[:3, 3] - start[:3, 3]))
-        angle = float(
-            np.linalg.norm(
-                cls._rotation_error_vector(
-                    end[:3, :3],
-                    start[:3, :3],
-                )
-            )
-        )
-        alpha = 1.0
-        step_dt = max(float(dt), 0.0)
-        if distance > 1e-9:
-            alpha = min(
-                alpha,
-                float(max_linear_speed) * step_dt / distance,
-            )
-        if angle > 1e-9:
-            alpha = min(
-                alpha,
-                float(max_angular_speed) * step_dt / angle,
-            )
-        return cls._c07_interpolate_pose(start, end, alpha)
 
     def _tool_lock_target_reached(
         self,
@@ -27180,19 +26463,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             <= _C07_POUR_MAX_HEIGHT_ABOVE_CUP
         )
 
-    @classmethod
-    def _c07_lock_pitcher_target_xy(
-        cls,
-        target: np.ndarray,
-        cup_xy: np.ndarray,
-    ) -> np.ndarray:
-        locked = np.asarray(target, dtype=np.float64).reshape(4, 4).copy()
-        outlet = cls._c07_spout_outlet_world(locked)
-        locked[:2, 3] += (
-            np.asarray(cup_xy, dtype=np.float64).reshape(2)
-            - outlet[:2]
-        )
-        return locked
 
     def _start_c07_tilt_path(
         self,
@@ -27504,22 +26774,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         return crossed_rim_downward
 
-    @staticmethod
-    def _c07_particle_settle_local(index: int) -> np.ndarray:
-        slots = np.asarray(
-            [
-                (0.000, 0.000, -0.022),
-                (0.010, 0.000, -0.010),
-                (-0.010, 0.000, -0.010),
-                (0.000, 0.010, -0.010),
-                (0.000, -0.010, -0.010),
-                (0.008, 0.008, 0.004),
-                (-0.008, 0.008, 0.004),
-                (0.000, -0.008, 0.004),
-            ],
-            dtype=np.float64,
-        )
-        return slots[int(index) % len(slots)].copy()
 
     def _c07_capture_particle_pins(
         self,
@@ -27563,25 +26817,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             last_targets[name] = particle.copy()
         return local_transforms, last_targets
 
-    @staticmethod
-    def _c07_particle_release_tilt_degrees(
-        state: dict[str, Any],
-        pitcher_target: np.ndarray,
-    ) -> float:
-        del state
-        target_matrix = np.asarray(
-            pitcher_target,
-            dtype=np.float64,
-        ).reshape(4, 4)
-        # atan2 preserves the full 0..180-degree arc.  asin would fold a
-        # 150-degree pour back to 30 degrees and disable the drain again.
-        total_tilt = math.degrees(
-            math.atan2(
-                float(-target_matrix[2, 1]),
-                float(target_matrix[2, 2]),
-            )
-        )
-        return float(np.clip(total_tilt, 0.0, 180.0))
 
     def _update_c07_particle_pins(
         self,
@@ -28448,25 +27683,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             )
             return False
 
-    @staticmethod
-    def _c08_tongs_tip_positions(
-        root_matrix: np.ndarray,
-        joint_angle: float,
-    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-        fixed_local = np.asarray([0.135, -0.018, 0.012], dtype=np.float64)
-        moving_root = np.asarray([-0.120, 0.018, 0.012], dtype=np.float64)
-        moving_arm = np.asarray([0.255, 0.0, 0.0], dtype=np.float64)
-        cosine = math.cos(float(joint_angle))
-        sine = math.sin(float(joint_angle))
-        moving_rotation = np.asarray(
-            [[cosine, -sine, 0.0], [sine, cosine, 0.0], [0.0, 0.0, 1.0]],
-            dtype=np.float64,
-        )
-        moving_local = moving_root + moving_rotation @ moving_arm
-        root = np.asarray(root_matrix, dtype=np.float64).reshape(4, 4)
-        fixed = root[:3, 3] + root[:3, :3] @ fixed_local
-        moving = root[:3, 3] + root[:3, :3] @ moving_local
-        return fixed, moving, 0.5 * (fixed + moving)
 
     @staticmethod
     def _c08_tongs_pad_segments(
@@ -28644,42 +27860,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         alpha = np.linspace(0.0, 1.0, sample_count).reshape(-1, 1)
         return centerline[0] + alpha * (centerline[1] - centerline[0])
 
-    def _c08_tongs_scene_clearance(
-        self,
-        root_matrix: np.ndarray,
-        joint_angle: float,
-    ) -> float:
-        """Return the minimum signed clearance from the full tongs to the table."""
-        # The tongs must intentionally contact ice and may pass close to the
-        # cup during pickup/drop. Only the table remains a blocking surface.
-        minimum_clearance = math.inf
-        table_top = float(self._current_table_top_z())
-
-        for segment, radius in self._c08_tongs_collision_capsules(
-            root_matrix,
-            joint_angle,
-        ):
-            points = self._c08_capsule_centerline_samples(segment)
-            minimum_clearance = min(
-                minimum_clearance,
-                float(np.min(points[:, 2] - radius - table_top)),
-            )
-        for center, rotation, half_extents in self._c08_tongs_collision_boxes(
-            root_matrix,
-            joint_angle,
-        ):
-            # The support of an OBB along world Z is the sum of each local
-            # half extent projected onto that axis.  Treating the new flat
-            # boxes as their former capsules would miss a corner whenever the
-            # tongs pitch or roll during a swept hand command.
-            vertical_support = float(
-                np.dot(np.abs(rotation[2, :]), half_extents)
-            )
-            minimum_clearance = min(
-                minimum_clearance,
-                float(center[2] - vertical_support - table_top),
-            )
-        return float(minimum_clearance)
 
     def _c08_collision_safe_tongs_target(
         self,
@@ -29100,37 +28280,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "transverse_error": transverse_error,
         }
 
-    @classmethod
-    def _c08_inner_pad_metrics(
-        cls,
-        tongs_matrix: np.ndarray,
-        joint_angle: float,
-        ice_position: np.ndarray,
-        ice_rotation: np.ndarray | None = None,
-    ) -> tuple[dict[str, float | bool], dict[str, float | bool]]:
-        fixed_segment, moving_segment = cls._c08_tongs_pad_segments(
-            tongs_matrix,
-            joint_angle,
-        )
-        rotation = (
-            np.eye(3, dtype=np.float64)
-            if ice_rotation is None
-            else np.asarray(ice_rotation, dtype=np.float64).reshape(3, 3)
-        )
-        return (
-            cls._c08_pad_inner_surface_metrics(
-                fixed_segment,
-                moving_segment,
-                ice_position,
-                rotation,
-            ),
-            cls._c08_pad_inner_surface_metrics(
-                moving_segment,
-                fixed_segment,
-                ice_position,
-                rotation,
-            ),
-        )
 
     @classmethod
     def _c08_one_jaw_inner_contact(
@@ -29554,23 +28703,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 closed_angle = midpoint_angle
         return float(result_angle), result[2]
 
-    @classmethod
-    def _c08_lock_tongs_target_xy(
-        cls,
-        target: np.ndarray,
-        joint_angle: float,
-        cup_xy: np.ndarray,
-    ) -> np.ndarray:
-        locked = np.asarray(target, dtype=np.float64).reshape(4, 4).copy()
-        _fixed, _moving, midpoint = cls._c08_tongs_tip_positions(
-            locked,
-            joint_angle,
-        )
-        locked[:2, 3] += (
-            np.asarray(cup_xy, dtype=np.float64).reshape(2)
-            - midpoint[:2]
-        )
-        return locked
 
     def _c08_held_ice_relative_transform(
         self,
@@ -29746,33 +28878,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         held["release_path_goal_local"] = desired_local.copy()
         return locked
 
-    @staticmethod
-    def _abort_c08_release(grasp: dict[str, Any]) -> None:
-        """Give control back without detaching the held cube."""
-        grasp.update(
-            {
-                "phase": "holding_ice",
-                "pour_xy_lock": False,
-                "pour_lock_pending": False,
-                "pour_hand_target_installed": False,
-                "hand_target_matrix": None,
-                "hand_target_installed": False,
-                "release_armed": False,
-                "release_retry_blocked": True,
-                "release_suspended": False,
-                "reanchor_after_release_abort": True,
-                "drop_hand_pose": None,
-                "drop_tongs_pose": None,
-                "drop_goal_pose": None,
-                "align_elapsed_s": 0.0,
-                "cup_missing_elapsed_s": 0.0,
-                "release_elapsed_s": 0.0,
-                "open_command_applied": False,
-                "open_command_success_s": 0.0,
-            }
-        )
-        grasp.pop("hand_target_installed_matrix", None)
-        grasp.pop("hand_target_installed_frame", None)
 
     def _c08_settle_delivered_ice(
         self,
@@ -31046,15 +30151,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         return overlap, z_error, min(x_alignment, normal_alignment)
 
-    @staticmethod
-    def _c09_other_paper(name: str) -> str:
-        return "c09_paper_1" if name == "c09_paper_0" else "c09_paper_0"
-
-    def _c09_grasp_side_for_paper(self, name: str) -> str | None:
-        for side, state in self._c09_paper_grasps.items():
-            if str(state.get("name")) == name:
-                return side
-        return None
 
     @staticmethod
     def _c09_paired_target(
@@ -31094,10 +30190,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             )
         )
 
-    def _c09_clear_hand_targets(self) -> None:
-        for state in self._c09_paper_grasps.values():
-            state["hand_target_matrix"] = None
-            state["hand_target_installed"] = False
 
     def _c09_hand_tracking_ready(
         self,
@@ -31240,21 +30332,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return False
         return True
 
-    def _c09_pin_stapler_root(self) -> None:
-        stapler = self._current_body_matrix("c09_stapler")
-        if stapler is None:
-            return
-        if self._c09_stapler_anchor is None:
-            self._c09_stapler_anchor = stapler.copy()
-        anchor = np.asarray(
-            self._c09_stapler_anchor,
-            dtype=np.float64,
-        ).reshape(4, 4)
-        self._set_body_rigid_grasp_target(
-            "c09_stapler",
-            anchor,
-            previous_target=anchor,
-        )
 
     def _update_c09_paper_assist(self) -> None:
         # The base must not fly away when the free hand opens or presses the
@@ -31711,8 +30788,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             if int(stack["stable_steps"]) >= _C09_GUIDE_STABLE_STEPS:
                 stack["phase"] = "inserted"
 
-    def _b01_hand_command_max(self) -> float:
-        return self._hand_command_max("right")
 
     def _b01_lid_in_release_zone(self) -> bool:
         if self.task_name != "t04_cover_pitcher":
@@ -31807,11 +30882,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return
         self._set_b01_release_assist(True)
 
-    def _b02_nut_grasp_assist_enabled(self) -> bool:
-        # Disabled while testing source-matched B02 MuJoCo parameters.  Keeping
-        # the helper state readable in ``info`` makes it obvious during
-        # collection that no velocity-based nut attachment is active.
-        return False
 
     def _clear_b02_nut_grasp_assist(self, reason: str = "") -> None:
         self._b02_grasp_assist = None
@@ -31870,9 +30940,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 positions[tip_name] = tip_position.astype(np.float64)
         return positions
 
-    def _b02_wuji_fingertip_positions(self) -> dict[str, np.ndarray]:
-        """Compatibility wrapper used by the existing right-hand tasks."""
-        return self._wuji_fingertip_positions("right")
 
     @staticmethod
     def _b02_tip_touches_nut_underside(
@@ -32235,27 +31302,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                     seen_paths.add(target_path)
         return tuple(records)
 
-    def _set_deferred_robot_body_hidden(self, hidden: bool) -> int:
-        if self._stage is None:
-            return 0
-        from pxr import UsdGeom
-
-        if self._deferred_robot_body_visibility is None:
-            self._deferred_robot_body_visibility = (
-                self._deferred_robot_body_visibility_records()
-            )
-            print(
-                "[HandsOn/IsaacLab] Deferred arm render body filter: "
-                f"{len(self._deferred_robot_body_visibility)} robot visual prims",
-                flush=True,
-            )
-        for path, original in self._deferred_robot_body_visibility:
-            prim = self._stage.GetPrimAtPath(path)
-            if not prim.IsValid():
-                continue
-            visibility = UsdGeom.Imageable(prim).GetVisibilityAttr()
-            visibility.Set(UsdGeom.Tokens.invisible if hidden else original)
-        return len(self._deferred_robot_body_visibility)
 
     def _commit_live_arm_visibility(self, *, hidden: bool) -> int:
         """Synchronize guarded arm visibility without advancing physics.
@@ -32706,28 +31752,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         self._last_ycb04_success_metrics = metrics
         return metrics
 
-    def _physics_dof_position(self, name: str) -> tuple[float, float] | None:
-        entry = self._task_dof_views.get(name)
-        if entry is None:
-            entry = next(
-                (
-                    value
-                    for dof_name, value in self._task_dof_views.items()
-                    if name in dof_name
-                ),
-                None,
-            )
-        if entry is None:
-            return None
-        view, index, initial = entry
-        try:
-            positions = view.get_dof_positions()
-            value = positions[0, int(index)]
-            if hasattr(value, "detach"):
-                value = value.detach().cpu().item()
-            return float(value), float(initial)
-        except Exception:
-            return None
 
     def _physics_dof_velocity(self, name: str) -> float | None:
         entry = self._task_dof_views.get(name)
@@ -33280,12 +32304,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         }
         return valid_spray
 
-    def _c05_button_travel(self, name: str) -> float:
-        reading = self._physics_dof_position(name)
-        if reading is None:
-            return 0.0
-        baseline = float(self._c05_button_initial_positions.get(name, 0.0))
-        return max(0.0, float(reading[0]) - baseline)
 
     def _c05_mouse_click_metrics(self, *, update_failure: bool) -> dict[str, Any]:
         mouse = self._pose_for_role("target")
@@ -33448,10 +32466,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         point = np.asarray([*np.asarray(point_world, dtype=np.float64).reshape(3), 1.0])
         return (_invert_pose_matrix(body_matrix) @ point)[:3]
 
-    def _body_local_point_world(self, body_name: str, local_point: np.ndarray) -> np.ndarray:
-        matrix = self._pose_matrix_for_name(body_name)
-        point = np.asarray([*np.asarray(local_point, dtype=np.float64).reshape(3), 1.0])
-        return (matrix @ point)[:3]
 
     @staticmethod
     def _axis_alignment(pose: np.ndarray, axis_index: int, reference: np.ndarray) -> float:
@@ -33463,22 +32477,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return 0.0
         return float(np.dot(axis, reference_np / norm))
 
-    @staticmethod
-    def _point_segment_distance_3d(
-        point: np.ndarray,
-        start: np.ndarray,
-        end: np.ndarray,
-    ) -> float:
-        point_np = np.asarray(point, dtype=np.float64).reshape(3)
-        start_np = np.asarray(start, dtype=np.float64).reshape(3)
-        segment = np.asarray(end, dtype=np.float64).reshape(3) - start_np
-        length_sq = float(np.dot(segment, segment))
-        if length_sq <= 1e-12:
-            return float(np.linalg.norm(point_np - start_np))
-        fraction = float(
-            np.clip(np.dot(point_np - start_np, segment) / length_sq, 0.0, 1.0)
-        )
-        return float(np.linalg.norm(point_np - (start_np + fraction * segment)))
 
     def _c07_hand_clearance(self) -> tuple[float, bool]:
         min_surface_distance = math.inf
@@ -33622,13 +32620,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "c07_release_hold_seconds": float(_C07_RELEASE_HOLD_SECONDS),
         }
 
-    def _c07_pitcher_pour_cup_success_now(self) -> bool:
-        self._last_c07_success_metrics = self._c07_pitcher_pour_metrics()
-        self._set_task_visual_names_visible(
-            {f"c07_cup_goal_rim_{index}" for index in range(8)},
-            bool(self._last_c07_success_metrics["c07_enough_inside"]),
-        )
-        return bool(self._last_c07_success_metrics["c07_success_now"])
 
     def _c08_tongs_ice_metrics(self) -> dict[str, Any]:
         cup = self._poses.get("c08_glass_cup", self._fallback_pose("c08_glass_cup"))
@@ -33670,18 +32661,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "c08_tongs_open_latched": bool(self._c08_tongs_was_open),
         }
 
-    def _c08_tongs_ice_cubes_success_now(self) -> bool:
-        self._last_c08_success_metrics = self._c08_tongs_ice_metrics()
-        self._set_task_visual_names_visible(
-            {
-                "c08_cup_goal_rim_xp",
-                "c08_cup_goal_rim_xn",
-                "c08_cup_goal_rim_yp",
-                "c08_cup_goal_rim_yn",
-            },
-            bool(self._last_c08_success_metrics["c08_all_ice_inside"]),
-        )
-        return bool(self._last_c08_success_metrics["c08_success_now"])
 
     def _c09_staple_metrics(self) -> dict[str, Any]:
         paper0 = self._poses.get("c09_paper_0", self._fallback_pose("c09_paper_0"))
@@ -33798,13 +32777,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             ),
         }
 
-    def _c09_staple_paper_sheets_success_now(self) -> bool:
-        self._last_c09_success_metrics = self._c09_staple_metrics()
-        self._set_task_visual_names_visible(
-            {"c09_staple_done"},
-            bool(self._last_c09_success_metrics["c09_success_now"]),
-        )
-        return bool(self._last_c09_success_metrics["c09_success_now"])
 
     @staticmethod
     def _c10_connection_geometry(
@@ -33908,30 +32880,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "strip_matrix": strip_matrix,
         }
 
-    def _apply_c10_progressive_capture(
-        self,
-        poses: dict[str, np.ndarray],
-        geometry: dict[str, Any],
-    ) -> None:
-        """Report capture state without magnetizing a connector held by nobody.
-
-        The previous implementation drove any free rigid body inside the broad
-        funnel to a canonical pose.  C10 guidance now lives in the connector's
-        real hand-grasp state, so this compatibility hook is deliberately
-        read-only.
-        """
-        self._c10_assist_metrics = {
-            "c10_plug_capture_active": any(
-                str(state.get("name")) == "c10_charger_plug"
-                and str(state.get("phase")) != "carry"
-                for state in self._c10_connector_grasps.values()
-            ),
-            "c10_cable_capture_active": any(
-                str(state.get("name")) == "c10_charging_cable"
-                and str(state.get("phase")) != "carry"
-                for state in self._c10_connector_grasps.values()
-            ),
-        }
 
     @staticmethod
     def _c10_grasp_box(
@@ -34103,13 +33051,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             angle_tolerance=_C10_HAND_TRACK_ANGLE_TOLERANCE,
         )
 
-    def _c10_plug_latch_handoff_pending(self) -> bool:
-        return any(
-            str(state.get("name")) == "c10_charger_plug"
-            and str(state.get("phase")) == "latched_handoff"
-            and not bool(state.get("hand_target_installed"))
-            for state in self._c10_connector_grasps.values()
-        )
 
     def _pin_c10_latched_connectors(self) -> bool:
         """Hold latched freejoint imports through their articulation root."""
@@ -34637,16 +33578,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._c10_cable_latched = True
         return True
 
-    def _set_c10_connector_kinematic(
-        self,
-        name: str,
-        enabled: bool,
-    ) -> bool:
-        return self._set_task_body_kinematic(
-            name,
-            enabled,
-            warning_label="C10 connector",
-        )
 
     def _set_task_body_kinematic(
         self,
@@ -35094,10 +34025,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             @ np.asarray([*_C11_MALLET_HEAD_LOCAL, 1.0], dtype=np.float64)
         )[:3]
 
-    def _c11_expected_key(self) -> str | None:
-        if self._c11_sequence_progress >= len(self._c11_target_sequence):
-            return None
-        return str(self._c11_target_sequence[self._c11_sequence_progress])
 
     def _c11_head_local_to_key(
         self,
@@ -35158,16 +34085,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         target[:3, 3] += correction_world
         return target
 
-    def _c11_return_guided_target(
-        self,
-        carried: np.ndarray,
-    ) -> np.ndarray:
-        target = np.asarray(carried, dtype=np.float64).reshape(4, 4).copy()
-        zone = self._current_body_matrix("c11_return_zone")
-        if zone is None:
-            return target
-        target[:2, 3] += zone[:2, 3] - target[:2, 3]
-        return target
 
     def _update_c11_mallet_assist(self) -> None:
         palm = self._robot_link_pose_matrix("right")
@@ -35371,10 +34288,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 hand_target,
             )
 
-    def _c11_key_contact_force(self, key_name: str) -> float:
-        return self._c04_contact_force(
-            self._c11_key_contact_views.get(key_name)
-        )
 
     def _update_c11_hit_events(self) -> None:
         """Advance the score only on a downward physical contact-layer event."""
@@ -35698,11 +34611,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                     best_point = world.copy()
         return float(best_gap), best_point
 
-    def _c12_tool_block_contact_force(self, name: str) -> tuple[float, bool]:
-        view = self._c12_tool_block_contact_views.get(name)
-        if view is None:
-            return 0.0, False
-        return self._c04_contact_force(view), True
 
     def _c12_push_contact_candidate(
         self,
@@ -35818,29 +34726,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return None
         return valid[0][1]
 
-    def _c12_set_block_kinematic(self, name: str, enabled: bool) -> bool:
-        applied = self._set_task_body_kinematic(
-            name,
-            enabled,
-            warning_label="C12 block",
-        )
-        return bool(applied or self._stage is None)
-
-    def _c12_pin_settled_blocks(self) -> bool:
-        for name, target_value in tuple(self._c12_settled_targets.items()):
-            target = np.asarray(
-                target_value,
-                dtype=np.float64,
-            ).reshape(4, 4)
-            applied, _linear, _angular = self._set_body_rigid_grasp_target(
-                name,
-                target,
-                previous_target=target,
-            )
-            if not applied:
-                self._manual_reset_requested = True
-                return False
-        return True
 
     def _update_c12_tool_assist(self) -> None:
         if not self._c12_pin_settled_blocks():
@@ -36314,57 +35199,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             for pose in block_poses
         )
 
-    @staticmethod
-    def _clip_polygon_to_axis_aligned_box(
-        polygon: np.ndarray,
-        half_extents: np.ndarray,
-    ) -> np.ndarray:
-        clipped = np.asarray(polygon, dtype=np.float64).reshape(-1, 2)
-        for axis in range(2):
-            for bound, keep_less in (
-                (float(half_extents[axis]), True),
-                (-float(half_extents[axis]), False),
-            ):
-                if len(clipped) == 0:
-                    return clipped
-                output: list[np.ndarray] = []
-                previous = clipped[-1]
-                previous_inside = (
-                    float(previous[axis]) <= bound
-                    if keep_less
-                    else float(previous[axis]) >= bound
-                )
-                for current in clipped:
-                    current_inside = (
-                        float(current[axis]) <= bound
-                        if keep_less
-                        else float(current[axis]) >= bound
-                    )
-                    if current_inside != previous_inside:
-                        denominator = float(current[axis] - previous[axis])
-                        if abs(denominator) > 1e-12:
-                            fraction = (bound - float(previous[axis])) / denominator
-                            output.append(
-                                previous + fraction * (current - previous)
-                            )
-                    if current_inside:
-                        output.append(current)
-                    previous = current
-                    previous_inside = current_inside
-                clipped = np.asarray(output, dtype=np.float64).reshape(-1, 2)
-        return clipped
-
-    @staticmethod
-    def _polygon_area(polygon: np.ndarray) -> float:
-        vertices = np.asarray(polygon, dtype=np.float64).reshape(-1, 2)
-        if len(vertices) < 3:
-            return 0.0
-        return 0.5 * abs(
-            float(
-                np.dot(vertices[:, 0], np.roll(vertices[:, 1], -1))
-                - np.dot(vertices[:, 1], np.roll(vertices[:, 0], -1))
-            )
-        )
 
     @classmethod
     def _c12_block_target_overlap_ratio(
@@ -37701,10 +36535,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         self._last_a02_success_metrics = metrics
         return bool(metrics["a02_success_now"])
 
-    def _cup_bottom_down(self) -> bool:
-        metrics = self._a06_cup_success_metrics()
-        self._last_a06_success_metrics = metrics
-        return bool(metrics["a06_success_now"])
 
     def _a06_cup_success_metrics(self) -> dict[str, Any]:
         cup = self._pose_for_role("target")
@@ -37755,36 +36585,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 min_distance = min(min_distance, distance)
         return min_distance, bool(min_distance >= _A06_HAND_CONTACT_DISTANCE)
 
-    def _a06_hand_points(self, side: str) -> tuple[np.ndarray, ...]:
-        points: list[np.ndarray] = []
-        robot = self._robots.get(side)
-        if robot is not None:
-            try:
-                body_names = list(robot.body_names)
-                body_poses = robot.data.body_pose_w[0]
-                for index, name in enumerate(body_names):
-                    normalized = str(name).lower()
-                    if "palm" not in normalized and "finger" not in normalized:
-                        continue
-                    point = body_poses[int(index), :3]
-                    if hasattr(point, "detach"):
-                        point = point.detach().cpu().numpy()
-                    point_np = np.asarray(point, dtype=np.float64).reshape(3)
-                    if np.all(np.isfinite(point_np)):
-                        points.append(point_np)
-            except Exception:
-                points = []
-        if points:
-            return tuple(points)
-
-        fallback = self._left_tcp_pose if side == "left" else self._right_tcp_pose
-        matrix = self._native_end_effector_pose_matrix(side, fallback)
-        if matrix is None:
-            return ()
-        point_np = np.asarray(matrix[:3, 3], dtype=np.float64).reshape(3)
-        if not np.all(np.isfinite(point_np)):
-            return ()
-        return (point_np,)
 
     def _task_info(self) -> dict[str, Any]:
         if self.task_name == xy3.TASK_NAME:
@@ -37832,12 +36632,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                     "full_pass_local_y_threshold_m": float(
                         YCB01_FULL_PASS_LOCAL_Y_THRESHOLD_M
                     ),
-                    "reset_xy_bounds_m": YCB01_TABLE_XY_BOUNDS_M.copy(),
-                    "start_side_direction": float(
-                        self._ycb01_travel_direction
-                    ),
-                    "allowed_push_hands": ("left", "right"),
-                    "bimanual": True,
                     "gate_frame_pose": self._ycb01_gate_frame_pose.copy(),
                     "sampled_reset_poses": {
                         name: pose.copy()
@@ -39025,9 +37819,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
                 )
         return ""
 
-    @staticmethod
-    def _condition_row(key: str, label: str, ok: bool) -> dict[str, Any]:
-        return {"key": key, "label": label, "ok": bool(ok)}
 
     @staticmethod
     def _success_condition_display_label(row: dict[str, Any]) -> str:
@@ -39306,43 +38097,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             ),
         ]
 
-    def _c07_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c07_success_metrics or self._c07_pitcher_pour_metrics()
-        return [
-            self._condition_row("c07_enough_inside", "至少 80% 代理物进入目标杯", bool(metrics["c07_enough_inside"])),
-            self._condition_row("c07_spill_limited", "桌面洒落数量不超过 1 个", bool(metrics["c07_spill_limited"])),
-            self._condition_row("c07_tilt_seen", "大把手杯已经发生有效倾倒", bool(metrics["c07_tilt_seen"])),
-            self._condition_row("c07_pitcher_centered_on_pad", "大把手杯完整放入回收垫中心", bool(metrics["c07_pitcher_centered_on_pad"])),
-            self._condition_row("c07_pitcher_on_pad_height", "大把手杯底已经落到回收垫上", bool(metrics["c07_pitcher_on_pad_height"])),
-            self._condition_row("c07_pitcher_stable", "大把手杯已停止移动", bool(metrics["c07_pitcher_stable"])),
-            self._condition_row("c07_hand_released", "手已完全离开大把手杯", bool(metrics["c07_hand_released"])),
-            self._condition_row("c07_pitcher_returned", "大把手杯回正并稳定放回", bool(metrics["c07_pitcher_returned"])),
-        ]
-
-    def _c08_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c08_success_metrics or self._c08_tongs_ice_metrics()
-        return [
-            self._condition_row("c08_all_ice_inside", "4 个冰块均进入杯内", bool(metrics["c08_all_ice_inside"])),
-            self._condition_row("c08_tongs_cycles", "食品夹完成至少 4 次闭合", bool(metrics["c08_tongs_cycles"])),
-            self._condition_row("c08_cup_upright", "玻璃杯未倾倒", bool(metrics["c08_cup_upright"])),
-        ]
-
-    def _c09_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c09_success_metrics or self._c09_staple_metrics()
-        return [
-            self._condition_row("c09_stapler_opened", "订书机上盖已打开", bool(metrics["c09_stapler_opened"])),
-            self._condition_row("c09_papers_overlap", "两张纸重叠率达到要求", bool(metrics["c09_papers_overlap"])),
-            self._condition_row("c09_papers_in_zone", "纸张进入有效装订区", bool(metrics["c09_papers_in_zone"])),
-            self._condition_row("c09_stapler_pressed", "订书机压合越过阈值", bool(metrics["c09_stapler_pressed"])),
-        ]
-
-    def _c10_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c10_success_metrics or self._c10_connection_metrics()
-        return [
-            self._condition_row("c10_first_connected", "充电头先插入排插", bool(metrics["c10_first_connected"])),
-            self._condition_row("c10_second_connected", "充电线接头插入充电头", bool(metrics["c10_second_connected"])),
-            self._condition_row("c10_order_valid", "插接顺序正确", bool(metrics["c10_order_valid"])),
-        ]
 
     def _c11_success_condition_rows(self) -> list[dict[str, Any]]:
         metrics = self._last_c11_success_metrics or self._c11_xylophone_metrics()
@@ -39379,11 +38133,61 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         ]
 
     def _ycb01_success_condition_rows(self) -> list[dict[str, Any]]:
+        metrics = self._last_ycb01_metrics
+        contact_monitor_ready = bool(
+            metrics.get("ycb01_contact_available", self._ycb01_contact_available)
+            and self._ycb01_gate_contact_available
+        )
+        no_gate_contact = bool(
+            not metrics.get("ycb01_gate_contact_seen", self._ycb01_gate_contact_seen)
+            and self._ycb01_failure_reason != "ball_or_hand_touched_gate"
+        )
+        gate_intact = bool(
+            metrics.get("ycb01_gate_intact", True)
+            and self._ycb01_failure_reason
+            not in {"gate_displaced_or_toppled", "ball_or_hand_touched_gate"}
+        )
         return [
             self._condition_row(
-                "ycb01_far_side_y",
-                "Ball center passed the far Y face",
+                "ycb01_start_side",
+                "球初始完整位于盒子起始侧",
+                self._ycb01_start_side_seen,
+            ),
+            self._condition_row(
+                "ycb01_hand_contact",
+                "手掌或手指已真实触球",
+                self._ycb01_hand_contact_seen,
+            ),
+            self._condition_row(
+                "ycb01_contact_monitor",
+                "球/手接触监视已就绪（未就绪时本次不可认证）",
+                contact_monitor_ready,
+            ),
+            self._condition_row(
+                "ycb01_no_gate_contact",
+                "手和球全程未碰到任一盒子",
+                no_gate_contact,
+            ),
+            self._condition_row(
+                "ycb01_valid_crossing",
+                "球心从起始侧向远侧穿过两盒子开口，球体完整在开口内",
+                self._ycb01_center_crossed,
+            ),
+            self._condition_row(
+                "ycb01_full_pass",
+                "球的整个球体越过远侧边界",
                 self._ycb01_full_passed,
+            ),
+            self._condition_row(
+                "ycb01_table_supported",
+                "球保持桌面滚动，未被抬起或抛出",
+                self._ycb01_table_supported_recently
+                and self._ycb01_failure_reason != "ball_lifted_or_thrown",
+            ),
+            self._condition_row(
+                "ycb01_gate_intact",
+                "两个 YCB 盒子保持直立且未移位",
+                gate_intact,
             ),
         ]
 
@@ -39617,13 +38421,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             self._condition_row("a03_hand_released", "右手已离开指定球", bool(metrics.get("a03_hand_released", False))),
         ]
 
-    def _a06_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_a06_success_metrics or self._a06_cup_success_metrics()
-        return [
-            self._condition_row("a06_opening_up", "杯口朝上", bool(metrics["a06_opening_up"])),
-            self._condition_row("a06_on_table", "杯子放在桌面高度", bool(metrics["a06_on_table"])),
-            self._condition_row("a06_hand_clear", "手已经离开杯子", bool(metrics["a06_hand_clear"])),
-        ]
 
     def _b01_success_condition_rows(self) -> list[dict[str, Any]]:
         metrics = self._last_b01_lid_success_metrics
@@ -39900,65 +38697,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             ),
         ]
 
-    def _c04_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c04_success_metrics
-        if not metrics:
-            aim_metrics = self._c04_spray_aim_metrics()
-            metrics = {
-                **aim_metrics,
-                "spray_grasp_ok": self._c04_hand_gripping_spray(),
-                "spray_trigger_contact_ok": False,
-                "c04_water_emitting": self._c04_water_emitting,
-            }
-        return [
-            self._condition_row(
-                "c04_spray_grasped",
-                "手已经抓住喷壶",
-                bool(metrics.get("spray_grasp_ok", False)),
-            ),
-            self._condition_row(
-                "c04_trigger_contact",
-                "手指确实按到扳机",
-                bool(metrics.get("spray_trigger_contact_ok", False)),
-            ),
-            self._condition_row(
-                "c04_water_emitting",
-                "扳机保持按下并正在喷水",
-                bool(metrics.get("c04_water_emitting", False)),
-            ),
-            self._condition_row(
-                "c04_water_hits_target",
-                "水流命中植株或盆土",
-                bool(metrics.get("spray_hits_soil_or_plant", False)),
-            ),
-        ]
-
-    def _c05_success_condition_rows(self) -> list[dict[str, Any]]:
-        metrics = self._last_c05_success_metrics or self._c05_mouse_click_metrics(
-            update_failure=False
-        )
-        return [
-            self._condition_row(
-                "c05_mouse_moved",
-                "鼠标已经离开初始位置并移动足够距离",
-                bool(metrics["c05_mouse_moved"]),
-            ),
-            self._condition_row(
-                "c05_mouse_on_pad",
-                "鼠标已经移动到鼠标垫范围内",
-                bool(metrics["c05_mouse_on_pad"]),
-            ),
-            self._condition_row(
-                "c05_no_early_click",
-                "移动完成前没有压到左右按键",
-                bool(metrics["c05_no_early_click"]),
-            ),
-            self._condition_row(
-                "c05_left_clicked",
-                "鼠标到位后按下左键",
-                bool(metrics["c05_left_clicked"]),
-            ),
-        ]
 
     def _c06_success_condition_rows(self) -> list[dict[str, Any]]:
         metrics = self._last_c06_success_metrics or self._c06_photograph_metrics()
@@ -40592,23 +39330,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             peg_pose[:2] + peg_axis_xy * _B03_RESET_PEG_MAX_LOCAL_Z,
         )
 
-    @staticmethod
-    def _point_to_segment_distance_xy(
-        point: np.ndarray,
-        segment_start: np.ndarray,
-        segment_end: np.ndarray,
-    ) -> tuple[float, np.ndarray]:
-        point_np = np.asarray(point, dtype=np.float64).reshape(2)
-        start = np.asarray(segment_start, dtype=np.float64).reshape(2)
-        end = np.asarray(segment_end, dtype=np.float64).reshape(2)
-        segment = end - start
-        segment_len_sq = float(np.dot(segment, segment))
-        if segment_len_sq < 1e-12:
-            closest = start
-        else:
-            t = float(np.clip(np.dot(point_np - start, segment) / segment_len_sq, 0.0, 1.0))
-            closest = start + t * segment
-        return float(np.linalg.norm(point_np - closest)), closest
 
     @classmethod
     def _b03_clear_reset_pose_from_right_hand(
@@ -40715,12 +39436,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             )
         return socket_pose
 
-    def _c01_nail_depth(self) -> float:
-        state = self._physics_dof_position("nail_slide_joint")
-        if state is None:
-            return 0.0
-        current, initial = state
-        return float(np.clip(initial - current, 0.0, 0.030))
 
     @staticmethod
     def _c01_nail_head_geometry(
@@ -41767,37 +40482,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             return float(np.max(np.abs(rot[2, :])))
         return float(rot[2, 2])
 
-    def _stack_target_height(
-        self,
-        names: list[str] | tuple[str, ...],
-        vertical_half_extents: dict[str, float] | None = None,
-    ) -> float:
-        extents = vertical_half_extents or {
-            name: self._stack_vertical_half_extent(name, self._poses.get(name, self._fallback_pose(name)))
-            for name in names
-        }
-        return float(
-            sum(2.0 * float(extents[name]) for name in names)
-        )
-
-    def _stack_tower_height(
-        self,
-        poses: dict[str, np.ndarray],
-        names: list[str] | tuple[str, ...],
-        vertical_half_extents: dict[str, float] | None = None,
-    ) -> float:
-        if not names:
-            return 0.0
-        extents = vertical_half_extents or {
-            name: self._stack_vertical_half_extent(name, poses[name])
-            for name in names
-        }
-        table_z = self._current_table_top_z()
-        top_z = max(
-            float(poses[name][2]) + float(extents[name])
-            for name in names
-        )
-        return float(top_z - table_z)
 
     def _block_stack_layer_metrics(
         self,
@@ -41894,31 +40578,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         rot = _quat_wxyz_to_matrix(np.asarray(pose, dtype=np.float64)[3:7])
         return np.abs(rot[:2, :]) @ self._stack_block_half_extents[name]
 
-    def _block_stack_max_speeds(
-        self,
-        names: list[str] | tuple[str, ...],
-    ) -> tuple[float, float, bool]:
-        max_linear_speed = 0.0
-        max_angular_speed = 0.0
-        available_count = 0
-        for name in names:
-            velocity = self._physics_body_velocity(name)
-            if velocity is None:
-                continue
-            available_count += 1
-            max_linear_speed = max(
-                max_linear_speed,
-                float(np.linalg.norm(velocity[:3])),
-            )
-            max_angular_speed = max(
-                max_angular_speed,
-                float(np.linalg.norm(velocity[3:])),
-            )
-        return (
-            max_linear_speed,
-            max_angular_speed,
-            available_count == len(names),
-        )
 
     def _block_stack_hand_metrics(
         self,
@@ -41959,13 +40618,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             "source": source,
         }
 
-    def _block_stack_hand_clearance(
-        self,
-        poses: dict[str, np.ndarray],
-    ) -> tuple[float, bool]:
-        """Compatibility wrapper for callers that only need distance/release."""
-        metrics = self._block_stack_hand_metrics(poses)
-        return float(metrics["min_distance"]), bool(metrics["released"])
 
     @staticmethod
     def _point_to_block_surface_distance(
@@ -42188,14 +40840,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
             width=target_width,
         )
 
-    @staticmethod
-    def _resize_rgb_nearest(frame: np.ndarray, height: int, width: int) -> np.ndarray:
-        src_h, src_w = frame.shape[:2]
-        if src_h <= 0 or src_w <= 0:
-            return np.zeros((height, width, 3), dtype=np.uint8)
-        y_idx = np.clip((np.arange(height) * src_h / height).astype(np.int64), 0, src_h - 1)
-        x_idx = np.clip((np.arange(width) * src_w / width).astype(np.int64), 0, src_w - 1)
-        return frame[y_idx][:, x_idx, :3].astype(np.uint8, copy=True)
 
     def _fallback_camera_frame(
         self,
@@ -43230,12 +41874,6 @@ class HandsOnABCIsaacLabEnv(BimanualAssemblyIsaacLabEnv):
         )
         return obs
 
-    def get_end_effector_pose_matrix(self):
-        right = self._native_end_effector_pose_matrix("right", self._right_tcp_pose)
-        if not self._spec.bimanual:
-            return right
-        left = self._native_end_effector_pose_matrix("left", self._left_tcp_pose)
-        return right, left
 
     def _native_end_effector_pose_matrix(self, side: str, fallback_pose: np.ndarray) -> np.ndarray:
         robot = self._robots.get(side)

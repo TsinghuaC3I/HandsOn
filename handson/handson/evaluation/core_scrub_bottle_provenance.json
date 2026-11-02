@@ -1,0 +1,13 @@
+{
+  "task": "t37_scrub_bottle",
+  "source_commit": "17d1dd8179977cced49ad96ceaea0050a19603eb",
+  "original_module": "dexjoco.sim.isaaclab.abc_collection_env",
+  "original_sha256": "c3fc1090a23b633783174b83a9dfd140e16f0f1479e47a819b34f931f1e209df",
+  "public_module": "handson.sim.isaaclab.core_scrub_bottle_env",
+  "public_sha256": "9c68db8ff402cf367dd22a13e68eeb43227c245cd429ce05bbd423b7bf4b7fe0",
+  "restored_methods": [
+    "_spawn_hs005_task_specific_assets",
+    "_configure_task_collision_safety"
+  ],
+  "scope": "Restore original Core default kitchen layer and collision path; shared controller and approved band-order settings retained. Alternative scene assets are not certified by this repair."
+}

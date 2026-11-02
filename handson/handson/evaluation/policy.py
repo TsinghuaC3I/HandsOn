@@ -49,6 +49,7 @@ class HTTPTransport:
         np.savez(packet, state=state, **{wire: images["main"]},
                  wrist_left=images["wrist_left"], wrist_right=images["wrist_right"],
                  prompt=np.asarray(c["prompt"]), task=np.asarray(c.get("task", "")),
+                 paper_variant=np.asarray(c.get("paper_variant") or ""),
                  seed=np.asarray(seed), request=np.asarray(index))
         body = packet.getvalue()
         for attempt in range(RETRIES + 1):

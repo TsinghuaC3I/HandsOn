@@ -1,0 +1,73 @@
+{
+  "profile": {
+    "version": "v16_pbr_lab_v1",
+    "mode": "randomized",
+    "seed": 1002636465,
+    "task": "ycb01_roll_ball_through_gate",
+    "seed_sha256": "f9b49ca28dc582fe74d603d6953265b862f4bee338894d2b6b148d63b71d1a59",
+    "table": "Wood095",
+    "table_tile_m": 0.7793007552566572,
+    "table_rotate_deg": 0.0,
+    "table_offset": [
+      0.84688308256875,
+      0.7721823154614702
+    ],
+    "table_roughness": 0.42753024651547855,
+    "table_normal_strength": 0.3,
+    "palette": "neutral",
+    "cabinet_color": [
+      0.36,
+      0.43,
+      0.46
+    ],
+    "wall_color": [
+      0.985,
+      0.985,
+      0.975
+    ],
+    "floor_tint": [
+      0.8,
+      0.84,
+      0.86
+    ],
+    "floor_tile_m": 2.290860534735753,
+    "floor_roughness": 0.7458771774670314,
+    "wall_tile_m": 1.5609921566216212,
+    "cabinet_x": 1.5086761168048608,
+    "context_variant": 1,
+    "key_position": [
+      0.44520107725280766,
+      1.7455970003492867,
+      2.573294166146159
+    ],
+    "key_intensity": 1736.9940442295126,
+    "key_temperature": 5604.391973008517,
+    "key_size": [
+      1.2,
+      0.85
+    ],
+    "fill_intensity": 700.0,
+    "rim_intensity": 550.0,
+    "dome_intensity": 89.96285834384658,
+    "spp": 32,
+    "exposure_multiplier": 3.0,
+    "context": true,
+    "ceiling_height": 3.140151302852136,
+    "ceiling_variant": 1,
+    "ceiling_color": [
+      0.97,
+      0.985,
+      1.0
+    ],
+    "ceiling_light_intensity": 182.44014041906664,
+    "ceiling_light_temperature": 5563.014859064075,
+    "wall_roughness": 0.8643026439570463,
+    "wall_normal_strength": 0.07022383295741949,
+    "ceiling_roughness": 0.8067550721743436,
+    "ceiling_normal_strength": 0.04212777040730174,
+    "architectural_palette": "predominantly_white"
+  },
+  "source_metadata_sha256": "500572a43e617419b3343a4d85d2d6e5318a655a05a2b2c1dbb973c3329944e7",
+  "assets_manifest_sha256": "40e0b21effb1a037aa5b1f52af3c5e865b6fb77f566dad16c1fa2870abaf4ae8",
+  "renderer_snapshot_sha256": "08ee7c8cc1d591098263faf933b1c65b1ad37271bb182e77b7a39bb61d1a61a4"
+}

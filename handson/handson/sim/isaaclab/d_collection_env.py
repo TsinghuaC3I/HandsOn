@@ -1091,6 +1091,14 @@ class HandsOnDIsaacLabEnv(XY1CompositionMixin, HandsOnABCIsaacLabEnv):
         if self.task_name == xy1.TASK_NAME:
             self._right_tcp_pose = _YCB01_CLEAR_RIGHT_START_TCP.copy()
             self._left_tcp_pose = _YCB01_CLEAR_LEFT_START_TCP.copy()
+        if self.task_name == "eval_gen04_pass_glue_stick":
+            # GEN4 owns its layout. The paper D-series parent returns here;
+            # D-only sampling would advance its seeded layout stream by eight
+            # MT19937 positions even with a fixed zero table-height range.
+            self.delta_h[:] = 0.0
+            self._d_last_metrics = {}
+            self._d_prev_object_poses = {}
+            return
         low, high = _D_TABLE_HEIGHT_BOUNDS[self.task_name]
         self.delta_h[:] = self._random.uniform(low, high) if self.randomize else low
         self._d_last_metrics = {}

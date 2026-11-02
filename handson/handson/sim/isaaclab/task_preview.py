@@ -644,7 +644,14 @@ _SUCCESS_CONDITION_LABELS = {
         'Upright wine glass released and stable at the plate center',
     ),
     "t34_roll_ball_through_gate": (
-        "Ball centre passed the far Y face",
+        "Ball began fully on start side",
+        "Palm or finger touched ball",
+        "Ball/hand contact monitoring is ready",
+        "Neither ball nor hand touched either gate box",
+        "Ball centre crossed start-to-far inside opening",
+        "Full ball reached far side",
+        "Ball stayed table-supported; not lifted or thrown",
+        "Both YCB gate boxes remain intact",
     ),
     "t27_place_largest_fitting_ball": (
         "Correct largest-fitting ball was touched and lifted",
@@ -1522,8 +1529,11 @@ def _task_arm_home(task_name: str | None) -> dict[str, tuple[float, ...]]:
         | _B320_SEASONING_START_TASKS
     ):
         return _C_TOOL_SPREAD_ARM_HOME
-    if task_name in {"t26_place_fruit_in_bucket", xy3.TASK_NAME}:
+    if task_name == xy3.TASK_NAME:
         return _A01_CLEAR_ARM_HOME
+    if task_name == "t26_place_fruit_in_bucket":
+        # Core-50 paper source d905ec6d; Transfer keeps its own start pose.
+        return {"right": _TASK_ARM_HOME["right"], "left": _RAISED_ARM_HOME["left"]}
     if task_name in {
         "t03_cover_box",
         xy5.TASK_NAME,
@@ -2259,7 +2269,7 @@ def _repair_d09_coffee_machine_material(
 
 
 def _hide_c04_spray_visual(stage, root_path: str, task_name: str) -> int:
-    if not _is_50_water_plant_task(task_name):
+    if not (_is_50_water_plant_task(task_name) or task_name == "eval_gen06_spray_shoe"):
         return 0
 
     from pxr import Usd, UsdGeom
@@ -2361,6 +2371,23 @@ def _remove_c04_isaac_hidden_visuals(root: ET.Element, task_name: str) -> int:
                 retained.append(element)
         body[:] = retained
     return removed
+
+
+def _apply_t18_paper_target_positions(root: ET.Element, task_name: str) -> int:
+    """Retain the two helper anchors from the paper's bb00df54 task asset.
+
+    These are non-colliding mocap helpers, not the robot's reset TCP poses.
+    The shared arena asset later lowered them for other task versions.
+    """
+    if task_name != "t18_open_micropipette_box":
+        return 0
+    for name, position in (("target_right", "-.10 -.18 1.16"),
+                           ("target_left", "-.10 .18 1.16")):
+        body = root.find(f".//body[@name='{name}']")
+        if body is None or body.get("mocap") != "true":
+            raise ValueError(f"Core micropipette scene is missing its paper helper {name}")
+        body.set("pos", position)
+    return 2
 
 
 def _remove_mocap_target_helper_geoms(root: ET.Element) -> int:
@@ -3022,6 +3049,25 @@ def _apply_c06_stable_camera_reset_pose(root: ET.Element, task_name: str) -> int
     position[2] = f"{_C06_ISAAC_CAMERA_ROOT_Z:.6f}"
     camera.attrib["pos"] = " ".join(position)
     camera.attrib["quat"] = "1 0 0 0"
+    return 1
+
+
+def _apply_b05_paper_lid_collision(root: ET.Element, task_name: str) -> int:
+    """Restore the Core paper's box collider before computing rigid-body inertia.
+
+    Source d905ec6d60bc702399782f77c82fbace396139e7 uses half extents
+    (0.146, 0.2145, 0.010), with the visual mesh kept separate. The later
+    rounded mesh hull changes both contact geometry and inferred inertia.
+    Transfer's independently authored box scene retains its own collider.
+    """
+    if task_name != "t03_cover_box":
+        return 0
+    body = root.find(".//body[@name='Box_lid']")
+    collision = None if body is None else body.find("geom[@name='Box_lid_collision_1']")
+    if collision is None:
+        raise ValueError("Core box scene is missing its paper lid collider")
+    collision.attrib.pop("mesh", None)
+    collision.attrib.update(type="box", size="0.146 0.2145 0.010", mass="0.04")
     return 1
 
 
@@ -4079,6 +4125,7 @@ def prepare_task_mjcf(
     _apply_b02_isaac_reset_repair(root, task_name)
     _apply_a01_analytic_fruit_collisions(root, task_name)
     _apply_ycb01_physical_truth(root, task_name)
+    _apply_b05_paper_lid_collision(root, task_name)
     _apply_b04_analytic_small_block_collisions(root, task_name)
     _remove_b04_wood_block_visual_collision(root, task_name)
     _apply_c07_hollow_vessel_collision_repair(root, task_name)
@@ -4096,6 +4143,7 @@ def prepare_task_mjcf(
     _apply_ycb02_hollow_c_rim_collision(root, task_name)
     _apply_ycb04_hollow_rim_collisions(root, task_name)
     _apply_ycb04_task_filter(root, task_name)
+    _apply_t18_paper_target_positions(root, task_name)
     _remove_mocap_target_helper_geoms(root)
     _remove_c06_target_region_visual(root, task_name)
     _apply_04_cover_pitcher_collision_repair(root, task_name)
@@ -4329,6 +4377,9 @@ def task_usd_cache_dir(
         cache_task_name += f"_selected_{asset_content_digest()[:20]}"
     if task_name == "t27_place_largest_fitting_ball":
         cache_task_name += f"_{_YCB02_FOUR_BALL_ROWS_USD_CACHE_REVISION}"
+    if task_name == "t18_open_micropipette_box":
+        # The converter configuration hash does not include transformed MJCF.
+        cache_task_name += "_paper_target_anchors_v1"
     if task_name == "t41_sort_nested_cups":
         cache_task_name += f"_{_YCB04_ISOLATED_CUPS_USD_CACHE_REVISION}"
     if task_name == _YCB07_TASK_NAME:

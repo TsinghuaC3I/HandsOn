@@ -45,6 +45,7 @@ class TaskConfig(TaskConfigBase):
         render_mode: Literal["rgb_array", "human"] = "human",
         randomize=True,
         sim_backend: Literal["mujoco", "isaacsim"] | None = None,
+        paper_variant: str | None = None,
         **kwargs,
     ):
         kwargs.setdefault("time_limit", 120.0)
@@ -60,9 +61,12 @@ class TaskConfig(TaskConfigBase):
                 f"contact truth, and requires sim_backend='isaacsim', got {sim_backend!r}."
             )
 
-        from ...sim.isaaclab.t06_fit_device_cover_env import (
-            HandsOnG02RepairCloseDeviceIsaacLabEnv,
-        )
+        from ...evaluation.paper_variants import load
+        variant = load(self.task_name, paper_variant)
+        if variant is None:
+            from ...sim.isaaclab.t06_fit_device_cover_env import HandsOnG02RepairCloseDeviceIsaacLabEnv
+        else:
+            from ...sim.isaaclab.core_device_cover_legacy_env import HandsOnG02RepairCloseDeviceIsaacLabEnv
 
         env = HandsOnG02RepairCloseDeviceIsaacLabEnv(
             self.task_name,
@@ -70,7 +74,16 @@ class TaskConfig(TaskConfigBase):
             randomize=randomize,
             **kwargs,
         )
-        self.attach_prompt_overlay(env)
+        if variant is None:
+            self.attach_prompt_overlay(env)
+        else:
+            # Keep one reusable config object from leaking a variant's prompt
+            # into its next default construction.
+            import copy
+            overlay = copy.copy(self)
+            overlay.task_prompt = variant["language_goal"]["canonical"]
+            overlay.attach_prompt_overlay(env)
+        env.paper_variant = paper_variant
         if policy_mode:
             env = DualArmPolicyWrapper(env)
         else:

@@ -1,0 +1,325 @@
+{
+  "original_helper_sha256": "8d180eb933c7fd97ab08156bd7f1f304b233c9210042dcbe766ce181295ec698",
+  "cases": [
+    {
+      "task": "t01_align_blocks_in_midair",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 2671738486,
+          "reset": 1941996054,
+          "camera": 1393882423,
+          "appearance": 25751467,
+          "policy": 299139581
+        },
+        "short_id": "BC021",
+        "setting_id": "new",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t05_fill_cup",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 1743118856,
+          "reset": 1919393516,
+          "camera": 251609256,
+          "appearance": 2899363500,
+          "policy": 3803919981
+        },
+        "short_id": "KA021",
+        "setting_id": "main",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t12_load_and_start_microwave",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 2810045424,
+          "reset": 205136018,
+          "camera": 2209440510,
+          "appearance": 2915802440,
+          "policy": 4226629643
+        },
+        "short_id": "D02",
+        "setting_id": "cracker_box",
+        "setting_draw": 0,
+        "setting_draw_denominator": 2,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t13_load_cans",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 4036649380,
+          "reset": 2942022363,
+          "camera": 3540469294,
+          "appearance": 4270248561,
+          "policy": 1495418851
+        },
+        "short_id": "BC012",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t15_open_drawers",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 141775192,
+          "reset": 4123924586,
+          "camera": 2879011780,
+          "appearance": 533647608,
+          "policy": 2029851890
+        },
+        "short_id": "BC017",
+        "setting_id": "large_upper_contact",
+        "setting_draw": 20444,
+        "setting_draw_denominator": 32860,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t20_pass_and_orient_pen",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 2721940415,
+          "reset": 1212474224,
+          "camera": 3295788157,
+          "appearance": 2389172843,
+          "policy": 1717351372
+        },
+        "short_id": "BC011",
+        "setting_id": "black_pen_negative_x",
+        "setting_draw": 0,
+        "setting_draw_denominator": 2,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t21_pass_block",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 1750755582,
+          "reset": 1220123372,
+          "camera": 574045769,
+          "appearance": 3180680988,
+          "policy": 2161347716
+        },
+        "short_id": "D03",
+        "setting_id": "friction_4_2p5",
+        "setting_draw": 1,
+        "setting_draw_denominator": 2,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t30_pour_seasonings",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 3929213533,
+          "reset": 835862621,
+          "camera": 1321816896,
+          "appearance": 2403626786,
+          "policy": 256962843
+        },
+        "short_id": "BC014",
+        "setting_id": "pour_cap_4s",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t31_prepare_coffee",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 251990718,
+          "reset": 3289234041,
+          "camera": 3227571058,
+          "appearance": 1956527886,
+          "policy": 3899074670
+        },
+        "short_id": "D09",
+        "setting_id": "narrow_tray",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t32_press_soap_pump",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 1963528231,
+          "reset": 1854422349,
+          "camera": 1977879482,
+          "appearance": 3171728668,
+          "policy": 3646117834
+        },
+        "short_id": "KA020",
+        "setting_id": "majority_rule",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t37_scrub_bottle",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 2548220542,
+          "reset": 2407586925,
+          "camera": 3995002165,
+          "appearance": 544401847,
+          "policy": 1011888003
+        },
+        "short_id": "HS005",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t38_set_dual_knobs",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 3053489801,
+          "reset": 2714706009,
+          "camera": 4222927082,
+          "appearance": 1397683662,
+          "policy": 3851484887
+        },
+        "short_id": "KA005-2",
+        "setting_id": "knob_pair_52",
+        "setting_draw": 52,
+        "setting_draw_denominator": 64,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t42_sort_objects",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 1992435484,
+          "reset": 3866178775,
+          "camera": 3036553863,
+          "appearance": 623477753,
+          "policy": 3433565053
+        },
+        "short_id": "D06",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t43_squeeze_scissors",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 314478941,
+          "reset": 1242672308,
+          "camera": 779458457,
+          "appearance": 65915765,
+          "policy": 3782029153
+        },
+        "short_id": "D05",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t45_stir_pot",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 3547809336,
+          "reset": 925979940,
+          "camera": 4027718541,
+          "appearance": 3357008282,
+          "policy": 567596407
+        },
+        "short_id": "KA012",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    },
+    {
+      "task": "t46_store_charger",
+      "master_seed": 42,
+      "episode_index": 17,
+      "expected": {
+        "protocol": "b-pi05-v1-clean-unified",
+        "seeds": {
+          "setting": 1635315466,
+          "reset": 582828055,
+          "camera": 3537607047,
+          "appearance": 1719043783,
+          "policy": 3333966306
+        },
+        "short_id": "FU006",
+        "setting_id": "native",
+        "setting_draw": 0,
+        "setting_draw_denominator": 1,
+        "forced_for_validation": false
+      }
+    }
+  ]
+}

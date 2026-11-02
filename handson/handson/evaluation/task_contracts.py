@@ -4,20 +4,22 @@ import os
 from pathlib import Path
 
 from .contracts import require, write_new
-from ..tasks.registry import TASKS, native_contracts
+from ..tasks.registry import TASKS
 
 
-def load(task):
-    return TASKS[task].native_contract()
+def load(task, paper_variant=None):
+    return TASKS[task].native_contract(paper_variant)
 
 
-def configure(task):
-    contract = load(task)
-    # The original worker starts with a clean task-control environment.
-    records = native_contracts()
-    keys = {key for value in records.values() for key in value['control_environment']}
-    for key in keys:
-        os.environ.pop(key, None)
+def configure(task, paper_variant=None):
+    contract = load(task, paper_variant)
+    # The paper worker clears every source-prefixed variable before applying
+    # the recorded controls. Clearing only known contract keys leaves optional
+    # solver, IK and scene overrides active when they were absent in the run.
+    # Runtime paths and per-trial overrides are installed by the caller next.
+    for key in list(os.environ):
+        if key.startswith('HANDSON_'):
+            del os.environ[key]
     if contract is not None:
         os.environ.update(contract['control_environment'])
     return contract
@@ -27,7 +29,7 @@ def initialize(env, wrapped, observation, reset_info, contract, output):
     import hashlib
     import importlib
     implementations = json.loads(Path(__file__).with_name('origin_implementations.json').read_text())
-    implementation = implementations.get(env.task_name)
+    implementation = (contract or {}).get('origin_implementation', implementations.get(env.task_name))
     if implementation is None:
         from ..sim.isaaclab import recording_origin
     else:
@@ -37,7 +39,7 @@ def initialize(env, wrapped, observation, reset_info, contract, output):
         write_new(output / 'ORIGIN_IMPLEMENTATION.json', implementation)
         from .contact_numeric import CHECKED_SOURCE_PAIRS, install_checked_copy_layout
         traces = json.loads(Path(__file__).with_name('trace_implementations.json').read_text())
-        producer = traces[env.task_name]
+        producer = (contract or {}).get('trace_implementation', traces[env.task_name])
         pair = (implementation['source_sha256'], producer['source_sha256'])
         if pair in CHECKED_SOURCE_PAIRS:
             receipt = install_checked_copy_layout(recording_origin, implementation, producer)
@@ -56,12 +58,13 @@ def initialize(env, wrapped, observation, reset_info, contract, output):
     return recording_origin.stabilize_recording_origin(env, observation, reset_info, **kwargs)
 
 
-def install_native_trace(task, output):
+def install_native_trace(task, output, paper_variant=None):
     """Pair each frozen origin gate with its original contact serializer."""
     import hashlib
     import importlib
     implementations = json.loads(Path(__file__).with_name('trace_implementations.json').read_text())
-    implementation = implementations.get(task)
+    contract = load(task, paper_variant)
+    implementation = (contract or {}).get('trace_implementation', implementations.get(task))
     if implementation is None:
         return
     module = importlib.import_module(implementation['module'])
@@ -78,7 +81,7 @@ def install_native_trace(task, output):
     else:
         trace_type = source_type
     bimanual_assembly_env.PhysxGroundTruthTrace = trace_type
-    paired_base = TASKS[task].trace_environment_module
+    paired_base = TASKS[task].evaluation_adapter(paper_variant).spec.trace_environment_module
     if paired_base:
         base = importlib.import_module("handson.sim.isaaclab." + paired_base)
         base.PhysxGroundTruthTrace = trace_type

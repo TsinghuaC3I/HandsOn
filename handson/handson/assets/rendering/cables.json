@@ -1,7 +1,7 @@
 {
   "schema": "handson.wrist_cable_routing.v1",
   "hardware": "rokae_ar5_5_08_wuji1",
-  "visual_bundle_sha256": "752cacb613433e9e82b55efe93a170a987730a95a19dd94025ec14ac058403ce",
+  "visual_bundle_sha256": "4060eafd007910b04b9a389c0e5973f7c2b299cde57ce64bf105fe1344d9bf05",
   "radius_m": 0.0038,
   "role": "visual routing approximation; no cable physics",
   "sides": {

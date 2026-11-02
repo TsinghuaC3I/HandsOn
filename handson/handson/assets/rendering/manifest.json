@@ -1,7 +1,7 @@
 {
   "schema": "handson.render_assets",
   "files": {
-    "cables.json": "4a301fcf3152a551f86703d16170a5bd76fcac3fac83ededecdfa6fbee3e8711",
+    "cables.json": "4cf7350d21b02f04306495f045fa83ec8940135f17827846406eb362804ad3ac",
     "materials/ASSETS.json": "40e0b21effb1a037aa5b1f52af3c5e865b6fb77f566dad16c1fa2870abaf4ae8",
     "materials/Concrete048/Color.jpg": "46e5f6a7670eb797ecbd6f6a45497d3cb4d9f44fac25792d9253a948bde28c9a",
     "materials/Concrete048/NormalGL.jpg": "b36f38f3ae9e706918616f777e5772cd00acf19cfb02de5e5431d8c42a7fbd3e",

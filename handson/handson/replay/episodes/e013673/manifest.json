@@ -1,0 +1,190 @@
+{
+  "format": "handson.episode_replay.v2",
+  "episode": "e013673",
+  "task": "t06_fit_device_cover",
+  "paper_variant": "stabilize_body",
+  "recorded_task": "g02_repair_close_device",
+  "recorded_source_commit": "59d128d30062a25e3283da344e4de6fe777de2d5",
+  "dataset_revision": "7ad38776d91e4e13c02dad4e6ad892e8b8a1d187",
+  "public_parquet_sha256": "104b12a05bca3fc5b611e432ce841993a240b013ead6b2c91c4c53c99c4d1b80",
+  "source_archive_sha256": "72293fab6a6d524eb40108ff96c0875285643070ca11fe694bccad035c586e6e",
+  "source_replay_manifest_sha256": "820e0ec3c87688489d9c96be7fdabcea4825929f68a74f58c53447d927ee8dd0",
+  "source_recording_schema_sha256": "919445481351dc5177487ee5aa833f3544a20fa58f5e6f49cf884e6ffce9dd11",
+  "construction_seed": 1050157404,
+  "reset_seed": 1050157406,
+  "action_count": 720,
+  "recorded_success_label_actions": [
+    720
+  ],
+  "source_success_label_is_first_native_success": false,
+  "current_checker": "Frozen 59d128d3 left-body/right-cover task; no tolerance relaxation",
+  "put_task_bodies_to_sleep": false,
+  "snapshot_shapes": {
+    "physx_command_hand": [
+      2,
+      20
+    ],
+    "physx_command_hand_valid": [
+      2,
+      20
+    ],
+    "physx_command_tcp_pose": [
+      2,
+      7
+    ],
+    "physx_control_step": [
+      1
+    ],
+    "physx_pose_commanded": [
+      2
+    ],
+    "physx_pose_filter_state": [
+      2,
+      14
+    ],
+    "physx_pose_filter_valid": [
+      2
+    ],
+    "physx_rng_mt19937_cached_gaussian": [
+      1
+    ],
+    "physx_rng_mt19937_has_gauss": [
+      1
+    ],
+    "physx_rng_mt19937_keys": [
+      624
+    ],
+    "physx_rng_mt19937_position": [
+      1
+    ],
+    "physx_rng_seed": [
+      1
+    ],
+    "physx_robot_joint_effort": [
+      2,
+      27
+    ],
+    "physx_robot_joint_effort_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_position": [
+      2,
+      27
+    ],
+    "physx_robot_joint_target": [
+      2,
+      27
+    ],
+    "physx_robot_joint_target_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_velocity": [
+      2,
+      27
+    ],
+    "physx_robot_root_state": [
+      2,
+      13
+    ],
+    "physx_robot_root_valid": [
+      2
+    ],
+    "physx_sim_time": [
+      1
+    ],
+    "physx_task_rigid_body_state": [
+      2,
+      13
+    ],
+    "physx_task_rigid_body_valid": [
+      2
+    ],
+    "physx_tcp_state": [
+      2,
+      13
+    ],
+    "physx_tcp_valid": [
+      2
+    ]
+  },
+  "task_state_shapes": {
+    "tcp_pose": [
+      14
+    ],
+    "gripper_pose": [
+      32
+    ],
+    "device_body_pose": [
+      7
+    ],
+    "device_cover_pose": [
+      7
+    ],
+    "cover_to_body": [
+      7
+    ],
+    "alignment_metrics": [
+      8
+    ],
+    "contact_metrics": [
+      9
+    ],
+    "table_delta_height": [
+      1
+    ]
+  },
+  "runtime_files": {
+    "tasks/t06_fit_device_cover/config.py": "ce9253fc1f2d0cfded1efba1b83624b8040155cd802ab028ef0d779c7baacba3",
+    "eef52.py": "38412002a368fdc365464a17fa54d78efa02ba11f046cc3e92079ba81005e807",
+    "replay/__main__.py": "c12e64ab895694edaa93d58174ffaaaef3dd8d4acd5e03df0cf1f912fe6bf897",
+    "replay/bundle.py": "d57210e5b2d5606044232da4d8c66233c673c28009308854c9c693858a40df94",
+    "replay/runtime.py": "1a1597808854412b2331ff5a496d47faa20fd90797c5ed1924582e01f4ef141d",
+    "replay/control.py": "e0c3cd7c159bd655dfaa333faa084673c0b1ba2ca767c1cf3f7055fe9252f2a8",
+    "evaluation/device_cover_stabilize_body.json": "ce11a6772ca8b0d083b667b34bd57cf62b4021a9c53c5dc14cbcb769bd511210",
+    "evaluation/paper_variants.py": "4deb758dd0b5b7a79041396391afefd2800fa48b25cc7f9680a1b954e1c4b7d8",
+    "evaluation/native.py": "5b7f31e2abd00dad524bc9898b78506dea7a30e8b214ac371e688bd6546d0338",
+    "evaluation/task_contracts.py": "ae6c793bdf9e3415383ee8005bf2e2fc5b63d2342aaf772b761aaa09570da4aa",
+    "sim/isaaclab/task_preview.py": "8dcd852901ad9d253298a1ae9036729a963c9d88e6d81739b94837fdb450214b",
+    "sim/isaaclab/default_appearance.py": "def9cafbdf31da913b2ecbb716cfc676dc20726b708f8423d52b39ba6c57cfe0",
+    "sim/isaaclab/room_appearance.py": "36402c8703f2d81ed17220d8f26c9a6b8fc9a5659c432c2243106741162441bc",
+    "assets/rendering/materials/ASSETS.json": "40e0b21effb1a037aa5b1f52af3c5e865b6fb77f566dad16c1fa2870abaf4ae8",
+    "sim/isaaclab/core_device_cover_legacy_env.py": "0b07b773250ce4a189d3660eb8eb335b8b0b63948917ab6d45eb8c90c6ea27e4",
+    "sim/isaaclab/core_device_cover_legacy_abc.py": "038f9457e591091ce05cb7fe3968f64b2d4595f508567a13f68b7e237e69f7be",
+    "sim/isaaclab/core_device_cover_legacy_base.py": "6b41187af1fdba2a6dc71060b4012f96ff155e2891edfd46c5210c2e0c0535bf",
+    "sim/isaaclab/core_device_cover_legacy_scene.py": "022e8ec59f0bfa378fb3ff4e1555861a1f19af21b02fa8a45a805eaa4cfb8a2a",
+    "sim/isaaclab/core_device_cover_legacy_h01.py": "457a04a4ec888fa8393d01cffa18ec40c75dbbc0e305671dc1e595063f6e6e2e",
+    "sim/isaaclab/origins/native_1b733a0f70d8.py": "b09b8d9c25060944074dcc965428defd4ab2c1675c626fda0404391cc6aaa71a",
+    "sim/isaaclab/origins/trace_30896f62f36f.py": "2dc0b7b373b1b0debd34eac643eff96664910fd18fc46a4b9d22258dba5ac31b",
+    "evaluation/cameras.py": "c2d9f683a29bfd5144474dfdb25c178d19e0bf620d09db9c3a2d53e899c7ce62",
+    "evaluation/camera_contracts.py": "719bda4acc19abecf9e24669073be19449bfd4db74f126f6582379e242ea9988",
+    "evaluation/paper_camera_contracts.json": "fdf1da4cb13df402ef7b7256d9447d13ebf6dfb33f20c6ebfcf0f088c8aa76bc",
+    "sim/isaaclab/calibrated_cameras.py": "327c6bc88f377b5b887ca120b59d94b553f28dfa3af9e46df9aa17ac400cfb18",
+    "sim/isaaclab/task_surfaces.py": "3ff44ee2903bfe3a66eef9fd7badae430ce149244eb78badcf269c6bed6df3e5",
+    "sim/isaaclab/blender_visual_layer.py": "152dc9d406e2af7cacc63d561925cd6d01dd02421d45a88cc3d9bd2044a3ff8b",
+    "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+    "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+  },
+  "files": {
+    "appearance.json": "3739e663e3908ca1819629c367cc4e174a93283b2f925aef391bce9a1d228a01",
+    "camera_jitter.json": "69a9df9fdb4c744028646e9e2fbae5bfa0d2a7ed24d9f558e35edfbdd0a19d19",
+    "commands.npz": "49156996b6f3ef9cf93ffc1e592a1fabc6a9f304906025ae170496685619cb38",
+    "initial_snapshot.npz": "c6d097a942b644ec615cad24f6d9cfea3041e1aefbb8ec675096a2de9b158139",
+    "joint_targets.npz": "daeaf8cd8757faedbbc2b3141ce6547f7ab1ff9af70d59c8b45b2e61fd5ab29f",
+    "physics_schema.json": "fd1123dda41d230d3e5b36663afcf7d9ce04ab5db1846adf2d0532daca6ede23",
+    "reference.npz": "a195727aeef7bdebe4676c111196182296846e1e540d7bae732263254b2ca89e",
+    "task_state.npz": "779bfe729adaa0a20618a6240e9f94c911eebfb5279fe15cce8acca20e842fc6"
+  },
+  "control_modes": [
+    "eef52",
+    "recorded_joint_targets"
+  ],
+  "validation_scope": "Original-source versus restored-source controls passed; packaged execution must be verified independently. EEF52-only replay did not reach success in the source control. Recorded joint targets reached success but are not exact historical-state replay.",
+  "formal_benchmark_trial": false,
+  "exact_historical_state_replay_certified": false
+}

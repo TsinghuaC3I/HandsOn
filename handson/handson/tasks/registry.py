@@ -2,7 +2,7 @@
 
 Imports stay lightweight: native task implementations load only on demand.
 """
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import json
 from pathlib import Path
 from types import MappingProxyType
@@ -23,16 +23,23 @@ class TaskSpec:
     force_scoring: bool = False
     terminal_contact_flag: str = ""
 
-    def native_contract(self):
+    def native_contract(self, paper_variant=None):
+        from ..evaluation.paper_variants import load
+        variant = load(self.name, paper_variant)
+        if variant is not None:
+            return variant["native_contract"]
         return native_contracts().get(self.name)
 
     def goal(self, env):
         from . import goal_readers
         return getattr(goal_readers, self.goal_reader)(env)
 
-    def evaluation_adapter(self):
+    def evaluation_adapter(self, paper_variant=None):
         from ..evaluation.task_adapters import NativeTaskAdapter
-        return NativeTaskAdapter(self)
+        from ..evaluation.paper_variants import load
+        variant = load(self.name, paper_variant)
+        spec = replace(self, **variant["adapter"]) if variant is not None else self
+        return NativeTaskAdapter(spec)
 
 
 _CONFIG_MODULES = {
@@ -107,12 +114,19 @@ _CONFIG_MODULES = {
 # Task-specific behavior is registered here, outside the shared rollout.
 _OVERRIDES = {
     "t03_cover_box": dict(camera_environment_module="core_box_env", trace_environment_module="core_box_base"),
+    "t04_cover_pitcher": dict(camera_environment_module="core_pitcher_env", trace_environment_module="core_pitcher_base"),
+    "t19_orient_cup_upright": dict(camera_environment_module="core_pitcher_env", trace_environment_module="core_pitcher_base"),
+    "t50_water_plant": dict(camera_environment_module="core_pitcher_env", trace_environment_module="core_pitcher_base"),
+    "t23_photograph_logo": dict(camera_environment_module="core_photograph_env", trace_environment_module="core_photograph_base"),
+    "t44_stack_blocks": dict(camera_environment_module="core_stack_env", trace_environment_module="core_pitcher_base"),
     "t09_insert_peg": dict(camera_environment_module="core_peg_env", trace_environment_module="core_peg_base"),
     "t22_pass_screwdriver": dict(bridge="as019_bridge"),
     "t10_lift_carton": dict(force_scoring=True),
     "t11_line_up_blocks": dict(terminal_contact_flag="c12_direct_hand_contact"),
-    "t26_place_fruit_in_bucket": dict(goal_reader="fruit"),
-    "t24_place_ball_in_bowl": dict(goal_reader="ball"),
+    "t26_place_fruit_in_bucket": dict(goal_reader="fruit", camera_environment_module="core_box_env", trace_environment_module="core_box_base"),
+    "t24_place_ball_in_bowl": dict(goal_reader="ball", camera_environment_module="core_box_env", trace_environment_module="core_box_base"),
+    "t25_place_cup_on_plate": dict(camera_environment_module="core_box_env", trace_environment_module="core_box_base"),
+    "t14_move_and_click_mouse": dict(camera_environment_module="core_box_env", trace_environment_module="core_box_base"),
     "t27_place_largest_fitting_ball": dict(goal_reader="fitting_cup"),
     "t28_place_tableware": dict(goal_reader="tableware"),
     "t39_set_timer": dict(goal_reader="timer"),

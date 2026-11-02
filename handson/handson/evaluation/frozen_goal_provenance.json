@@ -1,0 +1,9 @@
+{
+  "source_result_sha256": "752872393dd914b5d318788dff12ce3b9fc32d7b96906e9d822cd0f568941e38",
+  "source_job_sha256": "b193af55b23deee91c028c41c0038a6ed38a4b4ed317ca96289ecd5158d4532d",
+  "sources": {
+    "task_dispatch_c006.py": "de9c33d5db6936c3db802847bd77ec71f99699e87729f641bc8437c8aa16e168",
+    "goal_runtime.py": "b6fe69663555520c875304c63103c794adba1d3dfea2f4b8cc38a23ac81ad60c"
+  },
+  "scope": "Conditioning algorithms recovered from an actual paper attempt. Public hooks are scoped to one attempt and preserve the native complete reset draws; full historical scene equivalence is not implied."
+}

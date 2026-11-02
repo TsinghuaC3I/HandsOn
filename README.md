@@ -138,6 +138,20 @@ python -m handson.evaluation --model openwam --task t12_load_and_start_microwave
 ```
 
 The model profile selects the correct execution length and history settings.
+For the archived inputs of a Core-50 paper trial, replace `--seed 0` with
+`--paper-trial 0` (indices 0–99). This selects the recorded accepted reset
+candidate, goal, instruction and task setting for that model. The same inputs
+can be inspected without starting the simulator:
+
+```bash
+python -m handson.evaluation --model openwam --task t24_place_ball_in_bowl \
+    --paper-trial 0 --inspect-paper-trial
+```
+
+This restores inputs, not a historical simulator snapshot or the campaign's
+retry scheduler. See [the alignment audit](docs/trajectory-alignment.md#archived-core-trial-inputs)
+for validation coverage and remaining gaps.
+
 The default evaluator uses the paper's native EEF52 execution and three-view
 capture code. A custom OpenPI websocket policy can also use the transport entry:
 
@@ -149,8 +163,9 @@ python -m handson.evaluation --task t12_load_and_start_microwave \
 
 All 66 PhysX tasks use this entry. Actions execute at 30 Hz under the published
 3×P75 budgets (with three deformable-task native-duration exceptions).
-Task settings are selected before construction; one instruction is sampled
-from the paper language bank for the actual reset goal. See [the policy contract](docs/custom_policy_integration.md)
+Task settings are selected before construction. In seed-only mode, one
+instruction is sampled from the paper language bank for the actual reset goal;
+`--paper-trial` uses the archived goal and instruction instead. See [the policy contract](docs/custom_policy_integration.md)
 for transports, checkpoint identity, history inputs and scoring exceptions.
 
 The previous `handson_openpi_client.cli.evaluate --config ...` command is an
@@ -160,9 +175,11 @@ hand, prompt and timeout fields do not override the packaged protocol.
 ## Default rendering
 
 The release includes ROKAE arm and Wuji hand meshes, converted visual layers,
-routed wrist cables, station CAD and PBR room materials. Preview, native
-environment and replay use these bundled assets by default. They are installed before physics initialization; task
-objects, collision geometry, controllers and success conditions are preserved.
+routed wrist cables, station CAD and PBR room materials. Core evaluation also
+loads the recorded task-object surface layers; Transfer retains its native
+task-object appearance. These resources are installed before physics
+initialization, preserving collision geometry, controllers and native success
+conditions. See [the restoration audit](docs/trajectory-alignment.md) for scope.
 The renderer uses path tracing with 32 samples per pixel. No appearance switch
 is required. Missing or altered assets produce an integrity error.
 
@@ -230,6 +247,32 @@ print(sample["action"].shape)             # (16, 52)
 The reader indexes frames and provides episode-end padding masks, active-side
 masks and three camera images. See the dataset card for schema and split details.
 
+## Expert action replay
+
+Matching an EEF52 robot state or reset seed does not restore a historical scene.
+For `e015401` (`t34_roll_ball_through_gate`), an additional initial-state bundle
+and the public expert commands are included:
+
+```bash
+python -m handson.replay --episode e015401 --check
+python -m handson.replay --episode e015401 --output outputs/e015401
+```
+
+See [expert replay](docs/expert-replay.md) for the tested scope, initialization
+data, and differences between the historical and current task versions. This
+entry restores state only before action execution and does not produce a policy
+benchmark score. A second bundled example, `e013673`, distinguishes public
+EEF52 replay from recovered motor-target replay; see the same guide for its
+commands and measured limitations. Other episodes are not yet bundled.
+
+The [alignment audit](docs/trajectory-alignment.md) separates task startup,
+paper-source bindings and historical expert replay. To inspect the pinned public
+dataset's episode/source mapping without starting the simulator:
+
+```bash
+python -m handson.replay.provenance --episode e015401
+```
+
 ## Task acceptance
 
 `taskdev/` contains the fail-closed contract used to accept each task.  Every
@@ -274,11 +317,12 @@ and language protocol.
 | Newton demonstration dataset | To be released |
 | Policy checkpoints | not redistributed; see the manuscript |
 
-Determinism: each environment is seeded through `--seed`; the task's own
-reset-layout sampling is seeded. Public task names change task-keyed language,
-camera and setting draws, so an integer seed alone does not recreate a historical
-manuscript trial. Simulator/driver differences and native reset rejection must
-also be recorded.
+Determinism: seed-only evaluation uses `--seed` for native reset-layout sampling.
+An integer seed alone does not specify the historical model-specific goal,
+instruction or trial-index-dependent task setting. `--paper-trial` restores those
+archived inputs for Core-50. Simulator/driver differences and native reset
+rejection must still be recorded; the evaluator does not automatically replace
+an archived reset candidate.
 
 ## Contributing
 

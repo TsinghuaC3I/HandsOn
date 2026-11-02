@@ -31,7 +31,8 @@ def render_probe(env, job, output, number, seed, phase, capture, *, save_png=Tru
     from ..sim.isaaclab.default_appearance import verify_environment
     from ..sim.isaaclab.wrist_cable_visuals import update_wrist_cables
 
-    contract = json.loads(Path(__file__).with_name("camera_contract.json").read_text())
+    from .camera_contracts import current
+    contract = current()
     cameras = env._cameras
     require(set(SENSORS.values()) <= set(cameras), "Native three-view cameras missing")
     before = capture(env)

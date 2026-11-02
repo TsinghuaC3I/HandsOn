@@ -5089,7 +5089,7 @@ def test_rigid_grasp_writer_prefers_articulation_root_and_keeps_motion() -> None
             raise AssertionError(f"rigid writer should not be used: {name}")
 
     env = HandsOnABCIsaacLabEnv(
-        "c08_tongs_ice_cubes",
+        "t36_scoop_marbles",  # Registered task; fake views below isolate the writers.
         launch_isaac=False,
         image_obs=False,
     )
@@ -5260,7 +5260,7 @@ def test_successful_abc_state_writers_increment_action_phase_audit(
             self.velocities = values.clone()
 
     env = HandsOnABCIsaacLabEnv(
-        "c08_tongs_ice_cubes",
+        "t36_scoop_marbles",  # Registered task; fake views below isolate the writers.
         launch_isaac=False,
         image_obs=False,
         isaac_device="cpu",

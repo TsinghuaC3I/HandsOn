@@ -1,0 +1,625 @@
+{
+  "bitwise_checkpoint": false,
+  "requires_fresh_process_certification": true,
+  "requires_cuda_backend": true,
+  "cpu_backend_exception": "",
+  "certification_forbids_state_writes": false,
+  "allows_single_recorded_t0_restore": true,
+  "certification_forbids_state_writes_after_action_start": true,
+  "deterministic_kinematic_hand_inputs": false,
+  "capture_mode": "read_only_live_public_tensor_and_contact_report_snapshot",
+  "unavailable_public_state": [
+    "persistent_contact_manifold_feature_matching_cache",
+    "solver_friction_patch_cache_beyond_reported_anchors",
+    "solver_warm_start_impulses_and_lagrange_multipliers",
+    "solver_island_sleep_ccd_broadphase_and_pair_caches"
+  ],
+  "contact_report": {
+    "available_in_this_runtime": true,
+    "capture_api": "IPhysxSimulation.subscribe_contact_report_events+get_full_contact_report, with RigidContactView.get_contact_data/get_friction_data fallback",
+    "buffer_lifetime": "one_simulation_step",
+    "post_step_callback_copy": true,
+    "capture_frequency": "every_physics_substep",
+    "overflow_policy": "raise_without_writing_partial_data",
+    "max_headers": 128,
+    "max_contact_points": 512,
+    "max_friction_anchors": 512,
+    "report_enabled_task_body_paths": [
+      "/World/Task/G02RepairCloseDevice/device_body",
+      "/World/Task/G02RepairCloseDevice/device_cover"
+    ],
+    "path_id_encoding": "PhysicsSchemaTools.sdfPathToInt",
+    "path_table": [
+      {
+        "id": 62921729,
+        "path": "/World/DexJoCoRobots/CenterRig/rokae_center/rokae_center"
+      },
+      {
+        "id": 41949185,
+        "path": "/World/DexJoCoRobots/CenterRig/rokae_center/rokae_center_head"
+      },
+      {
+        "id": 25188609,
+        "path": "/World/DexJoCoRobots/CenterRig/worldBody"
+      },
+      {
+        "id": 33583361,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left"
+      },
+      {
+        "id": 29397249,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/attachment_left"
+      },
+      {
+        "id": 21034241,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/base_left"
+      },
+      {
+        "id": 58761217,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link1"
+      },
+      {
+        "id": 50360321,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link2"
+      },
+      {
+        "id": 37785857,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link3"
+      },
+      {
+        "id": 79738625,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link4"
+      },
+      {
+        "id": 255233,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link1"
+      },
+      {
+        "id": 29399809,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link2"
+      },
+      {
+        "id": 21039105,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link3"
+      },
+      {
+        "id": 41983233,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link4"
+      },
+      {
+        "id": 54569985,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link1"
+      },
+      {
+        "id": 29402369,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link2"
+      },
+      {
+        "id": 67151617,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link3"
+      },
+      {
+        "id": 25219329,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link4"
+      },
+      {
+        "id": 79742977,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link1"
+      },
+      {
+        "id": 50365185,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link2"
+      },
+      {
+        "id": 37790721,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link3"
+      },
+      {
+        "id": 62962945,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link4"
+      },
+      {
+        "id": 46191361,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link1"
+      },
+      {
+        "id": 67154177,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link2"
+      },
+      {
+        "id": 33592065,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link3"
+      },
+      {
+        "id": 33583873,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link4"
+      },
+      {
+        "id": 21038081,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_hand_mount"
+      },
+      {
+        "id": 41980673,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_palm_link"
+      },
+      {
+        "id": 75536641,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/left_wrist_fisheye_mount"
+      },
+      {
+        "id": 50355457,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link0_left"
+      },
+      {
+        "id": 249089,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link1_left"
+      },
+      {
+        "id": 41975809,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link2_left"
+      },
+      {
+        "id": 71332097,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link3_left"
+      },
+      {
+        "id": 79734273,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link4_left"
+      },
+      {
+        "id": 54567425,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link5_left"
+      },
+      {
+        "id": 62958081,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link6_left"
+      },
+      {
+        "id": 37780481,
+        "path": "/World/DexJoCoRobots/LeftRobot/base_left/link7_left"
+      },
+      {
+        "id": 33648897,
+        "path": "/World/DexJoCoRobots/LeftRobot/worldBody"
+      },
+      {
+        "id": 79714561,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right"
+      },
+      {
+        "id": 71316225,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/attachment_right"
+      },
+      {
+        "id": 33566465,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/base_right"
+      },
+      {
+        "id": 62933505,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link0_right"
+      },
+      {
+        "id": 50344449,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link1_right"
+      },
+      {
+        "id": 58732033,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link2_right"
+      },
+      {
+        "id": 200193,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link3_right"
+      },
+      {
+        "id": 67120897,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link4_right"
+      },
+      {
+        "id": 54538241,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link5_right"
+      },
+      {
+        "id": 75512321,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link6_right"
+      },
+      {
+        "id": 62936065,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/link7_right"
+      },
+      {
+        "id": 62938625,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link1"
+      },
+      {
+        "id": 54544385,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link2"
+      },
+      {
+        "id": 75514881,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link3"
+      },
+      {
+        "id": 25192449,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link4"
+      },
+      {
+        "id": 46159361,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link1"
+      },
+      {
+        "id": 62939649,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link2"
+      },
+      {
+        "id": 33571585,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link3"
+      },
+      {
+        "id": 204033,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link4"
+      },
+      {
+        "id": 25195009,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link1"
+      },
+      {
+        "id": 33572609,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link2"
+      },
+      {
+        "id": 21017857,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link3"
+      },
+      {
+        "id": 62942209,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link4"
+      },
+      {
+        "id": 25196033,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link1"
+      },
+      {
+        "id": 206593,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link2"
+      },
+      {
+        "id": 75520001,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link3"
+      },
+      {
+        "id": 41967105,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link4"
+      },
+      {
+        "id": 25197057,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link1"
+      },
+      {
+        "id": 33575169,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link2"
+      },
+      {
+        "id": 37769729,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link3"
+      },
+      {
+        "id": 79715073,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link4"
+      },
+      {
+        "id": 58735617,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_hand_mount"
+      },
+      {
+        "id": 67123969,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_palm_link"
+      },
+      {
+        "id": 54541569,
+        "path": "/World/DexJoCoRobots/RightRobot/base_right/right_wrist_fisheye_mount"
+      },
+      {
+        "id": 67151873,
+        "path": "/World/DexJoCoRobots/RightRobot/worldBody"
+      },
+      {
+        "id": 174593,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_front/geometry/material"
+      },
+      {
+        "id": 41981441,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_front/geometry/mesh"
+      },
+      {
+        "id": 175873,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_left/geometry/material"
+      },
+      {
+        "id": 21046785,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_left/geometry/mesh"
+      },
+      {
+        "id": 177153,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_right/geometry/material"
+      },
+      {
+        "id": 322049,
+        "path": "/World/Task/G02RepairCloseDevice/cover_locator_right/geometry/mesh"
+      },
+      {
+        "id": 173313,
+        "path": "/World/Task/G02RepairCloseDevice/cover_pickup_riser/geometry/material"
+      },
+      {
+        "id": 71333889,
+        "path": "/World/Task/G02RepairCloseDevice/cover_pickup_riser/geometry/mesh"
+      },
+      {
+        "id": 166913,
+        "path": "/World/Task/G02RepairCloseDevice/device_body"
+      },
+      {
+        "id": 144129,
+        "path": "/World/Task/G02RepairCloseDevice/device_body/geometry/mesh"
+      },
+      {
+        "id": 168705,
+        "path": "/World/Task/G02RepairCloseDevice/device_body/physicsMaterial"
+      },
+      {
+        "id": 168961,
+        "path": "/World/Task/G02RepairCloseDevice/device_cover"
+      },
+      {
+        "id": 170753,
+        "path": "/World/Task/G02RepairCloseDevice/device_cover/geometry/mesh"
+      },
+      {
+        "id": 171265,
+        "path": "/World/Task/G02RepairCloseDevice/device_cover/physicsMaterial"
+      },
+      {
+        "id": 143361,
+        "path": "/World/Task/G02RepairCloseDevice/workbench/geometry/mesh"
+      },
+      {
+        "id": 166657,
+        "path": "/World/Task/G02RepairCloseDevice/workbench/physicsMaterial"
+      },
+      {
+        "id": 172289,
+        "path": "/World/Task/G02RepairCloseDevice/workbench_support/geometry/material"
+      },
+      {
+        "id": 67165441,
+        "path": "/World/Task/G02RepairCloseDevice/workbench_support/geometry/mesh"
+      },
+      {
+        "id": 33559041,
+        "path": "/World/Task/target_left/target_left"
+      },
+      {
+        "id": 154113,
+        "path": "/World/Task/target_right/target_right"
+      },
+      {
+        "id": 67110657,
+        "path": "/World/Task/worldBody"
+      },
+      {
+        "id": 159745,
+        "path": "/World/Task/worldBody/floor"
+      },
+      {
+        "id": 62949121,
+        "path": "/World/Task/worldBody/floor/collisions/CollisionPlane"
+      },
+      {
+        "id": 145665,
+        "path": "/physicsScene/defaultMaterial"
+      }
+    ],
+    "capture_source_encoding": {
+      "0": "unavailable",
+      "1": "full_contact_report",
+      "2": "rigid_contact_tensor"
+    },
+    "tensor_fallback_available_in_this_runtime": true,
+    "tensor_sensor_paths": [
+      "/World/Task/G02RepairCloseDevice/device_body",
+      "/World/Task/G02RepairCloseDevice/device_cover"
+    ],
+    "tensor_filter_paths": [
+      "/World/DexJoCoRobots/CenterRig/rokae_center/rokae_center",
+      "/World/DexJoCoRobots/CenterRig/rokae_center/rokae_center_head",
+      "/World/DexJoCoRobots/LeftRobot/base_left/attachment_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/base_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link1",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link2",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link3",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger1_link4",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link1",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link2",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link3",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger2_link4",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link1",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link2",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link3",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger3_link4",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link1",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link2",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link3",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger4_link4",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link1",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link2",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link3",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_finger5_link4",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_hand_mount",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_palm_link",
+      "/World/DexJoCoRobots/LeftRobot/base_left/left_wrist_fisheye_mount",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link0_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link1_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link2_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link3_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link4_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link5_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link6_left",
+      "/World/DexJoCoRobots/LeftRobot/base_left/link7_left",
+      "/World/DexJoCoRobots/RightRobot/base_right/attachment_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/base_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link0_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link1_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link2_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link3_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link4_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link5_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link6_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/link7_right",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link1",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link2",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link3",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger1_link4",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link1",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link2",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link3",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger2_link4",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link1",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link2",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link3",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger3_link4",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link1",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link2",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link3",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger4_link4",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link1",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link2",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link3",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_finger5_link4",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_hand_mount",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_palm_link",
+      "/World/DexJoCoRobots/RightRobot/base_right/right_wrist_fisheye_mount",
+      "/World/Task/G02RepairCloseDevice/device_body",
+      "/World/Task/G02RepairCloseDevice/device_cover",
+      "/World/Task/target_left/target_left",
+      "/World/Task/target_right/target_right",
+      "/World/Task/worldBody/floor"
+    ],
+    "tensor_event_type_sentinel": 4294967294,
+    "tensor_source_actor_and_collider_ids_are_body_ids": true,
+    "tensor_source_face_and_material_ids_available": false,
+    "tensor_source_friction_rows_are_points_not_cache_anchors": true,
+    "reported_contact_points_are_manifold_snapshot": true,
+    "reported_friction_anchors_are_internal_cache": false,
+    "reported_impulses_are_current_step_solver_output": true,
+    "solver_warm_start_state_available": false,
+    "replay_restore_supported": false
+  },
+  "state_layout": [
+    "position_xyz",
+    "quaternion_wxyz",
+    "linear_velocity_xyz",
+    "angular_velocity_xyz"
+  ],
+  "robot_sides": [
+    "right",
+    "left"
+  ],
+  "robot_joint_names": {
+    "right": [
+      "joint1_right",
+      "joint2_right",
+      "joint3_right",
+      "joint4_right",
+      "joint5_right",
+      "joint6_right",
+      "joint7_right",
+      "right_finger1_joint1",
+      "right_finger2_joint1",
+      "right_finger3_joint1",
+      "right_finger4_joint1",
+      "right_finger5_joint1",
+      "right_finger1_joint2",
+      "right_finger2_joint2",
+      "right_finger3_joint2",
+      "right_finger4_joint2",
+      "right_finger5_joint2",
+      "right_finger1_joint3",
+      "right_finger2_joint3",
+      "right_finger3_joint3",
+      "right_finger4_joint3",
+      "right_finger5_joint3",
+      "right_finger1_joint4",
+      "right_finger2_joint4",
+      "right_finger3_joint4",
+      "right_finger4_joint4",
+      "right_finger5_joint4"
+    ],
+    "left": [
+      "joint1_left",
+      "joint2_left",
+      "joint3_left",
+      "joint4_left",
+      "joint5_left",
+      "joint6_left",
+      "joint7_left",
+      "left_finger1_joint1",
+      "left_finger2_joint1",
+      "left_finger3_joint1",
+      "left_finger4_joint1",
+      "left_finger5_joint1",
+      "left_finger1_joint2",
+      "left_finger2_joint2",
+      "left_finger3_joint2",
+      "left_finger4_joint2",
+      "left_finger5_joint2",
+      "left_finger1_joint3",
+      "left_finger2_joint3",
+      "left_finger3_joint3",
+      "left_finger4_joint3",
+      "left_finger5_joint3",
+      "left_finger1_joint4",
+      "left_finger2_joint4",
+      "left_finger3_joint4",
+      "left_finger4_joint4",
+      "left_finger5_joint4"
+    ]
+  },
+  "rigid_body_names": [
+    "/World/Task/G02RepairCloseDevice/device_body",
+    "/World/Task/G02RepairCloseDevice/device_cover"
+  ],
+  "rigid_body_sources": [
+    "physx_tensor_view",
+    "physx_tensor_view"
+  ],
+  "articulation_names": [],
+  "articulation_dof_names": {},
+  "deformable_name": null,
+  "deformable_position_source": null,
+  "deformable_velocity_source": null,
+  "physics_config": {
+    "device": "cuda:0",
+    "physics_dt": 0.008333333333333333,
+    "live_physics_dt": 0.008333333333333333,
+    "control_dt": 0.03333333333333333,
+    "n_substeps": 4,
+    "simulation_dt": 0.008333333333333333,
+    "render_interval": 1,
+    "solver": {
+      "solver_type": 1,
+      "enable_ccd": false,
+      "enable_enhanced_determinism": true,
+      "max_position_iteration_count": 64,
+      "max_velocity_iteration_count": 4,
+      "bounce_threshold_velocity": 0.2,
+      "friction_offset_threshold": 0.01,
+      "friction_correlation_distance": 0.00625,
+      "gpu_max_rigid_contact_count": 1048576,
+      "gpu_max_rigid_patch_count": 163840
+    }
+  },
+  "physics_dt": 0.008333333333333333,
+  "control_dt": 0.03333333333333333,
+  "n_substeps": 4,
+  "enhanced_determinism": true
+}

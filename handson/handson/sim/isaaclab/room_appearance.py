@@ -9,6 +9,7 @@ import numpy as np
 
 ROOT = "/World/HandsOnAppearance/Room"
 VERSION = "handson_pbr_lab"
+SAMPLING_VERSION = "v16_pbr_lab_v1"
 
 
 def state_signature(stage, bindings):
@@ -41,9 +42,14 @@ def verify(stage, receipt):
 
 def resolve(profile):
     """One coherent appearance per episode; stable across all render frames."""
+    from ...tasks.registry import TASKS
     seed = int(profile.get("seed", 0))
     task = str(profile.get("task", ""))
-    digest = hashlib.sha256(f"{VERSION}|{task}|{seed}".encode()).hexdigest()
+    spec = TASKS.get(task)
+    sampling_task = spec.checkpoint_name if spec is not None else task
+    # Public names are labels; changing them must not change the collected
+    # episode's material, lighting, or background random streams.
+    digest = hashlib.sha256(f"{SAMPLING_VERSION}|{sampling_task}|{seed}".encode()).hexdigest()
     rng = random.Random(int(digest[:16], 16))
     randomized = profile.get("mode", "fixed") == "randomized"
     material = profile.get("table", rng.choice(["Plastic010", "Wood095", "Wood049", "Wood051"])
@@ -51,7 +57,8 @@ def resolve(profile):
     palette = rng.choice(["neutral", "slate", "blue"]) if randomized else "neutral"
     result = dict(
         version=VERSION, mode=profile.get("mode", "fixed"), seed=seed,
-        task=task, seed_sha256=digest, table=material,
+        task=task, sampling_task=sampling_task, sampling_version=SAMPLING_VERSION,
+        seed_sha256=digest, table=material,
         table_tile_m=(rng.uniform(.72, 1.12) if material.startswith("Wood") else rng.uniform(.22, .32))
                      if randomized else (.8 if material.startswith("Wood") else .26),
         table_rotate_deg=rng.choice([0., 90.]) if randomized else 90.,

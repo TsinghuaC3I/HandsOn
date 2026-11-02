@@ -1,0 +1,452 @@
+{
+  "profile": "v14_camera_mount_jitter_v1",
+  "enabled": true,
+  "task": "ycb01_roll_ball_through_gate",
+  "storage_id": "ycb01_roll_ball_through_gate_demo_10_2026-09-04_18-33-43_168374__physx_v3__src_2cd49e5c1586",
+  "episode_reset_seed": 1002636465,
+  "translation_bounds_m_per_axis": [
+    -0.002,
+    0.002
+  ],
+  "rotation_bounds_deg_per_axis": [
+    -0.3,
+    0.3
+  ],
+  "composition": "T_world_camera_nominal @ T_camera_delta",
+  "coordinate_convention": "OpenGL camera local: +X right, +Y up, -Z forward",
+  "rotation_order": "Rz(yaw) @ Ry(pitch) @ Rx(roll)",
+  "sampling": "once per trajectory, independently for each camera",
+  "intrinsics_changed": false,
+  "cameras": {
+    "main": {
+      "seed": 14155052664086254032,
+      "translation_m": [
+        0.0009717742936065873,
+        0.0011065608076308354,
+        -0.0018305588747721134
+      ],
+      "roll_pitch_yaw_deg": [
+        -0.13693007785709269,
+        -0.03480269866741392,
+        0.059178788999893484
+      ],
+      "quaternion_wxyz": [
+        0.9999991067750948,
+        -0.0011947830069955034,
+        -0.000304327683822455,
+        0.0005160690260218966
+      ],
+      "nominal_override": {
+        "position_m": [
+          -0.6548241839280105,
+          0.012561357233655243,
+          1.5471263727537892
+        ],
+        "quaternion_wxyz_opengl": [
+          0.6615863460911702,
+          0.2349328201778931,
+          -0.2387186550508383,
+          -0.6709124237929381
+        ]
+      },
+      "sensor": "head_camera",
+      "prim_paths": [
+        "/World/RecordCameras/head_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.6548241972923279,
+            0.012561357580125332,
+            1.5471264123916626
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            0.661586344242096,
+            0.2349328249692917,
+            -0.2387186586856842,
+            -0.6709124445915222
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.6528245210647583,
+            0.011560594663023949,
+            1.546405553817749
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            0.6621400117874146,
+            0.2338147908449173,
+            -0.23823943734169006,
+            -0.6709271669387817
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            463.39337158203125,
+            0.0,
+            431.76727294921875
+          ],
+          [
+            0.0,
+            463.00189208984375,
+            239.91897583007812
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 1,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 1.4901161193847656e-08
+    },
+    "wrist_left": {
+      "seed": 4350882030459371320,
+      "translation_m": [
+        0.0001708194913332987,
+        -0.0008631141950774493,
+        -0.0016700882363898796
+      ],
+      "roll_pitch_yaw_deg": [
+        0.034758476125682614,
+        -0.0344189536464502,
+        0.013612386423727252
+      ],
+      "quaternion_wxyz": [
+        0.9999999018219108,
+        0.00030336058535864244,
+        -0.00030032598054625297,
+        0.0001188815772592913
+      ],
+      "sensor": "wrist_left_camera",
+      "prim_paths": [
+        "/World/RecordCameras/wrist_left_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.40631580352783203,
+            0.26864343881607056,
+            0.9287208318710327
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            0.5518155694007874,
+            -0.3492262363433838,
+            -0.7159172296524048,
+            0.24698813259601593
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.40492957830429077,
+            0.2681750953197479,
+            0.9299135208129883
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            0.5516771078109741,
+            -0.349069744348526,
+            -0.7159664034843445,
+            0.2473757565021515
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            272.1352233886719,
+            0.0,
+            424.0
+          ],
+          [
+            0.0,
+            272.1352233886719,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 1,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 2.9802322387695312e-08
+    },
+    "wrist_right": {
+      "seed": 17048496781051024031,
+      "translation_m": [
+        0.00020803219228372012,
+        0.0019851175929418196,
+        0.001808409919875101
+      ],
+      "roll_pitch_yaw_deg": [
+        -0.27881508613716244,
+        0.06343487491300609,
+        0.071137357797535
+      ],
+      "quaternion_wxyz": [
+        0.9999966932159914,
+        -0.002433461038585331,
+        0.0005520614838793389,
+        0.0006221354947791074
+      ],
+      "sensor": "wrist_right_camera",
+      "prim_paths": [
+        "/World/RecordCameras/wrist_right_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.40525346994400024,
+            -0.26213309168815613,
+            1.0137122869491577
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            -0.25690940022468567,
+            0.6649596691131592,
+            0.37209007143974304,
+            -0.5944538116455078
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.40664950013160706,
+            -0.2633221447467804,
+            1.0117396116256714
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            -0.2551259696483612,
+            0.6661422848701477,
+            0.37297987937927246,
+            -0.5933390855789185
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            267.00689697265625,
+            0.0,
+            424.0
+          ],
+          [
+            0.0,
+            267.00689697265625,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 628,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 5.960464477539063e-08
+    }
+  },
+  "implementation_sha256": "74c1a1ea3384babf3a869cd4f22148c6ed2f6d10c4016b90ac20edc4beb7c4ae",
+  "renderer_snapshot_sha256": "08ee7c8cc1d591098263faf933b1c65b1ad37271bb182e77b7a39bb61d1a61a4",
+  "v16_main_camera_profile": "v16_floor7_real_aligned_v2",
+  "status": "complete",
+  "readback_checks": [
+    {
+      "frame": 0,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 2,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 106,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 208,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 210,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 0,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 211,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 315,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 208,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 419,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 0,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 420,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 104,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 524,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 208,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 1.4901161193847656e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 628,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    }
+  ]
+}

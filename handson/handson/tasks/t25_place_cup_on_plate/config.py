@@ -47,7 +47,7 @@ class TaskConfig(TaskConfigBase):
         if backend == "isaac":
             backend = "isaacsim"
         if backend == "isaacsim":
-            from ...sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
+            from ...sim.isaaclab.core_box_env import HandsOnABCIsaacLabEnv
 
             env = HandsOnABCIsaacLabEnv(self.task_name, render_mode=render_mode, randomize=randomize, hz=30, **kwargs)
         else:

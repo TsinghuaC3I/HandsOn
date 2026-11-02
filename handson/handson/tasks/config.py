@@ -92,7 +92,7 @@ class TaskConfigBase(ABC):
                                                randomize=randomize, **kwargs)
         from ..interfaces import CONTROL_HZ
         from .registry import TASKS
-        contract = TASKS[self._task_name()].native_contract()
+        contract = TASKS[self._task_name()].native_contract(kwargs.get("paper_variant"))
         for key, value in (contract or {}).get("constructor", {}).items():
             if key not in {"randomize", "render_mode", "policy_mode", "image_obs", "headless"}:
                 kwargs.setdefault(key, value)

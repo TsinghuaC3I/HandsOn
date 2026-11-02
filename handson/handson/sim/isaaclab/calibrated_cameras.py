@@ -41,7 +41,7 @@ def install(AppLauncher=None):
         calibration = profile()
         Camera._handson_calibration = calibration
 
-        specs = json.loads((Path(__file__).parents[2] / "evaluation/camera_contract.json").read_text())["cameras"]
+        from ...evaluation.camera_contracts import current as camera_contract
         roles = {"head_camera": "main", "HeadRecordCamera": "main",
                  "wrist_left_camera": "wrist_left", "wrist_right_camera": "wrist_right",
                  "LeftWristRecordCamera": "wrist_left", "RightWristRecordCamera": "wrist_right"}
@@ -49,7 +49,10 @@ def install(AppLauncher=None):
         def camera_init(camera, cfg, *camera_args, **camera_kwargs):
             role = roles.get(cfg.prim_path.rsplit("/", 1)[-1])
             if role is not None:
-                spec = specs[role]
+                spec = camera_contract()["cameras"][role]
+                # Keep an existing sensor tied to its construction contract even
+                # if a later episode selects a different historical camera.
+                camera._handson_camera_spec = spec
                 cfg = copy.deepcopy(cfg)
                 cfg.width, cfg.height = spec["native_width_height"]
                 assert cfg.spawn is not None
@@ -90,7 +93,7 @@ def install(AppLauncher=None):
                 elif env_ids is None:
                     env_ids = slice(None)
                 matrices[env_ids] = torch.tensor(
-                    specs[role]["K_effective"], device=camera.device,
+                    camera._handson_camera_spec["K_effective"], device=camera.device,
                     dtype=matrices.dtype)
 
         Camera._update_intrinsic_matrices = update_intrinsics
