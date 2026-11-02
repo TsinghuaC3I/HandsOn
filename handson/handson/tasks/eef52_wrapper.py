@@ -18,7 +18,7 @@ class EEF52PolicyWrapper(gym.Wrapper):
         super().__init__(env)
         raw = env.unwrapped
         self.task_spec = TASKS[task]
-        self.native = TASKS[task].evaluation_adapter().native_view(
+        self.native = TASKS[task].evaluation_adapter(getattr(raw, 'paper_variant', None)).native_view(
             raw, launch=getattr(raw, '_sim', None) is not None)
         self.control = EEF52Control(self.native)
         if abs(self.native._control_dt - 1 / CONTROL_HZ) > 1e-12:

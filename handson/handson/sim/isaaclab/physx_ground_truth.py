@@ -1076,6 +1076,22 @@ class PhysxGroundTruthTrace:
         return tuple(entries)
 
     def _deformable_layout(self) -> _DeformableEntry | None:
+        if (
+            getattr(self.env, "_g01_task_name", "") == "eval_flex03_pack_pillow"
+            and getattr(self.env, "_g01_soft_views", {}).get("Pillow024") is not None
+        ):
+            # Record the solver nodes, not the detailed RTX skin. The same
+            # small native state then drives the high-quality offline mesh.
+            positions, velocities = self.env._g01_3_pillow_readback()
+            self.env._g01_trace_nodes_np = np.asarray(positions).copy()
+            self.env._g01_trace_velocities_np = np.asarray(velocities).copy()
+            return _DeformableEntry(
+                name="g01_pillow",
+                position_attribute="_g01_trace_nodes_np",
+                velocity_attribute="_g01_trace_velocities_np",
+                invalid_attribute=None,
+                shape=tuple(int(value) for value in positions.shape),
+            )
         candidates = (
             (
                 "ycb11_sponge",
@@ -1123,6 +1139,9 @@ class PhysxGroundTruthTrace:
     def _deformable_view_and_indices(self) -> tuple[Any, Any]:
         if self.deformable is None:
             return None, None
+        if self.deformable.name == "g01_pillow":
+            entry = getattr(self.env, "_g01_soft_views", {}).get("Pillow024")
+            return (None, None) if entry is None else entry[:2]
         if self.deformable.name == "surface":
             return (
                 getattr(self.env, "_e_garment_view", None),
@@ -4306,19 +4325,19 @@ class PhysxGroundTruthTrace:
     def _sample_deformable_fields(self) -> dict[str, np.ndarray]:
         if self.deformable is None:
             return {}
-        if self.deformable.name == "ycb11_sponge":
-            # YCB11 defers its expensive task metrics until the control
+        if self.deformable.name in {"ycb11_sponge", "g01_pillow"}:
+            # These tasks defer their expensive task metrics until the control
             # boundary. Origin verification, however, samples every physics
             # step. Read native nodes here; its metrics cache may be a whole
             # control interval old and must never serve as stability evidence.
             view, indices = self._deformable_view_and_indices()
             if view is None:
-                raise RuntimeError("YCB11 native deformable trace view is unavailable")
+                raise RuntimeError(f"{self.deformable.name} native deformable trace view is unavailable")
             body_indices = (
                 np.asarray([0]) if indices is None else _numpy(indices).reshape(-1)
             )
             if body_indices.size != 1:
-                raise RuntimeError("YCB11 trace requires exactly one deformable body")
+                raise RuntimeError(f"{self.deformable.name} trace requires exactly one deformable body")
             body_index = int(body_indices[0])
             native_positions = _numpy(view.get_simulation_nodal_positions())
             native_velocities = _numpy(view.get_simulation_nodal_velocities())
@@ -4328,7 +4347,7 @@ class PhysxGroundTruthTrace:
                 or native_velocities.shape != native_positions.shape
                 or not 0 <= body_index < native_positions.shape[0]
             ):
-                raise RuntimeError("YCB11 native deformable trace layout changed")
+                raise RuntimeError(f"{self.deformable.name} native deformable trace layout changed")
             positions = np.asarray(native_positions[body_index], dtype=np.float64)
             velocities = np.asarray(native_velocities[body_index], dtype=np.float64)
         else:
@@ -5069,6 +5088,14 @@ class PhysxGroundTruthTrace:
                     entry.indices,
                 )
                 articulation_dofs += entry.dof_count
+
+        if bool(getattr(self.env, "_stable_origin_zero_robot_velocities", False)):
+            for entry in self.robots:
+                robot = entry.robot
+                template = robot.data.joint_vel
+                writer = getattr(robot, "write_joint_velocity_to_sim", None)
+                if callable(writer):
+                    writer(self._array_like(template, np.zeros_like(_numpy(template))))
 
         if self.deformable is not None:
             view, indices = self._deformable_view_and_indices()

@@ -33,11 +33,12 @@ YCB01_VALID_OPENING_HALF_WIDTH_M = max(
     - YCB01_GATE_CLEARANCE_MARGIN_M,
 )
 # The gate frame's Y axis is the direction of travel.  A centre crossing of
-# ``y == 0`` only says that the ball reached the middle of the opening.  The
-# success event below deliberately compares the ball centre directly with the
-# far carton face: there is no extra radius or safety-margin requirement. Keep
-# this zero-valued name as a compatibility alias for audit/telemetry callers.
-YCB01_FAR_SIDE_MARGIN_M = 0.0
+# ``y == 0`` only says that the ball reached the middle of the opening; it does
+# not say that the sphere has cleared the thickness of either carton.  Keep a
+# separate margin for the complete-pass gate and derive the threshold from the
+# source box extents below so a future asset revision cannot silently regress
+# to a centre-only success.
+YCB01_FAR_SIDE_MARGIN_M = 0.010
 YCB01_LIFT_CLEARANCE_M = 0.015
 YCB01_LIFT_DEBOUNCE_S = 0.10
 YCB01_GATE_TRANSLATION_LIMIT_M = 0.030
@@ -59,43 +60,35 @@ YCB01_CRACKER_HALF_EXTENTS_M = np.asarray(
     [0.079906, 0.0299465, 0.1063595], dtype=np.float64
 )
 # Both boxes share the sampled gate-frame yaw.  In that frame the farther
-# rear face is the largest source half-depth.  The sphere centre only needs to
-# reach that far-face Y coordinate before ``full_passed`` can latch.
+# rear face is the largest source half-depth.  The sphere's centre must pass
+# that face by its own radius and the explicit far-side safety margin before
+# ``full_passed`` can latch.
 YCB01_GATE_FAR_FACE_HALF_DEPTH_M = max(
     float(YCB01_SUGAR_HALF_EXTENTS_M[1]),
     float(YCB01_CRACKER_HALF_EXTENTS_M[1]),
 )
-YCB01_FULL_PASS_LOCAL_Y_THRESHOLD_M = YCB01_GATE_FAR_FACE_HALF_DEPTH_M
-
-# Keep the two boxes at the authored centre of the table.  Only the ball is
-# randomized, so operators always see the same gate while learning to handle
-# left/right and near/far ball approaches.
-YCB01_GATE_CENTER_XY = np.asarray([-0.275, 0.055], dtype=np.float64)
-YCB01_GATE_CENTER_JITTER_XY = np.zeros(2, dtype=np.float64)
-YCB01_GATE_YAW_LIMIT_DEG = 0.0
-# Leave a small edge margin for the sphere/boxes, but otherwise cover the
-# complete physical tabletop.  This is intentionally wider than the old
-# calibrated camera rectangle, which confined all starts to one narrow lane.
-YCB01_TABLE_XY_BOUNDS_M = np.asarray(
-    [[-0.52, -0.74], [0.22, 0.74]], dtype=np.float64
+YCB01_FULL_PASS_LOCAL_Y_THRESHOLD_M = (
+    YCB01_GATE_FAR_FACE_HALF_DEPTH_M
+    + YCB01_BALL_RADIUS_M
+    + YCB01_FAR_SIDE_MARGIN_M
 )
-# Keep the historical public name for downstream reset/audit consumers.  It
-# now denotes the broad tabletop camera envelope used by YCB01.
-YCB01_CAMERA_XY_BOUNDS = YCB01_TABLE_XY_BOUNDS_M.copy()
-# Broad inner approximation of the calibrated head-camera footprint.  The
-# rectangular bounds above are the cheap gate; this ellipse screens corners
-# that would otherwise fall outside the camera while retaining both tabletop
-# lanes.
-YCB01_CAMERA_ELLIPSE_CENTER_XY = np.asarray([-0.20, 0.0], dtype=np.float64)
-YCB01_CAMERA_ELLIPSE_RADII_M = np.asarray([0.55, 1.00], dtype=np.float64)
-YCB01_CAMERA_CLEARANCE_M = 0.015
-# Sample the ball across the full tabletop width and on either side of the
-# fixed gate.  The world/table and camera checks clip only the physical edges,
-# so accepted seeds can appear on the image-left or image-right approach side.
-YCB01_BALL_LOCAL_X_LIMIT_M = 0.550
-YCB01_BALL_LOCAL_Y_RANGE_M = (-0.700, 0.700)
-YCB01_BALL_LOCAL_Y_MAGNITUDE_RANGE_M = (0.080, 0.700)
+
+YCB01_GATE_CENTER_XY = np.asarray([-0.275, 0.055], dtype=np.float64)
+YCB01_GATE_CENTER_JITTER_XY = np.asarray([0.006, 0.025], dtype=np.float64)
+YCB01_GATE_YAW_LIMIT_DEG = 8.0
+# Keep the ball on the table and in the camera/reach envelope, but expose a
+# genuinely broad start distribution.  The local lateral span is 16 cm and the
+# start-side travel span is 22 cm; some starts are deliberately outside the
+# eventual opening corridor so a policy must first steer the ball laterally
+# instead of memorising one centred flick.  ``ycb01_layout_is_valid`` still
+# rejects any sample that leaves the authored table/camera bounds or starts
+# too close to the boxes.
+YCB01_BALL_LOCAL_X_LIMIT_M = 0.080
+YCB01_BALL_LOCAL_Y_RANGE_M = (-0.300, -0.080)
 YCB01_LAYOUT_ATTEMPTS = 64
+YCB01_CAMERA_XY_BOUNDS = np.asarray(
+    [[-0.40, -0.30], [-0.12, 0.30]], dtype=np.float64
+)
 
 
 def _yaw_rotation(yaw_radians: float) -> np.ndarray:
@@ -112,7 +105,7 @@ def _yaw_quaternion_wxyz(yaw_radians: float) -> np.ndarray:
 
 
 def ycb01_layout_is_valid(layout: dict[str, np.ndarray]) -> bool:
-    """Check the complete reset footprint against table/camera bounds."""
+    """Check the complete reset footprint against camera/reach bounds."""
     sugar = np.asarray(layout[YCB01_LEFT_GATE_NAME], dtype=np.float64)
     cracker = np.asarray(layout[YCB01_RIGHT_GATE_NAME], dtype=np.float64)
     ball = np.asarray(layout[YCB01_BALL_NAME], dtype=np.float64)
@@ -134,40 +127,8 @@ def ycb01_layout_is_valid(layout: dict[str, np.ndarray]) -> bool:
         for center, half in footprints
     ):
         return False
-    # Keep every accepted body in the broad head-camera ellipse.  Shrinking
-    # the radii by the footprint and image reserve screens the full object,
-    # rather than merely its centre, at arbitrary sampled yaw.
-    camera_center = YCB01_CAMERA_ELLIPSE_CENTER_XY
-    for center, half in footprints:
-        effective = YCB01_CAMERA_ELLIPSE_RADII_M - (
-            float(np.max(half)) + YCB01_CAMERA_CLEARANCE_M
-        )
-        if np.any(effective <= 0.0):
-            return False
-        if float(np.linalg.norm((center - camera_center) / effective)) > 1.0:
-            return False
     local_ball = world_to_ycb01_gate(ball[:3], layout["gate_frame"])
-    if abs(float(local_ball[1])) < (
-        YCB01_BALL_RADIUS_M + YCB01_START_SIDE_MARGIN_M
-    ):
-        return False
-    # Reject an actual sphere/box overlap as well as a bad start-side sample.
-    # This matters for wide lateral starts that sit beside a carton corner;
-    # checking only the gate-frame Y coordinate would allow those seeds to
-    # begin with an immediate physical contact/reset.
-    return not any(
-        ycb01_sphere_box_contact(
-            ball[:3],
-            YCB01_BALL_RADIUS_M,
-            layout[name],
-            half_extents,
-            extra_margin=YCB01_GATE_CLEARANCE_MARGIN_M,
-        )
-        for name, half_extents in (
-            (YCB01_LEFT_GATE_NAME, YCB01_SUGAR_HALF_EXTENTS_M),
-            (YCB01_RIGHT_GATE_NAME, YCB01_CRACKER_HALF_EXTENTS_M),
-        )
-    )
+    return bool(local_ball[1] <= -(YCB01_BALL_RADIUS_M + YCB01_START_SIDE_MARGIN_M))
 
 
 def sample_ycb01_layout(
@@ -179,23 +140,22 @@ def sample_ycb01_layout(
     """Sample one seeded, collision-clear gate-and-ball reset layout."""
     for _ in range(YCB01_LAYOUT_ATTEMPTS):
         if randomize:
-            gate_center = YCB01_GATE_CENTER_XY.copy()
-            yaw_degrees = 0.0
+            gate_center = YCB01_GATE_CENTER_XY + random_state.uniform(
+                -YCB01_GATE_CENTER_JITTER_XY,
+                YCB01_GATE_CENTER_JITTER_XY,
+            )
+            yaw_degrees = float(
+                random_state.uniform(-YCB01_GATE_YAW_LIMIT_DEG, YCB01_GATE_YAW_LIMIT_DEG)
+            )
             ball_local_x = float(
                 random_state.uniform(-YCB01_BALL_LOCAL_X_LIMIT_M, YCB01_BALL_LOCAL_X_LIMIT_M)
             )
-            ball_local_y = float(
-                random_state.uniform(*YCB01_BALL_LOCAL_Y_MAGNITUDE_RANGE_M)
-            )
-            if float(random_state.uniform()) < 0.5:
-                ball_local_y *= -1.0
+            ball_local_y = float(random_state.uniform(*YCB01_BALL_LOCAL_Y_RANGE_M))
         else:
             gate_center = YCB01_GATE_CENTER_XY.copy()
             yaw_degrees = 0.0
             ball_local_x = 0.0
-            # Keep the non-randomized preview/reset pose near the historical
-            # centre start; the broad envelope is for seeded collection only.
-            ball_local_y = -0.190
+            ball_local_y = float(np.mean(YCB01_BALL_LOCAL_Y_RANGE_M))
 
         yaw = math.radians(yaw_degrees)
         rotation = _yaw_rotation(yaw)
@@ -267,32 +227,23 @@ def ycb01_crossing_metrics(
     previous_world: np.ndarray | None,
     current_world: np.ndarray,
     gate_frame_pose: np.ndarray,
-    *,
-    direction_sign: float = 1.0,
 ) -> dict[str, Any]:
-    """Evaluate centre and far-face Y crossings with interpolation.
+    """Evaluate centre and complete-pass crossings with interpolation.
 
     ``center_crossed_now`` records the direction-sensitive gate-plane event;
-    ``full_pass_crossed_now`` records the later far-face Y event.  Keeping
-    both events in one metric lets the runtime distinguish a centre-only
-    passage while still certifying a single high-speed segment that crosses
-    both boundaries.
-    ``direction_sign`` selects which side is the start side: ``+1`` means
-    local ``-Y`` to ``+Y`` (the historical direction), while ``-1`` mirrors
-    the same contract for local ``+Y`` to ``-Y`` starts.
+    ``full_pass_crossed_now`` records the later far-face event.  Keeping both
+    events in one metric lets the runtime reject a centre-only passage while
+    still certifying a single high-speed segment that crosses both boundaries.
     """
-    direction = -1.0 if float(direction_sign) < 0.0 else 1.0
     current_local = world_to_ycb01_gate(current_world, gate_frame_pose)
-    current_progress = direction * float(current_local[1])
     full_pass_threshold = float(YCB01_FULL_PASS_LOCAL_Y_THRESHOLD_M)
     metrics: dict[str, Any] = {
         "current_local": current_local,
-        "direction_sign": direction,
         "center_crossed_now": False,
         "inside_opening_now": False,
         "intersection_local": np.full(3, np.nan, dtype=np.float64),
         "full_pass_threshold": full_pass_threshold,
-        "full_passed_now": bool(current_progress >= full_pass_threshold),
+        "full_passed_now": bool(current_local[1] >= full_pass_threshold),
         "full_pass_crossed_now": False,
         "full_pass_inside_opening_now": False,
         "full_pass_intersection_local": np.full(3, np.nan, dtype=np.float64),
@@ -300,12 +251,11 @@ def ycb01_crossing_metrics(
     if previous_world is None:
         return metrics
     previous_local = world_to_ycb01_gate(previous_world, gate_frame_pose)
-    previous_progress = direction * float(previous_local[1])
-    denominator = float(current_progress - previous_progress)
+    denominator = float(current_local[1] - previous_local[1])
     if denominator <= 1.0e-12:
         return metrics
-    if previous_progress < 0.0 <= current_progress:
-        alpha = float(np.clip(-previous_progress / denominator, 0.0, 1.0))
+    if previous_local[1] < 0.0 <= current_local[1]:
+        alpha = float(np.clip(-previous_local[1] / denominator, 0.0, 1.0))
         intersection = previous_local + alpha * (current_local - previous_local)
         metrics.update(
             {
@@ -321,14 +271,14 @@ def ycb01_crossing_metrics(
     # side to beyond the rear face in one sample.  This is deliberately a
     # separate event from the centre-plane crossing above.
     full_pass_crossed_now = bool(
-        previous_progress < full_pass_threshold
-        and current_progress >= full_pass_threshold
+        previous_local[1] < full_pass_threshold
+        and current_local[1] >= full_pass_threshold
     )
     metrics["full_pass_crossed_now"] = full_pass_crossed_now
     if full_pass_crossed_now:
         alpha = float(
             np.clip(
-                (full_pass_threshold - previous_progress) / denominator,
+                (full_pass_threshold - previous_local[1]) / denominator,
                 0.0,
                 1.0,
             )
@@ -338,7 +288,7 @@ def ycb01_crossing_metrics(
         metrics["full_pass_inside_opening_now"] = bool(
             abs(float(far_intersection[0])) <= YCB01_VALID_OPENING_HALF_WIDTH_M
         )
-    elif current_progress >= full_pass_threshold:
+    elif current_local[1] >= full_pass_threshold:
         # This branch is useful when a caller starts evaluating after the
         # threshold was crossed.  The normal runtime latches on the explicit
         # crossing branch above, but retaining a conservative current-position

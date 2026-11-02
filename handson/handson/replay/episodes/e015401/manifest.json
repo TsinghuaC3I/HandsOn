@@ -1,0 +1,185 @@
+{
+  "format": "handson.episode_replay.v1",
+  "episode": "e015401",
+  "task": "t34_roll_ball_through_gate",
+  "recorded_task": "ycb01_roll_ball_through_gate",
+  "recorded_source_commit": "e199dbf4a82fbc6af97a976925f8ad6c5a13da42",
+  "qualified_public_base_commit": "be2b59aad016869e8cede1f485d64e3c2d191685",
+  "source_archive_sha256": "d304f0a262c0f552deea66c855fd161714a5088d0290deb0fa1bcc7cfe73ebd1",
+  "source_replay_manifest_sha256": "ed79b67de862fefc9a6ec6337a91cf9e5398893595cedfb822ea09aec7f4cf18",
+  "construction_seed": 1002636427,
+  "reset_seed": 1002636465,
+  "action_count": 209,
+  "recorded_success_action": 209,
+  "historical_far_side_threshold_m": 0.072967,
+  "current_far_side_threshold_m": 0.072967,
+  "current_checker": "historical t34 reset, contact events and success predicates restored from paper source 4ccf7508; full runtime replay qualification tracked separately",
+  "put_task_bodies_to_sleep": false,
+  "snapshot_shapes": {
+    "physx_command_hand": [
+      2,
+      20
+    ],
+    "physx_command_hand_valid": [
+      2,
+      20
+    ],
+    "physx_command_tcp_pose": [
+      2,
+      7
+    ],
+    "physx_control_step": [
+      1
+    ],
+    "physx_pose_commanded": [
+      2
+    ],
+    "physx_pose_filter_state": [
+      2,
+      14
+    ],
+    "physx_pose_filter_valid": [
+      2
+    ],
+    "physx_rng_mt19937_cached_gaussian": [
+      1
+    ],
+    "physx_rng_mt19937_has_gauss": [
+      1
+    ],
+    "physx_rng_mt19937_keys": [
+      624
+    ],
+    "physx_rng_mt19937_position": [
+      1
+    ],
+    "physx_rng_seed": [
+      1
+    ],
+    "physx_robot_joint_effort": [
+      2,
+      27
+    ],
+    "physx_robot_joint_effort_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_position": [
+      2,
+      27
+    ],
+    "physx_robot_joint_target": [
+      2,
+      27
+    ],
+    "physx_robot_joint_target_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_valid": [
+      2,
+      27
+    ],
+    "physx_robot_joint_velocity": [
+      2,
+      27
+    ],
+    "physx_robot_root_state": [
+      2,
+      13
+    ],
+    "physx_robot_root_valid": [
+      2
+    ],
+    "physx_sim_time": [
+      1
+    ],
+    "physx_task_rigid_body_state": [
+      4,
+      13
+    ],
+    "physx_task_rigid_body_valid": [
+      4
+    ],
+    "physx_tcp_state": [
+      2,
+      13
+    ],
+    "physx_tcp_valid": [
+      2
+    ]
+  },
+  "task_state_shapes": {
+    "tcp_pose": [
+      7
+    ],
+    "gripper_pose": [
+      20
+    ],
+    "ball_pose": [
+      7
+    ],
+    "ball_linear_velocity": [
+      3
+    ],
+    "ball_angular_velocity": [
+      3
+    ],
+    "left_gate_pose": [
+      7
+    ],
+    "right_gate_pose": [
+      7
+    ],
+    "gate_frame_pose": [
+      7
+    ],
+    "ball_gate_local_position": [
+      3
+    ],
+    "gate_width": [
+      1
+    ],
+    "ycb01_event_flags": [
+      7
+    ],
+    "ycb01_hidden_state": [
+      9
+    ],
+    "table_delta_height": [
+      1
+    ],
+    "ycb01_start_direction": [
+      1
+    ]
+  },
+  "runtime_files": {
+    "tasks/t34_roll_ball_through_gate/config.py": "63b5776388257a1fd5ca1ccbdf614eaf86187577a1ed7fcfdc4481a8af0c6739",
+    "sim/isaaclab/abc_collection_env.py": "de132a9299c9be9ce720534a280e365d529e13b663a215c66cef1a655ae111a4",
+    "sim/isaaclab/bimanual_assembly_env.py": "95e689785dc025c013a22c3230bece3c3bbedc585c0f00e6628b6fd1fc237cea",
+    "sim/isaaclab/ycb01_semantics.py": "9ccb357b646a9f4889bc940ea490cce376ae4d5721c97b40dc88352b18704d82",
+    "eef52.py": "38412002a368fdc365464a17fa54d78efa02ba11f046cc3e92079ba81005e807",
+    "sim/isaaclab/origins/trace_40091947eb3f.py": "9331d1ee0e1ad31f77046e1dadd9e75f2c957d0a826c0388413d1d3b08dffcbe",
+    "sim/isaaclab/origins/native_3e41ab60098b.py": "0c36e5cd351448690c9b27300412421f1e04730ba17ce430801c9c50bdcfce7b",
+    "sim/isaaclab/task_preview.py": "8dcd852901ad9d253298a1ae9036729a963c9d88e6d81739b94837fdb450214b",
+    "sim/isaaclab/room_appearance.py": "36402c8703f2d81ed17220d8f26c9a6b8fc9a5659c432c2243106741162441bc",
+    "sim/isaaclab/default_appearance.py": "def9cafbdf31da913b2ecbb716cfc676dc20726b708f8423d52b39ba6c57cfe0",
+    "assets/rendering/materials/ASSETS.json": "40e0b21effb1a037aa5b1f52af3c5e865b6fb77f566dad16c1fa2870abaf4ae8",
+    "sim/isaaclab/physics_config.py": "7ed444c885bd8570cb76859488ce24e0d3f51a96ccd8e1b6a7fde438664c7fd0",
+    "sim/isaaclab/paper_gpu_buffers.json": "2b363de4cff0d9a418714d06a4c78d3a88282a101cf3d9fa2ceb17e107e80716",
+    "sim/isaaclab/paper_reset_visual_rng.py": "eb435f6ade85afe57a2009d9230122db71ff7297536038827f5780a4d9d31829",
+    "sim/isaaclab/task_surfaces.py": "3ff44ee2903bfe3a66eef9fd7badae430ce149244eb78badcf269c6bed6df3e5",
+    "sim/isaaclab/blender_visual_layer.py": "152dc9d406e2af7cacc63d561925cd6d01dd02421d45a88cc3d9bd2044a3ff8b",
+    "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+    "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+  },
+  "files": {
+    "camera_jitter.json": "5aba87954e7eabc77011bf754afa15062e7ba302ea93e313fe27c63c7e6d483d",
+    "commands.npz": "7b07d65728855954e88aea056848509a8e270e9bdfeccdcd0de03a4fad5a66f2",
+    "physics_schema.json": "af9ed55702296666b7d4cfe51e453d3db8be40aa7beec5c7de41352ce76d9b74",
+    "initial_snapshot.npz": "c7f0021cd160a035681257fb8f85e86a6494fbbdbf7f7a4be665d793b02cce63",
+    "task_state.npz": "8f48d8cd267ee3c14fe5de75874981bb2ee227c4d1d44957972659053fd41549",
+    "appearance.json": "df00778ed4fbbb0e841bd8736b17e9b4d3733bb7d51bbe6e8b3804d8c1a27d2e"
+  },
+  "task_semantics_source_sha256": "4254f64309096d8ad50064a886526844636fa6b453063947a848dfee21013654"
+}

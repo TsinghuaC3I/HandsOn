@@ -10,7 +10,9 @@ from pathlib import Path
 
 TASK = 't10_lift_carton'
 REVISION = 'carton_raw_force_12n_v1'
-SOURCE_SHA = '91a1bd42e67df088bcc755261ba92d1f38043ed15acada073d860328bd3934ec'
+# Same reviewed implementation after the DexOmni -> HandsOn namespace rename.
+# Reversing that rename reproduces the previous 91a1bd42... source digest.
+SOURCE_SHA = '1967517bdd7f4b71bf3a0d5de7dd181a86fb19f4f0a904ff4876758bf8b107f8'
 LIMIT_N = 12.0
 SIDES = ('left', 'right')
 

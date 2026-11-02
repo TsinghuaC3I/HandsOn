@@ -1,0 +1,117 @@
+{
+  "task": "t05_fill_cup",
+  "historical_task": "b320_cup_stabilized_faucet_open",
+  "source_commit": "b64b0fec84981e9c7a1d4c23d3038e21a95af45b",
+  "result_sha256": "762f744ddb11c400842aca36c5bdb969ee96c65e573032005121873936c43fba",
+  "cohort_episodes": 900,
+  "modules": [
+    {
+      "original_module": "dexjoco.sim.isaaclab.b320_bimanual_env",
+      "original_sha256": "918082f89897e0cf4f39e221349a2dfe0414101fd5580ec142c7dadcfdfe0ad2",
+      "public_module": "handson.sim.isaaclab.core_faucet_env",
+      "public_sha256": "edf2d7ed1d2568bb8b77cdebf8cb5e979e166b875b9396bf7ca6835186270cc2",
+      "portability_diff_sha256": "6805e93fb65b568ba1040057cd5de853c6155d0c82e13067e7e166736017c099"
+    },
+    {
+      "original_module": "dexjoco.sim.isaaclab.b320_bimanual_scene",
+      "original_sha256": "fabb3c85b2cc472a4c767089528e423780c88f80cd1bf60f92b568533199a701",
+      "public_module": "handson.sim.isaaclab.core_faucet_scene",
+      "public_sha256": "5f9510299bd1b3f6c1d1f7c5481b05791785c9041269827d8bca318fdead1c56",
+      "portability_diff_sha256": "164eb95be4ff4b93b5c49f9e065d5abd7898a55f9ca4f3e6db931e2f3ef8398b"
+    }
+  ],
+  "assets": [
+    {
+      "original_path": "taskdev/tasks/bench320_hs005_sink_bottle_stabilized_scrub/scene/hs005_assets.usda",
+      "public_path": "sim/envs/usd/hs005_sink/scene/core_faucet_assets.usda",
+      "sha256": "5196ac1c18bdf11d533a7833dfe9dfd3505ca6f4be05302c118f9089c09454c2"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ATTRIBUTION.txt",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ATTRIBUTION.txt",
+      "sha256": "7c4776e630f29c6086921e7c169e60a3e39f6e9033257546348efda5fae32d35"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/asset_manifest.json",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/asset_manifest.json",
+      "sha256": "4748f701a73efe7e0cbf9f7d3992be7b23ab6694fee338e781c7536b76540731"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug.usd",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug.usd",
+      "sha256": "90136fb25fc2d1e18aa18e50137071a33b09f8b374cdcde7b8847d13f4ee0e8b"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug.zip",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug.zip",
+      "sha256": "f9142fbf5bf300af9444a264ebf6de8c0738d93e8758b289a43415024be778e7"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/license.txt",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/license.txt",
+      "sha256": "390f6d90c27d3f576ca9e0148840a3caab8619ede8a3f5552ac9063ac03b48b8"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/scene.bin",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/scene.bin",
+      "sha256": "e85d79b4a66c75ecc2c5fbfabf0c084e85f3a1c2d9e163953bb20d78628306c0"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/scene.gltf",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/scene.gltf",
+      "sha256": "a0c68b86012fcb1cda80b5c22fd138a3b5adbb247d86ee06b893b2da35fbe36d"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/textures/Mug_White_baseColor.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/textures/Mug_White_baseColor.png",
+      "sha256": "039fc544b907b3e4a7ef5e92d582b3910c003a6cbd2287d44f5e2ca317ca25b9"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/textures/Mug_White_emissive.jpeg",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/textures/Mug_White_emissive.jpeg",
+      "sha256": "d1a77e8d38602635e6ec0850819f15919df3fffd613f625f5b40f48daafad9b4"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/textures/Mug_White_metallicRoughness.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/textures/Mug_White_metallicRoughness.png",
+      "sha256": "59de154f99948fee53dfda9407f88077983ad9eb0ff4c7b82a9de6bec9cebca6"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/ceramic_white_mug_source/textures/Mug_White_normal.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/ceramic_white_mug_source/textures/Mug_White_normal.png",
+      "sha256": "be748b70544c54f70210127a02cf48c3d13cf9f2f6c723e183db7e80a79fbecf"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/faucet_handle.usd",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/faucet_handle.usd",
+      "sha256": "4303af3116b68f170bcc15ef9f4d451526cfd3c7d9cec2bb8e9405a829c9c069"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/faucet_static.usd",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/faucet_static.usd",
+      "sha256": "05f2920eadb231bd0ded5dd6ef07325fbd787f905a7cd5eabe4f135ddcadb966"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/textures/Mug_White_baseColor.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/textures/Mug_White_baseColor.png",
+      "sha256": "039fc544b907b3e4a7ef5e92d582b3910c003a6cbd2287d44f5e2ca317ca25b9"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/textures/Mug_White_emissive.jpeg",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/textures/Mug_White_emissive.jpeg",
+      "sha256": "d1a77e8d38602635e6ec0850819f15919df3fffd613f625f5b40f48daafad9b4"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/textures/Mug_White_metallicRoughness.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/textures/Mug_White_metallicRoughness.png",
+      "sha256": "59de154f99948fee53dfda9407f88077983ad9eb0ff4c7b82a9de6bec9cebca6"
+    },
+    {
+      "original_path": "dexjoco/dexjoco/sim/envs/usd/b320_bimanual_benchmark/assets/cc_ka021_hs005_kitchen_anilai_white_mug/textures/Mug_White_normal.png",
+      "public_path": "sim/envs/usd/b320_bimanual_benchmark/assets/core_faucet_paper_mug/textures/Mug_White_normal.png",
+      "sha256": "be748b70544c54f70210127a02cf48c3d13cf9f2f6c723e183db7e80a79fbecf"
+    }
+  ],
+  "scope": "Original paper B320 task runtime, scene builder and kitchen layer; shared ABC base, camera adapter and physical asset dependencies are verified separately. Only t05 selects this implementation.",
+  "asset_portability": "Separate original mug bundle retains historical collision metadata and attribution. Other validated public bundles differ only by namespaces and matching checksum metadata (salt/pepper, pot), or added cabinet texture dependencies. Their public checksums remain enforced."
+}

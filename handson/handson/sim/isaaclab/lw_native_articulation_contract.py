@@ -40,6 +40,12 @@ G08_ROOT_RANDOM_X_HALF_RANGE_M = 0.120
 G08_ROOT_RANDOM_Y_HALF_RANGE_M = 0.120
 G08_ROOT_RANDOM_YAW_HALF_RANGE_DEG = 30.0
 
+# Transfer Gen02 used the narrower reset envelope in the paper runtime
+# (6a30cb17892d). It must not inherit Core-18's later, wider box envelope.
+GEN3_ROOT_RANDOM_X_HALF_RANGE_M = 0.040
+GEN3_ROOT_RANDOM_Y_HALF_RANGE_M = 0.030
+GEN3_ROOT_RANDOM_YAW_HALF_RANGE_DEG = 8.0
+
 # The supplied box USD has a negative 90-degree hinge excursion, and the
 # operator task intentionally uses that authored stop.  Keep the values in
 # degrees here because USD revolute-joint limits are authored in degrees; the
@@ -524,26 +530,35 @@ def sample_reset(
             # reset-positioned fixed base.  This yields meaningful reach and
             # camera diversity without introducing pre-action hinge motion.
             q0 = np.asarray(spec.authored_q0_rad, dtype=np.float64)
+            x_range, y_range, yaw_range = (
+                (GEN3_ROOT_RANDOM_X_HALF_RANGE_M,
+                 GEN3_ROOT_RANDOM_Y_HALF_RANGE_M,
+                 GEN3_ROOT_RANDOM_YAW_HALF_RANGE_DEG)
+                if spec.task_id == "EVAL-Gen02" else
+                (G08_ROOT_RANDOM_X_HALF_RANGE_M,
+                 G08_ROOT_RANDOM_Y_HALF_RANGE_M,
+                 G08_ROOT_RANDOM_YAW_HALF_RANGE_DEG)
+            )
             root_x_m = float(
                 rng.uniform(
                     G08_ROOT_NOMINAL_X_M
-                    - G08_ROOT_RANDOM_X_HALF_RANGE_M,
+                    - x_range,
                     G08_ROOT_NOMINAL_X_M
-                    + G08_ROOT_RANDOM_X_HALF_RANGE_M,
+                    + x_range,
                 )
             )
             root_y_m = float(
                 rng.uniform(
                     G08_ROOT_NOMINAL_Y_M
-                    - G08_ROOT_RANDOM_Y_HALF_RANGE_M,
+                    - y_range,
                     G08_ROOT_NOMINAL_Y_M
-                    + G08_ROOT_RANDOM_Y_HALF_RANGE_M,
+                    + y_range,
                 )
             )
             root_yaw_deg = float(
                 rng.uniform(
-                    -G08_ROOT_RANDOM_YAW_HALF_RANGE_DEG,
-                    G08_ROOT_RANDOM_YAW_HALF_RANGE_DEG,
+                    -yaw_range,
+                    yaw_range,
                 )
             )
         elif spec.task_id == "49":

@@ -10,7 +10,11 @@ CAMERAS = ("main", "wrist_left", "wrist_right")
 
 def sample(task, storage_id, episode_seed):
     """Independent per-camera RNGs, unaffected by physics RNG or retry order."""
+    from ..tasks.registry import TASKS
+    spec = TASKS.get(task)
+    sampling_task = spec.checkpoint_name if spec is not None else task
     result = {'profile': PROFILE, 'enabled': True, 'task': task,
+              'sampling_task': sampling_task,
               'storage_id': storage_id, 'episode_reset_seed': int(episode_seed),
               'translation_bounds_m_per_axis': [-TRANSLATION_M, TRANSLATION_M],
               'rotation_bounds_deg_per_axis': [-ROTATION_DEG, ROTATION_DEG],
@@ -20,7 +24,7 @@ def sample(task, storage_id, episode_seed):
               'sampling': 'once per trajectory, independently for each camera',
               'intrinsics_changed': False, 'cameras': {}}
     for name in CAMERAS:
-        key = json.dumps([PROFILE, task, storage_id, int(episode_seed), name], separators=(',', ':'))
+        key = json.dumps([PROFILE, sampling_task, storage_id, int(episode_seed), name], separators=(',', ':'))
         seed = int.from_bytes(hashlib.sha256(key.encode()).digest()[:8], 'big')
         rng = random.Random(seed)
         translation = [rng.uniform(-TRANSLATION_M, TRANSLATION_M) for _ in range(3)]

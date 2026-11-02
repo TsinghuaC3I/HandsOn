@@ -1,0 +1,60 @@
+{
+  "task": "t06_fit_device_cover",
+  "variant": "stabilize_body",
+  "historical_task": "g02_repair_close_device",
+  "source_commit": "59d128d30062a25e3283da344e4de6fe777de2d5",
+  "result_sha256": "5983afa206c39e7a97fe4ffa22706ca08b47093d05ba736f4b4ec29befc7f6c1",
+  "cohort_episodes": 7,
+  "scope": "Complete task env, scene, ABC and base with explicit namespace, launcher, camera failure and accepted V16 appearance adaptations. Dynamic validation and shared dependency closure are separate.",
+  "modules": [
+    {
+      "original_module": "dexjoco.sim.isaaclab.abc_collection_env",
+      "original_sha256": "27fd838c963017a0acde453a7e49b642f084d7507431dbb5fee6314f654bfe47",
+      "public_module": "handson.sim.isaaclab.core_device_cover_legacy_abc",
+      "public_sha256": "038f9457e591091ce05cb7fe3968f64b2d4595f508567a13f68b7e237e69f7be",
+      "portability_diff_sha256": "d7f6082961ac70d595528d26f343902c3b568ee4892330d0c1af493b84f12f82",
+      "restoration_public_sha256": "5ee71152fe58a9145c73a68f2de27166469300a2fb7b59be2c9a1dadf379a353",
+      "runtime_extraction_baseline_sha256": "5ee71152fe58a9145c73a68f2de27166469300a2fb7b59be2c9a1dadf379a353",
+      "shared_runtime_dependencies": {
+        "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+        "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+      },
+      "portability_diff_scope": "Historical original-to-restoration diff ending at restoration_public_sha256; subsequent shared-method extraction is checked by tests/fixtures/runtime_extraction.json."
+    },
+    {
+      "original_module": "dexjoco.sim.isaaclab.bimanual_assembly_env",
+      "original_sha256": "ffc262b419022eda5d7de692bd18de347f2250cd8e789886a93594b66faa72df",
+      "public_module": "handson.sim.isaaclab.core_device_cover_legacy_base",
+      "public_sha256": "6b41187af1fdba2a6dc71060b4012f96ff155e2891edfd46c5210c2e0c0535bf",
+      "portability_diff_sha256": "4cfaedafc89d45fc80e7a31a7705d0d6b1cf3bf251e41a0255ee9b0481aed4e6",
+      "restoration_public_sha256": "b09cd2753d9ba3584d7e62d5b2a187dbf0bba3f8a7dc956717d8eaf0b8f969bb",
+      "runtime_extraction_baseline_sha256": "b09cd2753d9ba3584d7e62d5b2a187dbf0bba3f8a7dc956717d8eaf0b8f969bb",
+      "shared_runtime_dependencies": {
+        "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+        "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+      },
+      "portability_diff_scope": "Historical original-to-restoration diff ending at restoration_public_sha256; subsequent shared-method extraction is checked by tests/fixtures/runtime_extraction.json."
+    },
+    {
+      "original_module": "dexjoco.sim.isaaclab.g02_repair_close_device_env",
+      "original_sha256": "51eea5cb71cbfb74f057457ad58ff87e993b582d0b6345f79d67daefadec7269",
+      "public_module": "handson.sim.isaaclab.core_device_cover_legacy_env",
+      "public_sha256": "0b07b773250ce4a189d3660eb8eb335b8b0b63948917ab6d45eb8c90c6ea27e4",
+      "portability_diff_sha256": "60604091266380a19ade2729745079a5a3ec6240d6fa1db6006cc0a58d465592"
+    },
+    {
+      "original_module": "dexjoco.sim.isaaclab.g02_repair_close_device_scene",
+      "original_sha256": "92343e4bfeb12c7113384469cdafe0a48b95be6d2a364a1c052278e69d5e454c",
+      "public_module": "handson.sim.isaaclab.core_device_cover_legacy_scene",
+      "public_sha256": "022e8ec59f0bfa378fb3ff4e1555861a1f19af21b02fa8a45a805eaa4cfb8a2a",
+      "portability_diff_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "original_module": "dexjoco.tasks.h01_chinese_chess.model",
+      "original_sha256": "457a04a4ec888fa8393d01cffa18ec40c75dbbc0e305671dc1e595063f6e6e2e",
+      "public_module": "handson.sim.isaaclab.core_device_cover_legacy_h01",
+      "public_sha256": "457a04a4ec888fa8393d01cffa18ec40c75dbbc0e305671dc1e595063f6e6e2e",
+      "portability_diff_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  ]
+}

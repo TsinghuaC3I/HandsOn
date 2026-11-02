@@ -2,171 +2,171 @@
   "t26_place_fruit_in_bucket": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t24_place_ball_in_bowl": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t04_cover_pitcher": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t09_insert_peg": {
     "module": "handson.sim.isaaclab.origins.trace_026e6f7f2766",
     "source_sha256": "026e6f7f276607a01026e2c8fe86693c2feb30e78305a49abfcd4d670919efb7",
-    "packaged_sha256": "dd2e08aab8b5e02f9e845a51706976907983b430635892dbfbc3c7968439fde1"
+    "packaged_sha256": "e1c026837e89aa2297c2ef5f134ffd4d0ef09ece4452acb5356dcb92aec30ab6"
   },
   "t44_stack_blocks": {
     "module": "handson.sim.isaaclab.origins.trace_4facde467bf9",
     "source_sha256": "4facde467bf9810b5b52e5d93237510e0f96426f1aac0b96619cd812635a1bde",
-    "packaged_sha256": "e40b2431b5e0577f2c282ffeec46344c1ccee2433625d96307958eab06d7cb13"
+    "packaged_sha256": "fccff0af4bb52fe94f757f9bb13726254326bd40a5df7c293ac1f36ae3f079b2"
   },
   "t03_cover_box": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t08_hammer_nail": {
     "module": "handson.sim.isaaclab.origins.trace_4b18ed32f2a4",
     "source_sha256": "4b18ed32f2a494f0b63bef4b985b105a461d4a15bcfd74bb87113a40cd9db6b1",
-    "packaged_sha256": "34d804edca77f0018d16dba6fa649638f7421a7fa2abb9be230940dff848d573"
+    "packaged_sha256": "8955ce1d35ec449b3d71a6212f4bd513e57ffb9baf56f829881831541cd4f4e8"
   },
   "t36_scoop_marbles": {
     "module": "handson.sim.isaaclab.origins.trace_4b18ed32f2a4",
     "source_sha256": "4b18ed32f2a494f0b63bef4b985b105a461d4a15bcfd74bb87113a40cd9db6b1",
-    "packaged_sha256": "34d804edca77f0018d16dba6fa649638f7421a7fa2abb9be230940dff848d573"
+    "packaged_sha256": "8955ce1d35ec449b3d71a6212f4bd513e57ffb9baf56f829881831541cd4f4e8"
   },
   "t50_water_plant": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t14_move_and_click_mouse": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t23_photograph_logo": {
     "module": "handson.sim.isaaclab.origins.trace_66b97e001d4c",
     "source_sha256": "66b97e001d4c915d49e07ccf12c9125e2a6a6ea76aa50d90e09e650652b9ff82",
-    "packaged_sha256": "bead1aca89cf5d3573352d5cea01090081faf839566dc724751fb9e0a4af7d2b"
+    "packaged_sha256": "0abe56130c5fc1ea15bc7cf4f48850b16e0f8d940688cf2f4b8297bf514ef957"
   },
   "t02_connect_charger_and_cable": {
     "module": "handson.sim.isaaclab.origins.trace_f033481c143c",
     "source_sha256": "f033481c143cb9d716ebb1895587984d126916172e8a5bac9f4544649d87976b",
-    "packaged_sha256": "d86e1340ab29ce4ce3cf0f40bc0699db8896a14ea72aefce34e49cbe5f4ccb40"
+    "packaged_sha256": "359902c938d2a99bcabedfd0aaad8b6d74296ab8c6f99cf4617433633a45d0be"
   },
   "t11_line_up_blocks": {
     "module": "handson.sim.isaaclab.origins.trace_7919a05d78e6",
     "source_sha256": "7919a05d78e6f887b15fb5b27cd853a0fc0d18fac5f498acfe3a952e05945287",
-    "packaged_sha256": "ebaba08be79e108e68662b03cf0cf8507b6df726fffa49f6adf1f139d126ee38"
+    "packaged_sha256": "b77fcf1bf2be933bc5e05ee2b9ce3ef4e5cba800cea114ec0a8c6177b854cbf6"
   },
   "t06_fit_device_cover": {
     "module": "handson.sim.isaaclab.origins.trace_b57bef7e55b4",
     "source_sha256": "b57bef7e55b48bdf8566b8c1a69ef753617f5d2d6df6491860a5bc99880cf9d7",
-    "packaged_sha256": "57b7a530380fccbe7394412fa780780b1c871cb5a99458ec7fe0ab9674922288"
+    "packaged_sha256": "76ca0e3c3c08db0713501f244768c0230b3bbccf4b1bbae309710ebf292c546e"
   },
   "t18_open_micropipette_box": {
     "module": "handson.sim.isaaclab.origins.trace_b57bef7e55b4",
     "source_sha256": "b57bef7e55b48bdf8566b8c1a69ef753617f5d2d6df6491860a5bc99880cf9d7",
-    "packaged_sha256": "57b7a530380fccbe7394412fa780780b1c871cb5a99458ec7fe0ab9674922288"
+    "packaged_sha256": "76ca0e3c3c08db0713501f244768c0230b3bbccf4b1bbae309710ebf292c546e"
   },
   "t49_unfold_ruler": {
     "module": "handson.sim.isaaclab.origins.trace_b57bef7e55b4",
     "source_sha256": "b57bef7e55b48bdf8566b8c1a69ef753617f5d2d6df6491860a5bc99880cf9d7",
-    "packaged_sha256": "57b7a530380fccbe7394412fa780780b1c871cb5a99458ec7fe0ab9674922288"
+    "packaged_sha256": "76ca0e3c3c08db0713501f244768c0230b3bbccf4b1bbae309710ebf292c546e"
   },
   "t48_unfold_fan": {
     "module": "handson.sim.isaaclab.origins.trace_30896f62f36f",
     "source_sha256": "30896f62f36f48cf709e97758b370d84493464c56f4054685a98f6d7ce7c8923",
-    "packaged_sha256": "9aaf423201e93794731d37d086d366e8f0eb875d5396f3d88678b44912624565"
+    "packaged_sha256": "2dc0b7b373b1b0debd34eac643eff96664910fd18fc46a4b9d22258dba5ac31b"
   },
   "t34_roll_ball_through_gate": {
     "module": "handson.sim.isaaclab.origins.trace_40091947eb3f",
     "source_sha256": "40091947eb3f512b8c10ff501c0a384092018c933860106b13105c9859d23a73",
-    "packaged_sha256": "bff9c8b4472db47ecf1056605858581b4928b43da9b7680d4d48af37623ebc30"
+    "packaged_sha256": "9331d1ee0e1ad31f77046e1dadd9e75f2c957d0a826c0388413d1d3b08dffcbe"
   },
   "t27_place_largest_fitting_ball": {
     "module": "handson.sim.isaaclab.origins.trace_230634577562",
     "source_sha256": "2306345775620ea3907a0bc5120bd4a7720579c25529c850fc87b48abce8d8b0",
-    "packaged_sha256": "1362cb839907fcb95f277775b0fa6be7a836930554887d1aba2e6cf4781bf9a3"
+    "packaged_sha256": "a264e40bb8a9b1d4d3b3ce976bce4f1419f26d0ab3e0907f64a5291f03f22d99"
   },
   "t41_sort_nested_cups": {
     "module": "handson.sim.isaaclab.origins.trace_66b0f72fac9b",
     "source_sha256": "66b0f72fac9b195c8e8f53a9778b4d608d2209e551a5907090f741f0f194b91c",
-    "packaged_sha256": "3ef2b3f24b8c3a6d9203973dee4f8d0e9aa7fd594f3e5da70e88da5ff0d1478e"
+    "packaged_sha256": "1dc8bb555cd4726f215b72894002d4a08e775aec790700eb3a6d17654b977365"
   },
   "t47_trigger_drill_on_block": {
     "module": "handson.sim.isaaclab.origins.trace_dd7ce7987814",
     "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
-    "packaged_sha256": "df0b54a3a2c51853ff1a4d896852fbacd5f2d4082cae5fcb338e912dc54bbfa9"
+    "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a"
   },
   "t28_place_tableware": {
     "module": "handson.sim.isaaclab.origins.trace_dd7ce7987814",
     "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
-    "packaged_sha256": "df0b54a3a2c51853ff1a4d896852fbacd5f2d4082cae5fcb338e912dc54bbfa9"
+    "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a"
   },
   "t39_set_timer": {
     "module": "handson.sim.isaaclab.origins.trace_dd7ce7987814",
     "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
-    "packaged_sha256": "df0b54a3a2c51853ff1a4d896852fbacd5f2d4082cae5fcb338e912dc54bbfa9"
+    "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a"
   },
   "t07_flip_sponge": {
     "module": "handson.sim.isaaclab.origins.trace_3bc529c93a95",
     "source_sha256": "3bc529c93a95f7f385247c6c214b8f9759d83e8a39c72b358bc81d360f51da8f",
-    "packaged_sha256": "65d07179d1d34630866b737225cf6a4e9e4d2192bed4085c135aa57027cb7959"
+    "packaged_sha256": "e7eb86accc14fa9126feb2735783d59702d3eb48c2117927ca7e82e584389894"
   },
   "t29_place_wine_glass": {
     "module": "handson.sim.isaaclab.origins.trace_dd7ce7987814",
     "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
-    "packaged_sha256": "df0b54a3a2c51853ff1a4d896852fbacd5f2d4082cae5fcb338e912dc54bbfa9"
+    "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a"
   },
   "t33_reposition_marker_grasp": {
     "module": "handson.sim.isaaclab.origins.trace_4b18ed32f2a4",
     "source_sha256": "4b18ed32f2a494f0b63bef4b985b105a461d4a15bcfd74bb87113a40cd9db6b1",
-    "packaged_sha256": "34d804edca77f0018d16dba6fa649638f7421a7fa2abb9be230940dff848d573"
+    "packaged_sha256": "8955ce1d35ec449b3d71a6212f4bd513e57ffb9baf56f829881831541cd4f4e8"
   },
   "t25_place_cup_on_plate": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t19_orient_cup_upright": {
     "module": "handson.sim.isaaclab.origins.trace_77bf602bf1f3",
     "source_sha256": "77bf602bf1f3ac1c55b23f8128bf4ccd7a788e1c196a01c9b4cc4ca82763b156",
-    "packaged_sha256": "624b1bc23b3f63fad68fb95e59e904e2c0894b47c0a338353508ae4398f73878"
+    "packaged_sha256": "1b8071e3b57cd3e73b7359b19947bd7d3724e996d6aa636d2b8883f602bdb37e"
   },
   "t40_slide_knife_blade": {
     "module": "handson.sim.isaaclab.origins.trace_b57bef7e55b4",
     "source_sha256": "b57bef7e55b48bdf8566b8c1a69ef753617f5d2d6df6491860a5bc99880cf9d7",
-    "packaged_sha256": "57b7a530380fccbe7394412fa780780b1c871cb5a99458ec7fe0ab9674922288"
+    "packaged_sha256": "76ca0e3c3c08db0713501f244768c0230b3bbccf4b1bbae309710ebf292c546e"
   },
   "t22_pass_screwdriver": {
     "module": "handson.sim.isaaclab.origins.trace_230634577562",
     "source_sha256": "2306345775620ea3907a0bc5120bd4a7720579c25529c850fc87b48abce8d8b0",
-    "packaged_sha256": "1362cb839907fcb95f277775b0fa6be7a836930554887d1aba2e6cf4781bf9a3"
+    "packaged_sha256": "a264e40bb8a9b1d4d3b3ce976bce4f1419f26d0ab3e0907f64a5291f03f22d99"
   },
   "t10_lift_carton": {
     "module": "handson.sim.isaaclab.origins.trace_f29859071e44",
     "source_sha256": "f29859071e44f3f8acae0aba68db6294325b3b96ec37f0cbe711081217a5ddf8",
-    "packaged_sha256": "f88d9d9ff46eaa5edb8b035cd9deb91a8624592499d6e143c4fd17b1f01a8d9e"
+    "packaged_sha256": "7b2aa581f64c8e72508bff61b2753ba28e38da5b060a5c0cd467bfae07a12711"
   },
   "t16_open_laptop": {
     "module": "handson.sim.isaaclab.origins.trace_57e1a769d722",
     "source_sha256": "57e1a769d72277cb428d3a751ab969dfc31297fdbb0c2cfce9b087c5e913fe6c",
-    "packaged_sha256": "b6c7c0548ddbdc26967ab8b19070c7395abbeb439e1317fc78875b16ce0f37c6"
+    "packaged_sha256": "fb9303b13fd5385ff7ed722a9ef0e13c3a16f073b08e03ca38ea82662a5ae336"
   },
   "t17_open_latched_door": {
     "module": "handson.sim.isaaclab.origins.trace_30896f62f36f",
     "source_sha256": "30896f62f36f48cf709e97758b370d84493464c56f4054685a98f6d7ce7c8923",
-    "packaged_sha256": "9aaf423201e93794731d37d086d366e8f0eb875d5396f3d88678b44912624565"
+    "packaged_sha256": "2dc0b7b373b1b0debd34eac643eff96664910fd18fc46a4b9d22258dba5ac31b"
   },
   "t35_rotate_propeller": {
     "module": "handson.sim.isaaclab.origins.trace_dd7ce7987814",
     "source_sha256": "dd7ce79878149e6bac1e7eb88b8dc794e90cb3b7800c8b81a6cd6331143811c9",
-    "packaged_sha256": "df0b54a3a2c51853ff1a4d896852fbacd5f2d4082cae5fcb338e912dc54bbfa9"
+    "packaged_sha256": "76b332d3034e4bf6b353ceae255ede87d588b04ad37e3ce1b3fbf7b2ed95283a"
   }
 }

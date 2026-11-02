@@ -48,7 +48,10 @@ class TaskConfig(TaskConfigBase):
         if backend in {"newton", "nvidia_newton", "isaac_newton"}:
             backend = "isaacsim_newton"
         if backend in {"isaacsim", "isaacsim_newton"}:
-            from ...sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
+            if backend == "isaacsim_newton":
+                from ...sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
+            else:
+                from ...sim.isaaclab.core_box_env import HandsOnABCIsaacLabEnv
 
             env = HandsOnABCIsaacLabEnv(
                 self.task_name,

@@ -1,0 +1,16 @@
+{
+  "source_environment_prefix": "DEXJOCO_",
+  "public_environment_prefix": "HANDSON_",
+  "environment": {
+    "source_file": "native_reset_probe.py",
+    "source_sha256": "819a951853303cb9136dd487749fc7008593c136ff792467b451aaa71c1a7a8b",
+    "statements": "for key in list(os.environ):\n    if key.startswith('DEXJOCO_'):\n        del os.environ[key]\nos.environ.update(job['recorded_control_environment'])"
+  },
+  "spray_visual": {
+    "source_task": "gen7_spray_shoe_care",
+    "public_task": "eval_gen06_spray_shoe",
+    "source_file": "dexjoco/dexjoco/sim/isaaclab/task_preview.py",
+    "source_sha256": "757f896ebf7a54794e3018a823c4073becb2a3b0c666aad7a74262fd4fc0af29",
+    "function": "def _hide_c04_spray_visual(stage, root_path: str, task_name: str) -> int:\n    if not (_is_c04_water_plant_task(task_name) or task_name == \"gen7_spray_shoe_care\"):\n        return 0\n\n    from pxr import Usd, UsdGeom\n\n    root_prim = stage.GetPrimAtPath(root_path)\n    if not root_prim.IsValid():\n        return 0\n    for prim in Usd.PrimRange(root_prim):\n        if prim.GetName() != \"cone_vis\" or not prim.IsA(UsdGeom.Xformable):\n            continue\n        UsdGeom.Imageable(prim).MakeInvisible()\n        return 1\n    return 0"
+  }
+}

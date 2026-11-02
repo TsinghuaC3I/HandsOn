@@ -1,0 +1,77 @@
+// Task-local appearance material. Original print is supplied unchanged by USD.
+mdl 1.7;
+
+import ::base::*;
+import ::tex::*;
+import ::state::*;
+import OmniPBRBase::*;
+
+export material LabelFilm(
+    uniform texture_2d print_texture = texture_2d(),
+    uniform texture_2d roughness_texture = texture_2d(),
+    uniform texture_2d normal_texture = texture_2d(),
+    uniform color backing_color = color(0.72, 0.73, 0.74),
+    uniform float backing_roughness = 0.46,
+    uniform float2 detail_scale = float2(4.0539, 5.7158),
+    uniform float2 detail_translate = float2(-1.5248, -2.6448)
+)
+= let {
+    base::texture_coordinate_info uvw = base::coordinate_source(
+        coordinate_system: base::texture_coordinate_uvw,
+        texture_space: 0
+    );
+    base::texture_coordinate_info detail_uvw = base::transform_coordinate(
+        transform: float4x4(
+            detail_scale.x, 0.0, 0.0, 0.0,
+            0.0, detail_scale.y, 0.0, 0.0,
+            0.0, 0.0, 1.0, 0.0,
+            detail_translate.x, detail_translate.y, 0.0, 1.0
+        ),
+        coordinate: uvw
+    );
+    color print_color = base::file_texture(
+        texture: print_texture,
+        color_offset: color(0.0),
+        color_scale: color(1.0),
+        uvw: uvw,
+        clip: false
+    ).tint;
+    float film_roughness = base::file_texture(
+        texture: roughness_texture,
+        mono_source: base::mono_average,
+        uvw: detail_uvw,
+        clip: false
+    ).mono;
+    OmniPBRBase::NormalData detail_normal =
+        OmniPBRBase::tangent_space_normal_roughness_texture(
+            normal_texture, 1.0, false, false, detail_uvw,
+            float2(0.0, 1.0), float2(0.0, 1.0),
+            tex::wrap_repeat, tex::wrap_repeat, false,
+            1.0, 0.0, 0.0, int2(0), tex::wrap_repeat, 30.0
+        );
+    material printed_face = OmniPBRBase::OmniPBRBase(
+        diffuse_reflection_color: print_color,
+        specular_reflection_roughness: film_roughness,
+        specular_level: 0.45,
+        metalness: 0.0,
+        geometry_normal: detail_normal.normal
+    );
+    material unprinted_face = OmniPBRBase::OmniPBRBase(
+        diffuse_reflection_color: backing_color,
+        specular_reflection_roughness: backing_roughness,
+        specular_level: 0.45,
+        metalness: 0.0,
+        geometry_normal: detail_normal.normal
+    );
+} in material(
+    thin_walled: true,
+    // The source sleeve's winding and authored normals both point inward.
+    // Keep that mesh intact: its geometric back face is the printed exterior.
+    surface: unprinted_face.surface,
+    backface: printed_face.surface,
+    ior: color(1.47),
+    geometry: material_geometry(
+        normal: detail_normal.normal,
+        cutout_opacity: 1.0
+    )
+);

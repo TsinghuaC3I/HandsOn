@@ -1,0 +1,332 @@
+{
+  "profile": "v14_camera_mount_jitter_v1",
+  "enabled": true,
+  "task": "g02_repair_close_device",
+  "storage_id": "g02_repair_close_device_demo_1_2026-08-28_00-01-43_903116__physx_v3__src_4b56584935e2",
+  "episode_reset_seed": 1050157406,
+  "translation_bounds_m_per_axis": [
+    -0.002,
+    0.002
+  ],
+  "rotation_bounds_deg_per_axis": [
+    -0.3,
+    0.3
+  ],
+  "composition": "T_world_camera_nominal @ T_camera_delta",
+  "coordinate_convention": "OpenGL camera local: +X right, +Y up, -Z forward",
+  "rotation_order": "Rz(yaw) @ Ry(pitch) @ Rx(roll)",
+  "sampling": "once per trajectory, independently for each camera",
+  "intrinsics_changed": false,
+  "cameras": {
+    "main": {
+      "seed": 10552531165749777340,
+      "translation_m": [
+        0.0012043016489381715,
+        -0.0001721597544191379,
+        0.0003825862814870193
+      ],
+      "roll_pitch_yaw_deg": [
+        -0.17215766293438692,
+        0.16636232901853942,
+        0.16651728409481797
+      ],
+      "quaternion_wxyz": [
+        0.9999967586489876,
+        -0.001504464930325275,
+        0.0014495983849000945,
+        0.0014553148504635662
+      ],
+      "nominal_override": {
+        "position_m": [
+          -0.6548241839280105,
+          0.012561357233655243,
+          1.5471263727537892
+        ],
+        "quaternion_wxyz_opengl": [
+          0.6615863460911702,
+          0.2349328201778931,
+          -0.2387186550508383,
+          -0.6709124237929381
+        ]
+      },
+      "sensor": "head_camera",
+      "prim_paths": [
+        "/World/RecordCameras/head_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.6548241972923279,
+            0.012561357580125332,
+            1.5471264123916626
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            0.661586344242096,
+            0.2349328249692917,
+            -0.2387186586856842,
+            -0.6709124445915222
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.6552162766456604,
+            0.011362629011273384,
+            1.547315239906311
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            0.6632601022720337,
+            0.23456187546253204,
+            -0.23709137737751007,
+            -0.6699661016464233
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            463.39337158203125,
+            0.0,
+            431.76727294921875
+          ],
+          [
+            0.0,
+            463.00189208984375,
+            239.91897583007812
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 1,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 5.960464477539063e-08
+    },
+    "wrist_left": {
+      "seed": 10095576794109166217,
+      "translation_m": [
+        0.0009461443577071429,
+        0.0017163755504421801,
+        -0.0003421153172906699
+      ],
+      "roll_pitch_yaw_deg": [
+        0.12587080859496014,
+        -0.08167891462618004,
+        -0.15774065226335826
+      ],
+      "quaternion_wxyz": [
+        0.999998196334241,
+        0.0010974473022315882,
+        -0.0007142938684076504,
+        -0.001375762316994371
+      ],
+      "sensor": "wrist_left_camera",
+      "prim_paths": [
+        "/World/RecordCameras/wrist_left_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.40631580352783203,
+            0.26864343881607056,
+            0.9287208318710327
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            0.5518155694007874,
+            -0.3492262363433838,
+            -0.7159172296524048,
+            0.24698813259601593
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.4057352542877197,
+            0.2704519033432007,
+            0.9281286597251892
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            0.5520262122154236,
+            -0.3474586606025696,
+            -0.7165195345878601,
+            0.24726365506649017
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            269.56402587890625,
+            0.0,
+            424.0
+          ],
+          [
+            0.0,
+            269.56402587890625,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 720,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 5.960464477539063e-08
+    },
+    "wrist_right": {
+      "seed": 15910955161209276979,
+      "translation_m": [
+        0.0004362994223585429,
+        0.0008664712780030569,
+        -0.00045929939701249583
+      ],
+      "roll_pitch_yaw_deg": [
+        0.1968542091822708,
+        0.014444588812000392,
+        -0.04405341331403517
+      ],
+      "quaternion_wxyz": [
+        0.9999984425253037,
+        0.0017179245222789304,
+        0.00012539220346413665,
+        -0.00038465451787167714
+      ],
+      "sensor": "wrist_right_camera",
+      "prim_paths": [
+        "/World/RecordCameras/wrist_right_camera"
+      ],
+      "initial_pose": {
+        "nominal_position_m": [
+          [
+            -0.40525662899017334,
+            -0.2621331214904785,
+            0.9337169528007507
+          ]
+        ],
+        "nominal_quaternion_wxyz": [
+          [
+            -0.2569124400615692,
+            0.6649547219276428,
+            0.3720877766609192,
+            -0.5944593548774719
+          ]
+        ],
+        "applied_position_m": [
+          [
+            -0.4046344757080078,
+            -0.2622498571872711,
+            0.9328501224517822
+          ]
+        ],
+        "applied_quaternion_wxyz": [
+          [
+            -0.25832971930503845,
+            0.6644437313079834,
+            0.37128952145576477,
+            -0.5949154496192932
+          ]
+        ]
+      },
+      "intrinsic_matrix": [
+        [
+          [
+            269.56402587890625,
+            0.0,
+            424.0
+          ],
+          [
+            0.0,
+            269.56402587890625,
+            240.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      ],
+      "setter_calls": 720,
+      "position_readback_max_error_m": 0.0,
+      "quaternion_readback_max_error": 5.960464477539063e-08
+    }
+  },
+  "implementation_sha256": "59b89498967ddd6470853f2e770872beb104ee605cb011c2f21b1d2365d23a33",
+  "renderer_snapshot_sha256": "1589751337654cc648cca94e70370dd9e78de6f2785853540c21c1d2ad3a2d6b",
+  "v16_main_camera_profile": "v16_floor7_real_aligned_v2",
+  "status": "complete",
+  "readback_checks": [
+    {
+      "frame": 0,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        },
+        "wrist_left": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        },
+        "wrist_right": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 0.0
+        }
+      }
+    },
+    {
+      "frame": 360,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        },
+        "wrist_left": {
+          "setter_calls": 361,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 2.9802322387695312e-08
+        },
+        "wrist_right": {
+          "setter_calls": 361,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    },
+    {
+      "frame": 719,
+      "cameras": {
+        "main": {
+          "setter_calls": 1,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        },
+        "wrist_left": {
+          "setter_calls": 720,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        },
+        "wrist_right": {
+          "setter_calls": 720,
+          "position_readback_max_error_m": 0.0,
+          "quaternion_readback_max_error": 5.960464477539063e-08
+        }
+      }
+    }
+  ]
+}

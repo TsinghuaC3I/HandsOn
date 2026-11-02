@@ -21,7 +21,13 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check native factories without starting Isaac Sim")
     parser.add_argument("--physics-backend", choices=BACKENDS, default="physx",
                         help="Physics engine; --list reports the selected engine's supported tasks")
-    parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--seed", type=int)
+    parser.add_argument("--paper-trial", type=int,
+                        help="Use the archived accepted Core trial index (0–99), with --model and --task")
+    parser.add_argument("--inspect-paper-trial", action="store_true",
+                        help="Print the verified paper inputs without starting Isaac Sim")
+    parser.add_argument("--paper-variant", choices=["stabilize_body"],
+                        help="Explicit historical source cohort; stabilize_body is available for t06 on PhysX")
     parser.add_argument("--output", type=Path, default=Path("outputs/evaluation"))
     parser.add_argument("--diagnostic-steps", type=int, default=0,
                         help="Run held measured commands, with no policy score (minimum 90)")
@@ -53,18 +59,44 @@ def main():
         task = config["env_name"]
         if task not in CONFIG_MAPPING:
             parser.error(f"Unknown release task {task!r}; use --list for supported tasks")
+    paper_trial = None
+    if args.inspect_paper_trial and args.paper_trial is None:
+        parser.error('--inspect-paper-trial requires --paper-trial')
+    if args.paper_trial is not None:
+        if not task or not args.model or args.seed is not None or args.check:
+            parser.error('--paper-trial requires --task/--config and --model; omit --seed and --check')
+        from .paper_trials import load as load_trial
+        try:
+            paper_trial = load_trial(args.model, task, args.paper_trial)
+            if args.physics_backend != 'physx':
+                raise ValueError('Archived paper trials require PhysX')
+            if args.paper_variant is not None and args.paper_variant != paper_trial['paper_variant']:
+                raise ValueError('--paper-variant conflicts with the archived trial')
+        except (OSError, ValueError, KeyError) as exc:
+            parser.error(str(exc))
+        args.seed = paper_trial['seed']
+        args.paper_variant = paper_trial['paper_variant']
+        if args.inspect_paper_trial:
+            print(json.dumps(paper_trial, indent=2))
+            return
+    elif args.seed is None:
+        args.seed = 0
     if task:
         try:
             validate_task(task, args.physics_backend)
+            from .paper_variants import load as load_variant
+            load_variant(task, args.paper_variant, args.physics_backend)
         except ValueError as exc:
             parser.error(str(exc))
+    elif args.paper_variant:
+        parser.error("--paper-variant requires --task or --config")
     if args.check:
         from .native import check_task
         report = []
         for name in [task] if task else supported_tasks(args.physics_backend):
             try:
                 with contextlib.redirect_stdout(sys.stderr):
-                    row = check_task(name, physics_backend=args.physics_backend)
+                    row = check_task(name, physics_backend=args.physics_backend, paper_variant=args.paper_variant)
                 report.append(dict(row, passed=True))
             except Exception as exc:
                 report.append(dict(task=name, passed=False, error=repr(exc)))
@@ -103,8 +135,9 @@ def main():
         parser.error("action horizon and history frames must be positive")
     from .schedule import RenderSchedule
     RenderSchedule(args.render_stride, args.action_horizon)
-    if args.history_frames > 1 and (args.history_stride != args.render_stride or not args.policy_url):
-        parser.error("history models require --policy-url and history stride equal to render stride")
+    if args.history_frames > 1 and (args.history_stride != args.render_stride
+                                   or (not args.diagnostic_steps and not args.policy_url)):
+        parser.error("history models require history stride equal to render stride and --policy-url for policy execution")
     if not args.worker:
         from handson.robots.assets import require_benchmark_assets
         try:
@@ -162,5 +195,8 @@ def main():
     from .native import run_episode
     result = run_episode(task, args.output, seed=args.seed, policy=policy,
                          diagnostic_steps=args.diagnostic_steps, render_stride=args.render_stride,
-                         physics_backend=args.physics_backend, max_policy_steps=args.max_policy_steps)
+                         physics_backend=args.physics_backend, max_policy_steps=args.max_policy_steps,
+                         paper_variant=args.paper_variant, paper_trial=paper_trial, isolated_worker=True,
+                         execution_settings=dict(action_horizon=args.action_horizon,
+                             history_frames=args.history_frames, history_stride=args.history_stride))
     print(json.dumps(result, indent=2))

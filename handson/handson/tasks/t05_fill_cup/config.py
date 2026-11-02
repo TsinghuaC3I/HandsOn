@@ -4,6 +4,7 @@ from ..b320_common import B320TaskConfigBase
 class TaskConfig(B320TaskConfigBase):
     task_id = "05"
     task_name = "t05_fill_cup"
+    b320_runtime = "paper_faucet"
     task_prompt = (
         "Lift the randomized white ceramic mug under the faucet outlet with the "
         "left hand and keep its local +Z axis within 15 degrees, inclusive, of "

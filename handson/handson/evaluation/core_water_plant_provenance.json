@@ -1,0 +1,38 @@
+{
+  "task": "t50_water_plant",
+  "historical_task": "c04_water_plant",
+  "source_commit": "dcefa66571c147e3d71b90bb2d19ccecd97ff102",
+  "result_sha256": "896c774587b472896073ab0f40dd06f8164c3d85418063e292d421a1a21c5eed",
+  "cohort_episodes": 900,
+  "scope": "Paper-loaded environment and base, with explicit release portability and accepted V16 appearance adaptations. Shared assets/helpers and dynamic behavior are audited separately.",
+  "modules": [
+    {
+      "original_module": "dexjoco.sim.isaaclab.abc_collection_env",
+      "original_sha256": "97b8664cc877c220cec4b8d94fc1e6f93715061015ad90fb7d562b656f7b1df1",
+      "public_module": "handson.sim.isaaclab.core_pitcher_env",
+      "public_sha256": "937c4d8b412f3bd0539bf42c9681d433082dd3002e46873dba4e20b20c3ed239",
+      "portability_diff_sha256": "1e459175fb3b8118f10136185980e28be46a3a9e2f7d13f3292a2fca9fab5f45",
+      "restoration_public_sha256": "6c71f7948cc0f9535c146b2195421e13ebdafc726f5ed08cf6e0ddb0c388ab89",
+      "runtime_extraction_baseline_sha256": "17856dc13bc01965d4d576ae3eea4b1cf69443a42bf36e483be73678d404228d",
+      "shared_runtime_dependencies": {
+        "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+        "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+      },
+      "portability_diff_scope": "Historical original-to-restoration diff ending at restoration_public_sha256; subsequent shared-method extraction is checked by tests/fixtures/runtime_extraction.json."
+    },
+    {
+      "original_module": "dexjoco.sim.isaaclab.bimanual_assembly_env",
+      "original_sha256": "ca32524beeee70dc9e0b7d44b3c55c5d5a23367784a9bf5e9916ddf54dd8dae7",
+      "public_module": "handson.sim.isaaclab.core_pitcher_base",
+      "public_sha256": "2640644b3f056737c17f82273fe1ebb0522b938e88d5be59d42f71d05a101821",
+      "portability_diff_sha256": "a41d177ec9df8bda0585f7d4bc8116f58a9b50aa842f310eddfe431661c61c31",
+      "restoration_public_sha256": "2ca9a2b510784725dde365b4559b8e0b188d6ad2d9a82e0a8a6c66ab468944ec",
+      "runtime_extraction_baseline_sha256": "2ca9a2b510784725dde365b4559b8e0b188d6ad2d9a82e0a8a6c66ab468944ec",
+      "shared_runtime_dependencies": {
+        "sim/isaaclab/bimanual_runtime.py": "268e6241f6de9a2067d56348698eaa65dc62e8c88590411f9f696228866dbafa",
+        "sim/isaaclab/collection_runtime.py": "d1d5ab4123d82ab62d18c5e00dc24e22e1cd426f961c67beff44eefbd2b34b64"
+      },
+      "portability_diff_scope": "Historical original-to-restoration diff ending at restoration_public_sha256; subsequent shared-method extraction is checked by tests/fixtures/runtime_extraction.json."
+    }
+  ]
+}

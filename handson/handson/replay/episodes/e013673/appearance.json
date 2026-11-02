@@ -1,0 +1,72 @@
+{
+  "profile": {
+    "version": "v16_pbr_lab_v1",
+    "mode": "randomized",
+    "seed": 1050157406,
+    "task": "g02_repair_close_device",
+    "seed_sha256": "57be1b5ed6b02be071424617272b938eb3beedb48e76c5f59f8bc32a0df60b7b",
+    "table": "Wood049",
+    "table_tile_m": 0.9981458032611696,
+    "table_rotate_deg": 0.0,
+    "table_offset": [
+      0.8005446561313682,
+      0.13208964858645877
+    ],
+    "table_roughness": 0.41254080049818265,
+    "table_normal_strength": 0.3,
+    "palette": "slate",
+    "cabinet_color": [
+      0.21,
+      0.25,
+      0.29
+    ],
+    "wall_color": [
+      0.955,
+      0.975,
+      1.0
+    ],
+    "floor_tint": [
+      0.7,
+      0.75,
+      0.81
+    ],
+    "floor_tile_m": 2.075321404771346,
+    "floor_roughness": 0.6100706245390148,
+    "wall_tile_m": 1.2278094989500556,
+    "cabinet_x": 1.513791203774192,
+    "context_variant": 0,
+    "key_position": [
+      0.4502606081584031,
+      1.6665894866128546,
+      2.320938299575218
+    ],
+    "key_intensity": 1716.3222309475068,
+    "key_temperature": 5640.5288568357055,
+    "key_size": [
+      1.2,
+      0.85
+    ],
+    "fill_intensity": 700.0,
+    "rim_intensity": 550.0,
+    "dome_intensity": 94.39645492746804,
+    "spp": 32,
+    "exposure_multiplier": 3.0,
+    "context": true,
+    "ceiling_height": 3.103817104368449,
+    "ceiling_variant": 2,
+    "ceiling_color": [
+      0.97,
+      0.985,
+      1.0
+    ],
+    "ceiling_light_intensity": 201.76781590563712,
+    "ceiling_light_temperature": 5861.559791075758,
+    "wall_roughness": 0.8426383876680633,
+    "wall_normal_strength": 0.0752169258078281,
+    "ceiling_roughness": 0.8542832289621293,
+    "ceiling_normal_strength": 0.039184987119550804,
+    "architectural_palette": "predominantly_white"
+  },
+  "assets_manifest_sha256": "40e0b21effb1a037aa5b1f52af3c5e865b6fb77f566dad16c1fa2870abaf4ae8",
+  "source_metadata_sha256": "e7e44e0a6f1589f4c76fcd23445596cc88d2960a64cbe8f8a6dacafe23fd1b67"
+}

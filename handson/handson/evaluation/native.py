@@ -1,5 +1,6 @@
 """Portable entry to the native factory, measured EEF52 boundary and rollout."""
 from pathlib import Path
+from contextlib import ExitStack
 import json
 import os
 import shutil
@@ -13,7 +14,10 @@ from .evidence import json_safe
 from ..tasks.registry import TASKS
 
 
-def construct(task, seed=0, *, launch=True, selection=None, physics_backend="physx"):
+def construct(task, seed=0, *, launch=True, selection=None, physics_backend="physx", paper_variant=None,
+              trial_constructor=None):
+    from .paper_variants import load as load_variant
+    load_variant(task, paper_variant, physics_backend)
     from .backends import validate_task
     validate_task(task, physics_backend)
     if launch:
@@ -24,18 +28,25 @@ def construct(task, seed=0, *, launch=True, selection=None, physics_backend="phy
     # The paper evaluator constructs the task's own policy wrapper, then steps
     # the unwrapped native environment with named right/left 27-value commands.
     from .task_contracts import load
-    contract = load(task) if physics_backend == "physx" else None
+    contract = load(task, paper_variant) if physics_backend == "physx" else None
     kwargs = dict(contract['constructor']) if contract else {}
     kwargs.update(seed=seed, randomize=True, image_obs=False, hand_type="wuji1",
                   headless=True, launch_isaac=launch, isaac_device="cuda:0", control_dt=1 / 30,
                   wrist_camera_output_size=(848, 480))
     if selection is not None:
         kwargs['physics_dt'] = selection['physics']['physics_dt']
+    if paper_variant is not None:
+        kwargs['paper_variant'] = paper_variant
+    if trial_constructor is not None:
+        require(set(trial_constructor) <= {'target_object', 'target_open_deg', 'reset_clearance_scope'},
+                'Unsupported paper constructor fields')
+        kwargs.update(trial_constructor)
     wrapped = config.get_native_environment(policy_mode=True, render_mode="rgb_array",
                                      sim_backend="isaacsim" if physics_backend == "physx" else "isaacsim_newton", **kwargs)
     env = wrapped.unwrapped
-    env = TASKS[task].evaluation_adapter().native_view(env, launch)
+    env = TASKS[task].evaluation_adapter(paper_variant).native_view(env, launch)
     require(env.task_name == task, "Factory produced the wrong native task")
+    require(env._physics_backend == physics_backend, "Factory produced the wrong physics backend")
     require(abs(env._control_dt - 1 / 30) < 1e-12, "Control rate differs from 30 Hz")
     require(abs(env._n_substeps * env._physics_dt - 1 / 30) < 1e-12,
             "Physical action rate differs from 30 Hz")
@@ -50,10 +61,11 @@ def capture(env):
     return dict(readback(env), state=state.tolist(), eef=evidence)
 
 
-def check_task(task, physics_backend="physx"):
-    env, wrapped, config = construct(task, launch=False, physics_backend=physics_backend)
+def check_task(task, physics_backend="physx", paper_variant=None):
+    env, wrapped, config = construct(task, launch=False, physics_backend=physics_backend, paper_variant=paper_variant)
     try:
-        return dict(task=task, environment=type(env).__name__, hand_type=env.hand_type,
+        return dict(task=task, environment=type(env).__name__, environment_module=type(env).__module__,
+                    paper_variant=paper_variant, hand_type=env.hand_type,
                     physics_backend=env._physics_backend,
                     control_dt=env._control_dt, physics_dt=env._physics_dt,
                     n_substeps=env._n_substeps, native_time_limit=env._time_limit,
@@ -65,7 +77,16 @@ def check_task(task, physics_backend="physx"):
 
 
 def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render_stride=30,
-                physics_backend="physx", max_policy_steps=0):
+                physics_backend="physx", max_policy_steps=0, paper_variant=None,
+                paper_trial=None, isolated_worker=False, execution_settings=None):
+    execution_settings = dict(execution_settings or {})
+    require(set(execution_settings) <= {'action_horizon', 'history_frames', 'history_stride'},
+            'Unsupported execution settings')
+    from . import paper_trials
+    if paper_trial is not None:
+        paper_trials.validate(paper_trial, task, seed, physics_backend, paper_variant)
+    from .paper_variants import load as load_variant
+    variant = load_variant(task, paper_variant, physics_backend)
     from . import backends
     backends.validate_task(task, physics_backend)
     require(not (diagnostic_steps and max_policy_steps), "Choose hold diagnostics or bounded policy execution")
@@ -76,13 +97,18 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
     from .cameras import render_probe
     from .rollout import run
 
-    adapter = TASKS[task].evaluation_adapter()
+    adapter = TASKS[task].evaluation_adapter(paper_variant)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=False)
+    if variant is not None:
+        write_new(output / "PAPER_VARIANT.json", variant)
     require(policy is not None or diagnostic_steps >= 90,
             "Provide a policy or request a diagnostic of at least 90 actions")
     from .task_contracts import configure, initialize, install_native_trace
-    task_contract = configure(task) if physics_backend == "physx" else None
+    task_contract = configure(task, paper_variant) if physics_backend == "physx" else None
+    if paper_trial is not None:
+        paper_trials.configure_environment(paper_trial, task_contract)
+        write_new(output / 'PAPER_TRIAL.json', paper_trial)
     backends.configure(physics_backend)
     os.environ["HANDSON_BACKGROUND_MODE"] = "off"
     # The original evaluator gives each attempt its own conversion workspace.
@@ -92,25 +118,39 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
     os.environ["HANDSON_ISAACLAB_DEFER_CAMERA_RENDER"] = "0"
     os.environ["HANDSON_ISAACLAB_REQUIRE_REAL_RECORDING_CAMERAS"] = "1"
     env = wrapped = None
+    contexts = ExitStack()
+    frozen_goal = None
     try:
+        from .camera_contracts import use as use_camera_contract
+        camera_contract = contexts.enter_context(use_camera_contract(task, paper_variant, physics_backend))
+        write_new(output / 'CAMERA_CONTRACT.json', camera_contract)
         from .cameras import install_native_camera_creation, install_launcher
         install_launcher(physics_backend)
         from ..sim.isaaclab.abc_collection_env import HandsOnABCIsaacLabEnv
         install_native_camera_creation(HandsOnABCIsaacLabEnv)
         if physics_backend == "physx":
             adapter.prepare_cameras()
-            install_native_trace(task, output)
+            install_native_trace(task, output, paper_variant)
             adapter.prepare(output)
         from .setting_runtime import prepare, configure_solver, verify_b_setting
-        selection = prepare(task, seed, output) if physics_backend == "physx" else None
+        selection = prepare(task, seed, output, paper_trial=paper_trial) if physics_backend == "physx" else None
         if physics_backend == "physx":
             configure_solver(selection)
         reset_seed = selection["seeds"]["reset"] if selection else seed
-        env, wrapped, config = construct(task, reset_seed, selection=selection, physics_backend=physics_backend)
+        if paper_trial is not None:
+            require(reset_seed == paper_trial['reset_seed'], 'Reset seed differs from the paper trial')
+            from .frozen_goals import FrozenGoal
+            frozen_goal = contexts.enter_context(FrozenGoal(task, paper_trial['goal'],
+                condition_native=paper_trial['goal_route'] != 'legacy_native_generated'))
+        env, wrapped, config = construct(task, reset_seed, selection=selection, physics_backend=physics_backend,
+                                         paper_variant=paper_variant,
+                                         trial_constructor=paper_trial['constructor_overrides'] if paper_trial else None)
         require(env._sim is not None, "Isaac Sim did not start")
         if not env._cameras:
             env._init_recording_cameras()
-        observation, reset_info = env.reset(seed=reset_seed)
+        observation, reset_info = env.reset(seed=reset_seed, **(paper_trial['reset_parameters'] if paper_trial else {}))
+        if frozen_goal is not None:
+            write_new(output / 'FROZEN_GOAL_RESET.json', frozen_goal.verify(env))
         if physics_backend == "physx":
             observation, reset_info = initialize(
                 env, wrapped, observation, reset_info, task_contract, output)
@@ -124,12 +164,20 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
         require(env.env_step == 0, "Policy must start at the native recording boundary")
         write_new(output / "RECORDING_ORIGIN.json", json_safe(reset_info))
         from .goals import bind
-        instruction = bind(env, task, seed)
+        if frozen_goal is None:
+            instruction = bind(env, task, seed, paper_variant)
+        else:
+            readback = frozen_goal.verify(env)
+            write_new(output / 'FROZEN_GOAL_ORIGIN.json', readback)
+            instruction = paper_trials.bind_instruction(paper_trial, readback)
         prompt = instruction["prompt"]
         write_new(output / "PROMPT.json", instruction)
         budgets = json.loads(Path(__file__).with_name("budgets.json").read_text())
         require(task in budgets, "Task has no published evaluation budget")
         budget = budgets[task]
+        if paper_trial is not None:
+            require(int(budget['steps']) == paper_trial['budget_steps'],
+                    'Public evaluation budget differs from this archived trial')
         original_limit = float(env._time_limit)
         env._time_limit = int(budget["steps"]) * env._control_dt
         write_new(output / "BUDGET.json", dict(budget, native_time_limit=original_limit,
@@ -137,14 +185,22 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
                    physics_dt=env._physics_dt, n_substeps=env._n_substeps))
         ffmpeg = shutil.which("ffmpeg")
         require(ffmpeg is not None, "Install ffmpeg to record evaluation videos")
-        cfg = dict(policy or {"transport": "hold"})
-        cfg.update(prompt=prompt, action_horizon=int(cfg.get("action_horizon", 30)),
+        cfg = dict(execution_settings)
+        cfg.update(policy or {"transport": "hold"})
+        cfg.update(task=task, paper_variant=paper_variant, prompt=prompt, action_horizon=int(cfg.get("action_horizon", 30)),
                    max_chunks=10000, ffmpeg=ffmpeg)
-        job = dict(task=task, policy_probe=cfg, benchmark=dict(
+        job = dict(task=task, paper_variant=paper_variant, policy_probe=cfg, benchmark=dict(
             executor="legacy_native_eef", formal=policy is not None and not max_policy_steps, render_stride=render_stride,
             physics_backend=physics_backend, paper_physics_protocol=physics_backend == "physx",
             smoke_control_steps=diagnostic_steps or max_policy_steps), source_revision="packaged")
         job["evaluation_budget"] = dict(budget, native_time_limit_s=original_limit)
+        if paper_trial is not None:
+            job['paper_trial'] = dict(model=paper_trial['model'], index=paper_trial['index'],
+                candidate_seed_index=paper_trial['candidate_seed_index'],
+                input_manifest_sha256=paper_trial['input_manifest_sha256'],
+                source_commit=paper_trial['source_commit'],
+                historical_source_equivalence_certified=False,
+                reset_replacement='none; failure is reported without substituting another seed')
         if selection is not None:
             job.update(setting_selection=selection, setting_applied_before_reset=True,
                        setting_runtime_verified=verify_b_setting(env, selection))
@@ -155,10 +211,12 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
         camera_seed = selection["seeds"]["camera"] if selection else seed
         render_probe(env, job, output, 0, camera_seed, "initial", capture)
         result = adapter.run(run, env, job, output, 0, seed, capture)
+        if frozen_goal is not None:
+            write_new(output / 'FROZEN_GOAL_FINAL.json', frozen_goal.verify(env))
         write_new(output / "FINAL_STATE.json", capture(env))
         verify_environment(env)
         write_new(output / "RENDERING.json", env.default_appearance_report)
-        result.update(diagnostic_only=policy is None, complete_evaluation_episode=(
+        result.update(paper_variant=paper_variant, diagnostic_only=policy is None, complete_evaluation_episode=(
             policy is not None and result["complete_native_episode"]), evaluation_budget=budget)
         if policy is None:
             result["native_success_during_hold"] = result.pop("success")
@@ -172,5 +230,10 @@ def run_episode(task, output, *, seed=0, policy=None, diagnostic_steps=0, render
                                               diagnostics=json_safe(getattr(exc, "diagnostics", {}))))
         raise
     finally:
-        if wrapped is not None:
-            wrapped.close()
+        try:
+            if wrapped is not None:
+                if isolated_worker and paper_variant == 'stabilize_body':
+                    wrapped.unwrapped._fast_shutdown_on_close = True
+                wrapped.close()
+        finally:
+            contexts.close()

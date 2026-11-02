@@ -8,6 +8,10 @@ free.
 
 from __future__ import annotations
 
+from functools import lru_cache
+import json
+from pathlib import Path
+
 
 SINGLE_ENV_GPU_MAX_RIGID_CONTACT_COUNT = 2**20
 SINGLE_ENV_GPU_MAX_RIGID_PATCH_COUNT = 5 * 2**15
@@ -16,6 +20,22 @@ SINGLE_ENV_GPU_MAX_RIGID_PATCH_COUNT = 5 * 2**15
 # tiled, multi-environment scene.
 MULTI_ENV_GPU_MAX_RIGID_CONTACT_COUNT = 2**22
 MULTI_ENV_GPU_MAX_RIGID_PATCH_COUNT = 2**21
+
+
+@lru_cache(maxsize=1)
+def _paper_gpu_profiles():
+    return json.loads(Path(__file__).with_name("paper_gpu_buffers.json").read_text())["tasks"]
+
+
+def paper_gpu_physx_kwargs(task_name: str) -> dict[str, int] | None:
+    """Retain source-bound paper allocations before applying its solver setting.
+
+    Missing keys intentionally use Isaac Lab v2.3.2 defaults, as in the
+    original source. A later blanket low-memory profile changed those keys.
+    The bundled receipt binds each profile to the paper-loaded source hashes.
+    """
+    row = _paper_gpu_profiles().get(task_name)
+    return None if row is None else dict(row["kwargs"])
 
 
 def bounded_single_env_gpu_physx_kwargs() -> dict[str, int]:

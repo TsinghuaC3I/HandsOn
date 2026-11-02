@@ -11,6 +11,26 @@ from types import SimpleNamespace
 
 
 class EntryTests(unittest.TestCase):
+    def test_hold_diagnostics_keep_each_model_execution_profile_without_a_server(self):
+        from handson.policies.profiles import PROFILES, execution_settings
+        from handson.evaluation.schedule import RenderSchedule
+        from handson.evaluation.history import ImageHistory
+        for model in PROFILES:
+            with self.subTest(model=model):
+                argv = ["evaluation", "--task", "t24_place_ball_in_bowl", "--model", model,
+                        "--diagnostic-steps", "90", "--worker"]
+                with patch("sys.argv", argv), patch("handson.evaluation.native.run_episode", return_value={}) as run:
+                    cli.main()
+                kwargs = run.call_args.kwargs
+                self.assertIsNone(kwargs["policy"])
+                self.assertEqual(kwargs["diagnostic_steps"], 90)
+                expected = execution_settings(model)
+                self.assertEqual(kwargs["render_stride"], expected.pop("render_stride"))
+                self.assertEqual(kwargs["execution_settings"], expected)
+                schedule = RenderSchedule(kwargs["render_stride"], expected["action_horizon"])
+                ImageHistory(expected["history_frames"], expected["history_stride"],
+                             expected["action_horizon"], schedule.stride)
+
     @patch("handson.robots.assets.require_benchmark_assets")
     def test_silent_kit_exit_is_not_a_completed_trial(self, _assets):
         class Worker:

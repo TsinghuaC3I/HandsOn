@@ -1,0 +1,114 @@
+{
+  "source_commit": "6a30cb17892df75eca285ebab20e3187edbd8047",
+  "source_module_sha256": "98c67107ac56449a117d5087c47b846d204ce475890f95a7b7e71c94a02236b0",
+  "rows": [
+    {
+      "seed": 0,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 0,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.26904306501428366,
+        "root_y_m": -0.013812797174167779,
+        "root_yaw_deg": -7.344423617020885
+      }
+    },
+    {
+      "seed": 1,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 1,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.2790542700239795,
+        "root_y_m": 0.027027821779556115,
+        "root_yaw_deg": -5.69344619648586
+      }
+    },
+    {
+      "seed": 7,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 7,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.26999236267162663,
+        "root_y_m": 0.023832828058174528,
+        "root_yaw_deg": 4.410971043923096
+      }
+    },
+    {
+      "seed": 1729530836,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 1729530836,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.24066162798119567,
+        "root_y_m": -0.017586684898643748,
+        "root_yaw_deg": 6.6868388109564645
+      }
+    },
+    {
+      "seed": 1729635565,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 1729635565,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.25932104757194246,
+        "root_y_m": -0.004957161194905923,
+        "root_yaw_deg": -4.452254063977451
+      }
+    },
+    {
+      "seed": 2147483647,
+      "sample": {
+        "task_id": "GEN3",
+        "task_name": "gen3_hinged_trash_bin_open",
+        "seed": 2147483647,
+        "randomize": true,
+        "initial_q_rad": [
+          0.0
+        ],
+        "target_q_rad": [
+          -1.3962634015954636
+        ],
+        "root_x_m": -0.29833167206839084,
+        "root_y_m": 0.026033967023620853,
+        "root_yaw_deg": -0.9693173598062028
+      }
+    }
+  ]
+}

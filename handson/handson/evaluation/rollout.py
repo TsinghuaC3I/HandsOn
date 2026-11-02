@@ -55,7 +55,7 @@ def run(env, job, output, number, seed, capture):
     import numpy as np
     from PIL import Image
     from .cameras import render_probe
-    adapter = TASKS[job['task']].evaluation_adapter()
+    adapter = TASKS[job['task']].evaluation_adapter(job.get('paper_variant'))
     control = EEF52Control(env)
     cfg = job['policy_probe']
     spec = job['benchmark']

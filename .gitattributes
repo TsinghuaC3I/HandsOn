@@ -1,2 +1,5 @@
 # Unified diffs retain a required space prefix on empty context lines.
 *.patch whitespace=-blank-at-eol
+
+# Preserve hash-addressed shader sources exactly as recorded in the asset bundle.
+handson/handson/assets/task_surfaces/objects/*.mdl -text -whitespace

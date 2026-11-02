@@ -61,6 +61,7 @@ def _slew_env(torch) -> tuple[BimanualAssemblyIsaacLabEnv, dict[str, _Robot]]:
     env._newton_hand_target_slew_rate_rad_s = 2.0
     env._newton_hand_live_goal_serial = 0
     env._newton_hand_goal_targets = {}
+    env._smooth_grasp_hand_start_targets = {}
     env._physics_dt = 1.0 / 120.0
     env._torch = torch
     env._scene = {

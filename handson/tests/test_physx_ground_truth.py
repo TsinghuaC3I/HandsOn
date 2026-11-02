@@ -591,6 +591,36 @@ def test_zero_velocity_boundary_accepts_snapshot_without_articulations() -> None
     assert counts["articulation_dofs"] == 0
 
 
+def test_pillow_trace_reads_live_solver_nodes_and_clamps_only_velocity() -> None:
+    env = _fake_env()
+    view = _IndexedDeformableView()
+    indices = np.asarray([1], dtype=np.int32)
+    env._g01_task_name = "eval_flex03_pack_pillow"
+    env._g01_soft_views = {"Pillow024": (view, indices)}
+    env._g01_3_pillow_readback = lambda: (
+        view.positions[1].copy(), view.velocities[1].copy()
+    )
+    trace = PhysxGroundTruthTrace(env)
+    assert trace.deformable.name == "g01_pillow"
+
+    # The controller cache deliberately stays stale between physics steps.
+    view.positions[1] += 0.25
+    view.velocities[1] *= 2
+    snapshot = trace.snapshot()
+    np.testing.assert_array_equal(
+        snapshot["physx_deformable_position"], view.positions[1]
+    )
+    np.testing.assert_array_equal(
+        snapshot["physx_deformable_velocity"], view.velocities[1]
+    )
+    positions = view.positions.copy()
+    trace.zero_task_velocities()
+    np.testing.assert_array_equal(view.positions, positions)
+    np.testing.assert_array_equal(view.velocity_writes[-1][1], indices)
+    np.testing.assert_array_equal(env._g01_trace_nodes_np, positions[1])
+    np.testing.assert_array_equal(env._g01_trace_velocities_np, 0)
+
+
 def test_zero_task_velocities_syncs_live_deformable_position_cache() -> None:
     env = _fake_env()
     live_positions = np.asarray(

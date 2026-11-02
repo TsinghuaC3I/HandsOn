@@ -1,0 +1,50 @@
+{
+  "task": "t27_place_largest_fitting_ball",
+  "historical_task": "ycb02_select_largest_fitting_ball",
+  "default_reset_clearance_scope": "hand_bodies",
+  "paper_trial_coverage": {
+    "hand_bodies": 866,
+    "arm_bodies": 34,
+    "multitask_model_trials": 800,
+    "multitask_hand_bodies_trials": 800
+  },
+  "sources": [
+    {
+      "source_commit": "5738b0ba73e680186ac017c29e95170ce1a3812c",
+      "cohort_episodes": 841,
+      "source_key": "ycb02_select_largest_fitting_ball_5738b0ba73e6",
+      "result_sha256": "38b3df05b6d6da154cff5d78e2bcbfe3875d1a03c8736b5c0dbc967e2b74fe1e",
+      "environment_sha256": "add9d28407cd76f7db76a9c2b6aa41dc7e47a4b606dbaf9f1723029c95b2febe",
+      "reset_sampler_sha256": "fca7841bfec64663f4d6663e4d351978875174696997b8e225250293d503c26a",
+      "reset_clearance_scope": "hand_bodies"
+    },
+    {
+      "source_commit": "7cb708a9f73aebda6c35c54d2f826a64acdfc1e4",
+      "cohort_episodes": 18,
+      "source_key": "ycb02_select_largest_fitting_ball_7cb708a9f73a",
+      "result_sha256": "ea2cad44cf48c9669e31692d24b194e0c80a6db0f23c04da4e45cc903f90a3e4",
+      "environment_sha256": "3a38d8d87f46e31fe673a7829c99fdb092a63a2ad6ddd8d16e9906e23dbe3a2b",
+      "reset_sampler_sha256": "fca7841bfec64663f4d6663e4d351978875174696997b8e225250293d503c26a",
+      "reset_clearance_scope": "hand_bodies"
+    },
+    {
+      "source_commit": "b46d06e8c5826248113c51279582612d0244b4d7",
+      "cohort_episodes": 7,
+      "source_key": "ycb02_select_largest_fitting_ball_b46d06e8c582",
+      "result_sha256": "cbec04f730454332359d8147288eac14bc1b6a3a1f8800367e503bcc27a7a90d",
+      "environment_sha256": "94630e190aa731377648947d581f1991f639d87014a19ed25057eca0cbcd5cae",
+      "reset_sampler_sha256": "fca7841bfec64663f4d6663e4d351978875174696997b8e225250293d503c26a",
+      "reset_clearance_scope": "hand_bodies"
+    },
+    {
+      "source_commit": "c7bbd2efbeed37e48a91784ff1a9c041cb4c7557",
+      "cohort_episodes": 34,
+      "source_key": "ycb02_select_largest_fitting_ball_c7bbd2efbeed",
+      "result_sha256": "fdaee8c397e74e89c9d55765f5225a7bf6c8592f881a119008eb2dbc500c1fa7",
+      "environment_sha256": "c1041dd8a8780a1c929cc91fc279a040559a65fdd80056ff7e4d00bf2edb8690",
+      "reset_sampler_sha256": "74dce210e78c8701b1cc10ead6ea6beb173b276d8f544eb9aa5c67b9a57477dd",
+      "reset_clearance_scope": "arm_bodies"
+    }
+  ],
+  "scope": "Restore the paper reset clearance cloud. These counts describe retained model evaluation trials, not demonstration weights. The explicit arm_bodies option preserves the later sampler; it alone does not restore all dependencies of that source version. Full historical trajectory equivalence is not certified."
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ceramic White Mug
+* source:	https://sketchfab.com/3d-models/ceramic-white-mug-fdf735d1f8f6469d892a989b509cd245
+* author:	anilai (https://sketchfab.com/anilai)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ceramic White Mug" (https://sketchfab.com/3d-models/ceramic-white-mug-fdf735d1f8f6469d892a989b509cd245) by anilai (https://sketchfab.com/anilai) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

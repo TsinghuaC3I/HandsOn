@@ -667,10 +667,10 @@
   "files": {
     "ATTRIBUTION.md": "7f2bf1ca1dad019118e0e5378929c093298c559e594ff2e15b412ca7182855bb",
     "SOURCE_LICENSE.txt": "a61a7907e46be118774fe65414e49cce2a8ed95ddbd420b32ab40c939a7183a0",
-    "knob_collision.usda": "c63f7775ec3f676ebefc4bc3f8d1d54c64236a6f93d763f425d23bdf7f7997a6",
-    "knob_visual.usda": "d5bc385cb86005d8f31851ef90c3b746fca6e772b0cc65176d9a6644837ca1a7",
-    "mixer_fixed_collision.usda": "e8d945f0b78aef9a265da820a2a0e4dd59d81849dbc23f15404dc9aa61bde59f",
-    "mixer_fixed_visual.usda": "98df29e0b491080c730446cda6d2f4054cb2ae8db4bb3f1aafcb5d3f8e0f2b70",
+    "knob_collision.usda": "cc314dba937684e32055d60a9995518c6fcb42aed570fb7752bbdd70b1d68144",
+    "knob_visual.usda": "0facb8ee2b55f033b00d9701344b159a8704a85a884553bf813ca99578da0f38",
+    "mixer_fixed_collision.usda": "583f17f753155237db9ae25fa973716b1772694cc3b486e9bea6a3297559b37b",
+    "mixer_fixed_visual.usda": "c20ffe0efdafc4f490b404e0b97f649c95a6ded27826f48fa6d6373a264cdc4b",
     "textures/wire_153228153_emissive.jpeg": "a082c28c84d70dae3d617647fe24689c8d69b98d95cb71f28b2b1f180b03fb56",
     "textures/wire_061135006_baseColor.jpeg": "91580f77b84bdfe22766b1dd34d4ac07710c0f1d386500fa9934fa217f0abcb5"
   },

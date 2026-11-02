@@ -86,7 +86,11 @@ class B320TaskConfigBase(TaskConfigBase):
             active_proprio_keys = list(_TOWEL_PROPRIO_KEYS)
         else:
             b320_runtime = getattr(self, "b320_runtime", "rigid")
-            if b320_runtime == "xy6":
+            if b320_runtime == "paper_faucet":
+                from ..sim.isaaclab.core_faucet_env import (
+                    HandsOnB320BimanualIsaacLabEnv as B320Environment,
+                )
+            elif b320_runtime == "xy6":
                 from ..sim.isaaclab.eval_comb06_season_and_stir_env import (
                     HandsOnXY6IsaacLabEnv as B320Environment,
                 )

@@ -1,4 +1,6 @@
 from __future__ import annotations
+
+from .bimanual_runtime import BimanualRuntimeSupport
 from ...runtime.task_families import BENCHMARK_TASKS
 
 from argparse import Namespace
@@ -50,6 +52,7 @@ from .physics_config import (
     SINGLE_ENV_GPU_MAX_RIGID_CONTACT_COUNT,
     SINGLE_ENV_GPU_MAX_RIGID_PATCH_COUNT,
     bounded_single_env_gpu_physx_kwargs,
+    paper_gpu_physx_kwargs,
 )
 from .physx_ground_truth import (
     PhysxGroundTruthTrace,
@@ -394,7 +397,7 @@ def _bimanual_simulation_render_interval(
     return max(1, int(round(float(control_dt) / float(physics_dt))))
 
 
-class BimanualAssemblyIsaacLabEnv(gym.Env):
+class BimanualAssemblyIsaacLabEnv(BimanualRuntimeSupport, gym.Env):
     """Gym wrapper around the native Isaac Lab bimanual assembly scene."""
 
     # Articulated-arm tasks can safely use the atomic authored-home restore
@@ -775,23 +778,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
 
         return ("/Peg", "/Socket")
 
-    def _unsubscribe_scene_input_callbacks(self) -> None:
-        if (
-            self._keyboard_subscription is not None
-            and self._keyboard_input_interface is not None
-        ):
-            try:
-                self._keyboard_input_interface.unsubscribe_to_keyboard_events(
-                    self._keyboard,
-                    self._keyboard_subscription,
-                )
-            except Exception:
-                pass
-        self._keyboard_subscription = None
-        self._keyboard_input_interface = None
-        self._keyboard = None
-        self._timeline_pause_subscription = None
-        self._timeline = None
 
     @staticmethod
     def _release_camera_for_scene_rebuild(camera: Any) -> bool:
@@ -1456,27 +1442,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
                 print(f"[HandsOn/IsaacLab] {message}", flush=True)
             return False
 
-    @staticmethod
-    def _normalize_arm_ik_backend(value: str) -> str:
-        backend = str(value or "").strip().lower()
-        if backend in {"haorui", "haorui_new"}:
-            return "haorui"
-        if backend in {"", "dls", "sim", "isaac", "isaaclab", "isaaclab_dls", "differential_ik"}:
-            return "dls"
-        print(f"[HandsOn/IsaacLab] Unknown arm IK backend {backend!r}; using isaaclab_dls", flush=True)
-        return "dls"
-
-    @property
-    def control_dt(self) -> float:
-        return self._control_dt
-
-    @property
-    def physics_dt(self) -> float:
-        return self._physics_dt
-
-    @property
-    def random_state(self) -> np.random.RandomState:
-        return self._random
 
     def _build_observation_space(self) -> spaces.Dict:
         state_space = spaces.Dict(
@@ -2359,7 +2324,9 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
                 "bounce_threshold_velocity": 0.2,
                 "friction_offset_threshold": 0.01,
                 "friction_correlation_distance": 0.00625,
-                **bounded_single_env_gpu_physx_kwargs(),
+                **(paper_gpu_physx_kwargs(self.task_name)
+                   if self.task_name == "t22_pass_screwdriver"
+                   else bounded_single_env_gpu_physx_kwargs()),
                 "gpu_max_num_partitions": 8,
             },
             physics_material=sim_utils.RigidBodyMaterialCfg(static_friction=1.0, dynamic_friction=0.8),
@@ -2422,56 +2389,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
         refresh_environment(self)
         return int(self.default_appearance_report["robot"]["links"])
 
-    def _setup_timeline_pause_guard(self) -> None:
-        """Keep interactive collection running when Kit receives a pause command."""
-        if self._headless:
-            return
-        try:
-            import omni.timeline
-
-            self._timeline = omni.timeline.get_timeline_interface()
-            event_stream = self._timeline.get_timeline_event_stream()
-            self._timeline_pause_subscription = event_stream.create_subscription_to_pop_by_type(
-                int(omni.timeline.TimelineEventType.PAUSE),
-                self._on_timeline_pause,
-                order=-100,
-                name="HandsOn IsaacLab collection pause guard",
-            )
-            print(
-                "[HandsOn/IsaacLab] Timeline pause guard enabled: Space will not pause collection",
-                flush=True,
-            )
-        except Exception as exc:
-            message = f"Timeline pause guard unavailable: {exc}"
-            self._isaac_warnings.append(message)
-            print(f"[HandsOn/IsaacLab] {message}", flush=True)
-
-    def _on_timeline_pause(self, _event=None) -> None:
-        self._resume_timeline_if_paused(source="Timeline pause")
-
-    def _resume_timeline_if_paused(self, *, source: str = "") -> bool:
-        timeline = self._timeline
-        if timeline is None:
-            return False
-        try:
-            is_stopped = getattr(timeline, "is_stopped", None)
-            if callable(is_stopped) and is_stopped():
-                return False
-            if timeline.is_playing():
-                return False
-            timeline.play()
-            if source:
-                print(
-                    f"[HandsOn/IsaacLab] {source} ignored; collection resumed immediately",
-                    flush=True,
-                )
-            return True
-        except Exception as exc:
-            message = f"Could not resume paused Timeline: {exc}"
-            if message not in self._isaac_warnings:
-                self._isaac_warnings.append(message)
-                print(f"[HandsOn/IsaacLab] {message}", flush=True)
-            return False
 
     def _setup_keyboard_reset(self) -> None:
         if self._headless:
@@ -2598,10 +2515,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
         self._guidance_route_complete_requested = False
         return requested
 
-    def _consume_manual_reset_request(self) -> bool:
-        requested = bool(self._manual_reset_requested)
-        self._manual_reset_requested = False
-        return requested
 
     def _apply_keyboard_reset_immediately(self) -> None:
         if self._keyboard_reset_in_progress:
@@ -2681,10 +2594,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
             self._isaac_warnings.append(message)
             print(f"[HandsOn/IsaacLab] {message}", flush=True)
 
-    def _control_robot(self, side: str):
-        if self._scene is None:
-            raise RuntimeError("IsaacLab control scene is not initialized")
-        return self._scene[f"{side}_robot"]
 
     def _differential_ik_command_type(self, side: str) -> str:
         """Return the IsaacLab differential-IK command type for one arm."""
@@ -2923,34 +2832,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
                     pass
         return targets
 
-    def _reset_scene_state(self) -> None:
-        if self._scene is None:
-            return
-        scene = self._scene
-        self._reset_robot_control_state()
-
-        table = scene["table"]
-        table_state = table.data.default_root_state.clone()
-        table_state[:, :3] += scene.env_origins
-        table_state[:, 2] += float(self.delta_h[0])
-        table.write_root_pose_to_sim(table_state[:, :7])
-
-        for name in ("peg", "socket"):
-            rigid_object = scene[name]
-            root_state = rigid_object.data.default_root_state.clone()
-            pose = self._peg_ori_pose if name == "peg" else self._socket_ori_pose
-            pose_tensor = self._torch.tensor(
-                pose.reshape(1, 7),
-                dtype=root_state.dtype,
-                device=root_state.device,
-            ).repeat(root_state.shape[0], 1)
-            pose_tensor[:, :3] += scene.env_origins
-            root_state[:, :7] = pose_tensor
-            rigid_object.write_root_pose_to_sim(root_state[:, :7])
-            rigid_object.write_root_velocity_to_sim(root_state[:, 7:])
-
-        scene.reset()
-        scene.write_data_to_sim()
 
     def reset(self, seed: int | None = None, **_: Any):
         if seed is not None:
@@ -3542,42 +3423,10 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
         self._control_perf_steps = 0
         self._control_perf_phase_totals = {}
 
-    def _manual_reset_step_result(self):
-        self._refresh_object_poses()
-        manual_reset = self._consume_manual_reset_request()
-        info = {
-            "succeed": False,
-            "manual_reset": manual_reset,
-            "manual_reset_applied": bool(self._manual_reset_already_applied),
-            "isaac_warnings": tuple(self._isaac_warnings),
-        }
-        info.update(self._task_info())
-        return (
-            self._attach_physx_ground_truth(self._compute_observation()),
-            0.0,
-            False,
-            False,
-            info,
-        )
 
     def _task_info(self) -> dict[str, Any]:
         return dict(self._last_assembly_success_metrics)
 
-    def _compute_failure(self) -> bool:
-        return False
-
-    def _step_isaaclab(self) -> None:
-        if self._scene is None or self._sim is None:
-            return
-        # IsaacLab's SimulationContext.step() blocks while the Timeline is
-        # paused.  Recover before entering it in case a pause event landed
-        # between two control steps.
-        self._resume_timeline_if_paused(source="Timeline pause")
-        self._scene.write_data_to_sim()
-        # Camera rendering is performed exactly once by render(), after all
-        # PhysX substeps have completed and wrist poses are current.
-        self._sim.step(render=False)
-        self._scene.update(self._sim_dt)
 
     def _pump_startup_ui(self) -> bool:
         """Service the human viewport without advancing an extra PhysX frame."""
@@ -3786,7 +3635,24 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
             # feeding that value into the drive creates the large joint/TCP
             # transient that fails the physical-origin gate.  Hold the
             # default joint state until a genuinely bimanual task is active.
-            if not bool(getattr(getattr(self, "_spec", None), "bimanual", True)) and side == "left":
+            # These five Core routes retain the paper controller's ordinary
+            # idle-arm target update. Frozen Core classes already carry their
+            # own historical base; Transfer and Newton retain the newer hold.
+            paper_idle_update = (
+                self._physics_backend == "physx"
+                and getattr(self, "task_name", None) in {
+                    "t11_line_up_blocks",
+                    "t29_place_wine_glass",
+                    "t33_reposition_marker_grasp",
+                    "t34_roll_ball_through_gate",
+                    "t47_trigger_drill_on_block",
+                }
+            )
+            if (
+                not bool(getattr(getattr(self, "_spec", None), "bimanual", True))
+                and side == "left"
+                and not paper_idle_update
+            ):
                 robot.set_joint_position_target(target)
                 self._joint_targets[side] = target
                 status["left_arm"] = "inactive"
@@ -5280,11 +5146,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
         )
         return _pose_vector_to_matrix(pose_wxyz)
 
-    def _refresh_object_poses(self) -> None:
-        if self._scene is None:
-            return
-        self._peg_ori_pose = self._rigid_object_pose("peg", self._peg_ori_pose)
-        self._socket_ori_pose = self._rigid_object_pose("socket", self._socket_ori_pose)
 
     def _rigid_object_pose(self, name: str, fallback: np.ndarray) -> np.ndarray:
         try:
@@ -5507,70 +5368,6 @@ class BimanualAssemblyIsaacLabEnv(gym.Env):
             width=target_width,
         )
 
-    @staticmethod
-    def _resize_rgb_nearest(frame: np.ndarray, height: int, width: int) -> np.ndarray:
-        src_h, src_w = frame.shape[:2]
-        if src_h <= 0 or src_w <= 0:
-            return np.zeros((height, width, 3), dtype=np.uint8)
-        y_idx = np.clip((np.arange(height) * src_h / height).astype(np.int64), 0, src_h - 1)
-        x_idx = np.clip((np.arange(width) * src_w / width).astype(np.int64), 0, src_w - 1)
-        return frame[y_idx][:, x_idx, :3].astype(np.uint8, copy=True)
-
-    def _fallback_camera_frame(
-        self,
-        key: str,
-        *,
-        height: int | None = None,
-        width: int | None = None,
-    ) -> np.ndarray:
-        frame = np.zeros(
-            (
-                self._render_height if height is None else int(height),
-                self._render_width if width is None else int(width),
-                3,
-            ),
-            dtype=np.uint8,
-        )
-        colors = {
-            "ego": (58, 66, 70),
-            "wrist_left": (64, 74, 92),
-            "wrist_right": (92, 72, 62),
-        }
-        frame[:, :] = colors.get(key, (48, 48, 48))
-        h, w, _ = frame.shape
-        frame[h // 3 : 2 * h // 3, w // 3 : 2 * w // 3, :] = (154, 154, 145)
-        return frame
-
-    def _compute_observation(self) -> dict[str, Any]:
-        obs: dict[str, Any] = {}
-        if self.image_obs:
-            ego, wrist_left, wrist_right = self.render()
-            obs["images"] = {
-                "random_camera" if self.randomize else "ego": ego,
-                "wrist_left": wrist_left,
-                "wrist_right": wrist_right,
-            }
-
-        gripper_pose = np.zeros(32, dtype=np.float64)
-        right_dim = min(16, self._right_hand.size)
-        left_dim = min(16, self._left_hand.size)
-        gripper_pose[:right_dim] = self._right_hand[:right_dim]
-        gripper_pose[16 : 16 + left_dim] = self._left_hand[:left_dim]
-
-        obs["state"] = {
-            "tcp_pose": np.concatenate([self._right_tcp_pose, self._left_tcp_pose]).astype(np.float64),
-            "gripper_pose": gripper_pose,
-            "socket_ori_pose": self._socket_ori_pose.astype(np.float64, copy=True),
-            "peg_ori_pose": self._peg_ori_pose.astype(np.float64, copy=True),
-            "table_delta_height": self.delta_h.astype(np.float64, copy=True),
-        }
-        return obs
-
-    def get_end_effector_pose_matrix(self) -> tuple[np.ndarray, np.ndarray]:
-        return (
-            self._body_pose_matrix("right_robot", "right_palm_link", self._right_tcp_pose),
-            self._body_pose_matrix("left_robot", "left_palm_link", self._left_tcp_pose),
-        )
 
     def close(self) -> None:
         if (getattr(self, "_headless", False)

@@ -36,6 +36,7 @@ def predict_request(policy, profile, model, packet, bound_task=None):
         images = {key: np.array(data[key]) for key in VIEWS}
         prompt = str(data["prompt"].item())
         task = str(data["task"].item()) if "task" in data else bound_task
+        paper_variant = (str(data["paper_variant"].item()) or None) if "paper_variant" in data else None
         state = validate_observation(data["state"], images, prompt, profile.history_frames)
         seed, request = int(data["seed"].item()), int(data["request"].item())
     require(seed >= 0 and request >= 0, "Negative seed/request")
@@ -43,13 +44,14 @@ def predict_request(policy, profile, model, packet, bound_task=None):
         require(task == bound_task, "Task differs from the server's selected checkpoint")
     require(task in TASKS, "Unknown or missing public task identifier")
     require(profile.supports(task), f"{model} has no implicit Transfer-16 routing")
-    require(prompt in allowed_prompts(task),
+    require(prompt in allowed_prompts(task, paper_variant),
             "Instruction is outside the paper's evaluated language bank")
     noise = noise_seed(model, seed, request, task)
     started = time.monotonic()
     actions = validate_actions(policy.predict(state, images, prompt, noise), profile.model_horizon)
     return dict(actions=actions[:profile.action_horizon].tolist(), noise_seed=noise,
-                request=request, task=task, inference_seconds=time.monotonic() - started)
+                request=request, task=task, paper_variant=paper_variant,
+                inference_seconds=time.monotonic() - started)
 
 
 def handler_for(policy, model, metadata, bound_task=None):

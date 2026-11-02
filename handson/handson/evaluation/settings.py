@@ -3,7 +3,9 @@ from fractions import Fraction
 import hashlib,json,math,random
 from pathlib import Path
 from typing import Any
-_PROTOCOL = "handson-approved-settings"
+# Seed serialization is part of the paper protocol. Renaming the package or
+# public task IDs must not change profile selection or its independent streams.
+_PROTOCOL = "b-pi05-v1-clean-unified"
 _ROOT = Path(__file__).parent
 _SETTINGS_SHA256 = "beaf08faf21ccba553d8524c65e97399ab17ec6baa8436a5d1df969e07b2cc88"
 def verify_receipt():
@@ -17,8 +19,10 @@ def task_spec(task):
 def _profiles(spec):
     return spec["profiles"]
 def derive_seed(master_seed: int, task: str, episode_index: int, stream: str) -> int:
+    from ..tasks.registry import TASKS
+    seed_task = TASKS[task].checkpoint_name
     payload = json.dumps(
-        [_PROTOCOL, int(master_seed), task, int(episode_index), stream],
+        [_PROTOCOL, int(master_seed), seed_task, int(episode_index), stream],
         separators=(",", ":"),
         ensure_ascii=False,
     ).encode()

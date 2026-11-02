@@ -1,0 +1,21 @@
+{
+  "dataset": "Cyan666/HandsOn-Datasets",
+  "dataset_revision": "7ad38776d91e4e13c02dad4e6ad892e8b8a1d187",
+  "public_source_manifest_sha256": "6cced3356edb916038d160c3262238d0bc606ef678885b510db20b9dea69a942",
+  "catalog_sha256": "6bd72940c4c87ada0539cf3c15dcb3d4881f701469262a524c02e186f9d2f85f",
+  "episodes": 18000,
+  "mapped_core_episodes": 17400,
+  "historical_extra_tasks": {
+    "d20_1_5_set_controls": 8,
+    "d20_1_load_and_start": 66,
+    "d20_2_retrieve_and_plate": 26,
+    "h01_chinese_chess": 500
+  },
+  "source_recovery": {
+    "clean_commit_located": 15996,
+    "dirty_overlay_missing": 1735,
+    "dirty_overlay_verified": 269
+  },
+  "scope": "Manifest identities verified for every episode. Source-location status is not dependency closure, trajectory agreement, or replay certification. Only e015401 has a packaged initialization bundle.",
+  "historical_index_warning": "Use this pinned public revision. Retained pre-publication build indices 0 and 14097 were swapped; join by source identity rather than assuming private build indices."
+}

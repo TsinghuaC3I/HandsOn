@@ -1,0 +1,137 @@
+{
+  "scope": "Allocation keywords executed from SHA256-verified paper task sources, before Isaac Lab 2.3.2 defaults and per-trial solver overrides.",
+  "cohorts": [
+    {
+      "task": "t02_connect_charger_and_cable",
+      "source_key": "c10_two_stage_charging_aecf45135d5d",
+      "source_commit": "aecf45135d5d381e0554ebca31868a5ab135fceb",
+      "abc_sha256": "91639371d9a972263eb73caf2ddf4abb2916e7321aeb11ebf800308420f7fbf5",
+      "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t11_line_up_blocks",
+      "source_key": "c12_push_blocks_to_line_aef0f4b4ddad",
+      "source_commit": "aef0f4b4ddad391b091a1fbaa99324ea843cccc2",
+      "abc_sha256": "0ab44177fbc9815a96ccdeaeb7b9741ae563bbec75251a618b1387ff341a33f0",
+      "physics_config_sha256": "d8e6d92116298b559ea062f3bab95a607c073ef0d5b8747f785578f3d56df02c",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t06_fit_device_cover",
+      "source_key": "g02_repair_close_device_bb00df54dc58",
+      "source_commit": "bb00df54dc5809134a37422ea5443bd67059b421",
+      "abc_sha256": "f58a1499a11abef7740dbb9a02aeff3ab601683a0370234f0861eda0d4081782",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t34_roll_ball_through_gate",
+      "source_key": "ycb01_roll_ball_through_gate_4ccf75088d7e",
+      "source_commit": "4ccf75088d7e95bbe6291e5c44f5911c08f7d36b",
+      "abc_sha256": "0b7cfe01ef24e2790e8544e5dd57f4ad83857b3e96f5367a3bdd5f6f3810fb4b",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t27_place_largest_fitting_ball",
+      "source_key": "ycb02_select_largest_fitting_ball_5738b0ba73e6",
+      "source_commit": "5738b0ba73e680186ac017c29e95170ce1a3812c",
+      "abc_sha256": "add9d28407cd76f7db76a9c2b6aa41dc7e47a4b606dbaf9f1723029c95b2febe",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t27_place_largest_fitting_ball",
+      "source_key": "ycb02_select_largest_fitting_ball_7cb708a9f73a",
+      "source_commit": "7cb708a9f73aebda6c35c54d2f826a64acdfc1e4",
+      "abc_sha256": "3a38d8d87f46e31fe673a7829c99fdb092a63a2ad6ddd8d16e9906e23dbe3a2b",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t27_place_largest_fitting_ball",
+      "source_key": "ycb02_select_largest_fitting_ball_b46d06e8c582",
+      "source_commit": "b46d06e8c5826248113c51279582612d0244b4d7",
+      "abc_sha256": "94630e190aa731377648947d581f1991f639d87014a19ed25057eca0cbcd5cae",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t27_place_largest_fitting_ball",
+      "source_key": "ycb02_select_largest_fitting_ball_c7bbd2efbeed",
+      "source_commit": "c7bbd2efbeed37e48a91784ff1a9c041cb4c7557",
+      "abc_sha256": "c1041dd8a8780a1c929cc91fc279a040559a65fdd80056ff7e4d00bf2edb8690",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t35_rotate_propeller",
+      "source_key": "ycb03_airplane_propeller_spin_6e84298fcca2",
+      "source_commit": "6e84298fcca230f89f5e3c5c9a9987178285e887",
+      "abc_sha256": "6acb9c7b2e2be18b0244f4df7f7f2225014910bf8b3c40cdeed445904abb19ff",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t39_set_timer",
+      "source_key": "ycb07_timer_program_start_6e84298fcca2",
+      "source_commit": "6e84298fcca230f89f5e3c5c9a9987178285e887",
+      "abc_sha256": "6acb9c7b2e2be18b0244f4df7f7f2225014910bf8b3c40cdeed445904abb19ff",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t07_flip_sponge",
+      "source_key": "ycb08_spatula_flip_sponge_282390f0fec0",
+      "source_commit": "282390f0fec08daca53e2d6b03f6ad8772b609f4",
+      "abc_sha256": "81d5e878b2cdc34f8d1bbe9a97ba851775f4dc49e54650c7505ec8f2837a6141",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    },
+    {
+      "task": "t29_place_wine_glass",
+      "source_key": "ycb09_wine_glass_target_transfer_d41468eb3d04",
+      "source_commit": "d41468eb3d04540c3cd91d5c4afa4700597adc8b",
+      "abc_sha256": "647236f47a788f2dba3964b0a688041e49d4f1fca03232d8d56656d43bdde271",
+      "physics_config_sha256": "412a5b8f77f7f2d5090545bce0f8eb359066d836c931ac821440578fc938d0bd",
+      "kwargs": {
+        "gpu_max_rigid_contact_count": 1048576,
+        "gpu_max_rigid_patch_count": 163840
+      }
+    }
+  ]
+}
