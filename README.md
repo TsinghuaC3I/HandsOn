@@ -43,6 +43,12 @@ visual and goal-preserving prompt randomization.
   demonstrations, covering asset and relation transfer, skill composition
   (6 compositional tasks), and deformable manipulation (3 tasks).
 
+## Timeline
+
+- **2026-11-03 — Upload weights.** Released the eight paper multi-task [checkpoints on Hugging Face](https://huggingface.co/Cyan666/HandsOn-Checkpoints).
+- **2026-11-02 — Fix reset bugs.** Fixed task reset bugs and restored the paper evaluation workflow ([#7](https://github.com/TsinghuaC3I/HandsOn/pull/7)).
+- **2026-10-20 — Initial commit.** Released the HandsOn code and task suite ([commit](https://github.com/TsinghuaC3I/HandsOn/commit/be2b59aad016869e8cede1f485d64e3c2d191685)).
+
 ## Repository layout
 
 ```
