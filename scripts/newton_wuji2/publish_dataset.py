@@ -51,7 +51,11 @@ def main():
     parser.add_argument('--revision', default='main')
     parser.add_argument('--workers', type=int, default=2)
     parser.add_argument('--shard-episodes', type=int, default=50)
+    parser.add_argument('--tasks', type=int, nargs='+', choices=range(1, 51),
+                        help='Upload only these tasks; keep subset progress separate from the full release.')
     args = parser.parse_args()
+    task_filter = {f'{task:02d}' for task in args.tasks} if args.tasks else None
+    scope = 'tasks-' + '-'.join(sorted(task_filter)) if task_filter else None
     folder = args.release / 'package' / 'newton_wuji2'
     rows = [json.loads(line) for line in (folder / 'selection.jsonl').read_text().splitlines()]
     selected = {r['source_relative_path']: r for r in rows}
@@ -80,7 +84,7 @@ def main():
     api = HfApi()
     identity = api.whoami()['name']
     print(json.dumps({'event': 'authenticated', 'account': identity, 'episodes': len(rows)}), flush=True)
-    scratch = args.release / 'scratch'
+    scratch = args.release / ('scratch-' + scope if scope else 'scratch')
     receipts = args.release / 'receipts'
     scratch.mkdir(exist_ok=True)
     receipts.mkdir(exist_ok=True)
@@ -90,8 +94,11 @@ def main():
     jobs = []
     for task, episodes in sorted(groups.items()):
         assert len(episodes) == 200
+        if task_filter is not None and task not in task_filter:
+            continue
         for start in range(0, len(episodes), args.shard_episodes):
             jobs.append((task, start // args.shard_episodes, episodes[start:start + args.shard_episodes]))
+    print(json.dumps({'event': 'scheduled', 'scope': scope or 'all', 'shards': len(jobs)}), flush=True)
 
     def remote_match(path, sha, size):
         info = api.get_paths_info(args.repo, paths=[path], repo_type='dataset', revision=args.revision)
@@ -153,14 +160,17 @@ def main():
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for future in as_completed([pool.submit(worker, job) for job in jobs]):
             complete.append(future.result())
-            write_json(args.release / 'PROGRESS.json', {'completed_shards': len(complete),
+            progress_name = 'PROGRESS.' + scope + '.json' if scope else 'PROGRESS.json'
+            write_json(args.release / progress_name, {'completed_shards': len(complete),
                 'total_shards': len(jobs), 'verified_episodes': sum(r['episode_count'] for r in complete),
                 'verified_archive_bytes': sum(r['bytes'] for r in complete), 'updated_unix': time.time()})
     complete.sort(key=lambda r: r['path'])
-    write_json(folder / 'SHARDS.json', {'format': 'handson.newton_wuji2_tar_shards.v1', 'shards': complete})
-    write_json(args.release / 'UPLOAD_COMPLETE.json', {'repo': args.repo, 'revision': args.revision,
+    manifest_path = args.release / ('SHARDS.' + scope + '.json') if scope else folder / 'SHARDS.json'
+    complete_name = 'UPLOAD_COMPLETE.' + scope + '.json' if scope else 'UPLOAD_COMPLETE.json'
+    write_json(manifest_path, {'format': 'handson.newton_wuji2_tar_shards.v1', 'shards': complete})
+    write_json(args.release / complete_name, {'repo': args.repo, 'revision': args.revision,
         'episodes': sum(r['episode_count'] for r in complete), 'shards': len(complete),
-        'sha256': digest(folder / 'SHARDS.json'), 'completed_unix': time.time()})
+        'sha256': digest(manifest_path), 'completed_unix': time.time()})
 
 
 if __name__ == '__main__':
