@@ -90,3 +90,11 @@ See [policy integration](custom_policy_integration.md) for action units,
 checkpoint metadata, language sampling and the two disclosed scoring waivers.
 
 The latest installed-package run is documented in [release validation](release-validation.md), with per-task diagnostics and three-view samples.
+
+## Newton recordings with Wuji Hand 2
+
+The [Newton/Wuji2 dataset and rendering guide](newton-wuji2-dataset.md) documents
+the separate 10,000-trajectory raw release and its V16 replay profile. Its
+photo-informed Wuji2 v14 visuals use continuous knitted finger covers and
+pose-driven folds. Run `scripts/newton_wuji2/render_episode.py` with that
+release; the Wuji1 paper rendering defaults described above remain separate.

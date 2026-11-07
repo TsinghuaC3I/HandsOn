@@ -1,0 +1,14 @@
+{
+  "main": {
+    "mean_abs_rgb_difference_255": 0.6902571614583334,
+    "p99_abs_rgb_difference_255": 4.0
+  },
+  "wrist_left": {
+    "mean_abs_rgb_difference_255": 0.34146275550314464,
+    "p99_abs_rgb_difference_255": 3.0
+  },
+  "wrist_right": {
+    "mean_abs_rgb_difference_255": 0.42339737290356394,
+    "p99_abs_rgb_difference_255": 4.0
+  }
+}

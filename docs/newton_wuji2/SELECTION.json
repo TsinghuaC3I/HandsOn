@@ -1,0 +1,522 @@
+{
+  "format": "handson.newton_wuji2_shortest_selection.v1",
+  "selection_rule": "Within each task sort by (collection_meta.duration_seconds, episode_id) ascending; keep first 200. Preserve complete episodes.",
+  "duration_validation": "duration_seconds == step_count / data_fps within 2 microseconds; replay action header length == step_count",
+  "source_episodes": 11678,
+  "selected_episodes": 10000,
+  "task_count": 50,
+  "episodes_per_task": 200,
+  "selected_frames": 7077577,
+  "selected_source_bytes": 191065403988,
+  "selected_source_files": 104758,
+  "generation_counts": {
+    "nvidia_newton_v1": 9800,
+    "nvidia_newton_cross_gpu_v2": 200
+  },
+  "outcome_counts": {
+    "success": 10000
+  },
+  "selection_sha256": "a9b2aa504d09fc8a26669a73cc18264d98b8f3e528cff42637c2cc113552d704",
+  "tasks": [
+    {
+      "task_id": "01",
+      "task_name": "b320_two_block_midair_face_mating",
+      "available": 253,
+      "selected": 200,
+      "min_duration_seconds": 9.333333,
+      "max_selected_duration_seconds": 37.233333,
+      "first_excluded_duration_seconds": 37.4,
+      "selected_frames": 142352
+    },
+    {
+      "task_id": "02",
+      "task_name": "c10_two_stage_charging",
+      "available": 208,
+      "selected": 200,
+      "min_duration_seconds": 14.633333,
+      "max_selected_duration_seconds": 90.6,
+      "first_excluded_duration_seconds": 91.766667,
+      "selected_frames": 302831
+    },
+    {
+      "task_id": "03",
+      "task_name": "b05_clear_box_lid",
+      "available": 242,
+      "selected": 200,
+      "min_duration_seconds": 9.866667,
+      "max_selected_duration_seconds": 49.966667,
+      "first_excluded_duration_seconds": 50.5,
+      "selected_frames": 170742
+    },
+    {
+      "task_id": "04",
+      "task_name": "b01_pitcher_lid",
+      "available": 235,
+      "selected": 200,
+      "min_duration_seconds": 6.333333,
+      "max_selected_duration_seconds": 49.133333,
+      "first_excluded_duration_seconds": 49.533333,
+      "selected_frames": 155474
+    },
+    {
+      "task_id": "05",
+      "task_name": "b320_cup_stabilized_faucet_open",
+      "available": 205,
+      "selected": 200,
+      "min_duration_seconds": 9.4,
+      "max_selected_duration_seconds": 36.633333,
+      "first_excluded_duration_seconds": 37.433333,
+      "selected_frames": 113977
+    },
+    {
+      "task_id": "06",
+      "task_name": "g02_repair_close_device",
+      "available": 229,
+      "selected": 200,
+      "min_duration_seconds": 8.433333,
+      "max_selected_duration_seconds": 64.033333,
+      "first_excluded_duration_seconds": 67.066667,
+      "selected_frames": 194361
+    },
+    {
+      "task_id": "07",
+      "task_name": "ycb08_spatula_flip_sponge",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 14.866667,
+      "max_selected_duration_seconds": 128.2,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 275181
+    },
+    {
+      "task_id": "08",
+      "task_name": "c01_hammer_nail",
+      "available": 217,
+      "selected": 200,
+      "min_duration_seconds": 15.3,
+      "max_selected_duration_seconds": 73.233333,
+      "first_excluded_duration_seconds": 75.466667,
+      "selected_frames": 228627
+    },
+    {
+      "task_id": "09",
+      "task_name": "b03_peg_in_socket",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 11.2,
+      "max_selected_duration_seconds": 118.1,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 234533
+    },
+    {
+      "task_id": "10",
+      "task_name": "b320_low_compression_carton_carry",
+      "available": 236,
+      "selected": 200,
+      "min_duration_seconds": 4.966667,
+      "max_selected_duration_seconds": 12.266667,
+      "first_excluded_duration_seconds": 12.466667,
+      "selected_frames": 48594
+    },
+    {
+      "task_id": "11",
+      "task_name": "c12_push_blocks_to_line",
+      "available": 215,
+      "selected": 200,
+      "min_duration_seconds": 14.2,
+      "max_selected_duration_seconds": 98.966667,
+      "first_excluded_duration_seconds": 99.666667,
+      "selected_frames": 374712
+    },
+    {
+      "task_id": "12",
+      "task_name": "d02_bimanual_microwave_cook",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 20.366667,
+      "max_selected_duration_seconds": 164.266667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 316139
+    },
+    {
+      "task_id": "13",
+      "task_name": "bench320_bc012_dual_can_synchronized_bin_load",
+      "available": 201,
+      "selected": 200,
+      "min_duration_seconds": 5.866667,
+      "max_selected_duration_seconds": 29.4,
+      "first_excluded_duration_seconds": 29.7,
+      "selected_frames": 89119
+    },
+    {
+      "task_id": "14",
+      "task_name": "c05_move_mouse_click",
+      "available": 287,
+      "selected": 200,
+      "min_duration_seconds": 3.2,
+      "max_selected_duration_seconds": 10.333333,
+      "first_excluded_duration_seconds": 10.4,
+      "selected_frames": 40678
+    },
+    {
+      "task_id": "15",
+      "task_name": "b320_dual_drawer_synchronized_open",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 3.366667,
+      "max_selected_duration_seconds": 29.533333,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 59661
+    },
+    {
+      "task_id": "16",
+      "task_name": "bench320_fu015_laptop_base_stabilized_open",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 4.6,
+      "max_selected_duration_seconds": 21.266667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 77190
+    },
+    {
+      "task_id": "17",
+      "task_name": "p0_02_hold_lever_open_latched_door",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 6.0,
+      "max_selected_duration_seconds": 22.066667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 104239
+    },
+    {
+      "task_id": "18",
+      "task_name": "g08_micropipette_box_stabilized_lid_open",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 1.3,
+      "max_selected_duration_seconds": 19.966667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 26970
+    },
+    {
+      "task_id": "19",
+      "task_name": "a06_orient_rubiks_cube",
+      "available": 255,
+      "selected": 200,
+      "min_duration_seconds": 1.966667,
+      "max_selected_duration_seconds": 8.133333,
+      "first_excluded_duration_seconds": 8.166667,
+      "selected_frames": 26792
+    },
+    {
+      "task_id": "20",
+      "task_name": "b320_slim_object_stable_handover",
+      "available": 242,
+      "selected": 200,
+      "min_duration_seconds": 4.733333,
+      "max_selected_duration_seconds": 32.666667,
+      "first_excluded_duration_seconds": 32.666667,
+      "selected_frames": 116375
+    },
+    {
+      "task_id": "21",
+      "task_name": "d03_bimanual_handoff_to_box",
+      "available": 256,
+      "selected": 200,
+      "min_duration_seconds": 5.566667,
+      "max_selected_duration_seconds": 23.133333,
+      "first_excluded_duration_seconds": 23.9,
+      "selected_frames": 74943
+    },
+    {
+      "task_id": "22",
+      "task_name": "b320_as019_screwdriver_safe_orientation_handover",
+      "available": 226,
+      "selected": 200,
+      "min_duration_seconds": 2.2,
+      "max_selected_duration_seconds": 18.1,
+      "first_excluded_duration_seconds": 18.3,
+      "selected_frames": 58258
+    },
+    {
+      "task_id": "23",
+      "task_name": "c06_bimanual_photograph",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 9.033333,
+      "max_selected_duration_seconds": 114.066667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 174438
+    },
+    {
+      "task_id": "24",
+      "task_name": "a03_ball_to_bowl",
+      "available": 664,
+      "selected": 200,
+      "min_duration_seconds": 4.266667,
+      "max_selected_duration_seconds": 6.833333,
+      "first_excluded_duration_seconds": 6.866667,
+      "selected_frames": 35723
+    },
+    {
+      "task_id": "25",
+      "task_name": "a02_object_to_tray",
+      "available": 354,
+      "selected": 200,
+      "min_duration_seconds": 4.033333,
+      "max_selected_duration_seconds": 11.566667,
+      "first_excluded_duration_seconds": 11.666667,
+      "selected_frames": 45467
+    },
+    {
+      "task_id": "26",
+      "task_name": "a01_fruit_to_bucket",
+      "available": 295,
+      "selected": 200,
+      "min_duration_seconds": 4.466667,
+      "max_selected_duration_seconds": 29.466667,
+      "first_excluded_duration_seconds": 29.533333,
+      "selected_frames": 115655
+    },
+    {
+      "task_id": "27",
+      "task_name": "ycb02_select_largest_fitting_ball",
+      "available": 208,
+      "selected": 200,
+      "min_duration_seconds": 4.266667,
+      "max_selected_duration_seconds": 20.266667,
+      "first_excluded_duration_seconds": 21.366667,
+      "selected_frames": 58224
+    },
+    {
+      "task_id": "28",
+      "task_name": "ycb06_single_step_table_setting",
+      "available": 246,
+      "selected": 200,
+      "min_duration_seconds": 3.8,
+      "max_selected_duration_seconds": 42.533333,
+      "first_excluded_duration_seconds": 43.166667,
+      "selected_frames": 137981
+    },
+    {
+      "task_id": "29",
+      "task_name": "ycb09_wine_glass_target_transfer",
+      "available": 259,
+      "selected": 200,
+      "min_duration_seconds": 5.5,
+      "max_selected_duration_seconds": 27.433333,
+      "first_excluded_duration_seconds": 27.5,
+      "selected_frames": 98116
+    },
+    {
+      "task_id": "30",
+      "task_name": "b320_synchronized_salt_pepper_placement",
+      "available": 263,
+      "selected": 200,
+      "min_duration_seconds": 5.033333,
+      "max_selected_duration_seconds": 14.666667,
+      "first_excluded_duration_seconds": 14.7,
+      "selected_frames": 62657
+    },
+    {
+      "task_id": "31",
+      "task_name": "d09_prepare_coffee",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 23.4,
+      "max_selected_duration_seconds": 177.633333,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 332089
+    },
+    {
+      "task_id": "32",
+      "task_name": "b320_sponge_stabilized_soap_dispense",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 11.733333,
+      "max_selected_duration_seconds": 84.2,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 174837
+    },
+    {
+      "task_id": "33",
+      "task_name": "ycb10_marker_finger_gait",
+      "available": 213,
+      "selected": 200,
+      "min_duration_seconds": 3.8,
+      "max_selected_duration_seconds": 63.6,
+      "first_excluded_duration_seconds": 65.266667,
+      "selected_frames": 161690
+    },
+    {
+      "task_id": "34",
+      "task_name": "ycb01_roll_ball_through_gate",
+      "available": 302,
+      "selected": 200,
+      "min_duration_seconds": 2.0,
+      "max_selected_duration_seconds": 12.4,
+      "first_excluded_duration_seconds": 12.5,
+      "selected_frames": 46720
+    },
+    {
+      "task_id": "35",
+      "task_name": "ycb03_airplane_propeller_spin",
+      "available": 250,
+      "selected": 200,
+      "min_duration_seconds": 2.3,
+      "max_selected_duration_seconds": 13.433333,
+      "first_excluded_duration_seconds": 13.466667,
+      "selected_frames": 45765
+    },
+    {
+      "task_id": "36",
+      "task_name": "c02_spoon_marbles",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 9.0,
+      "max_selected_duration_seconds": 119.833333,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 213541
+    },
+    {
+      "task_id": "37",
+      "task_name": "b320_hs005_sink_bottle_stabilized_scrub",
+      "available": 256,
+      "selected": 200,
+      "min_duration_seconds": 10.966667,
+      "max_selected_duration_seconds": 25.366667,
+      "first_excluded_duration_seconds": 25.533333,
+      "selected_frames": 110246
+    },
+    {
+      "task_id": "38",
+      "task_name": "b320_synchronized_dual_knob_setting_2",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 4.733333,
+      "max_selected_duration_seconds": 39.966667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 121174
+    },
+    {
+      "task_id": "39",
+      "task_name": "ycb07_timer_program_start",
+      "available": 203,
+      "selected": 200,
+      "min_duration_seconds": 9.566667,
+      "max_selected_duration_seconds": 75.366667,
+      "first_excluded_duration_seconds": 75.866667,
+      "selected_frames": 145574
+    },
+    {
+      "task_id": "40",
+      "task_name": "b320_as013_utility_knife_body_stabilized_blade_slide",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 5.333333,
+      "max_selected_duration_seconds": 88.066667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 125350
+    },
+    {
+      "task_id": "41",
+      "task_name": "ycb04_cups_denest_order",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 11.8,
+      "max_selected_duration_seconds": 107.9,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 219310
+    },
+    {
+      "task_id": "42",
+      "task_name": "d06_sort_clutter_to_baskets",
+      "available": 210,
+      "selected": 200,
+      "min_duration_seconds": 20.7,
+      "max_selected_duration_seconds": 74.433333,
+      "first_excluded_duration_seconds": 76.1,
+      "selected_frames": 238876
+    },
+    {
+      "task_id": "43",
+      "task_name": "d05_scissors_three_cuts",
+      "available": 240,
+      "selected": 200,
+      "min_duration_seconds": 6.2,
+      "max_selected_duration_seconds": 73.266667,
+      "first_excluded_duration_seconds": 73.6,
+      "selected_frames": 180969
+    },
+    {
+      "task_id": "44",
+      "task_name": "b04_block_stacking",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 12.266667,
+      "max_selected_duration_seconds": 68.9,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 141205
+    },
+    {
+      "task_id": "45",
+      "task_name": "b320_dutch_oven_stabilized_stirring",
+      "available": 203,
+      "selected": 200,
+      "min_duration_seconds": 9.7,
+      "max_selected_duration_seconds": 66.266667,
+      "first_excluded_duration_seconds": 82.433333,
+      "selected_frames": 140790
+    },
+    {
+      "task_id": "46",
+      "task_name": "bench320_fu006_hold_drawer_store_charger",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 3.4,
+      "max_selected_duration_seconds": 24.366667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 46579
+    },
+    {
+      "task_id": "47",
+      "task_name": "ycb05_drill_point_and_trigger",
+      "available": 203,
+      "selected": 200,
+      "min_duration_seconds": 7.166667,
+      "max_selected_duration_seconds": 56.633333,
+      "first_excluded_duration_seconds": 57.4,
+      "selected_frames": 136689
+    },
+    {
+      "task_id": "48",
+      "task_name": "p001_bimanual_folding_fan_target_angle",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 4.7,
+      "max_selected_duration_seconds": 60.0,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 145505
+    },
+    {
+      "task_id": "49",
+      "task_name": "g10_folding_ruler_bimanual_unfold",
+      "available": 202,
+      "selected": 200,
+      "min_duration_seconds": 6.833333,
+      "max_selected_duration_seconds": 75.0,
+      "first_excluded_duration_seconds": 77.933333,
+      "selected_frames": 196526
+    },
+    {
+      "task_id": "50",
+      "task_name": "c04_water_plant",
+      "available": 200,
+      "selected": 200,
+      "min_duration_seconds": 5.1,
+      "max_selected_duration_seconds": 106.366667,
+      "first_excluded_duration_seconds": null,
+      "selected_frames": 194133
+    }
+  ]
+}

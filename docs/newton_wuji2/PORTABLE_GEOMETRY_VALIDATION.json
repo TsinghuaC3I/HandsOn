@@ -1,0 +1,198 @@
+{
+  "links_checked": 48,
+  "all_non_path_attributes_identical": true,
+  "rows": [
+    {
+      "asset": "links/left_wuji2_wrist_link.usdc",
+      "non_asset_path_attributes_sha256": "714f41c92d02f981c288274d3370c590eef8e67cc0f62d9a4ccae3f7ceaeb8b7"
+    },
+    {
+      "asset": "links/left_finger1_link1.usdc",
+      "non_asset_path_attributes_sha256": "25959afac7cf9b8283f30b35372f3642b8fab69baa15c9a6c4b071b849f1f89e"
+    },
+    {
+      "asset": "links/left_finger1_link2.usdc",
+      "non_asset_path_attributes_sha256": "e41777b0ee1038c8b29222e9bd4d18ab7391a0e7ada6153121fcf49c248b038a"
+    },
+    {
+      "asset": "links/left_finger1_link3.usdc",
+      "non_asset_path_attributes_sha256": "d6ba294d8c3af888789905799e21e60caea67f18b425b7e49452d350236dae97"
+    },
+    {
+      "asset": "links/left_finger1_link4.usdc",
+      "non_asset_path_attributes_sha256": "6c66c0d1e1ed55fede29edb410530ffd4cf098567951a8f078d54296fdc3983e"
+    },
+    {
+      "asset": "links/left_finger2_link1.usdc",
+      "non_asset_path_attributes_sha256": "e60e37a4febece5678b33af03cad426c1c29f7eeda7e83aba7e97238a3a4e7b6"
+    },
+    {
+      "asset": "links/left_finger2_link2.usdc",
+      "non_asset_path_attributes_sha256": "c6de4a8a8b03260c2fe1a882836577601f29e2de1e1ebc9c1f639146aad169ec"
+    },
+    {
+      "asset": "links/left_finger2_link3.usdc",
+      "non_asset_path_attributes_sha256": "ad20c48ea45d9e19cfee5bff906112232961db9d36dd00feadfb63836d270811"
+    },
+    {
+      "asset": "links/left_finger2_link4.usdc",
+      "non_asset_path_attributes_sha256": "677ded6eca25df4840b6d13573774d7993ec5f61b4693bc402fe7b058add95f3"
+    },
+    {
+      "asset": "links/left_finger3_link1.usdc",
+      "non_asset_path_attributes_sha256": "6c7bb2f8c7091ed0aa56ae1cb2c27c7755c6733e75bc8778597ebaa46fdee8ad"
+    },
+    {
+      "asset": "links/left_finger3_link2.usdc",
+      "non_asset_path_attributes_sha256": "2593fa056b85e9276efd7c3c5d76227144a4b27587c392baca1c9bb5ac9ba6c5"
+    },
+    {
+      "asset": "links/left_finger3_link3.usdc",
+      "non_asset_path_attributes_sha256": "9fdf2c7930de04f2fd61f06ca771b700228930a3fb513f5fce00c0939f800bf1"
+    },
+    {
+      "asset": "links/left_finger3_link4.usdc",
+      "non_asset_path_attributes_sha256": "b5995243d8618780daf206cc05b49dec584cc42aaf8090e2c0ed270d5606a21f"
+    },
+    {
+      "asset": "links/left_finger4_link1.usdc",
+      "non_asset_path_attributes_sha256": "d6dfecceb962322e3b85a261f177dfb902b0c7ca9d5653a3e9726e2bbfd334ed"
+    },
+    {
+      "asset": "links/left_finger4_link2.usdc",
+      "non_asset_path_attributes_sha256": "07e2199740372ebe18f7850fbe575d1bab0eddd87e46f3ee47749ad854d299af"
+    },
+    {
+      "asset": "links/left_finger4_link3.usdc",
+      "non_asset_path_attributes_sha256": "d0cdd11821313c0eb63bf9c65f11df794684b0275578cf070fee0445b1da7fab"
+    },
+    {
+      "asset": "links/left_finger4_link4.usdc",
+      "non_asset_path_attributes_sha256": "20b2bb640efaf286496a46ff26862282848608868cb9d1c9b11fb3dc284e11c2"
+    },
+    {
+      "asset": "links/left_finger5_link1.usdc",
+      "non_asset_path_attributes_sha256": "57c89ad37a62a7933a222cca8a49fca693bb09c8dce137d8c65c7d30ffee9b93"
+    },
+    {
+      "asset": "links/left_finger5_link2.usdc",
+      "non_asset_path_attributes_sha256": "91ac53c75c74ddc665cfff8b26ca5c914e6450e0693ad13bd7f72f01e3dc241a"
+    },
+    {
+      "asset": "links/left_finger5_link3.usdc",
+      "non_asset_path_attributes_sha256": "e2597e55926a57a1a73a0819be977a82ab33fe167bf92ba6760efae06b4df524"
+    },
+    {
+      "asset": "links/left_finger5_link4.usdc",
+      "non_asset_path_attributes_sha256": "ba5ef8c18c38ea4ff23527fc5ebab12fb2cafc3f2597b4d95dbabf336a8933f1"
+    },
+    {
+      "asset": "links/right_wuji2_wrist_link.usdc",
+      "non_asset_path_attributes_sha256": "a109a87a35ef918d6ecb8b263b8ac69dad87669bd3cd06750f216b0f4f67ad26"
+    },
+    {
+      "asset": "links/right_finger1_link1.usdc",
+      "non_asset_path_attributes_sha256": "1f39b0f9987d97a6294ccbc57cf431d613831ce8666b2938119346a36738572a"
+    },
+    {
+      "asset": "links/right_finger1_link2.usdc",
+      "non_asset_path_attributes_sha256": "91293cd3de115ca9b242f4ee8b4f4a3a13551235701b23f0d80b6a3cd931c65c"
+    },
+    {
+      "asset": "links/right_finger1_link3.usdc",
+      "non_asset_path_attributes_sha256": "70de8d4ef40a981864654c8900c61e696aab0aee5d3db37b0cf0e9de0aef0fd1"
+    },
+    {
+      "asset": "links/right_finger1_link4.usdc",
+      "non_asset_path_attributes_sha256": "d4a01b4379a15c73f473f6dd96dd33a56513b0b449ce389a8ee2868f1b00a086"
+    },
+    {
+      "asset": "links/right_finger2_link1.usdc",
+      "non_asset_path_attributes_sha256": "e7384debb210acbd9084ffc03f46cd13d5422f40736f262b9c1178260c884a22"
+    },
+    {
+      "asset": "links/right_finger2_link2.usdc",
+      "non_asset_path_attributes_sha256": "ef2bb1881836741473bc13255a39e8a5cc4bc7d3c1916e013fb7c4bc9dc60935"
+    },
+    {
+      "asset": "links/right_finger2_link3.usdc",
+      "non_asset_path_attributes_sha256": "a1fe63f793a287a62bb603d3efa71dd15c72d8b4059c6449e1270478fbe6c0db"
+    },
+    {
+      "asset": "links/right_finger2_link4.usdc",
+      "non_asset_path_attributes_sha256": "e47e2cef7dc66e29d15acb843b6f73e1e2888fc527e0a1fd0303bea861ea8160"
+    },
+    {
+      "asset": "links/right_finger3_link1.usdc",
+      "non_asset_path_attributes_sha256": "99f35d47064d5aa8cafdd96fc22bead256511fce827d56d9f74aeb6330105193"
+    },
+    {
+      "asset": "links/right_finger3_link2.usdc",
+      "non_asset_path_attributes_sha256": "a842ef066fc75cb870ec988cef2a00faac2b76560b034eda309896d55e3c1a0a"
+    },
+    {
+      "asset": "links/right_finger3_link3.usdc",
+      "non_asset_path_attributes_sha256": "52334b9f084385552c2b743ee1188d401f0a85262e31106ebda47a295acbab58"
+    },
+    {
+      "asset": "links/right_finger3_link4.usdc",
+      "non_asset_path_attributes_sha256": "7a7768fa55556656047a59605e24577c6fa78beb88080ac75a7a3b440e0fafe1"
+    },
+    {
+      "asset": "links/right_finger4_link1.usdc",
+      "non_asset_path_attributes_sha256": "42396fc96c32c5f04f643ad8c4e4e0541e510615b6eabc767ed13d2446079fb1"
+    },
+    {
+      "asset": "links/right_finger4_link2.usdc",
+      "non_asset_path_attributes_sha256": "8ed12d0e2105508d46de47a03ea0d6167a61c0f23cff5c229b0070123b0a9fd4"
+    },
+    {
+      "asset": "links/right_finger4_link3.usdc",
+      "non_asset_path_attributes_sha256": "92c7b504c67ffa91823c2e9dffff9a795e4333c308968943e9dfe996dfc8814c"
+    },
+    {
+      "asset": "links/right_finger4_link4.usdc",
+      "non_asset_path_attributes_sha256": "6861d607406f9916a7b639127425ae22825dbcc50b2ee84b000031608e1e3ade"
+    },
+    {
+      "asset": "links/right_finger5_link1.usdc",
+      "non_asset_path_attributes_sha256": "23a52a45c88a46f3b252e7db04a75268ac751d4375270572b86838a6ed929bb9"
+    },
+    {
+      "asset": "links/right_finger5_link2.usdc",
+      "non_asset_path_attributes_sha256": "6654b1ee6d8283c6a96416b33d5be5ffca08ae0f2320df934439089d66d12a41"
+    },
+    {
+      "asset": "links/right_finger5_link3.usdc",
+      "non_asset_path_attributes_sha256": "09432f227d97fbfbfa0a6bdff202fb54adbd88062469686865cfbf1fbd3fcb9f"
+    },
+    {
+      "asset": "links/right_finger5_link4.usdc",
+      "non_asset_path_attributes_sha256": "0dd5147179ce4888085d7cff46ebfe12202ce76f8e8cf9ac87e0c82f90207e0e"
+    },
+    {
+      "asset": "links/link6_left.usdc",
+      "non_asset_path_attributes_sha256": "48de381258881d4e506c20658aba846ea3ca7702211a474f9ef2483b2fc8f8a9"
+    },
+    {
+      "asset": "links/link7_left.usdc",
+      "non_asset_path_attributes_sha256": "06929d6769054468a10c25aa1b2a838f3fd00929d0a633940750e9124bd1cf7b"
+    },
+    {
+      "asset": "links/attachment_left.usdc",
+      "non_asset_path_attributes_sha256": "8b88cae08ef2bcf1aefeb53189a5230a052a659dd7ee82e0cb0137f2b23666a6"
+    },
+    {
+      "asset": "links/link6_right.usdc",
+      "non_asset_path_attributes_sha256": "0a515246919e5bd066ee0b3de3efdeebe80f4066c1900e87c4812ab7a32d3329"
+    },
+    {
+      "asset": "links/link7_right.usdc",
+      "non_asset_path_attributes_sha256": "bd9062ce65a52e7a6d570a0b8cd5a671d9b8e38fd0bb1ccec576198311e07026"
+    },
+    {
+      "asset": "links/attachment_right.usdc",
+      "non_asset_path_attributes_sha256": "3755055ba20e63a604844ba97c80f1a853cf0d6eda677146750ed7e7ee2f59e6"
+    }
+  ]
+}

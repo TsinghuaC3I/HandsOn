@@ -1,0 +1,56 @@
+{
+  "selection": {
+    "source_episodes": 11678,
+    "selected_episodes": 10000,
+    "tasks": 50,
+    "per_task": 200,
+    "source_action_headers_checked": 11678,
+    "frames": 7077577,
+    "selection_sha256": "a9b2aa504d09fc8a26669a73cc18264d98b8f3e528cff42637c2cc113552d704"
+  },
+  "cpu_tests": {
+    "command": "python scripts/newton_wuji2/test_release.py",
+    "passed": 2,
+    "checks": [
+      "per-task shortest selection, deterministic ties, preserving complete episodes and v2 identity",
+      "interruption after 7 frames, exact 37-frame recovery, cache-only publication, changed-profile rejection"
+    ]
+  },
+  "portable_geometry": {
+    "links": 48,
+    "all_non_path_attributes_identical": true
+  },
+  "portable_entry_gpu_validation": {
+    "status": "passed",
+    "frames": 3,
+    "cameras": 3,
+    "canonical_decode_fps_and_dimensions": "passed",
+    "physical_invariants": "unchanged",
+    "native_links": 48,
+    "scope": "diagnostic first three original source frames through published portable entry; original full296-frame acceptance video remains separate",
+    "visual_inspection": "main and both wrist frame0 inspected; textured V16 scene, continuous Wuji2 finger covers and wrist details visible",
+    "job_exit_code": 0,
+    "claim_released": true
+  },
+  "reference_acceptance": {
+    "episode": "b05_clear_box_lid_demo_13_2026-09-29_21-49-29_781515__newton_v1",
+    "frames": 296,
+    "fps": 30,
+    "main": [
+      640,
+      640
+    ],
+    "wrists": [
+      848,
+      480
+    ],
+    "appearance": "V16 with Wuji2 soft knit v14",
+    "main_sha256": "ae61ad43cd102e36bfcea05029b1b3767975da8053d23740e4d1d81dbba9b9f9",
+    "wrist_left_sha256": "8a52659830da1e5eb1a28c4016957b1e373658374e8dd9c982e6701a0c8bf635",
+    "wrist_right_sha256": "bbf1587da77d0d3c9dfb425b9487f70ce02a8f55a6657f733fa268fb3b08a199",
+    "right_wrist_severe_occlusion_source_indices": [
+      114,
+      115
+    ]
+  }
+}
