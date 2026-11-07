@@ -13,6 +13,8 @@ def main():
     p.add_argument('--release', type=Path, required=True)
     p.add_argument('--readme', type=Path, required=True)
     p.add_argument('--publish-card', action='store_true')
+    p.add_argument('--verify-only', action='store_true',
+                   help='Write the local verification receipt without publishing to the Hub.')
     a = p.parse_args()
     folder = a.release / 'package/newton_wuji2'
     selected_bytes = (folder / 'selection.jsonl').read_bytes()
@@ -23,6 +25,7 @@ def main():
     complete = json.loads((a.release / 'UPLOAD_COMPLETE.json').read_text())
     assert complete['episodes'] == len(rows) == 10000
     assert complete['shards'] == len(shards) == 200
+    assert hashlib.sha256((folder / 'SHARDS.json').read_bytes()).hexdigest() == complete['sha256']
     assert len(candidates) == 11678
     assert hashlib.sha256(selected_bytes).hexdigest() == summary['selection_sha256']
     groups = defaultdict(list)
@@ -68,6 +71,10 @@ def main():
         'verification': 'Per-task shortest-200 membership independently recomputed; all remote archive sizes and LFS SHA256s checked at one immutable Hub revision; every archived source file MD5 matched the transfer inventory.',
         'renderer_and_example_files': extras}
     (folder / 'RELEASE_COMPLETE.json').write_text(json.dumps(proof, indent=2) + '\n')
+    if a.verify_only:
+        print(json.dumps({'status': 'verified', 'revision': revision,
+                          'episodes': len(rows), 'shards': len(shards)}))
+        return
     operations = [CommitOperationAdd(path_in_repo='newton_wuji2/' + name, path_or_fileobj=folder / name)
         for name in ['selection.jsonl', 'candidates.jsonl', 'SELECTION.json', 'SHARDS.json', 'RELEASE_COMPLETE.json']]
     operations.append(CommitOperationAdd(path_in_repo='newton_wuji2/README.md', path_or_fileobj=a.readme))
