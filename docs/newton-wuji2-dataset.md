@@ -1,7 +1,5 @@
 # Newton + Wuji Hand 2 trajectories
 
-> **Publication status:** The selection, renderer, and acceptance sample are available. Raw shards are uploading; wait for `newton_wuji2/RELEASE_COMPLETE.json` before downloading the complete dataset.
-
 This release contains **10,000 complete raw trajectories: 200 from each of the
 50 Core tasks**, selected from 11,678 recordings. It adds a separate
 `newton_wuji2/` directory to
