@@ -32,6 +32,16 @@ def write_json(path, value):
     temp.replace(path)
 
 
+def retry_read(call):
+    for attempt in range(5):
+        try:
+            return call()
+        except Exception:
+            if attempt == 4:
+                raise
+            time.sleep(min(2 ** attempt, 10))
+
+
 class VerifiedReader:
     def __init__(self, stream):
         self.stream, self.md5 = stream, hashlib.md5()
@@ -82,7 +92,7 @@ def main():
             pass
     print(json.dumps({'event': 'metadata_checked', 'files': len(metadata)}), flush=True)
     api = HfApi()
-    identity = api.whoami()['name']
+    identity = retry_read(lambda: api.whoami())['name']
     print(json.dumps({'event': 'authenticated', 'account': identity, 'episodes': len(rows)}), flush=True)
     scratch = args.release / ('scratch-' + scope if scope else 'scratch')
     receipts = args.release / 'receipts'
@@ -101,7 +111,8 @@ def main():
     print(json.dumps({'event': 'scheduled', 'scope': scope or 'all', 'shards': len(jobs)}), flush=True)
 
     def remote_match(path, sha, size):
-        info = api.get_paths_info(args.repo, paths=[path], repo_type='dataset', revision=args.revision)
+        info = retry_read(lambda: api.get_paths_info(
+            args.repo, paths=[path], repo_type='dataset', revision=args.revision))
         return bool(info and info[0].size == size and info[0].lfs and info[0].lfs.sha256 == sha)
 
     def worker(job):
