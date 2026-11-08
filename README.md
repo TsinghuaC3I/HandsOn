@@ -34,7 +34,7 @@ visual and goal-preserving prompt randomization.
 </p>
 
 > **Dataset releases:** The paper corpus contains **18,000 PhysX/Wuji1 demonstrations**.
-> The [Newton + Wuji2 addition](docs/newton-wuji2-dataset.md) contains **10,000 raw trajectories**,
+> The [Newton + Wuji2 addition](docs/newton-wuji2-dataset.md) is uploading **10,000 selected raw trajectories**,
 > selected as the shortest 200 per Core task, with matching V16 rendering code.
 
 - **Core-50** — 50 tasks with demonstrations and execution tests, spanning
@@ -46,7 +46,7 @@ visual and goal-preserving prompt randomization.
 
 ## Timeline
 
-- **2026-11-08 — Newton + Wuji Hand 2 data.** Released [10,000 raw trajectories](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2), 200 per Core task selected by shortest duration, and the [V16/Wuji2 rendering code and method](docs/newton-wuji2-dataset.md).
+- **2026-11-08 — Newton + Wuji Hand 2 data.** Published the [10,000-trajectory selection](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) and [V16/Wuji2 rendering code and method](docs/newton-wuji2-dataset.md). Raw archives are uploading; `RELEASE_COMPLETE.json` will mark full availability.
 - **2026-11-03 — Upload weights.** Released the eight paper multi-task [checkpoints on Hugging Face](https://huggingface.co/Cyan666/HandsOn-Checkpoints).
 - **2026-11-02 — Fix reset bugs.** Fixed task reset bugs and restored the paper evaluation workflow ([#7](https://github.com/TsinghuaC3I/HandsOn/pull/7)).
 - **2026-10-20 — Initial commit.** Released the HandsOn code and task suite ([commit](https://github.com/TsinghuaC3I/HandsOn/commit/be2b59aad016869e8cede1f485d64e3c2d191685)).
@@ -211,14 +211,14 @@ The installed-package validation results, task matrix and three-view samples are
 
 ## Dataset
 
-The Hugging Face repository contains two separate releases: the paper
-**PhysX/Wuji1** LeRobot corpus and the **Newton/Wuji2** raw trajectory addition.
+The Hugging Face repository contains the paper **PhysX/Wuji1** LeRobot corpus
+and an in-progress **Newton/Wuji2** raw trajectory addition.
 The latter includes its selection manifests and a reproducible three-view renderer.
 
 | Backend | Release status | Contents |
 |---|---|---|
 | **PhysX** | Released: [`HandsOn-Datasets`](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets) | 18,000 curated trajectories (15,178 train / 2,822 validation), in LeRobot v2.1 format |
-| **Newton + Wuji2** | Released: [`newton_wuji2/`](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) | 10,000 raw trajectories, shortest 200 per Core task; [three-view rendering](docs/newton-wuji2-dataset.md) |
+| **Newton + Wuji2** | Uploading: [`newton_wuji2/`](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) | 10,000 selected raw trajectories, shortest 200 per Core task; [three-view rendering](docs/newton-wuji2-dataset.md) |
 
 The PhysX paper corpus contains 18,000 trajectories / 6,053,555 timesteps at 30 Hz, with three synchronized
 RGB streams per episode (front 854×480, two wrist views at 848×480).  The
@@ -322,7 +322,7 @@ and language protocol.
 | GPT-6 660-trial results | [Protocol and results](docs/gpt6-results.md), [JSON](docs/results/gpt6-results-20261019.json) |
 | Task acceptance evidence | `taskdev/tasks/*/validation_report.yaml` |
 | PhysX demonstration dataset | [Hugging Face](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets) |
-| Newton + Wuji2 demonstration dataset | [10,000 raw trajectories](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) · [rendering method](docs/newton-wuji2-dataset.md) |
+| Newton + Wuji2 demonstration dataset | [Selection published; raw upload in progress](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) · [rendering method](docs/newton-wuji2-dataset.md) |
 | Policy checkpoints | not redistributed; see the manuscript |
 
 Determinism: seed-only evaluation uses `--seed` for native reset-layout sampling.
