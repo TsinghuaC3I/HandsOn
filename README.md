@@ -290,6 +290,13 @@ measured evidence, or the task is rejected.
 
 ## Results
 
+See the [unified leaderboard](docs/leaderboard.md) for Core-50, Transfer-16
+and the 66-task overall average. The [interactive project leaderboard](https://llltttwww.github.io/HandsOn-website/leaderboard.html)
+includes the later Fable 5.2 evaluation. Its **29/660 (4.4%)** result is a
+[post-hoc 100-response cutoff](docs/fable52-results.md) of trajectories
+originally allowed 500 calls, not an independent 100-call rerun. The current
+snapshot covers 660 cutoff outcomes with 656 original trials independently audited.
+
 Over 40,000 Core-50 episodes across diffusion policies, vision-language-action
 models, and world-action models, the best of eight multi-task checkpoints
 reaches **29.1% task-macro success**.  Success is 35–51% for pushing,

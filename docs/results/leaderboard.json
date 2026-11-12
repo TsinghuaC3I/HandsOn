@@ -1,0 +1,117 @@
+{
+  "schema": "handson_unified_leaderboard_v1",
+  "updated_utc": "2026-11-12T03:01:11.757084+00:00",
+  "metric": "Native task success; Core-50 and Transfer-16 are task-macro rates. Overall is the 66-task macro mean, weighted by 50 and 16 tasks.",
+  "caveat": "Models differ in observations, action interface, interaction budgets and trial counts. Trained-model overall rates are derived from manuscript suite rates rounded to one decimal place.",
+  "fable_snapshot_complete_original_audit": false,
+  "fable_audited_original_trials": 656,
+  "models": [
+    {
+      "model": "OpenWAM",
+      "core_percent": 29.1,
+      "transfer_percent": 0.4,
+      "overall_percent": 22.1,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "FastWAM",
+      "core_percent": 26.4,
+      "transfer_percent": 0.0,
+      "overall_percent": 20.0,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "pi0.5",
+      "core_percent": 24.9,
+      "transfer_percent": 0.1,
+      "overall_percent": 18.9,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "DM0.5",
+      "core_percent": 21.4,
+      "transfer_percent": 0.9,
+      "overall_percent": 16.4,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "LingBot-VLA",
+      "core_percent": 19.7,
+      "transfer_percent": 0.0,
+      "overall_percent": 14.9,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "HY-Embodied",
+      "core_percent": 18.9,
+      "transfer_percent": 0.0,
+      "overall_percent": 14.3,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "Motus",
+      "core_percent": 18.1,
+      "transfer_percent": 0.1,
+      "overall_percent": 13.7,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "Spatial Forcing",
+      "core_percent": 12.4,
+      "transfer_percent": 0.1,
+      "overall_percent": 9.4,
+      "overall_derived_from_rounded_suite_rates": true,
+      "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    },
+    {
+      "model": "Fable 5.2 (move_eef)",
+      "core_percent": 5.2,
+      "transfer_percent": 1.875,
+      "overall_percent": 4.393939393939394,
+      "core_successes": 26,
+      "transfer_successes": 3,
+      "core_trials": 500,
+      "transfer_trials": 160,
+      "overall_derived_from_rounded_suite_rates": false,
+      "protocol": "Post-hoc 100-response cutoff of original 500-call trajectories; not a 100-call rerun.",
+      "source": "docs/fable52-results.md"
+    },
+    {
+      "model": "GPT-6 (move_eef)",
+      "core_percent": 5.2,
+      "transfer_percent": 1.875,
+      "overall_percent": 4.393939393939394,
+      "core_successes": 26,
+      "transfer_successes": 3,
+      "core_trials": 500,
+      "transfer_trials": 160,
+      "overall_derived_from_rounded_suite_rates": false,
+      "protocol": "Prompted controller; recorded context and call budgets vary across completed trials.",
+      "source": "docs/gpt6-results.md"
+    },
+    {
+      "model": "DP (single-task)",
+      "core_percent": 9.7,
+      "transfer_percent": null,
+      "overall_percent": null,
+      "overall_derived_from_rounded_suite_rates": false,
+      "protocol": "Core-only single-task reference; 38 tasks use an earlier goal sampler. Not ranked across 66 tasks.",
+      "source": "https://arxiv.org/abs/2610.26765"
+    }
+  ]
+}
