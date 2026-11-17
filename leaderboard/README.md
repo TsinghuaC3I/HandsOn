@@ -81,7 +81,8 @@ rules, and will state the reason in the pull request.
 ## How to submit
 
 1. **Install the evaluator.** Follow [installation](../docs/installation.md) in
-   a git checkout of this repository. Do not modify anything under `handson/`.
+   a git checkout of this repository, with `git` on `PATH` (the suite records
+   the commit). Do not modify anything under `handson/`.
 2. **Serve your policy.** Run an OpenPI websocket or HTTP policy server that
    returns `(horizon, 52)` physical EEF52 actions; see
    [policy integration](../docs/custom_policy_integration.md). Put a checkpoint
@@ -115,11 +116,16 @@ rules, and will state the reason in the pull request.
      `attempt_NN/` with its `console.txt`, `ATTEMPT.json` and `episode/`
      (`RESULT.json`, `JOB.json`, `PROMPT.json`, `steps.jsonl`, the three `.mp4`
      videos, …).
-   - `input_*.npz` request dumps and `scene-cache/` may be left out.
+   - `input_*.npz` request dumps and `scene-cache/` may be left out. The suite
+     deletes `scene-cache/` after each completed episode, which leaves about
+     20–25 MB per episode at the default render stride (roughly 130 GB for
+     `multi_task`).
 6. **Describe the system.** Copy [`templates/metadata.yaml`](templates/metadata.yaml)
    into the submission directory and fill it in.
 7. **Check and open a pull request.** Run the check below, then open a pull
-   request that adds only `leaderboard/submissions/<id>/`. CI runs the same check.
+   request that adds only `leaderboard/submissions/<id>/`. CI runs the same
+   check. After merging, the maintainers rebuild the published table, and the
+   entry appears as **Self-reported** until verified.
 
    ```bash
    python -m handson.evaluation.suite check leaderboard/submissions/<id> --git-repo . --git-ref origin/main
@@ -140,7 +146,8 @@ available, the maintainers:
 1. rerun the system on **10 hidden seeds per task** (660 episodes, or 500 for
    `single_task`), with the same evaluator commit and execution settings;
 2. compare the hidden rerun with the submitted public score;
-3. record the result in [`verifications.json`](verifications.json).
+3. record the result in [`verifications.json`](verifications.json) and rebuild
+   the published table with `python tools/build_leaderboard.py`.
 
 The entry becomes **Verified** when the task-macro difference is within 1.96
 combined standard errors. Otherwise it stays **Self-reported**, and the

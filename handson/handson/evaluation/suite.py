@@ -76,7 +76,8 @@ def _prepare_run(output, rows, args, passthrough):
     output.mkdir(parents=True, exist_ok=True)
     identity = lb.evaluator_identity()
     if identity["git_commit"] is None:
-        raise SystemExit("Run the suite from a git checkout of HandsOn so the evaluator commit is recorded")
+        raise SystemExit("Run the suite from a git checkout of HandsOn, with git on PATH, "
+                         "so the evaluator commit is recorded")
     if identity["git_dirty"] and not args.allow_dirty:
         raise SystemExit("The checkout has local changes under handson/; commit or stash them "
                          "(--allow-dirty records a run that cannot be submitted)")

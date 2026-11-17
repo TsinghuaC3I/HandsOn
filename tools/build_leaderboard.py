@@ -2,6 +2,7 @@
 
     python tools/build_leaderboard.py            # rebuild leaderboard.json and the docs table
     python tools/build_leaderboard.py --check    # fail if the published files are stale
+    python tools/build_leaderboard.py --dry-run  # compose and print the table without writing
     python tools/build_leaderboard.py --fable-source SNAPSHOT.json   # also refresh the Fable snapshot
 
 Entries come from three sources: the manuscript's trained models, the HandsOn
@@ -265,9 +266,10 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--fable-source", type=Path, help="Private Fable snapshot to republish")
     parser.add_argument("--check", action="store_true", help="Fail if the published files are out of date")
+    parser.add_argument("--dry-run", action="store_true", help="Print the composed table without writing")
     args = parser.parse_args()
-    if args.check and args.fable_source:
-        parser.error("--check does not refresh the Fable snapshot")
+    if (args.check or args.dry_run) and args.fable_source:
+        parser.error("--check and --dry-run do not refresh the Fable snapshot")
     if args.fable_source:
         fable = refresh_fable(args.fable_source)
     else:
@@ -275,6 +277,9 @@ def main():
     board = compose(fable)
     board_text = json.dumps(board, indent=2, ensure_ascii=False) + "\n"
     docs_text = render_docs(board)
+    if args.dry_run:
+        print(table(board))
+        return
     if args.check:
         stale = [str(path.relative_to(ROOT)) for path, text in
                  ((RESULTS / "leaderboard.json", board_text), (TABLE, docs_text)) if path.read_text() != text]

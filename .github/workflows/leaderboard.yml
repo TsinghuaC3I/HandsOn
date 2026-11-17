@@ -28,4 +28,7 @@ jobs:
       - run: python -m pip install -r requirements/cpu-test-lock.txt
       - run: python -m pip install --no-deps -e './handson[test]'
       - run: python tools/check_leaderboard_submissions.py --git-ref origin/main
-      - run: python tools/build_leaderboard.py --check
+      # Submission PRs only add their directory; maintainers rebuild the
+      # published table after merging (tools/build_leaderboard.py), so CI
+      # checks that the table composes rather than that it is current.
+      - run: python tools/build_leaderboard.py --dry-run
