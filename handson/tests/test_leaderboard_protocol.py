@@ -1,7 +1,9 @@
 """CPU checks for the handson-eval-v1 leaderboard protocol, suite runner and submission validator."""
 import json
 import shutil
+import subprocess
 import sys
+import tarfile
 from pathlib import Path
 
 import pytest
@@ -190,7 +192,9 @@ result = dict(task=args["--task"], seed=int(args["--seed"]), steps=90, success=T
 def test_runner_retries_infrastructure_errors_and_resumes(tmp_path, monkeypatch):
     fake = tmp_path / "fake_evaluator.py"
     fake.write_text(FAKE_EVALUATOR)
-    monkeypatch.setattr(lb, "evaluator_identity", lambda: dict(IDENTITY))
+    monkeypatch.setattr(lb, "identify_source", lambda root=None: dict(
+        git_commit=IDENTITY["git_commit"], git_dirty=False, check="git", mismatched=[]))
+    monkeypatch.setattr(lb, "evaluator_identity", lambda source=None: dict(IDENTITY))
     monkeypatch.setattr(suite.Runner, "command", lambda self, row, attempt: [
         sys.executable, str(fake), "--task", row["task"], "--seed", str(row["seed"]),
         "--output", str(attempt / "episode")])
@@ -211,3 +215,62 @@ def test_runner_retries_infrastructure_errors_and_resumes(tmp_path, monkeypatch)
     assert len([p for p in (output / "trials").rglob("attempt_[0-9][0-9]") if p.is_dir()]) == 30
     with pytest.raises(SystemExit):
         suite.main(argv + ["--", "--port", "9001"])
+
+
+def _tree(root, files):
+    for name, text in files.items():
+        path = root / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(text)
+
+
+def test_source_manifest_identifies_an_exported_tree_without_git(tmp_path, monkeypatch):
+    root = tmp_path / "export"
+    _tree(root, {"handson/a.py": "print(1)\n", "handson/sub/b.json": "{}\n", "README.md": "x\n"})
+    files = {name: lb._blob_sha1(root / name) for name in ("handson/a.py", "handson/sub/b.json")}
+    (root / lb.SOURCE_MANIFEST).write_text(json.dumps(dict(
+        schema="handson_source_manifest_v1", protocol=lb.PROTOCOL, git_commit="a" * 40, scope="handson/",
+        files_sha256=lb.sha256_text(lb._canonical(files)), files=files)))
+    # Without a git binary, and with git present but outside a checkout of this tree.
+    for path in ("", None):
+        if path is not None:
+            monkeypatch.setenv("PATH", path)
+        source = lb.identify_source(root)
+        assert source == dict(git_commit="a" * 40, git_dirty=False, check="source_manifest", mismatched=[])
+        monkeypatch.undo()
+    # Untracked extra files are ignored, as with `git status --untracked-files=no`.
+    (root / "handson" / "new.txt").write_text("extra")
+    assert lb.identify_source(root)["git_dirty"] is False
+    (root / "handson" / "a.py").write_text("print(2)\n")
+    (root / "handson" / "sub" / "b.json").unlink()
+    source = lb.identify_source(root)
+    assert source["git_dirty"] is True and source["mismatched"] == ["handson/a.py", "handson/sub/b.json"]
+    data = json.loads((root / lb.SOURCE_MANIFEST).read_text())
+    data["files"]["handson/a.py"] = "0" * 40
+    (root / lb.SOURCE_MANIFEST).write_text(json.dumps(data))
+    with pytest.raises(ValueError):
+        lb.identify_source(root)
+
+
+@pytest.mark.skipif(shutil.which("git") is None, reason="export-source needs git")
+def test_export_source_round_trip(tmp_path, monkeypatch):
+    repo = tmp_path / "repo"
+    _tree(repo, {"handson/handson/x.py": "X = 1\n", "handson/data.bin": "\u00e9\n", "tools/t.py": "\n"})
+    git = ["git", "-C", str(repo), "-c", "user.name=t", "-c", "user.email=t@localhost"]
+    subprocess.run(["git", "init", "-q", str(repo)], check=True)
+    subprocess.run(git + ["add", "-A"], check=True)
+    subprocess.run(git + ["commit", "-q", "-m", "snapshot"], check=True)
+    commit = subprocess.run(["git", "-C", str(repo), "rev-parse", "HEAD"], capture_output=True, text=True,
+                            check=True).stdout.strip()
+    assert lb.identify_source(repo)["check"] == "git"
+    report = lb.export_source(tmp_path / "out" / "src.tar.gz", "HEAD", root=repo)
+    assert report["git_commit"] == commit and report["files"] == 2
+    with tarfile.open(tmp_path / "out" / "src.tar.gz") as archive:
+        archive.extractall(tmp_path / "unpacked")
+    tree = tmp_path / "unpacked" / report["directory"]
+    assert (tree / lb.SOURCE_MANIFEST).is_file() and (tree / "tools" / "t.py").is_file()
+    monkeypatch.setenv("PATH", "")
+    assert lb.identify_source(tree) == dict(git_commit=commit, git_dirty=False, check="source_manifest",
+                                            mismatched=[])
+    (tree / "handson" / "handson" / "x.py").write_text("X = 2\n")
+    assert lb.identify_source(tree)["mismatched"] == ["handson/handson/x.py"]

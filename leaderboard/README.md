@@ -82,7 +82,13 @@ rules, and will state the reason in the pull request.
 
 1. **Install the evaluator.** Follow [installation](../docs/installation.md) in
    a git checkout of this repository, with `git` on `PATH` (the suite records
-   the commit). Do not modify anything under `handson/`.
+   the commit). Do not modify anything under `handson/`. If the GPU machines
+   have no `git`, pack the commit where git is available and unpack it there;
+   the suite then verifies every file against the packed `HANDSON_SOURCE.json`:
+
+   ```bash
+   python -m handson.evaluation.suite export-source --commit <sha> --output handson-<sha>.tar.gz
+   ```
 2. **Serve your policy.** Run an OpenPI websocket or HTTP policy server that
    returns `(horizon, 52)` physical EEF52 actions; see
    [policy integration](../docs/custom_policy_integration.md). Put a checkpoint
@@ -144,7 +150,8 @@ When `submission.request_verification` is `true` and the weights or API are
 available, the maintainers:
 
 1. rerun the system on **10 hidden seeds per task** (660 episodes, or 500 for
-   `single_task`), with the same evaluator commit and execution settings;
+   `single_task`), with the same evaluator commit (packed with `export-source`
+   for cluster nodes without git) and execution settings;
 2. compare the hidden rerun with the submitted public score;
 3. record the result in [`verifications.json`](verifications.json) and rebuild
    the published table with `python tools/build_leaderboard.py`.
