@@ -74,12 +74,18 @@ def _select(rows, args):
 
 def _prepare_run(output, rows, args, passthrough):
     output.mkdir(parents=True, exist_ok=True)
-    identity = lb.evaluator_identity()
+    source = lb.identify_source()
+    identity = lb.evaluator_identity(source)
     if identity["git_commit"] is None:
-        raise SystemExit("Run the suite from a git checkout of HandsOn, with git on PATH, "
-                         "so the evaluator commit is recorded")
+        raise SystemExit("Cannot identify the evaluator commit. Run the suite from a git checkout of HandsOn "
+                         "with git on PATH, or, on a machine without git, from a tree unpacked from "
+                         "`python -m handson.evaluation.suite export-source` (it carries HANDSON_SOURCE.json)")
     if identity["git_dirty"] and not args.allow_dirty:
-        raise SystemExit("The checkout has local changes under handson/; commit or stash them "
+        detail = ""
+        if source["check"] == "source_manifest":
+            shown = ", ".join(source["mismatched"][:5])
+            detail = f" ({len(source['mismatched'])} files differ from HANDSON_SOURCE.json, e.g. {shown})"
+        raise SystemExit(f"The evaluator has local changes under handson/{detail}; use an unmodified tree "
                          "(--allow-dirty records a run that cannot be submitted)")
     if identity["protocol_files"] != lb.PROTOCOL_FILE_SHA256:
         raise SystemExit(f"Protocol files differ from {lb.PROTOCOL}; use an unmodified release")
@@ -93,7 +99,7 @@ def _prepare_run(output, rows, args, passthrough):
             raise SystemExit(f"{output} holds a run with a different protocol, manifest, evaluator commit "
                              "or evaluator arguments; use a new output directory")
     else:
-        _write(path, dict(record, created_utc=_now()))
+        _write(path, dict(record, created_utc=_now(), source_check=source["check"]))
         (output / "MANIFEST.jsonl").write_text("".join(lb._canonical(row) + "\n" for row in rows))
     return record
 
@@ -301,6 +307,13 @@ def cmd_manifest(args):
         sys.stdout.write(text)
 
 
+def cmd_export_source(args):
+    report = lb.export_source(args.output, args.commit)
+    print(json.dumps(report, indent=2))
+    print(f"Unpack with: tar -xzf {Path(args.output).name}  (creates {report['directory']}/); "
+          "run the suite from that directory; git is not needed there", file=sys.stderr)
+
+
 def cmd_verify(args):
     public = json.loads((Path(args.submission) / "summary.json").read_text())
     results, hidden = _summarize(args.hidden_runs)
@@ -351,6 +364,10 @@ def main(argv=None):
     show.add_argument("--hidden-key", help=argparse.SUPPRESS)
     show.add_argument("--trials", type=int, help="Trials per task (default: the track's plan)")
     show.add_argument("--output")
+    export = sub.add_parser("export-source",
+                            help="Pack a commit with HANDSON_SOURCE.json for machines without git")
+    export.add_argument("--commit", default="HEAD")
+    export.add_argument("--output", required=True, help="Archive path, e.g. handson-<commit>.tar.gz")
     verify = sub.add_parser("verify", help=argparse.SUPPRESS)
     verify.add_argument("submission")
     verify.add_argument("hidden_runs", nargs="+")
@@ -362,7 +379,8 @@ def main(argv=None):
             parser.error("--per-gpu and --max-attempts must be positive")
         cmd_run(args, _passthrough(passthrough))
     else:
-        dict(summarize=cmd_summarize, check=cmd_check, manifest=cmd_manifest, verify=cmd_verify)[args.command](args)
+        dict(summarize=cmd_summarize, check=cmd_check, manifest=cmd_manifest, verify=cmd_verify,
+             **{"export-source": cmd_export_source})[args.command](args)
 
 
 if __name__ == "__main__":

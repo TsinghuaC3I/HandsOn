@@ -8,6 +8,7 @@ import hashlib
 import hmac
 import json
 import math
+import os
 import re
 import subprocess
 from pathlib import Path
@@ -134,23 +135,119 @@ def manifest_sha256(rows):
 
 
 # ------------------------------------------------------------ evaluator identity
-def protocol_file_hashes():
-    return {rel: hashlib.sha256((PACKAGE / rel).read_bytes()).hexdigest() for rel in PROTOCOL_FILE_SHA256}
+SOURCE_MANIFEST = "HANDSON_SOURCE.json"
+SOURCE_SCOPE = "handson"
 
 
-def evaluator_identity():
-    """Git commit and protocol-file hashes of the evaluator that runs the trials."""
-    root = PACKAGE.parents[1]
-    commit = dirty = None
+def protocol_file_hashes(package=None):
+    package = Path(package or PACKAGE)
+    return {rel: hashlib.sha256((package / rel).read_bytes()).hexdigest() for rel in PROTOCOL_FILE_SHA256}
+
+
+def _blob_sha1(path):
+    """Git blob id of a working-tree file (symlinks hash their target, as in git)."""
+    data = os.readlink(path).encode() if os.path.islink(path) else Path(path).read_bytes()
+    return hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+
+
+def _run_git(root, *args):
+    return subprocess.run(["git", "-C", str(root), *args], capture_output=True, text=True, check=True).stdout
+
+
+def _git_checkout(root):
+    """Commit and dirty flag when ``root`` itself is a git checkout and git is on PATH."""
     try:
-        commit = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True,
-                                text=True, check=True).stdout.strip()
-        status = subprocess.run(["git", "-C", str(root), "status", "--porcelain", "--untracked-files=no",
-                                 "--", "handson"], capture_output=True, text=True, check=True).stdout
-        dirty = bool(status.strip())
-    except (OSError, subprocess.CalledProcessError):
-        pass
-    return dict(protocol=PROTOCOL, git_commit=commit, git_dirty=dirty, protocol_files=protocol_file_hashes())
+        top, commit = _run_git(root, "rev-parse", "--show-toplevel", "HEAD").splitlines()
+        if Path(top).resolve() != Path(root).resolve():
+            return None  # an exported tree inside some other repository
+        status = _run_git(root, "status", "--porcelain", "--untracked-files=no", "--", SOURCE_SCOPE)
+    except (OSError, ValueError, subprocess.CalledProcessError):
+        return None
+    return commit, bool(status.strip())
+
+
+def source_manifest(root, commit="HEAD"):
+    """Blob ids of every tracked file under handson/ at ``commit`` (requires git)."""
+    full = _run_git(root, "rev-parse", f"{commit}^{{commit}}").strip()
+    files = {}
+    for entry in _run_git(root, "ls-tree", "-r", "-z", full, "--", SOURCE_SCOPE).split("\0"):
+        if not entry:
+            continue
+        meta, path = entry.split("\t", 1)
+        mode, kind, sha = meta.split()
+        if kind != "blob":
+            raise ValueError(f"{path}: submodules are not supported in an exported evaluator")
+        files[path] = sha
+    return dict(schema="handson_source_manifest_v1", protocol=PROTOCOL, git_commit=full, scope=SOURCE_SCOPE + "/",
+                files_sha256=sha256_text(_canonical(files)), files=files)
+
+
+def verify_source_manifest(root):
+    """Compare an exported tree with its HANDSON_SOURCE.json; return (commit, mismatched paths)."""
+    root = Path(root)
+    data = json.loads((root / SOURCE_MANIFEST).read_text())
+    files = data.get("files")
+    if (data.get("schema") != "handson_source_manifest_v1" or not isinstance(files, dict)
+            or data.get("files_sha256") != sha256_text(_canonical(files))
+            or not re.fullmatch(r"[0-9a-f]{40}", str(data.get("git_commit")))):
+        raise ValueError(f"{root / SOURCE_MANIFEST} is not a valid source manifest")
+    mismatched = [path for path, sha in sorted(files.items())
+                  if not (root / path).is_file() or _blob_sha1(root / path) != sha]
+    return data["git_commit"], mismatched
+
+
+def identify_source(root=None):
+    """Find the evaluator commit: from git, or from a verified HANDSON_SOURCE.json export.
+
+    Cluster nodes often have no git binary. ``suite export-source`` packs a commit with
+    a manifest of blob ids; every listed file is re-hashed here, so ``git_dirty`` has
+    the same meaning as ``git status`` on the tracked files under handson/.
+    """
+    root = Path(root or PACKAGE.parents[1])
+    checkout = _git_checkout(root)
+    if checkout is not None:
+        return dict(git_commit=checkout[0], git_dirty=checkout[1], check="git", mismatched=[])
+    if (root / SOURCE_MANIFEST).is_file():
+        commit, mismatched = verify_source_manifest(root)
+        return dict(git_commit=commit, git_dirty=bool(mismatched), check="source_manifest", mismatched=mismatched)
+    return dict(git_commit=None, git_dirty=None, check=None, mismatched=[])
+
+
+def evaluator_identity(source=None):
+    """Git commit and protocol-file hashes of the evaluator that runs the trials."""
+    source = source or identify_source()
+    return dict(protocol=PROTOCOL, git_commit=source["git_commit"], git_dirty=source["git_dirty"],
+                protocol_files=protocol_file_hashes())
+
+
+def export_source(output, commit="HEAD", root=None):
+    """Write ``<output>.tar.gz``: ``git archive`` of ``commit`` plus HANDSON_SOURCE.json."""
+    import gzip
+    import shutil
+    import tarfile
+    import tempfile
+    root = Path(root or PACKAGE.parents[1])
+    data = source_manifest(root, commit)
+    prefix = f"handson-{data['git_commit'][:12]}"
+    output = Path(output)
+    with tempfile.TemporaryDirectory() as scratch:
+        tar_path = Path(scratch) / "source.tar"
+        subprocess.run(["git", "-C", str(root), "archive", "--format=tar", f"--prefix={prefix}/",
+                        "-o", str(tar_path), data["git_commit"]], check=True)
+        manifest_path = Path(scratch) / SOURCE_MANIFEST
+        manifest_path.write_text(json.dumps(data, indent=1) + "\n")
+        with tarfile.open(tar_path, "a") as archive:
+            info = archive.gettarinfo(str(manifest_path), arcname=f"{prefix}/{SOURCE_MANIFEST}")
+            info.uid = info.gid = 0
+            info.uname = info.gname = "root"
+            info.mode = 0o644
+            with open(manifest_path, "rb") as handle:
+                archive.addfile(info, handle)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        with open(tar_path, "rb") as source, gzip.open(output, "wb", compresslevel=1) as target:
+            shutil.copyfileobj(source, target, 1 << 20)
+    return dict(output=str(output), directory=prefix, git_commit=data["git_commit"], files=len(data["files"]),
+                sha256=hashlib.sha256(output.read_bytes()).hexdigest())
 
 
 # ---------------------------------------------------------------- run results
