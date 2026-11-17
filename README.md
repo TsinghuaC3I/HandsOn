@@ -46,6 +46,7 @@ visual and goal-preserving prompt randomization.
 
 ## Timeline
 
+- **2026-11-17 — Open leaderboard submissions.** Other teams can submit results under the frozen `handson-eval-v1` protocol; see the [submission guide](leaderboard/README.md).
 - **2026-11-08 — Newton + Wuji Hand 2 data.** Released [10,000 raw trajectories](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2), 200 per Core task selected by shortest duration, and the [V16/Wuji2 rendering code and method](docs/newton-wuji2-dataset.md).
 - **2026-11-03 — Upload weights.** Released the eight paper multi-task [checkpoints on Hugging Face](https://huggingface.co/Cyan666/HandsOn-Checkpoints).
 - **2026-11-02 — Fix reset bugs.** Fixed task reset bugs and restored the paper evaluation workflow ([#7](https://github.com/TsinghuaC3I/HandsOn/pull/7)).
@@ -297,6 +298,11 @@ includes the later Fable 5.2 evaluation. Its **29/660 (4.4%)** result is a
 originally allowed 500 calls, not an independent 100-call rerun. The current
 snapshot covers 660 cutoff outcomes with 656 original trials independently audited.
 
+To submit your own results, run the frozen `handson-eval-v1` trials with
+`python -m handson.evaluation.suite` and open a pull request; the
+[submission guide](leaderboard/README.md) covers tracks, rules and hidden-seed
+verification.
+
 Over 40,000 Core-50 episodes across diffusion policies, vision-language-action
 models, and world-action models, the best of eight multi-task checkpoints
 reaches **29.1% task-macro success**.  Success is 35–51% for pushing,
@@ -344,6 +350,8 @@ an archived reset candidate.
 Issues and pull requests are welcome.  For a new task, `taskdev/` defines the
 acceptance contract a task must satisfy — see `taskdev/schema/` for the
 manifest schema and `taskdev/templates/` for the starting documents.
+Leaderboard results are submitted as pull requests under
+`leaderboard/submissions/`; see the [submission guide](leaderboard/README.md).
 
 ## Acknowledgements
 

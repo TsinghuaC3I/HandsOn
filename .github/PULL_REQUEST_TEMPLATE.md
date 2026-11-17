@@ -6,6 +6,7 @@
 
 - [ ] Bug fix
 - [ ] New task
+- [ ] Leaderboard submission (adds only `leaderboard/submissions/<id>/`; see `leaderboard/README.md`)
 - [ ] Documentation
 - [ ] Refactor (no behaviour change)
 
