@@ -5,6 +5,7 @@
   "caveat": "Models differ in observations, action interface, interaction budgets and trial counts. Trained-model overall rates are derived from manuscript suite rates rounded to one decimal place.",
   "fable_snapshot_complete_original_audit": false,
   "fable_audited_original_trials": 656,
+  "submission_protocol": "handson-eval-v1; see leaderboard/README.md",
   "models": [
     {
       "model": "OpenWAM",
@@ -13,7 +14,11 @@
       "overall_percent": 22.1,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "FastWAM",
@@ -22,7 +27,11 @@
       "overall_percent": 20.0,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "pi0.5",
@@ -31,7 +40,11 @@
       "overall_percent": 18.9,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "DM0.5",
@@ -40,7 +53,11 @@
       "overall_percent": 16.4,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "LingBot-VLA",
@@ -49,7 +66,11 @@
       "overall_percent": 14.9,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "HY-Embodied",
@@ -58,7 +79,11 @@
       "overall_percent": 14.3,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "Motus",
@@ -67,7 +92,11 @@
       "overall_percent": 13.7,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "Spatial Forcing",
@@ -76,7 +105,11 @@
       "overall_percent": 9.4,
       "overall_derived_from_rounded_suite_rates": true,
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "Fable 5.2 (move_eef)",
@@ -89,7 +122,11 @@
       "transfer_trials": 160,
       "overall_derived_from_rounded_suite_rates": false,
       "protocol": "Post-hoc 100-response cutoff of original 500-call trajectories; not a 100-call rerun.",
-      "source": "docs/fable52-results.md"
+      "source": "docs/fable52-results.md",
+      "track": "zero_shot",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "GPT-6 (move_eef)",
@@ -102,7 +139,11 @@
       "transfer_trials": 160,
       "overall_derived_from_rounded_suite_rates": false,
       "protocol": "Prompted controller; recorded context and call budgets vary across completed trials.",
-      "source": "docs/gpt6-results.md"
+      "source": "docs/gpt6-results.md",
+      "track": "zero_shot",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
     },
     {
       "model": "DP (single-task)",
@@ -111,7 +152,11 @@
       "overall_percent": null,
       "overall_derived_from_rounded_suite_rates": false,
       "protocol": "Core-only single-task reference; 38 tasks use an earlier goal sampler. Not ranked across 66 tasks.",
-      "source": "https://arxiv.org/abs/2610.26765"
+      "source": "https://arxiv.org/abs/2610.26765",
+      "track": "single_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": false
     }
   ]
 }

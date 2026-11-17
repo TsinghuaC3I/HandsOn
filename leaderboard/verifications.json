@@ -1,0 +1,6 @@
+{
+  "schema": "handson_leaderboard_verifications_v1",
+  "protocol": "handson-eval-v1",
+  "note": "Maintained by the HandsOn maintainers. status: verified | rejected | pending. Hidden-seed reruns use 10 trials per task.",
+  "entries": {}
+}

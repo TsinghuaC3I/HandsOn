@@ -1,0 +1,40 @@
+# HandsOn leaderboard submission metadata (protocol handson-eval-v1).
+# Copy to leaderboard/submissions/<YYYYMMDD>_<team>_<model>/metadata.yaml.
+# Rules and field meanings: leaderboard/README.md
+protocol: handson-eval-v1
+track: multi_task                 # multi_task | single_task | zero_shot
+
+submission:
+  team: Example Lab               # shown as the contributor
+  organization: Example University
+  contact_email: handson-submission@example.org   # public; a team alias is fine
+  request_verification: true      # ask the maintainers to rerun on hidden seeds
+
+model:
+  name: ExampleVLA                # display name
+  version: v1.0                   # checkpoint tag, commit or API model version
+  type: [VLA]                     # any of VLA, WAM, DP, IL, VLM, LLM, Agent, RL, Other
+  parameters_billion: 3.0         # optional
+
+links:
+  report: https://arxiv.org/abs/0000.00000           # paper or technical report
+  code: https://github.com/example/example-vla       # inference code (training code if released)
+  checkpoint: https://huggingface.co/example/example-vla-handson   # evaluated weights; API model page for agents
+  artifacts: https://huggingface.co/datasets/example/handson-runs  # raw run directories (required)
+
+training:
+  handson_data: Core-50 PhysX demonstrations, all 50 tasks         # "none" for zero_shot
+  external_data: none             # other robot or video data used for pretraining or co-training
+  pretrained_init: Example base model v1 (public weights at https://huggingface.co/example/base)
+  transfer16_data: false          # must be false: Transfer-16 is evaluation-only
+  evaluation_feedback_used: false # must be false: no tuning on evaluation outcomes
+
+interface:
+  transport: openpi_websocket     # openpi_websocket | http_physical_eef52
+  action_horizon: 30              # actions executed per request (--action-horizon)
+  history_frames: 1               # image frames per request (--history-frames)
+  uses_task_identifier: false     # must be false: no routing by task id or seed
+  max_model_calls_per_trial: null # zero_shot agents: per-trial model-call budget
+
+hardware: 8x RTX 5090 for the simulator, 1x H100 for the policy server
+notes: ""

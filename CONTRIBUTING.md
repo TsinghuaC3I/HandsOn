@@ -13,6 +13,15 @@ Open a GitHub issue.  Please include:
   behavioural mismatch
 - the seed, if the problem is not reproducible
 
+## Submitting leaderboard results
+
+Run the frozen `handson-eval-v1` trials with `python -m handson.evaluation.suite`,
+summarize them into `leaderboard/submissions/<YYYYMMDD>_<team>_<model>/`, and
+open a pull request that adds only that directory. The
+[submission guide](leaderboard/README.md) lists the tracks, rules, required
+metadata and the CI check (`python -m handson.evaluation.suite check ...`).
+Maintainers record hidden-seed verification in `leaderboard/verifications.json`.
+
 ## Adding or changing a task
 
 Tasks live in `handson/handson/tasks/<task_name>/`.  A task package must

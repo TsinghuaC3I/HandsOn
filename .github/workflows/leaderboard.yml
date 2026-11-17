@@ -1,0 +1,31 @@
+name: Leaderboard submissions
+on:
+  pull_request:
+    paths:
+      - 'leaderboard/**'
+      - 'handson/handson/evaluation/leaderboard.py'
+      - 'handson/handson/evaluation/suite.py'
+      - 'tools/check_leaderboard_submissions.py'
+      - 'tools/build_leaderboard.py'
+  push:
+    branches: [main]
+    paths:
+      - 'leaderboard/**'
+jobs:
+  check:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: git fetch origin main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements/cpu-test-lock.txt
+      - run: python -m pip install -r requirements/cpu-test-lock.txt
+      - run: python -m pip install --no-deps -e './handson[test]'
+      - run: python tools/check_leaderboard_submissions.py --git-ref origin/main
+      - run: python tools/build_leaderboard.py --check
