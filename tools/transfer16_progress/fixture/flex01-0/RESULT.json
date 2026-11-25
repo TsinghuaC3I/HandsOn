@@ -1,0 +1,7 @@
+{
+  "task": "Flex01",
+  "seed": 100,
+  "steps": 2,
+  "success": false,
+  "complete_evaluation_episode": true
+}

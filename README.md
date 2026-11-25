@@ -291,6 +291,9 @@ measured evidence, or the task is rejected.
 
 ## Results
 
+To reproduce Table 6 ordered progress from Transfer-16 control-step logs, use the
+[offline scorer, stage definitions, and example](tools/transfer16_progress/).
+
 See the [unified leaderboard](docs/leaderboard.md) for Core-50, Transfer-16
 and the 66-task overall average. The [interactive project leaderboard](https://llltttwww.github.io/HandsOn-website/leaderboard.html)
 includes the later Fable 5.2 evaluation. Its **29/660 (4.4%)** result is a

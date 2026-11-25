@@ -1,0 +1,7 @@
+{
+  "task": "Gen02",
+  "seed": 100,
+  "steps": 1,
+  "success": true,
+  "complete_evaluation_episode": true
+}

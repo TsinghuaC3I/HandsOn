@@ -1,0 +1,9 @@
+{"task":"Flex02","trial":0,"seed":100,"status":"scored","episode_dir":"flex02-0"}
+{"task":"Flex02","trial":1,"seed":101,"status":"scored","episode_dir":"flex02-1"}
+{"task":"Flex02","trial":2,"seed":102,"status":"scored","episode_dir":"flex02-2"}
+{"task":"Flex01","trial":0,"seed":100,"status":"scored","episode_dir":"flex01-0"}
+{"task":"Flex03","trial":0,"seed":100,"status":"scored","episode_dir":"flex03-0"}
+{"task":"Gen02","trial":0,"seed":100,"status":"scored","episode_dir":"gen02-0"}
+{"task":"Comb06","trial":0,"seed":100,"status":"scored","episode_dir":"comb06-0"}
+{"task":"Flex02","trial":3,"status":"invalid","reason":"reset failed"}
+{"task":"Flex02","trial":4,"status":"missing"}

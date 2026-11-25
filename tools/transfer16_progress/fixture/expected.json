@@ -1,0 +1,188 @@
+{
+  "episodes": {
+    "Flex02": [
+      {
+        "trial": 0,
+        "scored_steps": 1,
+        "success": false,
+        "L": 0,
+        "K": 4,
+        "progress": 0.0
+      },
+      {
+        "trial": 1,
+        "scored_steps": 3,
+        "success": false,
+        "L": 1,
+        "K": 4,
+        "progress": 0.25
+      },
+      {
+        "trial": 2,
+        "scored_steps": 1,
+        "success": false,
+        "L": 0,
+        "K": 4,
+        "progress": 0.0
+      }
+    ],
+    "Flex01": [
+      {
+        "trial": 0,
+        "scored_steps": 2,
+        "success": false,
+        "L": 3,
+        "K": 7,
+        "progress": 0.42857142857142855
+      }
+    ],
+    "Flex03": [
+      {
+        "trial": 0,
+        "scored_steps": 1,
+        "success": false,
+        "L": 2,
+        "K": 5,
+        "progress": 0.4
+      }
+    ],
+    "Gen02": [
+      {
+        "trial": 0,
+        "scored_steps": 1,
+        "success": true,
+        "L": null,
+        "K": null,
+        "progress": null
+      }
+    ],
+    "Comb06": [
+      {
+        "trial": 0,
+        "scored_steps": 1,
+        "success": false,
+        "L": 1,
+        "K": 5,
+        "progress": 0.2
+      }
+    ]
+  },
+  "per_task": {
+    "Gen01": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Gen02": {
+      "valid": 1,
+      "graded": 0,
+      "SR_pct": 100.0,
+      "Prog_pct": null
+    },
+    "Gen03": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Gen04": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Gen05": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Gen06": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Gen07": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb01": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb02": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb03": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb04": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb05": {
+      "valid": 0,
+      "graded": 0,
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb06": {
+      "valid": 1,
+      "graded": 1,
+      "SR_pct": 0.0,
+      "Prog_pct": 20.0
+    },
+    "Flex01": {
+      "valid": 1,
+      "graded": 1,
+      "SR_pct": 0.0,
+      "Prog_pct": 42.857142857142854
+    },
+    "Flex02": {
+      "valid": 3,
+      "graded": 3,
+      "invalid": 1,
+      "missing": 1,
+      "SR_pct": 0.0,
+      "Prog_pct": 8.333333333333332
+    },
+    "Flex03": {
+      "valid": 1,
+      "graded": 1,
+      "SR_pct": 0.0,
+      "Prog_pct": 40.0
+    }
+  },
+  "groups": {
+    "Gen": {
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Comb": {
+      "SR_pct": null,
+      "Prog_pct": null
+    },
+    "Flex": {
+      "SR_pct": 0.0,
+      "Prog_pct": 30.396825396825395
+    },
+    "All": {
+      "SR_pct": null,
+      "Prog_pct": null
+    }
+  }
+}

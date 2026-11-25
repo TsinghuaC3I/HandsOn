@@ -1,0 +1,3 @@
+{"step":1,"native":{"info":{"flat_latched":true,"first_fold_latched":false,"second_fold_latched":false,"release_latched":false,"succeed":false}}}
+{"step":2,"native":{"info":{"flat_latched":false,"first_fold_latched":true,"second_fold_latched":false,"release_latched":false,"succeed":false}}}
+{"step":3,"native":{"info":{"flat_latched":false,"first_fold_latched":false,"second_fold_latched":false,"release_latched":false,"succeed":false}}}
