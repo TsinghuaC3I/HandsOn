@@ -6,7 +6,7 @@
     python tools/build_leaderboard.py --fable-source SNAPSHOT.json   # also refresh the Fable snapshot
 
 Entries come from three sources: the manuscript's trained models, the HandsOn
-team's prompted-controller runs (GPT-6, Fable 5.2), and pull-request
+team's prompted-controller runs (GPT-6, GPT-6.2 Astra, Fable 5.2), and pull-request
 submissions under ``leaderboard/submissions`` (see leaderboard/README.md).
 """
 
@@ -112,7 +112,7 @@ def refresh_fable(fable_source):
     return fable
 
 
-def team_entries(fable):
+def team_entries(fable, gpt62):
     """Manuscript models, prompted controllers and the single-task DP reference."""
     entries = []
     for name, core, transfer in PAPER_MODELS:
@@ -125,10 +125,15 @@ def team_entries(fable):
             "track": "multi_task", "evaluation": "handson_team", "contributor": "HandsOn team", "ranked": True,
         })
     assert sum(task["successes_within_100"] for task in fable["tasks"]) == 29
+    core, transfer = (gpt62["suites"][suite] for suite in ("Core-50", "Transfer-16"))
+    assert (core["trials"], transfer["trials"], gpt62["audited_trials"]) == (500, 160, 660)
     for name, core_n, transfer_n, description, link in [
         ("GPT-6 (move_eef)", 26, 3,
          "Prompted controller; recorded context and call budgets vary across completed trials.",
          "docs/gpt6-results.md"),
+        ("GPT-6.2 Astra (move_eef)", core["successes"], transfer["successes"],
+         "Prompted controller at medium reasoning effort. Ten fixed trials per task with a 100-call limit.",
+         "docs/gpt62-astra-results.md"),
         ("Fable 5.2 (move_eef)", 26, 3,
          "Post-hoc 100-response cutoff of original 500-call trajectories; not a 100-call rerun.",
          "docs/fable52-results.md"),
@@ -199,8 +204,8 @@ def submission_entries():
     return entries
 
 
-def compose(fable):
-    team, dp = team_entries(fable)
+def compose(fable, gpt62):
+    team, dp = team_entries(fable, gpt62)
     submitted = submission_entries()
     ranked = sorted([row for row in team + submitted if row["ranked"]],
                     key=lambda row: (-row["overall_percent"], row["model"]))
@@ -208,7 +213,8 @@ def compose(fable):
                     key=lambda row: (-row["overall_percent"], row["model"]))
     core_only = [dp] + sorted([row for row in submitted if row["overall_percent"] is None],
                               key=lambda row: (-row["core_percent"], row["model"]))
-    dates = [fable["snapshot_utc"]] + [f"{row['listed_at']}T00:00:00+00:00" for row in submitted]
+    dates = [fable["snapshot_utc"], gpt62["snapshot_utc"]]
+    dates.extend(f"{row['listed_at']}T00:00:00+00:00" for row in submitted)
     return {
         "schema": "handson_unified_leaderboard_v1",
         "updated_utc": max(dates),
@@ -274,7 +280,8 @@ def main():
         fable = refresh_fable(args.fable_source)
     else:
         fable = json.loads((RESULTS / "fable52-call100.json").read_text())
-    board = compose(fable)
+    gpt62 = json.loads((RESULTS / "gpt62-astra-call100.json").read_text())
+    board = compose(fable, gpt62)
     board_text = json.dumps(board, indent=2, ensure_ascii=False) + "\n"
     docs_text = render_docs(board)
     if args.dry_run:

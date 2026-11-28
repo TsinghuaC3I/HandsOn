@@ -1,6 +1,6 @@
 {
   "schema": "handson_unified_leaderboard_v1",
-  "updated_utc": "2026-11-12T03:01:11.757084+00:00",
+  "updated_utc": "2026-11-27T17:26:11.022482+00:00",
   "metric": "Native task success; Core-50 and Transfer-16 are task-macro rates. Overall is the 66-task macro mean, weighted by 50 and 16 tasks.",
   "caveat": "Models differ in observations, action interface, interaction budgets and trial counts. Trained-model overall rates are derived from manuscript suite rates rounded to one decimal place.",
   "fable_snapshot_complete_original_audit": false,
@@ -107,6 +107,23 @@
       "protocol": "Paper trained checkpoint: 100 planned Core trials/task; 50 planned Transfer trials/task.",
       "source": "https://arxiv.org/abs/2610.26765",
       "track": "multi_task",
+      "evaluation": "handson_team",
+      "contributor": "HandsOn team",
+      "ranked": true
+    },
+    {
+      "model": "GPT-6.2 Astra (move_eef)",
+      "core_percent": 9.2,
+      "transfer_percent": 3.125,
+      "overall_percent": 7.7272727272727275,
+      "core_successes": 46,
+      "transfer_successes": 5,
+      "core_trials": 500,
+      "transfer_trials": 160,
+      "overall_derived_from_rounded_suite_rates": false,
+      "protocol": "Prompted controller at medium reasoning effort. Ten fixed trials per task with a 100-call limit.",
+      "source": "docs/gpt62-astra-results.md",
+      "track": "zero_shot",
       "evaluation": "handson_team",
       "contributor": "HandsOn team",
       "ranked": true

@@ -301,6 +301,10 @@ includes the later Fable 5.2 evaluation. Its **29/660 (4.4%)** result is a
 originally allowed 500 calls, not an independent 100-call rerun. The current
 snapshot covers 660 cutoff outcomes with 656 original trials independently audited.
 
+**GPT-6.2 Astra** with `move_eef` achieves **46/500 (9.20%)** on Core-50 and
+**5/160 (3.13%)** on Transfer-16, or **51/660 (7.73%)** overall. Every trial
+uses a 100-call budget. [Results and protocol](docs/gpt62-astra-results.md).
+
 To submit your own results, run the frozen `handson-eval-v1` trials with
 `python -m handson.evaluation.suite` and open a pull request; the
 [submission guide](leaderboard/README.md) covers tracks, rules and hidden-seed
@@ -336,6 +340,7 @@ and language protocol.
 | Environments, task definitions, success predicates | this repository |
 | Evaluation configs | `configs/multi_task/*.yaml` |
 | GPT-6 660-trial results | [Protocol and results](docs/gpt6-results.md), [JSON](docs/results/gpt6-results-20261019.json) |
+| GPT-6.2 Astra 660-trial results | [Protocol and results](docs/gpt62-astra-results.md), [JSON](docs/results/gpt62-astra-call100.json) |
 | Task acceptance evidence | `taskdev/tasks/*/validation_report.yaml` |
 | PhysX demonstration dataset | [Hugging Face](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets) |
 | Newton + Wuji2 demonstration dataset | [10,000 raw trajectories](https://huggingface.co/datasets/Cyan666/HandsOn-Datasets/tree/main/newton_wuji2) · [rendering method](docs/newton-wuji2-dataset.md) |
